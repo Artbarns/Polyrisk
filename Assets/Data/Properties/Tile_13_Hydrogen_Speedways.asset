@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ee77bc074e1491bab37d871b51629b, type: 3}
+  m_Name: Tile_13_Hydrogen_Speedways
+  m_EditorClassIdentifier: 
+  tileName: Hydrogen Speedways
+  tileIndex: 13
+  tileType: 0
+  basePrice: 1500
+  baseRent: 150
+  colorGroup: 0
+  familyData: {fileID: 11400000, guid: 041d7456b68464abc8ec42313df402a4, type: 2}
+  currentLevel: 0

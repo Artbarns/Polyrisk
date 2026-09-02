@@ -1,0 +1,40 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/UI/Styles/Theme.uss?fileID=7433441132597879392&amp;guid=f177baf72936741be81bdf456add4e4b&amp;type=3#Theme" />
+    <ui:VisualElement name="Panel_Marketplace_Hub" class="bottom-panel-container" style="flex-grow: 1; flex-basis: 100%;">
+        <ui:VisualElement class="marketplace-panel">
+            <ui:VisualElement class="indicator-row">
+                <ui:VisualElement class="indicator-pill" />
+            </ui:VisualElement>
+            <ui:Button name="Btn_CloseHub" class="btn-close">
+                <ui:Label text="×" class="close-text" />
+            </ui:Button>
+            <ui:VisualElement class="panel-content">
+                <ui:Label text="MARKETPLACE OPERATIONS" class="panel-header-title" />
+                <ui:VisualElement name="Container_HubForks" class="side-by-side-row">
+                    <ui:VisualElement class="choice-column">
+                        <ui:Button name="Btn_GoTenders" class="card-choice-vertical card-auction">
+                            <ui:VisualElement class="icon-box icon-box-top icon-auction-box">
+                                <ui:VisualElement name="Icon_Auction" class="icon-image" />
+                            </ui:VisualElement>
+                            <ui:VisualElement class="text-stack text-stack-center">
+                                <ui:Label text="OPEN AUCTIONS" class="card-title" />
+                                <ui:Label text="Publicly sell assets for Cash and Deals." class="card-desc" style="-unity-text-align: middle-center;" />
+                            </ui:VisualElement>
+                        </ui:Button>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="choice-column">
+                        <ui:Button name="Btn_GoSanctions" class="card-choice-vertical card-sanctions">
+                            <ui:VisualElement class="icon-box icon-box-top icon-sanctions-box">
+                                <ui:VisualElement name="Icon_Sanctions" class="icon-image" />
+                            </ui:VisualElement>
+                            <ui:VisualElement class="text-stack text-stack-center">
+                                <ui:Label text="HOSTILE SANCTIONS" class="card-title" />
+                                <ui:Label text="Target rivals with aggressive penalities." class="card-desc" style="-unity-text-align: middle-center;" />
+                            </ui:VisualElement>
+                        </ui:Button>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

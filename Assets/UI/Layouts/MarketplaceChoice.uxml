@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <!-- Connect Stylesheet -->
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="bottom-panel-container">
+        <!-- Main Panel Structure -->
+        <ui:VisualElement class="marketplace-panel">
+            
+            <!-- Handle Indicator -->
+            <ui:VisualElement class="indicator-row">
+                <ui:VisualElement class="indicator-pill" />
+            </ui:VisualElement>
+
+            <!-- Close Button Overlay -->
+            <ui:Button class="btn-close">
+                <ui:Label text="×" class="close-text" />
+            </ui:Button>
+
+            <!-- Card Content Wrapper -->
+            <ui:VisualElement class="panel-content">
+
+                <!-- AUCTION CHOICE CARD -->
+                <ui:Button class="card-choice card-auction">
+                    <ui:VisualElement class="icon-box icon-auction-box">
+                        <!-- We map the PNG sprite created later onto this VisualElement -->
+                        <ui:VisualElement class="icon-image icon-chart-png" />
+                    </ui:VisualElement>
+                    
+                    <ui:VisualElement class="text-stack">
+                        <ui:Label text="OPEN AUCTION" class="card-title" />
+                        <ui:Label text="Create a free-form auction for your assets. Offers can include Cash, Properties, or both. Your final selection rules all offers." class="card-desc" />
+                    </ui:VisualElement>
+                </ui:Button>
+
+                <!-- OR DIVIDER -->
+                <ui:VisualElement class="or-divider">
+                    <ui:VisualElement class="divider-line" />
+                    <ui:Label text="OR" class="divider-text" />
+                    <ui:VisualElement class="divider-line" />
+                </ui:VisualElement>
+
+                <!-- SANCTIONS CHOICE CARD -->
+                <ui:Button class="card-choice card-sanctions">
+                    <ui:VisualElement class="icon-box icon-sanctions-box">
+                        <ui:VisualElement class="icon-image icon-wrench-png" />
+                    </ui:VisualElement>
+                    
+                    <ui:VisualElement class="text-stack">
+                        <ui:Label text="HOSTILE SANCTIONS" class="card-title" />
+                        <ui:Label text="Create a free-form auction for your assets. Others can include Cash, Properties, or both. Your final selection rules all offers." class="card-desc" />
+                    </ui:VisualElement>
+                </ui:Button>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+
+</ui:UXML>

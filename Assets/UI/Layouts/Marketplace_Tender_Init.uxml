@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <!-- Connect Stylesheet -->
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="bottom-panel-container" name="Panel_Marketplace_TenderInit">
+        <ui:VisualElement class="marketplace-panel marketplace-panel--compact">
+            
+            <ui:VisualElement class="indicator-row">
+                <ui:VisualElement class="indicator-pill" />
+            </ui:VisualElement>
+
+            <ui:Button class="btn-close" name="Btn_CloseTenders">
+                <ui:Label text="×" class="close-text" />
+            </ui:Button>
+
+            <ui:VisualElement class="panel-content">
+                <ui:Label text="SELECT THE PROPERTY YOU WISH TO SELL" class="panel-header-title" />
+
+                <!-- SELECTED ASSET LIST — populated dynamically by Marketplace_UIManager -->
+                <ui:ScrollView class="scroll-list-container" name="Container_OwnedAssets" style="min-height: 80px;">
+                    <!-- Items injected here at runtime via InstantiateSellerRow() -->
+                </ui:ScrollView>
+
+                <!-- CTA: triggers 3D pulse/selection mode -->
+                <ui:Button class="card-sanction-item" name="Btn_PickProperty" style="margin-top: 8px; justify-content: center;">
+                    <ui:Label text="+ CLICK A PROPERTY ON THE BOARD" class="sanction-title" style="color: #05DF72; -unity-text-align: middle-center;" />
+                </ui:Button>
+                
+                <ui:VisualElement class="action-footer" style="flex-direction: row; justify-content: flex-end; padding-top: 16px;">
+                    <ui:Button name="Btn_ConfirmTender" text="CONFIRM SELECTION" class="btn-standard" style="opacity: 0.4;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="bottom-panel-container marketplace-modal" name="Panel_Marketplace_Waiting">
+        <ui:VisualElement class="marketplace-panel marketplace-panel--compact">
+
+            <ui:VisualElement class="indicator-row">
+                <ui:VisualElement class="indicator-pill" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="panel-content">
+
+                <ui:Label text="CALL FOR TENDERS" class="panel-header-title" />
+
+                <!-- Propriété mise aux enchères -->
+                <ui:VisualElement class="property-highlight-row" name="Container_WaitingProp">
+                    <ui:Label name="Lbl_WaitingPropName" text="—"
+                        style="color: white; font-size: 15px; -unity-font-style: bold; flex-grow: 1;" />
+                    <ui:Label name="Lbl_WaitingPropRent" text=""
+                        style="color: #05DF72; font-size: 12px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+
+                <!-- Statut animé (mis à jour par code) -->
+                <ui:Label name="Lbl_WaitingStatus" text="Waiting for bids from other players..."
+                    class="waiting-status-label" />
+
+                <!-- Compteur de bids reçus -->
+                <ui:Label name="Lbl_WaitingBidCount" text="0 offers received"
+                    style="color: #05DF72; font-size: 13px; -unity-font-style: bold; -unity-text-align: middle-center; margin-bottom: 16px;" />
+
+                <!-- Footer -->
+                <ui:VisualElement style="flex-direction: row; justify-content: center; padding-top: 8px;">
+                    <ui:Button name="Btn_CancelWaiting" text="CANCEL AUCTION" class="btn-secondary"
+                        style="flex-grow: 1;" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

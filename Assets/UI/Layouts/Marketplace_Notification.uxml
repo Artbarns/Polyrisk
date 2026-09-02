@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <!-- Connect Stylesheet -->
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="marketplace-notification-container" name="Panel_Marketplace_Notification" style="position: absolute; top: 80px; align-self: center; background-color: rgba(0, 0, 0, 0.8); padding: 16px; border-radius: 12px; border-width: 1px; border-color: #05DF72; min-width: 300px;">
+        <ui:Label name="Label_Title" text="AUCTION STARTED" style="color: #05DF72; -unity-font-style: bold; font-size: 16px; -unity-text-align: middle-center; margin-bottom: 8px;" />
+        <ui:Label name="Label_Asset" text="[Seller Name] is selling [Asset]" style="color: white; font-size: 14px; -unity-text-align: middle-center; margin-bottom: 12px; white-space: normal;" />
+        
+        <ui:Label name="Label_Timer" text="5s" style="color: #ffaa00; -unity-font-style: bold; font-size: 18px; -unity-text-align: middle-center; margin-bottom: 12px;" />
+        
+        <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
+            <ui:Button name="Btn_Skip" text="SKIP" class="btn-standard" style="background-color: #444444; flex-grow: 1; margin-right: 4px;" />
+            <ui:Button name="Btn_Participate" text="PARTICIPATE" class="btn-standard" style="background-color: #05DF72; color: #000000; flex-grow: 1; margin-left: 4px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

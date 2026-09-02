@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="victory-overlay fullscreen-overlay" name="VictoryOverlay">
+        <ui:VisualElement class="victory-card" name="VictoryCard">
+
+            <ui:Label name="Lbl_VictoryTitle" text="HYPER-MOGUL" class="victory-title" />
+            <ui:Label name="Lbl_VictoryWinner" text="PLAYER 0" class="victory-winner" />
+            <ui:Label name="Lbl_VictoryCondition" text="REACHED $10,000,000 IN NET CASH" class="victory-condition" />
+
+            <!-- Stats détaillées -->
+            <ui:VisualElement name="Container_VictoryStats" style="width: 100%; margin-bottom: 8px;" />
+
+            <!-- CTA -->
+            <ui:VisualElement class="victory-cta-row">
+                <ui:Button name="Btn_NewGame" text="NEW GAME" class="btn-standard"
+                    style="min-width: 200px;" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

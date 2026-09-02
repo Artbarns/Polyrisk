@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="bankruptcy-overlay fullscreen-overlay" name="BankruptcyOverlay">
+        <ui:VisualElement class="bankruptcy-card" name="BankruptcyCard">
+
+            <ui:Label name="Lbl_BankTitle" text="INSOLVENCY" class="bankruptcy-title" />
+            <ui:Label name="Lbl_BankDebtLine" text="Outstanding debt to settle" class="bankruptcy-debt-line" />
+            <ui:Label name="Lbl_BankDebtValue" text="$5,000" class="bankruptcy-debt-value" />
+
+            <!-- Liste d'actifs liquidables (upgrades / hypothèques / titres) -->
+            <ui:ScrollView name="Container_BankAssets" style="flex-grow: 1; min-height: 200px;" />
+
+            <!-- Footer : cash courant + bouton give-up -->
+            <ui:VisualElement style="flex-direction: row; justify-content: space-between; align-items: center; margin-top: 12px;">
+                <ui:Label name="Lbl_BankCurrentCash" text="Cash: $0" class="card-desc"
+                    style="flex-grow: 1;" />
+                <ui:Button name="Btn_BankGiveUp" text="GIVE UP" class="btn-secondary"
+                    style="background-color: rgba(255,71,71,0.2); color: #FF4747; border-color: rgba(255,71,71,0.5);" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

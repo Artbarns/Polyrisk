@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <!-- Connect Stylesheet -->
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="bottom-panel-container" name="Panel_Marketplace_TenderReview">
+        <ui:VisualElement class="marketplace-panel">
+            
+            <ui:VisualElement class="indicator-row">
+                <ui:VisualElement class="indicator-pill" />
+            </ui:VisualElement>
+
+            <ui:Button class="btn-close" name="Btn_CloseTenderReview">
+                <ui:Label text="×" class="close-text" />
+            </ui:Button>
+
+            <ui:VisualElement class="panel-content">
+                <ui:Label text="DEAL LIST" class="panel-header-title" />
+                <ui:Label text="(Select the best one)" class="card-desc" style="margin-bottom: 12px; margin-top: -10px;" />
+
+                <!-- SCROLLABLE BIDS LIST -->
+                <ui:ScrollView class="scroll-list-container" name="Container_BidList">
+                     
+                     <!-- The AuctionItem_Component logic will be instantiated here via code -->
+
+                </ui:ScrollView>
+
+                <!-- REVIEW ACTIONS (Side-by-side flex) -->
+                <ui:VisualElement class="side-by-side-row" style="margin-top: 16px;">
+                    <ui:Button class="choice-column" text="REJECT ALL" name="Btn_RejectAll" style="background-color: transparent; border-width: 1px; border-radius: 99px; height: 48px; border-color: rgba(255,255,255,0.2); color: #d1d5dc;" />
+                    <ui:Button class="choice-column" text="SEAL THE DEAL" name="Btn_SealDeal" style="background-color: #2bd86b; border-radius: 99px; height: 48px; color: black; -unity-font-style: bold; border-width: 0;" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

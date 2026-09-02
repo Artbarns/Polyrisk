@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="bottom-panel-container" name="Panel_Marketplace_Sanctions">
+        <ui:VisualElement class="marketplace-panel marketplace-panel--compact">
+
+            <ui:VisualElement class="indicator-row">
+                <ui:VisualElement class="indicator-pill" />
+            </ui:VisualElement>
+
+            <ui:Button class="btn-close" name="Btn_CloseSanctions">
+                <ui:Label text="×" class="close-text" />
+            </ui:Button>
+
+            <ui:VisualElement class="panel-content">
+                <ui:Label text="HOSTILE SANCTIONS" class="panel-header-title" />
+
+                <!-- VisualElement (pas ScrollView) — évite la capture des clicks par le scroll -->
+                <ui:VisualElement name="Container_SanctionsList" style="flex-direction: column;">
+
+                    <!-- S1. EMBARGO -->
+                    <ui:Button class="card-sanction-item clickable" name="Btn_SanctionEmbargo"
+                        style="padding: 10px 14px; margin-bottom: 8px;">
+                        <!-- picking-mode Ignore : le glow ne capture pas les clicks -->
+                        <ui:VisualElement class="neon-glow-active" name="GlowLayer_Embargo"
+                            picking-mode="Ignore" />
+                        <ui:VisualElement class="sanction-icon-box">
+                            <ui:VisualElement class="icon-image" name="Icon_Embargo" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="text-stack" picking-mode="Ignore">
+                            <ui:Label text="EMBARGO COMMERCIAL" class="sanction-title" picking-mode="Ignore" />
+                            <ui:Label text="Cost: 1.5 × Sgo" class="sanction-cost" picking-mode="Ignore" />
+                            <ui:Label text="Target property: no rent for 3 turns." class="sanction-effect" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:Button>
+
+                    <!-- S2. AUDIT -->
+                    <ui:Button class="card-sanction-item clickable" name="Btn_SanctionAudit"
+                        style="padding: 10px 14px; margin-bottom: 8px;">
+                        <ui:VisualElement class="neon-glow-active" name="GlowLayer_Audit"
+                            picking-mode="Ignore" />
+                        <ui:VisualElement class="sanction-icon-box">
+                            <ui:VisualElement class="icon-image" name="Icon_Audit" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="text-stack" picking-mode="Ignore">
+                            <ui:Label text="TARGETED AUDIT" class="sanction-title" picking-mode="Ignore" />
+                            <ui:Label text="Cost: 1 × Sgo" class="sanction-cost" picking-mode="Ignore" />
+                            <ui:Label text="Target pays 5% of their cash to the Bank." class="sanction-effect" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:Button>
+
+                    <!-- S3. STRIKE -->
+                    <ui:Button class="card-sanction-item clickable" name="Btn_SanctionStrike"
+                        style="padding: 10px 14px; margin-bottom: 8px;">
+                        <ui:VisualElement class="neon-glow-active" name="GlowLayer_Strike"
+                            picking-mode="Ignore" />
+                        <ui:VisualElement class="sanction-icon-box">
+                            <ui:VisualElement class="icon-image" name="Icon_Strike" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="text-stack" picking-mode="Ignore">
+                            <ui:Label text="PRODUCTION STRIKE" class="sanction-title" picking-mode="Ignore" />
+                            <ui:Label text="Cost: 2 × Sgo" class="sanction-cost" picking-mode="Ignore" />
+                            <ui:Label text="Double Burn Rate on targeted family next GO." class="sanction-effect" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:Button>
+
+                    <!-- S4. SABOTAGE -->
+                    <ui:Button class="card-sanction-item clickable" name="Btn_SanctionSabotage"
+                        style="padding: 10px 14px; margin-bottom: 0;">
+                        <ui:VisualElement class="neon-glow-active" name="GlowLayer_Sabotage"
+                            picking-mode="Ignore" />
+                        <ui:VisualElement class="sanction-icon-box">
+                            <ui:VisualElement class="icon-image" name="Icon_Sabotage" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="text-stack" picking-mode="Ignore">
+                            <ui:Label text="INDUSTRIAL SABOTAGE" class="sanction-title" picking-mode="Ignore" />
+                            <ui:Label text="Cost: 5 × Sgo" class="sanction-cost" picking-mode="Ignore" />
+                            <ui:Label text="Destroy 1 upgrade level on targeted property." class="sanction-effect" picking-mode="Ignore" />
+                        </ui:VisualElement>
+                    </ui:Button>
+
+                </ui:VisualElement>
+
+                <!-- Barre de confirmation (affichée par code après sélection target via board) -->
+                <ui:VisualElement name="Container_SanctionConfirm"
+                    style="display: none; flex-direction: row; align-items: center;
+                           justify-content: space-between; margin-top: 16px;">
+                    <ui:Label name="Lbl_SanctionConfirm" text="Select a target on the board"
+                        class="card-desc" style="flex-grow: 1; margin-right: 12px;" />
+                    <ui:Button name="Btn_ConfirmSanction" text="CONFIRM" class="btn-standard"
+                        style="min-width: 90px;" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

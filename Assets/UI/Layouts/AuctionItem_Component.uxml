@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/Theme.uss?fileID=7433441132597879392&amp;guid=f177baf72936741be81bdf456add4e4b&amp;type=3#Theme" />
+    <ui:VisualElement name="Item_BidRow" class="card-bid-entry">
+        <ui:VisualElement name="GlowLayer_BidSelection" class="neon-glow-active" />
+        <ui:VisualElement class="avatar-stack">
+            <ui:VisualElement name="Icon_PlayerAvatar" class="avatar-box" />
+            <ui:Label text="PLAYER NAME" name="Txt_PlayerName" class="player-name" />
+        </ui:VisualElement>
+        <ui:VisualElement class="vertical-divider" />
+        <ui:VisualElement name="Container_Offers" class="offer-stack">
+            <ui:VisualElement name="Tag_PropOffered" class="tag-offer tag-purple" style="width: 96px;">
+                <ui:Label text="HYDROGEN SPEEDWAYS" class="tag-label" />
+                <ui:Label text="$5,600" class="txt-price" />
+            </ui:VisualElement>
+            <ui:Label text="+" name="Txt_PlusSep" class="tag-label" style="color: rgb(153, 161, 175); font-size: 16px; margin-right: 8px;" />
+            <ui:VisualElement name="Tag_CashOffered" class="tag-offer tag-green" style="height: 73px; width: 74px;">
+                <ui:Label text="CASH" class="tag-label" />
+                <ui:Label text="$220K" class="txt-price" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

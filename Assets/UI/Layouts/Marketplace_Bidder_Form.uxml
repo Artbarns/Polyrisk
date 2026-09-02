@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="bottom-panel-container" name="Panel_Marketplace_BidderForm">
+        <ui:VisualElement class="marketplace-panel marketplace-panel--compact">
+
+            <ui:VisualElement class="indicator-row">
+                <ui:VisualElement class="indicator-pill" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="panel-content">
+                <ui:Label text="SUBMIT YOUR BID" class="panel-header-title" />
+
+                <!-- CASH SLIDER -->
+                <ui:VisualElement style="margin-top: 8px; margin-bottom: 12px;">
+                    <ui:Label text="CASH OFFER"
+                        style="color: #A0A0A0; font-size: 12px; margin-bottom: 4px;" />
+                    <ui:SliderInt name="Slider_CashOffer" low-value="0" high-value="1000" value="0" />
+                    <ui:Label name="Label_CashValue" text="$0"
+                        style="color: white; font-size: 16px; -unity-font-style: bold; align-self: flex-end;" />
+                </ui:VisualElement>
+
+                <!-- ASSET SELECTION -->
+                <ui:Label text="INCLUDED PROPERTIES (MAX 2)"
+                    style="color: #A0A0A0; font-size: 12px; margin-bottom: 4px;" />
+
+                <!-- VisualElement (pas ScrollView) — max 2 cards, pas de scrollbar système -->
+                <ui:VisualElement name="Container_BidAssets"
+                    style="flex-direction: column; min-height: 0;" />
+
+                <!-- CTA sélection 3D — visible tant que < 2 props sélectionnées -->
+                <ui:Button class="card-sanction-item" name="Btn_PickPropertyBid"
+                    style="margin-top: 8px; justify-content: center; background-color: rgba(0,255,255,0.08);
+                           border-color: rgba(0,255,255,0.3);">
+                    <ui:Label text="+ CLICK UP TO 2 PROPERTIES ON THE BOARD" class="sanction-title"
+                        style="color: #00FFFF; -unity-text-align: middle-center;" />
+                </ui:Button>
+
+                <!-- TOTAL VALUE -->
+                <ui:VisualElement style="flex-direction: row; justify-content: space-between;
+                                         margin-top: 16px; align-items: center;">
+                    <ui:Label text="TOTAL VALUE:" style="color: white; font-size: 14px;" />
+                    <ui:Label name="Label_TotalValue" text="$0"
+                        style="color: #05DF72; font-size: 20px; -unity-font-style: bold;" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="action-footer"
+                    style="flex-direction: row; justify-content: space-between; padding-top: 12px;">
+                    <ui:Button name="Btn_Skip" text="SKIP" class="btn-secondary"
+                        style="flex-grow: 1; margin-right: 8px;" />
+                    <ui:Button name="Btn_SubmitBid" text="SUBMIT BID" class="btn-standard"
+                        style="flex-grow: 2;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

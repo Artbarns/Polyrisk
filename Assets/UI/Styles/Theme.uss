@@ -1,0 +1,1029 @@
+/* 
+* Theme.uss - General styling for PolyRisk Mobile UI 
+* Translated from React Tailwind spacing, colors, and borders to 1920x1080px (9:16 relative) scale.
+*/
+
+:root {
+    /* Main Panel Background — Cyber-Luxury dark */
+    --color-panel-bg-top: rgba(15, 17, 25, 0.96);
+    --color-panel-bg-bot: rgba(18, 20, 28, 0.96);
+    --color-panel-border: rgba(64, 65, 78, 1);
+
+    /* Texts */
+    --color-text-white: #ffffff;
+    --color-text-muted: #d1d5dc;
+    --color-text-darker: #99a1af;
+
+    /* Neon Accents — Cyber-Luxury palette */
+    --color-neon-green: #05DF72;
+    --color-neon-cyan: #00FFFF;
+    --color-neon-purple: #C27AFF;
+    --color-neon-orange: #F59E0B;
+    --color-neon-red: #FF4747;
+    --color-neon-gold: #FFD700;
+
+    /* Green Card Constants (Cash / Auction) */
+    --color-auction-bg: rgba(5, 223, 114, 0.18);
+    --color-auction-border: rgba(5, 223, 114, 0.45);
+
+    /* Purple Card Constants (Property / Sanctions) */
+    --color-sanctions-bg: rgba(194, 122, 255, 0.18);
+    --color-sanctions-border: rgba(194, 122, 255, 0.4);
+    --color-sanctions-bg-light: rgba(194, 122, 255, 0.1);
+
+    /* Dark Board WealthStatus colors */
+    --color-wealth-low:   #8A8F9A;
+    --color-wealth-mid:   #3B82F6;
+    --color-wealth-high:  #F59E0B;
+    --color-wealth-mogul: #FFD700;
+
+    /* Misc */
+    --color-handle-pill: #3b3d4a;
+}
+
+/* ═══════════════════════════════════════════════════
+   TOP HUD — Barre fixée en haut (Cyber-Luxury)
+═══════════════════════════════════════════════════ */
+
+.top-hud-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: rgba(10, 12, 18, 0.92);
+    border-bottom-width: 1px;
+    border-color: rgba(64, 65, 78, 0.45);
+}
+
+.top-hud-segment {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    min-width: 0;
+}
+
+.top-hud-label {
+    color: var(--color-text-darker);
+    font-size: 10px;
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+    -unity-text-align: middle-center;
+}
+
+.top-hud-value {
+    color: var(--color-text-white);
+    font-size: 15px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+.top-hud-value--green  { color: var(--color-neon-green); }
+.top-hud-value--purple { color: var(--color-neon-purple); }
+.top-hud-value--cyan   { color: var(--color-neon-cyan); }
+.top-hud-value--orange { color: var(--color-neon-orange); }
+.top-hud-value--red    { color: var(--color-neon-red); }
+
+.top-hud-separator {
+    width: 1px;
+    min-width: 1px;
+    height: 28px;
+    background-color: rgba(120, 125, 145, 0.45);
+    flex-shrink: 0;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+/* ═══════════════════════════════════════════════════
+   DARK BOARD — Pastille WealthStatus
+═══════════════════════════════════════════════════ */
+
+.wealth-pill {
+    flex-direction: row;
+    align-items: center;
+    border-radius: 999px;
+    border-width: 1.5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.wealth-pill--low   { border-color: var(--color-wealth-low);   }
+.wealth-pill--mid   { border-color: var(--color-wealth-mid);   }
+.wealth-pill--high  { border-color: var(--color-wealth-high);  }
+.wealth-pill--mogul { border-color: var(--color-wealth-mogul); }
+
+.wealth-pill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.wealth-pill-dot--low   { background-color: var(--color-wealth-low);   }
+.wealth-pill-dot--mid   { background-color: var(--color-wealth-mid);   }
+.wealth-pill-dot--high  { background-color: var(--color-wealth-high);  }
+.wealth-pill-dot--mogul { background-color: var(--color-wealth-mogul); }
+
+.wealth-pill-label {
+    color: var(--color-text-white);
+    font-size: 11px;
+    -unity-font-style: bold;
+    letter-spacing: 0.5px;
+}
+
+.wealth-pill-label--low   { color: var(--color-wealth-low);   }
+.wealth-pill-label--mid   { color: var(--color-wealth-mid);   }
+.wealth-pill-label--high  { color: var(--color-wealth-high);  }
+.wealth-pill-label--mogul { color: var(--color-wealth-mogul); }
+
+/* ═══════════════════════════════════════════════════
+   PHASE E.5 — TRANSITIONS (Cyber-Luxury motion)
+═══════════════════════════════════════════════════ */
+
+/* Bottom sheets : slide-up depuis le bas + fade-in */
+.marketplace-panel {
+    transition-property: translate, opacity;
+    transition-duration: 280ms;
+    transition-timing-function: ease-out-cubic;
+    translate: 0 0;
+    opacity: 1;
+}
+
+.marketplace-panel.panel-enter-from {
+    translate: 0 100%;
+    opacity: 0;
+}
+
+.marketplace-panel.panel-exit-to {
+    translate: 0 100%;
+    opacity: 0;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-cubic;
+}
+
+/* Modales centrées (notifications) : scale + fade */
+.marketplace-notification-container {
+    transition-property: scale, opacity;
+    transition-duration: 240ms;
+    transition-timing-function: ease-out-cubic;
+    scale: 1 1;
+    opacity: 1;
+}
+
+.marketplace-notification-container.modal-enter-from {
+    scale: 0.85 0.85;
+    opacity: 0;
+}
+
+/* Fullscreen overlays (victory/bankruptcy) : fade global */
+.fullscreen-overlay {
+    transition-property: opacity;
+    transition-duration: 350ms;
+    transition-timing-function: ease-out-cubic;
+    opacity: 1;
+}
+
+.fullscreen-overlay.modal-enter-from {
+    opacity: 0;
+}
+
+/* Pulse glow pour highlights critiques (énergie 100%, victoire imminente) */
+.pulse-glow {
+    transition-property: opacity, scale;
+    transition-duration: 800ms;
+    transition-timing-function: ease-in-out;
+}
+
+.pulse-glow.glow-on {
+    opacity: 1;
+    scale: 1.04 1.04;
+}
+
+.pulse-glow.glow-off {
+    opacity: 0.6;
+    scale: 1 1;
+}
+
+/* Tap feedback léger sur boutons interactifs */
+.tap-feedback {
+    transition-property: scale, opacity;
+    transition-duration: 120ms;
+    transition-timing-function: ease-out;
+}
+
+.tap-feedback:hover {
+    scale: 1.02 1.02;
+}
+
+.tap-feedback:active {
+    scale: 0.97 0.97;
+    opacity: 0.85;
+}
+
+/* ═══════════════════════════════════════════════════
+   PHASE E.3 — VICTORY SCREEN (Cyber-Luxury)
+═══════════════════════════════════════════════════ */
+
+.victory-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(5, 7, 12, 0.94);
+    justify-content: center;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.victory-card {
+    width: 92%;
+    background-color: rgba(15, 17, 25, 0.98);
+    border-width: 2px;
+    border-color: var(--color-neon-gold);
+    border-radius: 28px;
+    padding-top: 32px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    align-items: center;
+}
+
+.victory-title {
+    color: var(--color-neon-gold);
+    font-size: 22px;
+    -unity-font-style: bold;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    -unity-text-align: middle-center;
+}
+
+.victory-winner {
+    color: var(--color-text-white);
+    font-size: 32px;
+    -unity-font-style: bold;
+    margin-bottom: 8px;
+    -unity-text-align: middle-center;
+}
+
+.victory-condition {
+    color: var(--color-neon-green);
+    font-size: 14px;
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    -unity-text-align: middle-center;
+}
+
+.victory-stats-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-bottom-width: 1px;
+    border-color: rgba(64, 65, 78, 0.4);
+}
+
+.victory-stats-label {
+    color: var(--color-text-darker);
+    font-size: 13px;
+}
+
+.victory-stats-value {
+    color: var(--color-text-white);
+    font-size: 16px;
+    -unity-font-style: bold;
+}
+
+.victory-stats-value--winner {
+    color: var(--color-neon-gold);
+}
+
+.victory-cta-row {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: 24px;
+}
+
+/* ═══════════════════════════════════════════════════
+   PHASE E.2 — VENTURE CARD POP-UP (Cyber-Luxury)
+═══════════════════════════════════════════════════ */
+
+.venture-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(5, 7, 12, 0.88);
+    justify-content: center;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.venture-card {
+    width: 86%;
+    max-width: 360px;
+    background-color: rgba(15, 17, 25, 0.98);
+    border-radius: 24px;
+    border-width: 2px;
+    border-color: rgba(120, 125, 145, 0.45);
+    padding-top: 24px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    transition-property: scale, opacity, rotate;
+    transition-duration: 380ms;
+    transition-timing-function: ease-out-cubic;
+    scale: 1 1;
+    opacity: 1;
+    rotate: 0deg;
+}
+
+.venture-card--positive { border-color: var(--color-neon-green);  background-color: rgba(5, 223, 114, 0.10); }
+.venture-card--negative { border-color: var(--color-neon-red);    background-color: rgba(255, 71, 71, 0.10); }
+.venture-card--chaos    { border-color: var(--color-neon-purple); background-color: rgba(194, 122, 255, 0.10); }
+
+.venture-card.card-flip-from {
+    scale: 0.6 0.6;
+    opacity: 0;
+    rotate: -180deg;
+}
+
+.venture-tag {
+    border-radius: 999px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 12px;
+    border-width: 1px;
+}
+
+.venture-tag--positive { background-color: rgba(5, 223, 114, 0.18);  border-color: var(--color-neon-green);  }
+.venture-tag--negative { background-color: rgba(255, 71, 71, 0.18);  border-color: var(--color-neon-red);    }
+.venture-tag--chaos    { background-color: rgba(194, 122, 255, 0.18); border-color: var(--color-neon-purple); }
+
+.venture-tag-label {
+    font-size: 10px;
+    -unity-font-style: bold;
+    letter-spacing: 1.5px;
+}
+
+.venture-tag-label--positive { color: var(--color-neon-green);  }
+.venture-tag-label--negative { color: var(--color-neon-red);    }
+.venture-tag-label--chaos    { color: var(--color-neon-purple); }
+
+.venture-card-title {
+    color: var(--color-text-white);
+    font-size: 22px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+    white-space: normal;
+}
+
+.venture-card-desc {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    -unity-text-align: middle-center;
+    margin-bottom: 20px;
+    white-space: normal;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.venture-card-id {
+    color: var(--color-text-darker);
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+/* ═══════════════════════════════════════════════════
+   PHASE E.4 — BANKRUPTCY SCREEN
+═══════════════════════════════════════════════════ */
+
+.bankruptcy-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(20, 5, 5, 0.92);
+    justify-content: center;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.bankruptcy-card {
+    width: 96%;
+    max-height: 85%;
+    background-color: rgba(15, 17, 25, 0.98);
+    border-radius: 22px;
+    border-width: 2px;
+    border-color: var(--color-neon-red);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 18px;
+    padding-right: 18px;
+    flex-direction: column;
+}
+
+.bankruptcy-title {
+    color: var(--color-neon-red);
+    font-size: 20px;
+    -unity-font-style: bold;
+    letter-spacing: 2px;
+    -unity-text-align: middle-center;
+    margin-bottom: 4px;
+}
+
+.bankruptcy-debt-line {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    -unity-text-align: middle-center;
+    margin-bottom: 12px;
+}
+
+.bankruptcy-debt-value {
+    color: var(--color-neon-red);
+    font-size: 28px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-bottom: 16px;
+}
+
+.bankruptcy-asset-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 6px;
+    border-radius: 12px;
+    border-width: 1px;
+    border-color: rgba(64, 65, 78, 0.5);
+    background-color: rgba(26, 29, 39, 0.5);
+}
+
+.bankruptcy-asset-name {
+    color: var(--color-text-white);
+    font-size: 13px;
+    -unity-font-style: bold;
+    flex-grow: 1;
+}
+
+.bankruptcy-asset-meta {
+    color: var(--color-text-darker);
+    font-size: 11px;
+}
+
+.bankruptcy-asset-btn {
+    background-color: rgba(255, 71, 71, 0.18);
+    color: var(--color-neon-red);
+    border-width: 1px;
+    border-color: rgba(255, 71, 71, 0.5);
+    border-radius: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 11px;
+    -unity-font-style: bold;
+}
+
+/* Base Panel */
+.bottom-panel-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.bottom-panel-container.marketplace-modal {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bottom-panel-container.marketplace-nonmodal {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.clickable {
+}
+
+.marketplace-panel {
+    background-color: var(--color-panel-bg-top);
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-top-width: 1.5px;
+    border-left-width: 1.5px;
+    border-right-width: 1.5px;
+    border-color: var(--color-panel-border);
+    flex-direction: column;
+    max-height: 45%;
+}
+
+/* Grab handle */
+.indicator-row {
+    height: 16px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 4px;
+}
+
+.indicator-pill {
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: var(--color-handle-pill);
+}
+
+/* Close/Header Button */
+.btn-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-width: 0;
+}
+
+.close-text {
+    font-size: 24px;
+    color: #6a7282;
+    -unity-text-align: middle-center;
+}
+
+/* Header Text */
+.panel-header-title {
+    color: #c27aff;
+    font-size: 16px;
+    -unity-font-style: bold;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+/* Content Container */
+.panel-content {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 20px;
+    flex-direction: column;
+}
+
+/* ----------- Layout Fragments & Expansion ----------- */
+
+/* Side-by-side flex for Marketplace Main Hub */
+.side-by-side-row {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.choice-column {
+    flex-basis: 48%; /* Leaves 4% gap */
+    flex-direction: column;
+}
+
+/* ScrollView Container */
+.scroll-list-container {
+    width: 100%;
+    height: 360px; /* Max height before scrolling */
+    flex-direction: column;
+}
+
+/* Choice Cards (Standard) */
+.card-choice {
+    width: 100%;
+    border-radius: 20px;
+    border-width: 1.5px;
+    flex-direction: row;
+    padding: 16px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    -unity-text-align: middle-left;
+    background-color: transparent;
+}
+
+/* Vertical Choice Card variant for Side-by-Side */
+.card-choice-vertical {
+    border-radius: 20px;
+    border-width: 1.5px;
+    flex-direction: column;
+    padding: 16px;
+    align-items: center;
+    margin-bottom: 12px;
+    -unity-text-align: middle-center;
+}
+
+.card-auction {
+    background-color: var(--color-auction-bg);
+    border-color: var(--color-auction-border);
+}
+
+.card-sanctions {
+    background-color: var(--color-sanctions-bg);
+    border-color: var(--color-sanctions-border);
+}
+
+/* Icons within cards */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.icon-box-left { margin-right: 16px; }
+.icon-box-top { margin-bottom: 12px; }
+
+.icon-auction-box { background-color: var(--color-auction-bg); }
+.icon-sanctions-box { background-color: var(--color-sanctions-bg); }
+
+/* Texts in Cards */
+.text-stack { flex-direction: column; flex-grow: 1; }
+.text-stack-center { align-items: center; }
+
+.card-title {
+    color: var(--color-text-white);
+    font-size: 16px;
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+    white-space: normal;
+}
+
+.card-desc {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    white-space: normal;
+}
+
+/* Sanction List Items */
+.card-sanction-item {
+    width: 100%;
+    border-radius: 14px;
+    border-width: 1.5px;
+    border-color: var(--color-sanctions-border);
+    background-color: var(--color-sanctions-bg-light);
+    flex-direction: row;
+    padding: 16px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.sanction-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background-color: var(--color-sanctions-bg);
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.sanction-title {
+    color: var(--color-text-white);
+    font-size: 14px;
+    -unity-font-style: bold;
+}
+
+.sanction-cost {
+    color: var(--color-text-darker);
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+.sanction-effect {
+    color: var(--color-text-muted);
+    font-size: 11px;
+    margin-top: 2px;
+    white-space: normal;
+}
+
+/* Bid Entry / Auction Item Component */
+.card-bid-entry {
+    border-radius: 16px;
+    border-width: 1.5px;
+    border-color: #6b6e71;
+    background-color: rgba(26, 29, 39, 0.4);
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+}
+
+.avatar-stack {
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.avatar-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: rgba(255, 100, 103, 0.2); /* Fallback */
+    margin-bottom: 4px;
+}
+
+.player-name {
+    color: var(--color-text-white);
+    font-size: 10px;
+    -unity-font-style: bold;
+}
+
+.vertical-divider {
+    width: 1px;
+    background-color: #3B3D4A;
+    margin-left: 12px;
+    margin-right: 12px;
+    align-self: stretch; /* Fills height */
+}
+
+.offer-stack {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Tag Offers */
+.tag-offer {
+    border-radius: 10px;
+    border-width: 1px;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    margin-right: 8px;
+}
+
+.tag-purple {
+    background-color: rgba(173, 70, 255, 0.15);
+    border-color: rgba(173, 70, 255, 0.35);
+}
+
+.tag-green {
+    background-color: rgba(0, 201, 80, 0.15);
+    border-color: rgba(0, 201, 80, 0.35);
+}
+
+.tag-label {
+    color: var(--color-text-white);
+    font-size: 9px;
+    -unity-font-style: bold;
+    margin-top: 4px;
+    white-space: normal;
+    -unity-text-align: middle-center;
+}
+
+.txt-price {
+    color: #05df72;
+    font-size: 12px;
+    -unity-font-style: bold;
+    margin-top: 2px;
+}
+
+/* ───────────────────────────────────────────── */
+/* GLOW COHERENCE: Neon Glow Fade Class          */
+/* ───────────────────────────────────────────── */
+
+.neon-glow-active {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* This will be the 9-slice PNG assigned in Unity Inspector or via code */
+    /* background-image: resource('Sprites/Frames/Frame_PurpleGlow_20px'); */
+    -unity-background-scale-mode: stretch-to-fill;
+    
+    /* Fade transition states */
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.neon-glow-active:hover {
+    opacity: 1;
+}
+
+/* Add a helper class to forceglow */
+.neon-glow-active.is-glowing {
+    opacity: 1;
+}
+
+/* Bid Row: selected state (neon green border) */
+.bid-selected {
+    border-color: #05DF72 !important;
+    border-width: 2px !important;
+}
+
+/* Seller property row (simplified layout for Tender Init) */
+.card-seller-row {
+    border-radius: 16px;
+    border-width: 1.5px;
+    border-color: rgba(5, 223, 114, 0.4);
+    background-color: rgba(5, 223, 114, 0.08);
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+}
+
+.seller-prop-name {
+    color: var(--color-text-white);
+    font-size: 14px;
+    -unity-font-style: bold;
+    flex-grow: 1;
+}
+
+.seller-prop-income {
+    color: #05DF72;
+    font-size: 12px;
+    -unity-font-style: bold;
+}
+
+/* ═══════════════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════════════ */
+
+/* Primary CTA — vert néon, coins arrondis */
+.btn-standard {
+    background-color: #05DF72;
+    color: #000000;
+    border-width: 0;
+    border-radius: 14px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+/* Secondary CTA — gris foncé */
+.btn-secondary {
+    background-color: rgba(60, 63, 80, 1);
+    color: #d1d5dc;
+    border-width: 1px;
+    border-color: rgba(64, 65, 78, 1);
+    border-radius: 14px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+/* ═══════════════════════════════════════════════════
+   PANEL HEIGHT VARIANTS
+═══════════════════════════════════════════════════ */
+
+/* Compact — hauteur pilotée par le contenu (pas de max-height fixe) */
+.marketplace-panel--compact {
+    max-height: none;
+}
+
+/* Expanded — pour les écrans avec longues listes */
+.marketplace-panel--expanded {
+    max-height: 72%;
+}
+
+/* ═══════════════════════════════════════════════════
+   WAITING / STATUS SCREENS
+═══════════════════════════════════════════════════ */
+
+.waiting-status-label {
+    color: var(--color-text-darker);
+    font-size: 13px;
+    -unity-text-align: middle-center;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    white-space: normal;
+}
+
+.property-highlight-row {
+    border-radius: 14px;
+    border-width: 1.5px;
+    border-color: rgba(5, 223, 114, 0.4);
+    background-color: rgba(5, 223, 114, 0.08);
+    flex-direction: row;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.spectator-footer-label {
+    color: var(--color-text-darker);
+    font-size: 12px;
+    -unity-text-align: middle-center;
+    margin-top: 8px;
+    white-space: normal;
+}
+
+/* ═══════════════════════════════════════════════════
+   PLAYER / PROPERTY SELECTION GRID (Frame 3.A)
+═══════════════════════════════════════════════════ */
+
+/* Card joueur — 2 colonnes */
+.player-select-card {
+    width: 48%;
+    border-radius: 16px;
+    border-width: 1.5px;
+    border-color: rgba(64, 65, 78, 1);
+    background-color: rgba(26, 29, 39, 0.6);
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+}
+
+.player-select-card.card-selected {
+    border-color: #05DF72;
+    background-color: rgba(5, 223, 114, 0.08);
+}
+
+.player-avatar-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-select-name {
+    color: var(--color-text-white);
+    font-size: 12px;
+    -unity-font-style: bold;
+    margin-bottom: 2px;
+}
+
+.player-select-sub {
+    color: var(--color-text-darker);
+    font-size: 10px;
+}
+
+/* Card propriété — dans la sélection sanction */
+.property-select-card {
+    width: 100%;
+    border-radius: 14px;
+    border-width: 1.5px;
+    border-color: rgba(64, 65, 78, 1);
+    background-color: rgba(26, 29, 39, 0.6);
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+}
+
+.property-select-card.card-selected {
+    border-color: #c27aff;
+    background-color: rgba(173, 70, 255, 0.08);
+}

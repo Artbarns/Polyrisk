@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="bottom-panel-container marketplace-modal" name="Panel_Marketplace_SelectPlayer">
+        <ui:VisualElement class="marketplace-panel marketplace-panel--compact">
+
+            <ui:VisualElement class="indicator-row">
+                <ui:VisualElement class="indicator-pill" />
+            </ui:VisualElement>
+
+            <ui:Button class="btn-close" name="Btn_CloseSelectPlayer">
+                <ui:Label text="×" class="close-text" />
+            </ui:Button>
+
+            <ui:VisualElement class="panel-content">
+
+                <!-- Titre dynamique : "SELECT PLAYER" ou "SELECT PROPERTY" -->
+                <ui:Label name="Lbl_SelectTitle" text="SELECT PLAYER" class="panel-header-title" />
+
+                <!-- Description de la sanction choisie -->
+                <ui:Label name="Lbl_SelectDesc" text=""
+                    style="color: #99a1af; font-size: 12px; margin-bottom: 12px; white-space: normal;" />
+
+                <!-- Grille joueurs / liste propriétés — contenu injecté dynamiquement -->
+                <ui:ScrollView name="Container_SelectGrid"
+                    style="max-height: 220px; flex-direction: column;" />
+
+                <!-- Barre de confirmation (masquée jusqu'à sélection) -->
+                <ui:VisualElement name="Container_SelectConfirmBar"
+                    style="display: none; flex-direction: row; justify-content: space-between;
+                           align-items: center; margin-top: 12px;">
+                    <ui:Label name="Lbl_SelectConfirmCost" text=""
+                        style="color: #d1d5dc; font-size: 13px; flex-grow: 1; margin-right: 12px;
+                               white-space: normal;" />
+                    <ui:Button name="Btn_SelectConfirm" text="CONFIRM" class="btn-standard"
+                        style="min-width: 100px;" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

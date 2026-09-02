@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="venture-overlay fullscreen-overlay" name="VentureOverlay">
+        <ui:VisualElement class="venture-card" name="VentureCard">
+
+            <!-- Tag type carte -->
+            <ui:VisualElement class="venture-tag" name="VentureTag">
+                <ui:Label name="Lbl_VentureTag" text="POSITIVE" class="venture-tag-label" />
+            </ui:VisualElement>
+
+            <!-- ID carte (#1, #11, etc.) -->
+            <ui:Label name="Lbl_VentureId" text="VENTURE #01" class="venture-card-id" />
+
+            <!-- Titre -->
+            <ui:Label name="Lbl_VentureTitle" text="HÉRITAGE OFFSHORE" class="venture-card-title" />
+
+            <!-- Description -->
+            <ui:Label name="Lbl_VentureDesc"
+                text="Recevez $5 × Sgo d'un trust offshore."
+                class="venture-card-desc" />
+
+            <!-- CTA -->
+            <ui:Button name="Btn_VentureConfirm" text="CONFIRM" class="btn-standard"
+                style="min-width: 180px;" />
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

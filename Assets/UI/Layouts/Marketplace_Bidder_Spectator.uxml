@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="bottom-panel-container marketplace-modal" name="Panel_Marketplace_BidderSpectator">
+        <ui:VisualElement class="marketplace-panel marketplace-panel--expanded">
+
+            <ui:VisualElement class="indicator-row">
+                <ui:VisualElement class="indicator-pill" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="panel-content" style="flex-grow: 1;">
+
+                <ui:Label text="DEAL LIST" class="panel-header-title" />
+                <ui:Label text="Waiting for the seller to pick an offer..."
+                    class="waiting-status-label" style="margin-bottom: 12px;" />
+
+                <!-- Liste des offres (read-only, même composant que TenderReview) -->
+                <ui:ScrollView class="scroll-list-container" name="Container_SpectatorBidList"
+                    style="flex-grow: 1; min-height: 120px;" />
+
+                <!-- Footer statique -->
+                <ui:Label name="Lbl_SpectatorFooter" text=""
+                    class="spectator-footer-label" style="margin-top: 12px;" />
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
