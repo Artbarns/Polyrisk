@@ -40,27 +40,38 @@ namespace PolyRisk
             public float emissiveIntensity = 1.0f;
             public float grooveWidth = 0.025f;
             public float deckThickness = 0.15f;
-            public float tileThickness = 0.07f;
-            public float metalRoughness = 0.82f;
-            public float metalness = 0.93f;
+            [Range(0.02f, 0.3f)] public float tileThickness = 0.11f;  // au-delà, la géométrie déborde du cadrage caméra/DoF prévu
+            [Range(0f, 1f)] public float metalRoughness = 0.82f;
+            [Range(0f, 1f)] public float metalness = 0.93f;
             [Range(0f, 1f)] public float baseGrey = 0.14f;
+            [Tooltip("Teinte du corps des tuiles, distincte du cadre/collier (baseGrey) pour qu'une tuile se voie comme une carte posée, pas comme un trou dans le même métal.")]
+            [Range(0f, 1f)] public float tileBodyGrey = 0.24f;
+            [Tooltip("Metallic dédié aux tuiles, plus bas que metalness (cadre) : à Metallic ~0.9+, _BaseColor a très peu d'effet visuel (surface dominée par la réflexion, pas par sa teinte diffuse) — c'est ça qui rendait tileBodyGrey inefficace malgré un matériau séparé.")]
+            [Range(0f, 1f)] public float tileMetalness = 0.35f;
+            [Range(0f, 1f)] public float tileRoughness = 0.55f;
             public float brushTiling = 4.75f;
 
             [Header("Couleurs de groupe (8)")]
             public Color[] groupColors = new Color[8];
 
             [Header("Géométrie")]
-            public float cellPitchShort = 1.5f;   // largeur d'une case latérale (aligné plateau existant)
-            public float cellPitchLong  = 1.5f;   // profondeur d'une case (aligné plateau existant)
+            [Tooltip("Volontairement < cellPitchLong : c'est CE qui rend les tuiles standards rectangulaires (étroites le long du bord, profondes vers le centre). Sans danger — AssertSlot(BuildSlotModel) est dynamique, pas figée sur 1.5/1.5. Déplace la position de toutes les cases, donc la caméra (cadrage à la main dans la scène) peut avoir besoin d'un réajustement si l'écart est important.")]
+            public float cellPitchShort = 1.0f;   // largeur d'une case latérale
+            public float cellPitchLong  = 1.5f;   // profondeur d'une case + taille des 4 coins carrés
             public float gap = 0.10f;             // matière entre deux logements
+            public float rowSeam = 0.02f;         // séparation visuelle résiduelle entre tuiles le long d'un bord
             public float slotPlay = 0.03f;        // jeu tuile / paroi
             public int cornerSegments = 6;        // subdivisions d'angle arrondi
+            [Tooltip("Extension des 4 coins carrés, vers l'extérieur du plateau uniquement (les bords intérieurs, côté tuiles voisines, ne bougent pas). Marge sûre avant le bord réel du châssis : ~0.45.")]
+            public float cornerGrow = 0.4f;
         }
 
         public Settings settings = new Settings();
 
         [Header("Matériaux")]
-        public Material metalMaterial;   // URP/Lit
+        public Material metalMaterial;   // URP/Lit — cadre, collier, châssis
+        [Tooltip("Matériau séparé pour le corps des tuiles. URP/Lit ne lit pas la couleur par sommet : sans un matériau à part, une tuile rend exactement comme le cadre (même _BaseColor), quelle que soit tileBodyGrey. Dupliquer M_BoardMetal.mat suffit (ex: M_BoardTile.mat) — ApplyMaterialSettings() pilote sa _BaseColor via tileBodyGrey.")]
+        public Material tileMaterial;    // URP/Lit — corps des tuiles, teinte distincte
         public Material neonMaterial;    // PolyRisk/NeonState
         public Material darkMaterial;    // URP/Lit, mat
 
@@ -82,6 +93,7 @@ namespace PolyRisk
         const int SIDE = 9;
         const int SLOT_COUNT = 40;
         const int STATE_WIDTH = 64;      // puissance de 2, >= SLOT_COUNT
+        const int TRIM_INDEX = 40;       // pixel réservé (hors 0..39) pour le liseré statique, jamais touché par SetTile/ResetTile
 
         // ------------------------------------------------------------- modèle
         public struct Slot
@@ -93,6 +105,7 @@ namespace PolyRisk
             public bool isCorner;
             public int groupId;          // -1 = case neutre
             public float surfaceY;       // Y de la surface haute du slot, pour poser les pions
+            public bool rowIsW;          // true si l'axe "le long du bord" est porté par w (sinon par d)
         }
 
         public IReadOnlyList<Slot> Slots => slots;
@@ -304,17 +317,26 @@ namespace PolyRisk
                         d = horiz ? tw : td,
                         rotY = rot,
                         isCorner = false,
-                        groupId = group
+                        groupId = group,
+                        rowIsW = !horiz
                     });
                 }
             }
 
-            // Assertions (PATCH A) — vérifie la parité avec le plateau existant.
-            // co = 8.25 - 0.75 = 7.5   -> match Tile_0 (+7.5, -7.5), Tile_10 (-7.5, -7.5), Tile_20 (-7.5, +7.5)
-            AssertSlot(0,  new Vector2( 7.5f, -7.5f), "Slot[0] doit être Bottom-Right");
-            AssertSlot(1,  new Vector2( 6.0f, -7.5f), "Slot[1] doit être 1 pas à gauche de 0 sur le bord Bottom");
-            AssertSlot(10, new Vector2(-7.5f, -7.5f), "Slot[10] doit être Bottom-Left");
-            AssertSlot(20, new Vector2(-7.5f,  7.5f), "Slot[20] doit être Top-Left");
+            // Assertions (PATCH A) — garde-fou sur l'algorithme, pas sur une valeur figée :
+            // dérivées de co/W (calculés ci-dessus pour CE run), donc valables quels que
+            // soient cellPitchShort/cellPitchLong. Continuent de détecter un vrai bug de
+            // parcours/ordre des coins ; ne réagissent plus à un choix de forme de tuile.
+            //
+            // Slot[1] (i=0 dans la boucle side) est positionnée par sa PROPRE formule
+            // ( (SIDE-1)*0.5*W ), indépendante de co — "co - W" ne coïncidait que tant que
+            // cellPitchShort == cellPitchLong (donc C == W). Avec des tuiles rectangulaires
+            // (C != W), il faut la vraie formule, pas un raccourci qui supposait l'égalité.
+            float slot1X = (SIDE - 1) * 0.5f * W;
+            AssertSlot(0,  new Vector2(co, -co),      "Slot[0] doit être Bottom-Right");
+            AssertSlot(1,  new Vector2(slot1X, -co),  "Slot[1] doit être 1 pas à gauche de 0 sur le bord Bottom");
+            AssertSlot(10, new Vector2(-co, -co),     "Slot[10] doit être Bottom-Left");
+            AssertSlot(20, new Vector2(-co, co),      "Slot[20] doit être Top-Left");
         }
 
         void AssertSlot(int i, Vector2 expected, string message)
@@ -342,6 +364,7 @@ namespace PolyRisk
             float INNER = (outerExtent - st.cellPitchLong) * 2f + 0.3f;
 
             Color metalTint = new Color(st.baseGrey, st.baseGrey, st.baseGrey);
+            Color tileTint = new Color(st.tileBodyGrey, st.tileBodyGrey, st.tileBodyGrey);
             Color darkTint = metalTint * 0.32f;
 
             var mMetal = new ProcGeo.MeshBuilder();
@@ -366,6 +389,13 @@ namespace PolyRisk
                 ProcGeo.RoundedRect(INNER, INNER, 0.35f, segs),
                 0f, H, metalTint);
 
+            // --- liseré blanc fin, sur la marche du châssis (le châssis fait S+0.55 de large,
+            // la lèvre extérieure qui vient par-dessus ne fait que S — la différence expose
+            // un rebord plat juste après la base, à Y proche de 0). Statique, jamais éteint,
+            // via le pixel réservé TRIM_INDEX (n'entre jamais en conflit avec les 40 cases).
+            ProcGeo.AddRing(mNeon, S + 0.25f, S + 0.25f, 0.58f, st.grooveWidth * 0.7f,
+                            -0.015f, 0.005f, Color.white, TRIM_INDEX, 0f, 0f, segs);
+
             // --- champ central gravé, en retrait
             float fieldT = H * 0.55f;
             ProcGeo.AddSolid(mMetal,
@@ -377,40 +407,74 @@ namespace PolyRisk
             for (int i = 0; i < slots.Count; i++)
             {
                 var s = slots[i];
-                float hw = s.w + PAD, hd = s.d + PAD;
-                float r = Mathf.Min(s.w, s.d) * 0.19f;
                 Color tint = GroupColor(s.groupId);
-
-                // le collier comble l'espace entre logements voisins ;
-                // les colliers se rejoignent exactement au milieu du gap
-                ProcGeo.AddRing(mMetal, hw + st.gap, hd + st.gap, r + st.gap * 0.5f,
-                                st.gap * 0.5f, 0f, H, metalTint, 0f, s.pos.x, s.pos.y, segs);
-
-                // paroi lumineuse du logement, sur toute la hauteur
-                ProcGeo.AddRing(mNeon, hw, hd, r, st.grooveWidth,
-                                0f, H * 0.96f, tint, s.index, s.pos.x, s.pos.y, segs);
 
                 if (s.isCorner)
                 {
-                    AddCornerInlay(mDark, mNeon, s, darkTint, tint, segs);
+                    // Coin agrandi vers l'extérieur uniquement : le centre est décalé de
+                    // grow/2 dans la direction du coin (signe de sa position), donc les
+                    // bords intérieurs (côté tuiles voisines) restent exactement en place —
+                    // seuls les bords extérieurs avancent, dans la marge du bandeau du cadre.
+                    float grow = st.cornerGrow;
+                    Vector2 outward = new Vector2(Mathf.Sign(s.pos.x), Mathf.Sign(s.pos.y));
+                    Vector2 center = s.pos + outward * (grow * 0.5f);
+                    float cw = s.w + grow, cd = s.d + grow;
+                    float cr = Mathf.Min(cw, cd) * 0.19f;
+                    float chw = cw + PAD, chd = cd + PAD;
+
+                    // collier + paroi néon du logement, redimensionnés avec le coin
+                    ProcGeo.AddRing(mMetal, chw + st.gap, chd + st.gap, cr + st.gap * 0.5f,
+                                    st.gap * 0.5f, 0f, H, metalTint, 0f, center.x, center.y, segs);
+                    ProcGeo.AddRing(mNeon, chw, chd, cr, st.grooveWidth,
+                                    0f, H * 0.96f, tint, s.index, center.x, center.y, segs);
+
+                    AddCornerInlay(mDark, mNeon, s, darkTint, tint, segs, cw, cd, center);
                     // corner : creusé, surface à ~0.034 (top de l'inlay clair)
                     s.surfaceY = 0.034f;
                 }
                 else
                 {
-                    s.surfaceY = AddTile(mTiles, mNeon, s, metalTint, tint, segs, H);
+                    float hw = s.w + PAD, hd = s.d + PAD;
+                    float r = Mathf.Min(s.w, s.d) * 0.19f;
+
+                    // le collier comble l'espace entre logements voisins ;
+                    // les colliers se rejoignent exactement au milieu du gap
+                    ProcGeo.AddRing(mMetal, hw + st.gap, hd + st.gap, r + st.gap * 0.5f,
+                                    st.gap * 0.5f, 0f, H, metalTint, 0f, s.pos.x, s.pos.y, segs);
+
+                    // paroi lumineuse du logement, sur toute la hauteur
+                    ProcGeo.AddRing(mNeon, hw, hd, r, st.grooveWidth,
+                                    0f, H * 0.96f, tint, s.index, s.pos.x, s.pos.y, segs);
+
+                    // Tuiles standards étirées le long du bord pour se toucher (pas de vide
+                    // visible), sans empiéter sur le jeu (slotPlay) réservé face au collier.
+                    // La forme rectangulaire vient directement de cellPitchShort < cellPitchLong
+                    // (Settings) — plus de mécanisme séparé pour ça, un seul levier à tourner.
+                    float rowWiden = Mathf.Max(0f, st.gap - st.rowSeam - st.slotPlay);
+                    float tileW = s.w + (s.rowIsW ? rowWiden : 0f);
+                    float tileD = s.d + (s.rowIsW ? 0f : rowWiden);
+
+                    s.surfaceY = AddTile(mTiles, mNeon, s, tileTint, tint, segs, H, tileW, tileD, s.pos);
                 }
 
                 slots[i] = s;
             }
 
             Spawn("Board_Metal", mMetal.ToMesh("Board_Metal"), metalMaterial);
-            Spawn("Board_Tiles", mTiles.ToMesh("Board_Tiles"), metalMaterial);
+            // Repli sur metalMaterial si tileMaterial n'est pas encore assigné dans l'Inspector —
+            // évite un plateau sans tuiles visibles, mais tileBodyGrey n'aura alors aucun effet
+            // (cf. tooltip du champ) tant qu'un matériau séparé n'est pas branché.
+            Spawn("Board_Tiles", mTiles.ToMesh("Board_Tiles"), tileMaterial != null ? tileMaterial : metalMaterial);
             Spawn("Board_Neon", mNeon.ToMesh("Board_Neon"), neonMaterial);
             Spawn("Board_Dark", mDark.ToMesh("Board_Dark"), darkMaterial);
 
             ApplyMaterialSettings();
             ResetAllTiles();
+
+            // Liseré blanc statique : intensité fixe, jamais remis à zéro (contrairement aux
+            // cases 0..39, TRIM_INDEX n'est jamais touché par SetTile/ResetTile/highlight).
+            statePixels[TRIM_INDEX] = new Color(1f, 1f, 1f, st.emissiveIntensity * 1.3f);
+            MarkStateDirty();
 
             // PATCH B — ancres Tile_N enfants (colliders + TileIdentifier + TileVisuals)
             BuildSlotAnchors();
@@ -420,58 +484,74 @@ namespace PolyRisk
         }
 
         /// Angle : creusé dans le plateau, jamais une tuile rapportée.
+        /// (cw, cd, center) = empreinte déjà agrandie (cornerGrow) calculée par l'appelant.
         void AddCornerInlay(ProcGeo.MeshBuilder dark, ProcGeo.MeshBuilder neon,
-                            Slot s, Color darkTint, Color tint, int segs)
+                            Slot s, Color darkTint, Color tint, int segs,
+                            float cw, float cd, Vector2 center)
         {
             ProcGeo.AddSolid(dark,
-                ProcGeo.RoundedRect(s.w - 0.06f, s.d - 0.06f, 0.22f, segs, s.pos.x, s.pos.y),
+                ProcGeo.RoundedRect(cw - 0.06f, cd - 0.06f, 0.22f, segs, center.x, center.y),
                 -0.02f, 0.01f, darkTint);
 
-            ProcGeo.AddRing(neon, s.w - 0.40f, s.d - 0.40f, 0.16f, settings.grooveWidth * 0.8f,
-                            0.008f, 0.034f, tint, s.index, s.pos.x, s.pos.y, segs);
-            ProcGeo.AddRing(neon, s.w - 0.72f, s.d - 0.72f, 0.10f, settings.grooveWidth * 0.6f,
-                            0.010f, 0.030f, tint, s.index, s.pos.x, s.pos.y, segs);
+            ProcGeo.AddRing(neon, cw - 0.40f, cd - 0.40f, 0.16f, settings.grooveWidth * 0.8f,
+                            0.008f, 0.034f, tint, s.index, center.x, center.y, segs);
+            ProcGeo.AddRing(neon, cw - 0.72f, cd - 0.72f, 0.10f, settings.grooveWidth * 0.6f,
+                            0.010f, 0.030f, tint, s.index, center.x, center.y, segs);
         }
 
-        /// Tuile : socle, liseré de jointure, dalle supérieure, rainure gravée.
+        /// Tuile : dalle plate pleine (métal anthracite, teinte distincte du cadre) +
+        /// un seul header émissif sur le côté tourné vers le centre du plateau. Plus de
+        /// double étage ni d'anneau néon périphérique — cf. cahier des charges mockup.
+        /// `center` = position de la tuile (`s.pos` pour les tuiles standards, décalée
+        /// pour les coins agrandis — cf. AddCornerInlay) ; le header se recale toujours
+        /// sur le vrai bord intérieur à partir de (center, tileD/tileW).
         /// Retourne la Y de la surface haute pour l'ancre de pion.
         float AddTile(ProcGeo.MeshBuilder body, ProcGeo.MeshBuilder neon,
-                      Slot s, Color metalTint, Color tint, int segs, float H)
+                      Slot s, Color bodyTint, Color tint, int segs, float H,
+                      float tileW, float tileD, Vector2 center)
         {
             float hb = settings.tileThickness;
-            float ht = hb * 0.85f;
-            float seamH = Mathf.Max(0.03f, hb * 0.42f);
-            float r = Mathf.Min(s.w, s.d) * 0.17f;
-            float inset = 0.11f;
-
-            float seamY = hb + 0.012f;
-            float topY = seamY + seamH * 0.82f;
-            float faceY = topY + ht - 0.004f;
-            float total = faceY + 0.022f;
+            float r = Mathf.Min(tileW, tileD) * 0.17f;
 
             // la tuile affleure légèrement le cadre, quelle que soit son épaisseur
-            float baseY = Mathf.Max(0.01f, H + 0.05f - total);
+            float baseY = Mathf.Max(0.01f, H + 0.05f - hb - 0.022f);
 
             ProcGeo.AddSolid(body,
-                ProcGeo.RoundedRect(s.w, s.d, r, segs, s.pos.x, s.pos.y),
-                baseY, baseY + hb, metalTint);
+                ProcGeo.RoundedRect(tileW, tileD, r, segs, center.x, center.y),
+                baseY, baseY + hb, bodyTint);
 
-            ProcGeo.AddRing(neon, s.w - 0.01f, s.d - 0.01f, r, settings.grooveWidth,
-                            baseY + seamY, baseY + seamY + seamH, tint, s.index,
-                            s.pos.x, s.pos.y, segs);
+            // Header : pavé coloré émissif, uniquement sur le bord intérieur.
+            Vector2 inward = InwardDir(s.rotY);
+            float depthAxis = s.rowIsW ? tileD : tileW;   // taille perpendiculaire au bord
+            float rowAxis   = s.rowIsW ? tileW : tileD;   // taille le long du bord
 
-            ProcGeo.AddSolid(body,
-                ProcGeo.RoundedRect(s.w - inset, s.d - inset,
-                                    Mathf.Max(r - inset * 0.5f, 0.02f), segs, s.pos.x, s.pos.y),
-                baseY + topY, baseY + topY + ht, metalTint);
+            float headerDepth = depthAxis * 0.24f;
+            const float headerInset = 0.06f;
+            float headerW = s.rowIsW ? rowAxis - headerInset : headerDepth;
+            float headerD = s.rowIsW ? headerDepth : rowAxis - headerInset;
+            float headerR = Mathf.Min(headerW, headerD) * 0.25f;
 
-            ProcGeo.AddRing(neon, s.w - inset - 0.13f, s.d - inset - 0.13f,
-                            Mathf.Max(r - inset * 0.5f - 0.06f, 0.015f), settings.grooveWidth,
-                            baseY + faceY, baseY + faceY + 0.022f, tint, s.index,
-                            s.pos.x, s.pos.y, segs);
+            // Bord intérieur réel de la dalle (déjà décalée), puis on rentre le header
+            // depuis ce bord — reste donc fixe même si tileD/tileW grandit côté extérieur.
+            Vector2 inwardEdge = center + inward * (depthAxis * 0.5f);
+            Vector2 headerCenter = inwardEdge - inward * (headerDepth * 0.5f + 0.02f);
 
-            // Surface haute réelle où le pion se pose (top de la dalle supérieure)
-            return baseY + topY + ht;
+            ProcGeo.AddSolid(neon,
+                ProcGeo.RoundedRect(headerW, headerD, headerR, segs, headerCenter.x, headerCenter.y),
+                baseY + hb - 0.006f, baseY + hb + 0.018f, tint, s.index);
+
+            // Surface haute réelle où le pion se pose (top de la dalle)
+            return baseY + hb;
+        }
+
+        /// Direction unitaire "vers le centre du plateau" pour une tuile de bord,
+        /// dérivée de sa rotation (fixée par côté dans BuildSlotModel).
+        static Vector2 InwardDir(float rotY)
+        {
+            if (Mathf.Approximately(rotY, 0f)) return new Vector2(0f, 1f);
+            if (Mathf.Approximately(rotY, 90f)) return new Vector2(1f, 0f);
+            if (Mathf.Approximately(rotY, 180f)) return new Vector2(0f, -1f);
+            return new Vector2(-1f, 0f); // -90
         }
 
         // ================================================== PATCH B — ancres
@@ -560,6 +640,16 @@ namespace PolyRisk
                 metalMaterial.SetFloat("_Metallic", st.metalness);
                 metalMaterial.SetFloat("_Smoothness", 1f - st.metalRoughness);
                 metalMaterial.SetTextureScale("_BaseMap", Vector2.one * st.brushTiling);
+            }
+            if (tileMaterial != null)
+            {
+                // Metallic/Smoothness dédiés (tileMetalness/tileRoughness), plus bas que le cadre :
+                // à Metallic ~0.9+ la _BaseColor n'a presque aucun effet visuel (surface dominée
+                // par la réflexion), donc tileBodyGrey ne se voyait pas malgré le matériau séparé.
+                tileMaterial.SetColor("_BaseColor", new Color(st.tileBodyGrey, st.tileBodyGrey, st.tileBodyGrey));
+                tileMaterial.SetFloat("_Metallic", st.tileMetalness);
+                tileMaterial.SetFloat("_Smoothness", 1f - st.tileRoughness);
+                tileMaterial.SetTextureScale("_BaseMap", Vector2.one * st.brushTiling);
             }
             if (neonMaterial != null)
             {

@@ -129,12 +129,24 @@ namespace PolyRisk
             for (int i = 0; i < n; i++)
             {
                 int j = (i + 1) % n;
+                // Capuchon haut posé dans les deux sens de rotation : le mesh est bâti
+                // à partir d'un profil dont le sens (horaire/antihoraire selon les axes
+                // utilisés par les appelants) ne garantit pas de front face côté +Y avec
+                // Cull Back. Sans ça, une des deux faces (haut ou bas) devient invisible
+                // depuis la caméra — c'est ce qui rendait les tuiles "creuses" par le
+                // dessus. Coût : quelques triangles culled en plus, négligeable ici.
                 mb.Tri(new Vector3(c.x, y1, c.y),
                        new Vector3(path[i].x, y1, path[i].y),
                        new Vector3(path[j].x, y1, path[j].y), Vector3.up, tint, idx);
+                mb.Tri(new Vector3(c.x, y1, c.y),
+                       new Vector3(path[j].x, y1, path[j].y),
+                       new Vector3(path[i].x, y1, path[i].y), Vector3.up, tint, idx);
                 mb.Tri(new Vector3(c.x, y0, c.y),
                        new Vector3(path[j].x, y0, path[j].y),
                        new Vector3(path[i].x, y0, path[i].y), Vector3.down, tint, idx);
+                mb.Tri(new Vector3(c.x, y0, c.y),
+                       new Vector3(path[i].x, y0, path[i].y),
+                       new Vector3(path[j].x, y0, path[j].y), Vector3.down, tint, idx);
 
                 Vector3 ni = new Vector3(nrm[i].x, 0, nrm[i].y);
                 Vector3 nj = new Vector3(nrm[j].x, 0, nrm[j].y);

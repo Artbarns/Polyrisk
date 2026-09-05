@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="bottom-panel-container marketplace-nonmodal" name="Panel_TileDetail">
+        <ui:VisualElement class="marketplace-panel marketplace-panel--compact">
+
+            <ui:VisualElement class="indicator-row">
+                <ui:VisualElement class="indicator-pill" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="panel-content">
+
+                <ui:VisualElement style="flex-direction: row; align-items: center; margin-bottom: 12px;">
+                    <ui:VisualElement name="Icon_TileFamily" class="icon-box" />
+                    <ui:VisualElement class="text-stack" style="margin-left: 16px;">
+                        <ui:Label name="Lbl_TileName" text="—" class="card-title" />
+                        <ui:Label name="Lbl_TileFamily" text="" class="card-desc" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement class="tile-stat-row">
+                    <ui:VisualElement class="tile-stat-cell">
+                        <ui:Label text="RENT" class="tile-stat-label" />
+                        <ui:Label name="Lbl_TileRent" text="—" class="tile-stat-value" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="tile-stat-cell" name="Container_TileLevel">
+                        <ui:Label text="LEVEL" class="tile-stat-label" />
+                        <ui:Label name="Lbl_TileLevel" text="—" class="tile-stat-value" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="tile-stat-cell">
+                        <ui:Label text="RENT YIELD" class="tile-stat-label" />
+                        <ui:Label name="Lbl_TileYield" text="—" class="tile-stat-value" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement class="tile-action-row">
+                    <ui:Button name="Btn_Primary" text="—" class="btn-standard tile-action-btn tile-action-btn--primary" />
+                    <ui:Button name="Btn_Secondary" text="—" class="btn-secondary tile-action-btn" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

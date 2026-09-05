@@ -19,6 +19,7 @@
 
                 <!-- Propriété mise aux enchères -->
                 <ui:VisualElement class="property-highlight-row" name="Container_WaitingProp">
+                    <ui:VisualElement name="Icon_WaitingProp" class="icon-box--compact" />
                     <ui:Label name="Lbl_WaitingPropName" text="—"
                         style="color: white; font-size: 15px; -unity-font-style: bold; flex-grow: 1;" />
                     <ui:Label name="Lbl_WaitingPropRent" text=""

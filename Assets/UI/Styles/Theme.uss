@@ -676,6 +676,130 @@
 .icon-auction-box { background-color: var(--color-auction-bg); }
 .icon-sanctions-box { background-color: var(--color-sanctions-bg); }
 
+.icon-image {
+    width: 100%;
+    height: 100%;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+#Icon_Auction { background-image: url("../Sprites/Icons/Icon_ChartAuction_Green.png"); }
+#Icon_Sanctions { background-image: url("../Sprites/Icons/Icon_WrenchSanctions_Purple.png"); }
+#Icon_Embargo { background-image: url("../Sprites/Icons/Icon_Embargo_Purple.png"); }
+#Icon_Audit { background-image: url("../Sprites/Icons/Icon_Audit_Purple.png"); }
+#Icon_Strike { background-image: url("../Sprites/Icons/Icon_Strike_Purple.png"); }
+#Icon_Sabotage { background-image: url("../Sprites/Icons/Icon_Sabotage_Purple.png"); }
+
+/* ────────────────────────────────────────────────────────────────
+   TILE ICONS — Family & Special-Tile Glyphs (procedural, no assets)
+   Composed at runtime by TileIconResolver.cs into an .icon-box /
+   .icon-box--compact container. Tint = background-color of the box
+   itself; glyph pieces are absolutely-positioned children in white.
+   ──────────────────────────────────────────────────────────────── */
+
+.icon-box--compact {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    margin-right: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.tile-icon--realestate  { background-color: rgba(59, 130, 246, 0.18); }
+.tile-icon--pharma      { background-color: rgba(5, 223, 114, 0.18); }
+.tile-icon--automobile  { background-color: rgba(255, 71, 71, 0.18); }
+.tile-icon--oilgas      { background-color: rgba(245, 158, 11, 0.18); }
+.tile-icon--luxe        { background-color: rgba(255, 215, 0, 0.18); }
+.tile-icon--tech        { background-color: rgba(0, 255, 255, 0.18); }
+.tile-icon--aerospace   { background-color: rgba(194, 122, 255, 0.18); }
+.tile-icon--armement    { background-color: rgba(255, 71, 71, 0.24); }
+.tile-icon--logistics   { background-color: rgba(138, 143, 154, 0.2); }
+
+.tile-icon--go           { background-color: rgba(5, 223, 114, 0.18); }
+.tile-icon--prison       { background-color: rgba(138, 143, 154, 0.2); }
+.tile-icon--redirect     { background-color: rgba(245, 158, 11, 0.22); }
+.tile-icon--auction      { background-color: var(--color-auction-bg); }
+.tile-icon--safe         { background-color: rgba(0, 255, 255, 0.16); }
+.tile-icon--tax          { background-color: rgba(138, 143, 154, 0.18); }
+.tile-icon--venture      { background-color: var(--color-sanctions-bg); }
+.tile-icon--casino       { background-color: rgba(255, 215, 0, 0.18); }
+.tile-icon--stockmarket  { background-color: rgba(0, 255, 255, 0.2); }
+
+.tile-icon--neutral      { background-color: rgba(138, 143, 154, 0.16); }
+
+/* Glyph primitives — plain shapes, positioned/rotated per-glyph in C#. */
+.glyph-piece {
+    position: absolute;
+    background-color: var(--color-text-white);
+}
+
+.glyph-bar { border-radius: 2px; }
+.glyph-circle { border-radius: 50%; }
+
+.glyph-ring {
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: var(--color-text-white);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.glyph-outline {
+    border-radius: 3px;
+    border-width: 2px;
+    border-color: var(--color-text-white);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* ────────────────────────────────────────────────────────────────
+   TILE DETAIL BOTTOM SHEET (TileDetail_BottomSheet.uxml)
+   ──────────────────────────────────────────────────────────────── */
+
+.tile-stat-row {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: rgba(64, 65, 78, 0.4);
+    margin-bottom: 16px;
+}
+
+.tile-stat-cell {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.tile-stat-label {
+    color: var(--color-text-darker);
+    font-size: 11px;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+
+.tile-stat-value {
+    color: var(--color-text-white);
+    font-size: 16px;
+    -unity-font-style: bold;
+}
+
+.tile-action-row {
+    flex-direction: row;
+    width: 100%;
+}
+
+.tile-action-btn {
+    flex-grow: 1;
+    -unity-text-align: middle-center;
+}
+
+.tile-action-btn--primary {
+    margin-right: 12px;
+}
+
 /* Texts in Cards */
 .text-stack { flex-direction: column; flex-grow: 1; }
 .text-stack-center { align-items: center; }

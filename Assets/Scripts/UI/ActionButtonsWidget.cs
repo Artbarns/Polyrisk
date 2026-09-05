@@ -1,6 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+using UnityEngine.UIElements;
 using System.Linq;
 using PolyRisk.Core;
 using PolyRisk.Systems;
@@ -8,8 +7,15 @@ using PolyRisk.Systems;
 namespace PolyRisk.UI
 {
     /// <summary>
-    /// Manages the primary and secondary action buttons.
-    /// Updates their state and text based on the selected tile and current player context.
+    /// Manages the primary/secondary action buttons (UI Toolkit) ET l'inspection de
+    /// tuile (fusion avec l'ancien InspectorWidget, retiré — cf. InspectorWidget.cs).
+    /// Le nom de la classe est conservé tel quel : TurnManager.cs et
+    /// Marketplace_UIManager.cs y font référence par type (ClearButtons(),
+    /// FindObjectOfType + SetActive) — un renommage casserait ces 6 call-sites pour
+    /// zéro bénéfice fonctionnel.
+    ///
+    /// Les anciens boutons/textes uGUI ont été supprimés de la scène (remplacés par
+    /// TileDetail_BottomSheet.uxml) — plus de chemin legacy à maintenir ici.
     /// </summary>
     public class ActionButtonsWidget : MonoBehaviour
     {
@@ -27,13 +33,15 @@ namespace PolyRisk.UI
         [Tooltip("Reference to the new UI Toolkit Marketplace UIManager.")]
         public Marketplace_UIManager marketplaceUIManager;
 
-        [Tooltip("The primary action button (e.g., Buy, Upgrade).")]
-        [SerializeField] private Button primaryButton;
-        [SerializeField] private TextMeshProUGUI primaryButtonText;
+        [Header("UI Toolkit")]
+        [Tooltip("UIDocument hôte de TileDetail_BottomSheet.uxml.")]
+        public UIDocument uiDocument;
+        public VisualTreeAsset bottomSheetTemplate;
 
-        [Tooltip("The secondary action button (e.g., Mortgage, Sell).")]
-        [SerializeField] private Button secondaryButton;
-        [SerializeField] private TextMeshProUGUI secondaryButtonText;
+        // Refs UI Toolkit résolues une fois au Start
+        private Button btnPrimary, btnSecondary;
+        private Label lblTileName, lblTileFamily, lblTileRent, lblTileLevel, lblTileYield;
+        private VisualElement containerTileLevel, iconTileFamily;
 
         private BoardTile currentSelectedTile;
         private float lastClickTime = 0f;
@@ -43,16 +51,12 @@ namespace PolyRisk.UI
         {
             GameEvents.OnTileSelected += OnTileSelected;
             GameEvents.OnTurnStarted += OnTurnStarted;
-            if (primaryButton != null) primaryButton.onClick.AddListener(OnPrimaryClicked);
-            if (secondaryButton != null) secondaryButton.onClick.AddListener(OnSecondaryClicked);
         }
 
         private void OnDisable()
         {
             GameEvents.OnTileSelected -= OnTileSelected;
             GameEvents.OnTurnStarted -= OnTurnStarted;
-            if (primaryButton != null) primaryButton.onClick.RemoveListener(OnPrimaryClicked);
-            if (secondaryButton != null) secondaryButton.onClick.RemoveListener(OnSecondaryClicked);
         }
 
         private void OnTurnStarted(int playerId)
@@ -68,8 +72,8 @@ namespace PolyRisk.UI
                 if (activePlayer.IsAI)
                 {
                     // Force the UI to show AI TURN immediately, before the AI even rolls the dice
-                    SetButtonState(primaryButton, primaryButtonText, "AI TURN", false);
-                    SetButtonState(secondaryButton, secondaryButtonText, "...", false);
+                    SetPrimaryButtonState("AI TURN", false);
+                    SetSecondaryButtonState("...", false);
                 }
                 else
                 {
@@ -77,22 +81,22 @@ namespace PolyRisk.UI
                     if (activePlayer.IsInAudit)
                     {
                          double sgo = turnManager.financeSystem != null ? turnManager.financeSystem.CurrentSgo : 500;
-                         SetButtonState(primaryButton, primaryButtonText, $"PAY FINE ({CurrencyFormatter.Format(sgo)})", true);
+                         SetPrimaryButtonState($"PAY FINE ({CurrencyFormatter.Format(sgo)})", true);
                          
                          if (turnManager.IsJustLandedInAudit)
                          {
-                             SetButtonState(secondaryButton, secondaryButtonText, "STAY IN JAIL", true);
+                             SetSecondaryButtonState("STAY IN JAIL", true);
                          }
                          else
                          {
-                             SetButtonState(secondaryButton, secondaryButtonText, "ROLL DOUBLES", true);
+                             SetSecondaryButtonState("ROLL DOUBLES", true);
                          }
                     }
                     else
                     {
                         // Reset buttons for human player
-                        SetButtonState(primaryButton, primaryButtonText, "WAIT", false);
-                        SetButtonState(secondaryButton, secondaryButtonText, "...", false);
+                        SetPrimaryButtonState("WAIT", false);
+                        SetSecondaryButtonState("...", false);
                     }
                 }
             }
@@ -106,9 +110,37 @@ namespace PolyRisk.UI
              if (boardManager == null)
                  boardManager = BoardManager.Instance ?? FindObjectOfType<BoardManager>();
 
+             TryBindUIToolkit();
+
              // Initial check
              if (currentSelectedTile == null)
                  UpdateButtonsState(null, null);
+             UpdateInspectorSection(null);
+        }
+
+        private void TryBindUIToolkit()
+        {
+            if (uiDocument == null) return;
+            var root = uiDocument.rootVisualElement;
+            if (root == null) return;
+
+            if (bottomSheetTemplate != null && root.Q<VisualElement>("Panel_TileDetail") == null)
+                bottomSheetTemplate.CloneTree(root);
+
+            btnPrimary = root.Q<Button>("Btn_Primary");
+            btnSecondary = root.Q<Button>("Btn_Secondary");
+            lblTileName = root.Q<Label>("Lbl_TileName");
+            lblTileFamily = root.Q<Label>("Lbl_TileFamily");
+            lblTileRent = root.Q<Label>("Lbl_TileRent");
+            lblTileLevel = root.Q<Label>("Lbl_TileLevel");
+            lblTileYield = root.Q<Label>("Lbl_TileYield");
+            containerTileLevel = root.Q<VisualElement>("Container_TileLevel");
+            iconTileFamily = root.Q<VisualElement>("Icon_TileFamily");
+
+            // Start() ne s'exécute qu'une fois par durée de vie du composant — pas de
+            // risque de double-abonnement.
+            if (btnPrimary != null) btnPrimary.clicked += OnPrimaryClicked;
+            if (btnSecondary != null) btnSecondary.clicked += OnSecondaryClicked;
         }
 
         public void OnPrimaryClicked()
@@ -277,7 +309,8 @@ namespace PolyRisk.UI
         private void HandleTileSelected(BoardTile tile)
         {
             currentSelectedTile = tile;
-            
+            UpdateInspectorSection(tile);
+
             if (turnManager == null)
             {
                  // Do not fallback to Instance
@@ -290,31 +323,31 @@ namespace PolyRisk.UI
             if (currentPlayer != null && currentPlayer.IsInAudit && turnManager.CurrentState == TurnManager.TurnState.WaitingForAuditDecision)
             {
                 double sgo = turnManager.financeSystem != null ? turnManager.financeSystem.CurrentSgo : 500;
-                SetButtonState(primaryButton, primaryButtonText, $"PAY FINE ({CurrencyFormatter.Format(sgo)})", true);
+                SetPrimaryButtonState($"PAY FINE ({CurrencyFormatter.Format(sgo)})", true);
                 
                 if (turnManager.IsJustLandedInAudit)
                 {
                     if (currentPlayer.HasGetOutOfAuditCard)
                     {
-                        SetButtonState(secondaryButton, secondaryButtonText, "USE ESCAPE CARD", true);
+                        SetSecondaryButtonState("USE ESCAPE CARD", true);
                         // We need to re-bind secondary listener to UseEscapeCard instead of StayInAudit?
                         // But ActionButtonsWidget relies on OnSecondaryClicked which calls methods based on state.
                         // We will update OnSecondaryClicked.
                     }
                     else
                     {
-                        SetButtonState(secondaryButton, secondaryButtonText, "STAY IN JAIL", true);
+                        SetSecondaryButtonState("STAY IN JAIL", true);
                     }
                 }
                 else
                 {
                     if (currentPlayer.HasGetOutOfAuditCard)
                     {
-                        SetButtonState(secondaryButton, secondaryButtonText, "USE ESCAPE CARD", true);
+                        SetSecondaryButtonState("USE ESCAPE CARD", true);
                     }
                     else
                     {
-                        SetButtonState(secondaryButton, secondaryButtonText, "ROLL DOUBLES", true);
+                        SetSecondaryButtonState("ROLL DOUBLES", true);
                     }
                 }
                 
@@ -331,8 +364,8 @@ namespace PolyRisk.UI
 
         public void ClearButtons()
         {
-            SetButtonState(primaryButton, primaryButtonText, "...", false);
-            SetButtonState(secondaryButton, secondaryButtonText, "...", false);
+            SetPrimaryButtonState("...", false);
+            SetSecondaryButtonState("...", false);
         }
 
         /// <summary>
@@ -359,14 +392,14 @@ namespace PolyRisk.UI
                 && currentPlayer != null && !currentPlayer.IsAI)
             {
                 // Primary = ROLL DICE (vert, toujours actif)
-                SetButtonState(primaryButton, primaryButtonText, "ROLL DICE", true);
+                SetPrimaryButtonState("ROLL DICE", true);
 
                 // Secondary = Use Ultimate (si dispo) sinon PASS
                 string ultFam = FindUltimateAvailable(currentPlayer);
                 if (ultFam != null)
-                    SetButtonState(secondaryButton, secondaryButtonText, $"USE {ultFam.ToUpper()} ULT", true);
+                    SetSecondaryButtonState($"USE {ultFam.ToUpper()} ULT", true);
                 else
-                    SetButtonState(secondaryButton, secondaryButtonText, "PASS", true);
+                    SetSecondaryButtonState("PASS", true);
                 return;
             }
 
@@ -378,15 +411,15 @@ namespace PolyRisk.UI
 
             if (currentPlayer == null)
             {
-                SetButtonState(primaryButton, primaryButtonText, "WAIT", false);
-                SetButtonState(secondaryButton, secondaryButtonText, "...", false);
+                SetPrimaryButtonState("WAIT", false);
+                SetSecondaryButtonState("...", false);
                 return;
             }
 
             if (currentPlayer.IsAI)
             {
-                SetButtonState(primaryButton, primaryButtonText, "AI TURN", false);
-                SetButtonState(secondaryButton, secondaryButtonText, "...", false);
+                SetPrimaryButtonState("AI TURN", false);
+                SetSecondaryButtonState("...", false);
                 return;
             }
 
@@ -394,15 +427,15 @@ namespace PolyRisk.UI
             if (currentPlayer.IsInAudit)
             {
                  double sgo = turnManager.financeSystem != null ? turnManager.financeSystem.CurrentSgo : 500;
-                 SetButtonState(primaryButton, primaryButtonText, $"PAY FINE ({CurrencyFormatter.Format(sgo)})", true);
+                 SetPrimaryButtonState($"PAY FINE ({CurrencyFormatter.Format(sgo)})", true);
                  
                  if (turnManager.IsJustLandedInAudit)
                  {
-                     SetButtonState(secondaryButton, secondaryButtonText, "STAY IN JAIL", true);
+                     SetSecondaryButtonState("STAY IN JAIL", true);
                  }
                  else
                  {
-                     SetButtonState(secondaryButton, secondaryButtonText, "ROLL DOUBLES", true);
+                     SetSecondaryButtonState("ROLL DOUBLES", true);
                  }
                 
                 // Re-bind listeners for Audit Actions if needed, but since we use OnPrimary/SecondaryClicked, we can branch there.
@@ -412,8 +445,8 @@ namespace PolyRisk.UI
             if (tile == null)
             {
                 // Probably rolling dice phase
-                SetButtonState(primaryButton, primaryButtonText, "ROLLING...", false);
-                SetButtonState(secondaryButton, secondaryButtonText, "...", false);
+                SetPrimaryButtonState("ROLLING...", false);
+                SetSecondaryButtonState("...", false);
                 return;
             }
 
@@ -430,7 +463,7 @@ namespace PolyRisk.UI
                 {
                     if (propData.CurrentLevel >= 5) // Assuming MaxLevel is 5
                     {
-                        SetButtonState(primaryButton, primaryButtonText, "MAX LEVEL", false);
+                        SetPrimaryButtonState("MAX LEVEL", false);
                     }
                     else
                     {
@@ -438,14 +471,14 @@ namespace PolyRisk.UI
                         // Prompt said: "Show UPGRADE/PASS (if they have the full family, otherwise just PASS)"
                         if (rulesEngine != null && rulesEngine.HasFullFamily(currentPlayer, propData.FamilyData))
                         {
-                            SetButtonState(primaryButton, primaryButtonText, "UPGRADE", true);
+                            SetPrimaryButtonState("UPGRADE", true);
                         }
                         else
                         {
-                            SetButtonState(primaryButton, primaryButtonText, "UPGRADE (Need Monopoly)", false);
+                            SetPrimaryButtonState("UPGRADE (Need Monopoly)", false);
                         }
                     }
-                    SetButtonState(secondaryButton, secondaryButtonText, "END TURN", true);
+                    SetSecondaryButtonState("END TURN", true);
                 }
                 else
                 {
@@ -455,12 +488,12 @@ namespace PolyRisk.UI
                         // Unowned -> BUY
                         if (currentPlayer.CurrentBalance >= propData.BasePrice)
                         {
-                            SetButtonState(primaryButton, primaryButtonText, $"BUY ({CurrencyFormatter.Format(propData.BasePrice)})", true);
-                            SetButtonState(secondaryButton, secondaryButtonText, "PASS", true);
+                            SetPrimaryButtonState($"BUY ({CurrencyFormatter.Format(propData.BasePrice)})", true);
+                            SetSecondaryButtonState("PASS", true);
                         }
                         else
                         {
-                            SetButtonState(primaryButton, primaryButtonText, "PASS (No Funds)", true);
+                            SetPrimaryButtonState("PASS (No Funds)", true);
                         }
                     }
                     else
@@ -470,8 +503,8 @@ namespace PolyRisk.UI
                         // Prompt Bug 1: "Human players see a "BUY" button when landing on properties owned by opponents"
                         // Since we added Auto-Pay in TurnManager, this UI state might be transient or for "Just Visiting".
                         // We should show "RENT PAID" or similar.
-                        SetButtonState(primaryButton, primaryButtonText, $"RENT PAID TO {owner.PlayerId}", false);
-                        SetButtonState(secondaryButton, secondaryButtonText, "END TURN", true);
+                        SetPrimaryButtonState($"RENT PAID TO {owner.PlayerId}", false);
+                        SetSecondaryButtonState("END TURN", true);
                     }
                 }
             }
@@ -513,24 +546,75 @@ namespace PolyRisk.UI
                     canPass = false;
                 }
                 
-                SetButtonState(primaryButton, primaryButtonText, actionText, canInteract);
+                SetPrimaryButtonState(actionText, canInteract);
                 if (canPass)
                 {
-                    SetButtonState(secondaryButton, secondaryButtonText, "PASS", true);
+                    SetSecondaryButtonState("PASS", true);
                 }
                 else
                 {
-                    SetButtonState(secondaryButton, secondaryButtonText, "...", false);
+                    SetSecondaryButtonState("...", false);
                 }
             }
         }
 
-        private void SetButtonState(Button btn, TextMeshProUGUI txt, string label, bool interactable)
+        private void SetPrimaryButtonState(string label, bool interactable)
         {
-            if (btn != null)
+            if (btnPrimary == null) return;
+            btnPrimary.text = label;
+            btnPrimary.SetEnabled(interactable);
+        }
+
+        private void SetSecondaryButtonState(string label, bool interactable)
+        {
+            if (btnSecondary == null) return;
+            btnSecondary.text = label;
+            btnSecondary.SetEnabled(interactable);
+        }
+
+        /// <summary>
+        /// Section "inspection de tuile" — absorbée depuis l'ancien InspectorWidget.
+        /// Alimente nom/famille/niveau/rent/rent-yield + l'icône (TileIconResolver).
+        /// UI Toolkit uniquement (pas de chemin legacy — InspectorWidget est retiré).
+        /// </summary>
+        private void UpdateInspectorSection(BoardTile tile)
+        {
+            if (iconTileFamily != null) TileIconResolver.PopulateIcon(iconTileFamily, tile?.Data);
+
+            if (tile != null && tile.Type == TileType.Property && tile.Property != null)
             {
-                btn.interactable = interactable;
-                if (txt != null) txt.text = label;
+                var prop = tile.Property;
+                if (lblTileName != null) lblTileName.text = prop.PropertyName;
+                if (lblTileFamily != null)
+                    lblTileFamily.text = prop.FamilyData != null
+                        ? $"{prop.FamilyData.FamilyName} · Level {prop.CurrentLevel}"
+                        : $"Level {prop.CurrentLevel}";
+                if (lblTileRent != null) lblTileRent.text = CurrencyFormatter.Format(prop.GetCurrentRent());
+                if (lblTileLevel != null) lblTileLevel.text = prop.CurrentLevel.ToString();
+                if (containerTileLevel != null) containerTileLevel.style.display = DisplayStyle.Flex;
+                if (lblTileYield != null)
+                {
+                    // Pas de concept "Risk" dans le modèle actuel (aucune donnée par tuile) —
+                    // seul un ratio dérivable proprement est affiché, cf. plan.
+                    double yieldPct = prop.BasePrice > 0 ? prop.BaseRent / prop.BasePrice * 100.0 : 0.0;
+                    lblTileYield.text = $"{yieldPct:0.0}%";
+                }
+            }
+            else if (tile != null)
+            {
+                if (lblTileName != null) lblTileName.text = tile.Data != null ? tile.Data.TileName : tile.Type.ToString();
+                if (lblTileFamily != null) lblTileFamily.text = "Special Tile";
+                if (lblTileRent != null) lblTileRent.text = "—";
+                if (lblTileYield != null) lblTileYield.text = "—";
+                if (containerTileLevel != null) containerTileLevel.style.display = DisplayStyle.None;
+            }
+            else
+            {
+                if (lblTileName != null) lblTileName.text = "—";
+                if (lblTileFamily != null) lblTileFamily.text = "";
+                if (lblTileRent != null) lblTileRent.text = "—";
+                if (lblTileYield != null) lblTileYield.text = "—";
+                if (containerTileLevel != null) containerTileLevel.style.display = DisplayStyle.None;
             }
         }
 

@@ -24,6 +24,10 @@ namespace PolyRisk.Core
         [Tooltip("The family this property belongs to, influencing rent growth.")]
         [SerializeField] private FamilyData familyData;
 
+        [Header("Visuals")]
+        [Tooltip("Placeholder slot for the final tile icon/logo (dev -> prod art pass, not wired to the 3D board yet).")]
+        [SerializeField] private Sprite icon;
+
         [Tooltip("The current level of the property (0-5).")]
         [SerializeField] [Range(0, 5)] private int currentLevel = 0;
 
@@ -56,6 +60,7 @@ namespace PolyRisk.Core
         public ColorGroup ColorGroup => colorGroup;
         public FamilyData FamilyData => familyData;
         public int CurrentLevel => currentLevel;
+        public Sprite Icon => icon;
 
         /// <summary>
         /// Calculates the current rent based on the property's level and the family's growth curve.

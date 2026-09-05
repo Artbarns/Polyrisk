@@ -12,6 +12,9 @@
 //   4. Règle l'ambient light et les paramètres d'environnement.
 //   5. Baisse la Directional Light existante à une "moon light" bleue rasante.
 //   6. Crée / met à jour 2 Point Lights néon (violet + vert) pour l'ambiance.
+//   7. Crée / met à jour une Reflection Probe Realtime au-dessus du plateau, pour
+//      que les matériaux très lisses (Background_Plate, Board_Metal) reflètent
+//      vraiment les néons au lieu du skybox plat.
 //
 // Idempotent : re-exécutable sans casser ce qui existe déjà.
 
@@ -37,6 +40,7 @@ namespace PolyRisk.EditorTools
             BoostBoardEmissive();   // patch : force le bloom à réagir sur tous les groupes
             EnsureEnvironment();
             EnsureLights();
+            EnsureReflections();
 
             AssetDatabase.SaveAssets();
             EditorSceneManager_MarkActiveDirty();
@@ -87,6 +91,16 @@ namespace PolyRisk.EditorTools
             vig.smoothness.overrideState = true;     vig.smoothness.value = 0.5f;
             vig.color.overrideState = true;          vig.color.value = new Color(0.02f, 0.02f, 0.05f, 1f);
 
+            // Depth of Field (Bokeh) : plateau net, bords flous — aspect "maquette photo".
+            // focusDistance calé sur EnsureCamera() (caméra isométrique au-dessus du plateau) ;
+            // à ajuster dans l'inspecteur si l'angle de vue change.
+            var dof = GetOrAdd<DepthOfField>(profile);
+            dof.mode.overrideState = true;             dof.mode.value = DepthOfFieldMode.Bokeh;
+            dof.focusDistance.overrideState = true;    dof.focusDistance.value = 12f;
+            dof.aperture.overrideState = true;         dof.aperture.value = 5.6f;
+            dof.focalLength.overrideState = true;      dof.focalLength.value = 50f;
+            dof.bladeCount.overrideState = true;       dof.bladeCount.value = 6;
+
             EditorUtility.SetDirty(profile);
             return profile;
         }
@@ -94,7 +108,12 @@ namespace PolyRisk.EditorTools
         static T GetOrAdd<T>(VolumeProfile p) where T : VolumeComponent
         {
             if (p.TryGet<T>(out var comp)) return comp;
-            return p.Add<T>(true);
+            comp = p.Add<T>(true);
+            // Sans ça, le composant existe en mémoire (visible/actif tant que l'Editor
+            // ne recharge pas) mais n'est jamais écrit comme sous-asset du .asset —
+            // il disparaît au prochain domain reload. C'est ce qui manquait pour DoF.
+            AssetDatabase.AddObjectToAsset(comp, p);
+            return comp;
         }
 
         // ─────────────────────────────────────────────────────────────
@@ -171,26 +190,36 @@ namespace PolyRisk.EditorTools
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
             ColorUtility.TryParseHtmlString("#0A0D18", out var ambient);
             RenderSettings.ambientLight = ambient;
-            RenderSettings.ambientIntensity = 0.9f;
+            // Baissé de 0.9 : à cette intensité l'ambient bleu lavait tout le plateau
+            // d'une teinte pâle uniforme au lieu de laisser l'anthracite du métal dominer.
+            RenderSettings.ambientIntensity = 0.35f;
 
             // Skybox procédural sombre — remplace le Default-Skybox bleu délavé.
             var skyPath = "Assets/Settings/PolyRisk_Skybox.mat";
             var sky = AssetDatabase.LoadAssetAtPath<Material>(skyPath);
-            if (sky == null)
+            bool isNewSky = sky == null;
+            if (isNewSky)
             {
                 var proc = Shader.Find("Skybox/Procedural");
                 if (proc != null)
                 {
                     sky = new Material(proc);
-                    sky.SetFloat("_SunSize", 0.02f);
-                    sky.SetFloat("_AtmosphereThickness", 0.5f);
-                    sky.SetColor("_SkyTint", new Color(0.04f, 0.05f, 0.10f, 1f));
-                    sky.SetColor("_GroundColor", new Color(0.02f, 0.02f, 0.04f, 1f));
-                    sky.SetFloat("_Exposure", 0.4f);
                     AssetDatabase.CreateAsset(sky, skyPath);
                 }
             }
-            if (sky != null) RenderSettings.skybox = sky;
+            if (sky != null)
+            {
+                sky.SetFloat("_SunSize", 0.02f);
+                sky.SetFloat("_AtmosphereThickness", 0.5f);
+                sky.SetColor("_SkyTint", new Color(0.04f, 0.05f, 0.10f, 1f));
+                sky.SetColor("_GroundColor", new Color(0.02f, 0.02f, 0.04f, 1f));
+                // Baissé de 0.4 : avec la Reflection Probe, ce skybox est maintenant
+                // reflété par le métal du plateau — trop d'exposure = teinte bleue pâle.
+                // Réappliqué à chaque run (plus seulement à la création) pour rester idempotent.
+                sky.SetFloat("_Exposure", 0.22f);
+                EditorUtility.SetDirty(sky);
+                RenderSettings.skybox = sky;
+            }
 
             // Fog subtil pour adoucir les fonds
             RenderSettings.fog = true;
@@ -245,6 +274,36 @@ namespace PolyRisk.EditorTools
             foreach (var l in Object.FindObjectsOfType<Light>())
                 if (l.type == LightType.Directional) return l;
             return null;
+        }
+
+        // ─────────────────────────────────────────────────────────────
+        // 6) Reflection Probe : sans elle, M_BackgroundPlate/M_BoardMetal (Metallic
+        //    quasi-1, Smoothness haute) ne réfléchissent que le skybox plat — jamais
+        //    le plateau néon lui-même. Realtime + Every Frame pour voir tout de suite
+        //    l'effet "verre fumé" pendant l'itération ; passer en Baked (ou refresh
+        //    OnAwake) sera la bonne optim mobile une fois la composition figée.
+        // ─────────────────────────────────────────────────────────────
+
+        static void EnsureReflections()
+        {
+            var probeGo = GameObject.Find("Board_ReflectionProbe") ?? new GameObject("Board_ReflectionProbe");
+            var probe = probeGo.GetComponent<ReflectionProbe>();
+            if (probe == null) probe = probeGo.AddComponent<ReflectionProbe>();
+
+            probe.mode = UnityEngine.Rendering.ReflectionProbeMode.Realtime;
+            probe.refreshMode = UnityEngine.Rendering.ReflectionProbeRefreshMode.EveryFrame;
+            probe.timeSlicingMode = UnityEngine.Rendering.ReflectionProbeTimeSlicingMode.AllFacesAtOnce;
+            probe.boxProjection = true;
+            probe.size = new Vector3(24f, 8f, 24f);
+            probe.center = Vector3.zero;
+            probe.resolution = 256;
+            probe.hdr = true;
+            probe.intensity = 1f;
+            probe.nearClipPlane = 0.3f;
+            probe.farClipPlane = 40f;
+
+            probeGo.transform.position = new Vector3(0f, 3f, 0f);
+            EditorUtility.SetDirty(probeGo);
         }
 
         // ─────────────────────────────────────────────────────────────

@@ -751,10 +751,14 @@ namespace PolyRisk.UI
 
             if (root != null) root.style.display = DisplayStyle.Flex;
 
-            // Remplir le nom de la propriété mise aux enchères
+            // Remplir le nom + l'icône de la propriété mise aux enchères
             var propNameLbl = root.Q<Label>("Lbl_WaitingPropName");
             if (propNameLbl != null && marketplaceSystem?.CurrentTenderProperty != null)
                 propNameLbl.text = marketplaceSystem.CurrentTenderProperty.PropertyName;
+
+            var propIconBox = root.Q<VisualElement>("Icon_WaitingProp");
+            if (propIconBox != null)
+                TileIconResolver.PopulateIcon(propIconBox, marketplaceSystem?.CurrentTenderProperty);
 
             var propRentLbl = root.Q<Label>("Lbl_WaitingPropRent");
             if (propRentLbl != null && marketplaceSystem?.CurrentTenderProperty != null)
@@ -1282,6 +1286,11 @@ namespace PolyRisk.UI
             var card = new Button();
             card.AddToClassList("property-select-card");
 
+            var iconBox = new VisualElement();
+            iconBox.AddToClassList("icon-box--compact");
+            TileIconResolver.PopulateIcon(iconBox, prop);
+            card.Add(iconBox);
+
             var nameLbl = new Label(prop.PropertyName);
             nameLbl.AddToClassList("seller-prop-name");
 
@@ -1486,6 +1495,11 @@ namespace PolyRisk.UI
             VisualElement row = new VisualElement();
             row.AddToClassList("card-seller-row");
 
+            var iconBox = new VisualElement();
+            iconBox.AddToClassList("icon-box--compact");
+            TileIconResolver.PopulateIcon(iconBox, property);
+            row.Add(iconBox);
+
             Label propName = new Label(property.PropertyName);
             propName.AddToClassList("seller-prop-name");
             row.Add(propName);
@@ -1538,6 +1552,11 @@ namespace PolyRisk.UI
 
             VisualElement row = new VisualElement();
             row.AddToClassList("card-seller-row");
+
+            var iconBox = new VisualElement();
+            iconBox.AddToClassList("icon-box--compact");
+            TileIconResolver.PopulateIcon(iconBox, property);
+            row.Add(iconBox);
 
             Label propName = new Label(property.PropertyName);
             propName.AddToClassList("seller-prop-name");
