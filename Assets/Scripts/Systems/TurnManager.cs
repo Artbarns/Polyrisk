@@ -441,7 +441,11 @@ namespace PolyRisk.Systems
                 if (justLandedInAudit)
                 {
                     Debug.Log("Paid fine immediately after landing. Turn Ends.");
-                    CompleteTileResolution();
+                    // CompleteTileResolution() exige currentState == ResolveTile, mais on est
+                    // ici en WaitingForAuditDecision — l'appel était un no-op silencieux qui
+                    // bloquait la partie indéfiniment (jamais de transition vers EndTurn).
+                    // Même correctif que la branche "IA ne peut pas payer" juste en dessous.
+                    currentState = TurnState.EndTurn;
                 }
                 else
                 {
@@ -914,7 +918,13 @@ namespace PolyRisk.Systems
                     }
 
                     // Phase E.3 — Time-out tournoi à 50 tours globaux (GDD §6.3)
-                    int globalTurn = players.Min(p => p.LapsCompleted);
+                    // Exclut les joueurs en faillite : leur LapsCompleted est figé pour toujours
+                    // dès leur élimination, donc les inclure dans le Min() pouvait bloquer cette
+                    // condition indéfiniment (jamais atteinte tant qu'un failli reste à un tour bas).
+                    var activePlayersForTurnCheck = players.Where(p => !p.IsBankrupt).ToList();
+                    int globalTurn = activePlayersForTurnCheck.Count > 0
+                        ? activePlayersForTurnCheck.Min(p => p.LapsCompleted)
+                        : 0;
                     if (globalTurn >= 50)
                     {
                         PlayerModel winnerByNV = players

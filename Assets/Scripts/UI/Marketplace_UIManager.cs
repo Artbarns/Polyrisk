@@ -152,12 +152,13 @@ namespace PolyRisk.UI
 
                 case MarketplaceSystem.AuctionState.Closing:
                     ResetAllHighlights();
-                    if (!isHumanTheSeller)
-                    {
-                        // L'IA était le vendeur — ferme l'UI spectateur/notification et libère le tour.
-                        // (Si c'est le vendeur humain, CloseMarketplace est déjà appelé par SealSelectedDeal.)
-                        CloseMarketplace();
-                    }
+                    // Toujours fermer ici, vendeur humain ou IA. SealSelectedDeal() appelle
+                    // aussi CloseMarketplace() directement pour le cas "deal scellé" — double
+                    // appel sans risque (CloseMarketplace/CompleteTileResolution sont déjà
+                    // idempotents). Sans cet appel inconditionnel, le cas "tender annulé, aucune
+                    // enchère, vendeur humain" ne fermait jamais le panneau (bug : le bottom
+                    // sheet ne revenait plus après un Reject All sans offres).
+                    CloseMarketplace();
                     break;
             }
         }

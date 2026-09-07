@@ -45,6 +45,12 @@ namespace PolyRisk.Systems
         [Tooltip("Number of players to initialize.")]
         [SerializeField] private int numberOfPlayers = 4;
 
+        /// <summary>
+        /// Debug/stress-test uniquement — force le joueur 0 à être IA aussi (par défaut il
+        /// est toujours humain). Piloté par StressTestRunner.cs, jamais par le jeu normal.
+        /// </summary>
+        public static bool ForceAllAI = false;
+
         private void Start()
         {
             StartCoroutine(InitializeGameSequence());
@@ -96,12 +102,16 @@ namespace PolyRisk.Systems
 
             for (int i = 0; i < numberOfPlayers; i++)
             {
-                bool isAI = (i != 0);
+                bool isAI = ForceAllAI || (i != 0);
                 PlayerModel newPlayer = new PlayerModel(i, startingBalance, isAI);
 
                 if (isAI)
                 {
-                    newPlayer.Profile = profileRoster[(i - 1) % profileRoster.Length];
+                    // Modulo signé en C# (contrairement à Python) : (i-1) peut valoir -1 quand
+                    // ForceAllAI rend le joueur 0 IA lui aussi — le +Length avant le second %
+                    // ramène toujours l'index dans [0, Length).
+                    int profileIndex = ((i - 1) % profileRoster.Length + profileRoster.Length) % profileRoster.Length;
+                    newPlayer.Profile = profileRoster[profileIndex];
                     Debug.Log($"[Bootstrap] Player {i} assigned profile: {newPlayer.Profile}");
                 }
 

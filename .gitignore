@@ -42,3 +42,6 @@ Packages/*
 
 # Backup archive, not source
 /PolyRisk.zip
+
+# Sorties générées par StressTestRunner.cs (CSV/résumés), pas du code source
+/StressTestResults/
