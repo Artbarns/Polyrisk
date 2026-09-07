@@ -135,6 +135,7 @@ namespace PolyRisk.DebugTools
             Application.logMessageReceived -= OnLogMessage;
             Application.SetStackTraceLogType(LogType.Log, savedLogTrace);
             Application.SetStackTraceLogType(LogType.Warning, savedWarningTrace);
+            foreach (var probe in FindObjectsOfType<ReflectionProbe>()) probe.enabled = true;
             Time.timeScale = 1f;
             batchRunning = false;
             Debug.Log($"[STRESS TEST] Terminé — {numberOfGames} parties dans {resultsDir}.");
@@ -283,6 +284,15 @@ namespace PolyRisk.DebugTools
 
             if (TurnManager.Instance == null || TurnManager.Instance.Players == null || TurnManager.Instance.Players.Count < 4)
                 Debug.LogError("[STRESS TEST] La partie suivante n'a pas démarré dans les temps après le rechargement de scène.");
+
+            // Autre goulot indépendant de Time.timeScale : la Reflection Probe du plateau est
+            // en Realtime / Refresh "Every Frame" / 6 faces d'un coup (réglée ainsi pour voir
+            // les reflets en direct pendant le travail visuel) — un coût GPU réel à chaque
+            // frame, peu importe la vitesse simulée. Elle n'est pas DontDestroyOnLoad, donc
+            // SceneManager.LoadScene() en recrée une neuve (enabled=true) à chaque partie —
+            // à désactiver ici, après CHAQUE reset, pas juste une fois en début de batch.
+            // Rendu du plateau sans importance pour un stress test.
+            foreach (var probe in FindObjectsOfType<ReflectionProbe>()) probe.enabled = false;
         }
 
         static string FormatDouble(double d) =>
