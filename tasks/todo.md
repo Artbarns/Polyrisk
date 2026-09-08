@@ -131,3 +131,53 @@ code (source du bug identifiée avec certitude), pas retesté après correction.
 étape pour Arthur : relancer un batch de 20+ parties et confirmer que le taux d'anomalie
 retombe à 0 (ou au pire au bug latent connu `ANOMALY_ALL_BANKRUPT`, toujours pas corrigé
 par choix — juste détecté par le harness).
+
+## Itération 6 — vrai goulot trouvé : ce n'était pas un deadlock de code
+
+Le fix de l'itération 5 n'a quasi rien changé (70-85% `ANOMALY_TIMEOUT` persistant sur
+des runs de 20-30 parties). Diagnostiqué avec des logs `[DIAG]` temporaires (retirés
+depuis) tracés dans `ExecuteMovement` + un heartbeat mesurant `Time.frameCount` :
+
+- [x] **Vrai diagnostic** : l'Editor Unity ne tournait qu'à **1-4 frames par ~2s réelles**
+  pendant tout le batch — pas un deadlock logique, un vrai ralentissement moteur.
+  Cause la plus probable : la fenêtre Console qui dégrade très mal au-delà de dizaines de
+  milliers de lignes (70k-120k lignes mesurées par run, avec 150+ points de log/tour).
+- [x] **Fuite trouvée en même temps** (`GameEvents.OnPawnMovementFinished` : 1→2→...→6
+  abonnés sur un seul batch) : `Destroy()` est différé en fin de frame, et un seul
+  `yield return null` dans `DoReset()` ne suffit pas toujours à laisser `OnDisable()`
+  désabonner avant le `SceneManager.LoadScene()` suivant, surtout sous le ralentissement
+  ci-dessus. Fix : tous les `GameEvents` pertinents nettoyés explicitement dans `DoReset()`
+  (sauf `OnGameVictory`/`OnPlayerBankruptcy`, dont `RunBatch` reste abonné tout le batch).
+- [x] **Fix perf #1** : `Debug.unityLogger.filterLogType = LogType.Warning` pendant toute
+  la boucle du batch (restauré après) — supprime le bavardage de routine sans toucher aux
+  150+ call sites. Errors/Exceptions passent toujours (`ErrorCount` intact).
+- [x] **Fix perf #2, le vrai morceau manquant** : Arthur a remarqué "les pions avancent
+  d'une case en une case" — l'animation de hop (`PawnMovement.MoveRoutine`) impose au
+  moins 1 frame réelle par case traversée, indépendamment de `Time.timeScale` (qui
+  n'accélère que le temps de jeu, pas le nombre de frames réelles). `GameBootstrapper.SkipMovementAnimation`
+  ajouté : téléportation directe pendant le stress test. Fonctionne correctement
+  seulement grâce au fix subscribe-avant-invoke de l'itération 5 (la téléportation
+  déclenche `OnPawnMovementFinished` de façon synchrone à chaque coup, sur tous les coups
+  désormais, pas juste les cas limites).
+- [x] **Faux problème résolu** : après ces fixes, Console totalement vide même en pressant
+  F9 (mais jeu visiblement rapide). Cause : `Debug.unityLogger.filterLogType` restait
+  "collé" en `Warning` d'une session Play interrompue à l'autre (`Reload Domain`
+  désactivé). Un forçage `filterLogType = LogType.Log` + stack traces `ScriptOnly` en
+  tout début de `RunBatch()` corrige ça de façon auto-réparante, quel que soit l'état
+  laissé par un run précédent. Confirmé par un `Debug.LogError` inconditionnel par frame
+  (retiré une fois confirmé) — les logs sont revenus dès la recompilation suivante.
+- [x] **Bug trouvé au passage, corrigé** (`RulesEngine.cs`, `ExecutePrimaryAction`) : le
+  cas `owner == null` + `TryBuyProperty` en échec (cash insuffisant) n'avait pas de
+  `else` — tombait jusqu'au garde-fou générique en bas de la méthode, loggant
+  `"Unhandled tile type Property"` (message trompeur, laisse croire à un case non géré).
+  Comportement inchangé (la case reste juste sautée), mais le log dit maintenant
+  vraiment ce qui se passe — utile pour la question de fond sur l'équilibrage (fréquence
+  de ce skip = signal direct de joueurs à court de cash).
+
+**Résultat** : le batch x100 tourne maintenant à vitesse normale avec logs propres.
+Prochaine étape pour Arthur : laisser tourner le vrai run x100 (ou plus) et analyser les
+résultats CSV — c'est la première fois que la question de fond du backlog (l'économie
+reste-t-elle stable au tour 50 ?) peut vraiment être testée à l'échelle.
+
+**Pas vérifié** : aucun accès Unity dans cette session — tous les fixes validés par
+traçage précis de code + logs fournis par Arthur, pas par exécution directe de ma part.
