@@ -290,6 +290,28 @@ namespace PolyRisk.DebugTools
             lastWinnerId = null;
             yield return null; // laisser la destruction différée d'Unity se terminer
 
+            // Bug trouvé via [DIAG] : Destroy() est différé en fin de frame, et sous charge
+            // (Console avec des dizaines de milliers de lignes accumulées ralentit l'Editor à
+            // 1-4 frames/2s pendant un batch) le seul `yield return null` ci-dessus ne suffit pas
+            // toujours à laisser TurnManager.OnDisable() désabonner ses events statiques avant
+            // le SceneManager.LoadScene() suivant. Résultat mesuré : GameEvents.OnPawnMovementFinished
+            // grossit de 1 abonné à chaque reset raté (1→2→3→4→5→6 observés sur un seul batch).
+            // On force un état propre ici, quel que soit le sort des OnDisable individuels —
+            // sans risque : ce reset ne s'exécute qu'entre deux parties du stress test.
+            // NOTE : OnGameVictory et OnPlayerBankruptcy ne sont PAS nettoyés ici — RunBatch()
+            // y reste abonné (HandleGameVictory/HandlePlayerBankruptcy) pour toute la durée du
+            // batch, les vider ici couperait la détection de fin de partie dès la 2e partie.
+            GameEvents.OnPlayerPathCalculated = null;
+            GameEvents.OnPawnMovementFinished = null;
+            GameEvents.OnTurnStarted = null;
+            GameEvents.OnTileSelected = null;
+            GameEvents.OnDiceRolled = null;
+            GameEvents.OnBalanceChanged = null;
+            GameEvents.OnPropertyPurchased = null;
+            GameEvents.OnAuctionEnded = null;
+            GameEvents.OnStockMarketInvestment = null;
+            GameEvents.OnInsolvency = null;
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
             float bootStart = Time.realtimeSinceStartup;
