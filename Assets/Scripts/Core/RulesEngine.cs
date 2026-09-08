@@ -93,6 +93,16 @@ namespace PolyRisk.Core
                                 turnManager.CompleteTileResolution();
                                 return;
                             }
+
+                            // TryBuyProperty a échoué (cash insuffisant, le cas quasi-exclusif ici) —
+                            // avant ce fix, l'absence de else faisait tomber jusqu'au garde-fou générique
+                            // en bas de la méthode ("Unhandled tile type Property"), un message trompeur
+                            // qui laissait croire à un case non géré alors que c'est un skip normal faute
+                            // de moyens. Comportement inchangé (on ne fait toujours rien d'autre que
+                            // passer), juste un log qui dit ce qui se passe réellement.
+                            Debug.Log($"Player {player.PlayerId} ne peut pas acheter {propData.PropertyName} (${propData.BasePrice}) — case laissée libre.");
+                            turnManager.CompleteTileResolution();
+                            return;
                         }
                         else if (owner.PlayerId == player.PlayerId)
                         {
