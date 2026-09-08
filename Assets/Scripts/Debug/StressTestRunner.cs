@@ -155,8 +155,23 @@ namespace PolyRisk.DebugTools
             float startReal = Time.realtimeSinceStartup;
             Time.timeScale = timeScale;
 
+            // Diagnostic — heartbeat pour distinguer un vrai gel de l'Editor/moteur (Time.frameCount
+            // qui stagne) d'un blocage purement logique (les frames avancent mais rien ne progresse
+            // côté jeu). Nécessaire car le garde-fou 10s ajouté dans ExecuteMovement ne s'est jamais
+            // déclenché sur un run où le jeu est resté totalement silencieux ~230s d'affilée.
+            float lastHeartbeat = startReal;
+            int lastHeartbeatFrame = Time.frameCount;
             while (!gameEnded && Time.realtimeSinceStartup - startReal < perGameTimeoutRealSeconds)
+            {
+                if (Time.realtimeSinceStartup - lastHeartbeat > 2f)
+                {
+                    int framesSince = Time.frameCount - lastHeartbeatFrame;
+                    Debug.Log($"[DIAG-HEARTBEAT] +{Time.realtimeSinceStartup - startReal:F1}s réelles, {framesSince} frame(s) depuis le dernier battement, currentState={TurnManager.Instance?.CurrentState}.");
+                    lastHeartbeat = Time.realtimeSinceStartup;
+                    lastHeartbeatFrame = Time.frameCount;
+                }
                 yield return null;
+            }
 
             float realElapsed = Time.realtimeSinceStartup - startReal;
 
