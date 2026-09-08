@@ -102,3 +102,32 @@ donnent enfin des parties `Normal` plutôt que 100% anomalies.
   `numberOfGames > 1`.
 
 **Pas vérifié** : aucun accès Unity — fix du Min() basé sur lecture de code, pas testé.
+
+## Itération 5 — perf réglée (reflection probe + stack trace), mais nouveau deadlock trouvé à l'échelle
+
+Run de 5 parties (`timeScale=100`) : 0 anomalie, 8-50s réelles/partie. Les deux fixes de
+perf de l'itération précédente tiennent la route. Mais un run suivant de 20 parties (même
+config) est retombé à **17/20 `ANOMALY_TIMEOUT` (85%)**, toutes bloquées très tôt
+(`EndedOnLap` 0-7), sans erreur console, sans faillite en cascade. Diagnostiqué à partir
+d'un export console complet (70k lignes) fourni par Arthur — pas une supposition :
+
+- [x] **Race condition trouvée et corrigée** (`TurnManager.cs`, `ExecuteMovement()`) :
+  `GameEvents.OnPlayerPathCalculated?.Invoke(...)` était appelé **avant** la souscription
+  à `OnPawnMovementFinished`. Si `BoardManager.GetPath()` retourne un chemin vide (arrive
+  dès qu'une entrée `visualTiles[i]` est `null` sur le trajet — cf. `BoardManager.cs:131-140`),
+  `PawnMovement.MoveAlongPath` termine de façon **synchrone** et déclenche
+  `OnPawnMovementFinished` immédiatement — avant que `TurnManager` ne soit abonné. Le
+  `yield return new WaitUntil(() => movementFinished)` attendait alors un event qui ne se
+  reproduirait jamais : blocage permanent, sans aucune erreur. Confirmé par les logs :
+  toutes les parties bloquées s'arrêtent net juste après un jet de dé / au tout début de
+  `ExecuteMovement`, jamais ailleurs.
+  Fix : souscription déplacée avant l'invocation (élimine la race), + garde-fou 10s
+  réelles (`Time.realtimeSinceStartup`, indépendant du `timeScale`) en filet de sécurité,
+  même pattern que le safety-net déjà existant sur la phase Planning humaine (qui, lui,
+  anticipait déjà ce genre de blocage — juste jamais appliqué à `ExecuteMovement`).
+
+**Pas vérifié** : aucun accès Unity dans cette session — fix basé sur traçage précis du
+code (source du bug identifiée avec certitude), pas retesté après correction. Prochaine
+étape pour Arthur : relancer un batch de 20+ parties et confirmer que le taux d'anomalie
+retombe à 0 (ou au pire au bug latent connu `ANOMALY_ALL_BANKRUPT`, toujours pas corrigé
+par choix — juste détecté par le harness).

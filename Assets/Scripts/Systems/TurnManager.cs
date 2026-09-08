@@ -98,28 +98,38 @@ namespace PolyRisk.Systems
 
             // Get path
             List<Vector3> path = BoardManager.Instance.GetPath(currentPos, steps);
-            GameEvents.OnPlayerPathCalculated?.Invoke(player.PlayerId, path);
-            
+
             currentState = TurnState.MovingPawn;
             if (actionButtonsWidget != null) actionButtonsWidget.ClearButtons();
-            
-            // Wait for movement to finish (Assume movement takes time proportional to steps or fixed duration)
-            // Ideally we should hook into OnPawnMovementFinished, but coroutines are cleaner for sequential logic.
-            // Since we have OnPawnMovementFinished event, let's use a flag.
-            
+
+            // Bug trouvé via stress test (85% ANOMALY_TIMEOUT sur un run de 20 parties) :
+            // si le chemin est vide (visualTiles[i] == null sur le trajet, cf. BoardManager.GetPath),
+            // PawnMovement.MoveAlongPath termine de façon SYNCHRONE et invoque OnPawnMovementFinished
+            // immédiatement. Il faut donc être abonné AVANT d'invoquer OnPlayerPathCalculated, sinon
+            // l'event se déclenche dans le vide et le WaitUntil ci-dessous bloque indéfiniment
+            // (aucun garde-fou avant ce fix, contrairement à la phase Planning humaine).
             bool movementFinished = false;
             System.Action onFinished = () => movementFinished = true;
             GameEvents.OnPawnMovementFinished += onFinished;
-            
+
+            GameEvents.OnPlayerPathCalculated?.Invoke(player.PlayerId, path);
+
             // Calculate new position logically BUT wait to apply effects
             int newPos = (currentPos + steps) % 40;
-            
+
             // Check for GO passing during movement (simplified: we trigger it after movement for now to ensure sync)
             // Prompt Option 2: "trigger... immediately after the movement coroutine finishes"
-            
-            // Wait until visual movement is done
-            yield return new WaitUntil(() => movementFinished);
-            
+
+            // Wait until visual movement is done — garde-fou 10s réelles en filet de sécurité
+            // (même logique que le safety net de la phase Planning humaine) au cas où un autre
+            // chemin d'échec non identifié empêcherait encore l'event de se déclencher.
+            float moveWaitStart = Time.realtimeSinceStartup;
+            const float MAX_MOVE_WAIT = 10f;
+            while (!movementFinished && Time.realtimeSinceStartup - moveWaitStart < MAX_MOVE_WAIT)
+                yield return null;
+            if (!movementFinished)
+                Debug.LogWarning($"[ExecuteMovement] Safety net : {MAX_MOVE_WAIT}s écoulées sans OnPawnMovementFinished pour Player {player.PlayerId} — on force la suite.");
+
             GameEvents.OnPawnMovementFinished -= onFinished;
             
             // Update logical position after movement
