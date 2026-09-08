@@ -85,7 +85,6 @@ namespace PolyRisk.Systems
 
         private IEnumerator ExecuteMovement(PlayerModel player, int steps)
         {
-            Debug.Log($"[DIAG] ExecuteMovement démarre pour Player {player.PlayerId}, steps={steps}.");
             int currentPos = playerPositions[player.PlayerId];
 
             // ── Automobile Passif "Assistance de Précision" : appliquer le delta si actif ──
@@ -99,7 +98,6 @@ namespace PolyRisk.Systems
 
             // Get path
             List<Vector3> path = BoardManager.Instance.GetPath(currentPos, steps);
-            Debug.Log($"[DIAG] GetPath({currentPos},{steps}) → {path.Count} waypoint(s). Abonnés OnPlayerPathCalculated={(GameEvents.OnPlayerPathCalculated?.GetInvocationList().Length ?? 0)}, OnPawnMovementFinished={(GameEvents.OnPawnMovementFinished?.GetInvocationList().Length ?? 0)}.");
 
             currentState = TurnState.MovingPawn;
             if (actionButtonsWidget != null) actionButtonsWidget.ClearButtons();
@@ -789,9 +787,7 @@ namespace PolyRisk.Systems
                         
                         // Strict sequential flow:
                         // 1. Trigger Movement Coroutine and WAIT for it
-                        Debug.Log($"[DIAG] Player {currentPlayer.PlayerId} : steps={steps}, appel StartCoroutine(ExecuteMovement)...");
                         yield return StartCoroutine(ExecuteMovement(currentPlayer, steps));
-                        Debug.Log($"[DIAG] Player {currentPlayer.PlayerId} : ExecuteMovement terminé, retour dans HandleTurnState.");
 
                         // 2. ExecuteMovement will transition state to ResolveTile when done
                         // So we don't need to do anything else here.

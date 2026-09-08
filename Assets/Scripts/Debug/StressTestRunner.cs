@@ -80,6 +80,7 @@ namespace PolyRisk.DebugTools
         // ─────────────────────────────────────────────────────────────────────
 
         StackTraceLogType savedLogTrace, savedWarningTrace;
+        LogType savedFilterLogType;
 
         IEnumerator RunBatch()
         {
@@ -100,6 +101,20 @@ namespace PolyRisk.DebugTools
             Application.SetStackTraceLogType(LogType.Log, StackTraceLogType.None);
             Application.SetStackTraceLogType(LogType.Warning, StackTraceLogType.None);
 
+            // 2e goulot confirmé par le diagnostic heartbeat (batch précédent) : l'Editor ne
+            // tournait qu'à 1-4 frames / 2s réelles pendant tout le batch — pas un deadlock,
+            // un vrai ralentissement moteur. Cause la plus probable : le redraw de la fenêtre
+            // Console Unity, qui dégrade très mal au-delà de quelques dizaines de milliers de
+            // lignes (70k-120k lignes mesurées sur un seul run) — indépendant de la stack
+            // trace (déjà coupée ci-dessus) et de Time.timeScale. Le désactiver de la stack
+            // trace ne suffisait pas car le texte du message lui-même (150+ points de log par
+            // tour : "Rolled X and Y", "[FINANCE REPORT]"...) reste coûteux à afficher en
+            // masse. On monte le seuil de log à Warning pour tout le batch — Error/Exception
+            // remontent toujours (errorCount et les vrais bugs restent visibles), restauré à
+            // la fin comme les stack traces ci-dessus. Activé après les 2 logs "Démarrage/Reset
+            // initial" ci-dessous pour qu'ils restent visibles malgré le filtre.
+            savedFilterLogType = Debug.unityLogger.filterLogType;
+
             string resultsDir = Path.Combine(Application.dataPath, "..", "StressTestResults");
             Directory.CreateDirectory(resultsDir);
             string stamp = System.DateTime.Now.ToString("yyyyMMdd_HHmmss");
@@ -119,6 +134,8 @@ namespace PolyRisk.DebugTools
             Debug.Log("[STRESS TEST] Reset initial pour appliquer ForceAllAI avant la partie 0...");
             yield return DoReset();
 
+            Debug.unityLogger.filterLogType = LogType.Warning;
+
             for (int gameIndex = 0; gameIndex < numberOfGames; gameIndex++)
             {
                 yield return RunOneGame(gameIndex);
@@ -135,6 +152,7 @@ namespace PolyRisk.DebugTools
             Application.logMessageReceived -= OnLogMessage;
             Application.SetStackTraceLogType(LogType.Log, savedLogTrace);
             Application.SetStackTraceLogType(LogType.Warning, savedWarningTrace);
+            Debug.unityLogger.filterLogType = savedFilterLogType;
             foreach (var probe in FindObjectsOfType<ReflectionProbe>()) probe.enabled = true;
             Time.timeScale = 1f;
             batchRunning = false;
@@ -155,23 +173,8 @@ namespace PolyRisk.DebugTools
             float startReal = Time.realtimeSinceStartup;
             Time.timeScale = timeScale;
 
-            // Diagnostic — heartbeat pour distinguer un vrai gel de l'Editor/moteur (Time.frameCount
-            // qui stagne) d'un blocage purement logique (les frames avancent mais rien ne progresse
-            // côté jeu). Nécessaire car le garde-fou 10s ajouté dans ExecuteMovement ne s'est jamais
-            // déclenché sur un run où le jeu est resté totalement silencieux ~230s d'affilée.
-            float lastHeartbeat = startReal;
-            int lastHeartbeatFrame = Time.frameCount;
             while (!gameEnded && Time.realtimeSinceStartup - startReal < perGameTimeoutRealSeconds)
-            {
-                if (Time.realtimeSinceStartup - lastHeartbeat > 2f)
-                {
-                    int framesSince = Time.frameCount - lastHeartbeatFrame;
-                    Debug.Log($"[DIAG-HEARTBEAT] +{Time.realtimeSinceStartup - startReal:F1}s réelles, {framesSince} frame(s) depuis le dernier battement, currentState={TurnManager.Instance?.CurrentState}.");
-                    lastHeartbeat = Time.realtimeSinceStartup;
-                    lastHeartbeatFrame = Time.frameCount;
-                }
                 yield return null;
-            }
 
             float realElapsed = Time.realtimeSinceStartup - startReal;
 
