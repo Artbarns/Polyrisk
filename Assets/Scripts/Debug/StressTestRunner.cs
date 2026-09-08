@@ -91,6 +91,17 @@ namespace PolyRisk.DebugTools
             GameEvents.OnGameVictory += HandleGameVictory;
             GameEvents.OnPlayerBankruptcy += HandlePlayerBankruptcy;
 
+            // Filet de sécurité : si un batch précédent a été interrompu (Stop manuel du Play
+            // Mode, script édité en plein run) AVANT d'atteindre la restauration en fin de
+            // RunBatch(), et que "Reload Domain" est désactivé dans les réglages Editor, ces
+            // réglages globaux restent collés d'une session Play à l'autre. Sans ce forçage,
+            // "savedLogTrace"/"savedFilterLogType" capturent alors l'état déjà dégradé comme
+            // s'il était la config normale à restaurer — silence total en Console dès la
+            // partie suivante, y compris sur les logs de démarrage ci-dessous.
+            Application.SetStackTraceLogType(LogType.Log, StackTraceLogType.ScriptOnly);
+            Application.SetStackTraceLogType(LogType.Warning, StackTraceLogType.ScriptOnly);
+            Debug.unityLogger.filterLogType = LogType.Log;
+
             // Goulot confirmé : générer une stack trace à chaque Debug.Log/Warning est un
             // coût CPU fixe, indépendant de Time.timeScale — avec 150+ points de log rien
             // que dans TurnManager/RulesEngine/MarketplaceSystem/FinanceSystem, c'est ça qui
