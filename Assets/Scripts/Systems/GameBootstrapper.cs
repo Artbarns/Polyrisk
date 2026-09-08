@@ -51,6 +51,16 @@ namespace PolyRisk.Systems
         /// </summary>
         public static bool ForceAllAI = false;
 
+        /// <summary>
+        /// Debug/stress-test uniquement — saute l'animation de déplacement du pion (hop
+        /// case par case) au profit d'une téléportation directe à la case d'arrivée.
+        /// L'animation impose au moins 1 frame réelle par case traversée, indépendamment de
+        /// Time.timeScale (qui n'accélère que le temps de jeu, pas le nombre de frames
+        /// réelles nécessaires) — un coût pur sans intérêt pour un batch 100% IA.
+        /// Piloté par StressTestRunner.cs, jamais par le jeu normal.
+        /// </summary>
+        public static bool SkipMovementAnimation = false;
+
         private void Start()
         {
             StartCoroutine(InitializeGameSequence());

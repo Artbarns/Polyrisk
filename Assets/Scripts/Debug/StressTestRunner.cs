@@ -86,6 +86,7 @@ namespace PolyRisk.DebugTools
         {
             batchRunning = true;
             GameBootstrapper.ForceAllAI = true;
+            GameBootstrapper.SkipMovementAnimation = true;
             Application.logMessageReceived += OnLogMessage;
             GameEvents.OnGameVictory += HandleGameVictory;
             GameEvents.OnPlayerBankruptcy += HandlePlayerBankruptcy;
@@ -153,6 +154,7 @@ namespace PolyRisk.DebugTools
             Application.SetStackTraceLogType(LogType.Log, savedLogTrace);
             Application.SetStackTraceLogType(LogType.Warning, savedWarningTrace);
             Debug.unityLogger.filterLogType = savedFilterLogType;
+            GameBootstrapper.SkipMovementAnimation = false;
             foreach (var probe in FindObjectsOfType<ReflectionProbe>()) probe.enabled = true;
             Time.timeScale = 1f;
             batchRunning = false;

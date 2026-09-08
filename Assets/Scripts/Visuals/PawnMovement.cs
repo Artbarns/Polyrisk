@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PolyRisk.Systems;
 
 namespace PolyRisk.Visuals
 {
@@ -27,6 +28,15 @@ namespace PolyRisk.Visuals
         {
             if (waypoints == null || waypoints.Count == 0)
             {
+                onMovementFinished?.Invoke();
+                return;
+            }
+
+            // Stress test (100% IA) : sauter le hop case par case, qui impose au moins 1 frame
+            // réelle par case traversée indépendamment de Time.timeScale. Téléportation directe.
+            if (GameBootstrapper.SkipMovementAnimation)
+            {
+                transform.position = waypoints[waypoints.Count - 1];
                 onMovementFinished?.Invoke();
                 return;
             }
