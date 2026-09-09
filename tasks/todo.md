@@ -181,3 +181,47 @@ reste-t-elle stable au tour 50 ?) peut vraiment être testée à l'échelle.
 
 **Pas vérifié** : aucun accès Unity dans cette session — tous les fixes validés par
 traçage précis de code + logs fournis par Arthur, pas par exécution directe de ma part.
+
+## Itération 7 — le vrai run x100 (10h30, 99% timeout) révèle le bug de fond
+
+Le run x100 réel a tourné 10h30 (17h24 → 03h48) : **99% ANOMALY_TIMEOUT**, 1 seule victoire
+propre ($10M en 214s). Mais le CSV révèle deux populations très différentes :
+- 6 parties ont réellement progressé (29-45 tours, Sgo $75K-$166K, soldes en millions) —
+  preuve que les fixes de perf de l'itération 6 fonctionnent vraiment une fois lancés.
+- 69/100 finissent à `EndedOnLap=0` avec Sgo quasi jamais monté, et plusieurs parties ont
+  dépassé le plafond de 240s réelles jusqu'à **1845s (30 min)** — signe d'un vrai blocage,
+  pas juste un manque de vitesse.
+
+Le premier export console (10h30 de session) ne montrait presque rien d'utile — hypothèse :
+buffer Console limité en lignes, ne gardait que la toute fin de la session. Un second run
+ciblé de 10 parties (~qq dizaines de minutes, export console immédiat) a confirmé cette
+hypothèse ET changé le diagnostic : sur ce run, **aucune** partie n'est restée bloquée à
+`EndedOnLap` bas — les 10 ont progressé normalement (14-33 tours). Donc le blocage précoce
+observé sur le run de 10h30 n'est probablement pas systématique, mais quelque chose s'est
+quand même révélé dans les logs de ce run de 10 : **le vrai bug de fond**.
+
+- [x] **Bug trouvé et corrigé** (`TransactionManager.cs`, `ProcessBankruptcyCash`) : le
+  message `"Player X cannot afford $130000 rent. Triggering Bankruptcy flow."` se répétait
+  **24 à 39 fois à l'identique** pour un même joueur dans une seule partie (confirmé par
+  grep sur l'export console). Cause : `ProcessBankruptcyCash` — le filet de secours appelé
+  par `RulesEngine` quand une IA insolvable ne peut toujours pas payer après le flow normal
+  de liquidation (`GameEvents.OnInsolvency` → `BankruptcyScreenController.ProcessAILiquidation`)
+  — transférait l'argent restant mais **ne posait jamais `IsBankrupt = true`**, contrairement
+  à `ProcessAILiquidation` qui le fait correctement. Si le flow de liquidation normal ne se
+  déclenche pas à temps pour une raison quelconque (même catégorie de risque que la fuite
+  d'abonnement déjà trouvée sur `OnPawnMovementFinished` à l'itération 5 — souscription à
+  `OnInsolvency` pas encore réarmée juste après un rechargement de scène), le joueur restait
+  bloqué à $0 sans jamais être formellement en faillite : il continuait à jouer
+  indéfiniment, retombant sur le même loyer impayable à chaque tour.
+  **Impact direct sur le taux d'anomalie** : `TurnManager.cs:917-920` (condition de victoire
+  "Last Player Standing") compte les joueurs non-bankrupt et déclare un gagnant dès qu'il
+  n'en reste qu'un — ce bug bloquait donc directement la condition de victoire naturelle du
+  jeu, forçant systématiquement le passage par le timeout de 240s peu importe la qualité du
+  reste. Fix : `ProcessBankruptcyCash` pose maintenant `IsBankrupt` et déclenche
+  `OnPlayerBankruptcy` lui-même, de façon autonome, peu importe ce qui s'est passé avant.
+
+**Pas vérifié** : aucun accès Unity dans cette session — fix basé sur traçage précis de
+code + comptage exact des répétitions dans les logs fournis par Arthur, pas retesté après
+correction. Prochaine étape pour Arthur : relancer un batch (10-30 parties suffisent pour
+valider avant de remonter à 100+) et vérifier que le taux de `LAST PLAYER STANDING` /
+`REACHED $10M` remonte franchement au-dessus de 1%.
