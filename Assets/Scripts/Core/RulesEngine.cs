@@ -190,6 +190,12 @@ namespace PolyRisk.Core
                             else
                             {
                                 Debug.LogWarning($"Player {player.PlayerId} cannot afford ${rent} rent. Triggering Bankruptcy flow.");
+                                // [BANKRUPTCY-TRACE] Diagnostic temporaire — investigation de l'hypothèse
+                                // "l'IA achète/upgrade sans réserve de trésorerie" (voir tasks/todo.md).
+                                // LogWarning et non Log : pendant un batch stress test, StressTestRunner
+                                // met Debug.unityLogger.filterLogType = LogType.Warning pour toute la
+                                // boucle — un simple Debug.Log ici serait invisible dans l'export console.
+                                Debug.LogWarning($"[BANKRUPTCY-TRACE] Player {player.PlayerId} ({player.Profile}) died turn {player.LapsCompleted} | cash_before={player.CurrentBalance} | rent={rent} | tile={propData.PropertyName} lvl{propData.CurrentLevel} | props_owned={player.OwnedProperties.Count}");
                                 // Fix #3 Phase F — Insolvabilité asynchrone.
                                 // Le controller prend la main : IA synchrone (liquide et paie immédiatement),
                                 // humain via UI (paie au close du BankruptcyScreen).
