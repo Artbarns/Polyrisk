@@ -151,11 +151,29 @@ namespace PolyRisk.Core
             {
                 debtor.SetBalance(0);
                 creditor.SetBalance(creditor.CurrentBalance + remainingCash);
-                
+
                 GameEvents.OnBalanceChanged?.Invoke(debtor.PlayerId, 0);
                 GameEvents.OnBalanceChanged?.Invoke(creditor.PlayerId, creditor.CurrentBalance);
-                
+
                 Debug.Log($"Bankruptcy: Transferred remaining {remainingCash} from Player {debtor.PlayerId} to Player {creditor.PlayerId}.");
+            }
+
+            // Bug trouvé via stress test (100 parties, 99% ANOMALY_TIMEOUT malgré une perf
+            // par ailleurs correcte) : cette méthode ne posait jamais IsBankrupt, contrairement
+            // à BankruptcyScreenController.ProcessAILiquidation() qui gère normalement ce cas
+            // (souscrite à GameEvents.OnInsolvency, appelée juste avant ce fallback dans
+            // RulesEngine). Si ce flow ne se déclenche pas à temps pour une raison quelconque
+            // (ex. souscription pas encore active juste après un rechargement de scène — même
+            // catégorie de risque que la fuite déjà trouvée sur OnPawnMovementFinished), le
+            // joueur restait bloqué à $0 sans jamais être formellement en faillite : il
+            // continuait à jouer indéfiniment, retombant sur le même loyer impayable à chaque
+            // tour (jusqu'à 39 répétitions identiques observées dans un seul run). Ce filet de
+            // secours doit être autonome et fiable, peu importe ce qui s'est passé avant.
+            if (!debtor.IsBankrupt)
+            {
+                debtor.IsBankrupt = true;
+                GameEvents.OnPlayerBankruptcy?.Invoke(debtor.PlayerId, 0);
+                Debug.LogWarning($"[Bankruptcy] Player {debtor.PlayerId} BANKRUPT (filet de secours ProcessBankruptcyCash).");
             }
         }
     }
