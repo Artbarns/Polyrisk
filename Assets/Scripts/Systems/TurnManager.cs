@@ -859,20 +859,32 @@ namespace PolyRisk.Systems
                     
                     if (currentPlayer.IsAI)
                     {
-                        // Delegate to AIManager
-                        AIManager aiManager = FindObjectOfType<AIManager>();
-                        if (aiManager != null)
+                        // Fix double-dispatch (trouvé via [BANKRUPTCY-TRACE] : 45% des événements
+                        // de faillite tracés étaient des doublons exacts, cash_before=0). Les blocs
+                        // Auto-Pay Rent / Auto-Pay Tax / Audit / GO ci-dessus peuvent avoir déjà
+                        // entièrement résolu la tuile et fait avancer currentState (via
+                        // CompleteTileResolution, appelé en interne par RulesEngine). Ne déléguer à
+                        // l'IA QUE si la tuile a réellement encore besoin d'une décision (case libre
+                        // à acheter, Marketplace, Venture, Casino, Stock Market...) — sinon
+                        // ExecutePrimaryAction était appelé une 2e fois pour la même tuile (double
+                        // loyer/taxe potentiel, double comptage de WasVisitedSinceLastGO, etc.).
+                        if (currentState == TurnState.ResolveTile)
                         {
-                            aiManager.RequestAIDecision(currentPlayer, landedTile);
-                            // The AI Manager will call CompleteTileResolution when done
+                            // Delegate to AIManager
+                            AIManager aiManager = FindObjectOfType<AIManager>();
+                            if (aiManager != null)
+                            {
+                                aiManager.RequestAIDecision(currentPlayer, landedTile);
+                                // The AI Manager will call CompleteTileResolution when done
+                            }
+                            else
+                            {
+                                Debug.LogWarning("TurnManager: AIManager not found! Skipping AI turn.");
+                                currentState = TurnState.EndTurn;
+                            }
                         }
-                        else
-                        {
-                            Debug.LogWarning("TurnManager: AIManager not found! Skipping AI turn.");
-                            currentState = TurnState.EndTurn;
-                        }
-                        
-                        // Wait indefinitely until state is changed externally
+
+                        // Wait indefinitely until state is changed externally (no-op si déjà résolu)
                         yield return new WaitUntil(() => currentState != TurnState.ResolveTile);
                     }
                     else
