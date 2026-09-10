@@ -225,3 +225,56 @@ code + comptage exact des répétitions dans les logs fournis par Arthur, pas re
 correction. Prochaine étape pour Arthur : relancer un batch (10-30 parties suffisent pour
 valider avant de remonter à 100+) et vérifier que le taux de `LAST PLAYER STANDING` /
 `REACHED $10M` remonte franchement au-dessus de 1%.
+
+## Itération 8 — le fix marche (96.7% LAST PLAYER STANDING), le vrai sujet est l'équilibrage
+
+Batch de 30 parties après le fix de l'itération 7 : **96.7% `LAST PLAYER STANDING`** (contre
+99% d'anomalie avant), 1 seule `ANOMALY_TIMEOUT`. Le fix de faillite marche exactement comme
+prévu. Mais les données propres révèlent le vrai sujet : parties très courtes (`Tour de fin`
+moyen = 0.4), **29/30 parties se terminent avec exactement 3 joueurs sur 4 en faillite** —
+pattern quasi uniforme. Winner rate par profil sur cet échantillon plus large : Negotiator
+52%, Rentier 31%, Predator 17% (correction d'une lecture précédente sur trop petit
+échantillon qui suggérait Rentier "ne gagne jamais").
+
+- [x] **Diagnostic `[BANKRUPTCY-TRACE]` posé** (`RulesEngine.cs`, avant `OnInsolvency.Invoke`)
+  pour tester l'hypothèse "IA achète sans réserve de trésorerie" proposée par une revue
+  externe. Run de 30 parties → 143 événements capturés.
+- [x] **Analyse quantifiée des 79 vrais déclenchements** (après dédoublonnage, voir bug
+  ci-dessous) :
+  - 71% des loyers tueurs viennent de tuiles **niveau 4-5** (quasi/full upgrade), 10%
+    seulement de niveau 0 — le vrai moteur n'est pas "achète sans réserve" mais
+    **"upgrade trop vite jusqu'au niveau 5 (×200)"**.
+  - 94% des morts arrivent en 0-2 tours de plateau complétés.
+  - Loyer médian tueur $19 200, mais 30% des morts viennent d'un loyer ≥$100K (jusqu'à
+    $260K) — aucune réserve de cash raisonnable à ce stade de l'économie (Sgo encore
+    ~$2-5K) ne protège contre un pic pareil.
+  - Tuiles les plus mortelles : Lockheed Martin, CyberTruck Factory, NASA Moonbase,
+    SpaceX, Antarctica Datacenter — toutes familles Aerospace/Tech/Auto (les plus chères
+    du plateau).
+- [x] **Bug trouvé au passage, corrigé** : 45% des événements tracés étaient des doublons
+  exacts (même tuile/loyer, `cash_before=0`) — preuve d'un **double-dispatch IA**.
+  Root cause (`TurnManager.cs`, case `ResolveTile`) : le bloc Auto-Pay Rent/Tax (qui
+  appelle `rulesEngine.ExecutePrimaryAction` directement et résout déjà la tuile via
+  `CompleteTileResolution`) était suivi, sans condition, par `aiManager.RequestAIDecision`
+  pour toute IA — qui rappelle `ExecutePrimaryAction` une 2e fois sur la même tuile. Fix :
+  la délégation IA ne se déclenche plus que si `currentState` est encore `ResolveTile`
+  (i.e. la tuile a vraiment encore besoin d'une décision : case libre, Marketplace,
+  Venture, Casino, Stock Market — les seuls cas que `TurnManager` ne pré-résout pas).
+- [x] **Vérification demandée par la revue externe faite, RAS** : le tableau
+  `rentMultipliers = {1,2,5,12,50,200}` (6 entrées, indices 0-5) est indexé exactement par
+  `property.CurrentLevel` (qui va aussi de 0 à 5) — pas d'off-by-one, le ×200 ne s'applique
+  bien qu'au niveau 5.
+- [x] **3 logs d'instrumentation ajoutés** (tous en `LogWarning` pour survivre au filtre du
+  stress test) pour la suite de l'investigation demandée par la revue externe :
+  `[UPGRADE]` (`UpgradeSystem.TryUpgradeProperty` — joueur, niveau avant/après, coût,
+  cash avant/après), `[ACQUISITION]` (les 4 vrais points de transfert de propriété trouvés
+  par grep : `RulesEngine.TryBuyProperty`=Landing, `AuctionManager.EndAuction`=Auction —
+  **jamais atteint en 100% IA, réservé au flow humain via `ActionButtonsWidget`** —,
+  `MarketplaceSystem.ExecuteTrade`=Marketplace-Trade et `SealTenderDeal`=Marketplace-Tender
+  / -Tender-Swap), `[RENT-CALC]` (niveau, loyer de base, multiplicateur appliqué, monopole,
+  loyer final).
+
+**Pas vérifié** : aucun accès Unity dans cette session. Prochaine étape pour Arthur :
+relancer un batch de 20-30 parties, exporter la console, et transmettre pour l'étape 3 de
+la revue externe (analyse forensique des 5 kills les plus chers : comment le tueur a
+acquis la propriété, comment il a financé l'upgrade, à quel tour).
