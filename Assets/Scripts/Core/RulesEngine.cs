@@ -346,8 +346,10 @@ namespace PolyRisk.Core
             {
                 player.AddProperty(property);
                 GameEvents.OnPropertyPurchased?.Invoke(player.PlayerId, property.PropertyName);
-                
+
                 Debug.Log($"Player {player.PlayerId} successfully purchased {property.PropertyName} for {property.BasePrice}.");
+                // [ACQUISITION] diagnostic temporaire — investigation rythme d'upgrade IA (tasks/todo.md).
+                Debug.LogWarning($"[ACQUISITION] {property.PropertyName} | from=Bank to=Player{player.PlayerId} ({player.Profile}) | channel=Landing | price={property.BasePrice:N0} | turn={player.LapsCompleted}");
                 return true;
             }
             else
@@ -468,6 +470,12 @@ namespace PolyRisk.Core
                     standardRent *= 1.15;
                 }
             }
+
+            // [RENT-CALC] diagnostic temporaire — investigation loyers extrêmes (tasks/todo.md).
+            // Vérifie notamment que le multiplicateur ×200 ne s'applique bien qu'au niveau 5
+            // (rentMultipliers[property.CurrentLevel], tableau à 6 entrées pour les niveaux 0-5 —
+            // confirmé correct à la lecture, pas d'off-by-one, mais on le trace quand même).
+            Debug.LogWarning($"[RENT-CALC] {property.PropertyName} | level={property.CurrentLevel} | baseRent={property.BaseRent:N0} | levelMult={(property.CurrentLevel >= 0 && property.CurrentLevel < rentMultipliers.Length ? rentMultipliers[property.CurrentLevel] : 0)} | monopoly={HasFullFamily(owner, property.FamilyData)} | finalRent={standardRent:N0}");
 
             return standardRent;
         }

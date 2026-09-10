@@ -43,6 +43,8 @@ namespace PolyRisk.Systems
             }
 
             double cost = CalculateUpgradeCost(property, player);
+            int oldLevel = property.CurrentLevel;
+            double cashBefore = player.CurrentBalance;
             bool success = transactionManager.DeductMoney(player, cost);
 
             if (success)
@@ -50,6 +52,9 @@ namespace PolyRisk.Systems
                 property.SetLevel(property.CurrentLevel + 1);
                 property.TotalUpgradeCostInvested += cost; // Phase E.4 — tracker pour la revente faillite
                 Debug.Log($"[Upgrade] {property.PropertyName} → Lvl{property.CurrentLevel} | Cost: ${cost:N0}");
+                // [UPGRADE] diagnostic temporaire — investigation rythme d'upgrade IA (tasks/todo.md).
+                // LogWarning (pas Log) pour survivre au filtre Warning du stress test.
+                Debug.LogWarning($"[UPGRADE] Player {player.PlayerId} ({player.Profile}) | {property.PropertyName} lvl{oldLevel}→lvl{oldLevel + 1} | cost={cost:N0} | cash_before={cashBefore:N0} | cash_after={player.CurrentBalance:N0} | turn={player.LapsCompleted}");
                 return true;
             }
 

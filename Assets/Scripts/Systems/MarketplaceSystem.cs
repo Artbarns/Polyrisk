@@ -328,6 +328,8 @@ namespace PolyRisk.Systems
             buyer.AddProperty(property);
 
             UnityEngine.Debug.Log($"[Marketplace] SUCCESS: Player {buyer.PlayerId} bought {property.PropertyName} from Player {seller.PlayerId} for {price}.");
+            // [ACQUISITION] diagnostic temporaire — investigation rythme d'upgrade IA (tasks/todo.md).
+            UnityEngine.Debug.LogWarning($"[ACQUISITION] {property.PropertyName} | from=Player{seller.PlayerId} to=Player{buyer.PlayerId} ({buyer.Profile}) | channel=Marketplace-Trade | price={price:N0} | turn={buyer.LapsCompleted}");
             return true;
         }
 
@@ -566,6 +568,8 @@ namespace PolyRisk.Systems
             // Transfer property ownership
             CurrentTenderSeller.RemoveProperty(CurrentTenderProperty);
             bid.bidder.AddProperty(CurrentTenderProperty);
+            // [ACQUISITION] diagnostic temporaire — investigation rythme d'upgrade IA (tasks/todo.md).
+            Debug.LogWarning($"[ACQUISITION] {CurrentTenderProperty.PropertyName} | from=Player{CurrentTenderSeller.PlayerId} to=Player{bid.bidder.PlayerId} ({bid.bidder.Profile}) | channel=Marketplace-Tender | price={bid.cashOffer:N0} | turn={bid.bidder.LapsCompleted}");
 
             // Refreshed logging for multiple properties
             string propLogs = "";
@@ -575,6 +579,7 @@ namespace PolyRisk.Systems
                 CurrentTenderSeller.AddProperty(prop);
                 RefreshTileVisualAfterOwnerChange(prop);
                 propLogs += prop.PropertyName + ", ";
+                Debug.LogWarning($"[ACQUISITION] {prop.PropertyName} | from=Player{bid.bidder.PlayerId} to=Player{CurrentTenderSeller.PlayerId} ({CurrentTenderSeller.Profile}) | channel=Marketplace-Tender-Swap | price=0 | turn={CurrentTenderSeller.LapsCompleted}");
             }
 
             if (bid.propertyOffers.Count > 0)

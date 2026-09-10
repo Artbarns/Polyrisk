@@ -138,8 +138,10 @@ namespace PolyRisk.Systems
                     // Transfer ownership
                     currentHighestBidder.AddProperty(currentAuctionProperty);
                     GameEvents.OnPropertyPurchased?.Invoke(currentHighestBidder.PlayerId, currentAuctionProperty.PropertyName);
-                    
+
                     Debug.Log($"Auction won by Player {currentHighestBidder.PlayerId} for {currentHighestBid}.");
+                    // [ACQUISITION] diagnostic temporaire — investigation rythme d'upgrade IA (tasks/todo.md).
+                    Debug.LogWarning($"[ACQUISITION] {currentAuctionProperty.PropertyName} | from=Bank to=Player{currentHighestBidder.PlayerId} ({currentHighestBidder.Profile}) | channel=Auction | price={currentHighestBid:N0} | turn={currentHighestBidder.LapsCompleted}");
                     OnAuctionEnded?.Invoke(currentHighestBidder, currentAuctionProperty, currentHighestBid);
                 }
                 else
