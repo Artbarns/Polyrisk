@@ -1,8 +1,8 @@
 # Préversion mobile en ligne — 12 octobre 2026
 
-Lien actif de recette au 13 octobre (V35) : https://discussing-intimate-outdoors-exclusively.trycloudflare.com/?visual-v35
+Lien actif de recette au 13 octobre (V37) : https://tom-hired-dover-impression.trycloudflare.com/?visual-v37
 
-Build V35 depuis le 13 octobre, serveur statique et relais API sur 8900, API de recette 5091. L'ancien domaine `law-organizational-postage-calibration.trycloudflare.com` a expiré ; le nouveau lien a chargé le menu WebGL public et ses quatre ressources répondent 200.
+Build V37 depuis le 13 octobre, serveur statique et relais API sur 8900, API de recette 5091. Le tunnel HTTPS de recette est temporaire et nécessite que ce Mac reste allumé. L'index et le loader correspondent octet pour octet au build ; les trois ressources Unity compressées correspondent après décompression HTTP. Les cinq URLs répondent 200 et le menu public a chargé à 430 × 900.
 Le smoke test `smoke_test.py` sur cette nouvelle origine HTTPS passe avec six joueurs (salon A33BXU, version 13, état de partie version 1). Ce test de protocole ne remplace pas une partie humaine sur six appareils.
 Tunnel temporaire : le Mac et les processus doivent rester allumés. Le lien
 mobile historique sur 8765 reste distinct.

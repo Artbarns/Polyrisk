@@ -579,6 +579,10 @@ namespace PolyRisk.UI
         /// </summary>
         private void UpdateInspectorSection(BoardTile tile)
         {
+            bool turboChoice = turnManager != null && turnManager.CurrentState == TurnManager.TurnState.ChooseTurbo;
+            bool precisionChoice = turnManager != null && turnManager.CurrentState == TurnManager.TurnState.AdjustDice;
+            lblTileFamily?.EnableInClassList("tile-family-badge",
+                !turboChoice && !precisionChoice && tile != null && tile.Type == TileType.Property && tile.Property != null);
             if (iconTileFamily != null) TileIconResolver.PopulateIcon(iconTileFamily, tile?.Data);
 
             if (tile != null && tile.Type == TileType.Property && tile.Property != null)
