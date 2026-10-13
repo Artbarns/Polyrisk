@@ -572,6 +572,7 @@ Périmètre strict : présentation et interactions uniquement ; aucune règle, d
 - [x] Plateau V21 : couleur des propriétés liée à leur vraie famille (17/26 écarts de l'ancien motif corrigés) ; lumière au repos abaissée, sélection Marketplace toujours visible et cliquable en portrait. Build 205 assertions PASS ; capture locale conservée.
 - [ ] Plateau : limiter glow/pulse aux cases d'arrivée et sélectionnables ; profondeur légère sous pions et bâtiments, sans bloom coûteux.
 - [ ] HUD : hiérarchie typographique, espacements 8 pt, CAPITAL/NET WORTH/TURN/MARKET sur une ligne, couleurs sémantiques et séparateurs discrets ; confirmer l'absence des overlays debug en release.
+- [ ] Accueil en paysage : corriger le chevauchement du bouton « Create Online Game » avec la ligne « Game Code / Join » observé à 1280 × 720 dans la préversion V24 ; recetter 900 × 430 et 1280 × 720 après rechargement WebGL.
 - [ ] Inspecteur : badge icône/famille/niveau, Rent/Risk/ROI seulement à partir de données existantes, tendance fiable, priorité visuelle primaire/secondaire ; vérifier le panneau réduit puis restauré.
 - [ ] Enchères : minuteur visuel et état critique, avatars par joueur, offres alignées et animées à l'arrivée, état vide stylé ; contrôler jusqu'à six joueurs sans surcharge UI.
 - [ ] Motion : achat par glissière, sélection de propriété distincte, déplacement case par case avec arc/rebond léger, compteurs d'argent animés, haptique seulement si disponible.
