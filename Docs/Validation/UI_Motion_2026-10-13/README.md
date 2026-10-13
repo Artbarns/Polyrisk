@@ -17,3 +17,7 @@ Le réglage « Réduire les animations » est visible sur l'accueil et dans le l
 V24 : Economy 106 + Mechanics 99 assertions PASS, `WEBGL PLAYER BUILD PASS`, sortie 0. Les animations futures de transaction et de compteurs devront respecter ce réglage ; cette couverture reste ouverte dans `tasks/todo.md`. La fluidité et la netteté sur iPhone 14 Pro Max réel ne sont pas encore mesurées.
 
 Le dossier WebGL V24 occupe 12 292 KiB, comme V21. La préversion HTTPS sert l'index V24 identique au build et les quatre ressources WebGL répondent 200. Le menu public a été chargé dans le navigateur à 430 × 900 après rechargement. En contrôle paysage à 1280 × 720, le bouton « Create Online Game » chevauche la ligne de code/entrée de partie ; le correctif est inscrit dans `tasks/todo.md`.
+
+## Accueil paysage — validation en cours
+
+V25 a remplacé l'accueil par un `ScrollView` limité à la hauteur disponible : à 1280 × 720, la superposition du bouton de création et de la saisie du code avait disparu et les actions restaient visibles. La barre de défilement native apparaissait en blanc et occupait trop de place. V29 garde la zone défilante et applique un style sombre plus étroit. Economy 106 + Mechanics 99 assertions PASS ; `WEBGL PLAYER BUILD PASS`, sortie 0 ; taille 12 292 KiB. Le navigateur de recette s'est arrêté pendant le chargement V29 : l'apparence de la barre, le scroll vers « Connection » et les autres tailles d'écran ne sont pas encore confirmés. V29 n'est pas publiée.

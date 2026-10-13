@@ -6,7 +6,7 @@
 >
     <Style src="project://database/Assets/UI/Styles/Theme.uss" />
     <ui:VisualElement class="main-menu-overlay fullscreen-overlay">
-        <ui:VisualElement name="HomeView" class="main-menu-card">
+        <ui:ScrollView name="HomeView" class="main-menu-card" mode="Vertical" vertical-scroller-visibility="Auto">
             <ui:Label text="POLYRISK" class="main-menu-title" />
             <ui:Label text="BUILD AN EMPIRE. RUIN YOUR FRIENDS." class="main-menu-kicker" />
             <ui:TextField name="Input_PlayerName" label="PLAYER NAME" max-length="18" class="main-menu-input" />
@@ -20,7 +20,7 @@
             <ui:Foldout text="CONNECTION" value="false" class="main-menu-connection">
                 <ui:TextField name="Input_ServerUrl" label="LOBBY SERVER" class="main-menu-input" />
             </ui:Foldout>
-        </ui:VisualElement>
+        </ui:ScrollView>
 
         <ui:VisualElement name="LobbyView" class="main-menu-card" style="display: none;">
             <ui:Label text="PRIVATE LOBBY" class="main-menu-kicker" />

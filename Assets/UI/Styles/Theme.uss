@@ -68,6 +68,19 @@
     border-radius: 24px;
 }
 
+#HomeView .unity-scroll-view__vertical-scroller {
+    width: 8px;
+    background-color: rgba(7, 9, 14, 0.7);
+}
+#HomeView .unity-scroller__low-button,
+#HomeView .unity-scroller__high-button { display: none; }
+#HomeView .unity-slider__dragger,
+#HomeView .unity-scroller__slider {
+    background-color: rgba(120, 125, 145, 0.5);
+    border-radius: 4px;
+}
+#HomeView .unity-scroll-view__content-container > Button { flex-shrink: 0; }
+
 .main-menu-title {
     color: var(--color-neon-green);
     font-size: 44px;
@@ -298,6 +311,7 @@
 .ux-compact-height .main-menu-join-row,
 .ux-compact-height .main-menu-actions { margin-bottom: 5px; }
 .ux-compact-height .main-menu-card > Button,
+.ux-compact-height #HomeView .unity-scroll-view__content-container > Button,
 .ux-compact-height .main-menu-join-row > Button,
 .ux-compact-height .main-menu-actions > Button {
     min-height: 38px;
@@ -328,6 +342,7 @@
 .ux-low-height .main-menu-title { font-size: 22px; }
 .ux-low-height .lobby-player-list { min-height: 40px; max-height: 64px; }
 .ux-low-height .lobby-code { font-size: 24px; }
+
 
 /* ═══════════════════════════════════════════════════
    TOP HUD — Barre fixée en haut (Cyber-Luxury)
