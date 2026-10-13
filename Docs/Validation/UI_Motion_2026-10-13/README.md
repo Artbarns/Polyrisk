@@ -9,3 +9,9 @@ Build Unity WebGL V21 : Economy 106 + Mechanics 99 assertions PASS, `WEBGL PLAYE
 Captures : `board_rest_v21.png`, `board_selection_v21.png`. La préversion HTTPS sert l'index V21, identique au build, ainsi que les quatre ressources WebGL répondant 200. Le navigateur local a chargé et exécuté V21 ; le dernier contrôle du chargement public n'a pas abouti parce que le navigateur de recette s'est arrêté. La mesure de fluidité et netteté sur iPhone réel reste ouverte.
 
 Le rendu final des icônes et du pourcentage sur chaque case attend la confrontation avec le mockup cible, indisponible dans cette session. Le chantier reste dans `tasks/todo.md`.
+
+## Accessibilité V24
+
+Le réglage « Réduire les animations » est visible sur l'accueil et dans le lobby, synchronisé entre les deux et conservé après rechargement. Il coupe les transitions déjà centralisées et l'arc des pions ; la durée de déplacement et les événements de fin de mouvement restent identiques. Le contrôle d'état dans le menu a été vérifié sur le build V22 : activation, rechargement, changement depuis le lobby, puis retour à l'accueil. Le style final sombre et l'état coché vert ont été vérifiés sur V24 en navigateur à 430 × 900. Capture : `reduced_motion_home_v24.png`.
+
+V24 : Economy 106 + Mechanics 99 assertions PASS, `WEBGL PLAYER BUILD PASS`, sortie 0. Les animations futures de transaction et de compteurs devront respecter ce réglage ; cette couverture reste ouverte dans `tasks/todo.md`. La fluidité et la netteté sur iPhone 14 Pro Max réel ne sont pas encore mesurées.

@@ -575,5 +575,6 @@ Périmètre strict : présentation et interactions uniquement ; aucune règle, d
 - [ ] Inspecteur : badge icône/famille/niveau, Rent/Risk/ROI seulement à partir de données existantes, tendance fiable, priorité visuelle primaire/secondaire ; vérifier le panneau réduit puis restauré.
 - [ ] Enchères : minuteur visuel et état critique, avatars par joueur, offres alignées et animées à l'arrivée, état vide stylé ; contrôler jusqu'à six joueurs sans surcharge UI.
 - [ ] Motion : achat par glissière, sélection de propriété distincte, déplacement case par case avec arc/rebond léger, compteurs d'argent animés, haptique seulement si disponible.
-- [ ] Accessibilité : toggle persistant « Réduire les animations », avec retours d'état conservés.
+- [x] Accessibilité V24 : toggle persistant « Réduire les animations » sur accueil et lobby, état synchronisé, arc des pions désactivé sans changer le temps de déplacement. WebGL 205 assertions PASS, contrôle navigateur en portrait.
+- [ ] Étendre « Réduire les animations » aux futurs effets d'achat, d'enchère et de compteurs tout en gardant les confirmations d'action lisibles ; vérifier avec un utilisateur sensible au mouvement.
 - [ ] Profiler avant/après sur WebGL mobile et desktop, contrôler temps de chargement et taille du build ; recette visuelle écran par écran face au mockup ; un commit logique par système.

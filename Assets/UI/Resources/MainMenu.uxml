@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+    <ui:VisualElement class="main-menu-overlay fullscreen-overlay">
+        <ui:VisualElement name="HomeView" class="main-menu-card">
+            <ui:Label text="POLYRISK" class="main-menu-title" />
+            <ui:Label text="BUILD AN EMPIRE. RUIN YOUR FRIENDS." class="main-menu-kicker" />
+            <ui:TextField name="Input_PlayerName" label="PLAYER NAME" max-length="18" class="main-menu-input" />
+            <ui:Button name="Btn_CreateGame" text="CREATE ONLINE GAME" class="btn-standard main-menu-primary" />
+            <ui:VisualElement class="main-menu-join-row">
+                <ui:TextField name="Input_GameCode" label="GAME CODE" max-length="6" class="main-menu-code-input" />
+                <ui:Button name="Btn_JoinGame" text="JOIN" class="btn-standard" />
+            </ui:VisualElement>
+            <ui:Button name="Btn_LocalGame" text="PLAY LOCAL" class="btn-secondary" />
+            <ui:Toggle name="Toggle_ReduceMotionHome" text="REDUCE ANIMATIONS" class="main-menu-motion" />
+            <ui:Foldout text="CONNECTION" value="false" class="main-menu-connection">
+                <ui:TextField name="Input_ServerUrl" label="LOBBY SERVER" class="main-menu-input" />
+            </ui:Foldout>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="LobbyView" class="main-menu-card" style="display: none;">
+            <ui:Label text="PRIVATE LOBBY" class="main-menu-kicker" />
+            <ui:Label name="Lbl_LobbyCode" text="ABC123" class="lobby-code" />
+            <ui:Label text="SHARE THIS CODE WITH YOUR FRIENDS" class="main-menu-help" />
+            <ui:Label name="Lbl_LobbyStatus" text="1/6 PLAYERS" class="lobby-status" />
+            <ui:ScrollView name="PlayerList" class="lobby-player-list" />
+            <ui:VisualElement class="main-menu-actions">
+                <ui:Button name="Btn_Ready" text="I'M READY" class="btn-secondary" />
+                <ui:Button name="Btn_StartOnline" text="START GAME" class="btn-standard" />
+            </ui:VisualElement>
+            <ui:Button name="Btn_LeaveLobby" text="LEAVE LOBBY" class="btn-ghost" />
+            <ui:Toggle name="Toggle_ReduceMotionLobby" text="REDUCE ANIMATIONS" class="main-menu-motion" />
+        </ui:VisualElement>
+        <ui:Label name="Lbl_MenuError" class="main-menu-error" style="display: none;" />
+    </ui:VisualElement>
+</ui:UXML>

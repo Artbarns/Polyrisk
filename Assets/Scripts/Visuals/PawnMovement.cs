@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PolyRisk.Systems;
+using PolyRisk.UI;
 
 namespace PolyRisk.Visuals
 {
@@ -48,6 +49,7 @@ namespace PolyRisk.Visuals
         {
             // We iterate through each waypoint, moving from current pos to waypoint.
             // Note: 'transform.position' updates at the end of each segment.
+            bool reducedMotion = UIUXRuntime.ReducedMotion;
             
             for (int i = 0; i < waypoints.Count; i++)
             {
@@ -80,7 +82,7 @@ namespace PolyRisk.Visuals
                     // Parabolic arc for Y (Jump)
                     // Sin(t * PI) goes from 0 to 1 to 0 over t=0..1
                     // Only add arc if distance is significant (don't hop in place)
-                    if (distance > 0.5f)
+                    if (!reducedMotion && distance > 0.5f)
                     {
                         float heightOffset = Mathf.Sin(t * Mathf.PI) * arcHeight;
                         currentPos.y += heightOffset;
