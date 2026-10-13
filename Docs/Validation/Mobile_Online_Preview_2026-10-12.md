@@ -1,8 +1,8 @@
 # Préversion mobile en ligne — 12 octobre 2026
 
-Lien actif de recette : https://law-organizational-postage-calibration.trycloudflare.com/
+Lien actif de recette au 13 octobre (V31) : https://discussing-intimate-outdoors-exclusively.trycloudflare.com/?visual-v31
 
-Build V21 depuis le 13 octobre, serveur statique et relais API sur 8900, API de recette 5091.
+Build V31 depuis le 13 octobre, serveur statique et relais API sur 8900, API de recette 5091. L'ancien domaine `law-organizational-postage-calibration.trycloudflare.com` a expiré ; le nouveau lien a chargé le menu WebGL public et ses quatre ressources répondent 200.
 Tunnel temporaire : le Mac et les processus doivent rester allumés. Le lien
 mobile historique sur 8765 reste distinct.
 
