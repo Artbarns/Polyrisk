@@ -25,3 +25,9 @@ V25 a remplacé l'accueil par un `ScrollView` limité à la hauteur disponible :
 Audit source du HUD debug : `BuildVerifiedWebGLPreview` appelle `BuildWebGLInternal(BuildOptions.None)`. Les trois scripts de raccourcis `DebugMarketplaceSetup`, `DebugUIShowcase` et `StressTestRunner` cachent leur `OnGUI` hors de l'éditeur ; le showcase est en plus limité par `UNITY_EDITOR || DEVELOPMENT_BUILD`. Le menu public V24 observé en navigateur ne montrait aucun overlay. La refonte visuelle du HUD reste ouverte.
 
 V30 reprend pour la barre du menu les sélecteurs `.unity-scroller--vertical`, `#unity-tracker` et `#unity-dragger` déjà utilisés dans le style des enchères. Build WebGL et 205 assertions PASS, sortie 0, dossier 12 296 KiB. Le navigateur a brièvement retrouvé ses onglets, puis s'est arrêté pendant leur fermeture ; aucun contrôle visuel V30 n'a été possible. La préversion publique reste V24.
+
+## Accueil V31 validé
+
+Le navigateur a été récupéré après fermeture des anciens onglets WebGL. V30 a montré l'absence de superposition à 1280 × 720 et 900 × 430 ; sa barre verticale sombre fonctionne. À 1280 × 720, le foldout « Connection » s'ouvre et le champ « Lobby Server » est atteint par glissement. Une barre horizontale parasite apparue en portrait a été désactivée dans V31. V31 a été contrôlé à 430 × 900 (aucune barre horizontale) et 1280 × 720 (boutons séparés, scrollbar verticale conservée). Captures : `menu_landscape_v31.png`, `menu_portrait_v31.png`, `menu_public_portrait_v31.png`.
+
+V31 : Economy 106 + Mechanics 99 assertions PASS, `WEBGL PLAYER BUILD PASS`, sortie 0. Le nouveau tunnel HTTPS `https://discussing-intimate-outdoors-exclusively.trycloudflare.com/?visual-v31` sert l'index V31 à l'octet près et ses quatre ressources WebGL répondent 200. Le navigateur a chargé le menu public à 430 × 900. Ce tunnel de test reste temporaire et dépend du Mac hôte.
