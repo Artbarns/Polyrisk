@@ -58,6 +58,7 @@
 }
 
 .main-menu-card {
+    -unity-font: url("/Assets/UI/Fonts/Inter-400.ttf");
     width: 100%;
     max-width: 520px;
     max-height: 92%;
@@ -67,6 +68,8 @@
     border-color: rgba(120, 125, 145, 0.45);
     border-radius: 24px;
 }
+
+.main-menu-card Button { -unity-font: url("/Assets/UI/Fonts/Inter-600.ttf"); }
 
 #HomeView .unity-scroller--vertical {
     width: 10px;
@@ -84,6 +87,7 @@
 #HomeView .unity-scroll-view__content-container > Button { flex-shrink: 0; }
 
 .main-menu-title {
+    -unity-font: url("/Assets/UI/Fonts/Inter-700.ttf");
     color: var(--color-neon-green);
     font-size: 44px;
     -unity-font-style: bold;
@@ -95,6 +99,7 @@
 .main-menu-kicker,
 .main-menu-help,
 .lobby-status {
+    -unity-font: url("/Assets/UI/Fonts/Inter-600.ttf");
     color: var(--color-text-darker);
     font-size: 11px;
     -unity-font-style: bold;
@@ -109,6 +114,7 @@
 
 .main-menu-input Label,
 .main-menu-code-input Label {
+    -unity-font: url("/Assets/UI/Fonts/Inter-600.ttf");
     color: var(--color-text-darker);
     font-size: 10px;
     -unity-font-style: bold;
@@ -379,6 +385,7 @@
 }
 
 .top-hud-label {
+    -unity-font: url("/Assets/UI/Fonts/Inter-500.ttf");
     color: var(--color-text-darker);
     font-size: 10px;
     -unity-font-style: bold;
@@ -388,6 +395,7 @@
 }
 
 .top-hud-value {
+    -unity-font: url("/Assets/UI/Fonts/Inter-700.ttf");
     color: var(--color-text-white);
     font-size: 15px;
     -unity-font-style: bold;
