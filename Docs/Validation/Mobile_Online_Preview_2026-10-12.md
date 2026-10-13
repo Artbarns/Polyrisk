@@ -2,7 +2,7 @@
 
 Lien actif de recette : https://law-organizational-postage-calibration.trycloudflare.com/
 
-Build V20 depuis le 13 octobre, serveur statique et relais API sur 8900, API de recette 5091.
+Build V21 depuis le 13 octobre, serveur statique et relais API sur 8900, API de recette 5091.
 Tunnel temporaire : le Mac et les processus doivent rester allumés. Le lien
 mobile historique sur 8765 reste distinct.
 
@@ -80,3 +80,17 @@ répond en HTTPS 200. Le menu public a été chargé dans le navigateur de recet
 (`Reconnect_2026-10-12/visual_public_home_v20.png`). Utiliser le paramètre
 `?visual-v20` pour contourner un ancien index mis en cache. Le tunnel reste
 temporaire et dépend du Mac allumé.
+
+## Mise à jour du plateau — V21
+
+Les teintes des propriétés suivent maintenant leur famille réelle ; la lumière
+des cases au repos est abaissée. Build Unity205 assertions PASS. En recette
+locale 430×900, la case sélectionnable reste clairement visible et le choix
+réouvre le formulaire avec la propriété affichée. Captures et limites :
+`UI_Motion_2026-10-13/README.md`.
+
+Index public V21 identique au build et quatre ressources WebGL en HTTPS 200.
+Le dernier contrôle de chargement dans le navigateur public a été interrompu
+par l'arrêt de l'outil de navigateur ; la recette locale V21 a réussi. Utiliser
+`?visual-v21` pour contourner un ancien index en cache. Fluidité et netteté
+sur iPhone réel restent à confirmer.
