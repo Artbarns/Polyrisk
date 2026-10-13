@@ -68,16 +68,18 @@
     border-radius: 24px;
 }
 
-#HomeView .unity-scroll-view__vertical-scroller {
-    width: 8px;
+#HomeView .unity-scroller--vertical {
+    width: 10px;
+    min-width: 10px;
     background-color: rgba(7, 9, 14, 0.7);
 }
-#HomeView .unity-scroller__low-button,
-#HomeView .unity-scroller__high-button { display: none; }
-#HomeView .unity-slider__dragger,
-#HomeView .unity-scroller__slider {
+#HomeView .unity-scroller #unity-low-button,
+#HomeView .unity-scroller #unity-high-button { display: none; }
+#HomeView .unity-scroller #unity-tracker { background-color: rgba(39, 43, 53, 1); }
+#HomeView .unity-scroller #unity-dragger {
     background-color: rgba(120, 125, 145, 0.5);
     border-radius: 4px;
+    min-height: 24px;
 }
 #HomeView .unity-scroll-view__content-container > Button { flex-shrink: 0; }
 
