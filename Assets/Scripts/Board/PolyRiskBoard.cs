@@ -25,6 +25,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using PolyRisk.Core;
 using PolyRisk.Visuals;
 
 namespace PolyRisk
@@ -94,6 +95,7 @@ namespace PolyRisk
         const int SLOT_COUNT = 40;
         const int STATE_WIDTH = 64;      // puissance de 2, >= SLOT_COUNT
         const int TRIM_INDEX = 40;       // pixel réservé (hors 0..39) pour le liseré statique, jamais touché par SetTile/ResetTile
+        const float RESTING_LIGHT_SCALE = 0.22f;
 
         // ------------------------------------------------------------- modèle
         public struct Slot
@@ -122,6 +124,7 @@ namespace PolyRisk
 
         // Ancres Tile_N (B) — cachées ici pour BindToBoardManager sans re-scan
         readonly List<Transform> tileAnchors = new List<Transform>();
+        PolyRisk.Systems.BoardManager colorBoardManager;
 
         // ============================================================ runtime
 
@@ -185,7 +188,7 @@ namespace PolyRisk
             EnsureStateTexture();
             if (slots.Count == 0) BuildSlotModel();
             var s = slots[index];
-            statePixels[index] = WithAlpha(GroupColor(s.groupId), settings.emissiveIntensity);
+            statePixels[index] = WithAlpha(TileColor(s), RestingLightIntensity);
             MarkStateDirty();
         }
 
@@ -195,7 +198,7 @@ namespace PolyRisk
             EnsureStateTexture();
             if (slots.Count == 0) BuildSlotModel();
             foreach (var s in slots)
-                statePixels[s.index] = WithAlpha(GroupColor(s.groupId), settings.emissiveIntensity);
+                statePixels[s.index] = WithAlpha(TileColor(s), RestingLightIntensity);
             MarkStateDirty();
         }
 
@@ -218,6 +221,48 @@ namespace PolyRisk
         }
 
         static Color WithAlpha(Color c, float a) => new Color(c.r, c.g, c.b, a);
+
+        float RestingLightIntensity => settings.emissiveIntensity * RESTING_LIGHT_SCALE;
+
+        // The procedural slot pattern predates the property assets and does not
+        // follow their actual families. Read the same family identity that the
+        // inspector uses, without changing any tile data or rules.
+        Color TileColor(Slot slot)
+        {
+            if (colorBoardManager == null)
+                colorBoardManager = PolyRisk.Systems.BoardManager.Instance ??
+                                    FindObjectOfType<PolyRisk.Systems.BoardManager>();
+            var data = colorBoardManager?.tileDataList;
+            if (data != null)
+            {
+                foreach (var tile in data)
+                {
+                    if (tile == null || tile.TileIndex != slot.index) continue;
+                    if (tile is PropertyData property && property.FamilyData != null)
+                        return FamilyColor(property.FamilyData);
+                    break;
+                }
+            }
+            return GroupColor(slot.groupId);
+        }
+
+        static Color FamilyColor(FamilyData family)
+        {
+            // Matches the family icon palette in Theme.uss. Logistics is rank 0.
+            switch (family.PowerRank)
+            {
+                case 0: return new Color32(138, 143, 154, 255); // Logistics
+                case 1: return new Color32(59, 130, 246, 255);  // Real Estate
+                case 2: return new Color32(5, 223, 114, 255);   // Pharma
+                case 3: return new Color32(255, 71, 71, 255);   // Automobile
+                case 4: return new Color32(245, 158, 11, 255);  // Oil & Gas
+                case 5: return new Color32(255, 215, 0, 255);   // Luxe
+                case 6: return new Color32(0, 255, 255, 255);   // Tech
+                case 7: return new Color32(194, 122, 255, 255); // Aerospace
+                case 8: return new Color32(255, 71, 71, 255);   // Armement
+                default: return new Color32(138, 143, 154, 255);
+            }
+        }
 
         Color GroupColor(int groupId)
         {
@@ -407,7 +452,7 @@ namespace PolyRisk
             for (int i = 0; i < slots.Count; i++)
             {
                 var s = slots[i];
-                Color tint = GroupColor(s.groupId);
+                Color tint = TileColor(s);
 
                 if (s.isCorner)
                 {
@@ -680,4 +725,3 @@ namespace PolyRisk
         }
     }
 }
-
