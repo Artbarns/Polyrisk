@@ -239,6 +239,7 @@ namespace PolyRisk.UI
             while (remaining > 0)
             {
                 if (timerLabel != null) timerLabel.text = $"{remaining}s";
+                timerLabel?.EnableInClassList("auction-countdown--critical", remaining <= 5);
                 yield return new UnityEngine.WaitForSeconds(1f);
                 remaining--;
                 // Abort if the element was already dismissed manually
@@ -819,6 +820,7 @@ namespace PolyRisk.UI
                     var playerName = row.Q<Label>("Txt_PlayerName");
                     if (playerName != null && bid.bidder != null)
                         playerName.text = $"PLAYER {bid.bidder.PlayerId}";
+                    SetBidderAvatar(row, bid.bidder);
 
                     var propTag  = row.Q<VisualElement>("Tag_PropOffered");
                     var cashTag  = row.Q<VisualElement>("Tag_CashOffered");
@@ -901,6 +903,7 @@ namespace PolyRisk.UI
                     {
                         playerName.text = $"PLAYER {bid.bidder.PlayerId}";
                     }
+                    SetBidderAvatar(row, bid?.bidder);
 
                     var propTag = row.Q<VisualElement>("Tag_PropOffered");
                     var cashTag = row.Q<VisualElement>("Tag_CashOffered");
@@ -1021,6 +1024,15 @@ namespace PolyRisk.UI
             new Color(0.6f, 0.3f, 1f, 1f),    // violet  — P4
             new Color(1f, 0.85f, 0.1f, 1f),   // jaune   — P5
         };
+
+        private static void SetBidderAvatar(VisualElement row, PlayerModel bidder)
+        {
+            var avatar = row?.Q<VisualElement>("Icon_PlayerAvatar");
+            if (avatar == null || bidder == null) return;
+            avatar.style.backgroundColor = bidder.PlayerId >= 0
+                ? PlayerColors[bidder.PlayerId % PlayerColors.Length]
+                : Color.gray;
+        }
 
         private void ShowPlayerSelection(SanctionChoice choice)
         {

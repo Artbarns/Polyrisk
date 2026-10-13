@@ -603,6 +603,24 @@
     opacity: 0;
 }
 
+.auction-countdown {
+    align-self: center;
+    min-width: 64px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    background-color: rgba(255, 170, 0, 0.12);
+    color: #FFB547;
+    -unity-font: url("/Assets/UI/Fonts/Inter-700.ttf");
+    font-size: 18px;
+    -unity-text-align: middle-center;
+}
+
+.auction-countdown--critical {
+    background-color: rgba(255, 83, 83, 0.16);
+    color: #FF6868;
+}
+
 /* Fullscreen overlays (victory/bankruptcy) : fade global */
 .fullscreen-overlay {
     transition-property: opacity;
@@ -1068,6 +1086,33 @@
     justify-content: space-between;
 }
 
+.tender-review-actions {
+    flex-shrink: 0;
+    margin-top: 16px;
+}
+
+.ux-compact-height #Panel_Marketplace_TenderReview .marketplace-panel--expanded {
+    height: 92%;
+}
+
+.ux-compact-height #Panel_Marketplace_TenderReview .panel-content {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 0;
+    padding-bottom: 8px;
+}
+
+.ux-compact-height #Panel_Marketplace_TenderReview .scroll-list-container {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 0;
+    max-height: none;
+}
+
+.ux-compact-height #Panel_Marketplace_TenderReview .tender-review-actions {
+    margin-top: 8px;
+}
+
 .choice-column {
     flex-basis: 48%; /* Leaves 4% gap */
     flex-direction: column;
@@ -1473,7 +1518,7 @@
 }
 
 .avatar-stack {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     flex-shrink: 0;
 }
@@ -1481,15 +1526,17 @@
 .avatar-box {
     width: 36px;
     height: 36px;
-    border-radius: 10px;
+    border-radius: 18px;
     background-color: rgba(255, 100, 103, 0.2); /* Fallback */
-    margin-bottom: 4px;
 }
 
 .player-name {
     color: var(--color-text-white);
     font-size: 10px;
-    -unity-font-style: bold;
+    -unity-font: url("/Assets/UI/Fonts/Inter-600.ttf");
+    margin-left: 8px;
+    max-width: 88px;
+    white-space: normal;
 }
 
 .vertical-divider {
@@ -1505,6 +1552,7 @@
     flex-wrap: wrap;
     align-items: center;
     flex-grow: 1;
+    justify-content: flex-end;
 }
 
 /* Tag Offers */
@@ -1715,6 +1763,21 @@
     -unity-text-align: middle-center;
     white-space: normal;
     padding: 20px 12px;
+}
+
+#Panel_Marketplace_TenderReview .empty-state-label,
+#Panel_Marketplace_BidderSpectator .empty-state-label {
+    align-self: stretch;
+    min-height: 72px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 20px 16px;
+    border-width: 1px;
+    border-color: rgba(112, 119, 139, 0.4);
+    border-radius: 12px;
+    background-color: rgba(35, 39, 53, 0.76);
+    color: var(--color-text-muted);
+    -unity-font: url("/Assets/UI/Fonts/Inter-500.ttf");
 }
 
 /* ═══════════════════════════════════════════════════

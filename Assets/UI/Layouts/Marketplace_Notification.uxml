@@ -11,7 +11,7 @@
         <ui:Label name="Label_Title" text="AUCTION STARTED" style="color: #05DF72; -unity-font-style: bold; font-size: 16px; -unity-text-align: middle-center; margin-bottom: 8px;" />
         <ui:Label name="Label_Asset" text="[Seller Name] is selling [Asset]" style="color: white; font-size: 14px; -unity-text-align: middle-center; margin-bottom: 12px; white-space: normal;" />
         
-        <ui:Label name="Label_Timer" text="5s" style="color: #ffaa00; -unity-font-style: bold; font-size: 18px; -unity-text-align: middle-center; margin-bottom: 12px;" />
+        <ui:Label name="Label_Timer" text="5s" class="auction-countdown" />
         
         <ui:VisualElement style="flex-direction: row; justify-content: space-between;">
             <ui:Button name="Btn_Skip" text="SKIP" class="btn-standard" style="background-color: #444444; flex-grow: 1; margin-right: 4px;" />
