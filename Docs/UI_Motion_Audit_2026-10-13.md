@@ -36,6 +36,7 @@ Périmètre : présentation Unity/WebGL uniquement. Les références visuelles c
 
 - Vérifier l'existant avant d'ajouter des dépendances : glissière d'achat, surbrillance de sélection, trajet des pions, compteurs d'argent. Ajouter un réglage « Réduire les animations » qui désactive les déplacements/ressorts décoratifs tout en conservant le retour d'état nécessaire.
 - Toute nouvelle animation doit être évaluée sur WebGL mobile : coût de rendu, taille de build, lisibilité tactile et navigation clavier. Les bibliothèques tierces restent facultatives; la priorité est une implémentation légère et compatible Unity 2022.3.
+- **Audit ciblé après V40 :** `PawnMovement` anime déjà chaque segment avec un arc et le supprime en mode « Réduire les animations ». `TopHUDWidget` écrit directement CAPITAL et NET WORTH à chaque événement sans interpolation ; un animateur commun, limité à environ 20 mises à jour/s et interrompu si la cible change, évite deux coroutines ou une bibliothèque supplémentaire. Avantage : peu de code et aucun ajout au build ; limite : l'effet reste sobre et doit être mesuré dans le HUD WebGL. `ActionButtonsWidget` déclenche encore l'achat depuis un bouton, sans glissière ; cette interaction exige une validation tactile et clavier séparée avant remplacement.
 
 ## Ordre de réalisation
 
