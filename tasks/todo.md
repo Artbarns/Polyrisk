@@ -1,4 +1,19 @@
-# Current Task
+# Objectif global d’achèvement PolyRisk
+
+> Achever PolyRisk en construisant le multijoueur en ligne jusqu’à six joueurs, puis terminer la recette mobile/WebGL, les tests humains, l’équilibrage et les finitions de publication.
+
+Cette phrase est l’objectif de référence du projet. Le suivi détaillé ci-dessous documente le travail, mais ne remplace pas les jalons de clôture. L’objectif Codex associé est actuellement marqué « bloqué » dans l’application ; ce fichier garde un état de travail distinct et ne modifie pas ce statut.
+
+- [x] Base du multijoueur en ligne jusqu’à six sièges et recette navigateur documentées (`Docs/Multiplayer_foundation_2026-10-04.md`, `Docs/Validation/Reconnect_2026-10-12/`).
+- [ ] Partie complète avec de vrais amis : recette humaine, incidents observés, liste des correctifs et validation après correctifs.
+- [ ] Recette finale sur appareils mobiles et WebGL, notamment iPhone 14 Pro Max, performances, netteté, orientation et reprise de partie.
+- [ ] Équilibrage final de l’économie et validation du plaisir de jeu avec des joueurs humains.
+- [ ] Finir l’UI/UX et les interactions visuelles, contrôler les panneaux et enchaînements face au mockup, profiler et préparer la publication.
+- [ ] Construire et vérifier les livrables de publication après clôture des jalons précédents.
+
+# Journal de travail et tâches détaillées
+
+## Banc de stress IA ×1000 — tâche historique
 
 Stress test IA x1000 parties. Plan complet :
 [wondrous-discovering-teacup.md](/Users/arthurbarreau/.claude/plans/wondrous-discovering-teacup.md)
@@ -571,7 +586,9 @@ Périmètre strict : présentation et interactions uniquement ; aucune règle, d
 - [x] V44 — overlay des icônes de famille et du rendement sur les propriétés : réutilise `TileIconResolver`, le ratio Rent/Price de l’inspecteur et les ancres projetées dans l’UI Toolkit. Le build WebGL a été vérifié en portrait 430×900 et en paysage 900×430 ; aucun mesh, matériau ou Canvas n’est ajouté. Le coût de rendu des éléments UI n’est pas profilé. Les hubs dont le loyer de base est nul affichent 0 % conformément aux données. Reste la recette de lisibilité et performance sur iPhone réel.
 - [x] Plateau : icônes sectorielles, rendement de base et couleur de famille issue des données affichés sur les propriétés ; les cases spéciales gardent leur glyphe dédié. La recette du cadrage complet en sélection Marketplace et l’observation des zones visibles restent distinctes.
 - [x] Plateau V21 : couleur des propriétés liée à leur vraie famille (17/26 écarts de l'ancien motif corrigés) ; lumière au repos abaissée, sélection Marketplace toujours visible et cliquable en portrait. Build 205 assertions PASS ; capture locale conservée.
-- [ ] Plateau : limiter glow/pulse aux cases d'arrivée et sélectionnables ; profondeur légère sous pions et bâtiments, sans bloom coûteux.
+- [x] Plateau — intensité au repos réduite en V21, cases admissibles seules en pulse et autres accents atténués pendant la sélection Marketplace en V43 ; aucune lueur forte permanente visible sur le build V44.
+- [x] V45 audit de profondeur : le prefab du pion et les meshes de plateau autorisent déjà le shadow casting ; aucune géométrie ni draw call supplémentaire nécessaire sur les profils qui rendent les ombres.
+- [ ] Ombres visuellement garanties sur tous les profils : Low/Very Low désactivent les ombres URP ; comparer les profils et mesurer l’impact mobile avant de changer le preset ou d’ajouter une ombre factice.
 - [ ] HUD : hiérarchie typographique, espacements 8 pt, CAPITAL/NET WORTH/TURN/MARKET sur une ligne, couleurs sémantiques et séparateurs discrets.
 - [x] Typographie V35 : Inter existant appliqué au menu et aux libellés/valeurs du HUD ; titre droit, gras et lisible, quatre indicateurs HUD sans débordement à 430 × 900. Build WebGL et 205 assertions PASS, +132 Kio sur V31, HTTPS chargé en navigateur. La comparaison au mockup et la typographie des autres panneaux restent ouvertes.
 - [x] Overlays debug release : le build WebGL public utilise `BuildOptions.None` ; F1/F2, F5–F8 et F9 n'affichent leur OnGUI que dans l'éditeur, et les raccourcis de showcase sont compilés seulement pour Editor/Development. V24 publique ne montrait aucun overlay.
