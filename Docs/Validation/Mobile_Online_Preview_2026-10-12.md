@@ -108,3 +108,21 @@ Le dernier contrôle de chargement dans le navigateur public a été interrompu
 par l'arrêt de l'outil de navigateur ; la recette locale V21 a réussi. Utiliser
 `?visual-v21` pour contourner un ancien index en cache. Fluidité et netteté
 sur iPhone réel restent à confirmer.
+
+## Recette deux clients WebGL — 14 octobre 2026
+
+Dans le build public V44, deux instances Unity WebGL avec stockages navigateur
+indépendants ont rejoint le salon `KPM6A7`, lancé une partie et joué à tour de
+rôle. L'hôte a acheté Pfizer-BioTech puis Hydrogen Speedways ; l'invité a acheté
+Fentanyl Labs. Les activités, propriétaires et soldes ont été publiés dans le
+même état serveur : Pfizer-BioTech et Hydrogen Speedways au siège hôte (15 300 $),
+Fentanyl Labs au siège invité (16 700 $), version d'état 8, séquence 5 acquittée,
+aucune commande en attente. Après rechargement de sa page, l'invité a retrouvé
+la partie et son tour sans ressaisir le code.
+
+Ce résultat valide le flux de base entre deux clients WebGL et la reprise après
+rechargement dans ces navigateurs de recette. Les deux clients étaient pilotés
+en QA sur le même poste : cela ne valide ni six personnes/appareils simultanés,
+ni Safari/iPhone, ni une partie complète, ni les parcours Marketplace/OPA et les
+pouvoirs de famille avec des joueurs humains. Le lien de préversion reste
+temporaire et dépend du Mac hôte.
