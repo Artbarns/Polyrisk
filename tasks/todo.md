@@ -568,7 +568,8 @@ Périmètre strict : présentation et interactions uniquement ; aucune règle, d
 
 - [x] Identifier la cause principale du flou WebGL mobile : template forçait `devicePixelRatio = 1` ; V20 adapte la densité avec plafond 2 et budget 2,4 millions de pixels. Build et calcul vérifiés.
 - [ ] Mesurer la netteté, la cadence et la chauffe sur iPhone 14 Pro Max réel avec V20 ; ajuster le plafond si nécessaire, comparer la taille CSS et le buffer de rendu.
-- [ ] Plateau : icône sectorielle cohérente, rendement réel de chaque propriété, couleur de famille issue des données ; vérifier le mapping des 40 cases et la lisibilité en portrait/paysage.
+- [x] V44 — overlay des icônes de famille et du rendement sur les propriétés : réutilise `TileIconResolver`, le ratio Rent/Price de l’inspecteur et les ancres projetées dans l’UI Toolkit. Le build WebGL a été vérifié en portrait 430×900 et en paysage 900×430 ; aucun mesh, matériau ou Canvas n’est ajouté. Le coût de rendu des éléments UI n’est pas profilé. Les hubs dont le loyer de base est nul affichent 0 % conformément aux données. Reste la recette de lisibilité et performance sur iPhone réel.
+- [x] Plateau : icônes sectorielles, rendement de base et couleur de famille issue des données affichés sur les propriétés ; les cases spéciales gardent leur glyphe dédié. La recette du cadrage complet en sélection Marketplace et l’observation des zones visibles restent distinctes.
 - [x] Plateau V21 : couleur des propriétés liée à leur vraie famille (17/26 écarts de l'ancien motif corrigés) ; lumière au repos abaissée, sélection Marketplace toujours visible et cliquable en portrait. Build 205 assertions PASS ; capture locale conservée.
 - [ ] Plateau : limiter glow/pulse aux cases d'arrivée et sélectionnables ; profondeur légère sous pions et bâtiments, sans bloom coûteux.
 - [ ] HUD : hiérarchie typographique, espacements 8 pt, CAPITAL/NET WORTH/TURN/MARKET sur une ligne, couleurs sémantiques et séparateurs discrets.

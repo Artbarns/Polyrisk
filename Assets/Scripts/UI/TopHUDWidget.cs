@@ -84,6 +84,7 @@ namespace PolyRisk.UI
                 topHudTemplate.CloneTree(root);
 
             UIUXRuntime.PrepareRoot(root);
+            BoardTileOverlayWidget.Mount(root);
             root.RegisterCallback<GeometryChangedEvent>(_ => TrimActivityRows());
 
             lblCapital  = root.Q<Label>("Lbl_Capital");

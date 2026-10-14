@@ -1,11 +1,16 @@
 # Préversion mobile en ligne — 12 octobre 2026
 
-Lien actif de recette au 14 octobre (V43) : https://tom-hired-dover-impression.trycloudflare.com/?visual-v43
+Lien actif de recette au 14 octobre (V44) : https://tom-hired-dover-impression.trycloudflare.com/?visual-v44
 
 Build V41 depuis le 14 octobre, serveur statique et relais API sur 8900, API de recette 5091. Le tunnel HTTPS de recette est temporaire et nécessite que ce Mac reste allumé. L'index et le loader correspondent octet pour octet au build ; les trois ressources Unity compressées correspondent après décompression HTTP. Les cinq URLs répondent 200 et le menu public a chargé à 430 × 900. La revue d'offres à six sièges et les compteurs HUD ont été contrôlés en local ; le lien public n'est pas une preuve de partie humaine réelle ni de cadence sur iPhone.
 Le smoke test `smoke_test.py` sur cette nouvelle origine HTTPS passe avec six joueurs (salon A33BXU, version 13, état de partie version 1). Ce test de protocole ne remplace pas une partie humaine sur six appareils.
 Tunnel temporaire : le Mac et les processus doivent rester allumés. Le lien
 mobile historique sur 8765 reste distinct.
+
+V44 du 14 octobre : glyphes de famille et rendement sur le board. Build WebGL
+PASS ; Economy 106 + Mechanics 99 assertions PASS. Le menu et le board ont été
+observés dans le navigateur à 430×900 et 900×430. Recharger avec `?visual-v44`.
+La mesure sur iPhone 14 Pro Max reste à faire.
 
 Chaque joueur ouvre ce lien sur son propre appareil et choisit un pseudo unique.
 Un joueur crée le salon et partage le code ; les autres le rejoignent. Tous
