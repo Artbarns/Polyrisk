@@ -2,9 +2,10 @@
 
 > Achever PolyRisk en construisant le multijoueur en ligne jusqu’à six joueurs, puis terminer la recette mobile/WebGL, les tests humains, l’équilibrage et les finitions de publication.
 
-Cette phrase est l’objectif de référence du projet. Le suivi détaillé ci-dessous documente le travail, mais ne remplace pas les jalons de clôture. L’objectif Codex associé est actuellement marqué « bloqué » dans l’application ; ce fichier garde un état de travail distinct et ne modifie pas ce statut.
+Cette phrase est l’objectif de référence du projet. Le suivi détaillé ci-dessous documente le travail, mais ne remplace pas les jalons de clôture. L’objectif Codex associé est actif ; son état et cette todo restent deux suivis distincts.
 
 - [x] Base du multijoueur en ligne jusqu’à six sièges ; smoke test public six joueurs et démarrage protocole PASS (`Docs/Multiplayer_foundation_2026-10-04.md`, `Docs/Validation/Reconnect_2026-10-12/`, rapport préversion ci-dessous).
+- [x] Serveur lobby actuel : test de redémarrage isolé PASS, identifiants hachés, file de commandes et état de partie restaurés (`Server/PolyRisk.LobbyServer/persistence_test.py`).
 - [ ] Partie complète avec de vrais amis : recette humaine, incidents observés, liste des correctifs et validation après correctifs.
 - [x] Relancer la préversion publique V44 ; le tunnel HTTPS et les services de recette répondent à nouveau. Le lien est temporaire et dépend du Mac hôte.
 - [ ] Recette finale sur appareils mobiles et WebGL, notamment iPhone 14 Pro Max, performances, netteté, orientation et reprise de partie.
