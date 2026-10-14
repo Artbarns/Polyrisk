@@ -6,6 +6,7 @@ Cette phrase est l’objectif de référence du projet. Le suivi détaillé ci-d
 
 - [x] Base du multijoueur en ligne jusqu’à six sièges et recette navigateur documentées (`Docs/Multiplayer_foundation_2026-10-04.md`, `Docs/Validation/Reconnect_2026-10-12/`).
 - [ ] Partie complète avec de vrais amis : recette humaine, incidents observés, liste des correctifs et validation après correctifs.
+- [ ] Relancer la préversion publique de recette : le tunnel temporaire V44 renvoie Cloudflare Error 1033 et son processus local est arrêté.
 - [ ] Recette finale sur appareils mobiles et WebGL, notamment iPhone 14 Pro Max, performances, netteté, orientation et reprise de partie.
 - [ ] Équilibrage final de l’économie et validation du plaisir de jeu avec des joueurs humains.
 - [ ] Finir l’UI/UX et les interactions visuelles, contrôler les panneaux et enchaînements face au mockup, profiler et préparer la publication.
