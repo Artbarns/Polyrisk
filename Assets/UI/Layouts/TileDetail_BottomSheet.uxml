@@ -40,6 +40,12 @@
 
                 <ui:VisualElement class="tile-action-row">
                     <ui:Button name="Btn_Primary" text="—" class="btn-standard tile-action-btn tile-action-btn--primary" />
+                    <ui:VisualElement name="Slider_Buy" class="buy-slide-track tile-action-btn tile-action-btn--primary" style="display: none;">
+                        <ui:Label name="Lbl_BuySlide" text="SLIDE TO BUY" class="buy-slide-label" />
+                        <ui:VisualElement name="Handle_BuySlide" class="buy-slide-handle">
+                            <ui:Label text="››" class="buy-slide-chevron" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
                     <ui:Button name="Btn_Secondary" text="—" class="btn-secondary tile-action-btn" />
                 </ui:VisualElement>
 

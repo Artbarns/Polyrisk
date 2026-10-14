@@ -1428,6 +1428,49 @@
     color: var(--color-text-muted);
 }
 
+/* Purchase confirmation: only the thumb moves, avoiding whole-Canvas rebuilds. */
+#Panel_TileDetail .buy-slide-track {
+    position: relative;
+    height: 48px;
+    min-height: 48px;
+    background-color: rgba(9, 54, 37, 0.92);
+    border-width: 1px;
+    border-color: rgba(46, 184, 114, 0.7);
+    border-radius: 24px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+#Panel_TileDetail .buy-slide-label {
+    color: #d8fbe7;
+    font-size: 11px;
+    -unity-font: url("/Assets/UI/Fonts/Inter-700.ttf");
+    letter-spacing: 0.5px;
+    margin-left: 38px;
+    -unity-text-align: middle-center;
+}
+#Panel_TileDetail .buy-slide-handle {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #35dd89;
+    align-items: center;
+    justify-content: center;
+}
+#Panel_TileDetail .buy-slide-chevron {
+    color: #07351e;
+    font-size: 19px;
+    -unity-font: url("/Assets/UI/Fonts/Inter-700.ttf");
+    -unity-text-align: middle-center;
+}
+#Panel_TileDetail .buy-slide-track:focus {
+    border-width: 2px;
+    border-color: var(--color-neon-cyan);
+}
+
 .marketplace-panel--selection {
     max-height: 112px;
     min-height: 88px;

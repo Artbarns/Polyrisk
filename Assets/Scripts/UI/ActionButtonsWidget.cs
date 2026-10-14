@@ -40,6 +40,13 @@ namespace PolyRisk.UI
 
         // Refs UI Toolkit résolues une fois au Start
         private Button btnPrimary, btnSecondary;
+        private VisualElement buySlideTrack, buySlideHandle;
+        private Label buySlideLabel;
+        private bool buySlideDragging;
+        private int buySlidePointerId = -1;
+        private float buySlideStartX;
+        private float buySlideProgress;
+        private bool lastReducedMotion;
         private Label lblTileName, lblTileFamily, lblTileRent, lblTileLevel, lblTileYield;
         private VisualElement containerTileLevel, iconTileFamily;
 
@@ -55,6 +62,7 @@ namespace PolyRisk.UI
 
         private void OnDisable()
         {
+            ResetBuySlide();
             GameEvents.OnTileSelected -= OnTileSelected;
             GameEvents.OnTurnStarted -= OnTurnStarted;
         }
@@ -129,6 +137,23 @@ namespace PolyRisk.UI
 
             btnPrimary = root.Q<Button>("Btn_Primary");
             btnSecondary = root.Q<Button>("Btn_Secondary");
+            buySlideTrack = root.Q<VisualElement>("Slider_Buy");
+            buySlideHandle = root.Q<VisualElement>("Handle_BuySlide");
+            buySlideLabel = root.Q<Label>("Lbl_BuySlide");
+            if (buySlideTrack != null)
+            {
+                buySlideTrack.focusable = true;
+                buySlideTrack.tooltip = "Slide right to buy. Press Enter or Space with a keyboard.";
+                buySlideTrack.RegisterCallback<KeyDownEvent>(OnBuySlideKeyDown);
+            }
+            if (buySlideHandle != null)
+            {
+                buySlideHandle.RegisterCallback<PointerDownEvent>(OnBuySlidePointerDown);
+                buySlideHandle.RegisterCallback<PointerMoveEvent>(OnBuySlidePointerMove);
+                buySlideHandle.RegisterCallback<PointerUpEvent>(OnBuySlidePointerUp);
+                buySlideHandle.RegisterCallback<PointerCaptureOutEvent>(_ => ResetBuySlide());
+            }
+            lastReducedMotion = UIUXRuntime.ReducedMotion;
             lblTileName = root.Q<Label>("Lbl_TileName");
             lblTileFamily = root.Q<Label>("Lbl_TileFamily");
             lblTileRent = root.Q<Label>("Lbl_TileRent");
@@ -377,6 +402,11 @@ namespace PolyRisk.UI
         private void Update()
         {
             if (turnManager == null) return;
+            if (lastReducedMotion != UIUXRuntime.ReducedMotion)
+            {
+                lastReducedMotion = UIUXRuntime.ReducedMotion;
+                UpdateButtonsState(currentSelectedTile, turnManager.CurrentPlayer);
+            }
             if (turnManager.CurrentState != lastObservedState)
             {
                 lastObservedState = turnManager.CurrentState;
@@ -561,8 +591,81 @@ namespace PolyRisk.UI
         private void SetPrimaryButtonState(string label, bool interactable)
         {
             if (btnPrimary == null) return;
+            bool isPurchase = interactable && label.StartsWith("BUY (")
+                && turnManager != null && turnManager.CurrentState == TurnManager.TurnState.ResolveTile
+                && currentSelectedTile != null && currentSelectedTile.Type == TileType.Property;
+            bool showSlide = isPurchase && !UIUXRuntime.ReducedMotion && buySlideTrack != null && buySlideHandle != null;
+            if (buySlideTrack != null)
+            {
+                if (!showSlide) ResetBuySlide();
+                buySlideTrack.style.display = showSlide ? DisplayStyle.Flex : DisplayStyle.None;
+            }
+            btnPrimary.style.display = showSlide ? DisplayStyle.None : DisplayStyle.Flex;
+            if (showSlide && buySlideLabel != null)
+                buySlideLabel.text = "SLIDE TO BUY " + label.Substring(4);
             btnPrimary.text = label;
             btnPrimary.SetEnabled(interactable);
+        }
+
+        private void OnBuySlideKeyDown(KeyDownEvent evt)
+        {
+            if (evt.keyCode != KeyCode.Return && evt.keyCode != KeyCode.KeypadEnter && evt.keyCode != KeyCode.Space) return;
+            if (buySlideTrack == null || buySlideTrack.resolvedStyle.display == DisplayStyle.None) return;
+            evt.StopPropagation();
+            CompleteBuySlide();
+        }
+
+        private void OnBuySlidePointerDown(PointerDownEvent evt)
+        {
+            if (evt.button != 0 || buySlideTrack == null || buySlideTrack.resolvedStyle.display == DisplayStyle.None) return;
+            buySlideDragging = true;
+            buySlidePointerId = evt.pointerId;
+            buySlideStartX = evt.position.x;
+            buySlideProgress = 0f;
+            buySlideHandle.CapturePointer(evt.pointerId);
+            evt.StopPropagation();
+        }
+
+        private void OnBuySlidePointerMove(PointerMoveEvent evt)
+        {
+            if (!buySlideDragging || evt.pointerId != buySlidePointerId) return;
+            float distance = Mathf.Max(1f, buySlideTrack.resolvedStyle.width - buySlideHandle.resolvedStyle.width - 6f);
+            // A short dead zone gives the thumb slight initial resistance.
+            buySlideProgress = Mathf.Clamp01((evt.position.x - buySlideStartX - 8f) / distance);
+            buySlideHandle.style.left = 3f + buySlideProgress * distance;
+            evt.StopPropagation();
+        }
+
+        private void OnBuySlidePointerUp(PointerUpEvent evt)
+        {
+            if (!buySlideDragging || evt.pointerId != buySlidePointerId) return;
+            bool confirmed = buySlideProgress >= 0.9f;
+            buySlideHandle.ReleasePointer(evt.pointerId);
+            ResetBuySlide();
+            evt.StopPropagation();
+            if (confirmed) CompleteBuySlide();
+        }
+
+        private void CompleteBuySlide()
+        {
+            if (buySlideTrack == null || buySlideTrack.resolvedStyle.display == DisplayStyle.None) return;
+            buySlideTrack.SetEnabled(false);
+            if (buySlideLabel != null) buySlideLabel.text = "PURCHASE REQUESTED ✓";
+            OnPrimaryClicked();
+            // A rejected online command must not leave the control permanently inert.
+            buySlideTrack.schedule.Execute(() =>
+            {
+                if (buySlideTrack != null) buySlideTrack.SetEnabled(true);
+            }).StartingIn(700);
+        }
+
+        private void ResetBuySlide()
+        {
+            buySlideDragging = false;
+            buySlidePointerId = -1;
+            buySlideProgress = 0f;
+            if (buySlideHandle != null) buySlideHandle.style.left = 3f;
+            buySlideTrack?.SetEnabled(true);
         }
 
         private void SetSecondaryButtonState(string label, bool interactable)
