@@ -120,6 +120,9 @@ namespace PolyRisk
         Texture2D stateTex;
         Color[] statePixels;
         bool stateDirty;                 // Correction 4 : batching
+        readonly Color[] selectionFocusOriginal = new Color[SLOT_COUNT];
+        readonly bool[] selectionFocusEligible = new bool[SLOT_COUNT];
+        bool selectionFocusActive;
         float outerExtent;
 
         // Ancres Tile_N (B) — cachées ici pour BindToBoardManager sans re-scan
@@ -199,6 +202,50 @@ namespace PolyRisk
             if (slots.Count == 0) BuildSlotModel();
             foreach (var s in slots)
                 statePixels[s.index] = WithAlpha(TileColor(s), RestingLightIntensity);
+            selectionFocusActive = false;
+            System.Array.Clear(selectionFocusEligible, 0, selectionFocusEligible.Length);
+            MarkStateDirty();
+        }
+
+        /// <summary>
+        /// Mute the non-selectable tile accents for a board-targeting UI flow.
+        /// The snapshot lets us restore the exact previous visual state without
+        /// touching eligible tiles whose highlight/pulse may still be changing.
+        /// </summary>
+        public void SetSelectionFocus(IEnumerable<int> eligibleTileIndices)
+        {
+            EnsureStateTexture();
+            if (selectionFocusActive) ClearSelectionFocus();
+            System.Array.Clear(selectionFocusEligible, 0, selectionFocusEligible.Length);
+            if (eligibleTileIndices != null)
+            {
+                foreach (int index in eligibleTileIndices)
+                    if (index >= 0 && index < SLOT_COUNT) selectionFocusEligible[index] = true;
+            }
+
+            for (int i = 0; i < SLOT_COUNT; i++)
+            {
+                selectionFocusOriginal[i] = statePixels[i];
+                if (selectionFocusEligible[i]) continue;
+
+                Color source = statePixels[i];
+                float luminance = source.r * 0.2126f + source.g * 0.7152f + source.b * 0.0722f;
+                Color neutral = new Color(luminance, luminance, luminance, source.a * 0.38f);
+                statePixels[i] = Color.Lerp(source, neutral, 0.68f);
+                statePixels[i].a = source.a * 0.38f;
+            }
+            selectionFocusActive = true;
+            MarkStateDirty();
+        }
+
+        /// <summary>Restore muted accents while keeping current eligible highlights intact.</summary>
+        public void ClearSelectionFocus()
+        {
+            if (!selectionFocusActive || statePixels == null) return;
+            for (int i = 0; i < SLOT_COUNT; i++)
+                if (!selectionFocusEligible[i]) statePixels[i] = selectionFocusOriginal[i];
+            selectionFocusActive = false;
+            System.Array.Clear(selectionFocusEligible, 0, selectionFocusEligible.Length);
             MarkStateDirty();
         }
 

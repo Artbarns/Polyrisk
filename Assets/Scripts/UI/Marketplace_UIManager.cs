@@ -414,7 +414,7 @@ namespace PolyRisk.UI
             // Bind Navigation to Tender Init
             Button btnInitiateTender = root.Q<Button>("Btn_InitiateTender");
             if (btnInitiateTender == null) btnInitiateTender = root.Q<Button>("Btn_GoTenders"); // Fallback
-            
+
             if (btnInitiateTender != null)
             {
                 btnInitiateTender.clicked += ShowTenderInit;
@@ -423,7 +423,7 @@ namespace PolyRisk.UI
             {
                 Debug.LogError("[Marketplace] Button 'Call for Tenders' (Btn_GoTenders) NOT FOUND in Main Hub UI!");
             }
-            
+
             // Optional: Bind Navigation to Tender Review
             Button btnTenderReview = root.Q<Button>("Btn_ReviewTenders");
             if (btnTenderReview != null)
@@ -527,6 +527,7 @@ namespace PolyRisk.UI
                 HighlightOwnedProperties(GetCyan());
             else if (context == SelectionContext.SanctionTarget)
                 HighlightTargetableProperties();
+            ApplyBoardSelectionFocus();
         }
 
         private void ExitSelectionMode(bool clearTenderSelection)
@@ -681,7 +682,29 @@ namespace PolyRisk.UI
             }
         }
 
- 
+
+
+        public bool IsTileEligibleForCurrentSelection(PropertyData tile)
+        {
+            if (tile == null || turnManager == null) return false;
+            PlayerModel currentPlayer = selectionContext == SelectionContext.BidProperty
+                ? GetLocalPlayer() : turnManager.CurrentPlayer;
+            if (currentPlayer == null) return false;
+
+            if (selectionContext == SelectionContext.TenderProperty ||
+                selectionContext == SelectionContext.BidProperty)
+                return currentPlayer.OwnedProperties.Contains(tile);
+
+            if (selectionContext == SelectionContext.SanctionTarget)
+            {
+                PlayerModel owner = turnManager.GetOwnerOfProperty(tile);
+                return owner != null && owner.PlayerId != currentPlayer.PlayerId;
+            }
+
+            return false;
+        }
+
+
 
         private void BindCommonCloseButton()
         {
@@ -876,8 +899,8 @@ namespace PolyRisk.UI
 
             selectedBid = null;
             selectedBidIndex = -1;
-            currentDisplayedBids = marketplaceSystem != null ? 
-                marketplaceSystem.ActiveBids.Values.Where(b => b != null).ToList() : 
+            currentDisplayedBids = marketplaceSystem != null ?
+                marketplaceSystem.ActiveBids.Values.Where(b => b != null).ToList() :
                 new List<MarketplaceSystem.TenderBid>();
 
             ScrollView bidList = root.Q<ScrollView>("Container_BidList");
@@ -1420,6 +1443,22 @@ namespace PolyRisk.UI
         private void SetSelectionMode(bool enabled)
         {
             if (turnManager != null) turnManager.IsInSelectionMode = enabled;
+            if (!enabled) FindObjectOfType<PolyRisk.PolyRiskBoard>()?.ClearSelectionFocus();
+        }
+
+        private void ApplyBoardSelectionFocus()
+        {
+            var board = BoardManager.Instance;
+            var visualBoard = FindObjectOfType<PolyRisk.PolyRiskBoard>();
+            if (board == null || visualBoard == null) return;
+
+            var eligibleTileIndices = new List<int>();
+            foreach (var tile in board.Tiles)
+            {
+                if (tile?.Data is PropertyData property && IsTileEligibleForCurrentSelection(property))
+                    eligibleTileIndices.Add(tile.TileIndex);
+            }
+            visualBoard.SetSelectionFocus(eligibleTileIndices);
         }
 
         private void StopPulses(bool resetToOriginal)
