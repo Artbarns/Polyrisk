@@ -441,7 +441,8 @@ Architecture et limites : `Docs/Multiplayer_foundation_2026-10-04.md`.
 - [x] Raccorder les styles et la capacité mobile à la classe existante `ux-narrow`, et réduire la pile lors du redimensionnement.
 - [x] Recetter le build final en 1280×720 et 430×840 : achat et passage côte à côte sur desktop ; passage conservé lors du tour suivant sur mobile ; aucune erreur navigateur.
 - [ ] Compléter les cas limites : rotation avec deux notifications encore actives et noms de joueurs très longs.
-- [ ] Vérifier la visibilité effective des achats/passages sur deux clients puis six ; le journal partagé existe, mais cette recette reste nécessaire.
+- [x] Vérifier la visibilité effective des achats sur deux clients WebGL indépendants ; synchronisation des trois achats et reprise de l'invité après rechargement consignées dans `Docs/Validation/Mobile_Online_Preview_2026-10-12.md`.
+- [ ] Vérifier la visibilité des achats/passages à six vrais clients simultanés ; la recette à six sièges via protocole ne confirme pas encore cet affichage sur six interfaces.
 
 Les builds précédents ont réussi et la régression mécanique précédente compte 76 assertions.
 Cela ne prouve pas la lisibilité de la dernière disposition : le premier essai a montré
