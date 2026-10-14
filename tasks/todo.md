@@ -4,9 +4,9 @@
 
 Cette phrase est l’objectif de référence du projet. Le suivi détaillé ci-dessous documente le travail, mais ne remplace pas les jalons de clôture. L’objectif Codex associé est actuellement marqué « bloqué » dans l’application ; ce fichier garde un état de travail distinct et ne modifie pas ce statut.
 
-- [x] Base du multijoueur en ligne jusqu’à six sièges et recette navigateur documentées (`Docs/Multiplayer_foundation_2026-10-04.md`, `Docs/Validation/Reconnect_2026-10-12/`).
+- [x] Base du multijoueur en ligne jusqu’à six sièges ; smoke test public six joueurs et démarrage protocole PASS (`Docs/Multiplayer_foundation_2026-10-04.md`, `Docs/Validation/Reconnect_2026-10-12/`, rapport préversion ci-dessous).
 - [ ] Partie complète avec de vrais amis : recette humaine, incidents observés, liste des correctifs et validation après correctifs.
-- [ ] Relancer la préversion publique de recette : le tunnel temporaire V44 renvoie Cloudflare Error 1033 et son processus local est arrêté.
+- [x] Relancer la préversion publique V44 ; le tunnel HTTPS et les services de recette répondent à nouveau. Le lien est temporaire et dépend du Mac hôte.
 - [ ] Recette finale sur appareils mobiles et WebGL, notamment iPhone 14 Pro Max, performances, netteté, orientation et reprise de partie.
 - [ ] Équilibrage final de l’économie et validation du plaisir de jeu avec des joueurs humains.
 - [ ] Finir l’UI/UX et les interactions visuelles, contrôler les panneaux et enchaînements face au mockup, profiler et préparer la publication.
