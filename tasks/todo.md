@@ -4,7 +4,7 @@
 
 Cette phrase est l’objectif de référence du projet. Le suivi détaillé ci-dessous documente le travail, mais ne remplace pas les jalons de clôture. L’objectif Codex associé est actif ; son état et cette todo restent deux suivis distincts.
 
-- [x] Base du multijoueur en ligne jusqu’à six sièges ; smoke test public six joueurs et démarrage protocole PASS (`Docs/Multiplayer_foundation_2026-10-04.md`, `Docs/Validation/Reconnect_2026-10-12/`, rapport préversion ci-dessous).
+- [x] Base du multijoueur en ligne jusqu’à six sièges ; smoke test public six joueurs et démarrage protocole PASS. Le client WebGL hôte a aussi lancé un lobby 6/6, effectué le premier lancer et acheté une propriété ; snapshot public cohérent (six joueurs, joueur 0 à 17 000 $, tour 2, version 3, séquence acquittée 2). L’action du siège 2 attend encore un vrai client navigateur séparé (`Docs/Validation/Mobile_Online_Preview_2026-10-12.md`).
 - [x] Serveur lobby actuel : test de redémarrage isolé PASS, identifiants hachés, file de commandes et état de partie restaurés (`Server/PolyRisk.LobbyServer/persistence_test.py`).
 - [ ] Partie complète avec de vrais amis : recette humaine, incidents observés, liste des correctifs et validation après correctifs.
 - [x] Relancer la préversion publique V44 ; le tunnel HTTPS et les services de recette répondent à nouveau. Le lien est temporaire et dépend du Mac hôte.
