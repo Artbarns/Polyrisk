@@ -1128,6 +1128,26 @@
     flex-direction: column;
 }
 
+#Panel_Marketplace_Sanctions #Container_SanctionsList .unity-scroll-view__vertical-scroller {
+    width: 8px;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+#Panel_Marketplace_Sanctions #Container_SanctionsList .unity-scroller__low-button,
+#Panel_Marketplace_Sanctions #Container_SanctionsList .unity-scroller__high-button {
+    display: none;
+}
+
+#Panel_Marketplace_Sanctions #Container_SanctionsList .unity-scroller__slider {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+#Panel_Marketplace_Sanctions #Container_SanctionsList .unity-base-slider__dragger {
+    background-color: rgba(194, 122, 255, 0.56);
+    border-radius: 4px;
+}
+
 /* Choice Cards (Standard) */
 .card-choice {
     width: 100%;

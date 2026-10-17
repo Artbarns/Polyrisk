@@ -21,7 +21,9 @@
                 <ui:Label text="HOSTILE SANCTIONS" class="panel-header-title" />
 
                 <!-- VisualElement (pas ScrollView) — évite la capture des clicks par le scroll -->
-                <ui:VisualElement name="Container_SanctionsList" style="flex-direction: column;">
+                <ui:ScrollView name="Container_SanctionsList" class="scroll-list-container"
+                    mode="Vertical" horizontal-scroller-visibility="Hidden"
+                    vertical-scroller-visibility="Auto" style="max-height: 340px;">
 
                     <!-- S1. EMBARGO -->
                     <ui:Button class="card-sanction-item clickable" name="Btn_SanctionEmbargo"
@@ -34,7 +36,7 @@
                         </ui:VisualElement>
                         <ui:VisualElement class="text-stack" picking-mode="Ignore">
                             <ui:Label text="EMBARGO COMMERCIAL" class="sanction-title" picking-mode="Ignore" />
-                            <ui:Label text="Cost: 1.5 × Sgo" class="sanction-cost" picking-mode="Ignore" />
+                            <ui:Label text="Cost: 5 × Sgo" class="sanction-cost" picking-mode="Ignore" />
                             <ui:Label text="Target property: no rent for 3 turns." class="sanction-effect" picking-mode="Ignore" />
                         </ui:VisualElement>
                     </ui:Button>
@@ -84,7 +86,7 @@
                         </ui:VisualElement>
                     </ui:Button>
 
-                </ui:VisualElement>
+                </ui:ScrollView>
 
                 <!-- Barre de confirmation (affichée par code après sélection target via board) -->
                 <ui:VisualElement name="Container_SanctionConfirm"
