@@ -1,0 +1,385 @@
+ M .gitignore
+ M Assets/Editor/PolyRiskLightingSetup.cs
+ M Assets/Scenes/SampleScene.unity
+ M Assets/Scripts/Board/PolyRiskBoard.cs
+ M Assets/Scripts/Core/GameEvents.cs
+ M Assets/Scripts/Core/PlayerModel.cs
+ M Assets/Scripts/Core/PropertyData.cs
+ M Assets/Scripts/Core/RulesEngine.cs
+ M Assets/Scripts/Core/TransactionManager.cs
+ M Assets/Scripts/Debug/DebugMarketplaceSetup.cs
+ M Assets/Scripts/Debug/StressTestRunner.cs
+ M Assets/Scripts/Multiplayer/MainMenuController.cs
+ M Assets/Scripts/Systems/AIManager.cs
+ M Assets/Scripts/Systems/AbilitySystem.cs
+ M Assets/Scripts/Systems/AuctionManager.cs
+ M Assets/Scripts/Systems/BoardInteractionManager.cs
+ M Assets/Scripts/Systems/BoardManager.cs
+ M Assets/Scripts/Systems/CycleManager.cs
+ M Assets/Scripts/Systems/DiceSystem.cs
+ M Assets/Scripts/Systems/FinanceSystem.cs
+ M Assets/Scripts/Systems/GameBootstrapper.cs
+ M Assets/Scripts/Systems/LiquidationHelper.cs
+ M Assets/Scripts/Systems/MarketplaceSystem.cs
+ M Assets/Scripts/Systems/TurnManager.cs
+ M Assets/Scripts/Systems/UpgradeSystem.cs
+ M Assets/Scripts/Systems/VentureSystem.cs
+ M Assets/Scripts/UI/ActionButtonsWidget.cs
+ M Assets/Scripts/UI/BankruptcyScreenController.cs
+ M Assets/Scripts/UI/BoardTileOverlayWidget.cs
+ M Assets/Scripts/UI/CurrencyFormatter.cs
+ M Assets/Scripts/UI/Marketplace_UIManager.cs
+ M Assets/Scripts/UI/TopHUDWidget.cs
+ M Assets/Scripts/UI/UIToolkitTransitions.cs
+ M Assets/Scripts/UI/UIUXRuntime.cs
+ M Assets/Scripts/UI/VentureCardCatalog.cs
+ M Assets/Scripts/UI/VentureCardModalController.cs
+ M Assets/Scripts/UI/VictoryScreenController.cs
+ M Assets/Scripts/Visuals/PawnMovement.cs
+ M Assets/Scripts/Visuals/PlayerVisualManager.cs
+ M Assets/Scripts/Visuals/TileVisuals.cs
+ M Assets/Settings/High_PipelineAsset.asset
+ M Assets/Settings/Low_PipelineAsset.asset
+ M Assets/Settings/Medium_PipelineAsset.asset
+ M Assets/Settings/PolyRisk_PostProfile.asset
+ M Assets/Settings/Ultra_PipelineAsset.asset
+ M "Assets/Settings/Very High_PipelineAsset.asset"
+ M "Assets/Settings/Very Low_PipelineAsset.asset"
+ M Assets/Shaders/NeonState.shader
+ M Assets/UI/Layouts/AuctionItem_Component.uxml
+ M Assets/UI/Layouts/MarketplaceChoice.uxml
+ M Assets/UI/Layouts/Marketplace_Bidder_Form.uxml
+ M Assets/UI/Layouts/Marketplace_Bidder_Spectator.uxml
+ M Assets/UI/Layouts/Marketplace_Main.uxml
+ M Assets/UI/Layouts/Marketplace_Notification.uxml
+ M Assets/UI/Layouts/Marketplace_Select_Player.uxml
+ M Assets/UI/Layouts/Marketplace_Tender_Init.uxml
+ M Assets/UI/Layouts/Marketplace_Waiting.uxml
+ M Assets/UI/Layouts/TileDetail_BottomSheet.uxml
+ M Assets/UI/Layouts/TopHUD.uxml
+ M Assets/UI/Resources/BankruptcyScreen.uxml
+ M Assets/UI/Resources/MainMenu.uxml
+ M Assets/UI/Resources/VictoryScreen.uxml
+ M Assets/UI/Styles/Theme.uss
+ M Assets/WebGLTemplates/PolyRiskResponsive/index.html
+ M Docs/GDD_Abilities.md
+ M Docs/GDD_Board.md
+ M Docs/GDD_Economy.md
+ M Docs/UI_Motion_Audit_2026-10-13.md
+ M Docs/Validation/Mobile_Online_Preview_2026-10-12.md
+ M Docs/Validation/UI_Motion_2026-10-13/README.md
+ M ProjectSettings/ProjectSettings.asset
+ M ProjectSettings/QualitySettings.asset
+ M tasks/todo.md
+?? .agents/
+?? AGENTS.md
+?? Assets/Plugins.meta
+?? Assets/Plugins/
+?? Assets/Resources.meta
+?? Assets/Resources/
+?? Assets/Scripts/Board/BoardVisualTheme.cs
+?? Assets/Scripts/Board/BoardVisualTheme.cs.meta
+?? Assets/Scripts/Core/GameEvent.cs
+?? Assets/Scripts/Core/GameEvent.cs.meta
+?? Assets/Scripts/Core/NetWorth.cs
+?? Assets/Scripts/Core/NetWorth.cs.meta
+?? Assets/Scripts/Debug/DebugUIShowcase.cs
+?? Assets/Scripts/Debug/DebugUIShowcase.cs.meta
+?? Assets/Scripts/Debug/MobileBoardValidationProbe.cs
+?? Assets/Scripts/Debug/MobileBoardValidationProbe.cs.meta
+?? Assets/Scripts/Debug/MonolithValidationDriver.cs
+?? Assets/Scripts/Debug/MonolithValidationDriver.cs.meta
+?? Assets/Scripts/Debug/PerceptualPolishValidationDriver.cs
+?? Assets/Scripts/Debug/PerceptualPolishValidationDriver.cs.meta
+?? Assets/Scripts/Debug/StrategicCameraValidationDriver.cs
+?? Assets/Scripts/Debug/StrategicCameraValidationDriver.cs.meta
+?? Assets/Scripts/Debug/SurfaceLightingValidationDriver.cs
+?? Assets/Scripts/Debug/SurfaceLightingValidationDriver.cs.meta
+?? Assets/Scripts/Editor/EconomyBatchValidation.cs
+?? Assets/Scripts/Editor/EconomyBatchValidation.cs.meta
+?? Assets/Scripts/Editor/EconomyRegression.cs
+?? Assets/Scripts/Editor/EconomyRegression.cs.meta
+?? Assets/Scripts/Editor/GameEventRegression.cs
+?? Assets/Scripts/Editor/GameEventRegression.cs.meta
+?? Assets/Scripts/Editor/GraphiteFoundationValidation.cs
+?? Assets/Scripts/Editor/GraphiteFoundationValidation.cs.meta
+?? Assets/Scripts/Editor/GraphiteRefinementValidation.cs
+?? Assets/Scripts/Editor/GraphiteRefinementValidation.cs.meta
+?? Assets/Scripts/Editor/MechanicsRegression.cs
+?? Assets/Scripts/Editor/MechanicsRegression.cs.meta
+?? Assets/Scripts/Editor/MobileBoardPresenceValidation.cs
+?? Assets/Scripts/Editor/MobileBoardPresenceValidation.cs.meta
+?? Assets/Scripts/Editor/MonolithValidation.cs
+?? Assets/Scripts/Editor/MonolithValidation.cs.meta
+?? Assets/Scripts/Editor/PerceptualPolishValidation.cs
+?? Assets/Scripts/Editor/PerceptualPolishValidation.cs.meta
+?? Assets/Scripts/Editor/SurfaceLightingValidation.cs
+?? Assets/Scripts/Editor/SurfaceLightingValidation.cs.meta
+?? Assets/Scripts/Editor/UIAssetRegression.cs
+?? Assets/Scripts/Editor/UIAssetRegression.cs.meta
+?? Assets/Scripts/Multiplayer.meta
+?? Assets/Scripts/Multiplayer/LobbyDtos.cs
+?? Assets/Scripts/Multiplayer/LobbyDtos.cs.meta
+?? Assets/Scripts/Multiplayer/LobbySession.cs
+?? Assets/Scripts/Multiplayer/LobbySession.cs.meta
+?? Assets/Scripts/Multiplayer/OnlineGameController.cs
+?? Assets/Scripts/Multiplayer/OnlineGameController.cs.meta
+?? Assets/Scripts/Systems/GameEventPresenter.cs
+?? Assets/Scripts/Systems/GameEventPresenter.cs.meta
+?? Assets/Scripts/Systems/GameSession.cs
+?? Assets/Scripts/Systems/GameSession.cs.meta
+?? Assets/Scripts/UI/GameEventTextFormatter.cs
+?? Assets/Scripts/UI/GameEventTextFormatter.cs.meta
+?? Assets/Scripts/UI/PulseDiceView.cs
+?? Assets/Scripts/UI/PulseDiceView.cs.meta
+?? Assets/Scripts/UI/PulseSheetMotion.cs
+?? Assets/Scripts/UI/PulseSheetMotion.cs.meta
+?? Assets/Scripts/Visuals/BoardContactFeedback.cs
+?? Assets/Scripts/Visuals/BoardContactFeedback.cs.meta
+?? Assets/Scripts/Visuals/BoardDicePresenter.cs
+?? Assets/Scripts/Visuals/BoardDicePresenter.cs.meta
+?? Assets/Scripts/Visuals/BoardSurfaceLighting.cs
+?? Assets/Scripts/Visuals/BoardSurfaceLighting.cs.meta
+?? Assets/Scripts/Visuals/CompactPawnVisual.cs
+?? Assets/Scripts/Visuals/CompactPawnVisual.cs.meta
+?? Assets/Settings/GraphiteFoundation.meta
+?? Assets/Settings/GraphiteFoundation/
+?? Assets/Shaders/GraphiteSurface.shader
+?? Assets/Shaders/GraphiteSurface.shader.meta
+?? Assets/WebGLTemplates.meta
+?? Assets/WebGLTemplates/PolyRiskResponsive.meta
+?? Assets/WebGLTemplates/PolyRiskResponsive/TemplateData.meta
+?? Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/
+?? Assets/WebGLTemplates/PolyRiskResponsive/index.html.meta
+?? Assets/WebGLTemplates/PolyRiskResponsive/thumbnail.png
+?? Assets/WebGLTemplates/PolyRiskResponsive/thumbnail.png.meta
+?? Docs/Audit_reprise_2026-09-25.md
+?? Docs/Design/
+?? Docs/Development/
+?? Docs/Multiplayer_foundation_2026-10-04.md
+?? Docs/Validation/2026-10-01/
+?? Docs/Validation/ActivityFeedLocalization_2026-10-16.md
+?? Docs/Validation/Activity_2026-10-08/
+?? Docs/Validation/Activity_Rotation_2026-10-15.md
+?? Docs/Validation/Armement_Target_Visual_2026-10-16.md
+?? Docs/Validation/Armement_Target_Visual_2026-10-16/
+?? Docs/Validation/BoardBadges_2026-10-16/
+?? Docs/Validation/BoardFeedback_UX_2026-10-16.md
+?? Docs/Validation/BoardProjection_2026-10-19/
+?? Docs/Validation/CameraPresence_2026-10-19/
+?? Docs/Validation/CloseStrategic_2026-10-20/
+?? Docs/Validation/CompactRoster_2026-10-15.md
+?? Docs/Validation/DarkBoard_Snapshot_2026-10-15.md
+?? Docs/Validation/DiceShowcase_2026-10-16.md
+?? Docs/Validation/DiceShowcase_Network_2026-10-17.md
+?? Docs/Validation/DiceShowcase_Network_2026-10-17/
+?? Docs/Validation/Economy_Current_2026-10-15/
+?? Docs/Validation/Economy_Cycle_Conformance_2026-10-15.md
+?? Docs/Validation/Economy_Expanded_2026-10-15/
+?? Docs/Validation/Economy_Paired100_2026-10-16/
+?? Docs/Validation/Economy_PairedSeeds_2026-10-15/
+?? Docs/Validation/Economy_SixPlayer_2026-10-14/
+?? Docs/Validation/EndScreensQA_2026-10-17/
+?? Docs/Validation/FinalExperience_2026-10-23/
+?? Docs/Validation/ForceAudit_Snapshot_2026-10-16.md
+?? Docs/Validation/GameStateDock_2026-10-16.md
+?? Docs/Validation/Game_State_Dock_GitHub_2026-10-16.md
+?? Docs/Validation/Gameplay_Feedback_Audit_2026-10-16.md
+?? Docs/Validation/GoalContinuation_2026-10-17.md
+?? Docs/Validation/GraphiteFoundation_2026-10-18/
+?? Docs/Validation/GraphiteRefinement_2026-10-19/
+?? Docs/Validation/Inspector_Compact_2026-10-15.md
+?? Docs/Validation/Inspector_Landscape_2026-10-15/
+?? Docs/Validation/Inspector_ShortLandscape_2026-10-15.md
+?? Docs/Validation/LobbyRoster_2026-10-16.md
+?? Docs/Validation/LobbyRoster_2026-10-16/
+?? Docs/Validation/LobbyUI_CurrentRelease_2026-10-16/
+?? Docs/Validation/Lobby_LongNames_2026-10-15.md
+?? Docs/Validation/MarketplaceSanction_Transport_2026-10-16.md
+?? Docs/Validation/MarketplaceSanction_WebGL_2026-10-16.md
+?? Docs/Validation/Mechanics_Family_OPA_2026-10-15.md
+?? Docs/Validation/Menu_Join_Responsive_2026-10-15.md
+?? Docs/Validation/MobileBoardPresence_2026-10-19/
+?? Docs/Validation/Mobile_Release_2026-10-16/
+?? Docs/Validation/Mobile_WebGL_2026-10-15/
+?? Docs/Validation/MonolithContact_2026-10-22/
+?? Docs/Validation/Monolith_2026-10-21/
+?? Docs/Validation/NetworkHud_2026-10-15/
+?? Docs/Validation/NetworkResilience_2026-10-15.md
+?? Docs/Validation/NetworkResilience_2026-10-15/
+?? Docs/Validation/NetworkRetry_PreCommit_WebGL_2026-10-15.png
+?? Docs/Validation/Oil_Boost_Inspector_2026-10-16.md
+?? Docs/Validation/Oil_Boost_Inspector_2026-10-16/
+?? Docs/Validation/Online_Aggressive_Growth_2026-10-14/
+?? Docs/Validation/Online_Ultimate_Aerospace_2026-10-15.md
+?? Docs/Validation/Online_Ultimate_Aerospace_2026-10-15/
+?? Docs/Validation/Online_Ultimate_Armement_2026-10-15.md
+?? Docs/Validation/Online_Ultimate_Armement_2026-10-15/
+?? Docs/Validation/Online_Ultimate_Automobile_2026-10-15.md
+?? Docs/Validation/Online_Ultimate_Automobile_2026-10-16.md
+?? Docs/Validation/Online_Ultimate_Automobile_2026-10-16/
+?? Docs/Validation/Online_Ultimate_Luxe_2026-10-15.md
+?? Docs/Validation/Online_Ultimate_Oil_2026-10-15.md
+?? Docs/Validation/Online_Ultimate_Pharma_2026-10-15.md
+?? Docs/Validation/Online_Ultimate_RealEstate_2026-10-15.md
+?? Docs/Validation/Online_Ultimate_Refusals_2026-10-15.md
+?? Docs/Validation/Online_Ultimate_Refusals_2026-10-15/
+?? Docs/Validation/Online_Ultimate_Tech_2026-10-15.md
+?? Docs/Validation/Online_Ultimate_Tech_2026-10-15/
+?? Docs/Validation/Online_Ultimate_UIQA_2026-10-15.md
+?? Docs/Validation/PawnBounce_2026-10-16.md
+?? Docs/Validation/PerceptualPolish_2026-10-22/
+?? Docs/Validation/Pharma_Immunity_Status_2026-10-16.md
+?? Docs/Validation/Pharma_Immunity_Status_2026-10-16/
+?? Docs/Validation/Planning_Timeout_2026-10-15.md
+?? Docs/Validation/PlayerRoster_2026-10-17.md
+?? Docs/Validation/Playtest_Amis_2026-10-14.md
+?? Docs/Validation/PreviewStatus_2026-10-16.md
+?? Docs/Validation/PulseFixed_2026-10-18/
+?? Docs/Validation/PulseNative_2026-10-18/
+?? Docs/Validation/PulseStable_2026-10-18/
+?? Docs/Validation/QuitModal_Narrow_2026-10-15.md
+?? Docs/Validation/Reconnect_2026-10-12/README.md
+?? Docs/Validation/Reconnect_2026-10-12/auto_turbo_counter_analysis.json
+?? Docs/Validation/Reconnect_2026-10-12/autonomous_desync_baseline.json
+?? Docs/Validation/Reconnect_2026-10-12/guest_selection_blocked_v2.png
+?? Docs/Validation/Reconnect_2026-10-12/guest_venture_v3.png
+?? Docs/Validation/Reconnect_2026-10-12/host_planning_after_reload.png
+?? Docs/Validation/Reconnect_2026-10-12/host_planning_before_reload.png
+?? Docs/Validation/Reconnect_2026-10-12/host_purchase_recovered_v2.png
+?? Docs/Validation/Reconnect_2026-10-12/invalid_address_recoverable_v7.png
+?? Docs/Validation/Reconnect_2026-10-12/invalid_api_busy_v3.png
+?? Docs/Validation/Reconnect_2026-10-12/lobby_guest_before.png
+?? Docs/Validation/Reconnect_2026-10-12/lobby_six_landscape_v9.png
+?? Docs/Validation/Reconnect_2026-10-12/lobby_six_ready_scrolled_v8.png
+?? Docs/Validation/Reconnect_2026-10-12/lobby_six_ready_v3.png
+?? Docs/Validation/Reconnect_2026-10-12/lobby_six_scroll_v8.png
+?? Docs/Validation/Reconnect_2026-10-12/lobby_six_v8_public.json
+?? Docs/Validation/Reconnect_2026-10-12/lobby_three_clients_v3.png
+?? Docs/Validation/Reconnect_2026-10-12/lobby_two_rows_v3.png
+?? Docs/Validation/Reconnect_2026-10-12/market_before_bid_v14.json
+?? Docs/Validation/Reconnect_2026-10-12/market_before_v12.json
+?? Docs/Validation/Reconnect_2026-10-12/market_bid_cash_mobile_v14.png
+?? Docs/Validation/Reconnect_2026-10-12/market_bid_form_clipped_v14.png
+?? Docs/Validation/Reconnect_2026-10-12/market_bid_form_portrait_v18.png
+?? Docs/Validation/Reconnect_2026-10-12/market_bid_submitted_v14.json
+?? Docs/Validation/Reconnect_2026-10-12/market_bid_wrong_owner_highlight_v16.png
+?? Docs/Validation/Reconnect_2026-10-12/market_bidding_fixture.json
+?? Docs/Validation/Reconnect_2026-10-12/market_invitation_clear_v14.png
+?? Docs/Validation/Reconnect_2026-10-12/market_invitation_impact.json
+?? Docs/Validation/Reconnect_2026-10-12/market_invitation_obscured_v13.png
+?? Docs/Validation/Reconnect_2026-10-12/market_manual_deal_v14.json
+?? Docs/Validation/Reconnect_2026-10-12/market_mixed_bid_submitted_v17.json
+?? Docs/Validation/Reconnect_2026-10-12/market_mixed_bid_submitted_v18.json
+?? Docs/Validation/Reconnect_2026-10-12/market_mixed_draft_returned_v18.png
+?? Docs/Validation/Reconnect_2026-10-12/market_mixed_manual_deal_v17.json
+?? Docs/Validation/Reconnect_2026-10-12/market_mixed_manual_deal_v18.json
+?? Docs/Validation/Reconnect_2026-10-12/market_mixed_manual_review_v17.png
+?? Docs/Validation/Reconnect_2026-10-12/market_mobile_board_clipped_v18.png
+?? Docs/Validation/Reconnect_2026-10-12/market_property_selected_v12.png
+?? Docs/Validation/Reconnect_2026-10-12/market_review_expected.json
+?? Docs/Validation/Reconnect_2026-10-12/market_review_fixture_v11.json
+?? Docs/Validation/Reconnect_2026-10-12/market_review_landscape_v12.png
+?? Docs/Validation/Reconnect_2026-10-12/market_review_obscured_v11.png
+?? Docs/Validation/Reconnect_2026-10-12/market_review_portrait_v12.png
+?? Docs/Validation/Reconnect_2026-10-12/market_review_prepared_v12.json
+?? Docs/Validation/Reconnect_2026-10-12/market_review_selected_v12.png
+?? Docs/Validation/Reconnect_2026-10-12/market_review_v12.json
+?? Docs/Validation/Reconnect_2026-10-12/market_review_v67_spectator_fix.json
+?? Docs/Validation/Reconnect_2026-10-12/market_sealed_reloaded_v12.json
+?? Docs/Validation/Reconnect_2026-10-12/market_sealed_v12.json
+?? Docs/Validation/Reconnect_2026-10-12/market_start_fixture_v12.json
+?? Docs/Validation/Reconnect_2026-10-12/market_tender_started_v12.json
+?? Docs/Validation/Reconnect_2026-10-12/market_waiting_clear_v16.png
+?? Docs/Validation/Reconnect_2026-10-12/market_waiting_fixture.json
+?? Docs/Validation/Reconnect_2026-10-12/market_waiting_obscured_v13.png
+?? Docs/Validation/Reconnect_2026-10-12/new_lobby_before_upgrade.png
+?? Docs/Validation/Reconnect_2026-10-12/opa_fixture_v11.json
+?? Docs/Validation/Reconnect_2026-10-12/opa_guest_confirmed_v11.json
+?? Docs/Validation/Reconnect_2026-10-12/opa_guest_restored_v11.png
+?? Docs/Validation/Reconnect_2026-10-12/opa_unaffordable_v11.json
+?? Docs/Validation/Reconnect_2026-10-12/planning_button_wait_v3.png
+?? Docs/Validation/Reconnect_2026-10-12/planning_to_planning_sixth_v8.png
+?? Docs/Validation/Reconnect_2026-10-12/public_home_portrait_v8.png
+?? Docs/Validation/Reconnect_2026-10-12/public_lobby_landscape_clipped_v8.png
+?? Docs/Validation/Reconnect_2026-10-12/public_lobby_portrait_v8.png
+?? Docs/Validation/Reconnect_2026-10-12/public_lobby_v11.png
+?? Docs/Validation/Reconnect_2026-10-12/resume_recovered_v8.png
+?? Docs/Validation/Reconnect_2026-10-12/resume_timeout_v8.png
+?? Docs/Validation/Reconnect_2026-10-12/six_after_guest_roll_v3.json
+?? Docs/Validation/Reconnect_2026-10-12/six_after_host_buy_v3.json
+?? Docs/Validation/Reconnect_2026-10-12/six_after_host_roll_v3.json
+?? Docs/Validation/Reconnect_2026-10-12/six_after_sixth_buy_v3.json
+?? Docs/Validation/Reconnect_2026-10-12/six_marketplace_closed_hidden_v3.png
+?? Docs/Validation/Reconnect_2026-10-12/six_marketplace_pick_v3.png
+?? Docs/Validation/Reconnect_2026-10-12/six_marketplace_selected_v3.png
+?? Docs/Validation/Reconnect_2026-10-12/six_marketplace_started_v3.json
+?? Docs/Validation/Reconnect_2026-10-12/six_mid_round_v3.json
+?? Docs/Validation/Reconnect_2026-10-12/six_v7_reloaded.json
+?? Docs/Validation/Reconnect_2026-10-12/sixth_decision_after_reload_v8.png
+?? Docs/Validation/Reconnect_2026-10-12/sixth_decision_before_reload_v8.png
+?? Docs/Validation/Reconnect_2026-10-12/sixth_resume_menu_v7.png
+?? Docs/Validation/Reconnect_2026-10-12/turbo_after_lower_choice_v10.json
+?? Docs/Validation/Reconnect_2026-10-12/turbo_after_precision_v10.json
+?? Docs/Validation/Reconnect_2026-10-12/turbo_choice_fixture.json
+?? Docs/Validation/Reconnect_2026-10-12/turbo_choices_restored_v10.png
+?? Docs/Validation/Reconnect_2026-10-12/turbo_fifth_double_v10.json
+?? Docs/Validation/Reconnect_2026-10-12/turbo_guest_choice_v10.json
+?? Docs/Validation/Reconnect_2026-10-12/turbo_guest_portrait_v10.png
+?? Docs/Validation/Reconnect_2026-10-12/turbo_guest_precision_timed_v10.json
+?? Docs/Validation/Reconnect_2026-10-12/turbo_guest_precision_timeout_v10.json
+?? Docs/Validation/Reconnect_2026-10-12/turbo_guest_restored_v10.png
+?? Docs/Validation/Reconnect_2026-10-12/turbo_landscape_v11.png
+?? Docs/Validation/Reconnect_2026-10-12/turbo_penalty_reloaded_v10.png
+?? Docs/Validation/Reconnect_2026-10-12/turbo_portrait_v11.png
+?? Docs/Validation/Reconnect_2026-10-12/two_clients_after_buy.json
+?? Docs/Validation/Reconnect_2026-10-12/two_clients_after_host_reload.json
+?? Docs/Validation/Reconnect_2026-10-12/two_clients_initial.json
+?? Docs/Validation/Reconnect_2026-10-12/v2_after_guest_command.json
+?? Docs/Validation/Reconnect_2026-10-12/v2_after_lost_initial_response.json
+?? Docs/Validation/Reconnect_2026-10-12/v2_after_lost_purchase_response.json
+?? Docs/Validation/Reconnect_2026-10-12/v2_autonomous_arrival.json
+?? Docs/Validation/Reconnect_2026-10-12/v3_after_guest_confirm.json
+?? Docs/Validation/Reconnect_2026-10-12/v8_after_all_reload.json
+?? Docs/Validation/Reconnect_2026-10-12/v8_after_host_buy.json
+?? Docs/Validation/Reconnect_2026-10-12/v8_after_resumed_purchase.json
+?? Docs/Validation/Reconnect_2026-10-12/v8_after_second_buy.json
+?? Docs/Validation/Reconnect_2026-10-12/v8_after_sixth_roll.json
+?? Docs/Validation/Reconnect_2026-10-12/v8_mid_round.json
+?? Docs/Validation/Reconnect_2026-10-12/venture_after_reload_v3.png
+?? Docs/Validation/Reconnect_2026-10-12/venture_pending_v3.png
+?? Docs/Validation/ReducedMotionVenture_2026-10-16.md
+?? Docs/Validation/ReflectiveNeon_2026-10-22/
+?? Docs/Validation/ReleaseAudit_2026-10-16.md
+?? Docs/Validation/ReleaseMobileCurrent_2026-10-17/
+?? Docs/Validation/SixIndependentUI_CurrentRelease_2026-10-16/
+?? Docs/Validation/SixPlayer_2026-10-15.md
+?? Docs/Validation/SixPlayer_2026-10-16.md
+?? Docs/Validation/SixPlayer_WebGL_2026-10-15/
+?? Docs/Validation/SixPlayer_WebGL_CurrentRelease_2026-10-16/
+?? Docs/Validation/SixWebGL_UI_2026-10-17/
+?? Docs/Validation/SplitRentTypedReceipt_2026-10-17.md
+?? Docs/Validation/SplitRentWebGL_2026-10-17/
+?? Docs/Validation/StrategicCamera_2026-10-20/
+?? Docs/Validation/Transit_Choice_2026-10-15.md
+?? Docs/Validation/TypedGameEventDock_2026-10-17.md
+?? Docs/Validation/UI_Motion_2026-10-13/hud_final_release_430x900_2026-10-15.png
+?? Docs/Validation/UI_Motion_2026-10-13/hud_final_release_932x430_2026-10-15.png
+?? Docs/Validation/UI_Motion_2026-10-13/reduced_motion_home_v22.png
+?? Docs/Validation/UI_Motion_2026-10-13/webgl_chrome_iphone_emulation_v67_2026-10-14.png
+?? Docs/Validation/UI_Panel_Inventory_2026-10-16.md
+?? Docs/Validation/Unity_Aggressive_Growth_2026-10-14.md
+?? Docs/Validation/Unity_Batch_2026-10-14.md
+?? Docs/Validation/Unity_CurrentSource_2026-10-16.md
+?? Docs/Validation/Unity_FinalCheckpoint_2026-10-15.md
+?? Docs/Validation/Unity_WebGL_FourClient_2026-10-15.md
+?? Docs/Validation/VisualUX_MasterPlan_2026-10-16.md
+?? Docs/Validation/aggressive_growth_webgl_430x932_2026-10-14.png
+?? Docs/Validation/check_results.py
+?? Docs/Validation/iOS_Export_2026-10-16.md
+?? Docs/Validation_device_readiness_2026-10-04.md
+?? Docs/Validation_economie.md
+?? Docs/Validation_mecaniques_2026-10-02.md
+?? Docs/Validation_ui_ux_2026-10-02.md
+?? Docs/Validation_ui_webgl_2026-10-02.md
+?? Server/

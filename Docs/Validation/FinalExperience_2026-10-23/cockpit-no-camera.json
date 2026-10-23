@@ -1,0 +1,20 @@
+[
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_READBACK {\"time\":116.8010025024414,\"reference\":18.208171844482423,\"size\":13.005837440490723,\"factor\":1.399999976158142,\"position\":{\"x\":-16.161235809326173,\"y\":13.70380973815918,\"z\":-14.205138206481934},\"rotation\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"pawn\":{\"x\":-2.2489655017852785,\"y\":4.016031265258789,\"z\":-8.134159088134766},\"state\":\"StrategicOverview\",\"manual\":true,\"hold\":false,\"reduced\":false,\"expanded\":false,\"active\":0,\"logical\":6,\"inspected\":0,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0}}\n",
+    "timestamp": "2026-10-23T20:22:42.878Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_READBACK {\"time\":160.51199340820313,\"reference\":18.208171844482423,\"size\":13.005837440490723,\"factor\":1.399999976158142,\"position\":{\"x\":-16.161235809326173,\"y\":13.70380973815918,\"z\":-14.205138206481934},\"rotation\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"pawn\":{\"x\":-2.2489655017852785,\"y\":4.016031265258789,\"z\":-8.134159088134766},\"state\":\"StrategicOverview\",\"manual\":true,\"hold\":false,\"reduced\":false,\"expanded\":false,\"active\":0,\"logical\":6,\"inspected\":12,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0}}\n",
+    "timestamp": "2026-10-23T20:23:26.580Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_READBACK {\"time\":180.49600219726563,\"reference\":18.208171844482423,\"size\":13.005837440490723,\"factor\":1.399999976158142,\"position\":{\"x\":-16.161235809326173,\"y\":13.70380973815918,\"z\":-14.205138206481934},\"rotation\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"pawn\":{\"x\":-2.2489655017852785,\"y\":4.016031265258789,\"z\":-8.134159088134766},\"state\":\"StrategicOverview\",\"manual\":true,\"hold\":false,\"reduced\":false,\"expanded\":true,\"active\":0,\"logical\":6,\"inspected\":12,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0}}\n",
+    "timestamp": "2026-10-23T20:23:46.568Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "archive": "Builds/PolyRisk-FinalExperience-20261024.zip",
+  "bytes": 12379541,
+  "sha256": "14cf7777b6f6db547b8337d48cad7f6e532cfb160ba0bcfd38b30e5a806d126e",
+  "zipCRCValidated": true,
+  "files": {
+    "Dockerfile": "0965c4e8ef1bab98e70c5ca8ed75a88b8f413bf836d763ea73fa2daa6d6bc81d",
+    "backend/LobbyPersistence.cs": "dfada8027f2ea7b1fc2a498eb37af98870986b316f60f67ae2a078d30e7d89f9",
+    "backend/PolyRisk.LobbyServer.csproj": "7c8dbff9196245188b63132959ebb1348c904f95d6b8e627e08ef2314bf6bcec",
+    "backend/Program.cs": "145cb271e5c8e0e6b3f7444daabcb5c8f7fd4c200fa334e9240cccaa049a2011",
+    "backend/WebGLHosting.cs": "d9ce6d9e634f31c5d5b47b3fb051fd06e3d63a4a71d797e57fd86c1d254b2d9c",
+    "backend/appsettings.json": "54c79fa2267ff0adb1669b7e0b11ddd2170bdd376b13a80ed55a67e51f52b9e5",
+    "entrypoint.sh": "83243335ab8ba01be4efd1fc8bd26b37acc14c9e96b49af5a00eefcd104b3ddf",
+    "release-manifest.json": "30a527d2ccbd537ce178e765969f5d338d2eb8209568fcfd42f33f811fa2d80a",
+    "webgl/Build/7a2dbded24d57e056180125b1583e7c4.loader.js": "95d413ec942c6764ee89174a13da7a4c7f80567f6a4fb43992a6e8273c3b93d2",
+    "webgl/Build/b75641dc6bd810e38d6456adc09cf0dd.framework.js.gz": "6a0b6553111d8438743e86ed074a89f4a163de78a172dab41c447ab92e39ff35",
+    "webgl/Build/da4d5e1789ddb6a79251521b83012e91.data.gz": "bf3bb740c8dae62360a0f08730d4d4a231a1a5d0719970dd000ccca3628c4d06",
+    "webgl/Build/e2585ece24207977c963a965e2e5662f.wasm.gz": "6a732a336b9fa339561d5676987841ef2bddcccab6470e29fd18d702ddd1948d",
+    "webgl/TemplateData/MemoryProfiler.png": "0ce87be20d0c24ab6cb73b57de2004da261cc2a641e69319c6ae3fe11fc85483",
+    "webgl/TemplateData/favicon.ico": "9c13beb90ee8f70580d52a21d5233970d1c89e71e4a34a462c22610941c3c77f",
+    "webgl/TemplateData/fullscreen-button.png": "21221581673a54b8139d408d4a3f8d2b879e86827d4b6fc53b995ff7a99ee3e9",
+    "webgl/TemplateData/progress-bar-empty-dark.png": "bbee7131afe8a3365906240d89184dc86234c119467f390bc4bc6802328fdb4d",
+    "webgl/TemplateData/progress-bar-empty-light.png": "143696c060ad43d6c30f19ff5f49000927a139a2a1e4c9f45fafaa2b90d7d2be",
+    "webgl/TemplateData/progress-bar-full-dark.png": "3306a6244dcb3926fca38a28e3ced589df8ff1beed955eb17c0bbf01c918bc62",
+    "webgl/TemplateData/progress-bar-full-light.png": "12395ea785480c5cdf12fade6e6cbf49666d5bb1cef7240c113dbcba6bdc5c87",
+    "webgl/TemplateData/style.css": "8e6f70b112cf22456dded77285854860eaf32b5b4951cecb9cefa90179e3e661",
+    "webgl/TemplateData/unity-logo-dark.png": "c1b72d26c096487dabc948b54bc203f8dac7ed4e3f5733918798e858acb4b159",
+    "webgl/TemplateData/unity-logo-light.png": "002990aea0d946833cadc1519d5b7e50a4570bd537a0517dd79a59d3eec84da7",
+    "webgl/TemplateData/webgl-logo.png": "b30c3af2a4538c6edf5f2411953760641dfa257f2a4cc5b88d671aa243b1f12f",
+    "webgl/TemplateData/webmemd-icon.png": "c56f5494640cedda273aad38d58e6ab9da625d5b3f4d875c0ff92c6192a569c2",
+    "webgl/index.html": "a889ae90b012f2dc5593eb196ff9cf3a4ff9e603298d3e580d22e251344acce3"
+  }
+}

@@ -1,0 +1,404 @@
+[
+  {
+    "level": "log",
+    "message": "navigator.mediaDevices support available",
+    "timestamp": "2026-10-23T20:20:44.272Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[UnityCache] 'http://127.0.0.1:9006/FinalExperienceQA/Build/604e57af87713bd71aadbc1518c0de0e.data' successfully downloaded and stored in the indexedDB cache",
+    "timestamp": "2026-10-23T20:20:44.684Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+  },
+  {
+    "level": "log",
+    "message": "[UnityMemory] Configuration Parameters - Can be set up in boot.config\n",
+    "timestamp": "2026-10-23T20:20:44.960Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-temp-allocator-size-nav-mesh-worker=65536\"\n",
+    "timestamp": "2026-10-23T20:20:44.963Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-temp-allocator-size-audio-worker=65536\"\n",
+    "timestamp": "2026-10-23T20:20:44.963Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-temp-allocator-size-background-worker=32768\"\n",
+    "timestamp": "2026-10-23T20:20:44.963Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-allocator-temp-initial-block-size-main=262144\"\n",
+    "timestamp": "2026-10-23T20:20:44.964Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-allocator-temp-initial-block-size-worker=262144\"\n",
+    "timestamp": "2026-10-23T20:20:44.965Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-bucket-allocator-granularity=16\"\n",
+    "timestamp": "2026-10-23T20:20:44.966Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-bucket-allocator-bucket-count=8\"\n",
+    "timestamp": "2026-10-23T20:20:44.967Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-bucket-allocator-block-size=4194304\"\n",
+    "timestamp": "2026-10-23T20:20:44.968Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-bucket-allocator-block-count=1\"\n",
+    "timestamp": "2026-10-23T20:20:44.969Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-main-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-23T20:20:44.970Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-thread-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-23T20:20:44.970Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-gfx-main-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-23T20:20:44.971Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-gfx-thread-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-23T20:20:44.973Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-cache-allocator-block-size=4194304\"\n",
+    "timestamp": "2026-10-23T20:20:44.973Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-typetree-allocator-block-size=2097152\"\n",
+    "timestamp": "2026-10-23T20:20:44.974Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-bucket-allocator-granularity=16\"\n",
+    "timestamp": "2026-10-23T20:20:44.976Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-bucket-allocator-bucket-count=8\"\n",
+    "timestamp": "2026-10-23T20:20:44.976Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-bucket-allocator-block-size=4194304\"\n",
+    "timestamp": "2026-10-23T20:20:44.977Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-bucket-allocator-block-count=1\"\n",
+    "timestamp": "2026-10-23T20:20:44.978Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-23T20:20:44.981Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-editor-allocator-block-size=1048576\"\n",
+    "timestamp": "2026-10-23T20:20:44.982Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-temp-allocator-size-main=4194304\"\n",
+    "timestamp": "2026-10-23T20:20:44.983Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-job-temp-allocator-block-size=2097152\"\n",
+    "timestamp": "2026-10-23T20:20:44.984Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-job-temp-allocator-block-size-background=1048576\"\n",
+    "timestamp": "2026-10-23T20:20:44.986Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-job-temp-allocator-reduction-small-platforms=262144\"\n",
+    "timestamp": "2026-10-23T20:20:44.986Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Found NO interfaces on host .\n",
+    "timestamp": "2026-10-23T20:20:45.337Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Input System module state changed to: Initialized.\n",
+    "timestamp": "2026-10-23T20:20:45.347Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+    "timestamp": "2026-10-23T20:20:45.355Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Loading player data from data.unity3d\n",
+    "timestamp": "2026-10-23T20:20:45.366Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Initialize engine version: 2022.3.62f3 (96770f904ca7)\n",
+    "timestamp": "2026-10-23T20:20:45.384Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Subsystems] Discovering subsystems at path UnitySubsystems\n",
+    "timestamp": "2026-10-23T20:20:45.385Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Creating WebGL 2.0 context.",
+    "timestamp": "2026-10-23T20:20:45.389Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+  },
+  {
+    "level": "log",
+    "message": "Renderer: WebKit WebGL\n",
+    "timestamp": "2026-10-23T20:20:45.444Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Vendor:   WebKit\n",
+    "timestamp": "2026-10-23T20:20:45.446Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Version:  OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))\n",
+    "timestamp": "2026-10-23T20:20:45.447Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GLES:     3\n",
+    "timestamp": "2026-10-23T20:20:45.447Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": " EXT_clip_control EXT_color_buffer_float EXT_color_buffer_half_float EXT_conservative_depth EXT_depth_clamp EXT_disjoint_timer_query_webgl2 EXT_float_blend EXT_polygon_offset_clamp EXT_render_snorm EXT_texture_compression_bptc EXT_texture_compression_rgtc EXT_texture_filter_anisotropic EXT_texture_mirror_clamp_to_edge EXT_texture_norm16 KHR_parallel_shader_compile NV_shader_noperspective_interpolation OES_draw_buffers_indexed OES_sample_variables OES_shader_multisample_interpolation OES_texture_float_linear WEBGL_blend_func_extended WEBGL_clip_cull_distance WEBGL_compressed_texture_s3tc WEBGL_compressed_texture_s3tc_srgb WEBGL_debug_renderer_info WEBGL_debug_shaders WEBGL_lose_context WEBGL_multi_draw WEBGL_polygon_mode WEBGL_provoking_vertex WEBGL_stencil_texturing GL_EXT_clip_control GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_depth_clamp GL_EXT_disjoint_timer_query_webgl2 GL_EXT_float_blend GL_EXT_polygon_offset_clamp GL_EXT_render_snorm GL_EXT_texture_compres\n",
+    "timestamp": "2026-10-23T20:20:45.448Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "sion_bptc GL_EXT_texture_compression_rgtc GL_EXT_texture_filter_anisotropic GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_KHR_parallel_shader_compile GL_NV_shader_noperspective_interpolation GL_OES_draw_buffers_indexed GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_texture_float_linear GL_WEBGL_blend_func_extended GL_WEBGL_clip_cull_distance GL_WEBGL_compressed_texture_s3tc GL_WEBGL_compressed_texture_s3tc_srgb GL_WEBGL_debug_renderer_info GL_WEBGL_debug_shaders GL_WEBGL_lose_context GL_WEBGL_multi_draw GL_WEBGL_polygon_mode GL_WEBGL_provoking_vertex GL_WEBGL_stencil_texturing\n",
+    "timestamp": "2026-10-23T20:20:45.450Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "OPENGL LOG: Creating OpenGL ES 3.0 graphics device ; Context level  <OpenGL ES 3.0> ; Context handle 1\n",
+    "timestamp": "2026-10-23T20:20:45.475Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ERROR: Shader ",
+    "timestamp": "2026-10-23T20:20:45.930Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Hidden/Universal/HDRDebugView shader is not supported on this GPU (none of subshaders/fallbacks are suitable)\n",
+    "timestamp": "2026-10-23T20:20:46.022Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Input Manager initialize...\n",
+    "timestamp": "2026-10-23T20:20:46.022Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+    "timestamp": "2026-10-23T20:20:46.353Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "UnloadTime: 9.600001 ms\n",
+    "timestamp": "2026-10-23T20:20:46.355Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Starting initialization...\n",
+    "timestamp": "2026-10-23T20:20:49.371Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Initializing Board Data...\n",
+    "timestamp": "2026-10-23T20:20:49.373Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Board initialized with 40 tiles.\n",
+    "timestamp": "2026-10-23T20:20:49.374Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Venture Deck initialized and shuffled.\n",
+    "timestamp": "2026-10-23T20:20:49.375Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Creating Players...\n",
+    "timestamp": "2026-10-23T20:20:50.828Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Bootstrap] Player 1 assigned profile: Predator\n",
+    "timestamp": "2026-10-23T20:20:50.828Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Bootstrap] Player 2 assigned profile: Rentier\n",
+    "timestamp": "2026-10-23T20:20:50.833Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Bootstrap] Player 3 assigned profile: Negotiator\n",
+    "timestamp": "2026-10-23T20:20:50.833Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Spawning Visuals...\n",
+    "timestamp": "2026-10-23T20:20:50.834Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Trying to get length of sound which is not loaded yet.",
+    "timestamp": "2026-10-23T20:20:50.888Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Trying to get length of sound which is not loaded yet.",
+    "timestamp": "2026-10-23T20:20:50.889Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Spawned 4 player pawns at (4.55, 3.95, -8.13).\n",
+    "timestamp": "2026-10-23T20:20:50.889Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Starting Game Loop...\n",
+    "timestamp": "2026-10-23T20:20:50.889Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Game loop deferred until a game mode is selected.\n",
+    "timestamp": "2026-10-23T20:20:50.889Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Audio context resumed after 9.423 seconds.",
+    "timestamp": "2026-10-23T20:20:54.947Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Turn Start: Player 0\n",
+    "timestamp": "2026-10-23T20:21:02.002Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Deferred local game started.\n",
+    "timestamp": "2026-10-23T20:21:02.002Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":19,\"collidersInside\":17,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":19.43174171447754,\"y\":213.986083984375},\"tile32\":{\"x\":44.25093460083008,\"y\":229.93951416015626},\"tile0\":{\"x\":247.3170166015625,\"y\":361.9833984375},\"tile10\":{\"x\":-9.899945259094239,\"y\":527.3193359375},\"tile20\":{\"x\":-267.1169738769531,\"y\":361.9833984375},\"tile30\":{\"x\":-9.900022506713868,\"y\":196.6474609375},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-332.2471008300781,\"y\":258.87261962890627,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676305770874025,\"minTileAltitudePixels\":22.448158264160158,\"minTileAreaPixels\":794.7807006835938}}\n",
+    "timestamp": "2026-10-23T20:21:02.210Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_READBACK {\"time\":25.08799934387207,\"reference\":18.208171844482423,\"size\":13.005837440490723,\"factor\":1.399999976158142,\"position\":{\"x\":-8.173534393310547,\"y\":16.035066604614259,\"z\":-19.42641830444336},\"rotation\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"pawn\":{\"x\":4.551034927368164,\"y\":3.954030990600586,\"z\":-8.134159088134766},\"state\":\"StrategicOverview\",\"manual\":false,\"hold\":false,\"reduced\":false,\"expanded\":false,\"active\":0,\"logical\":0,\"inspected\":0,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0}}\n",
+    "timestamp": "2026-10-23T20:21:11.116Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_QA {\"treatment\":\"GraphiteReflectiveNeon\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"mainLight\":\"PerPixel\",\"srpBatcher\":true,\"width\":430,\"height\":830,\"indices\":40,\"meshes\":4,\"lights\":1,\"realtimeProbes\":0,\"bloom\":0.07999999821186066,\"exposure\":0.15000000596046449,\"size\":13.005837440490723,\"camera\":{\"x\":-8.173534393310547,\"y\":16.035066604614259,\"z\":-19.42641830444336},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"finish\":{\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-23T20:21:11.434Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  }
+]

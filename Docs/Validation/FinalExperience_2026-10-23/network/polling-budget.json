@@ -1,0 +1,84 @@
+{
+  "clients": 6,
+  "targetSeconds": 90.0,
+  "budgetPerMinute": 3600,
+  "hostPollSeconds": 0.25,
+  "replicaPollSeconds": 1,
+  "lobbyPollSeconds": 1.5,
+  "scope": "HTTP authenticated polling only; no Unity rules or browser/device claim",
+  "polling": [
+    {
+      "seat": 0,
+      "counts": {
+        "game": 360,
+        "lobby": 60
+      },
+      "statuses": {
+        "200": 420
+      },
+      "elapsedSeconds": 90.005
+    },
+    {
+      "seat": 1,
+      "counts": {
+        "game": 90,
+        "lobby": 60
+      },
+      "statuses": {
+        "200": 150
+      },
+      "elapsedSeconds": 90.004
+    },
+    {
+      "seat": 2,
+      "counts": {
+        "game": 90,
+        "lobby": 60
+      },
+      "statuses": {
+        "200": 150
+      },
+      "elapsedSeconds": 90.005
+    },
+    {
+      "seat": 3,
+      "counts": {
+        "game": 90,
+        "lobby": 60
+      },
+      "statuses": {
+        "200": 150
+      },
+      "elapsedSeconds": 90.005
+    },
+    {
+      "seat": 4,
+      "counts": {
+        "game": 90,
+        "lobby": 60
+      },
+      "statuses": {
+        "200": 150
+      },
+      "elapsedSeconds": 90.003
+    },
+    {
+      "seat": 5,
+      "counts": {
+        "game": 90,
+        "lobby": 60
+      },
+      "statuses": {
+        "200": 150
+      },
+      "elapsedSeconds": 90.004
+    }
+  ],
+  "protection": {
+    "configuredBudget": 60,
+    "requestCount": 65,
+    "accepted": 59,
+    "rejected429": 6
+  },
+  "pass": true
+}

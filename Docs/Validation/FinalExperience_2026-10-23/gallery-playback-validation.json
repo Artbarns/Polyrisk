@@ -1,0 +1,21 @@
+{
+  "localHTTP": true,
+  "observed": [
+    {
+      "duration": 34.773,
+      "muted": false,
+      "paused": false,
+      "readyState": 4,
+      "source": "http://127.0.0.1:9006/evidence/release-close-corner-audio.mp4",
+      "time": 7.59263
+    },
+    {
+      "duration": 34.722,
+      "muted": false,
+      "paused": true,
+      "readyState": 4,
+      "source": "http://127.0.0.1:9006/evidence/release-multiplayer-audio.mp4",
+      "time": 0
+    }
+  ]
+}

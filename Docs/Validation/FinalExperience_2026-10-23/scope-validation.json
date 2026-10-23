@@ -1,0 +1,17 @@
+{
+  "baselineFiles": 626,
+  "unchanged": 619,
+  "modified": [
+    "Assets/UI/Styles/Theme.uss",
+    "Assets/Settings/GraphiteFoundation/GraphiteTheme.asset",
+    "Assets/WebGLTemplates/PolyRiskResponsive/index.html",
+    "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/style.css",
+    "Assets/Scripts/Board/BoardVisualTheme.cs",
+    "Assets/Scripts/Systems/BoardInteractionManager.cs",
+    "Server/PolyRisk.LobbyServer/Program.cs"
+  ],
+  "unexpected": [],
+  "missing": [],
+  "rulesEngineUnchanged": true,
+  "scopePass": true
+}

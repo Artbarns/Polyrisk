@@ -1,0 +1,14 @@
+[
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_READBACK {\"time\":86.53399658203125,\"reference\":18.208171844482423,\"size\":13.005837440490723,\"factor\":1.399999976158142,\"position\":{\"x\":-9.306310653686524,\"y\":15.200902938842774,\"z\":-19.28351593017578},\"rotation\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"pawn\":{\"x\":2.226034641265869,\"y\":4.122313976287842,\"z\":-8.134159088134766},\"state\":\"MovementFocus\",\"manual\":false,\"hold\":false,\"reduced\":false,\"expanded\":false,\"active\":0,\"logical\":0,\"inspected\":0,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0}}\n",
+    "timestamp": "2026-10-23T20:16:11.834Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_READBACK {\"time\":164.06100463867188,\"reference\":11.280900955200196,\"size\":8.05778694152832,\"factor\":1.3999998569488526,\"position\":{\"x\":-12.304203987121582,\"y\":14.228622436523438,\"z\":-17.439393997192384},\"rotation\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"pawn\":{\"x\":-2.2489655017852785,\"y\":4.016031265258789,\"z\":-8.134159088134766},\"state\":\"StrategicOverview\",\"manual\":false,\"hold\":false,\"reduced\":false,\"expanded\":false,\"active\":0,\"logical\":6,\"inspected\":0,\"viewport\":{\"serializedVersion\":\"2\",\"x\":12.0,\"y\":248.0,\"width\":1176.0,\"height\":506.0}}\n",
+    "timestamp": "2026-10-23T20:17:29.394Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "variable": "POLYRISK_REQUESTS_PER_MINUTE",
+    "value": "59",
+    "rejected": true
+  },
+  {
+    "variable": "POLYRISK_REQUESTS_PER_MINUTE",
+    "value": "3601",
+    "rejected": true
+  },
+  {
+    "variable": "PORT",
+    "value": "0",
+    "rejected": true
+  },
+  {
+    "variable": "PORT",
+    "value": "65536",
+    "rejected": true
+  }
+]

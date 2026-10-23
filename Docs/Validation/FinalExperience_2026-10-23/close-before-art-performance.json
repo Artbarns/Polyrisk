@@ -1,0 +1,8 @@
+[
+  {
+    "level": "log",
+    "message": "GRAPHITE_MEASURE {\"quality\":\"Low\",\"treatment\":\"GraphiteReflectiveNeon\",\"frames\":146,\"seconds\":6.002998352050781,\"meanFrameMs\":41.36986541748047,\"maxFrameMs\":99.0,\"renderCountersAvailable\":true,\"drawCalls\":193,\"batches\":70,\"setPass\":37,\"totalAllocatedBytes\":58513763,\"totalReservedBytes\":66868958}\n",
+    "timestamp": "2026-10-23T20:16:18.471Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  }
+]

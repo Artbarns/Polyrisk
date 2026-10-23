@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "hostReloadSnapshotIdentical": true,
+    "rent221CreditedToOwner": true,
+    "rent221DebitedFromVisitor": true,
+    "rentCombinedBalanceConserved": true,
+    "auction1770DebitedBidder": true,
+    "auction1770CreditedSeller": true,
+    "auctionTransfersTile13ToBidder": true,
+    "auctionCombinedBalanceConserved": true
+  },
+  "allPassed": true,
+  "scenarioNotes": "First four turns and two purchases natural; rent and auction entered from explicitly prepared recovery snapshots, then executed by real Unity rules/UI."
+}

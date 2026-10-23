@@ -1,0 +1,65 @@
+{
+  "context": "Development WebGL on Mac Intel Iris Plus, one Unity tab, CSS430x830, device/backing DPR1. Six-second sequential samples, not iPhone, not isolated GPU timing, no statistical speedup claim.",
+  "measurements": [
+    {
+      "timestamp": "2026-10-23T23:36:27.225Z",
+      "quality": "Low",
+      "treatment": "GraphiteReflectiveNeon",
+      "frames": 260,
+      "seconds": 6.002006530761719,
+      "meanFrameMs": 23.184600830078125,
+      "maxFrameMs": 45,
+      "renderCountersAvailable": true,
+      "drawCalls": 72,
+      "batches": 65,
+      "setPass": 37,
+      "totalAllocatedBytes": 51690308,
+      "totalReservedBytes": 60035400
+    },
+    {
+      "timestamp": "2026-10-23T23:37:16.022Z",
+      "quality": "Low",
+      "treatment": "GraphiteSatin",
+      "frames": 219,
+      "seconds": 6.01300048828125,
+      "meanFrameMs": 27.55709457397461,
+      "maxFrameMs": 61,
+      "renderCountersAvailable": true,
+      "drawCalls": 93,
+      "batches": 73,
+      "setPass": 37,
+      "totalAllocatedBytes": 58474778,
+      "totalReservedBytes": 66830049
+    },
+    {
+      "timestamp": "2026-10-23T23:37:44.036Z",
+      "quality": "Medium",
+      "treatment": "GraphiteReflectiveNeon",
+      "frames": 201,
+      "seconds": 6.0149993896484375,
+      "meanFrameMs": 30.089553833007812,
+      "maxFrameMs": 60,
+      "renderCountersAvailable": true,
+      "drawCalls": 97,
+      "batches": 77,
+      "setPass": 39,
+      "totalAllocatedBytes": 58537993,
+      "totalReservedBytes": 66894452
+    },
+    {
+      "timestamp": "2026-10-23T23:38:38.231Z",
+      "quality": "Low",
+      "treatment": "GraphiteReflectiveNeon",
+      "frames": 228,
+      "seconds": 6.022003173828125,
+      "meanFrameMs": 26.517539978027344,
+      "maxFrameMs": 49,
+      "renderCountersAvailable": true,
+      "drawCalls": 93,
+      "batches": 73,
+      "setPass": 37,
+      "totalAllocatedBytes": 58538242,
+      "totalReservedBytes": 66894674
+    }
+  ]
+}

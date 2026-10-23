@@ -1,0 +1,213 @@
+{
+  "date": "2026-10-23",
+  "authenticatedLogin": "Artbarns",
+  "listingScope": "All accessible repositories and owner-affiliated repositories, page size 100, both returned the same six entries.",
+  "polyRiskInstalledSearchResults": 0,
+  "mutationsExecuted": [],
+  "repositories": [
+    {
+      "fullName": "Artbarns/ControlNet-v1-1-nightly",
+      "id": "702148657",
+      "visibility": "public",
+      "permissions": {
+        "admin": true,
+        "maintain": true,
+        "pull": true,
+        "push": true,
+        "triage": true
+      },
+      "defaultBranch": "main",
+      "branches": [
+        {
+          "name": "main",
+          "sha": "0328944df0462d910833b3f42819790d2a6cd921",
+          "protected": false
+        }
+      ],
+      "rootEntries": [
+        ".DS_Store",
+        ".gitignore",
+        "README.md",
+        "annotator",
+        "cldm",
+        "config.py",
+        "environment.yaml",
+        "font",
+        "github_docs",
+        "gradio_annotator.py",
+        "gradio_canny.py",
+        "gradio_depth.py",
+        "gradio_inpaint.py",
+        "gradio_ip2p.py",
+        "gradio_lineart.py",
+        "gradio_lineart_anime.py",
+        "gradio_mlsd.py",
+        "gradio_normalbae.py",
+        "gradio_openpose.py",
+        "gradio_scribble.py",
+        "gradio_scribble_interactive.py",
+        "gradio_seg.py",
+        "gradio_shuffle.py",
+        "gradio_softedge.py",
+        "gradio_tile.py",
+        "ldm",
+        "models",
+        "share.py",
+        "test_imgs"
+      ],
+      "containsUnityRoot": false,
+      "trackedWorkflowsDirectoryPresent": false
+    },
+    {
+      "fullName": "Artbarns/landing-page-master-Arthur",
+      "id": "756366129",
+      "visibility": "public",
+      "permissions": {
+        "admin": true,
+        "maintain": true,
+        "pull": true,
+        "push": true,
+        "triage": true
+      },
+      "defaultBranch": "main",
+      "branches": [
+        {
+          "name": "main",
+          "sha": "b4c25853971c1047ba673bb12b6c8786cb58f3b0",
+          "protected": false
+        }
+      ],
+      "rootEntries": [
+        "images",
+        "index.html",
+        "style.css"
+      ],
+      "containsUnityRoot": false,
+      "trackedWorkflowsDirectoryPresent": false
+    },
+    {
+      "fullName": "Artbarns/My-profile-1",
+      "id": "862291924",
+      "visibility": "public",
+      "permissions": {
+        "admin": true,
+        "maintain": true,
+        "pull": true,
+        "push": true,
+        "triage": true
+      },
+      "defaultBranch": "main",
+      "branches": [
+        {
+          "name": "main",
+          "sha": "98f1ac2c31e1f9c2b59dc5f5b43c6f17020e2ed8",
+          "protected": false
+        }
+      ],
+      "rootEntries": [
+        "Images",
+        "Index.html",
+        "README.md",
+        "style.css"
+      ],
+      "containsUnityRoot": false,
+      "trackedWorkflowsDirectoryPresent": false
+    },
+    {
+      "fullName": "Artbarns/My-Profil",
+      "id": "862293431",
+      "visibility": "public",
+      "permissions": {
+        "admin": true,
+        "maintain": true,
+        "pull": true,
+        "push": true,
+        "triage": true
+      },
+      "defaultBranch": "main",
+      "branches": [
+        {
+          "name": "main",
+          "sha": "916d34da40f6a5e216feaa589cd701ca100e61f4",
+          "protected": false
+        }
+      ],
+      "rootEntries": [
+        "Images",
+        "index.html",
+        "style.css"
+      ],
+      "containsUnityRoot": false,
+      "trackedWorkflowsDirectoryPresent": false
+    },
+    {
+      "fullName": "Artbarns/CAPOUPASCAP.web",
+      "id": "863950356",
+      "visibility": "public",
+      "permissions": {
+        "admin": true,
+        "maintain": true,
+        "pull": true,
+        "push": true,
+        "triage": true
+      },
+      "defaultBranch": "main",
+      "branches": [
+        {
+          "name": "main",
+          "sha": "35dea31e30dd3ca0e38b731794b05e0d5db034a1",
+          "protected": false
+        }
+      ],
+      "rootEntries": [
+        "CSS",
+        "images",
+        "index.html"
+      ],
+      "containsUnityRoot": false,
+      "trackedWorkflowsDirectoryPresent": false
+    },
+    {
+      "fullName": "Artbarns/CAPOUPASCAP-page",
+      "id": "863955201",
+      "visibility": "public",
+      "permissions": {
+        "admin": true,
+        "maintain": true,
+        "pull": true,
+        "push": true,
+        "triage": true
+      },
+      "defaultBranch": "main",
+      "branches": [
+        {
+          "name": "main",
+          "sha": "ef2c3e44b5278c55994cc00648544f3d0a0bdd42",
+          "protected": false
+        }
+      ],
+      "rootEntries": [
+        "css",
+        "images",
+        "index.html"
+      ],
+      "containsUnityRoot": false,
+      "trackedWorkflowsDirectoryPresent": false
+    }
+  ],
+  "conclusion": "No compatible PolyRisk source repository is currently accessible. Six repositories contain existing unrelated Python/HTML projects. Do not rename or replace an arbitrary existing repository.",
+  "connectorCapabilities": {
+    "readRepositories": true,
+    "readBranches": true,
+    "createBlobUtf8OrBase64": true,
+    "createTree": true,
+    "createCommit": true,
+    "createBranch": true,
+    "updateRefWithExpectedSha": true,
+    "createRepository": false,
+    "renameRepository": false,
+    "workflowCollectionFetch": "Rejected by connector allow-list; absence of tracked .github directory independently checked in all default-branch roots."
+  },
+  "requiredInput": "New empty private PolyRisk repository with connector access, or exact existing repository target authorized by the user.",
+  "hostingStillRequired": "GitHub source access alone does not supply a persistent public ASP.NET Core host."
+}

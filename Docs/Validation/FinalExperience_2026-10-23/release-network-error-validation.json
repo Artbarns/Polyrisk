@@ -1,0 +1,15 @@
+{
+  "release": true,
+  "origin": "http://127.0.0.1:9012",
+  "steps": [
+    {
+      "server": "http://127.0.0.1:59999",
+      "result": "Unknown Error toast, menu remains interactive"
+    },
+    {
+      "server": "http://127.0.0.1:9012",
+      "result": "Create succeeds without reload, lobby 7V8MMG,1/6"
+    }
+  ],
+  "limitations": "Loopback Mac browser only. Error message is generic; no distant outage or phone claim."
+}

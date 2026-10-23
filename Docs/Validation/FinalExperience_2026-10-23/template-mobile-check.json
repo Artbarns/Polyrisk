@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "checks": 37,
+  "results": [
+    {
+      "scenario": "iPhone430",
+      "configuredDpr": 2,
+      "mobile": true,
+      "nominalPixels": 1427600
+    },
+    {
+      "scenario": "iPad desktop UA",
+      "configuredDpr": 1.3098763255693147,
+      "mobile": true,
+      "nominalPixels": 2399049
+    },
+    {
+      "scenario": "Mac Retina",
+      "configuredDpr": 1.4907119849998598,
+      "mobile": false,
+      "nominalPixels": 2400838
+    },
+    {
+      "scenario": "Desktop DPR1",
+      "configuredDpr": 1,
+      "mobile": false,
+      "nominalPixels": 1080000
+    },
+    {
+      "scenario": "Android",
+      "configuredDpr": 2,
+      "mobile": true,
+      "nominalPixels": 1316640
+    },
+    {
+      "scenario": "4K CSS viewport",
+      "configuredDpr": 1,
+      "mobile": false,
+      "nominalPixels": 8294400
+    }
+  ]
+}

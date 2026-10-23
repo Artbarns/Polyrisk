@@ -1,0 +1,722 @@
+[
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin pawn positions audio and locks unchanged\n",
+    "timestamp": "2026-10-23T20:22:13.930Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin actual full economic snapshot identical\n",
+    "timestamp": "2026-10-23T20:22:13.933Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin quality accessibility preference unchanged\n",
+    "timestamp": "2026-10-23T20:22:13.937Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 0\n",
+    "timestamp": "2026-10-23T20:22:13.938Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 1\n",
+    "timestamp": "2026-10-23T20:22:13.941Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 2\n",
+    "timestamp": "2026-10-23T20:22:13.942Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 3\n",
+    "timestamp": "2026-10-23T20:22:13.943Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 4\n",
+    "timestamp": "2026-10-23T20:22:13.945Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 5\n",
+    "timestamp": "2026-10-23T20:22:13.948Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 6\n",
+    "timestamp": "2026-10-23T20:22:13.949Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 7\n",
+    "timestamp": "2026-10-23T20:22:13.951Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 8\n",
+    "timestamp": "2026-10-23T20:22:13.953Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 9\n",
+    "timestamp": "2026-10-23T20:22:13.955Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 10\n",
+    "timestamp": "2026-10-23T20:22:13.958Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 11\n",
+    "timestamp": "2026-10-23T20:22:13.959Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 12\n",
+    "timestamp": "2026-10-23T20:22:13.961Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 13\n",
+    "timestamp": "2026-10-23T20:22:13.963Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 14\n",
+    "timestamp": "2026-10-23T20:22:13.966Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 15\n",
+    "timestamp": "2026-10-23T20:22:13.967Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 16\n",
+    "timestamp": "2026-10-23T20:22:13.969Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 17\n",
+    "timestamp": "2026-10-23T20:22:13.973Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 18\n",
+    "timestamp": "2026-10-23T20:22:13.973Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 19\n",
+    "timestamp": "2026-10-23T20:22:13.976Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 20\n",
+    "timestamp": "2026-10-23T20:22:13.977Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 21\n",
+    "timestamp": "2026-10-23T20:22:13.978Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 22\n",
+    "timestamp": "2026-10-23T20:22:13.982Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 23\n",
+    "timestamp": "2026-10-23T20:22:13.988Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 24\n",
+    "timestamp": "2026-10-23T20:22:13.989Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 25\n",
+    "timestamp": "2026-10-23T20:22:14.122Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 26\n",
+    "timestamp": "2026-10-23T20:22:14.122Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 27\n",
+    "timestamp": "2026-10-23T20:22:14.123Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 28\n",
+    "timestamp": "2026-10-23T20:22:14.123Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 29\n",
+    "timestamp": "2026-10-23T20:22:14.123Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 30\n",
+    "timestamp": "2026-10-23T20:22:14.124Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 31\n",
+    "timestamp": "2026-10-23T20:22:14.124Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 32\n",
+    "timestamp": "2026-10-23T20:22:14.124Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 33\n",
+    "timestamp": "2026-10-23T20:22:14.125Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 34\n",
+    "timestamp": "2026-10-23T20:22:14.125Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 35\n",
+    "timestamp": "2026-10-23T20:22:14.125Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 36\n",
+    "timestamp": "2026-10-23T20:22:14.126Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 37\n",
+    "timestamp": "2026-10-23T20:22:14.126Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 38\n",
+    "timestamp": "2026-10-23T20:22:14.127Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 39\n",
+    "timestamp": "2026-10-23T20:22:14.127Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon camera identical\n",
+    "timestamp": "2026-10-23T20:22:14.130Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon 40 anchor collider contracts unchanged\n",
+    "timestamp": "2026-10-23T20:22:14.131Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon same four fused mesh objects\n",
+    "timestamp": "2026-10-23T20:22:14.131Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon all persistent state pixels unchanged\n",
+    "timestamp": "2026-10-23T20:22:14.131Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon pawn positions audio and locks unchanged\n",
+    "timestamp": "2026-10-23T20:22:14.132Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon actual full economic snapshot identical\n",
+    "timestamp": "2026-10-23T20:22:14.132Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon quality accessibility preference unchanged\n",
+    "timestamp": "2026-10-23T20:22:14.133Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 0\n",
+    "timestamp": "2026-10-23T20:22:14.133Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 1\n",
+    "timestamp": "2026-10-23T20:22:14.133Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 2\n",
+    "timestamp": "2026-10-23T20:22:14.133Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 3\n",
+    "timestamp": "2026-10-23T20:22:14.133Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 4\n",
+    "timestamp": "2026-10-23T20:22:14.133Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 5\n",
+    "timestamp": "2026-10-23T20:22:14.134Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 6\n",
+    "timestamp": "2026-10-23T20:22:14.134Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 7\n",
+    "timestamp": "2026-10-23T20:22:14.134Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 8\n",
+    "timestamp": "2026-10-23T20:22:14.134Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 9\n",
+    "timestamp": "2026-10-23T20:22:14.134Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 10\n",
+    "timestamp": "2026-10-23T20:22:14.135Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 11\n",
+    "timestamp": "2026-10-23T20:22:14.135Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 12\n",
+    "timestamp": "2026-10-23T20:22:14.135Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 13\n",
+    "timestamp": "2026-10-23T20:22:14.136Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 14\n",
+    "timestamp": "2026-10-23T20:22:14.136Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 15\n",
+    "timestamp": "2026-10-23T20:22:14.138Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 16\n",
+    "timestamp": "2026-10-23T20:22:14.140Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 17\n",
+    "timestamp": "2026-10-23T20:22:14.140Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 18\n",
+    "timestamp": "2026-10-23T20:22:14.141Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 19\n",
+    "timestamp": "2026-10-23T20:22:14.141Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 20\n",
+    "timestamp": "2026-10-23T20:22:14.141Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 21\n",
+    "timestamp": "2026-10-23T20:22:14.141Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 22\n",
+    "timestamp": "2026-10-23T20:22:14.141Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 23\n",
+    "timestamp": "2026-10-23T20:22:14.141Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 24\n",
+    "timestamp": "2026-10-23T20:22:14.141Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 25\n",
+    "timestamp": "2026-10-23T20:22:14.142Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 26\n",
+    "timestamp": "2026-10-23T20:22:14.142Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 27\n",
+    "timestamp": "2026-10-23T20:22:14.142Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 28\n",
+    "timestamp": "2026-10-23T20:22:14.142Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 29\n",
+    "timestamp": "2026-10-23T20:22:14.143Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 30\n",
+    "timestamp": "2026-10-23T20:22:14.143Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 31\n",
+    "timestamp": "2026-10-23T20:22:14.143Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 32\n",
+    "timestamp": "2026-10-23T20:22:14.145Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 33\n",
+    "timestamp": "2026-10-23T20:22:14.146Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 34\n",
+    "timestamp": "2026-10-23T20:22:14.146Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 35\n",
+    "timestamp": "2026-10-23T20:22:14.147Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 36\n",
+    "timestamp": "2026-10-23T20:22:14.148Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 37\n",
+    "timestamp": "2026-10-23T20:22:14.149Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 38\n",
+    "timestamp": "2026-10-23T20:22:14.149Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 39\n",
+    "timestamp": "2026-10-23T20:22:14.150Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_QA {\"treatment\":\"GraphiteReflectiveNeon\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"mainLight\":\"PerPixel\",\"srpBatcher\":true,\"width\":430,\"height\":830,\"indices\":40,\"meshes\":4,\"lights\":1,\"realtimeProbes\":0,\"bloom\":0.07999999821186066,\"exposure\":0.15000000596046449,\"size\":13.005837440490723,\"camera\":{\"x\":-12.615591049194336,\"y\":13.703811645507813,\"z\":-17.750782012939454},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"finish\":{\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-23T20:22:14.150Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_VARIANTS_DONE\n",
+    "timestamp": "2026-10-23T20:22:14.154Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=31 arrival=False reduced=False intensity=1.150 t=88.5340\n",
+    "timestamp": "2026-10-23T20:22:14.577Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS actual texture matches continuous envelope at measured first-frame age\n",
+    "timestamp": "2026-10-23T20:22:14.727Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_FIRST_SAMPLE age=0.06100464 alpha=1.03027344\n",
+    "timestamp": "2026-10-23T20:22:14.727Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE FAIL actual texture carries bounded progressive pulse\n",
+    "timestamp": "2026-10-23T20:22:14.830Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=31 arrival=False reduced=False intensity=1.150 t=88.7740\n",
+    "timestamp": "2026-10-23T20:22:14.830Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS retrigger preserves current intensity at attack start\n",
+    "timestamp": "2026-10-23T20:22:14.855Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=31 arrival=False reduced=False intensity=1.150 t=88.8300\n",
+    "timestamp": "2026-10-23T20:22:14.855Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=32 arrival=False reduced=False intensity=1.150 t=88.8760\n",
+    "timestamp": "2026-10-23T20:22:14.859Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=33 arrival=False reduced=False intensity=1.150 t=88.9160\n",
+    "timestamp": "2026-10-23T20:22:14.899Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=34 arrival=False reduced=False intensity=1.150 t=88.9710\n",
+    "timestamp": "2026-10-23T20:22:15.033Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=35 arrival=False reduced=False intensity=1.150 t=89.0360\n",
+    "timestamp": "2026-10-23T20:22:15.033Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=36 arrival=False reduced=False intensity=1.150 t=89.0830\n",
+    "timestamp": "2026-10-23T20:22:15.133Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS rapid contacts clear without residual light\n",
+    "timestamp": "2026-10-23T20:22:15.706Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=31 arrival=True reduced=True intensity=0.742 t=89.6720\n",
+    "timestamp": "2026-10-23T20:22:15.708Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS Reduced Motion retains lower bounded contact\n",
+    "timestamp": "2026-10-23T20:22:15.923Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS arrival clears independently of callbacks\n",
+    "timestamp": "2026-10-23T20:22:16.346Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS all persistent tile state pixels unchanged through retrigger stress\n",
+    "timestamp": "2026-10-23T20:22:16.346Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS isolated contact never moves camera\n",
+    "timestamp": "2026-10-23T20:22:16.347Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_ENVELOPE_DONE\n",
+    "timestamp": "2026-10-23T20:22:16.347Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":26,\"collidersInside\":21,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":177.46453857421876,\"y\":116.880126953125},\"tile32\":{\"x\":202.28372192382813,\"y\":132.8336181640625},\"tile0\":{\"x\":405.3498229980469,\"y\":264.87744140625},\"tile10\":{\"x\":148.13284301757813,\"y\":430.21337890625},\"tile20\":{\"x\":-109.08416748046875,\"y\":264.87750244140627},\"tile30\":{\"x\":148.1327667236328,\"y\":99.54156494140625},\"economy\":\"0:18000:6:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"ResolveTile\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-174.21429443359376,\"y\":355.9784851074219,\"width\":644.6942138671875,\"height\":415.0248718261719},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676301956176759,\"minTileAltitudePixels\":22.448184967041017,\"minTileAreaPixels\":794.782470703125}}\n",
+    "timestamp": "2026-10-23T20:22:39.148Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":27,\"collidersInside\":21,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":257.46453857421877,\"y\":116.880126953125},\"tile32\":{\"x\":282.2837219238281,\"y\":132.8336181640625},\"tile0\":{\"x\":485.3498229980469,\"y\":264.87744140625},\"tile10\":{\"x\":228.1328582763672,\"y\":430.21337890625},\"tile20\":{\"x\":-29.084152221679689,\"y\":264.87744140625},\"tile30\":{\"x\":228.13278198242188,\"y\":99.54150390625},\"economy\":\"0:18000:6:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"ResolveTile\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-94.21427917480469,\"y\":355.978515625,\"width\":644.6942749023438,\"height\":415.02484130859377},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.6762638092041,\"minTileAltitudePixels\":22.448123931884767,\"minTileAreaPixels\":794.7803955078125}}\n",
+    "timestamp": "2026-10-23T20:22:40.043Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":28,\"collidersInside\":21,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":297.4644775390625,\"y\":116.880126953125},\"tile32\":{\"x\":322.28369140625,\"y\":132.8336181640625},\"tile0\":{\"x\":525.3497314453125,\"y\":264.87744140625},\"tile10\":{\"x\":268.1328125,\"y\":430.21337890625},\"tile20\":{\"x\":10.915790557861329,\"y\":264.87750244140627},\"tile30\":{\"x\":268.1327209472656,\"y\":99.54156494140625},\"economy\":\"0:18000:6:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"ResolveTile\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-54.21434020996094,\"y\":355.9784851074219,\"width\":644.6942138671875,\"height\":415.0248718261719},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.67629051208496,\"minTileAltitudePixels\":22.448179244995118,\"minTileAreaPixels\":794.78271484375}}\n",
+    "timestamp": "2026-10-23T20:22:41.084Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":26,\"collidersInside\":21,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":317.46453857421877,\"y\":116.880126953125},\"tile32\":{\"x\":342.28375244140627,\"y\":132.8336181640625},\"tile0\":{\"x\":545.349853515625,\"y\":264.87744140625},\"tile10\":{\"x\":288.13287353515627,\"y\":430.21337890625},\"tile20\":{\"x\":30.915851593017579,\"y\":264.87744140625},\"tile30\":{\"x\":288.1327819824219,\"y\":99.54150390625},\"economy\":\"0:18000:6:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"ResolveTile\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-34.21427917480469,\"y\":355.978515625,\"width\":644.6942138671875,\"height\":415.02484130859377},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.67629051208496,\"minTileAltitudePixels\":22.44814109802246,\"minTileAreaPixels\":794.780517578125}}\n",
+    "timestamp": "2026-10-23T20:22:42.205Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_READBACK {\"time\":116.8010025024414,\"reference\":18.208171844482423,\"size\":13.005837440490723,\"factor\":1.399999976158142,\"position\":{\"x\":-16.161235809326173,\"y\":13.70380973815918,\"z\":-14.205138206481934},\"rotation\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"pawn\":{\"x\":-2.2489655017852785,\"y\":4.016031265258789,\"z\":-8.134159088134766},\"state\":\"StrategicOverview\",\"manual\":true,\"hold\":false,\"reduced\":false,\"expanded\":false,\"active\":0,\"logical\":6,\"inspected\":0,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0}}\n",
+    "timestamp": "2026-10-23T20:22:42.878Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Tile Selected: 12\n",
+    "timestamp": "2026-10-23T20:23:25.594Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Input Gateway] Routed click to GameEvents.\n",
+    "timestamp": "2026-10-23T20:23:25.600Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":26,\"collidersInside\":21,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":12,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":317.46453857421877,\"y\":116.880126953125},\"tile32\":{\"x\":342.28375244140627,\"y\":132.8336181640625},\"tile0\":{\"x\":545.349853515625,\"y\":264.87744140625},\"tile10\":{\"x\":288.13287353515627,\"y\":430.21337890625},\"tile20\":{\"x\":30.915851593017579,\"y\":264.87744140625},\"tile30\":{\"x\":288.1327819824219,\"y\":99.54150390625},\"economy\":\"0:18000:6:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"ResolveTile\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"Stock Market\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-34.21427917480469,\"y\":355.978515625,\"width\":644.6942138671875,\"height\":415.02484130859377},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.67629051208496,\"minTileAltitudePixels\":22.44814109802246,\"minTileAreaPixels\":794.780517578125}}\n",
+    "timestamp": "2026-10-23T20:23:25.885Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_READBACK {\"time\":160.51199340820313,\"reference\":18.208171844482423,\"size\":13.005837440490723,\"factor\":1.399999976158142,\"position\":{\"x\":-16.161235809326173,\"y\":13.70380973815918,\"z\":-14.205138206481934},\"rotation\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"pawn\":{\"x\":-2.2489655017852785,\"y\":4.016031265258789,\"z\":-8.134159088134766},\"state\":\"StrategicOverview\",\"manual\":true,\"hold\":false,\"reduced\":false,\"expanded\":false,\"active\":0,\"logical\":6,\"inspected\":12,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0}}\n",
+    "timestamp": "2026-10-23T20:23:26.580Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  }
+]

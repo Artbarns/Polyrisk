@@ -1,0 +1,83 @@
+--- GraphiteAccents.mat.before
++++ GraphiteAccents.mat.editorserialized
+@@ -28,6 +28,10 @@
+         m_Scale: {x: 1, y: 1}
+         m_Offset: {x: 0, y: 0}
+     - _BumpMap:
++        m_Texture: {fileID: 0}
++        m_Scale: {x: 1, y: 1}
++        m_Offset: {x: 0, y: 0}
++    - _ContactTex:
+         m_Texture: {fileID: 0}
+         m_Scale: {x: 1, y: 1}
+         m_Offset: {x: 0, y: 0}
+@@ -93,6 +97,7 @@
+     - _BumpScale: 1
+     - _ClearCoatMask: 0
+     - _ClearCoatSmoothness: 0
++    - _ContactGain: 1
+     - _Count: 64
+     - _Cull: 2
+     - _Cutoff: 0.5
+--- GraphiteTiles.mat.before
++++ GraphiteTiles.mat.editorserialized
+@@ -28,6 +28,10 @@
+         m_Scale: {x: 1, y: 1}
+         m_Offset: {x: 0, y: 0}
+     - _BumpMap:
++        m_Texture: {fileID: 0}
++        m_Scale: {x: 1, y: 1}
++        m_Offset: {x: 0, y: 0}
++    - _ContactTex:
+         m_Texture: {fileID: 0}
+         m_Scale: {x: 1, y: 1}
+         m_Offset: {x: 0, y: 0}
+@@ -85,14 +89,22 @@
+         m_Offset: {x: 0, y: 0}
+     m_Ints: []
+     m_Floats:
++    - _ActiveSurfaceContrast: 0
+     - _AlphaClip: 0
+     - _AlphaToMask: 0
++    - _ArrivalReflectionStrength: 0
++    - _BackgroundSeparation: 0
+     - _BandBoost: 1.5
+     - _Blend: 0
+     - _BlendModePreserveSpecular: 1
++    - _BoardHalfExtent: 7
+     - _BumpScale: 1
+     - _ClearCoatMask: 0
+     - _ClearCoatSmoothness: 0
++    - _ContactOutlineGain: 1
++    - _ContactReflectionFalloff: 0.025
++    - _ContactReflectionReach: 0.09
++    - _ContactReflectionStrength: 0
+     - _CornerOffset: 5.7000003
+     - _Cull: 2
+     - _Cutoff: 0.5
+@@ -102,6 +114,7 @@
+     - _DstBlendAlpha: 0
+     - _EdgeNormalStrength: 0.2
+     - _EdgeShadingPixels: 0.85
++    - _EdgeSpecular: 0
+     - _EnvironmentReflections: 1
+     - _GlossMapScale: 0
+     - _Glossiness: 0
+@@ -112,6 +125,7 @@
+     - _MinimumBandPixels: 1.2
+     - _OcclusionStrength: 1
+     - _Parallax: 0.005
++    - _Polish: 0
+     - _QueueOffset: 0
+     - _ReceiveShadows: 1
+     - _ReflectionFalloff: 0.025
+@@ -131,6 +145,9 @@
+     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+     - _Color: {r: 0.49799997, g: 0.49799997, b: 0.49799997, a: 1}
+     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
++    - _PawnFoot: {r: 0, g: 0, b: 1, a: 0}
++    - _PawnFootColor: {r: 0, g: 0, b: 0, a: 0}
+     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
++    - _SurfaceTint: {r: 1, g: 1, b: 1, a: 1}
+     - _TileSize: {r: 0.92, g: 1.3199999, b: 0.01656, a: 0.02}
+   m_BuildTextureStacks: []

@@ -1,0 +1,20 @@
+[
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_READBACK {\"time\":30.025999069213868,\"reference\":18.208171844482423,\"size\":13.005837440490723,\"factor\":1.399999976158142,\"position\":{\"x\":-8.173534393310547,\"y\":16.035066604614259,\"z\":-19.42641830444336},\"rotation\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"pawn\":{\"x\":4.551034927368164,\"y\":3.954030990600586,\"z\":-8.134159088134766},\"state\":\"StrategicOverview\",\"manual\":false,\"hold\":false,\"reduced\":false,\"expanded\":false,\"active\":0,\"logical\":0,\"inspected\":0,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0}}\n",
+    "timestamp": "2026-10-23T20:15:15.323Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_READBACK {\"time\":70.87000274658203,\"reference\":18.208171844482423,\"size\":13.005837440490723,\"factor\":1.399999976158142,\"position\":{\"x\":-8.173534393310547,\"y\":16.035066604614259,\"z\":-19.42641830444336},\"rotation\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"pawn\":{\"x\":4.551034927368164,\"y\":3.954030990600586,\"z\":-8.134159088134766},\"state\":\"StrategicOverview\",\"manual\":false,\"hold\":false,\"reduced\":false,\"expanded\":false,\"active\":0,\"logical\":0,\"inspected\":0,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0}}\n",
+    "timestamp": "2026-10-23T20:15:56.142Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_READBACK {\"time\":86.53399658203125,\"reference\":18.208171844482423,\"size\":13.005837440490723,\"factor\":1.399999976158142,\"position\":{\"x\":-9.306310653686524,\"y\":15.200902938842774,\"z\":-19.28351593017578},\"rotation\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"pawn\":{\"x\":2.226034641265869,\"y\":4.122313976287842,\"z\":-8.134159088134766},\"state\":\"MovementFocus\",\"manual\":false,\"hold\":false,\"reduced\":false,\"expanded\":false,\"active\":0,\"logical\":0,\"inspected\":0,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0}}\n",
+    "timestamp": "2026-10-23T20:16:11.834Z",
+    "url": "http://127.0.0.1:9006/FinalExperienceQA/Build/8dccb73c99ea5528260772e0e34b00f3.framework.js"
+  }
+]

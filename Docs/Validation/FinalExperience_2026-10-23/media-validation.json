@@ -1,0 +1,30 @@
+[
+  {
+    "file": "release-multiplayer-audio.webm",
+    "decodePass": true,
+    "duration": null,
+    "hasAudio": true,
+    "channels": 2,
+    "sampleRate": 48000,
+    "peakInt16": 1778,
+    "clippedSamples": 0,
+    "rmsInt16": 81.45608852405626
+  },
+  {
+    "file": "release-close-corner-audio.webm",
+    "decodePass": true,
+    "duration": null,
+    "hasAudio": true,
+    "channels": 2,
+    "sampleRate": 48000,
+    "peakInt16": 1857,
+    "clippedSamples": 0,
+    "rmsInt16": 78.61454841326905
+  },
+  {
+    "file": "release-multiplayer-game.webm",
+    "decodePass": true,
+    "duration": null,
+    "hasAudio": false
+  }
+]

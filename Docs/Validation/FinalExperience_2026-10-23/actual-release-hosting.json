@@ -1,0 +1,46 @@
+[
+  {
+    "file": "e2585ece24207977c963a965e2e5662f.wasm.gz",
+    "status": 200,
+    "type": "application/wasm",
+    "encoding": "gzip",
+    "cache": "public, max-age=31536000, immutable",
+    "length": 7797315
+  },
+  {
+    "file": "7a2dbded24d57e056180125b1583e7c4.loader.js",
+    "status": 200,
+    "type": "text/javascript",
+    "encoding": null,
+    "cache": "public, max-age=31536000, immutable",
+    "length": 20680
+  },
+  {
+    "file": "da4d5e1789ddb6a79251521b83012e91.data.gz",
+    "status": 200,
+    "type": "application/octet-stream",
+    "encoding": "gzip",
+    "cache": "public, max-age=31536000, immutable",
+    "length": 4703521
+  },
+  {
+    "file": "b75641dc6bd810e38d6456adc09cf0dd.framework.js.gz",
+    "status": 200,
+    "type": "text/javascript",
+    "encoding": "gzip",
+    "cache": "public, max-age=31536000, immutable",
+    "length": 81625
+  },
+  {
+    "path": "/data/lobbies.json",
+    "status": 404
+  },
+  {
+    "path": "/capture.html",
+    "status": 404
+  },
+  {
+    "path": "/backend/Program.cs",
+    "status": 404
+  }
+]

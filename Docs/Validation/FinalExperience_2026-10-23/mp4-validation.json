@@ -1,0 +1,20 @@
+[
+  {
+    "file": "release-multiplayer-audio.mp4",
+    "decodePass": true,
+    "duration": "00:00:34.72",
+    "audio": true
+  },
+  {
+    "file": "release-multiplayer-game.mp4",
+    "decodePass": true,
+    "duration": "00:00:32.62",
+    "audio": false
+  },
+  {
+    "file": "release-close-corner-audio.mp4",
+    "decodePass": true,
+    "duration": "00:00:34.76",
+    "audio": true
+  }
+]
