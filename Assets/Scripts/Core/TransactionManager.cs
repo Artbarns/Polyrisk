@@ -1,8 +1,19 @@
 using System;
 using UnityEngine;
+using PolyRisk.Systems;
+using System.Linq;
 
 namespace PolyRisk.Core
 {
+    [Serializable]
+    public class DebtSettlementContext
+    {
+        public string kind;
+        public int propertyTileIndex = -1;
+        public int hijackerPlayerId = -1;
+        public double creditorBalanceBefore;
+    }
+
     /// <summary>
     /// Manages all monetary transactions in the game.
     /// Updated to support 'double' for currency.
@@ -25,6 +36,29 @@ namespace PolyRisk.Core
             }
         }
 
+        public void PayRequired(PlayerModel player, double amount, PlayerModel creditor, Action<bool> completed,
+            DebtSettlementContext context = null)
+        {
+            bool Pay() => creditor == null ? DeductMoney(player, amount) : TransferMoney(player, creditor, amount);
+            if (amount <= 0) { completed?.Invoke(true); return; }
+            if (player.CurrentBalance >= amount) { completed?.Invoke(Pay()); return; }
+            if (player.IsAI)
+            {
+                // Economic simulation must not depend on a UI component being subscribed.
+                LiquidationHelper.LiquidateToCover(player, amount);
+                bool paid = player.CurrentBalance >= amount && Pay();
+                if (!paid) ProcessBankruptcyCash(player, creditor);
+                completed?.Invoke(paid);
+                return;
+            }
+            if (GameEvents.OnInsolvency == null)
+            {
+                Debug.LogError("No insolvency UI available for a human debt.");
+                return; // Do not silently forgive the debt or eliminate a human.
+            }
+            GameEvents.OnInsolvency.Invoke(player, amount, creditor, completed, context);
+        }
+
         // Removed Lazy singleton logic
         // private static readonly Lazy<TransactionManager> lazy = ...
         // private TransactionManager() { }
@@ -36,7 +70,8 @@ namespace PolyRisk.Core
         /// <param name="receiver">The player receiving the money.</param>
         /// <param name="amount">The amount to transfer (double).</param>
         /// <returns>True if successful, false otherwise.</returns>
-        public bool TransferMoney(PlayerModel sender, PlayerModel receiver, double amount)
+        public bool TransferMoney(PlayerModel sender, PlayerModel receiver, double amount,
+            GameEventReason reason = GameEventReason.Other, long correlationId = 0, int tileId = -1)
         {
             if (sender == null || receiver == null)
             {
@@ -63,6 +98,12 @@ namespace PolyRisk.Core
 
                 GameEvents.OnBalanceChanged?.Invoke(sender.PlayerId, sender.CurrentBalance);
                 GameEvents.OnBalanceChanged?.Invoke(receiver.PlayerId, receiver.CurrentBalance);
+
+                GameEvents.PublishGameEvent(GameEventPhase.Resolution,
+                    GameEventKind.TransferConfirmed, GameEventPriority.Normal,
+                    sender.PlayerId, receiver.PlayerId, tileId, -amount, reason,
+                    correlationId, splits: new[] { new GameEventSplit(receiver.PlayerId, amount) },
+                    coalescible: reason == GameEventReason.Rent);
 
                 Debug.Log($"Transfer successful: {amount} from Player {sender.PlayerId} to Player {receiver.PlayerId}.");
                 return true;
@@ -140,41 +181,28 @@ namespace PolyRisk.Core
         /// <param name="creditor">The player owed money.</param>
         public void ProcessBankruptcyCash(PlayerModel debtor, PlayerModel creditor)
         {
-            if (debtor == null || creditor == null)
-            {
-                Debug.LogError("Bankruptcy Process failed: Debtor or Creditor is null.");
-                return;
-            }
-
+            if (debtor == null || debtor.IsBankrupt) return;
             double remainingCash = debtor.CurrentBalance;
-            if (remainingCash > 0)
+            debtor.SetBalance(0);
+            GameEvents.OnBalanceChanged?.Invoke(debtor.PlayerId, 0);
+            if (creditor != null && remainingCash > 0) AddMoney(creditor, remainingCash);
+            foreach (var property in debtor.OwnedProperties.ToList())
             {
-                debtor.SetBalance(0);
-                creditor.SetBalance(creditor.CurrentBalance + remainingCash);
-
-                GameEvents.OnBalanceChanged?.Invoke(debtor.PlayerId, 0);
-                GameEvents.OnBalanceChanged?.Invoke(creditor.PlayerId, creditor.CurrentBalance);
-
-                Debug.Log($"Bankruptcy: Transferred remaining {remainingCash} from Player {debtor.PlayerId} to Player {creditor.PlayerId}.");
+                debtor.RemoveProperty(property);
+                property.ResetRuntimeState();
             }
-
-            // Bug trouvé via stress test (100 parties, 99% ANOMALY_TIMEOUT malgré une perf
-            // par ailleurs correcte) : cette méthode ne posait jamais IsBankrupt, contrairement
-            // à BankruptcyScreenController.ProcessAILiquidation() qui gère normalement ce cas
-            // (souscrite à GameEvents.OnInsolvency, appelée juste avant ce fallback dans
-            // RulesEngine). Si ce flow ne se déclenche pas à temps pour une raison quelconque
-            // (ex. souscription pas encore active juste après un rechargement de scène — même
-            // catégorie de risque que la fuite déjà trouvée sur OnPawnMovementFinished), le
-            // joueur restait bloqué à $0 sans jamais être formellement en faillite : il
-            // continuait à jouer indéfiniment, retombant sur le même loyer impayable à chaque
-            // tour (jusqu'à 39 répétitions identiques observées dans un seul run). Ce filet de
-            // secours doit être autonome et fiable, peu importe ce qui s'est passé avant.
-            if (!debtor.IsBankrupt)
-            {
-                debtor.IsBankrupt = true;
-                GameEvents.OnPlayerBankruptcy?.Invoke(debtor.PlayerId, 0);
-                Debug.LogWarning($"[Bankruptcy] Player {debtor.PlayerId} BANKRUPT (filet de secours ProcessBankruptcyCash).");
-            }
+            debtor.IsBankrupt = true;
+            // Sabotage on someone else's property must not keep paying an eliminated player.
+            var board = BoardManager.Instance;
+            if (board != null && board.tileDataList != null)
+                foreach (var property in board.tileDataList.OfType<PropertyData>())
+                    if (property.HijackedBy == debtor)
+                    {
+                        property.HijackedBy = null;
+                        property.HijackTurnsRemaining = 0;
+                    }
+            GameEvents.OnPlayerBankruptcy?.Invoke(debtor.PlayerId, debtor.LapsCompleted);
+            GameEvents.PublishActivity("bankruptcy", debtor.PlayerId, "est en faillite", true);
         }
     }
 }

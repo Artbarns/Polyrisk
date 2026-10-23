@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,6 +12,69 @@ namespace PolyRisk.UI
     /// </summary>
     public static class UIUXRuntime
     {
+        private static readonly Dictionary<PanelSettings, PanelSettings> gamePanels = new Dictionary<PanelSettings, PanelSettings>();
+#if UNITY_WEBGL && !UNITY_EDITOR
+        [DllImport("__Internal")] private static extern float PolyRiskCanvasCssWidth();
+        [DllImport("__Internal")] private static extern float PolyRiskSafeInset(int edge);
+#endif
+
+        public static void PrepareDocument(UIDocument document)
+        {
+            if (document == null || document.panelSettings == null) return;
+            var source = document.panelSettings;
+            if (gamePanels.ContainsValue(source)) return;
+            if (!gamePanels.TryGetValue(source, out var settings))
+            {
+                settings = UnityEngine.Object.Instantiate(source);
+                settings.name = source.name + " (Pulse runtime)";
+#if UNITY_WEBGL || UNITY_EDITOR
+                settings.scaleMode = PanelScaleMode.ConstantPixelSize;
+#else
+                settings.scaleMode = PanelScaleMode.ConstantPhysicalSize;
+                settings.referenceDpi = 160;
+                settings.fallbackDpi = 160;
+#endif
+                settings.sortingOrder = source.sortingOrder - 1;
+                gamePanels.Add(source, settings);
+            }
+            RefreshPanelScale(settings);
+            document.panelSettings = settings;
+            document.rootVisualElement.RegisterCallback<GeometryChangedEvent>(_ => RefreshPanelScale(settings));
+        }
+
+        private static void RefreshPanelScale(PanelSettings settings)
+        {
+            float scale = 1;
+#if UNITY_WEBGL && !UNITY_EDITOR
+            float cssWidth = PolyRiskCanvasCssWidth();
+            if (cssWidth > 0) scale = Screen.width / cssWidth;
+#endif
+            if (!Mathf.Approximately(settings.scale, scale)) settings.scale = scale;
+        }
+
+        public static void FitBoardPresentation(VisualElement root, Rect viewport)
+        {
+            var stage = root?.Q<VisualElement>("PulseCenterStage");
+            if (stage?.parent == null || root.worldBound.width <= 0 || root.worldBound.height <= 0) return;
+            var parent = stage.parent.worldBound;
+            float sx = root.worldBound.width / Screen.width, sy = root.worldBound.height / Screen.height;
+            stage.style.left = viewport.xMin * sx - (parent.xMin - root.worldBound.xMin);
+            stage.style.top = (Screen.height - viewport.yMax) * sy - (parent.yMin - root.worldBound.yMin);
+            stage.style.width = viewport.width * sx;
+            stage.style.height = viewport.height * sy;
+            stage.style.right = StyleKeyword.Auto;
+            stage.style.bottom = StyleKeyword.Auto;
+        }
+
+        private static Rect cachedSafeArea;
+        public static Rect SafeArea => cachedSafeArea.width > 0 ? cachedSafeArea : Screen.safeArea;
+
+        public static Rect IntersectSafeInsets(Rect nativeSafe, float screenWidth, float screenHeight, Vector4 insets)
+        {
+            return Rect.MinMaxRect(Mathf.Max(nativeSafe.xMin, insets.x), Mathf.Max(nativeSafe.yMin, insets.y),
+                Mathf.Min(nativeSafe.xMax, screenWidth - insets.z), Mathf.Min(nativeSafe.yMax, screenHeight - insets.w));
+        }
+
         private const string PreparedRootClass = "ux-runtime-root";
         public static bool ReducedMotion => PlayerPrefs.GetInt("PolyRisk.ReduceMotion", 0) == 1;
 
@@ -67,9 +132,39 @@ namespace PolyRisk.UI
             // layouts and avoids polling Screen dimensions every frame.
             root.EnableInClassList("ux-compact-height", height <= 430f);
             root.EnableInClassList("ux-low-height", height <= 340f);
-            root.EnableInClassList("ux-narrow", Screen.width <= 520 || width <= 480f);
+            bool wideLandscape = width > height && height > 600f;
+            root.EnableInClassList("ux-wide-landscape", wideLandscape);
+            var tileInspector = root.Q<VisualElement>("Panel_TileDetail");
+            tileInspector?.EnableInClassList("ux-wide-landscape-inspector", wideLandscape);
+            bool shortLandscape = width > height && height <= 600f;
+            tileInspector?.EnableInClassList("ux-short-landscape-inspector", shortLandscape);
+            root.EnableInClassList("ux-narrow", width <= 480f);
+            root.EnableInClassList("ux-extra-narrow", width <= 370f);
+            root.EnableInClassList("ux-small-portrait", width < height && height < 760f);
 
             Rect safe = Screen.safeArea;
+#if UNITY_WEBGL && !UNITY_EDITOR
+            float cssWidth = PolyRiskCanvasCssWidth();
+            float pixelScale = cssWidth > 0 ? Screen.width / cssWidth : 1;
+            safe = IntersectSafeInsets(safe, Screen.width, Screen.height,
+                new Vector4(PolyRiskSafeInset(0), PolyRiskSafeInset(1), PolyRiskSafeInset(2), PolyRiskSafeInset(3)) * pixelScale);
+#endif
+            cachedSafeArea = safe;
+            // These two roots are absolute; padding on their parent does not inset them.
+            float left = width * safe.xMin / Screen.width;
+            float right = width * (Screen.width - safe.xMax) / Screen.width;
+            float top = height * (Screen.height - safe.yMax) / Screen.height;
+            float bottom = height * safe.yMin / Screen.height;
+            var hud = root.Q<VisualElement>("TopHUD_Bar");
+            if (hud != null) { hud.style.left = left; hud.style.right = right; hud.style.top = top; }
+            if (tileInspector != null)
+            {
+                root.pickingMode = PickingMode.Ignore;
+                tileInspector.pickingMode = PickingMode.Ignore;
+                tileInspector.style.left = left; tileInspector.style.right = right;
+                tileInspector.style.top = top; tileInspector.style.bottom = bottom;
+                tileInspector.style.width = StyleKeyword.Auto; tileInspector.style.height = StyleKeyword.Auto;
+            }
             root.style.paddingLeft = width * safe.xMin / Screen.width;
             root.style.paddingRight = width * (Screen.width - safe.xMax) / Screen.width;
             root.style.paddingBottom = height * safe.yMin / Screen.height;

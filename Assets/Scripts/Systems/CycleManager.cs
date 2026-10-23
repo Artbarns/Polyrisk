@@ -43,6 +43,8 @@ namespace PolyRisk.Systems
             Debug.Log($"<color=yellow>[CycleManager] Cycle {type} démarré pour {turnsRemaining} tours.</color>");
             SyncToFinanceSystem();
             OnCycleChanged?.Invoke(currentCycle, turnsRemaining);
+            GameEvents.PublishActivity("cycle", -1,
+                $"cycle {type} actif pour {turnsRemaining} tours", true);
         }
 
         public void EndCycle()
@@ -53,6 +55,16 @@ namespace PolyRisk.Systems
             turnsRemaining = 0;
             SyncToFinanceSystem();
             OnCycleChanged?.Invoke(currentCycle, 0);
+            GameEvents.PublishActivity("cycle", -1, "retour à un marché normal");
+        }
+
+        /// <summary>Applique un snapshot sans déclencher de logique autoritaire.</summary>
+        public void ApplyReplicatedState(CycleType type, int duration)
+        {
+            currentCycle = type;
+            turnsRemaining = type == CycleType.NORMAL ? 0 : Mathf.Max(0, duration);
+            SyncToFinanceSystem();
+            OnCycleChanged?.Invoke(currentCycle, turnsRemaining);
         }
 
         /// <summary>Propage l'état du cycle au FinanceSystem pour le TopHUD.</summary>
@@ -101,6 +113,9 @@ namespace PolyRisk.Systems
             _               => 1.00
         };
 
+        /// <summary>Multiplicateur de revenus au passage GO : le CRASH réduit salaires et dividendes.</summary>
+        public double GetGoIncomeMultiplier() => currentCycle == CycleType.CRASH ? 0.60 : 1.00;
+
         /// <summary>
         /// Shift additif appliqué aux bornes ROI du Stock Market (en points).
         /// BOOM : +0.20 sur min+max. CRASH : −0.20 sur min, max plus volatil.
@@ -111,11 +126,17 @@ namespace PolyRisk.Systems
             CycleType.CRASH => -0.20f,
             _               => 0f
         };
-        public float GetStockShiftMax() => currentCycle switch
+        public float GetStockShiftMax(int duration) => currentCycle switch
         {
-            CycleType.BOOM  => +0.20f,
-            CycleType.CRASH => -0.28f,
-            _               => 0f
+            CycleType.BOOM => +0.20f,
+            CycleType.CRASH => duration switch
+            {
+                1 => -0.20f,
+                3 => -0.28f,
+                5 => -0.48f,
+                _ => -0.28f
+            },
+            _ => 0f
         };
         public float GetStockTotalLossMultiplier() => currentCycle == CycleType.CRASH ? 1.75f : 1.0f;
 

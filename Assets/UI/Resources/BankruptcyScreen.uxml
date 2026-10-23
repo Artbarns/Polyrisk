@@ -14,13 +14,13 @@
             <ui:Label name="Lbl_BankDebtValue" text="$5,000" class="bankruptcy-debt-value" />
 
             <!-- Liste d'actifs liquidables (upgrades / hypothèques / titres) -->
-            <ui:ScrollView name="Container_BankAssets" style="flex-grow: 1; min-height: 200px;" />
+            <ui:ScrollView name="Container_BankAssets" class="bankruptcy-assets" />
 
             <!-- Footer : cash courant + bouton give-up -->
-            <ui:VisualElement style="flex-direction: row; justify-content: space-between; align-items: center; margin-top: 12px;">
+            <ui:VisualElement class="bankruptcy-footer">
                 <ui:Label name="Lbl_BankCurrentCash" text="Cash: $0" class="card-desc"
                     style="flex-grow: 1;" />
-                <ui:Button name="Btn_BankGiveUp" text="GIVE UP" class="btn-secondary"
+                <ui:Button name="Btn_BankGiveUp" text="GIVE UP" class="btn-secondary bankruptcy-give-up-btn"
                     style="background-color: rgba(255,71,71,0.2); color: #FF4747; border-color: rgba(255,71,71,0.5);" />
             </ui:VisualElement>
 

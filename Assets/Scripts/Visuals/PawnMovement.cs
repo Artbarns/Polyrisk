@@ -13,6 +13,14 @@ namespace PolyRisk.Visuals
     /// </summary>
     public class PawnMovement : MonoBehaviour
     {
+        // Read-only presentation clock; the original completion callback keeps its timing.
+        public bool IsVisuallySettled { get; private set; } = true;
+
+        private const float LandingBounceDuration = 0.08f;
+        private const float LandingBounceHeight = 0.055f;
+        private const float LandingBounceHorizontalScale = 0.025f;
+        private const float LandingBounceVerticalSquash = 0.06f;
+
         [Header("Movement Settings")]
         [Tooltip("Movement speed in units per second.")]
         [SerializeField] private float moveSpeed = 5f;
@@ -42,6 +50,7 @@ namespace PolyRisk.Visuals
                 return;
             }
 
+            IsVisuallySettled = false;
             StartCoroutine(MoveRoutine(waypoints, onMovementFinished));
         }
 
@@ -50,6 +59,8 @@ namespace PolyRisk.Visuals
             // We iterate through each waypoint, moving from current pos to waypoint.
             // Note: 'transform.position' updates at the end of each segment.
             bool reducedMotion = UIUXRuntime.ReducedMotion;
+            Vector3 baseScale = transform.localScale;
+            bool hasMoved = false;
             
             for (int i = 0; i < waypoints.Count; i++)
             {
@@ -62,6 +73,7 @@ namespace PolyRisk.Visuals
                 
                 // If distance is near zero, skip
                 if (distance < 0.01f) continue;
+                hasMoved = true;
 
                 // Duration based on speed
                 float duration = distance / moveSpeed;
@@ -88,15 +100,55 @@ namespace PolyRisk.Visuals
                         currentPos.y += heightOffset;
                     }
 
+                    // A short squash-and-pop on the next hop makes each tile landing
+                    // legible without adding time between intermediate waypoints.
+                    float landingBounce = !reducedMotion && i > 0
+                        ? Mathf.Sin(Mathf.Clamp01(elapsed / LandingBounceDuration) * Mathf.PI)
+                        : 0f;
+                    currentPos.y += landingBounce * LandingBounceHeight;
+
                     transform.position = currentPos;
+                    ApplyLandingBounceScale(baseScale, landingBounce);
                     yield return null;
                 }
 
                 // Snap to target to avoid drift
                 transform.position = targetPos;
+                transform.localScale = baseScale;
             }
 
+            // The last tile has no following hop to carry its bounce, so give only
+            // the final landing a brief 80 ms pulse before advancing the game loop.
+            if (!reducedMotion && hasMoved)
+            {
+                Vector3 finalPosition = waypoints[waypoints.Count - 1];
+                float elapsed = 0f;
+                while (elapsed < LandingBounceDuration)
+                {
+                    elapsed += Time.deltaTime;
+                    float progress = Mathf.Clamp01(elapsed / LandingBounceDuration);
+                    float landingBounce = Mathf.Sin(progress * Mathf.PI);
+                    transform.position = finalPosition + Vector3.up * (landingBounce * LandingBounceHeight);
+                    ApplyLandingBounceScale(baseScale, landingBounce);
+                    yield return null;
+                }
+
+                transform.position = finalPosition;
+            }
+
+            transform.localScale = baseScale;
+            IsVisuallySettled = true;
             onFinished?.Invoke();
+        }
+
+        private void ApplyLandingBounceScale(Vector3 baseScale, float bounce)
+        {
+            float horizontalScale = 1f + LandingBounceHorizontalScale * bounce;
+            float verticalScale = 1f - LandingBounceVerticalSquash * bounce;
+            transform.localScale = new Vector3(
+                baseScale.x * horizontalScale,
+                baseScale.y * verticalScale,
+                baseScale.z * horizontalScale);
         }
     }
 }

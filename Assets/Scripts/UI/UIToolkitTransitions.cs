@@ -18,6 +18,7 @@ namespace PolyRisk.UI
             Action onComplete = null, float durationSeconds = 0.28f)
         {
             if (target == null) return;
+            if (UIUXRuntime.ReducedMotion) { onComplete?.Invoke(); return; }
             target.AddToClassList("panel-enter-from");
             host.StartCoroutine(RemoveClassNextFrame(target, "panel-enter-from", durationSeconds, onComplete));
         }
@@ -27,6 +28,7 @@ namespace PolyRisk.UI
             Action onComplete = null, float durationSeconds = 0.20f)
         {
             if (target == null) return;
+            if (UIUXRuntime.ReducedMotion) { onComplete?.Invoke(); return; }
             target.AddToClassList("panel-exit-to");
             host.StartCoroutine(WaitAndCallback(durationSeconds, () =>
             {
@@ -40,6 +42,7 @@ namespace PolyRisk.UI
             Action onComplete = null, float durationSeconds = 0.24f)
         {
             if (target == null) return;
+            if (UIUXRuntime.ReducedMotion) { onComplete?.Invoke(); return; }
             target.AddToClassList("modal-enter-from");
             host.StartCoroutine(RemoveClassNextFrame(target, "modal-enter-from", durationSeconds, onComplete));
         }
@@ -49,6 +52,7 @@ namespace PolyRisk.UI
             Action onComplete = null, float durationSeconds = 0.35f)
         {
             if (target == null) return;
+            if (UIUXRuntime.ReducedMotion) { onComplete?.Invoke(); return; }
             target.AddToClassList("modal-enter-from");
             host.StartCoroutine(RemoveClassNextFrame(target, "modal-enter-from", durationSeconds, onComplete));
         }
@@ -65,14 +69,14 @@ namespace PolyRisk.UI
 
             if (onComplete != null)
             {
-                yield return new WaitForSeconds(durationSeconds);
+                yield return new WaitForSecondsRealtime(durationSeconds);
                 onComplete.Invoke();
             }
         }
 
         private static IEnumerator WaitAndCallback(float seconds, Action callback)
         {
-            yield return new WaitForSeconds(seconds);
+            yield return new WaitForSecondsRealtime(seconds);
             callback?.Invoke();
         }
     }

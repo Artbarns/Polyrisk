@@ -12,7 +12,9 @@ Shader "PolyRisk/NeonState"
 {
     Properties
     {
+        _ContactTex ("Transient pawn contact", 2D) = "black" {}
         _StateTex   ("État des cases (64x1)", 2D) = "black" {}
+        _ContactGain ("Contact outline gain", Float) = 1
         _Count      ("Largeur de la texture d'état", Float) = 64
         _Boost      ("Multiplicateur global", Float) = 1
         _Falloff    ("Adoucissement des bords", Range(0, 1)) = 0.15
@@ -43,10 +45,13 @@ Shader "PolyRisk/NeonState"
 
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 
+            TEXTURE2D(_ContactTex);
+            SAMPLER(sampler_ContactTex);
             TEXTURE2D(_StateTex);
             SAMPLER(sampler_StateTex);
 
             CBUFFER_START(UnityPerMaterial)
+                float _ContactGain;
                 float _Count;
                 float _Boost;
                 float _Falloff;
@@ -84,7 +89,8 @@ Shader "PolyRisk/NeonState"
                 // état inexistant (case jamais initialisée) : on retombe sur la
                 // teinte encodée dans le mesh, à intensité nulle
                 float3 tint = state.a > 0.0001 ? state.rgb : IN.color.rgb;
-                OUT.emissive = tint * state.a * _Boost;
+                float4 contact = SAMPLE_TEXTURE2D_LOD(_ContactTex, sampler_ContactTex, float2(u, 0.25), 0);
+                OUT.emissive = tint * state.a * _Boost + contact.rgb * contact.a * _ContactGain;
 
                 // les faces horizontales rendent un peu plus fort que les parois :
                 // ça creuse la lecture du logement sans coûter un second matériau

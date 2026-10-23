@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 using PolyRisk.Core;
 
@@ -59,7 +60,7 @@ namespace PolyRisk.Systems
             {
                 1 => 100f,   // T1 : ultime disponible chaque GO
                 2 => 50f,    // T2 : tous les 2 GO
-                3 => 33.3f,  // T3 : tous les 3 GO
+                3 => 100f / 3f, // T3 : exactement tous les 3 GO
                 _ => 0f
             };
 
@@ -85,6 +86,12 @@ namespace PolyRisk.Systems
                 playerEnergy[player.PlayerId] = Mathf.Max(0f, playerEnergy[player.PlayerId] - amount);
         }
 
+        public void SetEnergyForReplica(PlayerModel player, float amount)
+        {
+            if (player == null) return;
+            playerEnergy[player.PlayerId] = Mathf.Clamp(amount, 0f, 100f);
+        }
+
         // ─────────────────────────────────────────────────────────────────────────
         // GUARD COMMUN
         // ─────────────────────────────────────────────────────────────────────────
@@ -103,6 +110,13 @@ namespace PolyRisk.Systems
                 return false;
             }
             return true;
+        }
+
+        private static void PublishUltimate(PlayerModel player, string abilityName)
+        {
+            if (player != null)
+                GameEvents.PublishActivity("power", player.PlayerId,
+                    $"active {abilityName}", true);
         }
 
         // ─────────────────────────────────────────────────────────────────────────
@@ -133,6 +147,7 @@ namespace PolyRisk.Systems
             ConsumeEnergy(player);
             transactionManager.AddMoney(player, total);
             Debug.Log($"[Ultimate] Real Estate Rappel Dividendes → +${total:N0} pour Player {player.PlayerId}");
+            PublishUltimate(player, "Rappel de dividendes");
             return true;
         }
 
@@ -148,6 +163,7 @@ namespace PolyRisk.Systems
             player.HasImmunityCard = true;
             player.ImmunityTurnsRemaining = 1;
             Debug.Log($"[Ultimate] Pharma Protocole Sanitaire — Player {player.PlayerId} immunisé 1 tour.");
+            PublishUltimate(player, "Protocole sanitaire");
             return true;
         }
 
@@ -167,6 +183,7 @@ namespace PolyRisk.Systems
             ConsumeEnergy(player);
             player.AutoTurboReady = true;
             Debug.Log($"[Ultimate] Automobile Moteur Turbo activé — Player {player.PlayerId} peut reroller.");
+            PublishUltimate(player, "Moteur turbo");
             return true;
         }
 
@@ -181,6 +198,7 @@ namespace PolyRisk.Systems
             ConsumeEnergy(player);
             player.OilGasBoostTurnsRemaining = 1;
             Debug.Log($"[Ultimate] Oil&Gas Boom Énergétique — Player {player.PlayerId} : +80% loyers Oil&Gas ce tour.");
+            PublishUltimate(player, "Boom énergétique");
             return true;
         }
 
@@ -211,6 +229,7 @@ namespace PolyRisk.Systems
 
             ConsumeEnergy(player);
             Debug.Log($"[Ultimate] Luxe Taxe Somptuaire — Player {player.PlayerId} perçoit ${totalCollected:N0} (cap ${cap:N0}).");
+            PublishUltimate(player, "Taxe somptuaire");
             return true;
         }
 
@@ -244,23 +263,24 @@ namespace PolyRisk.Systems
             {
                 int before = prop.CurrentLevel;
                 prop.SetLevel(before + 1);
+                Debug.LogWarning($"[UPGRADE] Player {player.PlayerId} | {prop.PropertyName} lvl{before}→lvl{prop.CurrentLevel} | source=TechUltimate | cost=0 | turn={player.LapsCompleted}");
                 Debug.Log($"[Ultimate] Tech MàJ : {prop.PropertyName} Lvl{before} → Lvl{prop.CurrentLevel} (gratuit)");
             }
+            PublishUltimate(player, "Mise à jour système");
             return true;
         }
 
         /// <summary>
         /// Aerospace Ultime — Saut Quantique.
-        /// Téléporte le pion vers la tile Aero/Tech/Hub/Marketplace la plus stratégique.
-        /// Pour l'humain : auto-sélectionne le Hub ou la Marketplace la plus proche.
-        /// TODO Phase E : UI picker pour choisir la destination librement.
+        /// Téléporte le pion vers une tile Aero/Tech/Hub/Marketplace éligible.
+        /// Un index explicite permet au futur picker humain de choisir la destination.
+        /// Sans index, le fallback choisit la propriété éligible la plus chère, puis la Marketplace.
         /// </summary>
-        public bool Aerospace_SautQuantique(PlayerModel player)
+        public bool Aerospace_SautQuantique(PlayerModel player, int targetIndex = -1)
         {
             if (!CanActivate(player, "Aerospace")) return false;
             if (turnManager == null || boardManager == null) return false;
 
-            // Trouver les tiles éligibles : Aero, Tech, Hub (Logistics), Marketplace (case 20)
             int bestIndex = -1;
             double bestValue = -1;
 
@@ -283,7 +303,14 @@ namespace PolyRisk.Systems
                 else if (tile.Type == TileType.GlobalAuction)
                 {
                     eligible = true;
-                    value = 999999; // Marketplace en priorité absolue si aucune propriété valide
+                    value = 0; // fallback si aucune propriété éligible n'existe
+                }
+
+                if (targetIndex >= 0 && tile.TileIndex == targetIndex)
+                {
+                    if (!eligible) return false;
+                    bestIndex = targetIndex;
+                    break;
                 }
 
                 if (eligible && value > bestValue)
@@ -293,12 +320,13 @@ namespace PolyRisk.Systems
                 }
             }
 
-            if (bestIndex < 0) return false;
+            if (bestIndex < 0 || (targetIndex >= 0 && bestIndex != targetIndex)) return false;
 
             ConsumeEnergy(player);
             // Saut Quantique ne collecte PAS le Sgo si case 0 traversée
             turnManager.TeleportPlayer(player, bestIndex);
             Debug.Log($"[Ultimate] Aerospace Saut Quantique — Player {player.PlayerId} → Tile {bestIndex}");
+            PublishUltimate(player, "Saut quantique");
             return true;
         }
 
@@ -341,6 +369,7 @@ namespace PolyRisk.Systems
             targetProperty.HijackedBy = player;
             targetProperty.HijackTurnsRemaining = 3;
             Debug.Log($"[Ultimate] Armement Cyber-Sabotage — Player {player.PlayerId} hijack {targetProperty.PropertyName} (25% revenus × 3 tours).");
+            PublishUltimate(player, $"Cyber-sabotage sur {targetProperty.PropertyName}");
             return true;
         }
 
@@ -362,7 +391,7 @@ namespace PolyRisk.Systems
             return 3;
         }
 
-        private bool HasFullFamilyByName(PlayerModel player, string familyNameContains)
+        public bool HasFamilyMonopoly(PlayerModel player, string familyNameContains)
         {
             if (boardManager?.tileDataList == null) return false;
 
@@ -382,5 +411,31 @@ namespace PolyRisk.Systems
 
             return target != null && total > 0 && owned == total;
         }
+
+        /// <summary>
+        /// Publishes the family-unlocked activity after an authoritative acquisition.
+        /// Replicated snapshot application deliberately does not call this, avoiding
+        /// duplicate notifications when clients reconnect or replay state.
+        /// </summary>
+        public static void PublishFamilyCompletionIfNeeded(
+            PlayerModel player,
+            IEnumerable<PropertyData> acquiredProperties)
+        {
+            if (player == null || Instance == null || acquiredProperties == null) return;
+
+            foreach (string familyName in acquiredProperties
+                .Where(property => property?.FamilyData != null)
+                .Select(property => property.FamilyData.FamilyName)
+                .Where(name => !string.IsNullOrWhiteSpace(name))
+                .Distinct())
+            {
+                if (!Instance.HasFamilyMonopoly(player, familyName)) continue;
+                GameEvents.PublishActivity("family", player.PlayerId,
+                    $"complète la famille {familyName} · pouvoir débloqué", true);
+            }
+        }
+
+        private bool HasFullFamilyByName(PlayerModel player, string familyNameContains)
+            => HasFamilyMonopoly(player, familyNameContains);
     }
 }

@@ -18,7 +18,7 @@
             </ui:VisualElement>
 
             <!-- Close Button Overlay -->
-            <ui:Button class="btn-close">
+            <ui:Button class="btn-close" name="Btn_Close">
                 <ui:Label text="×" class="close-text" />
             </ui:Button>
 
@@ -26,15 +26,15 @@
             <ui:VisualElement class="panel-content">
 
                 <!-- AUCTION CHOICE CARD -->
-                <ui:Button class="card-choice card-auction">
+                <ui:Button class="card-choice card-auction" name="Btn_InitiateTender">
                     <ui:VisualElement class="icon-box icon-auction-box">
                         <!-- We map the PNG sprite created later onto this VisualElement -->
                         <ui:VisualElement class="icon-image icon-chart-png" />
                     </ui:VisualElement>
                     
                     <ui:VisualElement class="text-stack">
-                        <ui:Label text="OPEN AUCTION" class="card-title" />
-                        <ui:Label text="Create a free-form auction for your assets. Offers can include Cash, Properties, or both. Your final selection rules all offers." class="card-desc" />
+                        <ui:Label text="SELL A PROPERTY" class="card-title" />
+                        <ui:Label text="Invite offers in cash, properties, or both." class="card-desc" />
                     </ui:VisualElement>
                 </ui:Button>
 
@@ -46,14 +46,14 @@
                 </ui:VisualElement>
 
                 <!-- SANCTIONS CHOICE CARD -->
-                <ui:Button class="card-choice card-sanctions">
+                <ui:Button class="card-choice card-sanctions" name="Btn_Sanctions">
                     <ui:VisualElement class="icon-box icon-sanctions-box">
                         <ui:VisualElement class="icon-image icon-wrench-png" />
                     </ui:VisualElement>
                     
                     <ui:VisualElement class="text-stack">
                         <ui:Label text="HOSTILE SANCTIONS" class="card-title" />
-                        <ui:Label text="Create a free-form auction for your assets. Others can include Cash, Properties, or both. Your final selection rules all offers." class="card-desc" />
+                        <ui:Label text="Target rivals with economic penalties." class="card-desc" />
                     </ui:VisualElement>
                 </ui:Button>
 

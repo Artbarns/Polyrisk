@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Globalization;
 using System.Linq;
+using System.Collections.Generic;
 using PolyRisk.Core;
 using PolyRisk.Systems;
+using PolyRisk.Multiplayer;
 
 namespace PolyRisk.UI
 {
@@ -19,6 +22,15 @@ namespace PolyRisk.UI
     /// </summary>
     public class ActionButtonsWidget : MonoBehaviour
     {
+        private static bool transientDicePresentationActive;
+        private bool pulseUserInspecting;
+        private int pulseFeedbackGeneration;
+        private readonly Dictionary<long, int> pulseDiceOrigins = new Dictionary<long, int>();
+        public bool CanInspect => turnManager?.CurrentPlayer != null
+            && !turnManager.CurrentPlayer.IsAI && IsLocalPlayer(turnManager.CurrentPlayer)
+            && !transientDicePresentationActive;
+        public VisualElement DiceHost { get; private set; }
+
         [Header("System References")]
         [Tooltip("Reference to the RulesEngine for action execution.")]
         public RulesEngine rulesEngine;
@@ -39,7 +51,7 @@ namespace PolyRisk.UI
         public VisualTreeAsset bottomSheetTemplate;
 
         // Refs UI Toolkit résolues une fois au Start
-        private Button btnPrimary, btnSecondary;
+        private Button btnPrimary, btnSecondary, btnTertiary;
         private VisualElement buySlideTrack, buySlideHandle;
         private Label buySlideLabel;
         private bool buySlideDragging;
@@ -47,41 +59,111 @@ namespace PolyRisk.UI
         private float buySlideStartX;
         private float buySlideProgress;
         private bool lastReducedMotion;
-        private Label lblTileName, lblTileFamily, lblTileRent, lblTileLevel, lblTileYield;
-        private VisualElement containerTileLevel, iconTileFamily;
+        private Label lblTileName, lblTileFamily, lblTileEffect, lblTileRent, lblTileRentTrend, lblTileRisk, lblTileRoi, lblTileRoiTrend;
+        private VisualElement tileInspectorHeading, tileStats, containerTileRisk, iconTileFamily, tileDetailPanel, abilityPickerOverlay, investmentPickerOverlay;
+        private VisualElement pulsePanel, pulseDetails, pulseTabContent;
+        private Button pulseToggle, pulseInspectorTab, pulsePortfolioTab, pulseGoTab, pulseGoSummary;
+        private Button pulseFamilyProgress;
+        private Label pulseToggleState, pulseOwnership, pulseGoBase, pulseGoCosts, pulseGoNet;
+        private Label pulseFamilyOwned, pulseFamilyTotal;
+        private VisualElement pulseFamilySlots;
+        private Label primaryActionTitle, primaryActionValue;
+        private string pulseActiveTab = "inspector";
+        private bool pulseExpanded;
+        private bool pulseReturnToArrival;
+        private PulseSheetMotion pulseMotion;
+        private VisualElement gameStateDock, gameStateHistory, gameStateHistoryList;
+        private Label lblGameStateTitle, lblGameStateMessage;
+        private Button btnGameStateHistory, btnSkipGameEvent;
+        private readonly List<GameStateHistoryItem> gameStateTimeline = new List<GameStateHistoryItem>();
+        private readonly HashSet<string> gameStateActivityKeys = new HashSet<string>();
+        private readonly HashSet<long> gameStateEventIds = new HashSet<long>();
+        private GameEventPresenter gameEventPresenter;
+        private GameEvent activeDockEvent;
+        private int gameEventPresentationGeneration;
+        private string pendingTargetedUltimate;
+        private int pendingInvestmentDuration = 3;
+        private int pendingInvestmentPreset = 5;
+        private readonly List<PolyRisk.Visuals.TileVisuals> abilityTargetPulses = new List<PolyRisk.Visuals.TileVisuals>();
+
+        public bool IsAbilityTargetSelectionActive => !string.IsNullOrEmpty(pendingTargetedUltimate);
 
         private BoardTile currentSelectedTile;
+        public int InspectedTileIndex => currentSelectedTile?.TileIndex ?? -1;
         private float lastClickTime = 0f;
         private const float CLICK_COOLDOWN = 0.5f;
 
+        private sealed class GameStateHistoryItem
+        {
+            public GameActivityEntry Activity;
+            public GameEvent Event;
+        }
+
         private void OnEnable()
         {
+            PolyRisk.Visuals.PlayerVisualManager.VisualMovementStarted += OnVisualPawnMovement;
             GameEvents.OnTileSelected += OnTileSelected;
             GameEvents.OnTurnStarted += OnTurnStarted;
+            GameEvents.OnActivityPublished += OnGameActivityPublished;
+            gameEventPresenter = new GameEventPresenter
+            {
+                LocalPlayerId = LocalSeatIndex(),
+                ReducedMotion = UIUXRuntime.ReducedMotion,
+                PreserveChronology = true,
+                ShouldQueue = item => GameEventTextFormatter.IsDockEvent(item) || item.Kind == GameEventKind.DiceRolled
+            };
+            gameEventPresenter.TraceRecorded += OnGameEventTraceRecorded;
         }
 
         private void OnDisable()
         {
             ResetBuySlide();
+            pulseMotion?.Stop();
+            PolyRisk.Visuals.PlayerVisualManager.VisualMovementStarted -= OnVisualPawnMovement;
             GameEvents.OnTileSelected -= OnTileSelected;
             GameEvents.OnTurnStarted -= OnTurnStarted;
+            GameEvents.OnActivityPublished -= OnGameActivityPublished;
+            gameEventPresentationGeneration++;
+            activeDockEvent = null;
+            pulseDiceOrigins.Clear();
+            if (gameEventPresenter != null)
+            {
+                gameEventPresenter.TraceRecorded -= OnGameEventTraceRecorded;
+                gameEventPresenter.Dispose();
+                gameEventPresenter = null;
+            }
+            gameStateDock?.RemoveFromClassList("game-state-dock--presenting");
+            CloseUltimatePicker();
+            CloseInvestmentPicker();
         }
 
         private void OnTurnStarted(int playerId)
         {
             if (turnManager == null) return;
+            UpdateGameStateDock();
             
-            // Reset selection for the new turn
-            currentSelectedTile = null;
+            pulseUserInspecting = false;
+            var nextPlayer = turnManager.GetPlayerById(playerId);
+            if (activeDockEvent == null && nextPlayer != null)
+                currentSelectedTile = boardManager?.GetTileAt(turnManager.GetPlayerPosition(nextPlayer));
+            RefreshPulseMode();
+            UpdateInspectorSection(currentSelectedTile);
+            CloseInvestmentPicker();
 
             PlayerModel activePlayer = turnManager.GetPlayerById(playerId);
             if (activePlayer != null)
             {
+                if (!IsLocalPlayer(activePlayer))
+                {
+                    SetPrimaryButtonState("PLAYER TURN", false);
+                    SetSecondaryButtonState(string.Empty, false);
+                    return;
+                }
                 if (activePlayer.IsAI)
                 {
                     // Force the UI to show AI TURN immediately, before the AI even rolls the dice
                     SetPrimaryButtonState("AI TURN", false);
-                    SetSecondaryButtonState("...", false);
+                    SetSecondaryButtonState(string.Empty, false);
                 }
                 else
                 {
@@ -93,7 +175,7 @@ namespace PolyRisk.UI
                          
                          if (turnManager.IsJustLandedInAudit)
                          {
-                             SetSecondaryButtonState("STAY IN JAIL", true);
+                             SetSecondaryButtonState("STAY IN AUDIT", true);
                          }
                          else
                          {
@@ -102,9 +184,9 @@ namespace PolyRisk.UI
                     }
                     else
                     {
-                        // Reset buttons for human player
-                        SetPrimaryButtonState("WAIT", false);
-                        SetSecondaryButtonState("...", false);
+                        // Replicated turns can move directly from Planning to Planning.
+                        // Refresh now; Update's state-change cache will not detect that turn.
+                        UpdateButtonsState(currentSelectedTile, activePlayer);
                     }
                 }
             }
@@ -126,17 +208,73 @@ namespace PolyRisk.UI
              UpdateInspectorSection(null);
         }
 
+        public static void SetTransientDicePresentation(bool active)
+        {
+            transientDicePresentationActive = active;
+            foreach (var widget in FindObjectsOfType<ActionButtonsWidget>(true))
+            {
+                widget.pulsePanel?.EnableInClassList("pulse-panel--presenting-dice", active);
+                widget.RefreshPulseMode();
+                widget.UpdateGameStateDock();
+                if (active) continue;
+                if (widget.activeDockEvent?.Kind == GameEventKind.DiceRolled)
+                {
+                    var actor = widget.turnManager?.GetPlayerById(widget.activeDockEvent.ActorId);
+                    if (actor != null && !widget.pulseUserInspecting)
+                    {
+                        widget.currentSelectedTile = widget.boardManager?.GetTileAt(widget.turnManager.GetPlayerPosition(actor));
+                        widget.UpdateInspectorSection(widget.currentSelectedTile);
+                    }
+                    widget.UpdateButtonsState(widget.currentSelectedTile, widget.turnManager?.CurrentPlayer);
+                    widget.gameEventPresenter?.SkipCurrent();
+                    widget.activeDockEvent = null;
+                }
+                widget.BeginNextGameEventPresentation();
+            }
+        }
+
+        public void InspectTile(BoardTile tile)
+        {
+            if (!CanInspect || tile == null) return;
+            pulseUserInspecting = true;
+            HandleTileSelected(tile);
+            pulseActiveTab = "inspector";
+            RefreshPulseMode();
+            UpdateGameStateDock();
+        }
+
+        private void RefreshPulseMode()
+        {
+            if (pulsePanel == null) return;
+            bool spectating = turnManager?.CurrentPlayer != null
+                && (turnManager.CurrentPlayer.IsAI || !IsLocalPlayer(turnManager.CurrentPlayer));
+            pulsePanel.EnableInClassList("pulse-panel--spectating", spectating);
+            pulseToggle?.SetEnabled(CanInspect);
+            pulseFamilyProgress?.SetEnabled(CanInspect);
+            pulseGoSummary?.SetEnabled(CanInspect);
+            pulseDetails?.SetEnabled(CanInspect);
+            pulsePanel.Q<VisualElement>(className: "pulse-actions")?.SetEnabled(!spectating);
+            UpdatePulseToggleLabel();
+        }
+
         private void TryBindUIToolkit()
         {
             if (uiDocument == null) return;
+            UIUXRuntime.PrepareDocument(uiDocument);
             var root = uiDocument.rootVisualElement;
             if (root == null) return;
 
             if (bottomSheetTemplate != null && root.Q<VisualElement>("Panel_TileDetail") == null)
                 bottomSheetTemplate.CloneTree(root);
 
+            UIUXRuntime.PrepareRoot(root);
+            UIUXRuntime.PrepareView(root.Q<VisualElement>("Panel_TileDetail"));
+
             btnPrimary = root.Q<Button>("Btn_Primary");
             btnSecondary = root.Q<Button>("Btn_Secondary");
+            btnTertiary = root.Q<Button>("Btn_Tertiary");
+            primaryActionTitle = root.Q<Label>("Lbl_PrimaryTitle");
+            primaryActionValue = root.Q<Label>("Lbl_PrimaryValue");
             buySlideTrack = root.Q<VisualElement>("Slider_Buy");
             buySlideHandle = root.Q<VisualElement>("Handle_BuySlide");
             buySlideLabel = root.Q<Label>("Lbl_BuySlide");
@@ -154,24 +292,102 @@ namespace PolyRisk.UI
                 buySlideHandle.RegisterCallback<PointerCaptureOutEvent>(_ => ResetBuySlide());
             }
             lastReducedMotion = UIUXRuntime.ReducedMotion;
+            tileDetailPanel = root.Q<VisualElement>("Panel_TileDetail");
+            pulsePanel = tileDetailPanel;
+            DiceHost = root.Q<VisualElement>("PulseDiceHost");
+            FindObjectOfType<TopHUDWidget>()?.AttachDiceToCockpit(DiceHost);
+            pulseDetails = root.Q<VisualElement>("PulseDetails");
+            if (pulsePanel != null && pulseDetails != null) pulseMotion = new PulseSheetMotion(pulsePanel, pulseDetails);
+            pulseTabContent = root.Q<VisualElement>("PulseTabContent");
+            pulseToggle = root.Q<Button>("Btn_PulseToggle");
+            pulseToggleState = root.Q<Label>("Lbl_PulseToggleState");
+            pulseInspectorTab = root.Q<Button>("Btn_PulseInspector");
+            pulsePortfolioTab = root.Q<Button>("Btn_PulsePortfolio");
+            pulseGoTab = root.Q<Button>("Btn_PulseGo");
+            pulseGoSummary = root.Q<Button>("Btn_PulseGoSummary");
+            pulseFamilyProgress = root.Q<Button>("Btn_PulseFamilyProgress");
+            pulseFamilyOwned = root.Q<Label>("Lbl_PulseFamilyOwned");
+            pulseFamilyTotal = root.Q<Label>("Lbl_PulseFamilyTotal");
+            pulseFamilySlots = root.Q<VisualElement>("PulseFamilySlots");
+            pulseOwnership = root.Q<Label>("Lbl_PulseOwnership");
+            pulseGoBase = root.Q<Label>("Lbl_PulseGoBase");
+            pulseGoCosts = root.Q<Label>("Lbl_PulseGoCosts");
+            pulseGoNet = root.Q<Label>("Lbl_PulseGoNet");
+            if (pulseToggle != null) pulseToggle.clicked += TogglePulsePanel;
+            if (pulseInspectorTab != null) pulseInspectorTab.clicked += () => SetPulseTab("inspector");
+            if (pulsePortfolioTab != null) pulsePortfolioTab.clicked += () => SetPulseTab("portfolio");
+            if (pulseGoTab != null) pulseGoTab.clicked += () => SetPulseTab("go");
+            if (pulseGoSummary != null) pulseGoSummary.clicked += OpenPulseGoFlow;
+            if (pulseFamilyProgress != null) pulseFamilyProgress.clicked += OpenPulseInspector;
+            UpdatePulseToggleLabel();
+            RefreshPulseMode();
+            gameStateDock = root.Q<VisualElement>("GameStateDock");
+            lblGameStateTitle = root.Q<Label>("Lbl_GameStateTitle");
+            lblGameStateMessage = root.Q<Label>("Lbl_GameStateMessage");
+            gameStateHistory = root.Q<VisualElement>("GameStateHistory");
+            gameStateHistoryList = root.Q<VisualElement>("GameStateHistoryList");
+            if (gameStateHistory != null) pulsePanel.Add(gameStateHistory);
+            btnGameStateHistory = root.Q<Button>("Btn_GameStateHistory");
+            btnSkipGameEvent = root.Q<Button>("Btn_SkipGameEvent");
+            if (btnGameStateHistory != null) btnGameStateHistory.clicked += ToggleGameStateHistory;
+            if (btnSkipGameEvent != null)
+            {
+                btnSkipGameEvent.text = "Continuer";
+                btnSkipGameEvent.clicked += SkipCurrentGameEventPresentation;
+            }
+            RenderGameStateHistory();
+            UpdateGameStateDock();
+            BeginNextGameEventPresentation();
+            tileInspectorHeading = root.Q<VisualElement>(className: "tile-inspector-heading");
             lblTileName = root.Q<Label>("Lbl_TileName");
             lblTileFamily = root.Q<Label>("Lbl_TileFamily");
+            lblTileEffect = root.Q<Label>("Lbl_TileEffect");
             lblTileRent = root.Q<Label>("Lbl_TileRent");
-            lblTileLevel = root.Q<Label>("Lbl_TileLevel");
-            lblTileYield = root.Q<Label>("Lbl_TileYield");
-            containerTileLevel = root.Q<VisualElement>("Container_TileLevel");
+            lblTileRentTrend = root.Q<Label>("Lbl_TileRentTrend");
+            lblTileRisk = root.Q<Label>("Lbl_TileRisk");
+            lblTileRoi = root.Q<Label>("Lbl_TileRoi");
+            lblTileRoiTrend = root.Q<Label>("Lbl_TileRoiTrend");
+            containerTileRisk = root.Q<VisualElement>("Container_TileRisk");
+            tileStats = root.Q<VisualElement>(className: "tile-stat-row");
             iconTileFamily = root.Q<VisualElement>("Icon_TileFamily");
 
             // Start() ne s'exécute qu'une fois par durée de vie du composant — pas de
             // risque de double-abonnement.
             if (btnPrimary != null) btnPrimary.clicked += OnPrimaryClicked;
             if (btnSecondary != null) btnSecondary.clicked += OnSecondaryClicked;
+            if (btnTertiary != null) btnTertiary.clicked += OnTertiaryClicked;
+            SetPulseExpanded(pulseExpanded);
+        }
+
+        public void SetPresentationVisible(bool visible)
+        {
+            // Keep UIDocument and event listeners alive while a modal covers the HUD.
+            // Disabling the GameObject recreates the document and invalidates button refs.
+            if (uiDocument != null && uiDocument.rootVisualElement != null)
+            {
+                uiDocument.rootVisualElement.SetEnabled(visible);
+                uiDocument.rootVisualElement.EnableInClassList("pulse-modal-covered", !visible);
+            }
+            if (!visible || turnManager == null) return;
+            var current = turnManager.CurrentPlayer;
+            if (turnManager.CurrentState == TurnManager.TurnState.ResolveTile && current != null)
+                currentSelectedTile = boardManager != null
+                    ? boardManager.GetTileAt(turnManager.GetPlayerPosition(current)) : currentSelectedTile;
+            UpdateInspectorSection(currentSelectedTile);
+            RenderPulseDetails();
+            UpdateButtonsState(currentSelectedTile, current);
         }
 
         public void OnPrimaryClicked()
         {
             if (Time.time - lastClickTime < CLICK_COOLDOWN) return;
             lastClickTime = Time.time;
+
+            if (pulseReturnToArrival && turnManager?.CurrentPlayer != null)
+            {
+                HandleTileSelected(boardManager.GetTileAt(turnManager.GetPlayerPosition(turnManager.CurrentPlayer)));
+                return;
+            }
 
             if (rulesEngine == null || turnManager == null)
             {
@@ -183,11 +399,42 @@ namespace PolyRisk.UI
             }
 
             PlayerModel currentPlayer = turnManager.CurrentPlayer;
+            if (!IsLocalPlayer(currentPlayer)) return;
             if (currentPlayer != null && !currentPlayer.IsAI)
             {
+                if (turnManager.CurrentState == TurnManager.TurnState.ChooseTurbo)
+                {
+                    if (OnlineGameController.Instance != null
+                        && OnlineGameController.Instance.TrySubmitLocalCommand("dice.turbo", "{\"choice\":0}")) return;
+                    turnManager.ConfirmTurboChoice(0);
+                    return;
+                }
+                if (turnManager.CurrentState == TurnManager.TurnState.AdjustDice)
+                {
+                    if (OnlineGameController.Instance != null
+                        && OnlineGameController.Instance.TrySubmitLocalCommand("dice.adjust", "{\"delta\":-1}"))
+                        return;
+                    turnManager.ConfirmAutoPrecision(-1);
+                    return;
+                }
+
+                if (turnManager.CurrentState == TurnManager.TurnState.WaitingForTransitChoice)
+                {
+                    if (OnlineGameController.Instance != null
+                        && OnlineGameController.Instance.TrySubmitLocalCommand(
+                            "transit.choose", "{\"takeTransit\":true}")) return;
+                    turnManager.ResolveTransitExpressChoice(true);
+                    return;
+                }
+
                 // Phase D — PLANNING PHASE : Primary = ROLL DICE
                 if (turnManager.CurrentState == TurnManager.TurnState.Planning)
                 {
+                    pulseUserInspecting = false;
+                    RefreshPulseMode();
+                    if (OnlineGameController.Instance != null
+                        && OnlineGameController.Instance.TrySubmitLocalCommand("turn.roll"))
+                        return;
                     turnManager.EndPlanningPhase();
                     return;
                 }
@@ -195,6 +442,9 @@ namespace PolyRisk.UI
                 // Handle Audit Actions
                 if (currentPlayer.IsInAudit)
                 {
+                    if (OnlineGameController.Instance != null
+                        && OnlineGameController.Instance.TrySubmitLocalCommand("audit.pay"))
+                        return;
                     turnManager.AuditPayFine();
                     return;
                 }
@@ -217,6 +467,19 @@ namespace PolyRisk.UI
                     }
                     return;
                 }
+
+                if (turnManager.CurrentState == TurnManager.TurnState.ResolveTile
+                    && currentSelectedTile.Type == TileType.StockMarket)
+                {
+                    ShowInvestmentPicker(currentPlayer);
+                    return;
+                }
+
+
+                if (turnManager.CurrentState == TurnManager.TurnState.ResolveTile
+                    && OnlineGameController.Instance != null
+                    && OnlineGameController.Instance.TrySubmitLocalCommand("action.primary"))
+                    return;
 
                 // Affordability Check Override
                 if (currentSelectedTile.Type == TileType.Property && currentSelectedTile.Data is PropertyData prop)
@@ -248,23 +511,50 @@ namespace PolyRisk.UI
              }
              
              PlayerModel currentPlayer = turnManager.CurrentPlayer;
+             if (!IsLocalPlayer(currentPlayer)) return;
 
              if (currentPlayer != null && !currentPlayer.IsAI)
              {
+                if (turnManager.CurrentState == TurnManager.TurnState.ChooseTurbo)
+                {
+                    if (OnlineGameController.Instance != null
+                        && OnlineGameController.Instance.TrySubmitLocalCommand("dice.turbo", "{\"choice\":1}")) return;
+                    turnManager.ConfirmTurboChoice(1);
+                    return;
+                }
+                 if (turnManager.CurrentState == TurnManager.TurnState.AdjustDice)
+                 {
+                     if (OnlineGameController.Instance != null
+                         && OnlineGameController.Instance.TrySubmitLocalCommand("dice.adjust", "{\"delta\":0}"))
+                         return;
+                     turnManager.ConfirmAutoPrecision(0);
+                     return;
+                 }
+
+                 if (turnManager.CurrentState == TurnManager.TurnState.WaitingForTransitChoice)
+                 {
+                     if (OnlineGameController.Instance != null
+                         && OnlineGameController.Instance.TrySubmitLocalCommand(
+                             "transit.choose", "{\"takeTransit\":false}")) return;
+                     turnManager.ResolveTransitExpressChoice(false);
+                     return;
+                 }
+
                  // Phase D — PLANNING PHASE : Secondary = Use Ultimate (si dispo) sinon PASS
                  if (turnManager.CurrentState == TurnManager.TurnState.Planning)
                  {
-                     string ultFam = FindUltimateAvailable(currentPlayer);
-                     if (ultFam != null)
+                     if (GetAvailableUltimates(currentPlayer).Count > 0)
                      {
-                         TriggerUltimate(currentPlayer, ultFam);
-                         UpdateButtonsState(currentSelectedTile, currentPlayer); // refresh (energy peut avoir baissé)
+                         ShowUltimatePicker(currentPlayer);
                      }
-                     else
-                     {
-                         // PASS = roll dice directement
-                         turnManager.EndPlanningPhase();
-                     }
+                    else
+                    {
+                        // PASS = roll dice directement
+                        if (OnlineGameController.Instance != null
+                            && OnlineGameController.Instance.TrySubmitLocalCommand("turn.roll"))
+                            return;
+                        turnManager.EndPlanningPhase();
+                    }
                      return;
                  }
 
@@ -273,6 +563,9 @@ namespace PolyRisk.UI
                 {
                     if (currentPlayer.HasGetOutOfAuditCard)
                     {
+                         if (OnlineGameController.Instance != null
+                             && OnlineGameController.Instance.TrySubmitLocalCommand("audit.card"))
+                             return;
                          // Button logic for Escape Card
                          turnManager.UseEscapeCard();
                          return;
@@ -280,14 +573,25 @@ namespace PolyRisk.UI
 
                     if (turnManager.IsJustLandedInAudit)
                     {
+                        if (OnlineGameController.Instance != null
+                            && OnlineGameController.Instance.TrySubmitLocalCommand("audit.stay"))
+                            return;
                         turnManager.StayInAudit();
                     }
                     else
                     {
+                        if (OnlineGameController.Instance != null
+                            && OnlineGameController.Instance.TrySubmitLocalCommand("audit.roll"))
+                            return;
                         turnManager.AuditRollDice();
                     }
                     return;
                 }
+
+                 if (turnManager.CurrentState == TurnManager.TurnState.ResolveTile
+                     && OnlineGameController.Instance != null
+                     && OnlineGameController.Instance.TrySubmitLocalCommand("action.secondary"))
+                     return;
 
                  if (currentSelectedTile != null)
                  {
@@ -326,9 +630,368 @@ namespace PolyRisk.UI
              }
         }
 
+        public void OnTertiaryClicked()
+        {
+            if (Time.time - lastClickTime < CLICK_COOLDOWN) return;
+            lastClickTime = Time.time;
+            if (turnManager != null && turnManager.CurrentState == TurnManager.TurnState.AdjustDice)
+            {
+                if (!IsLocalPlayer(turnManager.CurrentPlayer)) return;
+                if (OnlineGameController.Instance != null
+                    && OnlineGameController.Instance.TrySubmitLocalCommand("dice.adjust", "{\"delta\":1}"))
+                    return;
+                turnManager.ConfirmAutoPrecision(1);
+            }
+        }
+
         private void OnTileSelected(BoardTile tile)
         {
-            HandleTileSelected(tile);
+            if (!transientDicePresentationActive && (!CanInspect || !pulseUserInspecting)) HandleTileSelected(tile);
+            RefreshPulseMode();
+            UpdateGameStateDock();
+        }
+
+        private void OnGameActivityPublished(GameActivityEntry entry)
+        {
+            if (entry == null || string.IsNullOrWhiteSpace(entry.text)) return;
+            string key = $"{entry.id}|{entry.kind}|{entry.playerId}|{entry.text}";
+            if (!gameStateActivityKeys.Add(key)) return;
+
+            var matchingTypedItem = gameStateTimeline.FirstOrDefault(item => item.Activity == null
+                && item.Event != null && MatchesActivity(item.Event, entry));
+            if (matchingTypedItem != null)
+                matchingTypedItem.Activity = entry;
+            else
+                gameStateTimeline.Add(new GameStateHistoryItem { Activity = entry });
+
+            TrimGameStateTimeline();
+            UpdateGameStateDock();
+            RenderGameStateHistory();
+        }
+
+        private void OnGameEventTraceRecorded(GameEvent gameEvent)
+        {
+            if (gameEvent == null) return;
+            if (gameEvent.Kind == GameEventKind.DiceRolled)
+            {
+                var actor = turnManager?.GetPlayerById(gameEvent.ActorId);
+                if (actor != null) pulseDiceOrigins[gameEvent.Id] = turnManager.GetPlayerPosition(actor);
+            }
+            if (gameEvent.Kind == GameEventKind.PawnArrived && !pulseUserInspecting
+                && (activeDockEvent == null || activeDockEvent.ActorId == gameEvent.ActorId))
+            {
+                currentSelectedTile = ResolvePresentedTile(gameEvent) ?? currentSelectedTile;
+                UpdateInspectorSection(currentSelectedTile);
+            }
+            if (gameEventPresenter != null)
+            {
+                gameEventPresenter.LocalPlayerId = LocalSeatIndex();
+                gameEventPresenter.ReducedMotion = UIUXRuntime.ReducedMotion;
+                if (activeDockEvent != null && gameEvent.Coalescible
+                    && activeDockEvent.CanCoalesceWith(gameEvent)
+                    && gameEventPresenter.Current != null)
+                    activeDockEvent = gameEventPresenter.Current;
+            }
+
+            if (GameEventTextFormatter.IsDockEvent(gameEvent) && gameStateEventIds.Add(gameEvent.Id))
+            {
+                var matchingActivityItem = gameStateTimeline.FirstOrDefault(item => item.Event == null
+                    && item.Activity != null && MatchesActivity(gameEvent, item.Activity));
+                if (matchingActivityItem != null)
+                    matchingActivityItem.Event = gameEvent;
+                else
+                    gameStateTimeline.Add(new GameStateHistoryItem { Event = gameEvent });
+                TrimGameStateTimeline();
+                UpdateGameStateDock();
+                RenderGameStateHistory();
+            }
+
+            BeginNextGameEventPresentation();
+        }
+
+        private bool MatchesActivity(GameEvent gameEvent, GameActivityEntry activity)
+        {
+            if (gameEvent == null || activity == null || gameEvent.ActorId != activity.playerId) return false;
+            if (gameEvent.Kind == GameEventKind.PropertyPurchased
+                && string.Equals(activity.kind, "purchase", System.StringComparison.OrdinalIgnoreCase))
+                return ActivityMentionsTile(gameEvent, activity.text);
+            if (gameEvent.Kind == GameEventKind.PropertyPassed
+                && string.Equals(activity.kind, "pass", System.StringComparison.OrdinalIgnoreCase))
+                return ActivityMentionsTile(gameEvent, activity.text);
+            if (gameEvent.Kind == GameEventKind.UpgradeApplied
+                && string.Equals(activity.kind, "upgrade", System.StringComparison.OrdinalIgnoreCase))
+                return ActivityMentionsTile(gameEvent, activity.text);
+            if (gameEvent.Kind == GameEventKind.TaxPaid
+                && string.Equals(activity.kind, "tax", System.StringComparison.OrdinalIgnoreCase))
+                return true;
+            if (gameEvent.Kind == GameEventKind.TransferConfirmed
+                && gameEvent.Reason == GameEventReason.Rent
+                && string.Equals(activity.kind, "rent", System.StringComparison.OrdinalIgnoreCase))
+                return ActivityMentionsTile(gameEvent, activity.text);
+            return false;
+        }
+
+        private bool ActivityMentionsTile(GameEvent gameEvent, string activityText)
+        {
+            string tileName = ResolveGameEventTileName(gameEvent.TileId);
+            return !string.IsNullOrWhiteSpace(tileName)
+                && !tileName.StartsWith("Tile ", System.StringComparison.Ordinal)
+                && activityText.IndexOf(tileName, System.StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
+        private void TrimGameStateTimeline()
+        {
+            while (gameStateTimeline.Count > 12)
+            {
+                var removed = gameStateTimeline[0];
+                if (removed.Activity != null)
+                    gameStateActivityKeys.Remove($"{removed.Activity.id}|{removed.Activity.kind}|{removed.Activity.playerId}|{removed.Activity.text}");
+                if (removed.Event != null)
+                    gameStateEventIds.Remove(removed.Event.Id);
+                gameStateTimeline.RemoveAt(0);
+            }
+        }
+
+        private void BeginNextGameEventPresentation()
+        {
+            if (gameEventPresenter == null || gameStateDock == null || activeDockEvent != null || transientDicePresentationActive) return;
+            if (!gameEventPresenter.TryBeginNext(out var nextEvent)) return;
+            activeDockEvent = nextEvent;
+            if (nextEvent.Kind == GameEventKind.DiceRolled)
+            {
+                if (pulseDiceOrigins.TryGetValue(nextEvent.Id, out int origin))
+                {
+                    pulseDiceOrigins.Remove(nextEvent.Id);
+                    if (!pulseUserInspecting)
+                    {
+                        currentSelectedTile = boardManager?.GetTileAt(origin) ?? currentSelectedTile;
+                        UpdateInspectorSection(currentSelectedTile);
+                    }
+                }
+                var hud = FindObjectOfType<TopHUDWidget>();
+                if (hud != null && hud.PresentConfirmedDice(nextEvent)) return;
+                gameEventPresenter.SkipCurrent();
+                activeDockEvent = null;
+                BeginNextGameEventPresentation();
+                return;
+            }
+            if (!pulseUserInspecting)
+            {
+                currentSelectedTile = ResolvePresentedTile(nextEvent) ?? currentSelectedTile;
+                UpdateInspectorSection(currentSelectedTile);
+            }
+            ShowPulseReceipt(nextEvent);
+            gameEventPresenter.LocalPlayerId = LocalSeatIndex();
+            gameEventPresenter.ReducedMotion = UIUXRuntime.ReducedMotion;
+            gameStateDock.EnableInClassList("game-state-dock--presenting", true);
+            btnSkipGameEvent?.AddToClassList("game-state-dock__skip-button--visible");
+            UpdateGameStateDock();
+            ScheduleGameEventBeat(++gameEventPresentationGeneration);
+        }
+
+        private void ScheduleGameEventBeat(int generation)
+        {
+            if (gameEventPresenter == null || activeDockEvent == null || gameStateDock == null) return;
+            var beat = gameEventPresenter.CurrentBeat;
+            gameStateDock.EnableInClassList("game-state-dock--beat-announcement", beat == GamePresentationBeat.Announcement);
+            gameStateDock.EnableInClassList("game-state-dock--beat-anticipation", beat == GamePresentationBeat.Anticipation);
+            gameStateDock.EnableInClassList("game-state-dock--beat-impact", beat == GamePresentationBeat.Impact);
+            gameStateDock.EnableInClassList("game-state-dock--beat-transfer", beat == GamePresentationBeat.Transfer);
+            gameStateDock.EnableInClassList("game-state-dock--beat-trace", beat == GamePresentationBeat.Trace);
+            float duration = gameEventPresenter.GetBeatDurationSeconds(activeDockEvent, beat);
+            if (beat == GamePresentationBeat.Impact) duration = Mathf.Max(duration, 1.05f);
+            long delayMs = Mathf.Max(0, Mathf.RoundToInt(duration * 1000f));
+            gameStateDock.schedule.Execute(() =>
+            {
+                if (generation != gameEventPresentationGeneration || gameEventPresenter == null) return;
+                if (gameEventPresenter.AdvanceBeat())
+                {
+                    ScheduleGameEventBeat(generation);
+                    return;
+                }
+
+                activeDockEvent = null;
+                gameStateDock.RemoveFromClassList("game-state-dock--presenting");
+                gameStateDock.RemoveFromClassList("game-state-dock--beat-announcement");
+                gameStateDock.RemoveFromClassList("game-state-dock--beat-anticipation");
+                gameStateDock.RemoveFromClassList("game-state-dock--beat-impact");
+                gameStateDock.RemoveFromClassList("game-state-dock--beat-transfer");
+                gameStateDock.RemoveFromClassList("game-state-dock--beat-trace");
+                btnSkipGameEvent?.RemoveFromClassList("game-state-dock__skip-button--visible");
+                UpdateGameStateDock();
+                BeginNextGameEventPresentation();
+            }).StartingIn(delayMs);
+        }
+
+        private void SkipCurrentGameEventPresentation()
+        {
+            if (gameEventPresenter == null || activeDockEvent == null) return;
+            gameEventPresenter.SkipCurrent();
+            gameEventPresentationGeneration++;
+            activeDockEvent = null;
+            gameStateDock?.RemoveFromClassList("game-state-dock--presenting");
+            btnSkipGameEvent?.RemoveFromClassList("game-state-dock__skip-button--visible");
+            UpdateGameStateDock();
+            BeginNextGameEventPresentation();
+        }
+
+        private BoardTile ResolvePresentedTile(GameEvent gameEvent)
+        {
+            if (gameEvent.TileId >= 0) return boardManager?.GetTileAt(gameEvent.TileId);
+            var actor = turnManager?.GetPlayerById(gameEvent.ActorId);
+            return actor != null ? boardManager?.GetTileAt(turnManager.GetPlayerPosition(actor)) : null;
+        }
+
+        public static string ReceiptTone(GameEvent gameEvent)
+        {
+            if (gameEvent == null) return "neutral";
+            if (gameEvent.Kind == GameEventKind.PropertyPurchased) return "purchase";
+            if (gameEvent.Kind == GameEventKind.PropertyPassed) return "pass";
+            if (gameEvent.Kind == GameEventKind.TransferConfirmed || gameEvent.Kind == GameEventKind.TaxPaid) return "payment";
+            return "neutral";
+        }
+
+        private void ShowPulseReceipt(GameEvent gameEvent)
+        {
+            if (pulsePanel == null) return;
+            int generation = ++pulseFeedbackGeneration;
+            foreach (string tone in new[] { "purchase", "pass", "payment", "neutral" })
+                pulsePanel.EnableInClassList("pulse-feedback--" + tone, ReceiptTone(gameEvent) == tone);
+            pulsePanel.schedule.Execute(() =>
+            {
+                if (generation != pulseFeedbackGeneration) return;
+                foreach (string tone in new[] { "purchase", "pass", "payment", "neutral" })
+                    pulsePanel.RemoveFromClassList("pulse-feedback--" + tone);
+            }).StartingIn(UIUXRuntime.ReducedMotion ? 900 : 650);
+        }
+
+        private void UpdateGameStateDock()
+        {
+            if (gameStateDock == null || lblGameStateTitle == null || lblGameStateMessage == null) return;
+            gameStateDock.RemoveFromClassList("game-state-dock--quiet");
+            bool visible = activeDockEvent != null && activeDockEvent.Kind != GameEventKind.DiceRolled
+                && !transientDicePresentationActive;
+            gameStateDock.EnableInClassList("game-state-dock--presenting", visible);
+            if (!visible) return;
+            string tone = ReceiptTone(activeDockEvent);
+            foreach (string variant in new[] { "purchase", "pass", "payment", "neutral" })
+                gameStateDock.EnableInClassList("pulse-receipt--" + variant, variant == tone);
+            lblGameStateTitle.text = tone == "purchase" ? "ACHAT CONFIRMÉ"
+                : tone == "pass" ? "ACHAT DÉCLINÉ" : tone == "payment" ? "PAIEMENT" : "ACTION CONFIRMÉE";
+            lblGameStateMessage.text = GameEventTextFormatter.FormatCenter(activeDockEvent, LocalSeatIndex(),
+                ResolveGameStatePlayerName, ResolveGameEventTileName);
+            lblGameStateMessage.tooltip = FormatGameEvent(activeDockEvent);
+        }
+
+        private string FormatGameEvent(GameEvent gameEvent)
+        {
+            return GameEventTextFormatter.Format(gameEvent, LocalSeatIndex(),
+                ResolveGameStatePlayerName, ResolveGameEventTileName);
+        }
+
+        private string ResolveGameEventTileName(int tileId)
+        {
+            var tile = BoardManager.Instance != null ? BoardManager.Instance.GetTileAt(tileId) : null;
+            return tile != null && tile.Data != null ? tile.Data.TileName : null;
+        }
+
+        private string ResolveGameStatePhase(PlayerModel activePlayer)
+        {
+            if (activePlayer != null && activePlayer.IsInAudit) return "AUDIT DECISION";
+            switch (turnManager.CurrentState)
+            {
+                case TurnManager.TurnState.TurnStart: return "TURN STARTING";
+                case TurnManager.TurnState.WaitingForAuditDecision: return "CHOOSE AN AUDIT ACTION";
+                case TurnManager.TurnState.Planning: return "ROLL OR USE A POWER";
+                case TurnManager.TurnState.RollDice: return "ROLLING DICE";
+                case TurnManager.TurnState.AdjustDice: return "CHOOSE YOUR RESULT";
+                case TurnManager.TurnState.ChooseTurbo: return "CHOOSE A DICE PAIR";
+                case TurnManager.TurnState.MovingPawn: return "MOVING ON THE BOARD";
+                case TurnManager.TurnState.WaitingForTransitChoice: return "EXPRESS TRANSIT DECISION";
+                case TurnManager.TurnState.ResolveTile:
+                    string tileName = currentSelectedTile != null && currentSelectedTile.Data != null
+                        ? currentSelectedTile.Data.TileName : string.Empty;
+                    return string.IsNullOrWhiteSpace(tileName)
+                        ? "CHOOSE A TILE ACTION" : "AT " + tileName.ToUpperInvariant();
+                case TurnManager.TurnState.EndTurn: return "TURN COMPLETE";
+                case TurnManager.TurnState.ResolveDice: return "DICE RESULT";
+                default: return "TURN IN PROGRESS";
+            }
+        }
+
+        private static string ReplaceActivityVerb(string message, string verb, string replacement)
+        {
+            return message != null && message.StartsWith(verb, System.StringComparison.Ordinal)
+                ? replacement + message.Substring(verb.Length)
+                : message;
+        }
+
+        private int LocalSeatIndex()
+        {
+            var online = OnlineGameController.Instance;
+            return online != null && online.IsOnlineGame ? online.LocalSeatIndex : 0;
+        }
+
+        private static string ResolveGameStatePlayerName(int playerId)
+        {
+            if (playerId < 0) return "Market";
+            var players = LobbySession.Instance?.CurrentLobby?.players;
+            if (players != null && playerId < players.Length
+                && !string.IsNullOrWhiteSpace(players[playerId].displayName))
+                return players[playerId].displayName;
+            return "Player " + (playerId + 1);
+        }
+
+        private void ToggleGameStateHistory()
+        {
+            if (gameStateHistory == null) return;
+            bool isOpen = gameStateHistory.ClassListContains("is-open");
+            gameStateHistory.EnableInClassList("is-open", !isOpen);
+            if (btnGameStateHistory != null) btnGameStateHistory.text = isOpen ? "LOG" : "FERMER";
+            if (isOpen) UpdateGameStateDock();
+            else gameStateDock?.RemoveFromClassList("game-state-dock--quiet");
+        }
+
+        private void RenderGameStateHistory()
+        {
+            if (gameStateHistoryList == null) return;
+            gameStateHistoryList.Clear();
+            for (int i = gameStateTimeline.Count - 1; i >= 0; i--)
+            {
+                var item = gameStateTimeline[i];
+                int actorId = item.Event != null ? item.Event.ActorId : item.Activity.playerId;
+                bool actorIsLocal = actorId == LocalSeatIndex();
+                string text = item.Event != null
+                    ? FormatGameEvent(item.Event)
+                    : (actorIsLocal ? "YOU" : ResolveGameStatePlayerName(actorId).ToUpperInvariant())
+                        + " · " + TopHUDWidget.FormatActivityText(item.Activity.text);
+                var row = new Label(text);
+                row.AddToClassList("game-state-history__entry");
+                if (actorIsLocal) row.AddToClassList("game-state-history__entry--local");
+                if (item.Event != null)
+                {
+                    row.AddToClassList("game-state-history__entry--typed");
+                    switch (item.Event.Kind)
+                    {
+                        case GameEventKind.PropertyPurchased:
+                            row.AddToClassList("game-state-history__entry--purchase");
+                            break;
+                        case GameEventKind.PropertyPassed:
+                            row.AddToClassList("game-state-history__entry--pass");
+                            break;
+                        case GameEventKind.TransferConfirmed:
+                            row.AddToClassList("game-state-history__entry--transfer");
+                            break;
+                        case GameEventKind.TaxPaid:
+                            row.AddToClassList("game-state-history__entry--tax");
+                            break;
+                        case GameEventKind.UpgradeApplied:
+                            row.AddToClassList("game-state-history__entry--upgrade");
+                            break;
+                    }
+                }
+                gameStateHistoryList.Add(row);
+            }
         }
 
         private void HandleTileSelected(BoardTile tile)
@@ -344,6 +1007,11 @@ namespace PolyRisk.UI
             
             PlayerModel currentPlayer = turnManager.CurrentPlayer;
 
+            if (currentPlayer != null && (currentPlayer.IsAI || !IsLocalPlayer(currentPlayer)))
+            {
+                UpdateButtonsState(tile, currentPlayer);
+                return;
+            }
             // Check if player is in Audit first (Before rolling dice phase)
             if (currentPlayer != null && currentPlayer.IsInAudit && turnManager.CurrentState == TurnManager.TurnState.WaitingForAuditDecision)
             {
@@ -361,7 +1029,7 @@ namespace PolyRisk.UI
                     }
                     else
                     {
-                        SetSecondaryButtonState("STAY IN JAIL", true);
+                        SetSecondaryButtonState("STAY IN AUDIT", true);
                     }
                 }
                 else
@@ -389,8 +1057,9 @@ namespace PolyRisk.UI
 
         public void ClearButtons()
         {
-            SetPrimaryButtonState("...", false);
-            SetSecondaryButtonState("...", false);
+            SetPrimaryButtonState("ACTION IN PROGRESS", false);
+            SetSecondaryButtonState(string.Empty, false);
+            SetTertiaryButtonState(string.Empty, false, false);
         }
 
         /// <summary>
@@ -405,17 +1074,59 @@ namespace PolyRisk.UI
             if (lastReducedMotion != UIUXRuntime.ReducedMotion)
             {
                 lastReducedMotion = UIUXRuntime.ReducedMotion;
+                pulseMotion?.SetExpanded(pulseExpanded, false);
                 UpdateButtonsState(currentSelectedTile, turnManager.CurrentPlayer);
             }
             if (turnManager.CurrentState != lastObservedState)
             {
                 lastObservedState = turnManager.CurrentState;
                 UpdateButtonsState(currentSelectedTile, turnManager.CurrentPlayer);
+                UpdateGameStateDock();
             }
         }
 
         public void UpdateButtonsState(BoardTile tile, PlayerModel currentPlayer)
         {
+            RefreshPulseMode();
+            UpdateInspectorSection(tile);
+            pulseReturnToArrival = false;
+            if (currentPlayer != null && !IsLocalPlayer(currentPlayer))
+            {
+                SetPrimaryButtonState("PLAYER TURN", false);
+                SetSecondaryButtonState(string.Empty, false);
+                SetTertiaryButtonState(string.Empty, false, false);
+                return;
+            }
+            if (turnManager != null
+                && turnManager.CurrentState == TurnManager.TurnState.WaitingForTransitChoice
+                && currentPlayer != null && !currentPlayer.IsAI)
+            {
+                SetPrimaryButtonState("USE TRANSIT EXPRESS", true);
+                SetSecondaryButtonState("STAY ON HUB", true);
+                SetTertiaryButtonState("OPTIONAL HUB TRANSIT", false, false);
+                return;
+            }
+            if (turnManager != null && turnManager.CurrentState == TurnManager.TurnState.ChooseTurbo)
+            {
+                string label(int[] roll) => roll == null ? "WAIT" : $"{roll[0]} + {roll[1]} → {(turnManager.GetPlayerPosition(currentPlayer) + roll[0] + roll[1]) % 40}";
+                SetPrimaryButtonState("JET 1 · " + label(turnManager.TurboFirst), true);
+                SetSecondaryButtonState("JET 2 · " + label(turnManager.TurboSecond), true);
+                SetTertiaryButtonState(string.Empty, false, false);
+                return;
+            }
+            if (turnManager != null
+                && turnManager.CurrentState == TurnManager.TurnState.AdjustDice
+                && currentPlayer != null && !currentPlayer.IsAI)
+            {
+                int roll = turnManager.PendingDiceTotal;
+                SetPrimaryButtonState($"−1  ({Mathf.Max(1, roll - 1)})", true);
+                SetSecondaryButtonState($"KEEP  ({roll})", true);
+                SetTertiaryButtonState($"+1  ({roll + 1})", true, true);
+                return;
+            }
+
+            SetTertiaryButtonState(string.Empty, false, false);
+
             // ── Phase D : PLANNING PHASE ─────────────────────────────────────────
             if (turnManager != null
                 && turnManager.CurrentState == TurnManager.TurnState.Planning
@@ -425,9 +1136,9 @@ namespace PolyRisk.UI
                 SetPrimaryButtonState("ROLL DICE", true);
 
                 // Secondary = Use Ultimate (si dispo) sinon PASS
-                string ultFam = FindUltimateAvailable(currentPlayer);
-                if (ultFam != null)
-                    SetSecondaryButtonState($"USE {ultFam.ToUpper()} ULT", true);
+                int ultimateCount = GetAvailableUltimates(currentPlayer).Count;
+                if (ultimateCount > 0)
+                    SetSecondaryButtonState(ultimateCount == 1 ? "USE ULTIMATE" : $"CHOOSE ULTIMATE ({ultimateCount})", true);
                 else
                     SetSecondaryButtonState("PASS", true);
                 return;
@@ -441,15 +1152,15 @@ namespace PolyRisk.UI
 
             if (currentPlayer == null)
             {
-                SetPrimaryButtonState("WAIT", false);
-                SetSecondaryButtonState("...", false);
+                SetPrimaryButtonState("WAITING FOR PLAYER", false);
+                SetSecondaryButtonState(string.Empty, false);
                 return;
             }
 
             if (currentPlayer.IsAI)
             {
                 SetPrimaryButtonState("AI TURN", false);
-                SetSecondaryButtonState("...", false);
+                SetSecondaryButtonState(string.Empty, false);
                 return;
             }
 
@@ -461,7 +1172,7 @@ namespace PolyRisk.UI
                  
                  if (turnManager.IsJustLandedInAudit)
                  {
-                     SetSecondaryButtonState("STAY IN JAIL", true);
+                     SetSecondaryButtonState("STAY IN AUDIT", true);
                  }
                  else
                  {
@@ -475,8 +1186,17 @@ namespace PolyRisk.UI
             if (tile == null)
             {
                 // Probably rolling dice phase
-                SetPrimaryButtonState("ROLLING...", false);
-                SetSecondaryButtonState("...", false);
+                SetPrimaryButtonState(turnManager.CurrentState == TurnManager.TurnState.MovingPawn ? "MOVING PAWN" : "ROLLING DICE", false);
+                SetSecondaryButtonState(string.Empty, false);
+                return;
+            }
+
+            if (turnManager.CurrentState == TurnManager.TurnState.ResolveTile
+                && tile.TileIndex != turnManager.GetPlayerPosition(currentPlayer))
+            {
+                pulseReturnToArrival = true;
+                SetPrimaryButtonState("Revenir à ma case", true);
+                SetSecondaryButtonState(string.Empty, false);
                 return;
             }
 
@@ -518,12 +1238,13 @@ namespace PolyRisk.UI
                         // Unowned -> BUY
                         if (currentPlayer.CurrentBalance >= propData.BasePrice)
                         {
-                            SetPrimaryButtonState($"BUY ({CurrencyFormatter.Format(propData.BasePrice)})", true);
+                            SetPrimaryButtonState($"BUY ({CurrencyFormatter.FormatExact(propData.BasePrice)})", true);
                             SetSecondaryButtonState("PASS", true);
                         }
                         else
                         {
-                            SetPrimaryButtonState("PASS (No Funds)", true);
+                            SetPrimaryButtonState("CAN'T AFFORD", false);
+                            SetSecondaryButtonState("PASS", true);
                         }
                     }
                     else
@@ -583,27 +1304,57 @@ namespace PolyRisk.UI
                 }
                 else
                 {
-                    SetSecondaryButtonState("...", false);
+                    SetSecondaryButtonState(string.Empty, false);
                 }
             }
+        }
+
+        private static bool IsLocalPlayer(PlayerModel player)
+        {
+            if (player == null) return false;
+            var online = OnlineGameController.Instance;
+            return online == null || !online.IsOnlineGame || player.PlayerId == online.LocalSeatIndex;
         }
 
         private void SetPrimaryButtonState(string label, bool interactable)
         {
             if (btnPrimary == null) return;
-            bool isPurchase = interactable && label.StartsWith("BUY (")
-                && turnManager != null && turnManager.CurrentState == TurnManager.TurnState.ResolveTile
-                && currentSelectedTile != null && currentSelectedTile.Type == TileType.Property;
-            bool showSlide = isPurchase && !UIUXRuntime.ReducedMotion && buySlideTrack != null && buySlideHandle != null;
             if (buySlideTrack != null)
             {
-                if (!showSlide) ResetBuySlide();
-                buySlideTrack.style.display = showSlide ? DisplayStyle.Flex : DisplayStyle.None;
+                ResetBuySlide();
+                buySlideTrack.style.display = DisplayStyle.None;
             }
-            btnPrimary.style.display = showSlide ? DisplayStyle.None : DisplayStyle.Flex;
-            if (showSlide && buySlideLabel != null)
-                buySlideLabel.text = "SLIDE TO BUY " + label.Substring(4);
-            btnPrimary.text = label;
+            bool propertyPurchase = label != null
+                && label.StartsWith("BUY (", System.StringComparison.Ordinal)
+                && label.EndsWith(")", System.StringComparison.Ordinal);
+            bool rollAction = string.Equals(label, "ROLL DICE", System.StringComparison.Ordinal);
+            string displayLabel = rollAction ? "Lancer les dés" : label;
+            if (label == "ACTION IN PROGRESS" || label == "ROLLING DICE")
+                displayLabel = "Lancer en cours";
+            else if (label == "MOVING PAWN") displayLabel = "Déplacement…";
+            else if (label == "AI TURN" || label == "PLAYER TURN") displayLabel = "Tour adverse";
+            btnPrimary.EnableInClassList("pulse-action--purchase", propertyPurchase);
+            btnPrimary.EnableInClassList("pulse-action--roll", rollAction);
+            if (primaryActionTitle != null && primaryActionValue != null)
+            {
+                primaryActionTitle.style.display = propertyPurchase ? DisplayStyle.Flex : DisplayStyle.None;
+                primaryActionValue.style.display = propertyPurchase ? DisplayStyle.Flex : DisplayStyle.None;
+                if (propertyPurchase)
+                {
+                    primaryActionTitle.text = "Acheter";
+                    primaryActionValue.text = label.Substring(5, label.Length - 6);
+                    btnPrimary.text = string.Empty;
+                }
+                else
+                {
+                    btnPrimary.text = displayLabel;
+                }
+            }
+            else
+            {
+                btnPrimary.text = displayLabel;
+            }
+            btnPrimary.style.display = DisplayStyle.Flex;
             btnPrimary.SetEnabled(interactable);
         }
 
@@ -671,8 +1422,22 @@ namespace PolyRisk.UI
         private void SetSecondaryButtonState(string label, bool interactable)
         {
             if (btnSecondary == null) return;
-            btnSecondary.text = label;
-            btnSecondary.SetEnabled(interactable);
+            bool visible = !string.IsNullOrWhiteSpace(label);
+            btnSecondary.EnableInClassList("pulse-action--pass",
+                !visible || string.Equals(label, "PASS", System.StringComparison.OrdinalIgnoreCase));
+            btnSecondary.text = visible
+                ? string.Equals(label, "PASS", System.StringComparison.OrdinalIgnoreCase) ? "Passer" : label
+                : "…";
+            btnSecondary.SetEnabled(visible && interactable);
+            btnSecondary.style.display = DisplayStyle.Flex;
+        }
+
+        private void SetTertiaryButtonState(string label, bool interactable, bool visible)
+        {
+            if (btnTertiary == null) return;
+            btnTertiary.text = label;
+            btnTertiary.SetEnabled(interactable);
+            btnTertiary.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
         }
 
         /// <summary>
@@ -682,84 +1447,842 @@ namespace PolyRisk.UI
         /// </summary>
         private void UpdateInspectorSection(BoardTile tile)
         {
+            if (tile == null && turnManager?.CurrentPlayer != null)
+                tile = boardManager?.GetTileAt(turnManager.GetPlayerPosition(turnManager.CurrentPlayer));
+            var finance = turnManager?.financeSystem;
+            var localViewer = turnManager?.GetPlayerById(LocalSeatIndex());
+            bool hasProjection = finance != null && localViewer != null;
+            var projection = hasProjection ? finance.EstimateGoIncome(localViewer) : default;
+            if (pulseGoBase != null) pulseGoBase.text = hasProjection ? SignedAmount(projection.Income) : "—";
+            if (pulseGoCosts != null) pulseGoCosts.text = hasProjection
+                ? (projection.Costs > 0 ? "−" : "") + CurrencyFormatter.FormatExact(projection.Costs) : "—";
+            if (pulseGoNet != null)
+            {
+                pulseGoNet.text = hasProjection ? SignedAmount(projection.Net) : "—";
+                pulseGoNet.EnableInClassList("pulse-go-summary__value--positive", hasProjection && projection.Net >= 0);
+                pulseGoNet.EnableInClassList("pulse-go-summary__value--negative", hasProjection && projection.Net < 0);
+            }
+            if (pulseGoSummary != null) pulseGoSummary.tooltip = "Estimation à état constant : revenus, entretien et taxes. Hors événements futurs et loyers.";
             bool turboChoice = turnManager != null && turnManager.CurrentState == TurnManager.TurnState.ChooseTurbo;
             bool precisionChoice = turnManager != null && turnManager.CurrentState == TurnManager.TurnState.AdjustDice;
-            lblTileFamily?.EnableInClassList("tile-family-badge",
-                !turboChoice && !precisionChoice && tile != null && tile.Type == TileType.Property && tile.Property != null);
+            bool hasInspectorContent = tile != null || turboChoice || precisionChoice;
+            bool hasPropertyStats = tile != null && tile.Type == TileType.Property && tile.Property != null;
+            if (tileInspectorHeading != null)
+                tileInspectorHeading.style.display = DisplayStyle.Flex;
+            if (pulseFamilyProgress != null)
+                pulseFamilyProgress.style.display = hasPropertyStats && !turboChoice && !precisionChoice
+                    ? DisplayStyle.Flex : DisplayStyle.None;
+            if (tileStats != null)
+                tileStats.style.display = DisplayStyle.Flex;
+            if (lblTileEffect != null)
+            {
+                lblTileEffect.text = string.Empty;
+                lblTileEffect.style.display = DisplayStyle.None;
+                lblTileEffect.RemoveFromClassList("tile-effect-badge--sabotage");
+                lblTileEffect.RemoveFromClassList("tile-effect-badge--oil-boost");
+            }
+            if (turboChoice || precisionChoice)
+            {
+                if (lblTileRent != null) lblTileRent.text = "—";
+                if (lblTileRoi != null) lblTileRoi.text = "—";
+                if (iconTileFamily != null) TileIconResolver.PopulateIcon(iconTileFamily, null);
+                if (pulseOwnership != null) pulseOwnership.text = "ACTION DE DÉPLACEMENT";
+                if (lblTileName != null) lblTileName.text = turboChoice ? "Moteur Turbo" : "Assistance de précision";
+                if (lblTileFamily != null) lblTileFamily.text = turboChoice
+                    ? "Choisissez votre jet · la flèche indique la case d’arrivée"
+                    : "Ajustez votre déplacement · les doubles restent inchangés";
+                return;
+            }
             if (iconTileFamily != null) TileIconResolver.PopulateIcon(iconTileFamily, tile?.Data);
 
             if (tile != null && tile.Type == TileType.Property && tile.Property != null)
             {
                 var prop = tile.Property;
+                PlayerModel propertyOwner = turnManager != null ? turnManager.GetOwnerOfProperty(prop) : null;
+                PlayerModel viewer = turnManager != null
+                    ? turnManager.GetPlayerById(LocalSeatIndex()) ?? turnManager.CurrentPlayer
+                    : null;
+                double currentRent = propertyOwner != null && rulesEngine != null
+                    ? rulesEngine.CalculateRent(prop, emitDiagnostics: false)
+                    : prop.GetCurrentRent();
+                int owned = 0;
+                int total = 0;
+                if (prop.FamilyData != null && boardManager?.tileDataList != null)
+                {
+                    total = boardManager.tileDataList.OfType<PropertyData>()
+                        .Count(item => item != null && item.FamilyData == prop.FamilyData);
+                    owned = viewer != null
+                        ? viewer.OwnedProperties.Count(item => item != null && item.FamilyData == prop.FamilyData)
+                        : 0;
+                }
+                if (pulseOwnership != null)
+                    pulseOwnership.text = propertyOwner == null
+                        ? "À ACQUÉRIR"
+                        : viewer != null && propertyOwner.PlayerId == viewer.PlayerId
+                            ? "VOTRE PROPRIÉTÉ"
+                            : "PROPRIÉTÉ DÉTENUE";
+                if (pulseFamilyProgress != null)
+                {
+                    pulseFamilyProgress.style.display = total > 0 ? DisplayStyle.Flex : DisplayStyle.None;
+                    if (pulseFamilyOwned != null)
+                        pulseFamilyOwned.text = total > 0 ? owned.ToString(CultureInfo.InvariantCulture) : "—";
+                    if (pulseFamilyTotal != null)
+                        pulseFamilyTotal.text = total > 0 ? "/" + total.ToString(CultureInfo.InvariantCulture) : string.Empty;
+                    RenderPulseFamilySlots(owned, total);
+                    pulseFamilyProgress.tooltip = prop.FamilyData != null
+                        ? $"Inspecter la famille {prop.FamilyData.FamilyName} · {owned} propriété(s) sur {total}"
+                        : "Famille non renseignée";
+                }
                 if (lblTileName != null) lblTileName.text = prop.PropertyName;
                 if (lblTileFamily != null)
                     lblTileFamily.text = prop.FamilyData != null
-                        ? $"{prop.FamilyData.FamilyName} · Level {prop.CurrentLevel}"
-                        : $"Level {prop.CurrentLevel}";
-                if (lblTileRent != null) lblTileRent.text = CurrencyFormatter.Format(prop.GetCurrentRent());
-                if (lblTileLevel != null) lblTileLevel.text = prop.CurrentLevel.ToString();
-                if (containerTileLevel != null) containerTileLevel.style.display = DisplayStyle.Flex;
-                if (lblTileYield != null)
+                        ? $"{prop.FamilyData.FamilyName} · Niveau {prop.CurrentLevel}"
+                        : $"Famille inconnue · Niveau {prop.CurrentLevel}";
+                bool oilBoostActive = propertyOwner != null
+                    && propertyOwner.OilGasBoostTurnsRemaining > 0
+                    && prop.FamilyData != null
+                    && (prop.FamilyData.FamilyName.Contains("Oil") || prop.FamilyData.FamilyName.Contains("Gas"));
+                if (lblTileEffect != null && prop.HijackTurnsRemaining > 0 && prop.HijackedBy != null)
                 {
-                    // Pas de concept "Risk" dans le modèle actuel (aucune donnée par tuile) —
-                    // seul un ratio dérivable proprement est affiché, cf. plan.
-                    double yieldPct = prop.BasePrice > 0 ? prop.BaseRent / prop.BasePrice * 100.0 : 0.0;
-                    lblTileYield.text = $"{yieldPct:0.0}%";
+                    int turns = prop.HijackTurnsRemaining;
+                    lblTileEffect.text = $"CYBER-SABOTAGE · {turns} {(turns == 1 ? "TURN" : "TURNS")}";
+                    if (oilBoostActive)
+                        lblTileEffect.text += $" · OIL +80% ({propertyOwner.OilGasBoostTurnsRemaining}T)";
+                    lblTileEffect.AddToClassList("tile-effect-badge--sabotage");
+                    lblTileEffect.style.display = DisplayStyle.Flex;
                 }
+                else if (lblTileEffect != null && oilBoostActive)
+                {
+                    int turns = propertyOwner.OilGasBoostTurnsRemaining;
+                    lblTileEffect.text = $"OIL & GAS · +80% RENT · {turns} {(turns == 1 ? "TURN" : "TURNS")}";
+                    lblTileEffect.AddToClassList("tile-effect-badge--oil-boost");
+                    lblTileEffect.style.display = DisplayStyle.Flex;
+                }
+                if (lblTileRent != null) lblTileRent.text = CurrencyFormatter.FormatExactNumber(currentRent);
+                SetTrendIndicator(lblTileRentTrend, currentRent, prop.BaseRent);
+                if (lblTileRisk != null)
+                {
+                    lblTileRisk.text = "Risque —";
+                    lblTileRisk.tooltip = "Aucune statistique de risque par propriété n’est modélisée.";
+                }
+                if (containerTileRisk != null) containerTileRisk.style.display = DisplayStyle.Flex;
+                if (lblTileRoi != null)
+                {
+                    // ROI locatif courant : loyer actuel sur prix de base; aucune donnée
+                    // de risque par propriété n'est modélisée.
+                    double roiPct = prop.BasePrice > 0 ? currentRent / prop.BasePrice * 100.0 : 0.0;
+                    lblTileRoi.text = roiPct.ToString("0.0", CultureInfo.InvariantCulture).Replace('.', ',');
+                    lblTileRoi.tooltip = "Rent per visit divided by base property price";
+                }
+                SetTrendIndicator(lblTileRoiTrend, currentRent, prop.BaseRent);
             }
             else if (tile != null)
             {
+                if (pulseOwnership != null) pulseOwnership.text = "CASE SPÉCIALE";
+                if (pulseFamilyProgress != null) pulseFamilyProgress.style.display = DisplayStyle.None;
                 if (lblTileName != null) lblTileName.text = tile.Data != null ? tile.Data.TileName : tile.Type.ToString();
-                if (lblTileFamily != null) lblTileFamily.text = "Special Tile";
+                if (lblTileFamily != null) lblTileFamily.text = "Événement du plateau";
                 if (lblTileRent != null) lblTileRent.text = "—";
-                if (lblTileYield != null) lblTileYield.text = "—";
-                if (containerTileLevel != null) containerTileLevel.style.display = DisplayStyle.None;
+                if (lblTileRoi != null) lblTileRoi.text = "—";
+                ClearTrendIndicators();
+                if (containerTileRisk != null) containerTileRisk.style.display = DisplayStyle.None;
             }
             else
             {
+                if (pulseOwnership != null) pulseOwnership.text = "SÉLECTIONNEZ UNE PROPRIÉTÉ";
+                if (pulseFamilyProgress != null) pulseFamilyProgress.style.display = DisplayStyle.None;
                 if (lblTileName != null) lblTileName.text = "—";
                 if (lblTileFamily != null) lblTileFamily.text = "";
                 if (lblTileRent != null) lblTileRent.text = "—";
-                if (lblTileYield != null) lblTileYield.text = "—";
-                if (containerTileLevel != null) containerTileLevel.style.display = DisplayStyle.None;
+                if (lblTileRoi != null) lblTileRoi.text = "—";
+                ClearTrendIndicators();
+                if (containerTileRisk != null) containerTileRisk.style.display = DisplayStyle.None;
             }
+            if (pulseExpanded) RenderPulseDetails();
+        }
+
+        public bool IsCockpitExpanded => pulseExpanded;
+        private void OnVisualPawnMovement(int playerId,PolyRisk.Visuals.PawnMovement pawn,List<Vector3> path)
+        {
+            if (!pulseExpanded) return;
+            SetPulseExpanded(false,false);
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            Debug.Log("CAMERA_COCKPIT_COLLAPSE player="+playerId+" t="+Time.unscaledTime.ToString("F4",CultureInfo.InvariantCulture));
+#endif
+        }
+
+        private void TogglePulsePanel()
+        {
+            if (!CanInspect) return;
+            SetPulseExpanded(!pulseExpanded);
+        }
+
+        private void SetPulseExpanded(bool expanded, bool animate = true)
+        {
+            if (expanded && !CanInspect) return;
+            pulseExpanded = expanded;
+            if (expanded) RenderPulseDetails();
+            pulseMotion?.SetExpanded(expanded, animate);
+            UpdatePulseToggleLabel();
+            UpdateGameStateDock();
+        }
+
+        private bool IsGameStateHistoryOpen() =>
+            gameStateHistory != null && gameStateHistory.ClassListContains("is-open");
+
+        private bool IsLatestActivityTurnStart()
+        {
+            var latest = gameStateTimeline.Count > 0 ? gameStateTimeline[gameStateTimeline.Count - 1] : null;
+            return activeDockEvent == null && latest?.Activity != null
+                && string.Equals(latest.Activity.kind, "turn", System.StringComparison.OrdinalIgnoreCase);
+        }
+
+        private void UpdatePulseToggleLabel()
+        {
+            if (pulseToggleState != null)
+                pulseToggleState.text = pulseExpanded ? "Réduire ↓" : "Déplier ↑";
+        }
+
+        private void OpenPulseInspector()
+        {
+            pulseActiveTab = "inspector";
+            SetPulseExpanded(true);
+        }
+
+        private void SetPulseTab(string tab)
+        {
+            pulseActiveTab = tab;
+            RenderPulseDetails();
+        }
+
+        private void OpenPulseGoFlow()
+        {
+            pulseActiveTab = "go";
+            if (!pulseExpanded) SetPulseExpanded(true);
+            RenderPulseDetails();
+        }
+
+        private void RenderPulseDetails()
+        {
+            if (pulseTabContent == null || boardManager == null || turnManager == null) return;
+            bool inspector = pulseActiveTab == "inspector";
+            bool portfolio = pulseActiveTab == "portfolio";
+            pulseInspectorTab?.EnableInClassList("pulse-tab--active", inspector);
+            pulsePortfolioTab?.EnableInClassList("pulse-tab--active", portfolio);
+            pulseGoTab?.EnableInClassList("pulse-tab--active", !inspector && !portfolio);
+            pulseTabContent.Clear();
+
+            var selectedProperty = currentSelectedTile != null ? currentSelectedTile.Property : null;
+            var family = selectedProperty != null ? selectedProperty.FamilyData : null;
+            var viewer = turnManager.GetPlayerById(LocalSeatIndex()) ?? turnManager.CurrentPlayer;
+            if (family == null && selectedProperty != null)
+                family = selectedProperty.FamilyData;
+
+            if (inspector)
+            {
+                if (family == null)
+                {
+                    AddPulseText("Select a property on the board to inspect its family.", "pulse-empty-state");
+                    return;
+                }
+
+                var familyProperties = boardManager.tileDataList?.OfType<PropertyData>()
+                    .Where(property => property != null && property.FamilyData == family)
+                    .OrderBy(property => property.TileIndex).ToList();
+                if (familyProperties == null || familyProperties.Count == 0)
+                {
+                    AddPulseText("No properties are configured for this family.", "pulse-empty-state");
+                    return;
+                }
+
+                int ownedCount = viewer != null
+                    ? familyProperties.Count(property => viewer.OwnedProperties.Contains(property)) : 0;
+                AddPulseSectionHeading(family.FamilyName, $"{ownedCount}/{familyProperties.Count} propriétés");
+                var cards = new VisualElement();
+                cards.AddToClassList("pulse-property-cards");
+                foreach (var property in familyProperties)
+                {
+                    var owner = turnManager.GetOwnerOfProperty(property);
+                    var card = new Button(() =>
+                    {
+                        var boardTile = boardManager.GetTileAt(property.TileIndex);
+                        if (boardTile != null) HandleTileSelected(boardTile);
+                    });
+                    card.AddToClassList("pulse-property-card");
+                    card.EnableInClassList("pulse-property-card--selected", property == selectedProperty);
+                    var cardTop = new VisualElement();
+                    cardTop.AddToClassList("pulse-property-card__top");
+                    var icon = new VisualElement();
+                    icon.AddToClassList("icon-box");
+                    icon.AddToClassList("icon-box--compact");
+                    icon.AddToClassList("pulse-property-card__icon");
+                    TileIconResolver.PopulateIcon(icon, property);
+                    var level = new Label("LV " + property.CurrentLevel);
+                    level.AddToClassList("pulse-property-card__level");
+                    cardTop.Add(icon);
+                    cardTop.Add(level);
+                    var name = new Label(property.PropertyName);
+                    name.AddToClassList("pulse-property-card__name");
+                    var state = new Label(owner != null
+                        ? viewer != null && owner.PlayerId == viewer.PlayerId ? "À VOUS" : "DÉTENUE"
+                        : CurrencyFormatter.FormatExact(property.BasePrice) + " ↗");
+                    state.AddToClassList("pulse-property-card__state");
+                    card.Add(cardTop);
+                    card.Add(name);
+                    card.Add(state);
+                    cards.Add(card);
+                }
+                pulseTabContent.Add(cards);
+                AddPulseText("Touchez une carte pour l’inspecter sur le plateau.", "pulse-footnote");
+                return;
+            }
+
+            var allProperties = boardManager.tileDataList?.OfType<PropertyData>()
+                .Where(property => property != null && property.FamilyData != null).ToList();
+            if (portfolio)
+            {
+                if (viewer == null || allProperties == null)
+                {
+                    AddPulseText("Portefeuille indisponible.", "pulse-empty-state");
+                    return;
+                }
+                var families = new VisualElement();
+                families.AddToClassList("pulse-family-grid");
+                foreach (var group in allProperties.GroupBy(property => property.FamilyData)
+                    .Where(group => group.Any(viewer.OwnedProperties.Contains)).OrderBy(group => group.Key.FamilyName))
+                {
+                    var property = group.First(viewer.OwnedProperties.Contains);
+                    int owned = group.Count(viewer.OwnedProperties.Contains), total = group.Count();
+                    var card = new Button(() =>
+                    {
+                        if (!CanInspect) return;
+                        pulseUserInspecting = true;
+                        pulseActiveTab = "inspector";
+                        HandleTileSelected(boardManager.GetTileAt(property.TileIndex));
+                    });
+                    card.AddToClassList("pulse-family-card");
+                    var top = new VisualElement();
+                    top.AddToClassList("pulse-property-card__top");
+                    var icon = new VisualElement();
+                    icon.AddToClassList("pulse-family-card__icon");
+                    TileIconResolver.PopulateIcon(icon, property);
+                    var progress = new Label($"{owned} / {total}");
+                    progress.AddToClassList("pulse-family-card__progress");
+                    top.Add(icon); top.Add(progress); card.Add(top);
+                    var familyName = new Label(group.Key.FamilyName);
+                    familyName.AddToClassList("pulse-family-card__name"); card.Add(familyName);
+                    var slots = new VisualElement(); slots.AddToClassList("pulse-family-card__slots");
+                    foreach (var item in group.OrderBy(item => item.TileIndex))
+                    {
+                        var slot = new VisualElement(); slot.AddToClassList("pulse-family-progress__slot");
+                        slot.EnableInClassList("pulse-family-progress__slot--owned", viewer.OwnedProperties.Contains(item));
+                        slot.tooltip = item.PropertyName; slots.Add(slot);
+                    }
+                    card.Add(slots);
+                    var remaining = new Label(owned == total ? "Famille complète ↗" : $"{total - owned} manquante(s) ↗");
+                    remaining.AddToClassList("pulse-footnote"); card.Add(remaining);
+                    families.Add(card);
+                }
+                pulseTabContent.Add(families);
+                if (families.childCount == 0) AddPulseText("Votre portefeuille est vide.", "pulse-empty-state");
+                return;
+            }
+
+            AddPulseSectionHeading("Prochain passage GO", "Estimation");
+            var finance = turnManager.financeSystem;
+            if (finance == null || viewer == null)
+            {
+                AddPulseText("Projection indisponible.", "pulse-empty-state");
+                return;
+            }
+            var projection = finance.EstimateGoIncome(viewer);
+            AddPulseMetric("Salaire GO", SignedAmount(projection.Salary), "");
+            AddPulseMetric("Dividendes de famille", SignedAmount(projection.Dividends), "");
+            AddPulseMetric("Entretien", "−" + CurrencyFormatter.FormatExact(projection.Upkeep), "");
+            if (projection.InfrastructureTax > 0)
+                AddPulseMetric("Taxe infrastructure", "−" + CurrencyFormatter.FormatExact(projection.InfrastructureTax), "");
+            AddPulseMetric("Net estimé", SignedAmount(projection.Net), "pulse-metric-row--primary");
+            AddPulseText("À état constant. Hors loyers, événements et changements de marché à venir.", "pulse-footnote");
+        }
+
+        private static string SignedAmount(double amount) =>
+            (amount > 0 ? "+" : "") + CurrencyFormatter.FormatExact(amount);
+
+        private void AddPulseSectionHeading(string title, string status)
+        {
+            var row = new VisualElement();
+            row.AddToClassList("pulse-section-heading");
+            var heading = new Label(title.ToUpperInvariant());
+            var detail = new Label(status);
+            detail.AddToClassList("pulse-section-heading__status");
+            row.Add(heading);
+            row.Add(detail);
+            pulseTabContent.Add(row);
+        }
+
+        private void RenderPulseFamilySlots(int owned, int total)
+        {
+            if (pulseFamilySlots == null) return;
+            pulseFamilySlots.Clear();
+            for (int index = 0; index < Mathf.Max(0, total); index++)
+            {
+                var slot = new VisualElement();
+                slot.AddToClassList("pulse-family-progress__slot");
+                slot.EnableInClassList("pulse-family-progress__slot--owned", index < owned);
+                pulseFamilySlots.Add(slot);
+            }
+        }
+
+        private void AddPulseText(string text, string className)
+        {
+            var label = new Label(text);
+            label.AddToClassList(className);
+            pulseTabContent.Add(label);
+        }
+
+        private void AddPulseMetric(string name, string value, string modifier)
+        {
+            var row = new VisualElement();
+            row.AddToClassList("pulse-metric-row");
+            if (!string.IsNullOrEmpty(modifier)) row.AddToClassList(modifier);
+            var label = new Label(name);
+            label.AddToClassList("pulse-metric-row__label");
+            var amount = new Label(value);
+            amount.AddToClassList("pulse-metric-row__value");
+            row.Add(label);
+            row.Add(amount);
+            pulseTabContent.Add(row);
+        }
+
+        private static void SetTrendIndicator(Label indicator, double current, double baseline)
+        {
+            if (indicator == null) return;
+            bool rising = current > baseline;
+            bool falling = current < baseline;
+            indicator.text = rising ? "↑" : falling ? "↓" : "→";
+            indicator.EnableInClassList("tile-stat-trend--up", rising);
+            indicator.EnableInClassList("tile-stat-trend--down", falling);
+            indicator.EnableInClassList("tile-stat-trend--flat", !rising && !falling);
+            indicator.tooltip = rising ? "Above base rent" : falling ? "Below base rent" : "At base rent";
+        }
+
+        private void ClearTrendIndicators()
+        {
+            if (lblTileRentTrend != null) lblTileRentTrend.text = "";
+            if (lblTileRoiTrend != null) lblTileRoiTrend.text = "";
         }
 
         // ─────────────────────────────────────────────────────────────────────────
         // Phase D — Helpers Planning Phase
         // ─────────────────────────────────────────────────────────────────────────
 
-        /// <summary>Retourne le nom d'une famille avec Ultime activable, ou null.</summary>
-        private string FindUltimateAvailable(PlayerModel player)
+        private List<string> GetAvailableUltimates(PlayerModel player)
         {
-            if (abilitySystem == null || player == null) return null;
-            if (!abilitySystem.HasEnoughEnergy(player)) return null;
+            var result = new List<string>();
+            if (abilitySystem == null || player == null || !abilitySystem.HasEnoughEnergy(player)) return result;
 
             string[] families = { "Tech", "Armement", "Real Estate", "Pharma", "Luxe", "Oil", "Aerospace", "Automobile" };
             foreach (var fam in families)
-                if (HasMonopoly(player, fam)) return fam;
-            return null;
+                if (HasMonopoly(player, fam)) result.Add(fam);
+            return result;
         }
 
-        /// <summary>Active l'Ultime de la famille donnée.</summary>
-        private void TriggerUltimate(PlayerModel player, string family)
+        private void ShowUltimatePicker(PlayerModel player)
         {
-            if (abilitySystem == null) return;
+            CloseUltimatePicker();
+            if (uiDocument == null) return;
+            var root = uiDocument.rootVisualElement;
+            if (root == null) return;
+
+            abilityPickerOverlay = new VisualElement { name = "Panel_UltimatePicker" };
+            abilityPickerOverlay.AddToClassList("bottom-panel-container");
+            abilityPickerOverlay.AddToClassList("marketplace-modal");
+
+            var panel = new VisualElement();
+            panel.AddToClassList("marketplace-panel");
+            panel.AddToClassList("marketplace-panel--compact");
+            var content = new VisualElement();
+            content.AddToClassList("panel-content");
+            var title = new Label("CHOOSE A FAMILY ULTIMATE");
+            title.AddToClassList("panel-header-title");
+            content.Add(title);
+
+            foreach (string family in GetAvailableUltimates(player))
+            {
+                string captured = family;
+                var button = new Button(() => HandleUltimateChoice(player, captured)) { text = captured.ToUpperInvariant() };
+                button.AddToClassList("btn-standard");
+                button.style.marginBottom = 8;
+                content.Add(button);
+            }
+
+            var cancel = new Button(CloseUltimatePicker) { text = "CANCEL" };
+            cancel.AddToClassList("btn-secondary");
+            content.Add(cancel);
+            panel.Add(content);
+            abilityPickerOverlay.Add(panel);
+            root.Add(abilityPickerOverlay);
+            UIUXRuntime.PrepareView(abilityPickerOverlay, CloseUltimatePicker);
+            UIToolkitTransitions.SlideUpEnter(this, panel);
+            if (tileDetailPanel != null) tileDetailPanel.style.display = DisplayStyle.None;
+        }
+
+        private void HandleUltimateChoice(PlayerModel player, string family)
+        {
+            if (family == "Armement" || family == "Aerospace")
+            {
+                BeginAbilityTargetSelection(family);
+                return;
+            }
+
+            var online = OnlineGameController.Instance;
+            if (online != null && online.IsOnlineGame)
+            {
+                string payload = JsonUtility.ToJson(new UltimateCommandDto
+                {
+                    family = family,
+                    targetTileIndex = -1
+                });
+                online.TrySubmitLocalCommand("ultimate.use", payload);
+                CloseUltimatePicker();
+                return;
+            }
+
+            TriggerUltimate(player, family);
+            CloseUltimatePicker();
+            UpdateButtonsState(currentSelectedTile, player);
+        }
+
+        private bool TriggerUltimate(PlayerModel player, string family)
+        {
+            if (abilitySystem == null) return false;
             bool ok = family switch
             {
                 "Tech"        => abilitySystem.Tech_MaJSysteme(player),
-                "Armement"    => abilitySystem.Armement_CyberSabotage(player),
                 "Real Estate" => abilitySystem.RealEstate_RappelDividendes(player),
                 "Pharma"      => abilitySystem.Pharma_ProtocoleSanitaire(player),
                 "Luxe"        => abilitySystem.Luxe_TaxeSomptuaire(player),
                 "Oil"         => abilitySystem.OilGas_BoomEnergetique(player),
-                "Aerospace"   => abilitySystem.Aerospace_SautQuantique(player),
                 "Automobile"  => abilitySystem.Automobile_MoteurTurbo(player),
                 _             => false
             };
             Debug.Log(ok
                 ? $"[Planning UI] Player {player.PlayerId} activated {family} ultimate."
                 : $"[Planning UI] Activation {family} ultimate failed.");
+            return ok;
+        }
+
+        private void BeginAbilityTargetSelection(string family)
+        {
+            if (abilityPickerOverlay == null || turnManager == null) return;
+            pendingTargetedUltimate = family;
+            turnManager.IsInSelectionMode = true;
+
+            abilityPickerOverlay.Clear();
+            abilityPickerOverlay.RemoveFromClassList("marketplace-modal");
+            abilityPickerOverlay.AddToClassList("marketplace-nonmodal");
+            abilityPickerOverlay.pickingMode = PickingMode.Ignore;
+
+            var panel = new VisualElement();
+            panel.AddToClassList("marketplace-panel");
+            panel.AddToClassList("marketplace-panel--selection");
+            panel.pickingMode = PickingMode.Position;
+            var content = new VisualElement();
+            content.AddToClassList("panel-content");
+            var title = new Label(family == "Armement"
+                ? "SELECT AN OPPONENT PROPERTY"
+                : "SELECT AERO / TECH / HUB / MARKETPLACE");
+            title.AddToClassList("panel-header-title");
+            content.Add(title);
+            var cancel = new Button(CloseUltimatePicker) { text = "CANCEL" };
+            cancel.AddToClassList("btn-secondary");
+            content.Add(cancel);
+            panel.Add(content);
+            abilityPickerOverlay.Add(panel);
+            UIUXRuntime.PrepareView(abilityPickerOverlay, CloseUltimatePicker);
+            HighlightAbilityTargets(family);
+        }
+
+        public bool OnAbilityTileSelected(BoardTile tile)
+        {
+            if (!IsAbilityTargetSelectionActive || tile == null || turnManager == null || abilitySystem == null) return false;
+            var player = turnManager.CurrentPlayer;
+            if (player == null) return false;
+
+            bool activated = false;
+            var online = OnlineGameController.Instance;
+            if (online != null && online.IsOnlineGame)
+            {
+                if (!IsAbilityTileEligible(tile)) return false;
+                string payload = JsonUtility.ToJson(new UltimateCommandDto
+                {
+                    family = pendingTargetedUltimate,
+                    targetTileIndex = tile.TileIndex
+                });
+                online.TrySubmitLocalCommand("ultimate.use", payload);
+                CloseUltimatePicker();
+                return true;
+            }
+            if (pendingTargetedUltimate == "Armement")
+            {
+                var property = tile.Property;
+                var owner = property != null ? turnManager.GetOwnerOfProperty(property) : null;
+                bool aerospace = property?.FamilyData != null && property.FamilyData.FamilyName.Contains("Aerospace");
+                if (property == null || owner == null || owner == player || aerospace) return false;
+                activated = abilitySystem.Armement_CyberSabotage(player, property);
+            }
+            else if (pendingTargetedUltimate == "Aerospace")
+            {
+                bool eligible = tile.Type == TileType.GlobalAuction;
+                if (tile.Property?.FamilyData != null)
+                {
+                    string name = tile.Property.FamilyData.FamilyName;
+                    eligible |= name.Contains("Aerospace") || name.Contains("Tech") || name.Contains("Logistics");
+                }
+                if (!eligible) return false;
+                activated = abilitySystem.Aerospace_SautQuantique(player, tile.TileIndex);
+            }
+
+            if (!activated) return false;
+            CloseUltimatePicker();
+            UpdateButtonsState(currentSelectedTile, player);
+            return true;
+        }
+
+        public bool IsAbilityTileEligible(BoardTile tile)
+        {
+            if (!IsAbilityTargetSelectionActive || tile == null || turnManager == null) return false;
+            var player = turnManager.CurrentPlayer;
+            if (player == null) return false;
+
+            if (pendingTargetedUltimate == "Armement")
+            {
+                var property = tile.Property;
+                var owner = property != null ? turnManager.GetOwnerOfProperty(property) : null;
+                bool aerospace = property?.FamilyData != null && property.FamilyData.FamilyName.Contains("Aerospace");
+                return property != null && owner != null && owner != player && !aerospace;
+            }
+
+            if (pendingTargetedUltimate == "Aerospace")
+            {
+                if (tile.Type == TileType.GlobalAuction) return true;
+                string name = tile.Property?.FamilyData?.FamilyName;
+                return name != null && (name.Contains("Aerospace") || name.Contains("Tech") || name.Contains("Logistics"));
+            }
+
+            return false;
+        }
+
+        private void HighlightAbilityTargets(string family)
+        {
+            ResetAbilityTargetHighlights();
+            if (boardManager == null || turnManager == null) return;
+            ColorUtility.TryParseHtmlString(family == "Armement" ? "#FF5B5B" : "#00FFFF", out Color color);
+            foreach (var tile in boardManager.Tiles)
+            {
+                bool eligible;
+                if (family == "Armement")
+                {
+                    var owner = tile.Property != null ? turnManager.GetOwnerOfProperty(tile.Property) : null;
+                    eligible = tile.Property != null && owner != null && owner != turnManager.CurrentPlayer
+                        && (tile.Property.FamilyData == null || !tile.Property.FamilyData.FamilyName.Contains("Aerospace"));
+                }
+                else
+                {
+                    eligible = tile.Type == TileType.GlobalAuction;
+                    string name = tile.Property?.FamilyData?.FamilyName;
+                    eligible |= name != null && (name.Contains("Aerospace") || name.Contains("Tech") || name.Contains("Logistics"));
+                }
+                if (!eligible || boardManager.visualTiles == null || tile.TileIndex >= boardManager.visualTiles.Length) continue;
+                var visual = boardManager.visualTiles[tile.TileIndex]?.GetComponentInChildren<PolyRisk.Visuals.TileVisuals>();
+                if (visual == null) continue;
+                visual.BeginPulse(color);
+                abilityTargetPulses.Add(visual);
+            }
+        }
+
+        private void ResetAbilityTargetHighlights()
+        {
+            foreach (var visual in abilityTargetPulses)
+                if (visual != null) visual.EndPulse(true);
+            abilityTargetPulses.Clear();
+        }
+
+        private void CloseUltimatePicker()
+        {
+            ResetAbilityTargetHighlights();
+            pendingTargetedUltimate = null;
+            if (turnManager != null) turnManager.IsInSelectionMode = false;
+            abilityPickerOverlay?.RemoveFromHierarchy();
+            abilityPickerOverlay = null;
+            if (tileDetailPanel != null) tileDetailPanel.style.display = DisplayStyle.Flex;
+        }
+
+        private void ShowInvestmentPicker(PlayerModel player)
+        {
+            if (player == null || turnManager?.financeSystem == null || uiDocument == null) return;
+            CloseInvestmentPicker();
+            RebuildInvestmentPicker(player, animate: true);
+        }
+
+        private void RebuildInvestmentPicker(PlayerModel player, bool animate = false)
+        {
+            var root = uiDocument?.rootVisualElement;
+            if (root == null || player == null) return;
+
+            investmentPickerOverlay?.RemoveFromHierarchy();
+            investmentPickerOverlay = new VisualElement { name = "Panel_InvestmentPicker" };
+            investmentPickerOverlay.AddToClassList("bottom-panel-container");
+            investmentPickerOverlay.AddToClassList("marketplace-modal");
+
+            var panel = new VisualElement();
+            panel.AddToClassList("marketplace-panel");
+            panel.AddToClassList("marketplace-panel--compact");
+            panel.AddToClassList("investment-panel");
+            var content = new VisualElement();
+            content.AddToClassList("panel-content");
+
+            var title = new Label("STOCK MARKET");
+            title.AddToClassList("panel-header-title");
+            content.Add(title);
+
+            var market = turnManager.financeSystem.CurrentMarketState;
+            var context = new Label($"Market {market} · Sgo {CurrencyFormatter.Format(turnManager.financeSystem.CurrentSgo)}");
+            context.AddToClassList("investment-context");
+            content.Add(context);
+
+            content.Add(BuildInvestmentLabel("DURATION · longer means more upside and risk"));
+            var durationRow = BuildInvestmentRow();
+            AddInvestmentOption(durationRow, "1 TURN", pendingInvestmentDuration == 1, () =>
+            {
+                pendingInvestmentDuration = 1;
+                RebuildInvestmentPicker(player);
+            });
+            AddInvestmentOption(durationRow, "3 TURNS", pendingInvestmentDuration == 3, () =>
+            {
+                pendingInvestmentDuration = 3;
+                RebuildInvestmentPicker(player);
+            });
+            AddInvestmentOption(durationRow, "5 TURNS", pendingInvestmentDuration == 5, () =>
+            {
+                pendingInvestmentDuration = 5;
+                RebuildInvestmentPicker(player);
+            });
+            content.Add(durationRow);
+
+            content.Add(BuildInvestmentLabel("AMOUNT"));
+            var amountRow = BuildInvestmentRow();
+            AddInvestmentOption(amountRow, "1× Sgo", pendingInvestmentPreset == 1, () =>
+            {
+                pendingInvestmentPreset = 1;
+                RebuildInvestmentPicker(player);
+            });
+            AddInvestmentOption(amountRow, "5× Sgo", pendingInvestmentPreset == 5, () =>
+            {
+                pendingInvestmentPreset = 5;
+                RebuildInvestmentPicker(player);
+            });
+            AddInvestmentOption(amountRow, "MAX", pendingInvestmentPreset == 0, () =>
+            {
+                pendingInvestmentPreset = 0;
+                RebuildInvestmentPicker(player);
+            });
+            content.Add(amountRow);
+
+            double amount = ResolveInvestmentAmount(player);
+            var risk = new Label(ResolveInvestmentRiskText());
+            risk.AddToClassList("investment-risk");
+            content.Add(risk);
+
+            var confirm = new Button(() => ConfirmInvestment(player))
+            {
+                text = $"INVEST {CurrencyFormatter.Format(amount)} · {pendingInvestmentDuration}T"
+            };
+            confirm.AddToClassList("btn-standard");
+            confirm.SetEnabled(amount > 0);
+            content.Add(confirm);
+
+            var cancel = new Button(CloseInvestmentPicker) { text = "CANCEL" };
+            cancel.AddToClassList("btn-secondary");
+            content.Add(cancel);
+
+            panel.Add(content);
+            investmentPickerOverlay.Add(panel);
+            root.Add(investmentPickerOverlay);
+            UIUXRuntime.PrepareView(investmentPickerOverlay, CloseInvestmentPicker);
+            if (animate) UIToolkitTransitions.SlideUpEnter(this, panel);
+            if (tileDetailPanel != null) tileDetailPanel.style.display = DisplayStyle.None;
+        }
+
+        private static Label BuildInvestmentLabel(string text)
+        {
+            var label = new Label(text);
+            label.AddToClassList("investment-label");
+            return label;
+        }
+
+        private static VisualElement BuildInvestmentRow()
+        {
+            var row = new VisualElement();
+            row.AddToClassList("investment-option-row");
+            return row;
+        }
+
+        private static void AddInvestmentOption(VisualElement row, string text, bool selected, System.Action action)
+        {
+            var button = new Button(action) { text = text };
+            button.AddToClassList("btn-secondary");
+            button.AddToClassList("investment-option-button");
+            if (selected) button.AddToClassList("card-selected");
+            row.Add(button);
+        }
+
+        private double ResolveInvestmentAmount(PlayerModel player)
+        {
+            double sgo = System.Math.Max(0, turnManager?.financeSystem?.CurrentSgo ?? 0);
+            double cap = (pendingInvestmentDuration == 5 ? 20 : 15) * sgo;
+            double requested = pendingInvestmentPreset == 0 ? cap : pendingInvestmentPreset * sgo;
+            return System.Math.Min(player.CurrentBalance, System.Math.Min(cap, requested));
+        }
+
+        private string ResolveInvestmentRiskText()
+        {
+            switch (pendingInvestmentDuration)
+            {
+                case 1: return "1T · ROI −30% to +40% before market-cycle modifiers";
+                case 3: return "3T · ROI −30% to +70% before market-cycle modifiers";
+                default: return "5T · 20% total-loss risk, otherwise ROI −20% to +120%";
+            }
+        }
+
+        private void ConfirmInvestment(PlayerModel player)
+        {
+            double amount = ResolveInvestmentAmount(player);
+            if (amount <= 0 || turnManager?.financeSystem == null) return;
+
+            var request = new StockInvestmentCommandDto
+            {
+                amount = amount,
+                duration = pendingInvestmentDuration
+            };
+            var online = OnlineGameController.Instance;
+            if (online != null && online.IsOnlineGame)
+            {
+                online.TrySubmitLocalCommand("stock.invest", JsonUtility.ToJson(request));
+                CloseInvestmentPicker();
+                return;
+            }
+
+            if (turnManager.financeSystem.InvestInStockMarket(player, amount, pendingInvestmentDuration))
+                turnManager.CompleteTileResolution();
+            CloseInvestmentPicker();
+        }
+
+        private void CloseInvestmentPicker()
+        {
+            investmentPickerOverlay?.RemoveFromHierarchy();
+            investmentPickerOverlay = null;
+            if (tileDetailPanel != null) tileDetailPanel.style.display = DisplayStyle.Flex;
         }
 
         private bool HasMonopoly(PlayerModel player, string familyNameContains)

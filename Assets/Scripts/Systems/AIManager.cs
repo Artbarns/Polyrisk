@@ -50,15 +50,6 @@ namespace PolyRisk.Systems
                 yield return new WaitForSeconds(0.5f);
             }
 
-            // 2) Auto Precision : si la prochaine case fortement loyée se trouve à ±1 case
-            //    du jet moyen attendu (7), on tente d'ajuster. Heuristique simple.
-            if (ai.AutoPrecisionAvailable && HasMonopoly(ai, "Automobile"))
-            {
-                int delta = PickAutoPrecisionDelta(ai);
-                if (delta != 0 && turnManager != null)
-                    turnManager.UseAutoPrecision(ai, delta);
-            }
-
             yield return new WaitForSeconds(0.5f);
         }
 
@@ -168,26 +159,26 @@ namespace PolyRisk.Systems
             if (richestOpponent == null) return;
 
             double sgo = GetSgo();
-            // Choix sanction selon budget : Audit (cheap) → Embargo → Strike → Sabotage
-            if (attacker.CurrentBalance >= 5.0 * sgo)
+            var propertyTarget = richestOpponent.OwnedProperties.OrderByDescending(p => p.BaseRent).FirstOrDefault();
+            var sabotageTarget = richestOpponent.OwnedProperties
+                .Where(p => p.CurrentLevel > 0 && (p.FamilyData == null || !p.FamilyData.FamilyName.Contains("Aerospace")))
+                .OrderByDescending(p => p.CurrentLevel).FirstOrDefault();
+
+            // Construire les sanctions réellement abordables et applicables, puis en tirer une.
+            // Cela évite que Strike masque systématiquement Embargo dans une chaîne de priorités.
+            var choices = new System.Collections.Generic.List<int> { 0 }; // 0 = Audit, toujours le fallback à 1×Sgo
+            if (attacker.CurrentBalance >= 2.0 * sgo && propertyTarget != null) choices.Add(1); // Strike
+            if (attacker.CurrentBalance >= 5.0 * sgo && propertyTarget != null) choices.Add(2); // Embargo
+            if (attacker.CurrentBalance >= 5.0 * sgo && sabotageTarget != null) choices.Add(3); // Sabotage
+
+            int choice = choices[UnityEngine.Random.Range(0, choices.Count)];
+            switch (choice)
             {
-                var target = richestOpponent.OwnedProperties
-                    .Where(p => p.CurrentLevel > 0 && (p.FamilyData == null || !p.FamilyData.FamilyName.Contains("Aerospace")))
-                    .OrderByDescending(p => p.CurrentLevel).FirstOrDefault();
-                if (target != null) { marketplaceSystem.ExecuteSabotage(attacker, target); return; }
+                case 1: marketplaceSystem.ExecuteStrike(attacker, propertyTarget); break;
+                case 2: marketplaceSystem.ExecuteEmbargo(attacker, propertyTarget); break;
+                case 3: marketplaceSystem.ExecuteSabotage(attacker, sabotageTarget); break;
+                default: marketplaceSystem.ExecuteAudit(attacker, richestOpponent); break;
             }
-            if (attacker.CurrentBalance >= 2.0 * sgo)
-            {
-                var target = richestOpponent.OwnedProperties.OrderByDescending(p => p.BaseRent).FirstOrDefault();
-                if (target != null) { marketplaceSystem.ExecuteStrike(attacker, target); return; }
-            }
-            if (attacker.CurrentBalance >= 1.5 * sgo)
-            {
-                var target = richestOpponent.OwnedProperties.OrderByDescending(p => p.BaseRent).FirstOrDefault();
-                if (target != null) { marketplaceSystem.ExecuteEmbargo(attacker, target); return; }
-            }
-            // Fallback : Targeted Audit (1×Sgo, cible le joueur directement)
-            marketplaceSystem.ExecuteAudit(attacker, richestOpponent);
         }
 
         /// <summary>
@@ -248,12 +239,38 @@ namespace PolyRisk.Systems
         // HEURISTIQUE AUTO PRECISION (placeholder simple)
         // ─────────────────────────────────────────────────────────────────────────
 
-        private int PickAutoPrecisionDelta(PlayerModel ai)
+        public int ChooseAutoPrecisionDelta(PlayerModel ai, int rolledSteps)
         {
-            // Stratégie minimale : ajuster pour ÉVITER une case dangereuse (Audit/Direction Audit/Tax)
-            // ou ATTEINDRE une case Venture/GO si elle est à +7 ou +8 cases.
-            // Phase D : heuristique simple. À enrichir Phase F.
-            // Pour l'instant : delta nul (ne pas perturber). On posera des bons cas en QA.
+            if (ai == null || turnManager == null || boardManager == null) return 0;
+            int position = turnManager.GetPlayerPosition(ai);
+            if (position < 0) return 0;
+
+            double Score(int delta)
+            {
+                var tile = boardManager.GetTileAt((position + rolledSteps + delta + 40) % 40);
+                if (tile == null) return 0;
+                switch (tile.Type)
+                {
+                    case TileType.GoToPrison: return -10;
+                    case TileType.Tax: return -4;
+                    case TileType.Venture: return 2;
+                    case TileType.GlobalAuction: return 1.5;
+                    case TileType.StockMarket:
+                    case TileType.Casino: return 1;
+                    case TileType.Property:
+                        if (tile.Property == null) return 0;
+                        var owner = turnManager.GetOwnerOfProperty(tile.Property);
+                        if (owner == null) return ai.CurrentBalance >= tile.Property.BasePrice ? 3 : -1;
+                        return owner == ai ? 1 : -2;
+                    default: return 0;
+                }
+            }
+
+            double baseline = Score(0);
+            double lower = Score(-1);
+            double higher = Score(1);
+            if (lower > baseline && lower >= higher) return -1;
+            if (higher > baseline) return 1;
             return 0;
         }
 

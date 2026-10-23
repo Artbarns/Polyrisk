@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PolyRisk.Core;
+using PolyRisk.Systems;
 
 namespace PolyRisk.Visuals
 {
@@ -10,6 +12,31 @@ namespace PolyRisk.Visuals
     /// </summary>
     public class PlayerVisualManager : MonoBehaviour
     {
+        private static readonly Color[] PlayerColors =
+        {
+            new Color(0.94f, 0.31f, 0.34f),
+            new Color(0.31f, 0.62f, 0.98f),
+            new Color(0.34f, 0.82f, 0.58f),
+            new Color(0.96f, 0.72f, 0.28f),
+            new Color(0.30f, 0.80f, 0.84f),
+            new Color(0.76f, 0.48f, 0.92f)
+        };
+
+        public static Color GetPlayerColor(int playerId)
+        {
+            int index = playerId % PlayerColors.Length;
+            if (index < 0) index += PlayerColors.Length;
+            return PlayerColors[index];
+        }
+
+        public static event System.Action<int,PawnMovement,List<Vector3>> VisualMovementStarted;
+        internal static void NotifyVisualMovementStarted(int playerId,PawnMovement pawn,List<Vector3> path) =>
+            VisualMovementStarted?.Invoke(playerId,pawn,path);
+
+        private const float PawnBaseScale = 0.76f;
+        private const float ActivePawnScale = 0.91f;
+        public static float MaximumPawnScale => ActivePawnScale;
+
         [Header("Assets")]
         [Tooltip("Prefab for the player pawn.")]
         [SerializeField] private GameObject pawnPrefab;
@@ -20,14 +47,33 @@ namespace PolyRisk.Visuals
         // Map PlayerID to their PawnMovement script
         private Dictionary<int, PawnMovement> activePawns = new Dictionary<int, PawnMovement>();
 
+        private int presentationGeneration;
+        private void CancelPreparation() { presentationGeneration++; StopAllCoroutines(); }
+        private void HandlePresentationRestore()
+        {
+            CancelPreparation();
+            // A replicated pose supersedes an old visual path. Never complete it later.
+            foreach(var pawn in activePawns.Values)
+            {
+                if(pawn==null)continue;
+                pawn.StopAllCoroutines();
+                pawn.GetComponent<CompactPawnVisual>()?.ResetPresentation();
+            }
+        }
+
         private void OnEnable()
         {
+            PolyRisk.Multiplayer.OnlineGameController.PresentationStateApplied += HandlePresentationRestore;
             GameEvents.OnPlayerPathCalculated += HandlePlayerPath;
+            GameEvents.OnTurnStarted += HandleTurnStarted;
         }
 
         private void OnDisable()
         {
+            PolyRisk.Multiplayer.OnlineGameController.PresentationStateApplied -= HandlePresentationRestore;
+            CancelPreparation();
             GameEvents.OnPlayerPathCalculated -= HandlePlayerPath;
+            GameEvents.OnTurnStarted -= HandleTurnStarted;
         }
 
         private void Start()
@@ -64,7 +110,9 @@ namespace PolyRisk.Visuals
                 return;
             }
 
-            // Clear existing
+            // Clear existing pawns before rebuilding a local or online roster.
+            foreach (var pawn in activePawns.Values)
+                if (pawn != null) Destroy(pawn.gameObject);
             activePawns.Clear();
 
             foreach (var player in players)
@@ -72,6 +120,7 @@ namespace PolyRisk.Visuals
                 // Instantiate pawn
                 GameObject pawnObj = Instantiate(pawnPrefab, startPos, Quaternion.identity);
                 pawnObj.name = $"Pawn_Player_{player.PlayerId}";
+                pawnObj.transform.localScale = Vector3.one * PawnBaseScale;
 
                 // Get PawnMovement component
                 PawnMovement movement = pawnObj.GetComponent<PawnMovement>();
@@ -80,20 +129,43 @@ namespace PolyRisk.Visuals
                     movement = pawnObj.AddComponent<PawnMovement>();
                 }
 
-                // Color tinting if supported (optional)
-                var renderer = pawnObj.GetComponentInChildren<Renderer>();
-                if (renderer != null)
-                {
-                    // Assign a distinct color based on ID
-                    // Simple logic: Red, Blue, Green, Yellow...
-                    Color[] colors = { Color.red, Color.blue, Color.green, Color.yellow, Color.cyan, Color.magenta };
-                    renderer.material.color = colors[player.PlayerId % colors.Length];
-                }
+                // Presentation child only: the original movement root and hit target remain intact.
+                float shortWidth=1f;
+                var anchor=BoardManager.Instance?.visualTiles?[1];
+                var box=anchor!=null?anchor.GetComponent<BoxCollider>():null;
+                if(box!=null)shortWidth=Mathf.Min(box.size.x*Mathf.Abs(anchor.lossyScale.x),box.size.z*Mathf.Abs(anchor.lossyScale.z));
+                pawnObj.AddComponent<CompactPawnVisual>().Initialize(player.PlayerId,shortWidth);
 
                 activePawns[player.PlayerId] = movement;
             }
+
+            int activePlayerId = TurnManager.Instance != null && TurnManager.Instance.CurrentPlayer != null
+                ? TurnManager.Instance.CurrentPlayer.PlayerId : -1;
+            UpdateActivePawn(activePlayerId);
             
             Debug.Log($"Spawned {activePawns.Count} player pawns at {startPos}.");
+        }
+
+        private void HandleTurnStarted(int playerId) => UpdateActivePawn(playerId);
+
+        private void UpdateActivePawn(int activePlayerId)
+        {
+            foreach (var pair in activePawns)
+            {
+                if (pair.Value == null) continue;
+                bool isActive = pair.Key == activePlayerId;
+                float pawnScale = isActive ? ActivePawnScale : PawnBaseScale;
+                pair.Value.transform.localScale = Vector3.one * pawnScale;
+                var collider = pair.Value.GetComponent<CapsuleCollider>();
+                if (collider != null)
+                {
+                    // Keep the original world-space hit target despite the larger mesh.
+                    collider.radius = 0.25f / pawnScale;
+                    collider.height = 1.0f / pawnScale;
+                }
+
+                pair.Value.GetComponent<CompactPawnVisual>()?.SetActive(isActive);
+            }
         }
 
         /// <summary>
@@ -103,8 +175,32 @@ namespace PolyRisk.Visuals
         /// <param name="path">The list of waypoints.</param>
         private void HandlePlayerPath(int playerId, List<Vector3> path)
         {
+            int generation=++presentationGeneration;
+            float wait=BoardDicePresenter.Instance!=null?BoardDicePresenter.Instance.LeadInRemaining(playerId):0f;
+            if(!GameBootstrapper.SkipMovementAnimation && path!=null && path.Count>0 && wait>0f)
+                StartCoroutine(PrepareVisualPath(playerId,path,wait,generation));
+            else DispatchPlayerPath(playerId,path);
+        }
+        private IEnumerator PrepareVisualPath(int playerId,List<Vector3> path,float wait,int generation)
+        {
+            float deadline=Time.unscaledTime+Mathf.Min(wait,1.1f);
+            while(Time.unscaledTime<deadline)
+            {
+                if(generation!=presentationGeneration || TurnManager.Instance?.CurrentPlayer?.PlayerId!=playerId ||
+                    TurnManager.Instance.CurrentState!=TurnManager.TurnState.MovingPawn) yield break;
+                yield return null;
+            }
+            if(generation==presentationGeneration && TurnManager.Instance?.CurrentPlayer?.PlayerId==playerId &&
+                TurnManager.Instance.CurrentState==TurnManager.TurnState.MovingPawn) DispatchPlayerPath(playerId,path);
+        }
+        private void DispatchPlayerPath(int playerId, List<Vector3> path)
+        {
             if (activePawns.TryGetValue(playerId, out PawnMovement pawn))
             {
+                // Presentation notification at the real visual dispatch; completion contract remains unchanged.
+                if (path != null && path.Count > 0 && !GameBootstrapper.SkipMovementAnimation &&
+                    (path[0]-pawn.transform.position).sqrMagnitude > .0001f)
+                    NotifyVisualMovementStarted(playerId,pawn,path);
                 // Execute movement
                 pawn.MoveAlongPath(path, () => 
                 {

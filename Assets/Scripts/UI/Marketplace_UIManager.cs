@@ -3,6 +3,7 @@ using UnityEngine.UIElements;
 using System.Collections.Generic;
 using System.Linq;
 using PolyRisk.Core;
+using PolyRisk.Multiplayer;
 using PolyRisk.Systems;
 
 namespace PolyRisk.UI
@@ -17,7 +18,8 @@ namespace PolyRisk.UI
             WaitingForBids,    // Vendeur attend les offres (transition 2B→3B)
             TenderReview,      // Vendeur choisit une offre
             BidderSpectator,   // Enchérisseur regarde les offres (read-only, Frame 4.B)
-            SelectPlayer       // Sélection de cible pour une sanction (Frame 3.A)
+            SelectPlayer,      // Sélection de cible pour une sanction (Frame 3.A)
+            BidderForm
         }
 
         private enum SelectionContext
@@ -86,12 +88,32 @@ namespace PolyRisk.UI
         private int selectedBidIndex = -1;
         private MarketplaceSystem.TenderBid selectedBid;
         private List<MarketplaceSystem.TenderBid> currentDisplayedBids = new List<MarketplaceSystem.TenderBid>();
+        private readonly HashSet<int> spectatorBidderIds = new HashSet<int>();
+        private int spectatorSellerId = -1;
+        private int spectatorPropertyIndex = -1;
+        private bool spectatorHasRenderedAuction;
+        private int respondedTenderSellerId = -1;
+        private int respondedTenderPropertyIndex = -1;
 
         // Rôle de l'humain dans l'enchère en cours
         private bool isHumanTheSeller = false;
 
         // Cible en cours de sélection pour les sanctions
         private PlayerModel pendingTargetPlayer = null;
+        private System.Action pendingSelectConfirmAction;
+
+        private bool IsOnline => OnlineGameController.Instance != null
+            && OnlineGameController.Instance.IsOnlineGame;
+
+        private PlayerModel GetLocalPlayer()
+        {
+            if (turnManager == null) return null;
+            var online = OnlineGameController.Instance;
+            if (online != null && online.IsOnlineGame)
+                return turnManager.GetPlayerById(online.LocalSeatIndex);
+            return turnManager.GetPlayerById(0)
+                ?? turnManager.Players?.FirstOrDefault(player => !player.IsAI);
+        }
 
         private void Awake()
         {
@@ -116,6 +138,10 @@ namespace PolyRisk.UI
             if (marketplaceSystem != null)
             {
                 marketplaceSystem.OnAuctionStateChanged += HandleAuctionStateChanged;
+                // A reconnect can apply the authoritative snapshot before this UI
+                // subscribes. Reconcile once so the restored auction opens the
+                // correct role-specific panel instead of leaving a stale form.
+                HandleAuctionStateChanged(marketplaceSystem.CurrentAuctionState);
             }
         }
 
@@ -127,20 +153,67 @@ namespace PolyRisk.UI
             }
         }
 
+        private void Update()
+        {
+            // Snapshot restoration can race the UI event subscription. Keep the
+            // reviewing state read-only even if a client missed that one event.
+            if (marketplaceSystem == null || root == null
+                || marketplaceSystem.CurrentAuctionState != MarketplaceSystem.AuctionState.Reviewing)
+                return;
+
+            var localPlayer = GetLocalPlayer();
+            bool localSeller = localPlayer != null
+                && marketplaceSystem.CurrentTenderSeller == localPlayer;
+            bool correctPanel = localSeller
+                ? currentView == MarketplaceView.TenderReview
+                    && root.Q<VisualElement>("Panel_Marketplace_TenderReview") != null
+                : currentView == MarketplaceView.BidderSpectator
+                    && root.Q<VisualElement>("Panel_Marketplace_BidderSpectator") != null;
+            if (!correctPanel)
+                HandleAuctionStateChanged(MarketplaceSystem.AuctionState.Reviewing);
+        }
+
         private void HandleAuctionStateChanged(MarketplaceSystem.AuctionState newState)
         {
+            var localPlayer = GetLocalPlayer();
+            isHumanTheSeller = localPlayer != null
+                && marketplaceSystem?.CurrentTenderSeller == localPlayer;
+            if (newState == MarketplaceSystem.AuctionState.Closing
+                || (respondedTenderSellerId >= 0
+                    && marketplaceSystem?.CurrentTenderSeller != null
+                    && marketplaceSystem.CurrentTenderProperty != null
+                    && !MatchesLocallyRespondedTender()))
+                ResetLocalTenderResponse();
             switch (newState)
             {
                 case MarketplaceSystem.AuctionState.InvitingPlayers:
-                    // Le vendeur reste sur son écran d'attente — on ne fait rien pour lui ici.
-                    // Pour les autres joueurs (humains non-IA), on affiche la notification.
-                    ShowAuctionNotification();
-                    // Mise à jour du compteur si l'écran d'attente est affiché
-                    UpdateWaitingBidCount();
+                    if (isHumanTheSeller)
+                    {
+                        if (currentView == MarketplaceView.WaitingForBids) UpdateWaitingBidCount();
+                        else ShowWaitingForBids();
+                    }
+                    else if (HasLocallyRespondedToTender()
+                        || (localPlayer != null && marketplaceSystem.ActiveBids.ContainsKey(localPlayer.PlayerId)))
+                    {
+                        ShowBidderSpectator();
+                    }
+                    else if (root?.Q<VisualElement>("Panel_Marketplace_BidderForm") != null)
+                    {
+                        // Another bidder's response must not reopen an invitation over a draft.
+                        break;
+                    }
+                    else if (root?.Q<VisualElement>("Panel_Marketplace_Notification") == null)
+                    {
+                        ShowAuctionNotification();
+                    }
                     break;
 
                 case MarketplaceSystem.AuctionState.Bidding:
-                    ShowBidderForm();
+                    if (isHumanTheSeller) ShowWaitingForBids();
+                    else if (HasLocallyRespondedToTender()
+                        || (localPlayer != null && marketplaceSystem.ActiveBids.ContainsKey(localPlayer.PlayerId)))
+                        ShowBidderSpectator();
+                    else if (root?.Q<VisualElement>("Panel_Marketplace_BidderForm") == null) ShowBidderForm();
                     break;
 
                 case MarketplaceSystem.AuctionState.Reviewing:
@@ -152,13 +225,9 @@ namespace PolyRisk.UI
 
                 case MarketplaceSystem.AuctionState.Closing:
                     ResetAllHighlights();
-                    // Toujours fermer ici, vendeur humain ou IA. SealSelectedDeal() appelle
-                    // aussi CloseMarketplace() directement pour le cas "deal scellé" — double
-                    // appel sans risque (CloseMarketplace/CompleteTileResolution sont déjà
-                    // idempotents). Sans cet appel inconditionnel, le cas "tender annulé, aucune
-                    // enchère, vendeur humain" ne fermait jamais le panneau (bug : le bottom
-                    // sheet ne revenait plus après un Reject All sans offres).
-                    CloseMarketplace();
+                    HideMarketplaceOnly();
+                    ResetSpectatorAnimationState();
+                    if (!IsOnline && turnManager != null) turnManager.CompleteTileResolution();
                     break;
             }
         }
@@ -177,19 +246,25 @@ namespace PolyRisk.UI
             }
         }
 
+        private string PlayerDisplayName(int playerId)
+        {
+            var seats = IsOnline ? LobbySession.Instance?.CurrentLobby?.players : null;
+            return seats != null && playerId >= 0 && playerId < seats.Length
+                ? seats[playerId].displayName : $"PLAYER {playerId}";
+        }
+
         private void ShowAuctionNotification()
         {
             if (marketplaceSystem == null || turnManager == null) return;
             var seller = marketplaceSystem.CurrentTenderSeller;
-            // Le "local player" est toujours l'humain (Player 0), pas le joueur du tour en cours
-            // (qui peut être une IA quand c'est elle qui a déclenché le Marketplace).
-            var localPlayer = turnManager.GetPlayerById(0)
-                           ?? turnManager.Players?.FirstOrDefault(p => !p.IsAI);
+            var localPlayer = GetLocalPlayer();
 
             if (localPlayer != null && seller != null && localPlayer.PlayerId != seller.PlayerId && !localPlayer.IsAI)
             {
                 marketplace_Notification = ResolveVisualTreeAsset(marketplace_Notification, "Marketplace_Notification");
                 if (marketplace_Notification == null || root == null) return;
+                TopHUDWidget.SetBoardIdentityOverlayVisible(false);
+                FindObjectOfType<ActionButtonsWidget>(true)?.SetPresentationVisible(false);
 
                 // Make sure root is visible for the notification overlay
                 root.style.display = DisplayStyle.Flex;
@@ -211,24 +286,26 @@ namespace PolyRisk.UI
                     string propName = marketplaceSystem.CurrentTenderProperty != null
                         ? marketplaceSystem.CurrentTenderProperty.PropertyName
                         : "an asset";
-                    lblAsset.text = $"Player {seller.PlayerId} is selling {propName}";
+                    lblAsset.text = $"{PlayerDisplayName(seller.PlayerId)} is selling {propName}";
                 }
 
                 var btnParticipate = notifElement.Q<Button>("Btn_Participate");
                 var btnSkip = notifElement.Q<Button>("Btn_Skip");
 
                 btnParticipate?.RegisterCallback<ClickEvent>(ev => {
-                    marketplaceSystem.SetAuctionState(MarketplaceSystem.AuctionState.Bidding);
                     notifElement.RemoveFromHierarchy();
+                    if (IsOnline) ShowBidderForm();
+                    else marketplaceSystem.SetAuctionState(MarketplaceSystem.AuctionState.Bidding);
                 });
 
                 btnSkip?.RegisterCallback<ClickEvent>(ev => {
-                    marketplaceSystem.SkipBid(localPlayer.PlayerId);
+                    SubmitBidSkip(localPlayer);
                     notifElement.RemoveFromHierarchy();
+                    if (IsOnline) ShowBidderSpectator();
                 });
 
-                // 5-second countdown — auto-skip on expiry
-                StartCoroutine(NotificationCountdown(notifElement, lblTimer, 5, localPlayer));
+                // Allow online players time to read the invitation on mobile.
+                StartCoroutine(NotificationCountdown(notifElement, lblTimer, IsOnline ? 30 : 5, localPlayer));
             }
         }
 
@@ -238,9 +315,12 @@ namespace PolyRisk.UI
             int remaining = seconds;
             while (remaining > 0)
             {
-                if (timerLabel != null) timerLabel.text = $"{remaining}s";
-                timerLabel?.EnableInClassList("auction-countdown--critical", remaining <= 5);
-                yield return new UnityEngine.WaitForSeconds(1f);
+                if (timerLabel != null)
+                {
+                    timerLabel.text = $"{remaining}s";
+                    timerLabel.EnableInClassList("auction-countdown--critical", remaining <= 5);
+                }
+                yield return new UnityEngine.WaitForSecondsRealtime(1f);
                 remaining--;
                 // Abort if the element was already dismissed manually
                 if (notifElement.parent == null) yield break;
@@ -248,8 +328,9 @@ namespace PolyRisk.UI
             // Time's up — auto-skip
             if (notifElement.parent != null)
             {
-                marketplaceSystem?.SkipBid(localPlayer.PlayerId);
+                SubmitBidSkip(localPlayer);
                 notifElement.RemoveFromHierarchy();
+                if (IsOnline) ShowBidderSpectator();
             }
         }
 
@@ -257,17 +338,28 @@ namespace PolyRisk.UI
         {
             if (marketplaceSystem == null || turnManager == null) return;
             var seller = marketplaceSystem.CurrentTenderSeller;
-            // Toujours l'humain (Player 0)
-            var localPlayer = turnManager.GetPlayerById(0)
-                           ?? turnManager.Players?.FirstOrDefault(p => !p.IsAI);
+            var localPlayer = GetLocalPlayer();
 
             if (localPlayer == null || seller == null || localPlayer.PlayerId == seller.PlayerId || localPlayer.IsAI) return;
 
+            bool alreadyResponded = HasLocallyRespondedToTender()
+                || marketplaceSystem.ActiveBids.ContainsKey(localPlayer.PlayerId);
+            bool acceptsBids = marketplaceSystem.CurrentAuctionState == MarketplaceSystem.AuctionState.InvitingPlayers
+                || marketplaceSystem.CurrentAuctionState == MarketplaceSystem.AuctionState.Bidding;
+            if (alreadyResponded || !acceptsBids)
+            {
+                if (marketplaceSystem.CurrentAuctionState == MarketplaceSystem.AuctionState.Reviewing
+                    || alreadyResponded)
+                    ShowBidderSpectator();
+                return;
+            }
+
             // ── Désactiver le HUD principal pour éviter qu'il reste visible derrière ──
             ActionButtonsWidget actionBtns = FindObjectOfType<ActionButtonsWidget>(true);
-            if (actionBtns != null) actionBtns.gameObject.SetActive(false);
+            if (actionBtns != null) actionBtns.SetPresentationVisible(false);
 
             isHumanTheSeller = false;
+            currentView = MarketplaceView.BidderForm;
             selectionContext = SelectionContext.BidProperty;
             selectedProperties.Clear();
             ResetAllHighlights();
@@ -300,10 +392,11 @@ namespace PolyRisk.UI
             });
 
             btnSkip?.RegisterCallback<ClickEvent>(ev => {
-                marketplaceSystem.SkipBid(localPlayer.PlayerId);
+                SubmitBidSkip(localPlayer);
                 if (turnManager != null) turnManager.IsInSelectionMode = false;
                 ResetAllHighlights();
-                CloseMarketplace();
+                if (IsOnline) ShowBidderSpectator();
+                else CloseMarketplace();
             });
 
             btnSubmit?.RegisterCallback<ClickEvent>(ev => {
@@ -312,12 +405,42 @@ namespace PolyRisk.UI
                     cashOffer = slider?.value ?? 0,
                 };
                 bid.propertyOffers.AddRange(selectedProperties);
+                MarkLocalTenderResponse();
 
-                marketplaceSystem.SubmitBid(localPlayer.PlayerId, bid);
+                if (IsOnline)
+                {
+                    var request = new MarketplaceTenderCommandDto
+                    {
+                        cashOffer = bid.cashOffer,
+                        offeredTileIndices = bid.propertyOffers.Select(property => property.TileIndex).ToArray()
+                    };
+                    OnlineGameController.Instance.TrySubmitLocalCommand(
+                        "marketplace.bid.submit", JsonUtility.ToJson(request), allowOutOfTurn: true);
+                }
+                else
+                {
+                    marketplaceSystem.SubmitBid(localPlayer.PlayerId, bid);
+                }
                 if (turnManager != null) turnManager.IsInSelectionMode = false;
                 ResetAllHighlights();
                 ShowBidderSpectator();
             });
+        }
+
+        private void SubmitBidSkip(PlayerModel localPlayer)
+        {
+            if (localPlayer == null) return;
+            MarkLocalTenderResponse();
+            if (IsOnline)
+            {
+                OnlineGameController.Instance.TrySubmitLocalCommand(
+                    "marketplace.bid.skip", JsonUtility.ToJson(new MarketplaceTenderCommandDto()),
+                    allowOutOfTurn: true);
+            }
+            else
+            {
+                marketplaceSystem?.SkipBid(localPlayer.PlayerId);
+            }
         }
 
         private void UpdateBidderTotal(int cash)
@@ -329,6 +452,27 @@ namespace PolyRisk.UI
                 double propTotal = selectedProperties.Sum(p => p.BasePrice);
                 lblTotal.text = CurrencyFormatter.Format(cash + propTotal);
             }
+        }
+
+        private bool MatchesLocallyRespondedTender()
+        {
+            return respondedTenderSellerId >= 0
+                && respondedTenderSellerId == (marketplaceSystem?.CurrentTenderSeller?.PlayerId ?? -1)
+                && respondedTenderPropertyIndex == (marketplaceSystem?.CurrentTenderProperty?.TileIndex ?? -1);
+        }
+
+        private bool HasLocallyRespondedToTender() => MatchesLocallyRespondedTender();
+
+        private void MarkLocalTenderResponse()
+        {
+            respondedTenderSellerId = marketplaceSystem?.CurrentTenderSeller?.PlayerId ?? -1;
+            respondedTenderPropertyIndex = marketplaceSystem?.CurrentTenderProperty?.TileIndex ?? -1;
+        }
+
+        private void ResetLocalTenderResponse()
+        {
+            respondedTenderSellerId = -1;
+            respondedTenderPropertyIndex = -1;
         }
 
         private VisualTreeAsset ResolveVisualTreeAsset(VisualTreeAsset current, string desiredName)
@@ -354,6 +498,7 @@ namespace PolyRisk.UI
                 root = uiDocument.rootVisualElement;
                 if (root != null)
                 {
+                    UIUXRuntime.PrepareRoot(root);
                     root.style.display = DisplayStyle.None;
                     root.Clear();
                 }
@@ -363,7 +508,7 @@ namespace PolyRisk.UI
         public void OpenMarketplace()
         {
             ActionButtonsWidget oldUI = FindObjectOfType<ActionButtonsWidget>(true);
-            if (oldUI != null) oldUI.gameObject.SetActive(false);
+            if (oldUI != null) oldUI.SetPresentationVisible(false);
 
             if (uiDocument != null) root = uiDocument.rootVisualElement;
 
@@ -381,11 +526,13 @@ namespace PolyRisk.UI
         {
             if (template == null || root == null) return;
 
+            FindObjectOfType<ActionButtonsWidget>(true)?.SetPresentationVisible(false);
             root.Clear();
             template.CloneTree(root);
             viewRoot = root.childCount > 0 ? root[0] : root;
 
             BindCommonCloseButton();
+            UIUXRuntime.PrepareView(viewRoot, CloseMarketplace);
 
             // Phase E.5 — Slide-up enter animation sur les bottom sheets
             VisualElement marketplacePanel = viewRoot.Q<VisualElement>(className: "marketplace-panel")
@@ -509,6 +656,21 @@ namespace PolyRisk.UI
 
             // Enter selection mode immediately — panel stays visible but non-blocking for 3D clicks
             // SetModal(false) lets raycasts through while panel stays on screen
+            var currentPlayer = turnManager != null ? turnManager.CurrentPlayer : null;
+            if (currentPlayer == null || currentPlayer.OwnedProperties.Count == 0)
+            {
+                SetModal(true);
+                var title = root.Q<Label>(className: "panel-header-title");
+                if (title != null) title.text = "NO PROPERTY TO SELL";
+                if (ownedContainer != null)
+                {
+                    var empty = new Label("Acquire a property before starting a tender.");
+                    empty.AddToClassList("empty-state-label");
+                    ownedContainer.Add(empty);
+                }
+                if (btnPickProperty != null) btnPickProperty.style.display = DisplayStyle.None;
+                return;
+            }
             EnterSelectionMode(SelectionContext.TenderProperty);
         }
 
@@ -519,6 +681,7 @@ namespace PolyRisk.UI
             selectionContext = context;
             SetSelectionMode(true);
             SetModal(false);
+            SetSelectionPanelCollapsed(true);
 
             StopPulses(false);
             if (context == SelectionContext.TenderProperty)
@@ -536,6 +699,7 @@ namespace PolyRisk.UI
             selectionContext = SelectionContext.None;
             SetSelectionMode(false);
             SetModal(true);
+            SetSelectionPanelCollapsed(false);
             if (clearTenderSelection) selectedProperties.Clear();
         }
 
@@ -583,6 +747,9 @@ namespace PolyRisk.UI
                 }
 
                 selectedProperties.Add(tile);
+                SetSelectionMode(false);
+                SetModal(true);
+                SetSelectionPanelCollapsed(false);
 
                 ScrollView container = root.Q<ScrollView>("Container_OwnedAssets");
                 if (container != null)
@@ -599,7 +766,7 @@ namespace PolyRisk.UI
             }
             else if (selectionContext == SelectionContext.BidProperty)
             {
-                PlayerModel currentPlayer = turnManager != null ? turnManager.CurrentPlayer : null;
+                PlayerModel currentPlayer = GetLocalPlayer();
                 if (currentPlayer == null) return;
                 if (!currentPlayer.OwnedProperties.Contains(tile)) return;
 
@@ -648,12 +815,10 @@ namespace PolyRisk.UI
                 if (pickBtn != null)
                     pickBtn.style.display = selectedProperties.Count >= 2 ? DisplayStyle.None : DisplayStyle.Flex;
 
-                // Quand 2 props : désactiver le mode 3D sélection, reprendre modal pour le UI
-                if (selectedProperties.Count >= 2)
-                {
-                    SetSelectionMode(false);
-                    SetModal(true);
-                }
+                // Return to the draft after every choice; the pick button can add a second title.
+                SetSelectionMode(false);
+                SetModal(true);
+                SetSelectionPanelCollapsed(false);
 
                 var slider = viewRoot?.Q<SliderInt>("Slider_CashOffer");
                 UpdateBidderTotal(slider?.value ?? 0);
@@ -682,8 +847,6 @@ namespace PolyRisk.UI
             }
         }
 
-
-
         public bool IsTileEligibleForCurrentSelection(PropertyData tile)
         {
             if (tile == null || turnManager == null) return false;
@@ -708,7 +871,7 @@ namespace PolyRisk.UI
 
         private void BindCommonCloseButton()
         {
-            string[] closeNames = { "Btn_Close", "Btn_CloseHub", "Btn_CloseSanctions", "Btn_CloseTenders", "Btn_CloseTenderReview" };
+            string[] closeNames = { "Btn_Close", "Btn_CloseHub", "Btn_CloseSanctions", "Btn_CloseTenders", "Btn_CloseTenderReview", "Btn_CloseSelectPlayer" };
             foreach (var name in closeNames)
             {
                 Button btn = root.Q<Button>(name);
@@ -721,6 +884,37 @@ namespace PolyRisk.UI
 
         public void CloseMarketplace()
         {
+            if (IsOnline)
+            {
+                var localPlayer = GetLocalPlayer();
+                var auctionState = marketplaceSystem != null
+                    ? marketplaceSystem.CurrentAuctionState
+                    : MarketplaceSystem.AuctionState.None;
+                bool tenderOpen = auctionState == MarketplaceSystem.AuctionState.InvitingPlayers
+                    || auctionState == MarketplaceSystem.AuctionState.Bidding
+                    || auctionState == MarketplaceSystem.AuctionState.Reviewing;
+
+                if (tenderOpen && marketplaceSystem?.CurrentTenderSeller == localPlayer)
+                {
+                    OnlineGameController.Instance.TrySubmitLocalCommand("marketplace.tender.cancel");
+                }
+                else if (tenderOpen && localPlayer != null
+                    && !marketplaceSystem.ActiveBids.ContainsKey(localPlayer.PlayerId))
+                {
+                    SubmitBidSkip(localPlayer);
+                }
+                else if (!tenderOpen)
+                {
+                    OnlineGameController.Instance.TrySubmitLocalCommand("marketplace.pass");
+                }
+            }
+            HideMarketplaceOnly();
+            if (!IsOnline && turnManager != null)
+                turnManager.CompleteTileResolution();
+        }
+
+        private void HideMarketplaceOnly()
+        {
             StopPulses(true);
             selectionContext = SelectionContext.None;
             SetSelectionMode(false);
@@ -728,6 +922,7 @@ namespace PolyRisk.UI
             selectedBidIndex = -1;
             pendingSanctionPropertyTarget = null;
             pendingSanctionPlayerTarget = null;
+            pendingSelectConfirmAction = null;
 
             if (root != null)
             {
@@ -735,13 +930,10 @@ namespace PolyRisk.UI
                 root.Clear();
             }
 
-            ActionButtonsWidget oldUI = FindObjectOfType<ActionButtonsWidget>(true);
-            if (oldUI != null) oldUI.gameObject.SetActive(true);
+            TopHUDWidget.SetBoardIdentityOverlayVisible(true);
 
-            if (turnManager != null)
-            {
-                turnManager.CompleteTileResolution();
-            }
+            ActionButtonsWidget oldUI = FindObjectOfType<ActionButtonsWidget>(true);
+            if (oldUI != null) oldUI.SetPresentationVisible(true);
         }
 
         private void ConfirmTenderSelection()
@@ -753,8 +945,20 @@ namespace PolyRisk.UI
 
             isHumanTheSeller = true;
 
-            // Lance l'enchère asynchrone (les IA vont bidder pendant qu'on attend)
-            marketplaceSystem.BeginTender(turnManager.CurrentPlayer, selectedProperties[0]);
+            if (IsOnline)
+            {
+                var request = new MarketplaceTenderCommandDto
+                {
+                    targetTileIndex = selectedProperties[0].TileIndex
+                };
+                OnlineGameController.Instance.TrySubmitLocalCommand(
+                    "marketplace.tender.begin", JsonUtility.ToJson(request));
+            }
+            else
+            {
+                // Lance l'enchère asynchrone (les IA vont bidder pendant qu'on attend)
+                marketplaceSystem.BeginTender(turnManager.CurrentPlayer, selectedProperties[0]);
+            }
 
             ExitSelectionMode(true);
 
@@ -778,16 +982,18 @@ namespace PolyRisk.UI
 
             // Remplir le nom + l'icône de la propriété mise aux enchères
             var propNameLbl = root.Q<Label>("Lbl_WaitingPropName");
-            if (propNameLbl != null && marketplaceSystem?.CurrentTenderProperty != null)
-                propNameLbl.text = marketplaceSystem.CurrentTenderProperty.PropertyName;
+            var tenderProperty = marketplaceSystem?.CurrentTenderProperty
+                ?? selectedProperties.FirstOrDefault();
+            if (propNameLbl != null && tenderProperty != null)
+                propNameLbl.text = tenderProperty.PropertyName;
 
             var propIconBox = root.Q<VisualElement>("Icon_WaitingProp");
             if (propIconBox != null)
-                TileIconResolver.PopulateIcon(propIconBox, marketplaceSystem?.CurrentTenderProperty);
+                TileIconResolver.PopulateIcon(propIconBox, tenderProperty);
 
             var propRentLbl = root.Q<Label>("Lbl_WaitingPropRent");
-            if (propRentLbl != null && marketplaceSystem?.CurrentTenderProperty != null)
-                propRentLbl.text = $"Base rent: {CurrencyFormatter.Format(marketplaceSystem.CurrentTenderProperty.BaseRent)}";
+            if (propRentLbl != null && tenderProperty != null)
+                propRentLbl.text = $"Base rent: {CurrencyFormatter.Format(tenderProperty.BaseRent)}";
 
             UpdateWaitingBidCount();
 
@@ -804,15 +1010,46 @@ namespace PolyRisk.UI
             if (countLbl == null || marketplaceSystem == null) return;
 
             int count = marketplaceSystem.ActiveBids.Count(kvp => kvp.Value != null);
-            countLbl.text = count == 0 ? "No offers yet..." : $"{count} offer{(count > 1 ? "s" : "")} received";
+            countLbl.text = count == 0 ? "No offers yet…" : $"{count} offer{(count > 1 ? "s" : "")} received";
         }
 
         // ─────────────────────────────────────────────────────────────────────────
         // BIDDER SPECTATOR — Frame 4.B (enchérisseur regarde la deal list, read-only)
         // ─────────────────────────────────────────────────────────────────────────
 
+        private void PrepareSpectatorAnimationContext()
+        {
+            int sellerId = marketplaceSystem?.CurrentTenderSeller?.PlayerId ?? -1;
+            int propertyIndex = marketplaceSystem?.CurrentTenderProperty?.TileIndex ?? -1;
+            if (sellerId == spectatorSellerId && propertyIndex == spectatorPropertyIndex) return;
+
+            spectatorBidderIds.Clear();
+            spectatorSellerId = sellerId;
+            spectatorPropertyIndex = propertyIndex;
+            spectatorHasRenderedAuction = false;
+        }
+
+        private void ResetSpectatorAnimationState()
+        {
+            spectatorBidderIds.Clear();
+            spectatorSellerId = -1;
+            spectatorPropertyIndex = -1;
+            spectatorHasRenderedAuction = false;
+        }
+
+        private bool IsNewSpectatorBid(int bidderId)
+        {
+            if (bidderId < 0) return false;
+            bool isNew = spectatorBidderIds.Add(bidderId);
+            return spectatorHasRenderedAuction && isNew;
+        }
+
         private void ShowBidderSpectator()
         {
+            PrepareSpectatorAnimationContext();
+            bool reuseSpectatorView = currentView == MarketplaceView.BidderSpectator
+                && root?.Q<VisualElement>("Panel_Marketplace_BidderSpectator") != null;
+            FindObjectOfType<ActionButtonsWidget>(true)?.SetPresentationVisible(false);
             if (root != null) root.style.display = DisplayStyle.Flex;
 
             currentView = MarketplaceView.BidderSpectator;
@@ -821,7 +1058,9 @@ namespace PolyRisk.UI
             SetSelectionMode(false);
 
             marketplace_BidderSpectator = ResolveVisualTreeAsset(marketplace_BidderSpectator, "Marketplace_Bidder_Spectator");
-            SwitchView(marketplace_BidderSpectator);
+            // Keep the sheet mounted for live bid updates: rebuilding it would replay
+            // the full bottom-sheet entrance on every offer and discard its UI state.
+            if (!reuseSpectatorView) SwitchView(marketplace_BidderSpectator);
             SetModal(true);
 
             // Remplir la liste des offres (identique à TenderReview mais sans boutons d'action)
@@ -839,10 +1078,12 @@ namespace PolyRisk.UI
                     VisualElement holder = new VisualElement();
                     auctionItem.CloneTree(holder);
                     VisualElement row = holder.childCount > 0 ? holder[0] : holder;
+                    row.focusable = false;
+                    row.pickingMode = PickingMode.Ignore;
 
                     var playerName = row.Q<Label>("Txt_PlayerName");
                     if (playerName != null && bid.bidder != null)
-                        playerName.text = $"PLAYER {bid.bidder.PlayerId}";
+                        playerName.text = PlayerDisplayName(bid.bidder.PlayerId);
                     SetBidderAvatar(row, bid.bidder);
 
                     var propTag  = row.Q<VisualElement>("Tag_PropOffered");
@@ -869,7 +1110,19 @@ namespace PolyRisk.UI
                     if (plusSep != null)
                         plusSep.style.display = bid.propertyOffers.Count > 0 ? DisplayStyle.Flex : DisplayStyle.None;
 
+                    int bidderId = bid.bidder != null ? bid.bidder.PlayerId : -1;
+                    bool animateArrival = IsNewSpectatorBid(bidderId) && !UIUXRuntime.ReducedMotion;
+                    if (animateArrival) row.AddToClassList("bid-entry--incoming");
                     bidList.Add(row);
+                    if (animateArrival)
+                        row.schedule.Execute(() => row.RemoveFromClassList("bid-entry--incoming")).ExecuteLater(16);
+                }
+
+                if (bids.Count == 0)
+                {
+                    var empty = new Label("No offers were submitted.");
+                    empty.AddToClassList("empty-state-label");
+                    bidList.Add(empty);
                 }
             }
 
@@ -877,16 +1130,19 @@ namespace PolyRisk.UI
             var footerLbl = root.Q<Label>("Lbl_SpectatorFooter");
             if (footerLbl != null)
             {
-                var humanPlayer = turnManager?.GetPlayerById(0);
+                var humanPlayer = GetLocalPlayer();
                 bool humanBid   = bids.Any(b => b.bidder != null && humanPlayer != null && b.bidder.PlayerId == humanPlayer.PlayerId);
                 footerLbl.text  = humanBid ? "✓ Your offer is in the running" : "You passed on this auction";
             }
+
+            spectatorHasRenderedAuction = true;
         }
 
         // ─────────────────────────────────────────────────────────────────────────
 
         private void ShowTenderReview()
         {
+            FindObjectOfType<ActionButtonsWidget>(true)?.SetPresentationVisible(false);
             if (root != null) root.style.display = DisplayStyle.Flex;
 
             currentView = MarketplaceView.TenderReview;
@@ -924,7 +1180,7 @@ namespace PolyRisk.UI
                     var playerName = row.Q<Label>("Txt_PlayerName");
                     if (playerName != null && bid != null && bid.bidder != null)
                     {
-                        playerName.text = $"PLAYER {bid.bidder.PlayerId}";
+                        playerName.text = PlayerDisplayName(bid.bidder.PlayerId);
                     }
                     SetBidderAvatar(row, bid?.bidder);
 
@@ -953,22 +1209,44 @@ namespace PolyRisk.UI
                         plus.style.display = bid != null && bid.propertyOffers.Count > 0 ? DisplayStyle.Flex : DisplayStyle.None;
                     }
 
-                    row.RegisterCallback<PointerDownEvent>(_ => SelectBid(index));
+                    if (row is Button bidButton)
+                        bidButton.clicked += () => SelectBid(index);
+                    else
+                        row.RegisterCallback<ClickEvent>(_ => SelectBid(index));
                     bidList.Add(row);
                 }
+            }
+
+            if (bidList != null && currentDisplayedBids.Count == 0)
+            {
+                var empty = new Label("No valid offers were submitted.");
+                empty.AddToClassList("empty-state-label");
+                bidList.Add(empty);
             }
 
             Button rejectAll = root.Q<Button>("Btn_RejectAll");
             if (rejectAll != null) rejectAll.clicked += CancelTender;
 
             Button sealDeal = root.Q<Button>("Btn_SealDeal");
-            if (sealDeal != null) sealDeal.clicked += SealSelectedDeal;
+            if (sealDeal != null)
+            {
+                sealDeal.SetEnabled(false);
+                sealDeal.clicked += SealSelectedDeal;
+            }
         }
 
         private void CancelTender()
         {
-            if (marketplaceSystem != null) marketplaceSystem.CancelTender();
-            CloseMarketplace();
+            if (IsOnline)
+            {
+                OnlineGameController.Instance.TrySubmitLocalCommand("marketplace.tender.cancel");
+                HideMarketplaceOnly();
+            }
+            else
+            {
+                if (marketplaceSystem != null) marketplaceSystem.CancelTender();
+                CloseMarketplace();
+            }
         }
 
         private void SelectBid(int index)
@@ -1009,6 +1287,18 @@ namespace PolyRisk.UI
             // Anti-exploit : désactiver le bouton immédiatement
             Button sealDeal = root.Q<Button>("Btn_SealDeal");
             if (sealDeal != null) sealDeal.SetEnabled(false);
+
+            if (IsOnline)
+            {
+                var request = new MarketplaceTenderCommandDto
+                {
+                    bidderPlayerId = dealToSeal.bidder != null ? dealToSeal.bidder.PlayerId : -1
+                };
+                OnlineGameController.Instance.TrySubmitLocalCommand(
+                    "marketplace.tender.seal", JsonUtility.ToJson(request));
+                HideMarketplaceOnly();
+                return;
+            }
 
             if (!marketplaceSystem.SealTenderDeal(dealToSeal))
             {
@@ -1087,7 +1377,7 @@ namespace PolyRisk.UI
 
             (string title, string desc) = choice switch
             {
-                SanctionChoice.Embargo  => ("SELECT PLAYER",   $"EMBARGO — Cost: {CurrencyFormatter.Format(1.5 * sgo)}\nTarget property generates no rent for 3 turns."),
+                SanctionChoice.Embargo  => ("SELECT PLAYER",   $"EMBARGO — Cost: {CurrencyFormatter.Format(5.0 * sgo)}\nTarget property generates no rent for 3 turns."),
                 SanctionChoice.Audit    => ("SELECT PLAYER",   $"TARGETED AUDIT — Cost: {CurrencyFormatter.Format(1.0 * sgo)}\nTarget pays 5% of their cash to the Bank."),
                 SanctionChoice.Strike   => ("SELECT PLAYER",   $"PRODUCTION STRIKE — Cost: {CurrencyFormatter.Format(2.0 * sgo)}\nDouble Burn Rate on targeted family next GO."),
                 SanctionChoice.Sabotage => ("SELECT PLAYER",   $"INDUSTRIAL SABOTAGE — Cost: {CurrencyFormatter.Format(5.0 * sgo)}\nDestroy 1 upgrade level on their property."),
@@ -1107,6 +1397,13 @@ namespace PolyRisk.UI
             var opponents = turnManager.Players
                 .Where(p => p != null && !p.IsBankrupt && p.PlayerId != attacker?.PlayerId)
                 .ToList();
+
+            if (opponents.Count == 0)
+            {
+                var empty = new Label("No eligible opponent remains.");
+                empty.AddToClassList("empty-state-label");
+                grid.Add(empty);
+            }
 
             for (int i = 0; i < opponents.Count; i++)
             {
@@ -1133,9 +1430,12 @@ namespace PolyRisk.UI
 
             if (confirmBtn != null)
             {
-                confirmBtn.clicked += () => OnSanctionPlayerConfirmed(choice);
+                pendingSelectConfirmAction = () => OnSanctionPlayerConfirmed(choice);
+                confirmBtn.clicked += ExecutePendingSelectConfirmAction;
             }
         }
+
+        private void ExecutePendingSelectConfirmAction() => pendingSelectConfirmAction?.Invoke();
 
         private VisualElement BuildPlayerCard(PlayerModel player)
         {
@@ -1242,7 +1542,7 @@ namespace PolyRisk.UI
                 double sgo  = financeSystem != null ? financeSystem.CurrentSgo : 0;
                 double cost = pendingSanctionChoice switch
                 {
-                    SanctionChoice.Embargo  => 1.5 * sgo,
+                    SanctionChoice.Embargo  => 5.0 * sgo,
                     SanctionChoice.Audit    => 1.0 * sgo,
                     SanctionChoice.Strike   => 2.0 * sgo,
                     SanctionChoice.Sabotage => 5.0 * sgo,
@@ -1261,7 +1561,7 @@ namespace PolyRisk.UI
                 // Audit ne cible pas une propriété — on exécute directement
                 pendingSanctionPlayerTarget = pendingTargetPlayer;
                 ConfirmPendingSanction();
-                CloseMarketplace();
+                if (!IsOnline) CloseMarketplace();
             }
             else
             {
@@ -1297,14 +1597,12 @@ namespace PolyRisk.UI
             // Recâbler le bouton confirm pour la propriété
             if (confirmBtn != null)
             {
-                // Retirer l'ancien listener en remplaçant le bouton (clone)
-                confirmBtn.clicked -= () => OnSanctionPlayerConfirmed(choice);
-                confirmBtn.clicked += () => {
+                pendingSelectConfirmAction = () => {
                     if (pendingSanctionPropertyTarget != null)
                     {
                         pendingSanctionPlayerTarget = targetPlayer;
                         ConfirmPendingSanction();
-                        CloseMarketplace();
+                        if (!IsOnline) CloseMarketplace();
                     }
                 };
             }
@@ -1386,7 +1684,7 @@ namespace PolyRisk.UI
 
             double cost = pendingSanctionChoice switch
             {
-                SanctionChoice.Embargo => 1.5 * sgo,
+                SanctionChoice.Embargo => 5.0 * sgo,
                 SanctionChoice.Audit => 1.0 * sgo,
                 SanctionChoice.Strike => 2.0 * sgo,
                 SanctionChoice.Sabotage => 5.0 * sgo,
@@ -1407,6 +1705,25 @@ namespace PolyRisk.UI
             PlayerModel attacker = turnManager.CurrentPlayer;
             if (attacker == null) return;
 
+            if (IsOnline)
+            {
+                var request = new MarketplaceSanctionCommandDto
+                {
+                    sanction = pendingSanctionChoice.ToString().ToLowerInvariant(),
+                    targetPlayerId = pendingSanctionPlayerTarget != null
+                        ? pendingSanctionPlayerTarget.PlayerId
+                        : -1,
+                    targetTileIndex = pendingSanctionPropertyTarget != null
+                        ? pendingSanctionPropertyTarget.TileIndex
+                        : -1
+                };
+                OnlineGameController.Instance.TrySubmitLocalCommand(
+                    "marketplace.sanction", JsonUtility.ToJson(request));
+                ClearPendingSanction();
+                HideMarketplaceOnly();
+                return;
+            }
+
             if (pendingSanctionChoice == SanctionChoice.Embargo)
             {
                 marketplaceSystem.ExecuteEmbargo(attacker, pendingSanctionPropertyTarget);
@@ -1424,20 +1741,57 @@ namespace PolyRisk.UI
                 marketplaceSystem.ExecuteSabotage(attacker, pendingSanctionPropertyTarget);
             }
 
-            pendingSanctionPropertyTarget = null;
-            pendingSanctionPlayerTarget = null;
-            pendingSanctionChoice = SanctionChoice.None;
+            ClearPendingSanction();
 
             var confirmContainer = root.Q<VisualElement>("Container_SanctionConfirm");
             if (confirmContainer != null) confirmContainer.style.display = DisplayStyle.None;
         }
 
+        private void ClearPendingSanction()
+        {
+            pendingSanctionPropertyTarget = null;
+            pendingSanctionPlayerTarget = null;
+            pendingSanctionChoice = SanctionChoice.None;
+
+            pendingTargetPlayer = null;
+        }
+
         private void SetModal(bool modal)
         {
+            TopHUDWidget.SetBoardIdentityOverlayVisible(!modal);
             if (viewRoot == null) return;
             viewRoot.EnableInClassList("marketplace-modal", modal);
             viewRoot.EnableInClassList("marketplace-nonmodal", !modal);
             viewRoot.pickingMode = modal ? PickingMode.Position : PickingMode.Ignore;
+        }
+
+        private void SetSelectionPanelCollapsed(bool collapsed)
+        {
+            if (viewRoot == null) return;
+            var panel = viewRoot.Q<VisualElement>(className: "marketplace-panel");
+            panel?.EnableInClassList("marketplace-panel--selection", collapsed);
+
+            if (currentView == MarketplaceView.BidderForm)
+            {
+                var details = viewRoot.Q<ScrollView>("Scroll_BidDetails");
+                if (details != null) details.style.display = collapsed ? DisplayStyle.None : DisplayStyle.Flex;
+                var actions = viewRoot.Q<VisualElement>(className: "action-footer");
+                if (actions != null) actions.style.display = collapsed ? DisplayStyle.None : DisplayStyle.Flex;
+                var hint = viewRoot.Q<Label>("Lbl_BidSelectionHint");
+                if (hint != null) hint.style.display = collapsed ? DisplayStyle.Flex : DisplayStyle.None;
+                return;
+            }
+            if (currentView != MarketplaceView.TenderInit) return;
+            var title = viewRoot.Q<Label>(className: "panel-header-title");
+            if (title != null)
+                title.text = collapsed ? "SELECT A PROPERTY ON THE BOARD" : "PROPERTY SELECTED";
+
+            var list = viewRoot.Q<ScrollView>("Container_OwnedAssets");
+            if (list != null) list.style.display = collapsed ? DisplayStyle.None : DisplayStyle.Flex;
+            var cta = viewRoot.Q<Button>("Btn_PickProperty");
+            if (cta != null) cta.style.display = collapsed ? DisplayStyle.None : DisplayStyle.Flex;
+            var footer = viewRoot.Q<VisualElement>(className: "action-footer");
+            if (footer != null) footer.style.display = collapsed ? DisplayStyle.None : DisplayStyle.Flex;
         }
 
         private void SetSelectionMode(bool enabled)
@@ -1473,7 +1827,8 @@ namespace PolyRisk.UI
         private void HighlightOwnedProperties(Color pulseColor)
         {
             if (turnManager == null) return;
-            var player = turnManager.CurrentPlayer;
+            var player = selectionContext == SelectionContext.BidProperty
+                ? GetLocalPlayer() : turnManager.CurrentPlayer;
             if (player == null) return;
             var board = BoardManager.Instance;
             if (board == null) return;
@@ -1558,17 +1913,13 @@ namespace PolyRisk.UI
 
             // Income indicator: Base rent or formatted
             double rent = property.BaseRent;
-            Label incomeLabel = new Label($"Income: {CurrencyFormatter.Format(rent)} / turn");
+            Label incomeLabel = new Label($"Rent: {CurrencyFormatter.Format(rent)} / visit");
             incomeLabel.AddToClassList("seller-prop-income");
             row.Add(incomeLabel);
 
             // Add Deselect button
-            Button deselectBtn = new Button { text = "X" };
-            deselectBtn.AddToClassList("btn-standard");
-            deselectBtn.style.backgroundColor = new StyleColor(new Color(0.8f, 0.2f, 0.2f));
-            deselectBtn.style.width = 30;
-            deselectBtn.style.height = 30;
-            deselectBtn.style.marginLeft = 10;
+            Button deselectBtn = new Button { text = "✕", tooltip = "Remove property" };
+            deselectBtn.AddToClassList("btn-remove");
             deselectBtn.clicked += () => {
                 int prevIndex = FindTileIndexForProperty(property);
                 if (prevIndex >= 0)
@@ -1591,6 +1942,7 @@ namespace PolyRisk.UI
 
                 Button confirmBtn = root.Q<Button>("Btn_ConfirmTender");
                 if (confirmBtn != null) confirmBtn.SetEnabled(false);
+                EnterSelectionMode(SelectionContext.TenderProperty);
             };
             row.Add(deselectBtn);
 
@@ -1619,16 +1971,8 @@ namespace PolyRisk.UI
             incomeLabel.AddToClassList("seller-prop-income");
             row.Add(incomeLabel);
 
-            Button deselectBtn = new Button { text = "✕" };
-            deselectBtn.AddToClassList("btn-standard");
-            deselectBtn.style.backgroundColor = new StyleColor(new Color(0.75f, 0.15f, 0.15f, 1f));
-            deselectBtn.style.width = 30;
-            deselectBtn.style.height = 30;
-            deselectBtn.style.borderTopLeftRadius = deselectBtn.style.borderTopRightRadius =
-            deselectBtn.style.borderBottomLeftRadius = deselectBtn.style.borderBottomRightRadius = 8;
-            deselectBtn.style.marginLeft = 10;
-            deselectBtn.style.paddingTop = deselectBtn.style.paddingBottom =
-            deselectBtn.style.paddingLeft = deselectBtn.style.paddingRight = 0;
+            Button deselectBtn = new Button { text = "✕", tooltip = "Remove property" };
+            deselectBtn.AddToClassList("btn-remove");
 
             deselectBtn.clicked += () => {
                 int prevIndex = FindTileIndexForProperty(property);

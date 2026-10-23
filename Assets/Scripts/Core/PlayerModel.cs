@@ -105,6 +105,7 @@ namespace PolyRisk.Core
         /// Number of full laps completed around the board.
         /// </summary>
         public int LapsCompleted { get; set; } = 0;
+        public int TurnsStarted { get; set; } = 0;
 
         // Venture Card Effects Flags
         public bool HasGetOutOfJailCard { get; set; } = false;

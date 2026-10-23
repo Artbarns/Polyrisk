@@ -32,7 +32,7 @@
                 </ui:Button>
                 
                 <ui:VisualElement class="action-footer" style="flex-direction: row; justify-content: flex-end; padding-top: 16px;">
-                    <ui:Button name="Btn_ConfirmTender" text="CONFIRM SELECTION" class="btn-standard" style="opacity: 0.4;" />
+                    <ui:Button name="Btn_ConfirmTender" text="CONFIRM SELECTION" class="btn-standard" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

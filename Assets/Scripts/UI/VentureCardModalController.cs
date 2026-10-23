@@ -19,7 +19,7 @@ namespace PolyRisk.UI
         public static VentureCardModalController Instance => _instance;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        private static void AutoSpawn()
+        public static void EnsureExists()
         {
             if (FindObjectOfType<VentureCardModalController>() != null) return;
             var go = new GameObject("[Auto] VentureCardModal");
@@ -31,7 +31,7 @@ namespace PolyRisk.UI
             c.ventureTemplate = Resources.Load<VisualTreeAsset>("VentureCardModal");
 
             // Réutilise les PanelSettings d'un autre UIDocument de la scène
-            var anyDoc = FindObjectOfType<UIDocument>();
+            var anyDoc = FindObjectsOfType<UIDocument>().FirstOrDefault(d => d != doc && d.panelSettings != null);
             if (anyDoc != null && anyDoc != doc) doc.panelSettings = anyDoc.panelSettings;
 
             DontDestroyOnLoad(go);
@@ -55,6 +55,8 @@ namespace PolyRisk.UI
             root = uiDocument.rootVisualElement;
             root.Clear();
             ventureTemplate.CloneTree(root);
+            UIUXRuntime.PrepareRoot(root);
+            UIUXRuntime.PrepareView(root);
 
             var info = VentureCardCatalog.GetInfo(cardId);
             string suffix = info.Type switch
@@ -109,7 +111,7 @@ namespace PolyRisk.UI
             }
 
             // Animation flip + scale-in
-            if (card != null)
+            if (card != null && !UIUXRuntime.ReducedMotion)
             {
                 card.AddToClassList("card-flip-from");
                 StartCoroutine(RemoveFlipNextFrames(card));

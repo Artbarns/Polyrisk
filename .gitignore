@@ -2,6 +2,8 @@
 Library/
 Temp/
 Obj/
+**/bin/
+**/obj/
 Build/
 Builds/
 Logs/
@@ -45,3 +47,6 @@ Packages/*
 
 # Sorties générées par StressTestRunner.cs (CSV/résumés), pas du code source
 /StressTestResults/
+
+# Runtime persistence for the local lobby server
+/Server/PolyRisk.LobbyServer/data/

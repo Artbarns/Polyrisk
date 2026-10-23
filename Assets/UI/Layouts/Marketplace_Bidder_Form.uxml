@@ -7,13 +7,14 @@
     <Style src="project://database/Assets/UI/Styles/Theme.uss" />
 
     <ui:VisualElement class="bottom-panel-container" name="Panel_Marketplace_BidderForm">
-        <ui:VisualElement class="marketplace-panel marketplace-panel--compact">
+        <ui:VisualElement class="marketplace-panel marketplace-panel--expanded bidder-panel">
 
             <ui:VisualElement class="indicator-row">
                 <ui:VisualElement class="indicator-pill" />
             </ui:VisualElement>
 
-            <ui:VisualElement class="panel-content">
+            <ui:Label name="Lbl_BidSelectionHint" text="SELECT A PROPERTY ON THE BOARD" class="panel-header-title" style="display: none; padding-left: 16px; padding-right: 16px;" />
+            <ui:ScrollView class="panel-content bidder-scroll" name="Scroll_BidDetails" mode="Vertical" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Auto">
                 <ui:Label text="SUBMIT YOUR BID" class="panel-header-title" />
 
                 <!-- CASH SLIDER -->
@@ -49,14 +50,15 @@
                         style="color: #05DF72; font-size: 20px; -unity-font-style: bold;" />
                 </ui:VisualElement>
 
-                <ui:VisualElement class="action-footer"
+            </ui:ScrollView>
+
+                <ui:VisualElement class="action-footer bidder-actions"
                     style="flex-direction: row; justify-content: space-between; padding-top: 12px;">
                     <ui:Button name="Btn_Skip" text="SKIP" class="btn-secondary"
                         style="flex-grow: 1; margin-right: 8px;" />
                     <ui:Button name="Btn_SubmitBid" text="SUBMIT BID" class="btn-standard"
                         style="flex-grow: 2;" />
                 </ui:VisualElement>
-            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

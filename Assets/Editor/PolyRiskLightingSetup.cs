@@ -47,6 +47,15 @@ namespace PolyRisk.EditorTools
             Debug.Log("[PolyRisk] Cyber-Luxury lighting appliqué. Sauvegarde la scène (Ctrl+S) pour persister.");
         }
 
+        public static void SetupAndSaveSampleScene()
+        {
+            var scene = UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");
+            SetupAll();
+            UnityEditor.SceneManagement.EditorSceneManager.SaveScene(scene);
+            AssetDatabase.SaveAssets();
+            PolyRisk.Editor.EconomyBatchValidation.BuildVerifiedWebGLPreview();
+        }
+
         // ─────────────────────────────────────────────────────────────
         // 1) Volume Profile — Bloom / Tone / Color / Vignette
         // ─────────────────────────────────────────────────────────────
@@ -61,33 +70,31 @@ namespace PolyRisk.EditorTools
                 AssetDatabase.CreateAsset(profile, ProfileAssetPath);
             }
 
-            // Bloom : c'est LA transformation.
-            // Threshold BAS (0.4) pour attraper aussi les couleurs sombres (bleu #282BCC, rouge #F72626)
-            // que la palette PolyRisk contient. À 0.75 seul le vert déclenchait vraiment.
+            // Bloom contenu pour préserver les contours et les valeurs sur petit écran.
             var bloom = GetOrAdd<Bloom>(profile);
-            bloom.threshold.overrideState = true;    bloom.threshold.value = 0.4f;
-            bloom.intensity.overrideState = true;    bloom.intensity.value = 1.8f;
-            bloom.scatter.overrideState = true;      bloom.scatter.value = 0.6f;
+            bloom.threshold.overrideState = true;    bloom.threshold.value = 0.8f;
+            bloom.intensity.overrideState = true;    bloom.intensity.value = 0.55f;
+            bloom.scatter.overrideState = true;      bloom.scatter.value = 0.35f;
             bloom.tint.overrideState = true;         bloom.tint.value = Color.white;
             bloom.highQualityFiltering.overrideState = true;
-            bloom.highQualityFiltering.value = true;
+            bloom.highQualityFiltering.value = false;
 
             // Tonemapping Neutral pour ne pas tuer les couleurs saturées des néons.
             var tone = GetOrAdd<Tonemapping>(profile);
             tone.mode.overrideState = true;          tone.mode.value = TonemappingMode.Neutral;
 
-            // Color Adjustments : plus de contraste, un peu plus de saturation.
+            // Contraste contenu : conserver le caractère sombre sans teinte néon dominante.
             var color = GetOrAdd<ColorAdjustments>(profile);
-            color.postExposure.overrideState = true; color.postExposure.value = 0.35f;
-            color.contrast.overrideState = true;     color.contrast.value = 18f;
-            color.saturation.overrideState = true;   color.saturation.value = 12f;
+            color.postExposure.overrideState = true; color.postExposure.value = 0.05f;
+            color.contrast.overrideState = true;     color.contrast.value = 12f;
+            color.saturation.overrideState = true;   color.saturation.value = 4f;
             color.colorFilter.overrideState = true;
             ColorUtility.TryParseHtmlString("#F5F0FF", out var filter);
             color.colorFilter.value = filter;        // très léger teint violet
 
-            // Vignette pour focaliser sur le plateau.
+            // Vignette discrète pour ne pas assombrir les cases du pourtour.
             var vig = GetOrAdd<Vignette>(profile);
-            vig.intensity.overrideState = true;      vig.intensity.value = 0.32f;
+            vig.intensity.overrideState = true;      vig.intensity.value = 0.18f;
             vig.smoothness.overrideState = true;     vig.smoothness.value = 0.5f;
             vig.color.overrideState = true;          vig.color.value = new Color(0.02f, 0.02f, 0.05f, 1f);
 
@@ -95,6 +102,7 @@ namespace PolyRisk.EditorTools
             // focusDistance calé sur EnsureCamera() (caméra isométrique au-dessus du plateau) ;
             // à ajuster dans l'inspecteur si l'angle de vue change.
             var dof = GetOrAdd<DepthOfField>(profile);
+            dof.active = false;
             dof.mode.overrideState = true;             dof.mode.value = DepthOfFieldMode.Bokeh;
             dof.focusDistance.overrideState = true;    dof.focusDistance.value = 12f;
             dof.aperture.overrideState = true;         dof.aperture.value = 5.6f;
@@ -175,8 +183,8 @@ namespace PolyRisk.EditorTools
             // 2.0 dépasse largement le Bloom threshold 0.4, quelle que soit la couleur du groupe.
             // Le shader NeonState multiplie state.rgb * state.a — donc avec un vert #1BDE1F
             // (luminance ~0.5) × 2.0 = ~1.0, ce qui produit un halo visible.
-            board.settings.emissiveIntensity = 2.0f;
-            board.highlightIntensity = 5.0f;    // même logique côté highlight (F1/F2/pulse)
+            board.settings.emissiveIntensity = 0.8f;
+            board.highlightIntensity = 3.2f;    // réservé aux cases actives/sélectionnées
             board.ResetAllTiles();
             EditorUtility.SetDirty(board);
         }
@@ -241,30 +249,30 @@ namespace PolyRisk.EditorTools
             {
                 ColorUtility.TryParseHtmlString("#B7C4FF", out var moonColor);
                 moon.color = moonColor;
-                moon.intensity = 0.4f;
+                moon.intensity = 0.6f;
                 moon.transform.rotation = Quaternion.Euler(60f, -30f, 0f);
                 moon.shadows = LightShadows.Soft;
             }
 
-            // Point Light "Key néon violet" au-dessus du plateau
+            // Key violet doux : dessine les volumes sans laver le plateau.
             var keyGo = GameObject.Find("Key néon violet") ?? new GameObject("Key néon violet");
             var key = keyGo.GetComponent<Light>() ?? keyGo.AddComponent<Light>();
             key.type = LightType.Point;
             ColorUtility.TryParseHtmlString("#C27AFF", out var keyColor);
             key.color = keyColor;
-            key.intensity = 5f;
-            key.range = 15f;
+            key.intensity = 1.4f;
+            key.range = 12f;
             key.shadows = LightShadows.None;
             keyGo.transform.position = new Vector3(0f, 5f, 0f);
 
-            // Point Light "Rim néon vert" en coin
+            // Rim vert discret pour séparer le plateau du fond.
             var rimGo = GameObject.Find("Rim néon vert") ?? new GameObject("Rim néon vert");
             var rim = rimGo.GetComponent<Light>() ?? rimGo.AddComponent<Light>();
             rim.type = LightType.Point;
             ColorUtility.TryParseHtmlString("#05DF72", out var rimColor);
             rim.color = rimColor;
-            rim.intensity = 3.5f;
-            rim.range = 12f;
+            rim.intensity = 0.85f;
+            rim.range = 10f;
             rim.shadows = LightShadows.None;
             rimGo.transform.position = new Vector3(-6f, 3f, -6f);
         }
@@ -277,11 +285,8 @@ namespace PolyRisk.EditorTools
         }
 
         // ─────────────────────────────────────────────────────────────
-        // 6) Reflection Probe : sans elle, M_BackgroundPlate/M_BoardMetal (Metallic
-        //    quasi-1, Smoothness haute) ne réfléchissent que le skybox plat — jamais
-        //    le plateau néon lui-même. Realtime + Every Frame pour voir tout de suite
-        //    l'effet "verre fumé" pendant l'itération ; passer en Baked (ou refresh
-        //    OnAwake) sera la bonne optim mobile une fois la composition figée.
+        // 6) Reflection Probe : une capture au chargement suffit à donner une réponse
+        //    de matériau cohérente sans recalculer six faces de cubemap chaque frame.
         // ─────────────────────────────────────────────────────────────
 
         static void EnsureReflections()
@@ -291,7 +296,7 @@ namespace PolyRisk.EditorTools
             if (probe == null) probe = probeGo.AddComponent<ReflectionProbe>();
 
             probe.mode = UnityEngine.Rendering.ReflectionProbeMode.Realtime;
-            probe.refreshMode = UnityEngine.Rendering.ReflectionProbeRefreshMode.EveryFrame;
+            probe.refreshMode = UnityEngine.Rendering.ReflectionProbeRefreshMode.OnAwake;
             probe.timeSlicingMode = UnityEngine.Rendering.ReflectionProbeTimeSlicingMode.AllFacesAtOnce;
             probe.boxProjection = true;
             probe.size = new Vector3(24f, 8f, 24f);
@@ -316,4 +321,3 @@ namespace PolyRisk.EditorTools
     }
 }
 #endif
-

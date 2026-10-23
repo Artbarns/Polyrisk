@@ -1,0 +1,14 @@
+html, body { width: 100%; height: 100%; padding: 0; margin: 0; overflow: hidden; background: #07090e }
+#unity-container, #unity-container.unity-desktop, #unity-container.unity-mobile { position: fixed; inset: 0; width: 100%; height: 100% }
+#unity-canvas, .unity-mobile #unity-canvas { display: block; width: 100%; height: 100%; background: {{{ BACKGROUND_COLOR }}} }
+#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
+#unity-logo { width: 154px; height: 130px; background: url('unity-logo-{{{ SPLASH_SCREEN_STYLE.toLowerCase() }}}.png') no-repeat center }
+#unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; margin-left: 6.5px; background: url('progress-bar-empty-{{{ SPLASH_SCREEN_STYLE.toLowerCase() }}}.png') no-repeat center }
+#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-{{{ SPLASH_SCREEN_STYLE.toLowerCase() }}}.png') no-repeat center }
+#unity-footer { position: absolute; left: max(12px, env(safe-area-inset-left)); bottom: max(12px, env(safe-area-inset-bottom)); width: 96px; height: 36px }
+#unity-webgl-logo, #unity-build-title { display: none }
+#unity-fullscreen-button { cursor: pointer; width: 96px; height: 36px; padding: 0; border: 1px solid #2a303b; border-radius: 8px; background: rgba(11, 14, 22, 0.9); color: #a1a6b2; font: 500 11px system-ui, sans-serif }
+#unity-fullscreen-button:focus-visible { outline: 2px solid #edb95c; outline-offset: 2px }
+#unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+
+@media (max-width: 600px), (max-height: 500px) { #unity-footer { display: none } }

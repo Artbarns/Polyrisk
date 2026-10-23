@@ -17,8 +17,8 @@
                                 <ui:VisualElement name="Icon_Auction" class="icon-image" />
                             </ui:VisualElement>
                             <ui:VisualElement class="text-stack text-stack-center">
-                                <ui:Label text="OPEN AUCTIONS" class="card-title" />
-                                <ui:Label text="Publicly sell assets for Cash and Deals." class="card-desc" style="-unity-text-align: middle-center;" />
+                                <ui:Label text="SELL A PROPERTY" class="card-title" />
+                                <ui:Label text="Invite offers in cash, properties, or both." class="card-desc" style="-unity-text-align: middle-center;" />
                             </ui:VisualElement>
                         </ui:Button>
                     </ui:VisualElement>
@@ -29,7 +29,7 @@
                             </ui:VisualElement>
                             <ui:VisualElement class="text-stack text-stack-center">
                                 <ui:Label text="HOSTILE SANCTIONS" class="card-title" />
-                                <ui:Label text="Target rivals with aggressive penalities." class="card-desc" style="-unity-text-align: middle-center;" />
+                                <ui:Label text="Target rivals with economic penalties." class="card-desc" style="-unity-text-align: middle-center;" />
                             </ui:VisualElement>
                         </ui:Button>
                     </ui:VisualElement>

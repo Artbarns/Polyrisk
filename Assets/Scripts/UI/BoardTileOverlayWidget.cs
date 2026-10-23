@@ -1,186 +1,167 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using PolyRisk.Core;
 using PolyRisk.Systems;
+using PolyRisk.Visuals;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace PolyRisk.UI
 {
-    /// <summary>
-    /// Lightweight screen-space labels for property tiles. Reuses the inspector's
-    /// family glyph and baseRent/basePrice yield formula; never mutates game data.
-    /// Layout is recalculated only when the camera or viewport changes.
-    /// </summary>
+    /// <summary>Read-only tile identities over the existing anchors; financial details stay in the inspector.</summary>
     internal sealed class BoardTileOverlayWidget
     {
-        private const string OverlayName = "BoardTileYieldOverlay";
-        private const int PropertyTileCount = 40;
-        private readonly VisualElement root;
-        private readonly VisualElement overlay;
+        private const string OverlayName = "BoardTileIdentityOverlay";
+        private readonly VisualElement root, overlay;
         private readonly Camera camera;
         private readonly BoardManager board;
+        private readonly TurnManager turns;
+        private readonly ActionButtonsWidget inspector;
+        private readonly BoardInteractionManager framing;
         private readonly List<Entry> entries = new List<Entry>();
-        private Signature previous;
+        private float nextOwnerPoll;
         private bool hasPrevious;
+        private Signature previous;
 
         private sealed class Entry
         {
             public Transform anchor;
-            public VisualElement chip;
-            public VisualElement icon;
-            public Label yield;
-            public Vector3 worldPoint;
+            public PropertyData property;
+            public PlayerModel ownerPlayer;
+            public int tileIndex;
+            public VisualElement chip, icon, owner, position;
         }
 
         private struct Signature : IEquatable<Signature>
         {
-            public Vector3 cameraPosition;
-            public Quaternion cameraRotation;
-            public float orthographicSize;
-            public int screenWidth;
-            public int screenHeight;
-            public float rootWidth;
-            public float rootHeight;
-
-            public bool Equals(Signature other) =>
-                cameraPosition == other.cameraPosition && cameraRotation == other.cameraRotation &&
-                Mathf.Approximately(orthographicSize, other.orthographicSize) &&
-                screenWidth == other.screenWidth && screenHeight == other.screenHeight &&
-                Mathf.Approximately(rootWidth, other.rootWidth) && Mathf.Approximately(rootHeight, other.rootHeight);
+            public Vector3 position;
+            public Quaternion rotation;
+            public float size, width, height;
+            public int state, screenWidth, screenHeight;
+            public Rect viewport;
+            public bool Equals(Signature other) => position == other.position && rotation == other.rotation &&
+                size == other.size && width == other.width && height == other.height && state == other.state &&
+                screenWidth == other.screenWidth && screenHeight == other.screenHeight && viewport == other.viewport;
         }
 
         private BoardTileOverlayWidget(VisualElement root, BoardManager board, Camera camera)
         {
-            this.root = root;
-            this.board = board;
-            this.camera = camera;
+            this.root = root; this.board = board; this.camera = camera;
+            turns = UnityEngine.Object.FindObjectOfType<TurnManager>();
+            inspector = UnityEngine.Object.FindObjectOfType<ActionButtonsWidget>(true);
+            framing = UnityEngine.Object.FindObjectOfType<BoardInteractionManager>();
             overlay = new VisualElement { name = OverlayName, pickingMode = PickingMode.Ignore };
-            overlay.AddToClassList("board-tile-yield-overlay");
+            overlay.AddToClassList("board-tile-identity-overlay");
             root.Add(overlay);
             BuildEntries();
-            root.RegisterCallback<GeometryChangedEvent>(_ => Refresh(force: true));
-            root.schedule.Execute(Poll).Every(150);
-            Refresh(force: true);
+            root.RegisterCallback<GeometryChangedEvent>(_ => hasPrevious = false);
+            if (framing != null)
+            {
+                framing.FramingChanged += OnFramingChanged;
+                root.RegisterCallback<DetachFromPanelEvent>(_ => framing.FramingChanged -= OnFramingChanged);
+                root.RegisterCallback<AttachToPanelEvent>(_ =>
+                {
+                    framing.FramingChanged -= OnFramingChanged;
+                    framing.FramingChanged += OnFramingChanged;
+                });
+            }
+            root.schedule.Execute(Poll).Every(33);
         }
 
         public static void Mount(VisualElement root)
         {
             if (root == null || root.Q<VisualElement>(OverlayName) != null) return;
-            var board = BoardManager.Instance != null ? BoardManager.Instance : UnityEngine.Object.FindObjectOfType<BoardManager>();
-            var camera = Camera.main;
-            if (board == null || camera == null) return;
-            new BoardTileOverlayWidget(root, board, camera);
+            var board = BoardManager.Instance ?? UnityEngine.Object.FindObjectOfType<BoardManager>();
+            if (board != null && Camera.main != null) new BoardTileOverlayWidget(root, board, Camera.main);
         }
 
         private void BuildEntries()
         {
             if (board.visualTiles == null) return;
-            for (int i = 0; i < PropertyTileCount && i < board.visualTiles.Length; i++)
+            for (int i = 0; i < 40 && i < board.visualTiles.Length; i++)
             {
                 var tile = board.GetTileAt(i);
-                var property = tile != null ? tile.Property : null;
                 var anchor = board.visualTiles[i];
-                if (property == null || anchor == null) continue;
-
-                var chip = new VisualElement { pickingMode = PickingMode.Ignore };
-                chip.AddToClassList("board-tile-yield-chip");
+                if (tile == null || anchor == null) continue;
+                var chip = new VisualElement { name = "BoardIdentity_" + i, pickingMode = PickingMode.Ignore };
+                chip.AddToClassList("board-tile-identity");
                 var icon = new VisualElement { pickingMode = PickingMode.Ignore };
-                icon.AddToClassList("icon-box--compact");
-                icon.AddToClassList("board-tile-yield-icon");
-                TileIconResolver.PopulateIcon(icon, property);
-                var label = new Label(FormatYield(property));
-                label.pickingMode = PickingMode.Ignore;
-                label.AddToClassList("board-tile-yield-value");
-                chip.Add(icon);
-                chip.Add(label);
+                icon.AddToClassList("icon-box--compact"); icon.AddToClassList("board-identity-icon");
+                TileIconResolver.PopulateIcon(icon, tile.Data);
+                var owner = new VisualElement { pickingMode = PickingMode.Ignore };
+                owner.AddToClassList("board-owner-marker");
+                var position = new VisualElement { pickingMode = PickingMode.Ignore };
+                position.AddToClassList("board-position-marker");
+                chip.Add(icon); chip.Add(owner); chip.Add(position);
                 overlay.Add(chip);
-
-                entries.Add(new Entry
-                {
-                    anchor = anchor,
-                    chip = chip,
-                    icon = icon,
-                    yield = label,
-                    worldPoint = anchor.position + anchor.forward * 0.24f + Vector3.up * 0.08f
-                });
+                entries.Add(new Entry { anchor = anchor, property = tile.Property, tileIndex = i,
+                    chip = chip, icon = icon, owner = owner, position = position });
             }
-
-            if (entries.Count == 0)
-            {
-                overlay.RemoveFromHierarchy();
-                root.schedule.Execute(() => Mount(root)).StartingIn(250);
-            }
-        }
-
-        private static string FormatYield(PropertyData property)
-        {
-            double percent = property.BasePrice > 0.0 ? property.BaseRent / property.BasePrice * 100.0 : 0.0;
-            return percent.ToString("0.#", CultureInfo.InvariantCulture) + "%";
         }
 
         private void Poll()
         {
-            if (root.panel == null) return;
-            var current = new Signature
+            if (root.panel == null || camera == null || root.worldBound.width <= 0 || Screen.width <= 0) return;
+            if (entries.Count == 0) BuildEntries();
+            if (Time.unscaledTime >= nextOwnerPoll)
             {
-                cameraPosition = camera.transform.position,
-                cameraRotation = camera.transform.rotation,
-                orthographicSize = camera.orthographicSize,
-                screenWidth = Screen.width,
-                screenHeight = Screen.height,
-                rootWidth = root.resolvedStyle.width,
-                rootHeight = root.resolvedStyle.height
-            };
-            if (hasPrevious && previous.Equals(current)) return;
-            previous = current;
-            hasPrevious = true;
-            Refresh(force: false);
-        }
-
-        private void Refresh(bool force)
-        {
-            if (root.panel == null || camera == null || Screen.width <= 0 || Screen.height <= 0) return;
-            float rootWidth = root.resolvedStyle.width;
-            float rootHeight = root.resolvedStyle.height;
-            if (rootWidth <= 0f || rootHeight <= 0f) return;
-
-            float scaleX = rootWidth / Screen.width;
-            float scaleY = rootHeight / Screen.height;
-            Rect rootBounds = root.worldBound;
+                nextOwnerPoll = Time.unscaledTime + 0.15f;
+                foreach (var entry in entries) entry.ownerPlayer = null;
+                if (turns?.Players != null) foreach (var player in turns.Players)
+                    foreach (var property in player.OwnedProperties)
+                        foreach (var entry in entries) if (entry.property == property) entry.ownerPlayer = player;
+            }
+            int state = inspector != null ? inspector.InspectedTileIndex : -1;
+            if (turns?.CurrentPlayer != null) state = unchecked(state * 397 ^ turns.GetPlayerPosition(turns.CurrentPlayer));
             foreach (var entry in entries)
             {
-                if (entry.anchor == null) { entry.chip.style.display = DisplayStyle.None; continue; }
-                entry.worldPoint = entry.anchor.position + entry.anchor.forward * 0.24f + Vector3.up * 0.08f;
-                Vector3 screen = camera.WorldToScreenPoint(entry.worldPoint);
-                if (screen.z <= 0f || screen.x < 0f || screen.x > Screen.width || screen.y < 0f || screen.y > Screen.height)
-                {
-                    entry.chip.style.display = DisplayStyle.None;
-                    continue;
-                }
+                if (entry.property == null) continue;
+                int ownerId = entry.ownerPlayer?.PlayerId ?? -1;
+                state = unchecked(state * 397 ^ ownerId);
+                state = unchecked(state * 397 ^ entry.property.HijackTurnsRemaining);
+            }
+            var current = new Signature { position = camera.transform.position, rotation = camera.transform.rotation,
+                size = camera.orthographicSize, width = root.worldBound.width, height = root.worldBound.height,
+                screenWidth = Screen.width, screenHeight = Screen.height, state = state,
+                viewport = framing != null ? framing.BoardViewport : new Rect(0,0,Screen.width,Screen.height) };
+            if (hasPrevious && previous.Equals(current)) return;
+            previous = current; hasPrevious = true;
+            Refresh();
+        }
 
-                Vector3 along = camera.WorldToScreenPoint(entry.worldPoint + entry.anchor.right * 0.55f);
-                Vector3 inward = camera.WorldToScreenPoint(entry.worldPoint + entry.anchor.forward * 0.30f);
-                float longSize = Vector2.Distance(new Vector2(screen.x, screen.y), new Vector2(along.x, along.y)) * 2f * scaleX;
-                float depthSize = Vector2.Distance(new Vector2(screen.x, screen.y), new Vector2(inward.x, inward.y)) * 2f * scaleY;
-                // Keep text upright on every board edge. A compact vertical stack fits
-                // the narrow sides; the long sides can use a horizontal icon/ROI pair.
-                Vector2 axis = new Vector2(along.x - screen.x, screen.y - along.y);
-                bool horizontalTile = Mathf.Abs(axis.x) >= Mathf.Abs(axis.y);
-                float width = Mathf.Clamp((horizontalTile ? longSize : depthSize) * 0.78f, 16f, 38f);
-                float height = Mathf.Clamp((horizontalTile ? depthSize : longSize) * 0.78f, 18f, 36f);
+        private void OnFramingChanged()
+        {
+            if (root.panel == null || root.worldBound.width <= 0 || root.worldBound.height <= 0) return;
+            hasPrevious = false;
+            Refresh();
+        }
 
-                float x = screen.x * scaleX - rootBounds.x - width * 0.5f;
-                float y = (Screen.height - screen.y) * scaleY - rootBounds.y - height * 0.5f;
-                entry.chip.style.display = DisplayStyle.Flex;
-                entry.chip.style.left = x;
-                entry.chip.style.top = y;
-                entry.chip.style.width = width;
-                entry.chip.style.height = height;
-                entry.chip.style.flexDirection = horizontalTile ? FlexDirection.Row : FlexDirection.Column;
-                entry.icon.style.width = Mathf.Clamp(height * 0.43f, 8f, 14f);
-                entry.icon.style.height = Mathf.Clamp(height * 0.43f, 8f, 14f);
+        private Vector2 PanelPoint(Vector3 world)
+        {
+            Vector3 screen = camera.WorldToScreenPoint(world);
+            return new Vector2(screen.x * root.worldBound.width / Screen.width,
+                (Screen.height - screen.y) * root.worldBound.height / Screen.height);
+        }
+
+        private void Refresh()
+        {
+            int activePosition = turns?.CurrentPlayer != null ? turns.GetPlayerPosition(turns.CurrentPlayer) : -1;
+            int selected = inspector != null ? inspector.InspectedTileIndex : -1;
+            foreach (var entry in entries)
+            {
+                if (entry.anchor == null) continue;
+                Vector3 world = entry.anchor.position + Vector3.up * 0.02f;
+                Vector2 center = PanelPoint(world);
+                bool visible = center.x >= 0 && center.x <= root.worldBound.width && center.y >= 0 && center.y <= root.worldBound.height;
+                entry.chip.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
+                entry.chip.style.left = center.x - 9; entry.chip.style.top = center.y - 8;
+                entry.chip.EnableInClassList("board-tile-identity--selected", selected == entry.tileIndex);
+                bool sabotaged = entry.property != null && entry.property.HijackTurnsRemaining > 0 && entry.property.HijackedBy != null;
+                entry.chip.EnableInClassList("board-tile-identity--sabotaged", sabotaged);
+                var owner = entry.ownerPlayer;
+                entry.owner.style.display = owner != null ? DisplayStyle.Flex : DisplayStyle.None;
+                if (owner != null) entry.owner.style.backgroundColor = PlayerVisualManager.GetPlayerColor(owner.PlayerId);
+                entry.position.style.display = activePosition == entry.tileIndex ? DisplayStyle.Flex : DisplayStyle.None;
             }
         }
     }

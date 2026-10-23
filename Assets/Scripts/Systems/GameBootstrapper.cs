@@ -61,6 +61,31 @@ namespace PolyRisk.Systems
         /// </summary>
         public static bool SkipMovementAnimation = false;
 
+        public static int? TestPlayerCount;
+        public static bool DeferGameLoop;
+        private List<PlayerModel> deferredPlayers;
+        private Vector3 deferredStartPosition;
+        private bool deferredGameStarted;
+        public bool CanStartDeferredGame => deferredPlayers != null && !deferredGameStarted;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetRuntimeConfiguration()
+        {
+            DeferGameLoop = false;
+        }
+
+        private void Awake()
+        {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            // Les probes temps réel URP peuvent dépasser la mémoire WASM dès le premier rendu.
+            // Le plateau conserve son éclairage statique ; seule la capture cubemap dynamique
+            // est désactivée sur le build navigateur.
+            foreach (var probe in FindObjectsOfType<ReflectionProbe>(true))
+                if (probe != null && probe.mode == UnityEngine.Rendering.ReflectionProbeMode.Realtime)
+                    probe.enabled = false;
+#endif
+        }
+
         private void Start()
         {
             StartCoroutine(InitializeGameSequence());
@@ -99,6 +124,11 @@ namespace PolyRisk.Systems
             
             // Wait a frame to ensure any internal board setup (like visual caching) is done
             yield return null;
+
+            PolyRisk.UI.BankruptcyScreenController.EnsureExists();
+            PolyRisk.UI.VictoryScreenController.EnsureExists();
+            PolyRisk.UI.VentureCardModalController.EnsureExists();
+            numberOfPlayers = Mathf.Clamp(TestPlayerCount ?? numberOfPlayers, 2, 6);
 
             // 3. Create Players
             Debug.Log("Bootstrapper: Creating Players...");
@@ -152,12 +182,48 @@ namespace PolyRisk.Systems
             // 5. Spawn Player Visuals
             Debug.Log("Bootstrapper: Spawning Visuals...");
             visualManager.SpawnPlayers(playersList, startPos);
+            deferredStartPosition = startPos;
 
-            // 6. Start the Game Loop
+            // 6. Start the Game Loop, or wait behind the home/lobby screen.
             Debug.Log("Bootstrapper: Starting Game Loop...");
+            if (DeferGameLoop)
+            {
+                deferredPlayers = playersList;
+                Debug.Log("Bootstrapper: Game loop deferred until a game mode is selected.");
+                yield break;
+            }
             turnManager.StartGame(playersList);
             
             Debug.Log("Bootstrapper: Initialization Complete.");
+        }
+
+        public bool StartDeferredLocalGame(bool resumeLoop = true)
+        {
+            if (!CanStartDeferredGame) return false;
+            deferredGameStarted = true;
+            DeferGameLoop = false;
+            turnManager.StartGame(deferredPlayers, resumeLoop);
+            deferredPlayers = null;
+            Debug.Log("Bootstrapper: Deferred local game started.");
+            return true;
+        }
+
+        public bool StartDeferredOnlineGame(int playerCount, bool runAuthoritativeLoop)
+        {
+            if (!CanStartDeferredGame) return false;
+            playerCount = Mathf.Clamp(playerCount, 2, 6);
+
+            var onlinePlayers = new List<PlayerModel>(playerCount);
+            for (int i = 0; i < playerCount; i++)
+                onlinePlayers.Add(new PlayerModel(i, startingBalance, isAI: false));
+
+            visualManager.SpawnPlayers(onlinePlayers, deferredStartPosition);
+            deferredGameStarted = true;
+            DeferGameLoop = false;
+            turnManager.StartGame(onlinePlayers, runAuthoritativeLoop);
+            deferredPlayers = null;
+            Debug.Log($"Bootstrapper: Deferred online game initialized with {playerCount} human seats (authority={runAuthoritativeLoop}).");
+            return true;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace PolyRisk.UI
     ///
     /// Fix #8 Phase F — RÉALIGNÉ sur les effets réels codés dans VentureSystem.ApplyCardEffect.
     /// Les textes précédents décrivaient les intentions GDD, pas ce que le code exécute.
-    /// L'implémentation complète des effets GDD (choix Ransomware, OPA 150%, Scandale sans Sgo, etc.)
+    /// L'implémentation complète des effets GDD (choix Ransomware, Scandale sans Sgo, etc.)
     /// est un backlog Phase F séparé.
     /// </summary>
     public enum VentureCardType { Positive, Negative, Chaos }
@@ -67,7 +67,7 @@ namespace PolyRisk.UI
 
             // ── CHAOS ────────────────────────────────────────────────────────
             { 19, new VentureCardInfo { Id=19, Type=VentureCardType.Chaos, Title="OPA HOSTILE",
-                Description="Vous piratez une propriété adverse au hasard : vous captez ses revenus pendant 1 tour." } },
+                Description="Vous rachetez une propriété adverse abordable au hasard au prix le plus élevé entre 150% du prix d'achat et le prix d'achat + 75% des upgrades payés." } },
             { 20, new VentureCardInfo { Id=20, Type=VentureCardType.Chaos, Title="EFFONDREMENT GLOBAL",
                 Description="Tirage aléatoire 50/50 : cycle BOOM ou CRASH mondial pour 5 tours." } },
         };

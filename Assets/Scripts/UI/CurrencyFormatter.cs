@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 namespace PolyRisk.UI
 {
@@ -32,6 +33,32 @@ namespace PolyRisk.UI
             }
 
             return $"${amount.ToString("0")}";
+        }
+
+        /// <summary>
+        /// Full, localized display for the Pulse HUD and property cockpit. Keeps
+        /// the real amount visible instead of abbreviating it (e.g. 18 000 $).
+        /// This is presentation only; calculations should continue using doubles.
+        /// </summary>
+        public static string FormatExact(double amount)
+        {
+            if (double.IsNaN(amount) || double.IsInfinity(amount)) return "—";
+
+            double rounded = Math.Round(Math.Abs(amount), MidpointRounding.AwayFromZero);
+            string grouped = rounded.ToString("#,##0", CultureInfo.InvariantCulture)
+                .Replace(",", "\u202f");
+            return (amount < 0 ? "−" : string.Empty) + grouped + " $";
+        }
+
+        /// <summary>Full grouped number without a currency suffix for a split UI value.</summary>
+        public static string FormatExactNumber(double amount)
+        {
+            if (double.IsNaN(amount) || double.IsInfinity(amount)) return "—";
+
+            double rounded = Math.Round(Math.Abs(amount), MidpointRounding.AwayFromZero);
+            string grouped = rounded.ToString("#,##0", CultureInfo.InvariantCulture)
+                .Replace(",", "\u202f");
+            return (amount < 0 ? "−" : string.Empty) + grouped;
         }
     }
 }

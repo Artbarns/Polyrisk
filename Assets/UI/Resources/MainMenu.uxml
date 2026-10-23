@@ -27,13 +27,27 @@
             <ui:Label name="Lbl_LobbyCode" text="ABC123" class="lobby-code" />
             <ui:Label text="SHARE THIS CODE WITH YOUR FRIENDS" class="main-menu-help" />
             <ui:Label name="Lbl_LobbyStatus" text="1/6 PLAYERS" class="lobby-status" />
-            <ui:ScrollView name="PlayerList" class="lobby-player-list" />
+            <ui:Label name="Lbl_PlayerRoster" class="lobby-player-list" />
             <ui:VisualElement class="main-menu-actions">
                 <ui:Button name="Btn_Ready" text="I'M READY" class="btn-secondary" />
                 <ui:Button name="Btn_StartOnline" text="START GAME" class="btn-standard" />
             </ui:VisualElement>
             <ui:Button name="Btn_LeaveLobby" text="LEAVE LOBBY" class="btn-ghost" />
             <ui:Toggle name="Toggle_ReduceMotionLobby" text="REDUCE ANIMATIONS" class="main-menu-motion" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="PauseView" class="main-menu-card in-game-menu" style="display: none;">
+            <ui:Label text="GAME MENU" class="main-menu-title in-game-menu-title" />
+            <ui:Label text="SESSION OPTIONS" class="main-menu-kicker" />
+            <ui:Button name="Btn_ResumeGame" text="RESUME GAME" class="btn-standard main-menu-primary" />
+            <ui:Button name="Btn_QuitGame" text="QUIT GAME" class="btn-ghost quit-game-button" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="QuitConfirmView" class="main-menu-card in-game-menu" style="display: none;">
+            <ui:Label text="LEAVE THIS GAME?" class="main-menu-title in-game-menu-title" />
+            <ui:Label name="Lbl_QuitConfirmMessage" text="This will reset the current game." class="quit-confirm-message" />
+            <ui:Button name="Btn_ConfirmQuit" text="QUIT GAME" class="btn-danger main-menu-primary" />
+            <ui:Button name="Btn_CancelQuit" text="CANCEL" class="btn-ghost" />
         </ui:VisualElement>
         <ui:Label name="Lbl_MenuError" class="main-menu-error" style="display: none;" />
     </ui:VisualElement>

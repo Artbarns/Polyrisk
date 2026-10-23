@@ -27,15 +27,15 @@
                 </ui:VisualElement>
 
                 <!-- Statut animé (mis à jour par code) -->
-                <ui:Label name="Lbl_WaitingStatus" text="Waiting for bids from other players..."
+                <ui:Label name="Lbl_WaitingStatus" text="Waiting for bids from other players…"
                     class="waiting-status-label" />
 
                 <!-- Compteur de bids reçus -->
                 <ui:Label name="Lbl_WaitingBidCount" text="0 offers received"
-                    style="color: #05DF72; font-size: 13px; -unity-font-style: bold; -unity-text-align: middle-center; margin-bottom: 16px;" />
+                    style="color: #05DF72; font-size: 13px; -unity-font-style: bold; -unity-text-align: middle-center; margin-bottom: 4px;" />
 
                 <!-- Footer -->
-                <ui:VisualElement style="flex-direction: row; justify-content: center; padding-top: 8px;">
+                <ui:VisualElement style="flex-direction: row; justify-content: center; padding-top: 4px;">
                     <ui:Button name="Btn_CancelWaiting" text="CANCEL AUCTION" class="btn-secondary"
                         style="flex-grow: 1;" />
                 </ui:VisualElement>

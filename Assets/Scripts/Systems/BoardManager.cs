@@ -18,6 +18,12 @@ namespace PolyRisk.Systems
 
         // The internal list of board tiles.
         private List<BoardTile> tiles;
+        private readonly List<PropertyData> runtimeProperties = new List<PropertyData>();
+
+        private void OnDestroy()
+        {
+            foreach (var property in runtimeProperties) if (property != null) Destroy(property);
+        }
 
         // Public read-only access to tiles.
         public IReadOnlyList<BoardTile> Tiles => tiles.AsReadOnly();
@@ -59,6 +65,16 @@ namespace PolyRisk.Systems
                 // Sort by index to ensure order
                 tileDataList.Sort((a, b) => a.TileIndex.CompareTo(b.TileIndex));
 
+                // Never mutate project assets during a game or retain state across batches.
+                tileDataList = new List<BoardTileData>(tileDataList);
+                for (int i = 0; i < tileDataList.Count; i++)
+                {
+                    if (!(tileDataList[i] is PropertyData source)) continue;
+                    var runtime = Instantiate(source);
+                    runtime.ResetRuntimeState();
+                    runtimeProperties.Add(runtime);
+                    tileDataList[i] = runtime;
+                }
                 foreach (var tileData in tileDataList)
                 {
                     // Pass the generic BoardTileData (which might be PropertyData or BoardTileData)

@@ -7,6 +7,14 @@ using PolyRisk.UI;
 
 namespace PolyRisk.Systems
 {
+    [System.Serializable]
+    public class MovementResumeState
+    {
+        public int startPosition;
+        public int targetPosition;
+        public bool goEconomicsApplied;
+    }
+
     /// <summary>
     /// Manages the game loop, player turns, and state transitions.
     /// Implements a State Machine for the turn phases.
@@ -14,6 +22,25 @@ namespace PolyRisk.Systems
     public class TurnManager : MonoBehaviour
     {
         public static TurnManager Instance { get; private set; }
+        private MovementResumeState pendingMovement;
+        public bool HasPendingMovement => pendingMovement != null;
+
+        public MovementResumeState CaptureMovementState() => pendingMovement == null ? null :
+            new MovementResumeState { startPosition = pendingMovement.startPosition,
+                targetPosition = pendingMovement.targetPosition,
+                goEconomicsApplied = pendingMovement.goEconomicsApplied };
+
+        public bool ApplyReplicatedMovement(MovementResumeState state)
+        {
+            if (state != null && (state.startPosition < 0 || state.startPosition >= 40
+                || state.targetPosition < 0 || state.targetPosition >= 40)) return false;
+            pendingMovement = state == null ? null : new MovementResumeState
+            {
+                startPosition = state.startPosition, targetPosition = state.targetPosition,
+                goEconomicsApplied = state.goEconomicsApplied
+            };
+            return true;
+        }
 
         public enum TurnState
         {
@@ -21,26 +48,143 @@ namespace PolyRisk.Systems
             WaitingForAuditDecision,
             Planning,        // Phase D — Pre-roll : activer Ultime + Auto Precision
             RollDice,
+            AdjustDice,      // Automobile : choix -1 / conserver / +1 après le jet réel
             MovingPawn,
+            WaitingForTransitChoice,
             ResolveTile,
-            EndTurn
+            EndTurn,
+            ChooseTurbo,
+            ResolveDice
         }
 
         [Header("Game Settings")]
         [Tooltip("List of players in the game.")]
         [SerializeField] private List<PlayerModel> players;
         public List<PlayerModel> Players => players;
-        
+
         // Track current tile index for each player
         private Dictionary<int, int> playerPositions = new Dictionary<int, int>();
 
         // Public accessor for current state
         public TurnState CurrentState => currentState;
+        public bool IsGameOver => isGameOver;
+        public int WinnerPlayerId { get; private set; } = -1;
+        public string VictoryReason { get; private set; } = "";
+        public int TurnsStarted { get; private set; }
+        public int PendingDiceTotal { get; private set; }
+        private int[] turboFirst;
+        private int[] turboSecond;
+        public int[] TurboFirst => turboFirst == null ? null : (int[])turboFirst.Clone();
+        public int[] TurboSecond => turboSecond == null ? null : (int[])turboSecond.Clone();
+
+        public static bool IsValidTurboCandidates(int[] first, int[] second, bool awaitingChoice)
+        {
+            bool absent(int[] roll) => roll == null || roll.Length == 0;
+            bool valid(int[] roll) => roll != null && roll.Length == 2
+                && roll[0] >= 1 && roll[0] <= 6 && roll[1] >= 1 && roll[1] <= 6;
+            if (absent(first) && absent(second)) return !awaitingChoice;
+            return valid(first) && valid(second);
+        }
+
+        public bool ApplyTurboCandidates(int[] first, int[] second)
+        {
+            if (!IsValidTurboCandidates(first, second, currentState == TurnState.ChooseTurbo)) return false;
+            turboFirst = first == null || first.Length == 0 ? null : (int[])first.Clone();
+            turboSecond = second == null || second.Length == 0 ? null : (int[])second.Clone();
+            return true;
+        }
+
+        public bool ConfirmTurboChoice(int choice)
+        {
+            if (currentState != TurnState.ChooseTurbo || CurrentPlayer == null
+                || choice < 0 || choice > 1 || turboFirst == null || turboSecond == null) return false;
+            int[] selected = choice == 0 ? turboFirst : turboSecond;
+            CommitSelectedRoll(selected);
+            turboFirst = turboSecond = null;
+            return true;
+        }
+
+        private void CommitSelectedRoll(int[] result)
+        {
+            diceSystem.CommitRoll(result);
+            if (diceSystem.HasExceededDoublesLimit())
+            {
+                transactionManager.DeductMoney(CurrentPlayer, penaltyAmount);
+                diceSystem.ResetDoubles();
+                PendingDiceTotal = 0;
+                currentState = TurnState.EndTurn;
+            }
+            else
+            {
+                PendingDiceTotal = result[0] + result[1];
+                currentState = TurnState.ResolveDice;
+            }
+        }
+
+        private IEnumerator WaitForTurboChoice()
+        {
+            float started = Time.realtimeSinceStartup;
+            while (currentState == TurnState.ChooseTurbo && Time.realtimeSinceStartup - started < 60f)
+                yield return null;
+            if (currentState == TurnState.ChooseTurbo) ConfirmTurboChoice(0);
+        }
+
+        public double GetNetWorth(PlayerModel player) => NetWorth.Calculate(player,
+            BoardManager.Instance != null ? BoardManager.Instance.tileDataList?.OfType<PropertyData>() : null);
+
+        public void DeclareVictory(PlayerModel winner, string reason)
+        {
+            if (isGameOver) return;
+            isGameOver = true;
+            WinnerPlayerId = winner != null ? winner.PlayerId : -1;
+            VictoryReason = reason ?? "";
+            pendingMovement = null;
+            PendingDiceTotal = 0;
+            currentState = TurnState.EndTurn;
+            actionButtonsWidget?.ClearButtons();
+            GameEvents.OnGameVictory?.Invoke(winner, reason);
+        }
+
+        public bool ApplyReplicatedOutcome(bool ended, int winnerPlayerId, string reason)
+        {
+            var winner = winnerPlayerId >= 0 ? GetPlayerById(winnerPlayerId) : null;
+            if (ended && winnerPlayerId >= 0 && winner == null) return false;
+            bool changed = !isGameOver || WinnerPlayerId != winnerPlayerId || VictoryReason != (reason ?? "");
+            isGameOver = ended;
+            WinnerPlayerId = ended ? winnerPlayerId : -1;
+            VictoryReason = ended ? reason ?? "" : "";
+            if (ended)
+            {
+                StopAllCoroutines();
+                currentState = TurnState.EndTurn;
+                pendingMovement = null;
+                PendingDiceTotal = 0;
+                actionButtonsWidget?.ClearButtons();
+                if (changed) GameEvents.OnGameVictory?.Invoke(winner, VictoryReason);
+            }
+            return true;
+        }
+
+        public bool CheckEndConditions()
+        {
+            if (isGameOver) return true;
+            var survivors = players.Where(p => !p.IsBankrupt).ToList();
+            if (survivors.Count == 0)
+                DeclareVictory(null, "NO SURVIVORS");
+            else if (survivors.Count == 1)
+                DeclareVictory(survivors[0], "LAST PLAYER STANDING");
+            else if (survivors.Min(p => p.LapsCompleted) >= 50)
+                DeclareVictory(survivors.OrderByDescending(GetNetWorth).ThenBy(p => p.PlayerId).First(),
+                    "TIME OUT — HIGHEST NET WORTH");
+            return isGameOver;
+        }
 
         public void AuditRollDice()
         {
             PlayerModel currentPlayer = players[currentPlayerIndex];
             if (!currentPlayer.IsInAudit) return;
+
+            GameEvents.PublishActivity("audit", currentPlayer.PlayerId, "tente de sortir de l’Audit fiscal");
 
             int[] result = diceSystem.RollDice();
             Debug.Log($"Audit Roll: {result[0]} + {result[1]}");
@@ -50,7 +194,7 @@ namespace PolyRisk.Systems
                 Debug.Log("Rolled Doubles! Escaped Audit Fiscal immediately.");
                 currentPlayer.IsInAudit = false;
                 currentPlayer.AuditTurnsRemaining = 0;
-                
+
                 // Move with this roll
                 StartCoroutine(ExecuteMovement(currentPlayer, result[0] + result[1]));
             }
@@ -63,7 +207,7 @@ namespace PolyRisk.Systems
                     transactionManager.DeductMoney(currentPlayer, 500);
                     currentPlayer.IsInAudit = false;
                     currentPlayer.AuditTurnsRemaining = 0;
-                    
+
                     // Move with this roll
                     StartCoroutine(ExecuteMovement(currentPlayer, result[0] + result[1]));
                 }
@@ -96,6 +240,10 @@ namespace PolyRisk.Systems
                 player.PendingDiceDelta = 0;
             }
 
+            pendingMovement = new MovementResumeState
+            {
+                startPosition = currentPos, targetPosition = (currentPos + steps) % 40
+            };
             // Get path
             List<Vector3> path = BoardManager.Instance.GetPath(currentPos, steps);
 
@@ -131,38 +279,73 @@ namespace PolyRisk.Systems
                 Debug.LogWarning($"[ExecuteMovement] Safety net : {MAX_MOVE_WAIT}s écoulées sans OnPawnMovementFinished pour Player {player.PlayerId} — on force la suite.");
 
             GameEvents.OnPawnMovementFinished -= onFinished;
-            
+
             // Update logical position after movement
             playerPositions[player.PlayerId] = newPos;
-            
-            // Handle GO Logic
-            if (newPos < currentPos)
+
+            ApplyPendingMovementEconomics(player);
+            while (financeSystem != null && financeSystem.IsSettlingGo && !isGameOver) yield return null;
+            FinishMovementAfterSettlement(player, newPos < currentPos);
+        }
+
+        public bool ApplyPendingMovementEconomics(PlayerModel player)
+        {
+            if (pendingMovement == null || player == null || player != CurrentPlayer) return false;
+            playerPositions[player.PlayerId] = pendingMovement.targetPosition;
+            if (pendingMovement.goEconomicsApplied) return true;
+            pendingMovement.goEconomicsApplied = true;
+            if (pendingMovement.targetPosition >= pendingMovement.startPosition) return true;
+            player.LapsCompleted++;
+            if (financeSystem != null)
             {
-                Debug.Log($"Player {player.PlayerId} passed GO.");
-                player.LapsCompleted++;
-
-                // ── Sgo inflation ──────────────────────────────────────────────
-                if (financeSystem != null)
+                int activePlayers = players.Count(p => !p.IsBankrupt);
+                if (activePlayers > 0)
                 {
-                    int activePlayers = players.Count(p => !p.IsBankrupt);
-                    if (activePlayers > 0)
-                    {
-                        int sgoGrowth = Mathf.FloorToInt(1000f / activePlayers);
-
-                        // Phase C : modificateur de cycle (BOOM ×1.3 / CRASH ×0.6)
-                        var cm = CycleManager.Instance;
-                        if (cm != null && cm.IsActive)
-                            sgoGrowth = Mathf.FloorToInt(sgoGrowth * (float)cm.GetSgoMultiplier());
-
-                        financeSystem.CurrentSgo += sgoGrowth;
-                        Debug.Log($"<color=green>[GO] Sgo +{sgoGrowth} (1000÷{activePlayers}) → {financeSystem.CurrentSgo}</color>");
-                    }
-                    financeSystem.ProcessGoIncome(player);
+                    var cycle = CycleManager.Instance;
+                    double cycleMultiplier = cycle != null && cycle.IsActive ? cycle.GetSgoMultiplier() : 1.0;
+                    int growth = FinanceSystem.CalculateSgoGrowth(activePlayers, cycleMultiplier,
+                        financeSystem.IsAggressiveGrowthMode);
+                    financeSystem.CurrentSgo += growth;
                 }
+                financeSystem.ProcessGoIncome(player);
+            }
+            return true;
+        }
 
-                // ── Passif Automobile — Assistance de Précision reset ─────────
-                player.AutoPrecisionAvailable = true;
+        private IEnumerator ResumePendingMovement(PlayerModel player)
+        {
+            if (pendingMovement == null)
+            {
+                Debug.LogError("[Online] Mouvement interrompu sans destination sauvegardée.");
+                yield return new WaitForSecondsRealtime(1f);
+                yield break;
+            }
+            bool passedGo = pendingMovement.targetPosition < pendingMovement.startPosition;
+            TeleportPlayer(player, pendingMovement.targetPosition);
+            ApplyPendingMovementEconomics(player);
+            while (financeSystem != null && financeSystem.IsSettlingGo && !isGameOver) yield return null;
+            FinishMovementAfterSettlement(player, passedGo);
+        }
 
+        /// <summary>Resumes a restored GO debt after its payment, without repeating GO economics.</summary>
+        public bool ResumeGoDebtSettlement(PlayerModel player, bool paid)
+        {
+            if (player == null || player != CurrentPlayer || currentState != TurnState.MovingPawn)
+                return false;
+            financeSystem?.CompleteGoSettlement(player, paid);
+            FinishMovementAfterSettlement(player, true);
+            return true;
+        }
+
+        private void FinishMovementAfterSettlement(PlayerModel player, bool passedGo)
+        {
+            PendingDiceTotal = 0;
+            pendingMovement = null;
+            if (isGameOver) return;
+            if (player.IsBankrupt) { currentState = TurnState.EndTurn; return; }
+            int newPos = playerPositions[player.PlayerId];
+            if (passedGo)
+            {
                 // ── Énergie Ability System ─────────────────────────────────────
                 var abilitySystem = AbilitySystem.Instance;
                 if (abilitySystem != null) abilitySystem.ChargeEnergyOnGo(player);
@@ -179,38 +362,47 @@ namespace PolyRisk.Systems
                 }
             }
 
-            // ── Phase C : Transit Express 4 Hubs (GDD_Board v7) ──────────────────
-            int finalPos = HandleTransitExpress(player, newPos);
-            if (finalPos != newPos)
+            // The GDD makes Transit Express optional. Preserve the Hub landing
+            // and let the active player decide before the tile is resolved.
+            if (TryGetTransitExpressDestination(player, newPos, out _))
             {
-                playerPositions[player.PlayerId] = finalPos;
-                TeleportPlayer(player, finalPos);
-                newPos = finalPos;
+                currentState = TurnState.WaitingForTransitChoice;
+                var landedHub = BoardManager.Instance != null ? BoardManager.Instance.GetTileAt(newPos) : null;
+                if (landedHub != null) GameEvents.OnTileSelected?.Invoke(landedHub);
+                GameEvents.PublishActivity("transit", player.PlayerId, "peut activer Transit Express");
+                if (player.IsAI) ResolveTransitExpressChoice(true);
+                return;
             }
 
             Debug.Log($"Player {player.PlayerId} arrived at tile {newPos}.");
+            var landedTile = BoardManager.Instance != null ? BoardManager.Instance.GetTileAt(newPos) : null;
+            string landedName = landedTile?.Data != null && !string.IsNullOrWhiteSpace(landedTile.Data.TileName)
+                ? landedTile.Data.TileName
+                : landedTile != null ? landedTile.Type.ToString() : $"case {newPos}";
+            GameEvents.PublishActivity("move", player.PlayerId, $"arrive sur {landedName}");
 
             // Transition to ResolveTile
             currentState = TurnState.ResolveTile;
         }
 
         /// <summary>
-        /// Transit Express : si le joueur atterit sur un Hub et possède les 4 Hubs,
-        /// il est téléporté au Hub suivant. Pas de Sgo collecté si traverse Case 0 (Hub 35 → Hub 5).
-        /// IA : auto-active. Humain : auto-active aussi (UI optionnelle pour Phase D).
+        /// Returns the next clockwise Hub when a player owns all four Logistics Hubs
+        /// and has just landed on one. The actual movement remains an optional choice.
         /// </summary>
-        private int HandleTransitExpress(PlayerModel player, int currentPos)
+        public static bool TryGetTransitExpressDestination(PlayerModel player, int currentPos, out int nextHub)
         {
+            nextHub = -1;
+            if (player == null) return false;
             int[] hubIndices = { 5, 15, 25, 35 };
-            if (System.Array.IndexOf(hubIndices, currentPos) < 0) return currentPos;
+            if (System.Array.IndexOf(hubIndices, currentPos) < 0) return false;
 
             // Vérifier que le joueur possède les 4 Hubs
             int hubCount = player.OwnedProperties.Count(p =>
                 p.FamilyData != null && p.FamilyData.FamilyName.Contains("Logistics"));
-            if (hubCount < 4) return currentPos;
+            if (hubCount < 4) return false;
 
             // Hub suivant dans le sens horaire
-            int nextHub = currentPos switch
+            nextHub = currentPos switch
             {
                 5  => 15,
                 15 => 25,
@@ -219,8 +411,33 @@ namespace PolyRisk.Systems
                 _  => currentPos
             };
 
-            Debug.Log($"[Transit Express] Player {player.PlayerId} possède les 4 Hubs → téléportation {currentPos} → {nextHub} (pas de Sgo si traverse Case 0).");
-            return nextHub;
+            return nextHub >= 0;
+        }
+
+        public bool ResolveTransitExpressChoice(bool takeTransit)
+        {
+            if (currentState != TurnState.WaitingForTransitChoice || CurrentPlayer == null) return false;
+            int currentPosition = GetPlayerPosition(CurrentPlayer);
+            if (!TryGetTransitExpressDestination(CurrentPlayer, currentPosition, out int nextHub)) return false;
+
+            if (takeTransit)
+            {
+                playerPositions[CurrentPlayer.PlayerId] = nextHub;
+                TeleportPlayer(CurrentPlayer, nextHub);
+                GameEvents.PublishActivity("transit", CurrentPlayer.PlayerId,
+                    $"utilise Transit Express · case {currentPosition} → {nextHub}", true);
+            }
+            else
+            {
+                GameEvents.PublishActivity("transit", CurrentPlayer.PlayerId, "reste sur son Hub");
+            }
+
+            currentState = TurnState.ResolveTile;
+            var destination = BoardManager.Instance != null
+                ? BoardManager.Instance.GetTileAt(GetPlayerPosition(CurrentPlayer))
+                : null;
+            if (destination != null) GameEvents.OnTileSelected?.Invoke(destination);
+            return true;
         }
 
         /// <summary>
@@ -229,10 +446,10 @@ namespace PolyRisk.Systems
         public void TeleportPlayer(PlayerModel player, int targetIndex)
         {
             if (player == null) return;
-            
+
             // Update logical position
             playerPositions[player.PlayerId] = targetIndex;
-            
+
             // Update visual position
             // Find the pawn GameObject by name (created by PlayerVisualManager)
             GameObject pawn = GameObject.Find($"Pawn_Player_{player.PlayerId}");
@@ -270,6 +487,9 @@ namespace PolyRisk.Systems
             return players.Find(p => p.PlayerId == playerId);
         }
 
+        public int GetPlayerPosition(PlayerModel player)
+            => player != null && playerPositions.TryGetValue(player.PlayerId, out int position) ? position : -1;
+
         /// <summary>
         /// Finds the owner of a given property.
         /// </summary>
@@ -286,7 +506,7 @@ namespace PolyRisk.Systems
             }
             return null;
         }
-        
+
         [Tooltip("The index of the player whose turn it is.")]
         [SerializeField] private int currentPlayerIndex = 0;
 
@@ -301,9 +521,10 @@ namespace PolyRisk.Systems
         // Current state of the turn
         private TurnState currentState;
         private bool isGameOver = false;
-        
+
         // Dependencies
         private DiceSystem diceSystem;
+        public int ConsecutiveDoubles => diceSystem != null ? diceSystem.ConsecutiveDoubles : 0;
         private TransactionManager transactionManager;
 
         [Tooltip("Reference to the FinanceSystem for GO logic.")]
@@ -322,7 +543,7 @@ namespace PolyRisk.Systems
         public int GlobalLapsCompleted { get; private set; } = 0;
 
         public bool IsInSelectionMode { get; set; }  // Supprime le { get; set; } pour que le Header fonctionne
-        
+
         [Tooltip("Reference to the Marketplace UI Manager for selection callback.")]
         public Marketplace_UIManager marketplaceUIManager;
 
@@ -333,7 +554,7 @@ namespace PolyRisk.Systems
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
                 // In a real scenario, players would be initialized via a GameSetup manager
-                players = new List<PlayerModel>(); 
+                players = new List<PlayerModel>();
             }
             else
             {
@@ -351,10 +572,18 @@ namespace PolyRisk.Systems
 
         public void StayInAudit()
         {
+            var currentPlayer = players != null && currentPlayerIndex >= 0 && currentPlayerIndex < players.Count
+                ? players[currentPlayerIndex]
+                : null;
+            if (currentPlayer != null)
+                GameEvents.PublishActivity("audit", currentPlayer.PlayerId, "reste en Audit fiscal");
             if (justLandedInAudit)
             {
                 Debug.Log("Player chose to stay in Audit (Just Landed). Ending turn.");
-                CompleteTileResolution();
+                // EnterAuditDecisionMode moved the state from ResolveTile to
+                // WaitingForAuditDecision. CompleteTileResolution is guarded against
+                // that state and used to no-op here, leaving the turn blocked forever.
+                currentState = TurnState.EndTurn;
             }
             else
             {
@@ -373,9 +602,10 @@ namespace PolyRisk.Systems
                 currentPlayer.IsInAudit = false;
                 currentPlayer.AuditTurnsRemaining = 0;
                 justLandedInAudit = false;
-                
+
                 Debug.Log($"Player {currentPlayer.PlayerId} used a Get Out Of Audit Free card!");
-                
+                GameEvents.PublishActivity("audit", currentPlayer.PlayerId, "utilise sa carte de sortie d’Audit", true);
+
                 // Allow movement immediately
                 StartCoroutine(ExecuteMovementAfterAuditEscape());
             }
@@ -395,6 +625,12 @@ namespace PolyRisk.Systems
         public bool UseAutoPrecision(PlayerModel player, int delta)
         {
             if (player == null) return false;
+            var abilities = AbilitySystem.Instance;
+            if (abilities == null || !abilities.HasFamilyMonopoly(player, "Automobile"))
+            {
+                Debug.LogWarning($"[Auto Precision] Player {player.PlayerId} n'a pas le monopole Automobile.");
+                return false;
+            }
             if (!player.AutoPrecisionAvailable)
             {
                 Debug.LogWarning($"[Auto Precision] Player {player.PlayerId} a déjà utilisé l'Assistance ce tour.");
@@ -408,6 +644,72 @@ namespace PolyRisk.Systems
             player.PendingDiceDelta = clamped;
             Debug.Log($"[Auto Precision] Player {player.PlayerId} ajuste le total des dés de {clamped:+#;-#}.");
             return true;
+        }
+
+        /// <summary>Valide le choix Automobile humain et libère la coroutine de lancer.</summary>
+        public bool ConfirmAutoPrecision(int delta)
+        {
+            if (currentState != TurnState.AdjustDice || CurrentPlayer == null || CurrentPlayer.IsAI) return false;
+            if (delta < -1 || delta > 1) return false;
+
+            if (delta == 0)
+            {
+                CurrentPlayer.AutoPrecisionAvailable = false;
+                CurrentPlayer.PendingDiceDelta = 0;
+            }
+            else if (!UseAutoPrecision(CurrentPlayer, delta))
+            {
+                return false;
+            }
+
+            currentState = TurnState.RollDice;
+            return true;
+        }
+
+        private IEnumerator ResolveSelectedDice(PlayerModel currentPlayer)
+        {
+            int steps = PendingDiceTotal;
+            // Automobile : le choix se fait sur le résultat réel, juste avant le mouvement.
+            var rollAbilities = AbilitySystem.Instance;
+            bool canAdjust = currentPlayer.AutoPrecisionAvailable
+                && rollAbilities != null
+                && rollAbilities.HasFamilyMonopoly(currentPlayer, "Automobile");
+            if (canAdjust)
+            {
+                PendingDiceTotal = steps;
+                if (currentPlayer.IsAI)
+                {
+                    var aiManager = FindObjectOfType<AIManager>();
+                    int delta = aiManager != null ? aiManager.ChooseAutoPrecisionDelta(currentPlayer, steps) : 0;
+                    if (delta != 0) UseAutoPrecision(currentPlayer, delta);
+                    else currentPlayer.AutoPrecisionAvailable = false;
+                }
+                else
+                {
+                    currentState = TurnState.AdjustDice;
+                    yield return StartCoroutine(WaitForAutoPrecisionChoice(currentPlayer));
+                }
+            }
+
+            // Strict sequential flow:
+            // 1. Trigger Movement Coroutine and WAIT for it
+            yield return StartCoroutine(ExecuteMovement(currentPlayer, steps));
+            PendingDiceTotal = 0;
+
+        }
+
+        private IEnumerator WaitForAutoPrecisionChoice(PlayerModel player)
+        {
+            float waitStart = Time.realtimeSinceStartup;
+            while (currentState == TurnState.AdjustDice && Time.realtimeSinceStartup - waitStart < 60f)
+                yield return null;
+            if (currentState == TurnState.AdjustDice)
+            {
+                Debug.LogWarning("[Auto Precision] Délai expiré : conservation automatique du jet.");
+                player.AutoPrecisionAvailable = false;
+                player.PendingDiceDelta = 0;
+                currentState = TurnState.RollDice;
+            }
         }
 
         /// <summary>Helper : true si player a le monopole Pharma complet.</summary>
@@ -445,9 +747,11 @@ namespace PolyRisk.Systems
             if (transactionManager.DeductMoney(currentPlayer, fineAmount))
             {
                 Debug.Log($"Player {currentPlayer.PlayerId} paid {fineAmount} fine to leave Audit Fiscal.");
+                GameEvents.PublishActivity("audit", currentPlayer.PlayerId,
+                    $"paie {fineAmount:N0} $ et quitte l’Audit fiscal", true);
                 currentPlayer.IsInAudit = false;
                 currentPlayer.AuditTurnsRemaining = 0;
-                
+
                 if (justLandedInAudit)
                 {
                     Debug.Log("Paid fine immediately after landing. Turn Ends.");
@@ -477,31 +781,27 @@ namespace PolyRisk.Systems
             }
         }
 
-        private void OnEnable()
-        {
-            GameEvents.OnPawnMovementFinished += OnPawnMovementFinished;
-        }
-
-        private void OnDisable()
-        {
-            GameEvents.OnPawnMovementFinished -= OnPawnMovementFinished;
-        }
-
-        private void OnPawnMovementFinished()
-        {
-            if (currentState == TurnState.MovingPawn)
-            {
-                currentState = TurnState.ResolveTile;
-            }
-        }
-
         /// <summary>
         /// Starts the game with the provided players.
         /// </summary>
-        public void StartGame(List<PlayerModel> initialPlayers)
+        public void StartGame(List<PlayerModel> initialPlayers, bool resumeLoop = true)
         {
+            if (initialPlayers == null || initialPlayers.Count < 2 || initialPlayers.Count > 6)
+                throw new System.ArgumentException("A game requires 2–6 participants (humans or AI).");
             players = initialPlayers;
-            
+            GameEvents.BeginActivitySession();
+            isGameOver = false;
+            WinnerPlayerId = -1;
+            VictoryReason = "";
+            TurnsStarted = 0;
+            currentPlayerIndex = 0;
+            currentState = TurnState.TurnStart;
+            turboFirst = turboSecond = null;
+            playerPositions.Clear();
+            pendingMovement = null;
+            PendingDiceTotal = 0;
+            financeSystem?.StartMatchClock();
+
             // Initialize positions
             foreach (var p in players)
             {
@@ -509,7 +809,34 @@ namespace PolyRisk.Systems
             }
 
             // Start the loop
-            StartCoroutine(GameLoop());
+            if (resumeLoop && !GameBootstrapper.DeferGameLoop) ResumeGameLoop();
+        }
+
+        public bool ApplyReplicaTurnState(
+            int currentPlayerId,
+            string stateName,
+            int turnsStarted,
+            int pendingDice,
+            bool landedInAudit,
+            int consecutiveDoubles = 0)
+        {
+            int index = players?.FindIndex(player => player.PlayerId == currentPlayerId) ?? -1;
+            if (index < 0 || !System.Enum.TryParse(stateName, true, out TurnState parsedState)) return false;
+            StopAllCoroutines();
+            currentPlayerIndex = index;
+            currentState = parsedState;
+            TurnsStarted = Mathf.Max(0, turnsStarted);
+            PendingDiceTotal = Mathf.Max(0, pendingDice);
+            justLandedInAudit = landedInAudit;
+            if (diceSystem == null) diceSystem = GetComponent<DiceSystem>();
+            if (diceSystem == null) diceSystem = gameObject.AddComponent<DiceSystem>();
+            diceSystem.ApplyReplicatedDoubles(consecutiveDoubles);
+            return true;
+        }
+
+        public void ResumeGameLoop()
+        {
+            if (!isGameOver) StartCoroutine(GameLoop());
         }
 
         private void Start()
@@ -529,6 +856,7 @@ namespace PolyRisk.Systems
 
         private void Update()
         {
+#if UNITY_EDITOR || DEVELOPMENT_BUILD || DEBUG_BUILD
             if (UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode.Space))
             {
                 UnityEngine.Debug.LogWarning("[DEBUG] Spacebar pressed. Forcing Tile Resolution.");
@@ -541,16 +869,17 @@ namespace PolyRisk.Systems
                 if (currentState == TurnState.RollDice || currentState == TurnState.WaitingForAuditDecision || currentState == TurnState.TurnStart)
                 {
                     UnityEngine.Debug.Log("[DEBUG] Shortcut M: Teleporting to Marketplace 20");
-                    
+
                     PlayerModel currentPlayer = players[currentPlayerIndex];
-                    
+
                     // Force the player's logical and visual position to Marketplace (index 20)
                     TeleportPlayer(currentPlayer, 20);
-                    
+
                     // Transition the state to trigger the tile resolution logic for tile 20
                     currentState = TurnState.ResolveTile;
                 }
             }
+#endif
         }
 
         public void ResetDoublesState()
@@ -584,7 +913,8 @@ namespace PolyRisk.Systems
         {
             // Guard : n'agit que si le tour est réellement en attente de résolution.
             // Évite les appels en double (Marketplace AI seal + fallback AIManager, etc.)
-            if (currentState != TurnState.ResolveTile) return;
+            if (isGameOver || currentState != TurnState.ResolveTile) return;
+            if (CurrentPlayer.IsBankrupt) { currentState = TurnState.EndTurn; return; }
 
             if (diceSystem.ConsecutiveDoubles > 0 && diceSystem.ConsecutiveDoubles < 5)
             {
@@ -641,14 +971,30 @@ namespace PolyRisk.Systems
         /// </summary>
         private IEnumerator HandleTurnState()
         {
+            var online = PolyRisk.Multiplayer.OnlineGameController.Instance;
+            // A restored liquidation already has an invoice and a continuation.
+            // Keep processing network commands, but do not execute the tile again.
+            if (online != null && online.IsOnlineGame && online.IsAuthority && online.HasPendingDebt)
+            {
+                yield return null;
+                yield break;
+            }
             PlayerModel currentPlayer = players[currentPlayerIndex];
 
             switch (currentState)
             {
                 case TurnState.TurnStart:
+                    if (CheckEndConditions()) yield break;
+                    var abilities = AbilitySystem.Instance;
+                    currentPlayer.AutoPrecisionAvailable = abilities != null
+                        && abilities.HasFamilyMonopoly(currentPlayer, "Automobile");
+                    currentPlayer.PendingDiceDelta = 0;
+                    TurnsStarted++;
+                    currentPlayer.TurnsStarted++;
                     Debug.Log($"Turn Start: Player {currentPlayer.PlayerId}");
                     GameEvents.OnTurnStarted?.Invoke(currentPlayer.PlayerId);
-                    
+                    GameEvents.PublishActivity("turn", currentPlayer.PlayerId, "commence son tour");
+
                     // Process Stock Market Investments
                     if (financeSystem != null)
                     {
@@ -669,10 +1015,10 @@ namespace PolyRisk.Systems
                             // AI logic handles it in RollDice or we can do it here immediately?
                             // Let's stick to the prompt: Check if player is in audit.
                             // If true, do NOT proceed to normal WaitingForRoll.
-                            
+
                             // Since AI logic was previously in RollDice, we should move it or adapt.
                             // But prompt says: "Set a state like WaitingForAuditDecision"
-                            
+
                             currentState = TurnState.WaitingForAuditDecision;
                         }
                         else
@@ -736,77 +1082,95 @@ namespace PolyRisk.Systems
                     }
                     break;
 
-                case TurnState.RollDice:
-                    if (actionButtonsWidget != null) actionButtonsWidget.ClearButtons();
-                    Debug.Log($"Player {currentPlayer.PlayerId} is rolling dice...");
-                    
-                    // Wait for roll input if human, or auto-roll if AI
-                    yield return new WaitForSeconds(1.0f); 
-
-                    // Check if player is in Audit Fiscal (Prison) before rolling
-                    // NOTE: This block is now handled in WaitingForAuditDecision state, 
-                    // but we keep it safe or remove it?
-                    // The prompt implies we change the flow.
-                    // If we come here, we are NOT in Audit (or escaped).
-                    
-                    int[] result = diceSystem.RollDice();
-
-                    // ── Automobile Ultime — Moteur Turbo : relancer + choisir meilleur ──
-                    if (currentPlayer.AutoTurboReady)
+                case TurnState.WaitingForTransitChoice:
+                    if (currentPlayer.IsAI)
                     {
-                        currentPlayer.AutoTurboReady = false;
-                        int[] reroll = diceSystem.RollDice();
-                        int firstSum  = result[0] + result[1];
-                        int secondSum = reroll[0] + reroll[1];
-                        if (secondSum > firstSum)
-                        {
-                            Debug.Log($"[Auto Turbo] Player {currentPlayer.PlayerId} : reroll {secondSum} > {firstSum}, on garde reroll.");
-                            result = reroll;
-                        }
-                        else
-                        {
-                            Debug.Log($"[Auto Turbo] Player {currentPlayer.PlayerId} : original {firstSum} ≥ reroll {secondSum}, on garde original.");
-                        }
-                    }
-
-                    // Check for excessive doubles (only if not just escaped from audit, or standard rules apply)
-                    // Standard rules: If you roll doubles to escape, you move but do NOT roll again. 
-                    // However, our code checks for excessive doubles. Let's keep it simple.
-                    if (diceSystem.HasExceededDoublesLimit())
-                    {
-                        Debug.LogWarning($"Player {currentPlayer.PlayerId} rolled too many doubles! Penalty applied.");
-                        transactionManager.DeductMoney(currentPlayer, penaltyAmount);
-                        diceSystem.ResetDoubles();
-                        currentState = TurnState.EndTurn; // Force end turn
+                        // Preserve the pre-existing AI policy; human players receive
+                        // the optional choice specified by the board rules.
+                        ResolveTransitExpressChoice(true);
                     }
                     else
                     {
-                        // Calculate new position
-                        int currentPos = playerPositions[currentPlayer.PlayerId];
-                        int steps = result[0] + result[1];
-                        
-                        // Strict sequential flow:
-                        // 1. Trigger Movement Coroutine and WAIT for it
-                        yield return StartCoroutine(ExecuteMovement(currentPlayer, steps));
-
-                        // 2. ExecuteMovement will transition state to ResolveTile when done
-                        // So we don't need to do anything else here.
+                        float transitWaitStart = Time.realtimeSinceStartup;
+                        while (currentState == TurnState.WaitingForTransitChoice
+                               && Time.realtimeSinceStartup - transitWaitStart < 60f)
+                            yield return null;
+                        if (currentState == TurnState.WaitingForTransitChoice)
+                        {
+                            Debug.LogWarning("[Transit Express] Délai expiré : le joueur reste sur son Hub.");
+                            ResolveTransitExpressChoice(false);
+                        }
                     }
                     break;
-                
+
+                case TurnState.ChooseTurbo:
+                    yield return StartCoroutine(WaitForTurboChoice());
+                    if (currentState == TurnState.ResolveDice)
+                        yield return StartCoroutine(ResolveSelectedDice(currentPlayer));
+                    break;
+
+                case TurnState.ResolveDice:
+                    yield return StartCoroutine(ResolveSelectedDice(currentPlayer));
+                    break;
+
+                case TurnState.AdjustDice:
+                    // A restored choice has no original RollDice coroutine to resume.
+                    yield return StartCoroutine(WaitForAutoPrecisionChoice(currentPlayer));
+                    yield return StartCoroutine(ExecuteMovement(currentPlayer, PendingDiceTotal));
+                    PendingDiceTotal = 0;
+                    break;
+
+                case TurnState.RollDice:
+                    // The choice may have been acknowledged just before disconnecting.
+                    // A saved total identifies an already completed roll.
+                    if (PendingDiceTotal > 0)
+                    {
+                        yield return StartCoroutine(ExecuteMovement(currentPlayer, PendingDiceTotal));
+                        PendingDiceTotal = 0;
+                        break;
+                    }
+                    if (actionButtonsWidget != null) actionButtonsWidget.ClearButtons();
+                    Debug.Log($"Player {currentPlayer.PlayerId} is rolling dice...");
+
+                    // Wait for roll input if human, or auto-roll if AI
+                    yield return new WaitForSeconds(1.0f);
+
+                    // Check if player is in Audit Fiscal (Prison) before rolling
+                    // NOTE: This block is now handled in WaitingForAuditDecision state,
+                    // but we keep it safe or remove it?
+                    // The prompt implies we change the flow.
+                    // If we come here, we are NOT in Audit (or escaped).
+
+                    int[] result = diceSystem.GenerateRoll();
+
+                    if (currentPlayer.AutoTurboReady)
+                    {
+                        currentPlayer.AutoTurboReady = false;
+                        int[] reroll = diceSystem.GenerateRoll();
+                        if (!currentPlayer.IsAI)
+                        {
+                            ApplyTurboCandidates(result, reroll);
+                            currentState = TurnState.ChooseTurbo;
+                            yield return StartCoroutine(WaitForTurboChoice());
+                        }
+                        else
+                            CommitSelectedRoll(reroll[0] + reroll[1] > result[0] + result[1] ? reroll : result);
+                    }
+                    else CommitSelectedRoll(result);
+                    if (currentState == TurnState.ResolveDice)
+                        yield return StartCoroutine(ResolveSelectedDice(currentPlayer));
+                    break;
+
                 case TurnState.MovingPawn:
-                    // Wait until OnPawnMovementFinished changes state to ResolveTile
-                    // This case is actually redundant if we yield wait in RollDice/ExecuteMovement
-                    // But we keep it as a safety buffer
-                    yield return null;
+                    yield return StartCoroutine(ResumePendingMovement(currentPlayer));
                     break;
 
                 case TurnState.ResolveTile:
                     Debug.Log($"Resolving tile for Player {currentPlayer.PlayerId}...");
-                    
+
                     int tileIndex = playerPositions[currentPlayer.PlayerId];
                     BoardTile landedTile = BoardManager.Instance.GetTileAt(tileIndex);
-                    
+
                     // Trigger selection for UI
                     GameEvents.OnTileSelected?.Invoke(landedTile);
 
@@ -856,7 +1220,7 @@ namespace PolyRisk.Systems
                         Debug.Log("Landed on GO. Auto-skipping.");
                         CompleteTileResolution();
                     }
-                    
+
                     if (currentPlayer.IsAI)
                     {
                         // Fix double-dispatch (trouvé via [BANKRUPTCY-TRACE] : 45% des événements
@@ -891,11 +1255,11 @@ namespace PolyRisk.Systems
                     {
                         // Update UI with current tile for Human player
                         GameEvents.OnTileSelected?.Invoke(landedTile);
-                        
+
                         // Wait for UI input from human player
                         // This is a placeholder for waiting for a "End Turn" button press or purchase decision
                         Debug.Log("Waiting for Human Input...");
-                        
+
                         // Wait indefinitely until UI calls CompleteTileResolution
                         yield return new WaitUntil(() => currentState != TurnState.ResolveTile);
                     }
@@ -904,7 +1268,7 @@ namespace PolyRisk.Systems
                 case TurnState.EndTurn:
                     Debug.Log($"End of Turn for Player {currentPlayer.PlayerId}.");
                     diceSystem.ResetDoubles();
-                    
+
                     // Financial Report
                     string report = "[FINANCE REPORT] ";
                     foreach (var p in players)
@@ -912,55 +1276,14 @@ namespace PolyRisk.Systems
                         report += $"Player {p.PlayerId}: {CurrencyFormatter.Format(p.CurrentBalance)} | ";
                     }
                     Debug.Log(report);
-                    
-                    // Move to next player
-                    // Simple loop to find next non-bankrupt player
-                    int previousPlayerIndex = currentPlayerIndex;
-                    do
-                    {
-                        currentPlayerIndex = (currentPlayerIndex + 1) % players.Count;
-                    } while (players[currentPlayerIndex].IsBankrupt);
 
-                    // Phase C : Tick du cycle macro à chaque round-robin complet (retour au plus petit index)
+                    // Count survivors BEFORE searching for one: zero survivors must never spin.
+                    if (CheckEndConditions()) yield break;
+                    int previousPlayerIndex = currentPlayerIndex;
+                    do { currentPlayerIndex = (currentPlayerIndex + 1) % players.Count; }
+                    while (players[currentPlayerIndex].IsBankrupt);
                     if (currentPlayerIndex <= previousPlayerIndex && CycleManager.Instance != null)
                         CycleManager.Instance.TickOnTurnEnd();
-                    
-                    // Check win condition
-                    int nonBankruptCount = players.Count(p => !p.IsBankrupt);
-                    if (nonBankruptCount == 1)
-                    {
-                        PlayerModel winner = players.FirstOrDefault(p => !p.IsBankrupt);
-                        if (winner != null)
-                        {
-                            Debug.Log($"[GAME OVER] We have a winner! Player {winner.PlayerId}");
-                            GameEvents.OnGameVictory?.Invoke(winner, "LAST PLAYER STANDING");
-                            isGameOver = true;
-                            yield break;
-                        }
-                    }
-
-                    // Phase E.3 — Time-out tournoi à 50 tours globaux (GDD §6.3)
-                    // Exclut les joueurs en faillite : leur LapsCompleted est figé pour toujours
-                    // dès leur élimination, donc les inclure dans le Min() pouvait bloquer cette
-                    // condition indéfiniment (jamais atteinte tant qu'un failli reste à un tour bas).
-                    var activePlayersForTurnCheck = players.Where(p => !p.IsBankrupt).ToList();
-                    int globalTurn = activePlayersForTurnCheck.Count > 0
-                        ? activePlayersForTurnCheck.Min(p => p.LapsCompleted)
-                        : 0;
-                    if (globalTurn >= 50)
-                    {
-                        PlayerModel winnerByNV = players
-                            .Where(p => !p.IsBankrupt)
-                            .OrderByDescending(p => p.CurrentBalance + p.OwnedProperties.Sum(prop => prop.BasePrice))
-                            .FirstOrDefault();
-                        if (winnerByNV != null)
-                        {
-                            Debug.Log($"[GAME OVER] Turn 50 reached — winner by Net Worth: Player {winnerByNV.PlayerId}");
-                            GameEvents.OnGameVictory?.Invoke(winnerByNV, "TIME OUT — HIGHEST NET WORTH");
-                            isGameOver = true;
-                            yield break;
-                        }
-                    }
 
                     if (!isGameOver)
                     {

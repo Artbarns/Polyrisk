@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using PolyRisk.Core;
+using PolyRisk.UI;
 
 namespace PolyRisk.Visuals
 {
@@ -173,10 +174,23 @@ namespace PolyRisk.Visuals
 
         public void BeginPulse(Color targetColor, float speed = 4f)
         {
+            if (pulseCoroutine != null)
+            {
+                StopCoroutine(pulseCoroutine);
+                pulseCoroutine = null;
+            }
+
+            // Keep the selection clear without a repeating brightness animation when
+            // the accessibility preference asks for reduced motion.
+            if (UIUXRuntime.ReducedMotion)
+            {
+                Highlight(targetColor);
+                return;
+            }
+
             // Board_Procedural : pulse via intensité shader
             if (CanForwardToBoard)
             {
-                if (pulseCoroutine != null) StopCoroutine(pulseCoroutine);
                 // Fixer la couleur cible et laisser la coroutine faire respirer l'intensité
                 Board.SetTile(TileIndex, targetColor, Board.settings.emissiveIntensity);
                 pulseCoroutine = StartCoroutine(PulseRoutineNeon(speed));
@@ -184,7 +198,6 @@ namespace PolyRisk.Visuals
             }
             // Fallback legacy
             if (tileRenderer == null || tileRenderer.material == null) return;
-            if (pulseCoroutine != null) StopCoroutine(pulseCoroutine);
             pulseCoroutine = StartCoroutine(PulseRoutine(targetColor, speed));
         }
 

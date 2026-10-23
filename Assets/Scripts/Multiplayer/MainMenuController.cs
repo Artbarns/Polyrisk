@@ -11,8 +11,11 @@ namespace PolyRisk.Multiplayer
     {
         private UIDocument document;
         private VisualElement homeView;
+        private VisualElement responsiveRoot;
         private VisualElement lobbyView;
-        private VisualElement playerList;
+        private VisualElement pauseView;
+        private VisualElement quitConfirmView;
+        private Label playerRoster;
         private TextField playerName;
         private TextField gameCode;
         private TextField serverUrl;
@@ -25,8 +28,13 @@ namespace PolyRisk.Multiplayer
         private Button joinButton;
         private Toggle reduceMotionHome;
         private Toggle reduceMotionLobby;
-        private LobbyPlayerDto[] renderedPlayers;
-        private string renderedLocalPlayerId;
+        private Label quitConfirmMessage;
+        private Button confirmQuitButton;
+        private Coroutine rosterResponsiveRoutine;
+        private bool renderedLandscape;
+        private bool returningToTitle;
+
+        public static MainMenuController Instance { get; private set; }
 
         public static bool SamePlayerRows(LobbyPlayerDto[] previous, LobbyPlayerDto[] current)
         {
@@ -36,6 +44,27 @@ namespace PolyRisk.Multiplayer
                     || previous[i].isHost != current[i].isHost || previous[i].isReady != current[i].isReady)
                     return false;
             return true;
+        }
+
+        public static bool ShouldUseDenseLobbyRoster(int playerCount, bool landscape)
+            => playerCount > 0 && landscape;
+
+        public static string PreservePlayerNameOnRoster(string displayName)
+            => string.IsNullOrEmpty(displayName) ? string.Empty : displayName.Replace(' ', '\u00A0');
+
+        public static string FormatLobbyRoster(LobbyPlayerDto[] players, int playersPerRow)
+        {
+            if (players == null || players.Length == 0) return string.Empty;
+
+            string[] entries = players.Select(player =>
+                $"{PreservePlayerNameOnRoster(player.displayName)}{(player.isHost ? " · HOST" : string.Empty)} · {(player.isReady ? "READY" : "WAITING")}")
+                .ToArray();
+            int rowSize = playersPerRow <= 0 ? entries.Length : playersPerRow;
+            if (rowSize >= entries.Length) return string.Join("    •    ", entries);
+
+            int rowCount = (entries.Length + rowSize - 1) / rowSize;
+            return string.Join("\n", Enumerable.Range(0, rowCount)
+                .Select(row => string.Join("    •    ", entries.Skip(row * rowSize).Take(rowSize))));
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -73,13 +102,20 @@ namespace PolyRisk.Multiplayer
 
         private void Start()
         {
+            if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+            Instance = this;
             var root = document.rootVisualElement;
+            responsiveRoot = root.Q<VisualElement>(className: "main-menu-overlay") ?? root;
             UIUXRuntime.PrepareRoot(root);
             UIUXRuntime.PrepareView(root);
 
             homeView = root.Q<VisualElement>("HomeView");
             lobbyView = root.Q<VisualElement>("LobbyView");
-            playerList = root.Q<VisualElement>("PlayerList");
+            pauseView = root.Q<VisualElement>("PauseView");
+            quitConfirmView = root.Q<VisualElement>("QuitConfirmView");
+            quitConfirmMessage = root.Q<Label>("Lbl_QuitConfirmMessage");
+            confirmQuitButton = root.Q<Button>("Btn_ConfirmQuit");
+            playerRoster = root.Q<Label>("Lbl_PlayerRoster");
             playerName = root.Q<TextField>("Input_PlayerName");
             gameCode = root.Q<TextField>("Input_GameCode");
             serverUrl = root.Q<TextField>("Input_ServerUrl");
@@ -121,17 +157,37 @@ namespace PolyRisk.Multiplayer
                 ShowError(string.Empty);
             });
 
-            createButton.clicked += () => LobbySession.Instance.CreateLobby(playerName.value);
-            joinButton.clicked += () => LobbySession.Instance.JoinLobby(gameCode.value, playerName.value);
-            root.Q<Button>("Btn_LocalGame").clicked += () => StartCoroutine(StartLocalGame());
+            createButton.clicked += () =>
+            {
+                string name = playerName.value;
+                DismissTextEntry();
+                LobbySession.Instance.CreateLobby(name);
+            };
+            joinButton.clicked += () =>
+            {
+                string code = gameCode.value;
+                string name = playerName.value;
+                DismissTextEntry();
+                LobbySession.Instance.JoinLobby(code, name);
+            };
+            root.Q<Button>("Btn_LocalGame").clicked += () =>
+            {
+                DismissTextEntry();
+                StartCoroutine(StartLocalGame());
+            };
             readyButton.clicked += ToggleReady;
             startButton.clicked += () => LobbySession.Instance.StartGame();
             root.Q<Button>("Btn_LeaveLobby").clicked += () => LobbySession.Instance.LeaveLobby();
+            root.Q<Button>("Btn_ResumeGame").clicked += ResumeGame;
+            root.Q<Button>("Btn_QuitGame").clicked += BeginQuitConfirmation;
+            root.Q<Button>("Btn_CancelQuit").clicked += CancelQuitConfirmation;
+            confirmQuitButton.clicked += ConfirmQuit;
 
             LobbySession.Instance.LobbyChanged += RenderLobby;
             LobbySession.Instance.ErrorChanged += ShowError;
             LobbySession.Instance.BusyChanged += SetBusy;
             LobbySession.Instance.GameStarted += HandleGameStarted;
+            LobbySession.Instance.GameAbandoned += HandleGameAbandoned;
             OnlineGameController.Instance.GameReady += HandleOnlineGameReady;
 
             RenderLobby(LobbySession.Instance.CurrentLobby);
@@ -140,11 +196,15 @@ namespace PolyRisk.Multiplayer
 
         private void OnDestroy()
         {
-            if (LobbySession.Instance == null) return;
-            LobbySession.Instance.LobbyChanged -= RenderLobby;
-            LobbySession.Instance.ErrorChanged -= ShowError;
-            LobbySession.Instance.BusyChanged -= SetBusy;
-            LobbySession.Instance.GameStarted -= HandleGameStarted;
+            if (Instance == this) Instance = null;
+            if (LobbySession.Instance != null)
+            {
+                LobbySession.Instance.LobbyChanged -= RenderLobby;
+                LobbySession.Instance.ErrorChanged -= ShowError;
+                LobbySession.Instance.BusyChanged -= SetBusy;
+                LobbySession.Instance.GameStarted -= HandleGameStarted;
+                LobbySession.Instance.GameAbandoned -= HandleGameAbandoned;
+            }
             if (OnlineGameController.Instance != null)
                 OnlineGameController.Instance.GameReady -= HandleOnlineGameReady;
         }
@@ -191,36 +251,30 @@ namespace PolyRisk.Multiplayer
             bool inLobby = lobby != null;
             homeView.style.display = inLobby ? DisplayStyle.None : DisplayStyle.Flex;
             lobbyView.style.display = inLobby ? DisplayStyle.Flex : DisplayStyle.None;
-            if (!inLobby) { renderedPlayers = null; return; }
+            if (!inLobby)
+            {
+                playerRoster.text = string.Empty;
+                if (rosterResponsiveRoutine != null)
+                {
+                    StopCoroutine(rosterResponsiveRoutine);
+                    rosterResponsiveRoutine = null;
+                }
+                return;
+            }
+
+            if (rosterResponsiveRoutine == null)
+                rosterResponsiveRoutine = StartCoroutine(CheckLobbyViewportRoutine());
 
             lobbyCode.text = lobby.code;
             lobbyStatus.text = lobby.status == "started" ? "GAME STARTED" : $"{lobby.players.Length}/{lobby.maxPlayers} PLAYERS";
-            bool rebuildRows = renderedLocalPlayerId != LobbySession.Instance.LocalPlayerId
-                || !SamePlayerRows(renderedPlayers, lobby.players);
-            var scroll = playerList as ScrollView;
-            var previousOffset = scroll != null ? scroll.scrollOffset : Vector2.zero;
-            if (rebuildRows) playerList.Clear();
-
-            foreach (var player in rebuildRows ? lobby.players : System.Array.Empty<LobbyPlayerDto>())
-            {
-                var row = new VisualElement();
-                row.AddToClassList("lobby-player-row");
-                if (player.playerId == LobbySession.Instance.LocalPlayerId) row.AddToClassList("lobby-player-row--local");
-
-                var name = new Label(player.displayName + (player.isHost ? "  · HOST" : string.Empty));
-                name.AddToClassList("lobby-player-name");
-                var state = new Label(player.isReady ? "READY" : "WAITING");
-                state.AddToClassList(player.isReady ? "lobby-player-ready" : "lobby-player-waiting");
-                row.Add(name);
-                row.Add(state);
-                playerList.Add(row);
-            }
-            if (rebuildRows)
-            {
-                renderedPlayers = lobby.players;
-                renderedLocalPlayerId = LobbySession.Instance.LocalPlayerId;
-                if (scroll != null) scroll.schedule.Execute(() => scroll.scrollOffset = previousOffset);
-            }
+            bool landscape = IsLandscapeViewport();
+            bool denseLobbyRoster = lobby.players != null
+                && ShouldUseDenseLobbyRoster(lobby.players.Length, landscape);
+            renderedLandscape = landscape;
+            lobbyView.EnableInClassList("lobby-view--roster-dense", denseLobbyRoster);
+            playerRoster.EnableInClassList("lobby-player-list--dense", denseLobbyRoster);
+            int playersPerRow = landscape && lobbyView.resolvedStyle.width <= 1000f ? 2 : lobby.players.Length;
+            playerRoster.text = FormatLobbyRoster(lobby.players, playersPerRow);
 
             var localPlayer = lobby.players.FirstOrDefault(p => p.playerId == LobbySession.Instance.LocalPlayerId);
             readyButton.text = localPlayer != null && localPlayer.isReady ? "NOT READY" : "I'M READY";
@@ -230,8 +284,43 @@ namespace PolyRisk.Multiplayer
             startButton.SetEnabled(lobby.status == "waiting" && allReady);
         }
 
+        private IEnumerator CheckLobbyViewportRoutine()
+        {
+            var interval = new WaitForSecondsRealtime(0.5f);
+            while (true)
+            {
+                yield return interval;
+                if (LobbySession.Instance?.CurrentLobby == null)
+                {
+                    rosterResponsiveRoutine = null;
+                    yield break;
+                }
+                CheckLobbyViewportOrientation();
+            }
+        }
+
+        private void CheckLobbyViewportOrientation()
+        {
+            var currentLobby = LobbySession.Instance?.CurrentLobby;
+            if (currentLobby == null || responsiveRoot == null) return;
+
+            bool landscape = IsLandscapeViewport();
+            if (landscape != renderedLandscape) RenderLobby(currentLobby);
+        }
+
+        private bool IsLandscapeViewport()
+        {
+            if (Screen.width > 0 && Screen.height > 0)
+                return Screen.width > Screen.height;
+
+            var root = document.rootVisualElement;
+            var viewport = responsiveRoot != null ? responsiveRoot.contentRect : root.contentRect;
+            return viewport.width > viewport.height;
+        }
+
         private void HandleGameStarted()
         {
+            DismissTextEntry();
             lobbyStatus.text = "PREPARING THE BOARD…";
             readyButton.SetEnabled(false);
             startButton.SetEnabled(false);
@@ -240,7 +329,108 @@ namespace PolyRisk.Multiplayer
 
         private void HandleOnlineGameReady()
         {
+            DismissTextEntry();
+            if (rosterResponsiveRoutine != null)
+            {
+                StopCoroutine(rosterResponsiveRoutine);
+                rosterResponsiveRoutine = null;
+            }
             document.rootVisualElement.style.display = DisplayStyle.None;
+        }
+
+        public void ShowInGameMenu()
+        {
+            if (document == null) return;
+
+            var root = document.rootVisualElement;
+            pauseView ??= root.Q<VisualElement>("PauseView");
+            quitConfirmView ??= root.Q<VisualElement>("QuitConfirmView");
+            if (pauseView == null || quitConfirmView == null)
+            {
+                Debug.LogError("[MainMenu] In-game menu views are missing from MainMenu.uxml.");
+                return;
+            }
+            root.style.display = DisplayStyle.Flex;
+            homeView.style.display = DisplayStyle.None;
+            lobbyView.style.display = DisplayStyle.None;
+            quitConfirmView.style.display = DisplayStyle.None;
+            pauseView.style.display = DisplayStyle.Flex;
+            ShowError(string.Empty);
+        }
+
+        private void ResumeGame()
+        {
+            pauseView.style.display = DisplayStyle.None;
+            quitConfirmView.style.display = DisplayStyle.None;
+            document.rootVisualElement.style.display = DisplayStyle.None;
+        }
+
+        private void BeginQuitConfirmation()
+        {
+            bool online = OnlineGameController.Instance != null && OnlineGameController.Instance.IsOnlineGame;
+            quitConfirmMessage.text = online
+                ? "This will end the online match for everyone and return all players to the title screen."
+                : "This will reset the local game and return you to the title screen.";
+            pauseView.style.display = DisplayStyle.None;
+            quitConfirmView.style.display = DisplayStyle.Flex;
+            confirmQuitButton.text = online ? "END MATCH" : "QUIT GAME";
+            confirmQuitButton.SetEnabled(true);
+        }
+
+        private void CancelQuitConfirmation()
+        {
+            quitConfirmView.style.display = DisplayStyle.None;
+            pauseView.style.display = DisplayStyle.Flex;
+            confirmQuitButton.SetEnabled(true);
+        }
+
+        private void ConfirmQuit()
+        {
+            bool online = OnlineGameController.Instance != null && OnlineGameController.Instance.IsOnlineGame;
+            if (!online)
+            {
+                ReturnToTitle();
+                return;
+            }
+
+            confirmQuitButton.SetEnabled(false);
+            confirmQuitButton.text = "ENDING MATCH…";
+            LobbySession.Instance.AbandonGame(() =>
+            {
+                confirmQuitButton.SetEnabled(true);
+                confirmQuitButton.text = "END MATCH";
+            });
+        }
+
+        private void HandleGameAbandoned() => ReturnToTitle();
+
+        private void ReturnToTitle()
+        {
+            if (returningToTitle) return;
+            returningToTitle = true;
+            OnlineGameController.Instance?.ResetOnlineSessionForExit();
+            LobbySession.Instance?.ClearSessionForAbandonedGame();
+            GameBootstrapper.DeferGameLoop = true;
+            var root = document.rootVisualElement;
+            root.style.display = DisplayStyle.Flex;
+            homeView.style.display = DisplayStyle.Flex;
+            lobbyView.style.display = DisplayStyle.None;
+            pauseView.style.display = DisplayStyle.None;
+            quitConfirmView.style.display = DisplayStyle.None;
+            StartCoroutine(ReturnToTitleRoutine());
+        }
+
+        private IEnumerator ReturnToTitleRoutine()
+        {
+            yield return GameSession.Reload();
+            returningToTitle = false;
+        }
+
+        private void DismissTextEntry()
+        {
+            playerName?.Blur();
+            gameCode?.Blur();
+            serverUrl?.Blur();
         }
 
         private void SetBusy(bool busy)

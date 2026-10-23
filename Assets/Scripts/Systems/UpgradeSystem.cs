@@ -51,6 +51,13 @@ namespace PolyRisk.Systems
             {
                 property.SetLevel(property.CurrentLevel + 1);
                 property.TotalUpgradeCostInvested += cost; // Phase E.4 — tracker pour la revente faillite
+                GameEvents.PublishGameEvent(GameEventPhase.Resolution,
+                    GameEventKind.UpgradeApplied, GameEventPriority.Major,
+                    player.PlayerId, tileId: property.TileIndex, amount: -cost,
+                    reason: GameEventReason.Upgrade, valueA: oldLevel, valueB: property.CurrentLevel);
+                GameEvents.PublishActivity("upgrade", player.PlayerId,
+                    $"améliore {property.PropertyName} · niveau {property.CurrentLevel}",
+                    property.CurrentLevel >= 4);
                 Debug.Log($"[Upgrade] {property.PropertyName} → Lvl{property.CurrentLevel} | Cost: ${cost:N0}");
                 // [UPGRADE] diagnostic temporaire — investigation rythme d'upgrade IA (tasks/todo.md).
                 // LogWarning (pas Log) pour survivre au filtre Warning du stress test.

@@ -2,9 +2,17 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using PolyRisk.Core;
+using PolyRisk.UI;
 
 namespace PolyRisk.Systems
 {
+    [System.Serializable]
+    public class VentureDeckState
+    {
+        public int[] drawPile;
+        public int[] discardPile;
+    }
+
     /// <summary>
     /// Manages the 'Cruel World 2026' Venture Deck.
     /// Handles deck state (draw/discard piles) and card effect execution.
@@ -31,6 +39,73 @@ namespace PolyRisk.Systems
         private List<int> discardPile = new List<int>();
         
         private const int MAX_CARDS = 20;
+
+        public VentureDeckState CaptureDeckState() => new VentureDeckState
+        {
+            drawPile = drawPile.ToArray(), discardPile = discardPile.ToArray()
+        };
+
+        public static bool IsValidDeckState(VentureDeckState state)
+        {
+            if (state?.drawPile == null || state.discardPile == null) return false;
+            return state.drawPile.Concat(state.discardPile).OrderBy(id => id)
+                .SequenceEqual(Enumerable.Range(1, MAX_CARDS));
+        }
+
+        public bool ApplyReplicatedDeck(VentureDeckState state)
+        {
+            if (!IsValidDeckState(state)) return false;
+            drawPile = state.drawPile.ToList();
+            discardPile = state.discardPile.ToList();
+            return true;
+        }
+
+
+        /// <summary>
+        /// Prix GDD d'une OPA : le plus élevé entre 150% du prix d'achat et
+        /// le prix d'achat augmenté de 75% des upgrades effectivement payés.
+        /// </summary>
+        public static double CalculateHostileTakeoverPrice(PropertyData target)
+        {
+            if (target == null) return 0;
+            return System.Math.Max(
+                target.BasePrice * 1.5,
+                target.BasePrice + target.TotalUpgradeCostInvested * 0.75);
+        }
+
+        /// <summary>
+        /// Exécute une OPA sans création monétaire : paiement intégral au propriétaire,
+        /// puis transfert de l'actif avec son niveau et ses upgrades conservés.
+        /// </summary>
+        public bool ExecuteHostileTakeover(PlayerModel acquirer, PropertyData target)
+        {
+            if (acquirer == null || target == null || acquirer.IsBankrupt
+                || turnManager == null || transactionManager == null)
+                return false;
+
+            PlayerModel owner = turnManager.GetOwnerOfProperty(target);
+            if (owner == null || owner == acquirer || owner.IsBankrupt) return false;
+
+            double price = CalculateHostileTakeoverPrice(target);
+            if (price <= 0 || acquirer.CurrentBalance < price)
+            {
+                Debug.Log($"[Venture Card #19] OPA impossible : Player {acquirer.PlayerId} ne peut pas payer {price:N0}.");
+                return false;
+            }
+
+            if (!transactionManager.TransferMoney(acquirer, owner, price)) return false;
+
+            owner.RemoveProperty(target);
+            acquirer.AddProperty(target);
+            AbilitySystem.PublishFamilyCompletionIfNeeded(acquirer, new[] { target });
+            target.HijackedBy = null;
+            target.HijackTurnsRemaining = 0;
+            GameEvents.PublishActivity("venture", acquirer.PlayerId,
+                $"lance une OPA sur {target.PropertyName} pour {CurrencyFormatter.Format(price)}", true);
+            Debug.Log($"[Venture Card #19] OPA Hostile: Player {acquirer.PlayerId} acquiert {target.PropertyName} de Player {owner.PlayerId} pour {price:N0}.");
+            Debug.LogWarning($"[ACQUISITION] {target.PropertyName} | from=Player{owner.PlayerId} to=Player{acquirer.PlayerId} ({acquirer.Profile}) | channel=Venture-OPA | price={price:N0} | turn={acquirer.LapsCompleted}");
+            return true;
+        }
 
         private void Start()
         {
@@ -124,12 +199,11 @@ namespace PolyRisk.Systems
 
         private void ShuffleDeck()
         {
-            System.Random rng = new System.Random();
             int n = drawPile.Count;
             while (n > 1)
             {
                 n--;
-                int k = rng.Next(n + 1);
+                int k = UnityEngine.Random.Range(0, n + 1);
                 int value = drawPile[k];
                 drawPile[k] = drawPile[n];
                 drawPile[n] = value;
@@ -143,6 +217,26 @@ namespace PolyRisk.Systems
         public void DrawCard(PlayerModel player)
         {
             if (player == null) return;
+
+            int cardId = DrawCardId(player);
+            if (cardId < 0) return;
+
+            // Phase E.2 — Pop-up modale avant l'effet.
+            // Humain : on attend confirm. IA : on applique direct (pas d'UI nécessaire).
+            var modal = PolyRisk.UI.VentureCardModalController.Instance;
+            if (!player.IsAI && modal != null)
+                modal.ShowCard(cardId, () => ApplyCardEffect(player, cardId));
+            else
+                ApplyCardEffect(player, cardId);
+        }
+
+        /// <summary>
+        /// Pioche autoritaire sans ouvrir d'interface. Le multijoueur réplique ensuite
+        /// l'identifiant et laisse uniquement le siège actif confirmer la carte.
+        /// </summary>
+        public int DrawCardId(PlayerModel player)
+        {
+            if (player == null) return -1;
 
             if (drawPile.Count == 0)
             {
@@ -167,21 +261,17 @@ namespace PolyRisk.Systems
                 discardPile.Add(cardId);
 
                 Debug.Log($"Player {player.PlayerId} drew Venture Card #{cardId}");
-
-                // Phase E.2 — Pop-up modale avant l'effet.
-                // Humain : on attend confirm. IA : on applique direct (pas d'UI nécessaire).
-                var modal = PolyRisk.UI.VentureCardModalController.Instance;
-                if (!player.IsAI && modal != null)
-                    modal.ShowCard(cardId, () => ApplyCardEffect(player, cardId));
-                else
-                    ApplyCardEffect(player, cardId);
+                GameEvents.PublishActivity("venture", player.PlayerId,
+                    $"pioche Venture #{cardId:D2}");
+                return cardId;
             }
+            return -1;
         }
 
         /// <summary>
         /// Applies the logic for a specific card ID.
         /// </summary>
-        private void ApplyCardEffect(PlayerModel player, int cardId)
+        public void ApplyCardEffect(PlayerModel player, int cardId)
         {
             if (financeSystem == null || transactionManager == null || turnManager == null || rulesEngine == null || boardManager == null)
             {
@@ -191,8 +281,9 @@ namespace PolyRisk.Systems
 
             double sgo = financeSystem.CurrentSgo;
 
-            // Liquidity Shield Rule: If cash > 10 * Sgo, penalties are DOUBLED.
-            bool hasLiquidityShield = player.CurrentBalance > (10 * sgo);
+            // Liquidity Shield threshold rises to 30×Sgo after 90 minutes.
+            bool hasLiquidityShield = FinanceSystem.HasLiquidityShield(
+                player.CurrentBalance, sgo, financeSystem.IsAggressiveGrowthMode);
 
             // ── Phase B : Immunité (Pharma Protocole Sanitaire / Golden Ticket) ─────
             // Bloque uniquement les cartes négatives (11-18). Les positives, Chaos et OPA passent.
@@ -422,7 +513,8 @@ namespace PolyRisk.Systems
                         {
                             foreach (var prop in otherPlayer.OwnedProperties)
                             {
-                                potentialTargets19.Add(prop);
+                                if (CalculateHostileTakeoverPrice(prop) <= player.CurrentBalance)
+                                    potentialTargets19.Add(prop);
                             }
                         }
                     }
@@ -431,14 +523,11 @@ namespace PolyRisk.Systems
                     {
                         PropertyData targetProp = potentialTargets19[Random.Range(0, potentialTargets19.Count)];
                         
-                        targetProp.HijackedBy = player;
-                        targetProp.HijackTurnsRemaining = 1; 
-                        
-                        Debug.Log($"[Venture Card #19] OPA Hostile: Player {player.PlayerId} HIJACKED {targetProp.PropertyName} for 1 turn!");
+                        ExecuteHostileTakeover(player, targetProp);
                     }
                     else
                     {
-                        Debug.Log("[Venture Card #19] OPA Hostile: No valid targets found.");
+                        Debug.Log("[Venture Card #19] OPA Hostile: aucune propriété adverse abordable.");
                     }
                     turnManager.CompleteTileResolution();
                     break;

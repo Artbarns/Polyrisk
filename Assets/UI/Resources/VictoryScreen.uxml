@@ -14,7 +14,7 @@
             <ui:Label name="Lbl_VictoryCondition" text="REACHED $10,000,000 IN NET CASH" class="victory-condition" />
 
             <!-- Stats détaillées -->
-            <ui:VisualElement name="Container_VictoryStats" style="width: 100%; margin-bottom: 8px;" />
+            <ui:ScrollView name="Container_VictoryStats" class="victory-stats-list" />
 
             <!-- CTA -->
             <ui:VisualElement class="victory-cta-row">

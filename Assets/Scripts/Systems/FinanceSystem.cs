@@ -23,6 +23,7 @@ namespace PolyRisk.Systems
 
     public class FinanceSystem : MonoBehaviour
     {
+        public bool IsSettlingGo { get; private set; }
         [Tooltip("Required reference to the TransactionManager.")]
         public TransactionManager transactionManager;
 
@@ -31,6 +32,36 @@ namespace PolyRisk.Systems
 
         public double CurrentSgo = 2000;
         public string CurrentMarketState = "STABLE";
+
+        private const long AggressiveGrowthDelayTicks = 90L * System.TimeSpan.TicksPerMinute;
+        public long MatchStartedUtcTicks { get; private set; }
+        public bool IsAggressiveGrowthMode => IsAggressiveGrowthModeAt(MatchStartedUtcTicks, System.DateTime.UtcNow.Ticks);
+        public double LiquidityShieldThreshold => CalculateLiquidityShieldThreshold(CurrentSgo, IsAggressiveGrowthMode);
+
+        public void StartMatchClock() => MatchStartedUtcTicks = System.DateTime.UtcNow.Ticks;
+
+        public bool ApplyReplicatedMatchClock(long startedUtcTicks)
+        {
+            if (startedUtcTicks <= System.DateTime.MinValue.Ticks || startedUtcTicks > System.DateTime.MaxValue.Ticks) return false;
+            MatchStartedUtcTicks = startedUtcTicks;
+            return true;
+        }
+
+        public static bool IsAggressiveGrowthModeAt(long startedUtcTicks, long nowUtcTicks)
+            => startedUtcTicks > System.DateTime.MinValue.Ticks && nowUtcTicks - startedUtcTicks > AggressiveGrowthDelayTicks;
+
+        public static int CalculateSgoGrowth(int activePlayers, double cycleMultiplier, bool aggressiveGrowth)
+        {
+            if (activePlayers <= 0) return 0;
+            int growth = aggressiveGrowth ? 5000 : Mathf.FloorToInt(1000f / activePlayers);
+            return Mathf.FloorToInt(growth * (float)cycleMultiplier);
+        }
+
+        public static double CalculateLiquidityShieldThreshold(double sgo, bool aggressiveGrowth)
+            => sgo * (aggressiveGrowth ? 30.0 : 10.0);
+
+        public static bool HasLiquidityShield(double cash, double sgo, bool aggressiveGrowth)
+            => cash > CalculateLiquidityShieldThreshold(sgo, aggressiveGrowth);
 
         // Burn Rate par niveau (Mode Actif 100% / Mode Veille 25%) — GDD_Economy §3
         private static readonly double[] BurnRateActive = { 0, 300, 900, 3000, 10000, 35000 };
@@ -41,12 +72,18 @@ namespace PolyRisk.Systems
 
         private Dictionary<int, List<StockInvestment>> activeInvestments = new Dictionary<int, List<StockInvestment>>();
 
-        public void InvestInStockMarket(PlayerModel player, double amount, int duration)
+        public bool InvestInStockMarket(PlayerModel player, double amount, int duration)
         {
-            if (transactionManager == null)
+            if (transactionManager == null || player == null)
             {
                 Debug.LogError("FinanceSystem: TransactionManager is not assigned.");
-                return;
+                return false;
+            }
+
+            if (amount <= 0 || (duration != 1 && duration != 3 && duration != 5))
+            {
+                Debug.LogWarning($"Invalid stock investment: amount={amount}, duration={duration}.");
+                return false;
             }
 
             // Plafonds GDD_Economy §5 : 15×Sgo (1T & 3T) / 20×Sgo (5T)
@@ -60,7 +97,7 @@ namespace PolyRisk.Systems
             if (player.CurrentBalance < amount)
             {
                 Debug.LogWarning($"Player {player.PlayerId} cannot afford investment of {amount}.");
-                return;
+                return false;
             }
 
             if (transactionManager.DeductMoney(player, amount))
@@ -72,8 +109,40 @@ namespace PolyRisk.Systems
 
                 activeInvestments[player.PlayerId].Add(new StockInvestment { Amount = amount, TurnsRemaining = duration, TotalDuration = duration });
                 Debug.Log($"Player {player.PlayerId} invested {amount} in Stock Market for {duration} turns.");
+                GameEvents.OnStockMarketInvestment?.Invoke(amount, duration);
+                GameEvents.PublishActivity("investment", player.PlayerId,
+                    $"investit {CurrencyFormatter.Format(amount)} pour {duration} tour{(duration > 1 ? "s" : "")}");
+                return true;
             }
+
+            return false;
         }
+
+        public IReadOnlyList<StockInvestment> GetActiveInvestmentsForPlayer(int playerId)
+        {
+            if (!activeInvestments.TryGetValue(playerId, out var investments))
+                return new List<StockInvestment>();
+            return investments.Select(CloneInvestment).ToList();
+        }
+
+        public void ClearInvestmentsForReplica() => activeInvestments.Clear();
+
+        public void SetInvestmentsForReplica(int playerId, IEnumerable<StockInvestment> investments)
+        {
+            if (investments == null) return;
+            var copies = investments
+                .Where(item => item != null && item.Amount > 0 && item.TurnsRemaining > 0)
+                .Select(CloneInvestment)
+                .ToList();
+            if (copies.Count > 0) activeInvestments[playerId] = copies;
+        }
+
+        private static StockInvestment CloneInvestment(StockInvestment investment) => new StockInvestment
+        {
+            Amount = investment.Amount,
+            TurnsRemaining = investment.TurnsRemaining,
+            TotalDuration = investment.TotalDuration
+        };
 
         public void ProcessActiveInvestments(PlayerModel player)
         {
@@ -93,7 +162,7 @@ namespace PolyRisk.Systems
                     // Phase C : shifts macroéconomiques (BOOM/CRASH)
                     var cycleMgr = CycleManager.Instance;
                     float shiftMin = cycleMgr != null ? cycleMgr.GetStockShiftMin() : 0f;
-                    float shiftMax = cycleMgr != null ? cycleMgr.GetStockShiftMax() : 0f;
+                    float shiftMax = cycleMgr != null ? cycleMgr.GetStockShiftMax(inv.TotalDuration) : 0f;
                     float lossMultiplier = cycleMgr != null ? cycleMgr.GetStockTotalLossMultiplier() : 1f;
 
                     switch (inv.TotalDuration)
@@ -136,6 +205,12 @@ namespace PolyRisk.Systems
                     {
                         Debug.Log($"<color={resultColor}>STOCK MARKET RESULT</color> Player {player.PlayerId} ({inv.TotalDuration} turns): Invested {inv.Amount}, ROI {roi:P0}, Payout {payout}.");
                     }
+
+                    GameEvents.PublishActivity("investment", player.PlayerId,
+                        payout <= 0
+                            ? $"perd son investissement de {CurrencyFormatter.Format(inv.Amount)}"
+                            : $"récupère {CurrencyFormatter.Format(payout)} en Bourse",
+                        payout > inv.Amount || totalLoss);
                     
                     investments.RemoveAt(i);
                 }
@@ -154,46 +229,14 @@ namespace PolyRisk.Systems
                 return;
             }
 
-            double totalCredit = 0;
-            double totalDebit  = 0;
-
-            // ── 1. Salaire GO ──────────────────────────────────────────────────────
-            totalCredit += CurrentSgo;
-
-            // ── 2. Dividendes Tiérisés ─────────────────────────────────────────────
-            // Versés par propriété si le joueur détient le monopole complet de la famille.
-            // Formule : (BaseRent × Mult_Niveau × 2) × Taux_Tier
-            var familiesChecked = new System.Collections.Generic.HashSet<FamilyData>();
-            foreach (var prop in player.OwnedProperties)
-            {
-                if (prop.FamilyData == null || prop.FamilyData.FamilyName.Contains("Logistics")) continue;
-                if (familiesChecked.Contains(prop.FamilyData)) continue;
-                if (!HasFullFamilyForPlayer(player, prop.FamilyData)) continue;
-
-                familiesChecked.Add(prop.FamilyData);
-
-                double tierRate = GetDividendRate(prop.FamilyData);
-                foreach (var familyProp in player.OwnedProperties)
-                {
-                    if (familyProp.FamilyData != prop.FamilyData) continue;
-                    int lvl = Mathf.Clamp(familyProp.CurrentLevel, 0, RentMultipliers.Length - 1);
-                    double monopolyRent = familyProp.BaseRent * RentMultipliers[lvl] * 2.0;
-                    totalCredit += monopolyRent * tierRate;
-                }
-            }
-
-            // ── 3. Burn Rate ───────────────────────────────────────────────────────
-            // Prélevé par propriété. Multiplicateur ×2 si DoubleBurnRateNextGo actif.
-            double burnMultiplier = player.DoubleBurnRateNextGo ? 2.0 : 1.0;
+            var projection = EstimateGoIncome(player);
+            double totalCredit = projection.Income;
+            double totalDebit = projection.Costs;
             if (player.DoubleBurnRateNextGo) player.DoubleBurnRateNextGo = false;
 
-            // Phase C : modificateur cycle (BOOM × 1.20 sur Burn Rate)
-            var cm = CycleManager.Instance;
-            if (cm != null && cm.IsActive) burnMultiplier *= cm.GetBurnRateMultiplier();
-
             foreach (var prop in player.OwnedProperties)
             {
-                if (prop.FamilyData != null && prop.FamilyData.FamilyName.Contains("Logistics")) continue;
+                if (prop.FamilyData != null && (prop.FamilyData.FamilyName ?? string.Empty).Contains("Logistics")) continue;
 
                 // Fix #6 Phase F — Hypothèque : pas de Burn Rate. Règle anti-exploit GDD :
                 // exonération uniquement au GO *suivant* l'hypothèque. On stocke MortgageExemptFromNextGo
@@ -215,51 +258,82 @@ namespace PolyRisk.Systems
                     continue; // Lvl0 : Burn Rate = $0 mais on a bien décrémenté
                 }
 
-                int lvl = Mathf.Clamp(prop.CurrentLevel, 0, BurnRateActive.Length - 1);
-                double br = prop.WasVisitedSinceLastGO ? BurnRateActive[lvl] : BurnRateVeille[lvl];
-                totalDebit += br * burnMultiplier;
-
                 // Reset pour le prochain cycle
                 prop.WasVisitedSinceLastGO = false;
 
                 DecrementDurations(prop);
             }
 
-            // ── 4. Infrastructure Tax (4 Hubs) ─────────────────────────────────────
-            // $20,000/GO si le joueur possède les 4 Hubs simultanément (anti-snowball)
-            int hubCount = player.OwnedProperties.Count(
-                p => p.FamilyData != null && p.FamilyData.FamilyName.Contains("Logistics"));
-            if (hubCount == 4)
-            {
-                totalDebit += 20000;
+            if (projection.InfrastructureTax > 0)
                 Debug.Log($"[GO] Player {player.PlayerId} — Infrastructure Tax 4 Hubs : -$20,000");
-            }
 
             // ── 5. Décrémenter OilGasPenaltyTurns ─────────────────────────────────
             if (player.OilGasPenaltyTurns > 0)
                 player.OilGasPenaltyTurns--;
 
             // ── 6. Application nette ───────────────────────────────────────────────
-            double netRevenu = totalCredit - totalDebit;
-            if (netRevenu >= 0)
-            {
-                transactionManager.AddMoney(player, netRevenu);
-            }
-            else
-            {
-                // Revenu net négatif : déduire le delta (Burn Rate > Sgo + Dividendes)
-                transactionManager.AddMoney(player, totalCredit);
-                transactionManager.DeductMoney(player, totalDebit);
-            }
+            if (totalCredit > 0) transactionManager.AddMoney(player, totalCredit);
+            IsSettlingGo = true;
+            transactionManager.PayRequired(player, totalDebit, null,
+                paid => CompleteGoSettlement(player, paid),
+                new DebtSettlementContext { kind = "go" });
+        }
 
-            Debug.Log($"[GO] Player {player.PlayerId} — Sgo+Divs: +{CurrencyFormatter.Format(totalCredit)} | Burn: -{CurrencyFormatter.Format(totalDebit)} | Net: {CurrencyFormatter.Format(netRevenu)}");
+        public readonly struct GoProjection
+        {
+            public readonly double Salary, Dividends, Upkeep, InfrastructureTax;
+            public double Income => Salary + Dividends;
+            public double Costs => Upkeep + InfrastructureTax;
+            public double Net => Income - Costs;
 
-            // Phase E.3 — Check Hyper-Mogul ($10M cash net, GDD §6.1)
-            if (player.CurrentBalance >= 10_000_000)
+            public GoProjection(double salary, double dividends, double upkeep, double infrastructureTax)
             {
-                Debug.Log($"<color=yellow>[VICTORY] Player {player.PlayerId} reached $10M — HYPER-MOGUL!</color>");
-                GameEvents.OnGameVictory?.Invoke(player, $"REACHED $10,000,000 IN NET CASH");
+                Salary = salary;
+                Dividends = dividends;
+                Upkeep = upkeep;
+                InfrastructureTax = infrastructureTax;
             }
+        }
+
+        /// <summary>GO at the current state; never consumes effects, timers, cash or RNG.</summary>
+        public GoProjection EstimateGoIncome(PlayerModel player)
+        {
+            if (player == null) return default;
+            double dividends = 0, upkeep = 0;
+            var familiesChecked = new HashSet<FamilyData>();
+            foreach (var prop in player.OwnedProperties)
+            {
+                if (prop == null || prop.FamilyData == null || (prop.FamilyData.FamilyName ?? string.Empty).Contains("Logistics")) continue;
+                if (!familiesChecked.Add(prop.FamilyData) || !HasFullFamilyForPlayer(player, prop.FamilyData)) continue;
+                double rate = GetDividendRate(prop.FamilyData);
+                foreach (var familyProp in player.OwnedProperties)
+                {
+                    if (familyProp == null || familyProp.FamilyData != prop.FamilyData) continue;
+                    int level = Mathf.Clamp(familyProp.CurrentLevel, 0, RentMultipliers.Length - 1);
+                    dividends += familyProp.BaseRent * RentMultipliers[level] * 2.0 * rate;
+                }
+            }
+            var cycle = CycleManager.Instance;
+            double burnMultiplier = player.DoubleBurnRateNextGo ? 2.0 : 1.0;
+            if (cycle != null && cycle.IsActive) burnMultiplier *= cycle.GetBurnRateMultiplier();
+            foreach (var prop in player.OwnedProperties)
+            {
+                if (prop == null || prop.IsMortgaged || prop.CurrentLevel == 0
+                    || (prop.FamilyData != null && (prop.FamilyData.FamilyName ?? string.Empty).Contains("Logistics"))) continue;
+                int level = Mathf.Clamp(prop.CurrentLevel, 0, BurnRateActive.Length - 1);
+                upkeep += (prop.WasVisitedSinceLastGO ? BurnRateActive[level] : BurnRateVeille[level]) * burnMultiplier;
+            }
+            int hubs = player.OwnedProperties.Count(p => p != null && p.FamilyData != null && (p.FamilyData.FamilyName ?? string.Empty).Contains("Logistics"));
+            double incomeMultiplier = cycle != null && cycle.IsActive ? cycle.GetGoIncomeMultiplier() : 1;
+            return new GoProjection(CurrentSgo * incomeMultiplier, dividends * incomeMultiplier, upkeep, hubs == 4 ? 20000 : 0);
+        }
+
+        /// <summary>Finishes a GO debt after collection, without repeating GO income or taxes.</summary>
+        public void CompleteGoSettlement(PlayerModel player, bool paid)
+        {
+            IsSettlingGo = false;
+            if (paid && !player.IsBankrupt && player.CurrentBalance >= 10_000_000)
+                TurnManager.Instance?.DeclareVictory(player, "REACHED $10,000,000 IN NET CASH");
         }
 
         // ── Helpers Dividendes ──────────────────────────────────────────────────────
@@ -312,6 +386,11 @@ namespace PolyRisk.Systems
             double taxAmount = CurrentSgo * multiplier;
             if (transactionManager.DeductMoney(player, taxAmount))
             {
+                GameEvents.PublishGameEvent(GameEventPhase.Resolution,
+                    GameEventKind.TaxPaid, GameEventPriority.Major,
+                    player.PlayerId, amount: -taxAmount, reason: GameEventReason.Tax);
+                GameEvents.PublishActivity("tax", player.PlayerId,
+                    $"paie {CurrencyFormatter.Format(taxAmount)} · {taxName}");
                 Debug.Log($"Player {player.PlayerId} paid {taxName}: {taxAmount} (Multiplier: {multiplier})");
             }
             else
@@ -380,10 +459,14 @@ namespace PolyRisk.Systems
             {
                 double winnings = betAmount * winMultiplier;
                 transactionManager.AddMoney(player, winnings);
+                GameEvents.PublishActivity("casino", player.PlayerId,
+                    $"gagne {CurrencyFormatter.Format(winnings)} au Casino", true);
                 Debug.Log($"<color=green>CASINO WIN!</color> Player {player.PlayerId} bet {betAmount} on {risk} (Roll: {roll}). Won {winnings}!");
             }
             else
             {
+                GameEvents.PublishActivity("casino", player.PlayerId,
+                    $"perd {CurrencyFormatter.Format(betAmount)} au Casino");
                 Debug.Log($"<color=red>CASINO LOSS.</color> Player {player.PlayerId} bet {betAmount} on {risk} (Roll: {roll}). Lost everything.");
             }
         }

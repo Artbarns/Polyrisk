@@ -16,7 +16,7 @@
             <ui:VisualElement class="panel-content" style="flex-grow: 1;">
 
                 <ui:Label text="DEAL LIST" class="panel-header-title" />
-                <ui:Label text="Waiting for the seller to pick an offer..."
+                <ui:Label text="Waiting for the seller to pick an offer…"
                     class="waiting-status-label" style="margin-bottom: 12px;" />
 
                 <!-- Liste des offres (read-only, même composant que TenderReview) -->

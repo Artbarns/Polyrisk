@@ -62,6 +62,19 @@ namespace PolyRisk.Core
         public int CurrentLevel => currentLevel;
         public Sprite Icon => icon;
 
+        public void ResetRuntimeState()
+        {
+            currentLevel = 0;
+            HijackedBy = null;
+            HijackTurnsRemaining = 0;
+            IsEmbargoed = false;
+            EmbargoTurnsRemaining = 0;
+            WasVisitedSinceLastGO = false;
+            IsMortgaged = false;
+            MortgageExemptFromNextGo = false;
+            TotalUpgradeCostInvested = 0;
+        }
+
         /// <summary>
         /// Calculates the current rent based on the property's level and the family's growth curve.
         /// </summary>

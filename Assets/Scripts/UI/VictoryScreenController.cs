@@ -20,7 +20,7 @@ namespace PolyRisk.UI
         private bool isShown = false;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        private static void AutoSpawn()
+        public static void EnsureExists()
         {
             if (FindObjectOfType<VictoryScreenController>() != null) return;
             var go = new GameObject("[Auto] VictoryScreen");
@@ -32,7 +32,7 @@ namespace PolyRisk.UI
             c.victoryTemplate = Resources.Load<VisualTreeAsset>("VictoryScreen");
 
             // PanelSettings du projet (réutilise n'importe lequel trouvé dans la scène)
-            var anyDoc = FindObjectOfType<UIDocument>();
+            var anyDoc = FindObjectsOfType<UIDocument>().FirstOrDefault(d => d != doc && d.panelSettings != null);
             if (anyDoc != null && anyDoc != doc) doc.panelSettings = anyDoc.panelSettings;
 
             DontDestroyOnLoad(go);
@@ -57,6 +57,8 @@ namespace PolyRisk.UI
             root = uiDocument.rootVisualElement;
             root.Clear();
             victoryTemplate.CloneTree(root);
+            UIUXRuntime.PrepareRoot(root);
+            UIUXRuntime.PrepareView(root);
 
             // Récup éléments
             var lblWinner    = root.Q<Label>("Lbl_VictoryWinner");
@@ -66,9 +68,9 @@ namespace PolyRisk.UI
             var btnNewGame   = root.Q<Button>("Btn_NewGame");
 
             // Remplissage
-            if (lblWinner != null)    lblWinner.text = $"PLAYER {winner.PlayerId}{(winner.IsAI ? $" ({winner.Profile})" : "")}";
+            if (lblWinner != null) lblWinner.text = winner == null ? "NO WINNER" : $"PLAYER {winner.PlayerId}{(winner.IsAI ? $" ({winner.Profile})" : "")}";
             if (lblCondition != null) lblCondition.text = condition;
-            if (lblTitle != null)     lblTitle.text = condition.Contains("$10") ? "HYPER-MOGUL" : "WINNER BY NET WORTH";
+            if (lblTitle != null)     lblTitle.text = winner == null ? "GAME OVER" : condition.Contains("$10") ? "HYPER-MOGUL" : condition == "LAST PLAYER STANDING" ? "LAST PLAYER STANDING" : "WINNER BY NET WORTH";
 
             // Stats finales révélées (Dark Board OFF en fin de partie)
             if (statsBox != null)
@@ -79,14 +81,14 @@ namespace PolyRisk.UI
                 {
                     foreach (var p in tm.Players.OrderByDescending(x => CalcNetWorth(x)))
                     {
-                        statsBox.Add(BuildStatRow(p, p.PlayerId == winner.PlayerId));
+                        statsBox.Add(BuildStatRow(p, winner != null && p.PlayerId == winner.PlayerId));
                     }
                 }
             }
 
             // CTA
             if (btnNewGame != null)
-                btnNewGame.clicked += () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                btnNewGame.clicked += () => GameSession.Restart();
 
             // Animation fade-in
             var overlay = root.Q<VisualElement>("VictoryOverlay");
@@ -112,7 +114,7 @@ namespace PolyRisk.UI
 
         private double CalcNetWorth(PlayerModel p)
         {
-            return p.CurrentBalance + p.OwnedProperties.Sum(prop => prop.BasePrice);
+            return TurnManager.Instance.GetNetWorth(p);
         }
     }
 }

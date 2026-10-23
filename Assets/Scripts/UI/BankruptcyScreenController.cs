@@ -2,6 +2,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 using PolyRisk.Core;
+using PolyRisk.Multiplayer;
 using PolyRisk.Systems;
 
 namespace PolyRisk.UI
@@ -23,9 +24,14 @@ namespace PolyRisk.UI
         private PlayerModel currentCreditor; // Fix #3 Phase F — créancier à payer au close (null = banque)
         private double currentDebt;
         private bool isShown = false;
+        private bool giveUpArmed = false;
+        private System.Action<bool> onResolved;
+        private bool isOnlinePresentation;
+        private long onlineToken;
+        private System.Action<string, int, long> submitOnlineCommand;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        private static void AutoSpawn()
+        public static void EnsureExists()
         {
             if (FindObjectOfType<BankruptcyScreenController>() != null) return;
             var go = new GameObject("[Auto] BankruptcyScreen");
@@ -36,7 +42,7 @@ namespace PolyRisk.UI
             // Fix #9 Phase F — Resources.Load pour marcher en build device (pas juste éditeur)
             c.bankTemplate = Resources.Load<VisualTreeAsset>("BankruptcyScreen");
 
-            var anyDoc = FindObjectOfType<UIDocument>();
+            var anyDoc = FindObjectsOfType<UIDocument>().FirstOrDefault(d => d != doc && d.panelSettings != null);
             if (anyDoc != null && anyDoc != doc) doc.panelSettings = anyDoc.panelSettings;
 
             DontDestroyOnLoad(go);
@@ -47,13 +53,19 @@ namespace PolyRisk.UI
 
         // ─────────────────────────────────────────────────────────────────────
 
-        public void Show(PlayerModel player, double debt, PlayerModel creditor)
+        public void Show(PlayerModel player, double debt, PlayerModel creditor, System.Action<bool> completed,
+            DebtSettlementContext context = null)
         {
             if (player == null || isShown) return;
 
+            // In an online game, insolvency is represented in the authoritative snapshot.
+            // Only the debtor's client may present and command the liquidation screen.
+            var online = OnlineGameController.Instance;
+            if (online != null && online.IsOnlineGame) return;
+
             // Fix #9 Phase F — Le check IA passe AVANT le guard template :
             // même sans UI, la liquidation IA doit tourner (sinon IA insta-bankrupt en build device).
-            if (player.IsAI) { ProcessAILiquidation(player, debt, creditor); return; }
+            if (player.IsAI) { TransactionManager.Instance.PayRequired(player, debt, creditor, completed); return; }
 
             if (uiDocument == null || bankTemplate == null)
             {
@@ -61,6 +73,8 @@ namespace PolyRisk.UI
                 return;
             }
 
+            onResolved = completed;
+            isOnlinePresentation = false;
             isShown = true;
             currentPlayer = player;
             currentCreditor = creditor;
@@ -69,6 +83,10 @@ namespace PolyRisk.UI
             root = uiDocument.rootVisualElement;
             root.Clear();
             bankTemplate.CloneTree(root);
+            UIUXRuntime.PrepareRoot(root);
+            UIUXRuntime.PrepareView(root);
+            ApplyResponsiveLayout();
+            giveUpArmed = false;
 
             var overlay = root.Q<VisualElement>("BankruptcyOverlay");
             if (overlay != null) UIToolkitTransitions.FadeInOverlay(this, overlay);
@@ -76,7 +94,64 @@ namespace PolyRisk.UI
             RefreshUI();
 
             var btnGiveUp = root.Q<Button>("Btn_BankGiveUp");
-            if (btnGiveUp != null) btnGiveUp.clicked += FinalizeBankruptcy;
+            if (btnGiveUp != null) btnGiveUp.clicked += HandleGiveUp;
+        }
+
+        public void ShowOnline(
+            PlayerModel player,
+            double debt,
+            long token,
+            System.Action<string, int, long> commandSender)
+        {
+            if (player == null || token <= 0 || commandSender == null) return;
+
+            bool refreshExisting = isShown && isOnlinePresentation && onlineToken == token && root != null;
+            currentPlayer = player;
+            currentCreditor = null;
+            currentDebt = debt;
+            onlineToken = token;
+            submitOnlineCommand = commandSender;
+            isOnlinePresentation = true;
+            giveUpArmed = false;
+
+            if (refreshExisting)
+            {
+                RefreshUI();
+                return;
+            }
+
+            if (uiDocument == null || bankTemplate == null)
+            {
+                Debug.LogError("[BankruptcyScreen] Template UXML introuvable pour la liquidation en ligne.");
+                return;
+            }
+
+            isShown = true;
+            root = uiDocument.rootVisualElement;
+            root.Clear();
+            bankTemplate.CloneTree(root);
+            UIUXRuntime.PrepareRoot(root);
+            UIUXRuntime.PrepareView(root);
+            ApplyResponsiveLayout();
+
+            var overlay = root.Q<VisualElement>("BankruptcyOverlay");
+            if (overlay != null) UIToolkitTransitions.FadeInOverlay(this, overlay);
+
+            RefreshUI();
+            var btnGiveUp = root.Q<Button>("Btn_BankGiveUp");
+            if (btnGiveUp != null) btnGiveUp.clicked += HandleGiveUp;
+        }
+
+        private void ApplyResponsiveLayout()
+        {
+            var footer = root?.Q<VisualElement>(className: "bankruptcy-footer");
+            footer?.EnableInClassList("bankruptcy-footer--portrait", Screen.height > Screen.width);
+        }
+
+        public void HideOnline()
+        {
+            if (!isOnlinePresentation) return;
+            ResetAndClear();
         }
 
         private void RefreshUI()
@@ -92,6 +167,7 @@ namespace PolyRisk.UI
             var list = root.Q<ScrollView>("Container_BankAssets");
             if (list == null) return;
             list.Clear();
+            list.verticalScrollerVisibility = ScrollerVisibility.Auto;
 
             // 1) Upgrades (priorité GDD §6)
             foreach (var prop in currentPlayer.OwnedProperties)
@@ -100,6 +176,11 @@ namespace PolyRisk.UI
                     list.Add(BuildRow(prop, $"{prop.PropertyName} — Lvl{prop.CurrentLevel} upgrades",
                         prop.TotalUpgradeCostInvested * 0.5, "SELL UPGRADES", () =>
                         {
+                            if (isOnlinePresentation)
+                            {
+                                SubmitOnline("bankruptcy.upgrades", prop.TileIndex);
+                                return;
+                            }
                             var us = FindObjectOfType<UpgradeSystem>();
                             us?.SellAllUpgrades(currentPlayer, prop);
                             CheckAndRefresh();
@@ -113,6 +194,11 @@ namespace PolyRisk.UI
                     list.Add(BuildRow(prop, $"{prop.PropertyName} — Mortgage",
                         prop.BasePrice * 0.5, "MORTGAGE", () =>
                         {
+                            if (isOnlinePresentation)
+                            {
+                                SubmitOnline("bankruptcy.mortgage", prop.TileIndex);
+                                return;
+                            }
                             LiquidationHelper.MortgageProperty(currentPlayer, prop);
                             CheckAndRefresh();
                         }));
@@ -125,10 +211,29 @@ namespace PolyRisk.UI
                     list.Add(BuildRow(prop, $"{prop.PropertyName} — Sell to bank",
                         prop.BasePrice * 0.5, "SELL", () =>
                         {
+                            if (isOnlinePresentation)
+                            {
+                                SubmitOnline("bankruptcy.sell", prop.TileIndex);
+                                return;
+                            }
                             LiquidationHelper.SellPropertyToBank(currentPlayer, prop);
                             CheckAndRefresh();
                         }));
             }
+
+            if (list.contentContainer.childCount == 0)
+            {
+                list.verticalScrollerVisibility = ScrollerVisibility.Hidden;
+                var empty = new Label("No assets remain to liquidate.");
+                empty.AddToClassList("empty-state-label");
+                list.Add(empty);
+            }
+
+            var btnGiveUp = root.Q<Button>("Btn_BankGiveUp");
+            if (btnGiveUp != null && !giveUpArmed) btnGiveUp.text = "GIVE UP";
+            var debtLine = root.Q<Label>("Lbl_BankDebtLine");
+            if (debtLine != null && !giveUpArmed) debtLine.text = "Outstanding debt to settle";
+            UIUXRuntime.PrepareView(root);
         }
 
         private VisualElement BuildRow(PropertyData prop, string label, double refundAmount, string btnText, System.Action onClick)
@@ -159,6 +264,7 @@ namespace PolyRisk.UI
 
         private void CheckAndRefresh()
         {
+            giveUpArmed = false;
             // Dette comblée ?
             if (currentPlayer.CurrentBalance >= currentDebt)
             {
@@ -178,6 +284,32 @@ namespace PolyRisk.UI
             RefreshUI();
         }
 
+        private void HandleGiveUp()
+        {
+            if (!giveUpArmed)
+            {
+                giveUpArmed = true;
+                var btn = root?.Q<Button>("Btn_BankGiveUp");
+                if (btn != null) btn.text = "CONFIRM";
+                var line = root?.Q<Label>("Lbl_BankDebtLine");
+                if (line != null) line.text = "This ends your game. Tap again to confirm.";
+                return;
+            }
+            if (isOnlinePresentation)
+            {
+                SubmitOnline("bankruptcy.give_up", -1);
+                return;
+            }
+            FinalizeBankruptcy();
+        }
+
+        private void SubmitOnline(string command, int tileIndex)
+        {
+            var sender = submitOnlineCommand;
+            if (sender == null || onlineToken <= 0) return;
+            sender(command, tileIndex, onlineToken);
+        }
+
         /// <summary>
         /// Fix #3 Phase F — Solde le créancier avec le cash disponible puis ferme.
         /// Appelé quand la dette est effectivement comblée.
@@ -185,79 +317,38 @@ namespace PolyRisk.UI
         private void SettleDebtAndClose()
         {
             var tm = TransactionManager.Instance;
-            if (tm != null && currentCreditor != null && currentDebt > 0)
-                tm.TransferMoney(currentPlayer, currentCreditor, currentDebt);
-            Close();
+            bool paid = tm != null && (currentCreditor == null
+                ? tm.DeductMoney(currentPlayer, currentDebt)
+                : tm.TransferMoney(currentPlayer, currentCreditor, currentDebt));
+            if (paid) Close(true);
         }
 
         private void FinalizeBankruptcy()
         {
-            Debug.LogWarning($"[Bankruptcy] Player {currentPlayer.PlayerId} déclaré en faillite. Propriétés retour banque.");
-
-            // Fix #3 Phase F — Créancier touche le cash résiduel avant que les propriétés partent en banque.
-            var tm = TransactionManager.Instance;
-            if (tm != null && currentCreditor != null)
-                tm.ProcessBankruptcyCash(currentPlayer, currentCreditor);
-
-            // Toutes les propriétés restantes → banque (OwnerID = -1)
-            foreach (var prop in currentPlayer.OwnedProperties.ToList())
-                LiquidationHelper.SellPropertyToBank(currentPlayer, prop);
-
-            currentPlayer.IsBankrupt = true;
-            GameEvents.OnPlayerBankruptcy?.Invoke(currentPlayer.PlayerId, 0);
-            Close();
+            TransactionManager.Instance.ProcessBankruptcyCash(currentPlayer, currentCreditor);
+            Close(false);
         }
 
-        private void Close()
+        private void Close(bool paid)
+        {
+            var callback = onResolved;
+            ResetAndClear();
+            callback?.Invoke(paid);
+        }
+
+        private void ResetAndClear()
         {
             isShown = false;
+            giveUpArmed = false;
             if (root != null) root.Clear();
-            // Fix #3 Phase F — Rendre la main au GameLoop qui attendait en ResolveTile
-            var turnMgr = FindObjectOfType<TurnManager>();
-            if (turnMgr != null) turnMgr.CompleteTileResolution();
-
+            onResolved = null;
             currentCreditor = null;
             currentPlayer = null;
             currentDebt = 0;
+            isOnlinePresentation = false;
+            onlineToken = 0;
+            submitOnlineCommand = null;
         }
 
-        // ─────────────────────────────────────────────────────────────────────
-        // IA : auto-liquidation respectant l'ordre strict
-        // ─────────────────────────────────────────────────────────────────────
-
-        private void ProcessAILiquidation(PlayerModel ai, double debt, PlayerModel creditor)
-        {
-            Debug.Log($"[Bankruptcy AI] Player {ai.PlayerId} doit ${debt:N0}. Auto-liquidation.");
-            var us = FindObjectOfType<UpgradeSystem>();
-
-            // 1) Vendre upgrades du plus cher au moins cher
-            foreach (var prop in ai.OwnedProperties.Where(p => p.CurrentLevel > 0).OrderByDescending(p => p.TotalUpgradeCostInvested).ToList())
-            {
-                if (ai.CurrentBalance >= debt) return;
-                us?.SellAllUpgrades(ai, prop);
-            }
-
-            // 2) Hypothéquer
-            foreach (var prop in ai.OwnedProperties.Where(p => !p.IsMortgaged).OrderBy(p => p.BasePrice).ToList())
-            {
-                if (ai.CurrentBalance >= debt) return;
-                LiquidationHelper.MortgageProperty(ai, prop);
-            }
-
-            // 3) Vendre à la banque
-            foreach (var prop in ai.OwnedProperties.ToList())
-            {
-                if (ai.CurrentBalance >= debt) return;
-                LiquidationHelper.SellPropertyToBank(ai, prop);
-            }
-
-            // Encore insolvable → faillite
-            if (ai.CurrentBalance < debt)
-            {
-                ai.IsBankrupt = true;
-                GameEvents.OnPlayerBankruptcy?.Invoke(ai.PlayerId, 0);
-                Debug.LogWarning($"[Bankruptcy AI] Player {ai.PlayerId} BANKRUPT.");
-            }
-        }
     }
 }

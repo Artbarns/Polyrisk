@@ -177,7 +177,7 @@ namespace PolyRisk.Systems
         public void ExecuteEmbargo(PlayerModel attacker, PropertyData target)
         {
             if (attacker == null || target == null || financeSystem == null || transactionManager == null) return;
-            double cost = 1.5 * financeSystem.CurrentSgo;
+            double cost = 5.0 * financeSystem.CurrentSgo;
 
             if (attacker.CurrentBalance < cost)
             {
@@ -197,6 +197,8 @@ namespace PolyRisk.Systems
             transactionManager.DeductMoney(attacker, cost);
             target.IsEmbargoed = true;
             target.EmbargoTurnsRemaining = 3;
+            GameEvents.PublishActivity("marketplace", attacker.PlayerId,
+                $"place un embargo sur {target.PropertyName}", true);
             
             Debug.Log($"[Marketplace] EMBARGO executed by Player {attacker.PlayerId} on {target.PropertyName} for {cost}. Rent is 0 for 3 turns.");
         }
@@ -225,6 +227,8 @@ namespace PolyRisk.Systems
             // Target pays 5% of cash to Bank
             double tax = target.CurrentBalance * 0.05;
             transactionManager.DeductMoney(target, tax);
+            GameEvents.PublishActivity("marketplace", attacker.PlayerId,
+                $"déclenche un audit ciblé contre Joueur {target.PlayerId + 1}", true);
             
             Debug.Log($"[Marketplace] TARGETED AUDIT executed by Player {attacker.PlayerId} on Player {target.PlayerId} for {cost}. Target lost {tax} to the bank.");
         }
@@ -257,6 +261,8 @@ namespace PolyRisk.Systems
 
                 transactionManager.DeductMoney(attacker, cost);
                 owner.DoubleBurnRateNextGo = true;
+                GameEvents.PublishActivity("marketplace", attacker.PlayerId,
+                    $"déclenche une grève chez Joueur {owner.PlayerId + 1}", true);
                 Debug.Log($"[Marketplace] PRODUCTION STRIKE executed by Player {attacker.PlayerId} targeting family owner Player {owner.PlayerId} for {cost}. Burn rate doubled next GO.");
             }
             else
@@ -296,6 +302,8 @@ namespace PolyRisk.Systems
             {
                 transactionManager.DeductMoney(attacker, cost);
                 target.SetLevel(target.CurrentLevel - 1);
+                GameEvents.PublishActivity("marketplace", attacker.PlayerId,
+                    $"sabote {target.PropertyName}", true);
                 Debug.Log($"[Marketplace] SABOTAGE executed by Player {attacker.PlayerId} on {target.PropertyName} for {cost}. Level reduced to {target.CurrentLevel}.");
             }
             else
@@ -326,6 +334,7 @@ namespace PolyRisk.Systems
             // 3. Transfer ownership
             seller.RemoveProperty(property);
             buyer.AddProperty(property);
+            AbilitySystem.PublishFamilyCompletionIfNeeded(buyer, new[] { property });
 
             UnityEngine.Debug.Log($"[Marketplace] SUCCESS: Player {buyer.PlayerId} bought {property.PropertyName} from Player {seller.PlayerId} for {price}.");
             // [ACQUISITION] diagnostic temporaire — investigation rythme d'upgrade IA (tasks/todo.md).
@@ -355,6 +364,7 @@ namespace PolyRisk.Systems
         {
             if (CurrentAuctionState != AuctionState.InvitingPlayers && CurrentAuctionState != AuctionState.Bidding) return;
             activeBids[playerId] = null; // null signifies a skipped bid
+            OnAuctionStateChanged?.Invoke(CurrentAuctionState);
             CheckAuctionProgress();
         }
 
@@ -362,7 +372,32 @@ namespace PolyRisk.Systems
         {
             if (CurrentAuctionState != AuctionState.InvitingPlayers && CurrentAuctionState != AuctionState.Bidding) return;
             activeBids[playerId] = bid;
+            OnAuctionStateChanged?.Invoke(CurrentAuctionState);
             CheckAuctionProgress();
+        }
+
+        public void ApplyReplicatedTenderState(
+            PlayerModel seller,
+            PropertyData property,
+            AuctionState state,
+            IEnumerable<KeyValuePair<int, TenderBid>> bids)
+        {
+            bool stateChanged = CurrentAuctionState != state;
+            activeBids.Clear();
+            if (bids != null)
+            {
+                foreach (var bid in bids)
+                    activeBids[bid.Key] = bid.Value;
+            }
+            CurrentTenderSeller = seller;
+            CurrentTenderProperty = property;
+            CurrentAuctionState = state;
+
+            // Inviting/Bidding can receive another offer without changing enum state.
+            // Refresh those panels so the seller sees the live response count.
+            if (stateChanged || state == AuctionState.InvitingPlayers || state == AuctionState.Bidding
+                || state == AuctionState.Reviewing)
+                OnAuctionStateChanged?.Invoke(CurrentAuctionState);
         }
 
         private void CheckAuctionProgress()
@@ -541,7 +576,9 @@ namespace PolyRisk.Systems
 
         public bool CancelTender()
         {
-            if (CurrentAuctionState != AuctionState.Reviewing) return false;
+            if (CurrentAuctionState != AuctionState.InvitingPlayers
+                && CurrentAuctionState != AuctionState.Bidding
+                && CurrentAuctionState != AuctionState.Reviewing) return false;
 
             activeBids.Clear();
             CurrentTenderSeller = null;
@@ -581,6 +618,10 @@ namespace PolyRisk.Systems
                 propLogs += prop.PropertyName + ", ";
                 Debug.LogWarning($"[ACQUISITION] {prop.PropertyName} | from=Player{bid.bidder.PlayerId} to=Player{CurrentTenderSeller.PlayerId} ({CurrentTenderSeller.Profile}) | channel=Marketplace-Tender-Swap | price=0 | turn={CurrentTenderSeller.LapsCompleted}");
             }
+
+            AbilitySystem.PublishFamilyCompletionIfNeeded(bid.bidder,
+                new[] { CurrentTenderProperty });
+            AbilitySystem.PublishFamilyCompletionIfNeeded(CurrentTenderSeller, bid.propertyOffers);
 
             if (bid.propertyOffers.Count > 0)
             {

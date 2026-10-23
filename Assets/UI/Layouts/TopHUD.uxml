@@ -6,34 +6,46 @@
 >
     <Style src="project://database/Assets/UI/Styles/Theme.uss" />
 
-    <!-- Barre HUD : CAPITAL | NET WORTH | TURN | MARKET -->
-    <ui:VisualElement class="top-hud-bar" name="TopHUD_Bar" picking-mode="Ignore">
-
-        <ui:VisualElement class="top-hud-segment">
-            <ui:Label text="CAPITAL:" class="top-hud-label" />
-            <ui:Label name="Lbl_Capital" text="$18,000" class="top-hud-value top-hud-value--green" />
+    <ui:VisualElement class="top-hud-bar" name="TopHUD_Bar">
+        <ui:VisualElement class="top-hud-brand-row">
+            <ui:VisualElement class="top-hud-brand-copy">
+                <ui:Label text="POLYRISK" class="top-hud-brand" />
+                <ui:Label text="CONSOLE / 01" class="top-hud-edition" />
+            </ui:VisualElement>
+            <ui:Button name="Btn_GameMenu" tooltip="Game menu" class="top-hud-menu-button">
+                <ui:VisualElement class="top-hud-menu-dot" />
+                <ui:VisualElement class="top-hud-menu-dot" />
+                <ui:VisualElement class="top-hud-menu-dot" />
+            </ui:Button>
         </ui:VisualElement>
 
-        <ui:VisualElement class="top-hud-separator" />
-
-        <ui:VisualElement class="top-hud-segment">
-            <ui:Label text="NET WORTH:" class="top-hud-label" />
-            <ui:Label name="Lbl_NetWorth" text="$18,000" class="top-hud-value top-hud-value--orange" />
+        <ui:VisualElement class="top-hud-balances">
+            <ui:VisualElement class="top-hud-segment">
+                <ui:Label text="CAPITAL" class="top-hud-label" />
+                <ui:Label name="Lbl_Capital" text="18 000 $" class="top-hud-value top-hud-value--green" />
+            </ui:VisualElement>
+            <ui:VisualElement class="top-hud-segment">
+                <ui:Label text="PATRIMOINE" class="top-hud-label" />
+                <ui:Label name="Lbl_NetWorth" text="18 000 $" class="top-hud-value top-hud-value--gold" />
+            </ui:VisualElement>
+            <ui:VisualElement class="top-hud-segment top-hud-segment--turn">
+                <ui:Label text="TOUR" class="top-hud-label" />
+                <ui:Label name="Lbl_Turn" text="1 / 50" class="top-hud-value" />
+            </ui:VisualElement>
         </ui:VisualElement>
 
-        <ui:VisualElement class="top-hud-separator" />
-
-        <ui:VisualElement class="top-hud-segment">
-            <ui:Label text="TURN:" class="top-hud-label" />
-            <ui:Label name="Lbl_Turn" text="1/50" class="top-hud-value" />
+        <ui:VisualElement class="top-hud-market-row">
+            <ui:VisualElement class="top-hud-market-copy">
+                <ui:Label name="Lbl_Market" text="MARCHÉ STABLE" class="top-hud-value top-hud-market-value top-hud-value--green" />
+            </ui:VisualElement>
+            <ui:VisualElement class="player-roster" name="PlayerRoster" picking-mode="Ignore" />
         </ui:VisualElement>
+    </ui:VisualElement>
 
-        <ui:VisualElement class="top-hud-separator" />
 
-        <ui:VisualElement class="top-hud-segment">
-            <ui:Label text="MARKET:" class="top-hud-label" />
-            <ui:Label name="Lbl_Market" text="STABLE" class="top-hud-value top-hud-value--green" />
-        </ui:VisualElement>
-
+    <ui:VisualElement class="activity-feed" name="ActivityFeed" picking-mode="Ignore">
+        <ui:Label text="LIVE" class="activity-feed-kicker" />
+        <ui:Label name="Lbl_LocalPlayerStatus" class="player-status-badge player-status-badge--immunity" text="PHARMA IMMUNITY · 1 TURN" picking-mode="Ignore" />
+        <ui:VisualElement class="activity-feed-stack" name="ActivityFeedStack" picking-mode="Ignore" />
     </ui:VisualElement>
 </ui:UXML>

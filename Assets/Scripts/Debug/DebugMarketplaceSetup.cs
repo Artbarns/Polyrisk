@@ -43,6 +43,7 @@ namespace PolyRisk.DebugTools
 
         private void Update()
         {
+            if (!Debug.isDebugBuild) return;
             if (Input.GetKeyDown(KeyCode.F1)) TriggerMarketplace(humanLands: true);
             if (Input.GetKeyDown(KeyCode.F2)) TriggerMarketplace(humanLands: false);
         }
@@ -164,6 +165,8 @@ namespace PolyRisk.DebugTools
 
         private void OnGUI()
         {
+            if (!Application.isEditor) return;
+            if (!Debug.isDebugBuild) return;
             GUI.color = new Color(1f, 0.8f, 0f, 0.9f);
             GUI.Label(new Rect(10, 10, 460, 20),
                 "[DEBUG Marketplace] F1 = Humain atterrit sur case 20  |  F2 = Adversaire atterrit");

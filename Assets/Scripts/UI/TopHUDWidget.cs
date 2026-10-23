@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 using PolyRisk.Core;
 using PolyRisk.Systems;
 using PolyRisk.Multiplayer;
+using PolyRisk.Visuals;
 
 namespace PolyRisk.UI
 {
@@ -41,6 +43,10 @@ namespace PolyRisk.UI
         private const float MoneyAnimationSeconds = 0.45f;
         private const float MoneyPaintIntervalSeconds = 0.05f;
         private VisualElement activityFeed, activityFeedStack;
+        private VisualElement playerRoster;
+        private BoardDicePresenter boardDice;
+        private Label lblLocalPlayerStatus;
+        private bool localPlayerStatusVisible;
         private readonly List<GameActivityEntry> pendingActivities = new List<GameActivityEntry>();
         // Wide layouts show two messages side by side; narrow layouts keep one priority message.
         private const int MaxVisibleActivities = 2;
@@ -52,7 +58,7 @@ namespace PolyRisk.UI
             GameEvents.OnTurnStarted    += OnTurnStarted;
             GameEvents.OnBalanceChanged += OnBalanceChanged;
             GameEvents.OnPropertyPurchased += OnPropertyPurchased;
-            GameEvents.OnActivityPublished += OnActivityPublished;
+            GameEvents.OnGameEventPublished += OnGameEventPublished;
             UpdateHumanPlayerUI();
         }
 
@@ -61,7 +67,8 @@ namespace PolyRisk.UI
             GameEvents.OnTurnStarted    -= OnTurnStarted;
             GameEvents.OnBalanceChanged -= OnBalanceChanged;
             GameEvents.OnPropertyPurchased -= OnPropertyPurchased;
-            GameEvents.OnActivityPublished -= OnActivityPublished;
+            GameEvents.OnGameEventPublished -= OnGameEventPublished;
+            boardDice?.Cancel();
             if (moneyAnimation != null) StopCoroutine(moneyAnimation);
             moneyAnimation = null;
             moneyInitialized = false;
@@ -73,9 +80,46 @@ namespace PolyRisk.UI
             UpdateHumanPlayerUI();
         }
 
+        private static void UpdateNetworkCommandNotice(VisualElement root, string error)
+        {
+            var notice = root.Q<VisualElement>("NetworkCommandNotice");
+            if (string.IsNullOrWhiteSpace(error))
+            {
+                notice?.RemoveFromHierarchy();
+                return;
+            }
+
+            if (notice != null) return;
+            notice = new VisualElement { name = "NetworkCommandNotice" };
+            notice.AddToClassList("network-command-notice");
+            notice.Add(new Label("No server confirmation. Retry the same action to resync."));
+            root.Add(notice);
+        }
+
+        public static void ReportNetworkCommandStatus(string error)
+        {
+            foreach (var document in FindObjectsOfType<UIDocument>(true))
+            {
+                var root = document.rootVisualElement;
+                if (root != null && root.Q<VisualElement>("TopHUD_Bar") != null)
+                    UpdateNetworkCommandNotice(root, error ?? string.Empty);
+            }
+        }
+
+        public static void SetBoardIdentityOverlayVisible(bool visible)
+        {
+            foreach (var document in FindObjectsOfType<UIDocument>(true))
+            {
+                var overlay = document.rootVisualElement?.Q<VisualElement>("BoardTileIdentityOverlay");
+                if (overlay != null)
+                    overlay.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
+            }
+        }
+
         private void TryBindUIToolkit()
         {
             if (uiDocument == null) return;
+            UIUXRuntime.PrepareDocument(uiDocument);
             var root = uiDocument.rootVisualElement;
             if (root == null) return;
 
@@ -85,14 +129,27 @@ namespace PolyRisk.UI
 
             UIUXRuntime.PrepareRoot(root);
             BoardTileOverlayWidget.Mount(root);
+            // Mount event cards after the tile badges so transient results stay legible.
+            MountDiceRollStage(root);
+            var cockpit = FindObjectOfType<ActionButtonsWidget>(true);
+            if (cockpit?.DiceHost != null) AttachDiceToCockpit(cockpit.DiceHost);
             root.RegisterCallback<GeometryChangedEvent>(_ => TrimActivityRows());
 
             lblCapital  = root.Q<Label>("Lbl_Capital");
             lblNetWorth = root.Q<Label>("Lbl_NetWorth");
             lblTurn     = root.Q<Label>("Lbl_Turn");
             lblMarket   = root.Q<Label>("Lbl_Market");
+            playerRoster = root.Q<VisualElement>("PlayerRoster");
             activityFeed = root.Q<VisualElement>("ActivityFeed");
             activityFeedStack = root.Q<VisualElement>("ActivityFeedStack");
+            lblLocalPlayerStatus = root.Q<Label>("Lbl_LocalPlayerStatus");
+            var gameMenuButton = root.Q<Button>("Btn_GameMenu");
+            if (gameMenuButton != null)
+                gameMenuButton.clicked += () =>
+                {
+                    var menu = MainMenuController.Instance ?? FindObjectOfType<MainMenuController>();
+                    menu?.ShowInGameMenu();
+                };
 
             if (activityFeedStack != null && pendingActivities.Count > 0)
             {
@@ -100,9 +157,24 @@ namespace PolyRisk.UI
                     AddActivityRow(entry);
                 pendingActivities.Clear();
             }
+            UpdatePlayerRoster();
         }
 
-        private void OnTurnStarted(int playerId) => UpdateHumanPlayerUI();
+        private void MountDiceRollStage(VisualElement root)
+        {
+            boardDice=GetComponent<BoardDicePresenter>();
+            if(boardDice==null)boardDice=gameObject.AddComponent<BoardDicePresenter>();
+        }
+        // Kept for the existing cockpit startup binding; dice now live on the board.
+        public void AttachDiceToCockpit(VisualElement host) { }
+        private void OnGameEventPublished(GameEvent gameEvent) => UpdatePlayerRoster();
+        public bool PresentConfirmedDice(GameEvent gameEvent) => isActiveAndEnabled && boardDice!=null && boardDice.Present(gameEvent);
+
+        private void OnTurnStarted(int playerId)
+        {
+            UpdateHumanPlayerUI();
+            UpdatePlayerRoster();
+        }
 
         private void OnBalanceChanged(int playerId, double newAmount)
         {
@@ -110,6 +182,7 @@ namespace PolyRisk.UI
                 ? OnlineGameController.Instance.LocalSeatIndex
                 : 0;
             if (playerId == localPlayerId) UpdateHumanPlayerUI();
+            UpdatePlayerRoster();
         }
 
         private void OnPropertyPurchased(int playerId, string propertyName)
@@ -123,6 +196,10 @@ namespace PolyRisk.UI
         private void OnActivityPublished(GameActivityEntry entry)
         {
             if (entry == null) return;
+            int localPlayerId = OnlineGameController.Instance != null && OnlineGameController.Instance.IsOnlineGame
+                ? OnlineGameController.Instance.LocalSeatIndex
+                : 0;
+            if (entry.playerId == localPlayerId) UpdateHumanPlayerUI();
             if (activityFeedStack == null)
             {
                 pendingActivities.Add(entry);
@@ -136,19 +213,23 @@ namespace PolyRisk.UI
         private void AddActivityRow(GameActivityEntry entry)
         {
             if (activityFeed == null || activityFeedStack == null) return;
-            activityFeed.style.display = DisplayStyle.Flex;
+            RefreshActivityFeedVisibility();
 
-            var row = new Label($"{ResolvePlayerName(entry.playerId)}  {entry.text}");
+            int firstDie = 0;
+            int secondDie = 0;
+            bool isDiceResult = string.Equals(entry.kind, "dice", StringComparison.OrdinalIgnoreCase)
+                && TryReadDice(entry.text, out firstDie, out secondDie);
+            var row = isDiceResult ? BuildDiceActivityRow(entry, firstDie, secondDie)
+                : new Label($"{ResolvePlayerName(entry.playerId)}  {FormatActivityText(entry.text)}");
             row.pickingMode = PickingMode.Ignore;
             row.AddToClassList("activity-feed-item");
             row.AddToClassList("activity-feed-item--" + SanitizeKind(entry.kind));
-            // Decisions must survive the automatic turn/dice/movement notifications.
-            if (entry.emphasis || (entry.kind != "turn" && entry.kind != "dice" && entry.kind != "move"))
+            // The roll result must survive the near-immediate landing event on narrow screens.
+            if (entry.emphasis || (entry.kind != "turn" && entry.kind != "move"))
                 row.AddToClassList("activity-feed-item--priority");
             if (entry.emphasis) row.AddToClassList("activity-feed-item--emphasis");
             row.AddToClassList("activity-feed-item--enter");
             activityFeedStack.Insert(0, row);
-
             TrimActivityRows();
 
             row.schedule.Execute(() => row.RemoveFromClassList("activity-feed-item--enter")).StartingIn(20);
@@ -157,9 +238,65 @@ namespace PolyRisk.UI
             row.schedule.Execute(() =>
             {
                 row.RemoveFromHierarchy();
-                if (activityFeedStack.childCount == 0)
-                    activityFeed.style.display = DisplayStyle.None;
+                RefreshActivityFeedVisibility();
             }).StartingIn(visibleMs + 260);
+        }
+
+        private VisualElement BuildDiceActivityRow(GameActivityEntry entry, int firstDie, int secondDie)
+        {
+            var row = new VisualElement();
+            row.AddToClassList("activity-dice-result");
+            var player = new Label(ResolvePlayerName(entry.playerId));
+            player.AddToClassList("activity-dice-player");
+            row.Add(player);
+
+            var dice = new VisualElement();
+            dice.AddToClassList("activity-dice-pair");
+            dice.Add(MakeDie(firstDie));
+            var plus = new Label("+");
+            plus.AddToClassList("activity-dice-plus");
+            dice.Add(plus);
+            dice.Add(MakeDie(secondDie));
+            row.Add(dice);
+
+            var total = new Label($"{firstDie + secondDie} STEPS");
+            total.AddToClassList("activity-dice-total");
+            row.Add(total);
+            return row;
+        }
+
+        private static Label MakeDie(int value)
+        {
+            var die = new Label(value.ToString(CultureInfo.InvariantCulture));
+            die.AddToClassList("activity-die");
+            die.AddToClassList("activity-die--enter");
+            die.schedule.Execute(() => die.RemoveFromClassList("activity-die--enter")).StartingIn(20);
+            return die;
+        }
+
+        private static bool TryReadDice(string text, out int firstDie, out int secondDie)
+        {
+            firstDie = secondDie = 0;
+            if (string.IsNullOrWhiteSpace(text)) return false;
+            int start = text.IndexOf(' ');
+            int plus = text.IndexOf('+', start >= 0 ? start : 0);
+            if (start < 0 || plus < 0) return false;
+            int middleDot = text.IndexOf('·', plus + 1);
+            if (middleDot < 0) middleDot = text.Length;
+            return int.TryParse(text.Substring(start + 1, plus - start - 1).Trim(), NumberStyles.Integer,
+                    CultureInfo.InvariantCulture, out firstDie)
+                && int.TryParse(text.Substring(plus + 1, middleDot - plus - 1).Trim(), NumberStyles.Integer,
+                    CultureInfo.InvariantCulture, out secondDie)
+                && firstDie >= 1 && firstDie <= 6 && secondDie >= 1 && secondDie <= 6;
+        }
+
+        private void RefreshActivityFeedVisibility()
+        {
+            if (activityFeed == null) return;
+            bool hasActivity = activityFeedStack != null && activityFeedStack.childCount > 0;
+            activityFeed.style.display = localPlayerStatusVisible || hasActivity
+                ? DisplayStyle.Flex
+                : DisplayStyle.None;
         }
 
         private void TrimActivityRows()
@@ -200,7 +337,149 @@ namespace PolyRisk.UI
             if (lobbyPlayers != null && playerId >= 0 && playerId < lobbyPlayers.Length
                 && !string.IsNullOrWhiteSpace(lobbyPlayers[playerId].displayName))
                 return lobbyPlayers[playerId].displayName;
-            return playerId >= 0 ? $"Joueur {playerId + 1}" : "Partie";
+            return playerId >= 0 ? $"Player {playerId + 1}" : "Game";
+        }
+
+        private void UpdatePlayerRoster()
+        {
+            if (playerRoster == null || turnManager == null) return;
+            var players = turnManager.Players;
+            playerRoster.Clear();
+            if (players == null || players.Count < 2)
+            {
+                playerRoster.style.display = DisplayStyle.None;
+                return;
+            }
+
+            playerRoster.style.display = DisplayStyle.Flex;
+            int localPlayerId = OnlineGameController.Instance != null && OnlineGameController.Instance.IsOnlineGame
+                ? OnlineGameController.Instance.LocalSeatIndex : 0;
+            int activePlayerId = turnManager.CurrentPlayer != null ? turnManager.CurrentPlayer.PlayerId : -1;
+            double sgo = turnManager.financeSystem != null ? turnManager.financeSystem.CurrentSgo : 0;
+
+            foreach (var player in players)
+            {
+                if (player == null) continue;
+                if (playerRoster.childCount > 0)
+                {
+                    var separator = new Label("·");
+                    separator.AddToClassList("player-roster-separator");
+                    separator.pickingMode = PickingMode.Ignore;
+                    playerRoster.Add(separator);
+                }
+                string displayName = player.PlayerId == localPlayerId
+                    ? "Vous"
+                    : ShortPlayerName(ResolvePlayerName(player.PlayerId));
+                var chip = new VisualElement();
+                chip.AddToClassList("player-roster-chip");
+                chip.EnableInClassList("player-roster-chip--active", player.PlayerId == activePlayerId);
+                chip.EnableInClassList("player-roster-chip--local", player.PlayerId == localPlayerId);
+                chip.EnableInClassList("player-roster-chip--bankrupt", player.IsBankrupt);
+                var wealthStatus = WealthStatusHelper.GetStatus(player, sgo);
+                chip.tooltip = player.IsBankrupt
+                    ? displayName + " · BANKRUPT"
+                    : displayName + " · " + WealthStatusHelper.GetLabel(wealthStatus);
+
+                var avatar = new Label(GetPlayerInitial(displayName));
+                avatar.AddToClassList("player-roster-avatar");
+                avatar.style.backgroundColor = player.IsBankrupt
+                    ? new Color(0.25f, 0.27f, 0.31f, 1f)
+                    : PlayerVisualManager.GetPlayerColor(player.PlayerId);
+                chip.Add(avatar);
+
+                var identity = new VisualElement();
+                identity.AddToClassList("player-roster-identity");
+                var name = new Label(displayName);
+                name.AddToClassList("player-roster-name");
+                identity.Add(name);
+                string statusText = player.IsBankrupt ? "OUT" : WealthStatusHelper.GetLabel(wealthStatus);
+                var status = new Label(statusText);
+                status.AddToClassList("player-roster-wealth");
+                status.AddToClassList("player-roster-wealth--" + statusText.ToLowerInvariant());
+                identity.Add(status);
+                chip.Add(identity);
+                playerRoster.Add(chip);
+            }
+        }
+
+        private static string GetPlayerInitial(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name)) return "?";
+            return name.Trim().Substring(0, 1).ToUpperInvariant();
+        }
+
+        private static string ShortPlayerName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name)) return "PLAYER";
+            string trimmed = name.Trim();
+            if (trimmed.StartsWith("Player ", StringComparison.OrdinalIgnoreCase)
+                && int.TryParse(trimmed.Substring(7), NumberStyles.Integer, CultureInfo.InvariantCulture, out int playerNumber))
+                return "P" + playerNumber.ToString(CultureInfo.InvariantCulture);
+            return trimmed.Length <= 7 ? trimmed.ToUpperInvariant() : trimmed.Substring(0, 6).ToUpperInvariant() + "…";
+        }
+
+        public static string FormatActivityText(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text)) return string.Empty;
+
+            // Activity entries are also stored in replicated snapshots. Translate at the
+            // presentation edge so old/reconnected sessions follow the English UI too.
+            if (text == "commence son tour") return "starts their turn";
+            if (text.StartsWith("arrive sur ", StringComparison.Ordinal)) return "lands on " + text.Substring(11);
+            if (text.StartsWith("passe l’appel d’offres", StringComparison.Ordinal)) return "passes on the tender";
+            if (text.StartsWith("passe sur ", StringComparison.Ordinal)) return "passes on " + text.Substring(10);
+            if (text == "passe") return "passes";
+            if (text.StartsWith("lance une OPA sur ", StringComparison.Ordinal))
+                return "launches a hostile takeover of " + text.Substring(18).Replace(" pour ", " for ");
+            if (text.StartsWith("lance ", StringComparison.Ordinal)) return "rolls " + text.Substring(6);
+            if (text.StartsWith("achète ", StringComparison.Ordinal)) return "buys " + text.Substring(7);
+            if (text.StartsWith("paie ", StringComparison.Ordinal))
+                return "pays " + text.Substring(5).Replace(" de loyer · ", " in rent · ")
+                    .Replace(" et quitte l’Audit fiscal", " and leaves Tax Audit");
+            if (text.StartsWith("règle sa dette de ", StringComparison.Ordinal))
+                return "settles a debt of " + text.Substring(18);
+            if (text.StartsWith("règle ", StringComparison.Ordinal))
+                return "pays " + text.Substring(6).Replace(" de loyer · ", " in rent · ");
+            if (text.StartsWith("investit ", StringComparison.Ordinal))
+                return "invests " + text.Substring(9).Replace(" pour ", " for ").Replace(" tour", " turn");
+            if (text.StartsWith("perd son investissement de ", StringComparison.Ordinal))
+                return "loses their investment of " + text.Substring(27);
+            if (text.StartsWith("récupère ", StringComparison.Ordinal))
+                return "receives " + text.Substring(9).Replace(" en Bourse", " from the stock market");
+            if (text == "est en faillite") return "is bankrupt";
+            if (text.StartsWith("vend les améliorations de ", StringComparison.Ordinal))
+                return "sells upgrades on " + text.Substring(26);
+            if (text.StartsWith("hypothèque ", StringComparison.Ordinal)) return "mortgages " + text.Substring(11);
+            if (text.StartsWith("vend ", StringComparison.Ordinal)) return "sells " + text.Substring(5).Replace(" à la banque", " to the bank");
+            if (text.StartsWith("quitte la Marketplace", StringComparison.Ordinal)) return "leaves the Marketplace";
+            if (text.StartsWith("annule l’appel d’offres", StringComparison.Ordinal)) return "cancels the tender";
+            if (text.StartsWith("met ", StringComparison.Ordinal)) return "lists " + text.Substring(4).Replace(" en appel d’offres", " for tender");
+            if (text == "soumet une offre") return "places a bid";
+            if (text.StartsWith("remporte ", StringComparison.Ordinal)) return "wins " + text.Substring(9);
+            if (text.StartsWith("active ", StringComparison.Ordinal)) return "activates " + text.Substring(7);
+            if (text.StartsWith("complète la famille ", StringComparison.Ordinal))
+                return "completes the " + text.Substring(20).Replace(" · pouvoir débloqué", " family · power unlocked");
+            if (text.StartsWith("cycle ", StringComparison.Ordinal))
+                return "market cycle " + text.Substring(6).Replace(" actif pour ", " active for ").Replace(" tours", " turns");
+            if (text == "retour à un marché normal") return "returns to a normal market";
+            if (text.StartsWith("gagne ", StringComparison.Ordinal)) return "wins " + text.Substring(6).Replace(" au Casino", " at the Casino");
+            if (text.StartsWith("perd ", StringComparison.Ordinal)) return "loses " + text.Substring(5).Replace(" au Casino", " at the Casino");
+            if (text == "tente de sortir de l’Audit fiscal") return "tries to leave Tax Audit";
+            if (text == "peut activer Transit Express") return "can activate Express Transit";
+            if (text.StartsWith("utilise Transit Express · case ", StringComparison.Ordinal))
+                return "uses Express Transit · tile " + text.Substring(31);
+            if (text == "reste sur son Hub") return "stays at their Hub";
+            if (text == "reste en Audit fiscal") return "stays in Tax Audit";
+            if (text == "utilise sa carte de sortie d’Audit") return "uses a Tax Audit exit card";
+            if (text.StartsWith("pioche Venture #", StringComparison.Ordinal)) return "draws Venture #" + text.Substring(16);
+            if (text.StartsWith("améliore ", StringComparison.Ordinal)) return "upgrades " + text.Substring(9).Replace(" · niveau ", " · level ");
+            if (text.StartsWith("place un embargo sur ", StringComparison.Ordinal)) return "places an embargo on " + text.Substring(21);
+            if (text.StartsWith("déclenche un audit ciblé contre Joueur ", StringComparison.Ordinal))
+                return "launches a targeted audit against Player " + text.Substring(39);
+            if (text.StartsWith("déclenche une grève chez Joueur ", StringComparison.Ordinal))
+                return "starts a strike at Player " + text.Substring(32);
+            if (text.StartsWith("sabote ", StringComparison.Ordinal)) return "sabotages " + text.Substring(7);
+            return text;
         }
 
         private static string SanitizeKind(string kind)
@@ -223,6 +502,8 @@ namespace PolyRisk.UI
                 case "venture":
                 case "investment":
                 case "cycle":
+                case "network":
+                case "dice":
                     return kind.ToLowerInvariant();
                 default:
                     return "info";
@@ -239,6 +520,7 @@ namespace PolyRisk.UI
                 : 0;
             var humanPlayer = turnManager.GetPlayerById(localPlayerId);
             if (humanPlayer == null) return;
+            UpdateLocalPlayerStatus(humanPlayer);
 
             // Net Worth = cash + valeur d'achat propriétés
             double netWorth = turnManager.GetNetWorth(humanPlayer);
@@ -246,7 +528,7 @@ namespace PolyRisk.UI
 
             // Turn x/MAX (tour de plateau global pour le joueur humain)
             int currentTurn = humanPlayer.LapsCompleted + 1;
-            string turnStr = $"{currentTurn}/{maxTurns}";
+            string turnStr = $"{currentTurn} / {maxTurns}";
             if (lblTurn != null) lblTurn.text = turnStr;
 
             // Market state (cycle macro)
@@ -255,6 +537,20 @@ namespace PolyRisk.UI
                 : "STABLE";
             if (string.IsNullOrEmpty(marketState)) marketState = "STABLE";
             ApplyMarketStyling(marketState);
+        }
+
+        private void UpdateLocalPlayerStatus(PlayerModel player)
+        {
+            if (lblLocalPlayerStatus == null) return;
+            bool hasPharmaImmunity = player.ImmunityTurnsRemaining > 0;
+            localPlayerStatusVisible = hasPharmaImmunity;
+            lblLocalPlayerStatus.text = hasPharmaImmunity
+                ? $"PHARMA IMMUNITY · {player.ImmunityTurnsRemaining} TURN{(player.ImmunityTurnsRemaining == 1 ? string.Empty : "S")}"
+                : string.Empty;
+            lblLocalPlayerStatus.style.display = hasPharmaImmunity
+                ? DisplayStyle.Flex
+                : DisplayStyle.None;
+            RefreshActivityFeedVisibility();
         }
 
         private void UpdateMoneyDisplay(double capital, double netWorth)
@@ -312,15 +608,15 @@ namespace PolyRisk.UI
 
         private void PaintMoney()
         {
-            if (lblCapital != null) lblCapital.text = CurrencyFormatter.Format(shownCapital);
-            if (lblNetWorth != null) lblNetWorth.text = CurrencyFormatter.Format(shownNetWorth);
+            if (lblCapital != null) lblCapital.text = CurrencyFormatter.FormatExact(shownCapital);
+            if (lblNetWorth != null) lblNetWorth.text = CurrencyFormatter.FormatExact(shownNetWorth);
         }
 
         /// <summary>Applique la couleur néon adaptée selon BOOM/CRASH/WAR/NORMAL/STABLE.</summary>
         private void ApplyMarketStyling(string marketState)
         {
             if (lblMarket == null) return;
-            lblMarket.text = marketState;
+            lblMarket.text = "MARCHÉ " + marketState.ToUpperInvariant();
 
             // Nettoyer
             lblMarket.RemoveFromClassList("top-hud-value--green");

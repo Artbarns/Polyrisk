@@ -56,6 +56,21 @@ namespace PolyRisk.Core
         public void SkipOptionalAction()
         {
             Debug.Log("Player chose to SKIP the action.");
+            var player = turnManager != null ? turnManager.CurrentPlayer : null;
+            var tile = player != null && BoardManager.Instance != null
+                ? BoardManager.Instance.GetTileAt(turnManager.GetPlayerPosition(player))
+                : null;
+            string subject = tile?.Data != null && !string.IsNullOrWhiteSpace(tile.Data.TileName)
+                ? $" sur {tile.Data.TileName}"
+                : string.Empty;
+            if (player != null)
+            {
+                GameEvents.PublishActivity("pass", player.PlayerId, "passe" + subject);
+                if (tile != null)
+                    GameEvents.PublishGameEvent(GameEventPhase.Resolution,
+                        GameEventKind.PropertyPassed, GameEventPriority.Normal,
+                        player.PlayerId, tileId: tile.TileIndex);
+            }
             turnManager.CompleteTileResolution();
         }
 
@@ -147,45 +162,46 @@ namespace PolyRisk.Core
                             }
 
                             // Hijacking Logic
-                            if (propData.HijackedBy != null && propData.HijackTurnsRemaining > 0)
+                            if (propData.HijackedBy != null && !propData.HijackedBy.IsBankrupt && propData.HijackTurnsRemaining > 0)
                             {
                                 receiver = propData.HijackedBy;
                                 Debug.Log($"<color=orange>HIJACKED!</color> Rent for {propData.PropertyName} diverted to Player {receiver.PlayerId}.");
                             }
 
                             bool paid;
+                            long rentCorrelationId = GameEvents.CreateCorrelationId();
 
                             // Cyber-Sabotage (Armement Ultime) : 25% au hijacker, 75% au propriétaire
-                            if (propData.HijackedBy != null && propData.HijackTurnsRemaining > 0)
+                            if (propData.HijackedBy != null && !propData.HijackedBy.IsBankrupt && propData.HijackTurnsRemaining > 0)
                             {
                                 double stolenPortion = rent * 0.25;
                                 double ownerPortion  = rent - stolenPortion;
-                                bool s1 = transactionManager.TransferMoney(player, propData.HijackedBy, stolenPortion);
-                                bool s2 = transactionManager.TransferMoney(player, owner, ownerPortion);
-                                paid = s1 || s2;
+                                paid = player.CurrentBalance >= rent;
+                                if (paid)
+                                {
+                                    transactionManager.TransferMoney(player, propData.HijackedBy,
+                                        stolenPortion, GameEventReason.Rent, rentCorrelationId, propData.TileIndex);
+                                    transactionManager.TransferMoney(player, owner,
+                                        ownerPortion, GameEventReason.Rent, rentCorrelationId, propData.TileIndex);
+                                }
                                 Debug.Log($"[Hijack] {propData.PropertyName} : {CurrencyFormatter.Format(stolenPortion)} → Player {propData.HijackedBy.PlayerId} | {CurrencyFormatter.Format(ownerPortion)} → Player {owner.PlayerId}");
                             }
                             else
                             {
-                                paid = transactionManager.TransferMoney(player, receiver, rent);
+                                paid = transactionManager.TransferMoney(player, receiver, rent,
+                                    GameEventReason.Rent, rentCorrelationId, propData.TileIndex);
                             }
 
                             if (paid)
                             {
                                 propData.WasVisitedSinceLastGO = true;
+                                GameEvents.PublishActivity("rent", player.PlayerId,
+                                    $"paie {CurrencyFormatter.Format(rent)} de loyer · {propData.PropertyName}",
+                                    rent >= financeSystem.CurrentSgo * 5.0);
                                 Debug.Log($"Primary action executed: Paid {rent} Rent to {receiver.PlayerId} for {propData.PropertyName}");
                                 
-                                // Decrement Hijack turns ONLY if payment occurred? Or regardless?
-                                // Prompt: "Ensure ExecutePrimaryAction decrements HijackTurnsRemaining after a hijacked rent is paid"
-                                if (propData.HijackedBy != null)
-                                {
-                                    propData.HijackTurnsRemaining--;
-                                    if (propData.HijackTurnsRemaining <= 0)
-                                    {
-                                        propData.HijackedBy = null;
-                                        Debug.Log($"Hijack on {propData.PropertyName} has expired.");
-                                    }
-                                }
+                                // La durée est exprimée en tours du propriétaire et décrémentée au GO
+                                // par FinanceSystem. Un même tour peut donc intercepter plusieurs loyers.
                             }
                             else
                             {
@@ -195,23 +211,24 @@ namespace PolyRisk.Core
                                 // LogWarning et non Log : pendant un batch stress test, StressTestRunner
                                 // met Debug.unityLogger.filterLogType = LogType.Warning pour toute la
                                 // boucle — un simple Debug.Log ici serait invisible dans l'export console.
-                                Debug.LogWarning($"[BANKRUPTCY-TRACE] Player {player.PlayerId} ({player.Profile}) died turn {player.LapsCompleted} | cash_before={player.CurrentBalance} | rent={rent} | tile={propData.PropertyName} lvl{propData.CurrentLevel} | props_owned={player.OwnedProperties.Count}");
+                                Debug.LogWarning($"[BANKRUPTCY-TRACE] Player {player.PlayerId} ({player.Profile}) insolvent at lap {player.LapsCompleted} | cash_before={player.CurrentBalance} | rent={rent} | tile={propData.PropertyName} lvl{propData.CurrentLevel} | props_owned={player.OwnedProperties.Count}");
                                 // Fix #3 Phase F — Insolvabilité asynchrone.
                                 // Le controller prend la main : IA synchrone (liquide et paie immédiatement),
                                 // humain via UI (paie au close du BankruptcyScreen).
-                                GameEvents.OnInsolvency?.Invoke(player, rent, receiver);
-
-                                if (player.IsAI)
-                                {
-                                    // IA : ProcessAILiquidation est synchrone. À sa sortie on solde le créancier.
-                                    if (player.CurrentBalance >= rent)
-                                        transactionManager.TransferMoney(player, receiver, rent);
-                                    else
-                                        transactionManager.ProcessBankruptcyCash(player, receiver);
-                                    turnManager.CompleteTileResolution();
-                                }
-                                // Humain : le BankruptcyScreenController appellera CompleteTileResolution
-                                // à la fermeture du panel. On ne complète PAS ici.
+                                var hijacker = propData.HijackedBy;
+                                bool diverted = hijacker != null && !hijacker.IsBankrupt && propData.HijackTurnsRemaining > 0;
+                                var creditor = diverted ? owner : receiver;
+                                double creditorBefore = creditor.CurrentBalance;
+                                transactionManager.PayRequired(player, rent, creditor, paidDebt =>
+                                    CompleteRentSettlement(player, propData, creditor,
+                                        diverted ? hijacker : null, creditorBefore, paidDebt),
+                                    new DebtSettlementContext
+                                    {
+                                        kind = "rent",
+                                        propertyTileIndex = propData.TileIndex,
+                                        hijackerPlayerId = diverted ? hijacker.PlayerId : -1,
+                                        creditorBalanceBefore = creditorBefore
+                                    });
                                 return;
                             }
 
@@ -276,17 +293,19 @@ namespace PolyRisk.Core
                     else
                     {
                         Debug.LogError("RulesEngine: VentureSystem reference is missing!");
+                        turnManager.CompleteTileResolution();
                     }
-                    turnManager.CompleteTileResolution();
                     return;
 
                 case TileType.StockMarket:
                     Debug.Log($"Primary action executed: Stock Market Investment");
-                    // Simulate an investment since we have no UI yet
+                    // Fallback for AI/legacy callers. Human players use the investment picker.
                     double investment = 1000;
                     int duration = 3; // Defaulting to medium term
-                    financeSystem.InvestInStockMarket(player, investment, duration);
-                    turnManager.CompleteTileResolution();
+                    if (financeSystem.InvestInStockMarket(player, investment, duration))
+                        turnManager.CompleteTileResolution();
+                    else
+                        SkipOptionalAction();
                     return;
 
                 case TileType.Tax:
@@ -346,6 +365,14 @@ namespace PolyRisk.Core
             {
                 player.AddProperty(property);
                 GameEvents.OnPropertyPurchased?.Invoke(player.PlayerId, property.PropertyName);
+                GameEvents.PublishGameEvent(GameEventPhase.Resolution,
+                    GameEventKind.PropertyPurchased, GameEventPriority.Major,
+                    player.PlayerId, tileId: property.TileIndex, amount: -property.BasePrice,
+                    reason: GameEventReason.PropertyPurchase);
+                GameEvents.PublishActivity("purchase", player.PlayerId,
+                    $"achète {property.PropertyName} · {property.BasePrice:N0} $", true);
+
+                AbilitySystem.PublishFamilyCompletionIfNeeded(player, new[] { property });
 
                 Debug.Log($"Player {player.PlayerId} successfully purchased {property.PropertyName} for {property.BasePrice}.");
                 // [ACQUISITION] diagnostic temporaire — investigation rythme d'upgrade IA (tasks/todo.md).
@@ -362,18 +389,18 @@ namespace PolyRisk.Core
         /// <summary>
         /// Calculates the rent for a specific property.
         /// </summary>
-        public double CalculateRent(PropertyData property)
+        public double CalculateRent(PropertyData property, bool emitDiagnostics = true)
         {
             // Fix #6 Phase F — Propriété hypothéquée = zéro loyer (règle GDD)
             if (property.IsMortgaged)
             {
-                Debug.Log($"[Rent] {property.PropertyName} hypothéquée : loyer 0.");
+                if (emitDiagnostics) Debug.Log($"[Rent] {property.PropertyName} hypothéquée : loyer 0.");
                 return 0;
             }
 
             if (property.IsEmbargoed && property.EmbargoTurnsRemaining > 0)
             {
-                Debug.Log($"<color=red>EMBARGO!</color> Rent for {property.PropertyName} is 0 this turn.");
+                if (emitDiagnostics) Debug.Log($"<color=red>EMBARGO!</color> Rent for {property.PropertyName} is 0 this turn.");
                 return 0;
             }
 
@@ -385,7 +412,7 @@ namespace PolyRisk.Core
             if (cycleMgr != null && cycleMgr.ShouldZeroHubRent()
                 && property.FamilyData != null && property.FamilyData.FamilyName.Contains("Logistics"))
             {
-                Debug.Log($"[Cycle WAR] Hub {property.PropertyName} : loyer = 0.");
+                if (emitDiagnostics) Debug.Log($"[Cycle WAR] Hub {property.PropertyName} : loyer = 0.");
                 return 0;
             }
 
@@ -475,7 +502,8 @@ namespace PolyRisk.Core
             // Vérifie notamment que le multiplicateur ×200 ne s'applique bien qu'au niveau 5
             // (rentMultipliers[property.CurrentLevel], tableau à 6 entrées pour les niveaux 0-5 —
             // confirmé correct à la lecture, pas d'off-by-one, mais on le trace quand même).
-            Debug.LogWarning($"[RENT-CALC] {property.PropertyName} | level={property.CurrentLevel} | baseRent={property.BaseRent:N0} | levelMult={(property.CurrentLevel >= 0 && property.CurrentLevel < rentMultipliers.Length ? rentMultipliers[property.CurrentLevel] : 0)} | monopoly={HasFullFamily(owner, property.FamilyData)} | finalRent={standardRent:N0}");
+            if (emitDiagnostics)
+                Debug.LogWarning($"[RENT-CALC] {property.PropertyName} | level={property.CurrentLevel} | baseRent={property.BaseRent:N0} | levelMult={(property.CurrentLevel >= 0 && property.CurrentLevel < rentMultipliers.Length ? rentMultipliers[property.CurrentLevel] : 0)} | monopoly={HasFullFamily(owner, property.FamilyData)} | finalRent={standardRent:N0}");
 
             return standardRent;
         }
@@ -527,6 +555,27 @@ namespace PolyRisk.Core
 
             // 3. Compare
             return totalInFamily > 0 && ownedInFamily == totalInFamily;
+        }
+
+        /// <summary>
+        /// Completes an already collected rent debt without charging it again.
+        /// The same continuation can be used when restoring a pending online debt.
+        /// </summary>
+        public void CompleteRentSettlement(PlayerModel player, PropertyData property,
+            PlayerModel creditor, PlayerModel hijacker, double creditorBalanceBefore, bool paid)
+        {
+            double collected = creditor.CurrentBalance - creditorBalanceBefore;
+            // A hijacker who went bankrupt while paying cannot receive a diversion.
+            if (hijacker != null && !hijacker.IsBankrupt && collected > 0)
+                transactionManager.TransferMoney(creditor, hijacker, collected * 0.25);
+            if (paid || collected > 0)
+            {
+                property.WasVisitedSinceLastGO = true;
+                GameEvents.PublishActivity("rent", player.PlayerId,
+                    $"règle {CurrencyFormatter.Format(collected)} de loyer · {property.PropertyName}",
+                    collected >= financeSystem.CurrentSgo * 5.0);
+            }
+            turnManager.CompleteTileResolution();
         }
 
         /// <summary>

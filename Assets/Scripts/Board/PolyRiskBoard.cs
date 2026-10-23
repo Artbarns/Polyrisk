@@ -68,6 +68,8 @@ namespace PolyRisk
         }
 
         public Settings settings = new Settings();
+        [Tooltip("Optional static art direction. Does not change tile indices or visual state contracts.")]
+        public BoardVisualTheme visualTheme;
 
         [Header("Matériaux")]
         public Material metalMaterial;   // URP/Lit — cadre, collier, châssis
@@ -138,6 +140,7 @@ namespace PolyRisk
             // Fix "cases noires au Play" : statePixels perdus lors de la sérialisation
             // Play/Edit, il faut repeupler avec la couleur de repos AVANT le premier push.
             ResetAllTiles();
+            if (visualTheme != null) statePixels[TRIM_INDEX] = WithAlpha(visualTheme.outline, visualTheme.trimEmission);
             PushStateTextureImmediate(); // push immédiat car pas forcément un LateUpdate au frame 0
             if (bindToBoardManager) BindToBoardManager();
         }
@@ -265,16 +268,25 @@ namespace PolyRisk
             stateTex.SetPixels(statePixels);
             stateTex.Apply(false, false);
             if (neonMaterial != null) neonMaterial.SetTexture("_StateTex", stateTex);
+            if (visualTheme != null && tileMaterial != null) tileMaterial.SetTexture("_StateTex", stateTex);
         }
 
         static Color WithAlpha(Color c, float a) => new Color(c.r, c.g, c.b, a);
 
-        float RestingLightIntensity => settings.emissiveIntensity * RESTING_LIGHT_SCALE;
+        float RestingLightIntensity => (visualTheme != null ? visualTheme.restingEmission : settings.emissiveIntensity) * RESTING_LIGHT_SCALE;
 
         // The procedural slot pattern predates the property assets and does not
         // follow their actual families. Read the same family identity that the
         // inspector uses, without changing any tile data or rules.
         Color TileColor(Slot slot)
+        {
+            Color source = SourceTileColor(slot);
+            if (visualTheme == null) return source;
+            float grey = source.grayscale;
+            return Color.Lerp(new Color(grey, grey, grey), source, visualTheme.categorySaturation);
+        }
+
+        Color SourceTileColor(Slot slot)
         {
             if (colorBoardManager == null)
                 colorBoardManager = PolyRisk.Systems.BoardManager.Instance ??
@@ -442,22 +454,31 @@ namespace PolyRisk
         // ========================================================== génération
 
         [ContextMenu("Générer le plateau")]
-        public void Generate()
+        public void Generate() => Generate(false);
+
+        /// <summary>Rebuild only the four render meshes, retaining every interaction anchor.</summary>
+        [ContextMenu("Rebuild static surfaces (preserve anchors)")]
+        public void RebuildSurfacesPreservingAnchors() => Generate(true);
+
+        void Generate(bool preserveAnchors)
         {
             EnsureStateTexture();
             BuildSlotModel();
-            ClearChildren();
+            ClearChildren(preserveAnchors);
 
             var st = settings;
-            int segs = st.cornerSegments;
+            int segs = visualTheme != null ? visualTheme.cornerSegments : st.cornerSegments;
             float H = st.deckThickness;
             float PAD = st.slotPlay;
             float S = outerExtent * 2f + 0.9f;
             float INNER = (outerExtent - st.cellPitchLong) * 2f + 0.3f;
 
-            Color metalTint = new Color(st.baseGrey, st.baseGrey, st.baseGrey);
-            Color tileTint = new Color(st.tileBodyGrey, st.tileBodyGrey, st.tileBodyGrey);
-            Color darkTint = metalTint * 0.32f;
+            Color metalTint = visualTheme != null ? visualTheme.board.linear : new Color(st.baseGrey, st.baseGrey, st.baseGrey);
+            Color tileTint = visualTheme != null ? visualTheme.tile.linear : new Color(st.tileBodyGrey, st.tileBodyGrey, st.tileBodyGrey);
+            Color darkTint = visualTheme != null ? visualTheme.engraving.linear : metalTint * 0.32f;
+            Color outlineTint = visualTheme != null ? visualTheme.outline.linear : metalTint;
+            float groove = visualTheme != null ? (st.cellPitchShort - st.gap) * visualTheme.outlineWidthRatio : st.grooveWidth;
+            float frameRadius = visualTheme != null ? visualTheme.frameCornerRadius : 0.55f;
 
             var mMetal = new ProcGeo.MeshBuilder();
             var mTiles = new ProcGeo.MeshBuilder();
@@ -466,33 +487,33 @@ namespace PolyRisk
 
             // --- châssis : ferme le fond de tous les logements
             ProcGeo.AddSolid(mMetal,
-                ProcGeo.RoundedRect(S + 0.55f, S + 0.55f, 0.62f, segs),
+                ProcGeo.RoundedRect(S + 0.55f, S + 0.55f, visualTheme != null ? frameRadius + 0.02f : 0.62f, segs),
                 -0.02f - H * 0.85f, -0.02f, metalTint);
 
             // --- lèvre extérieure et lèvre intérieure du cadre
             float slotOuter = outerExtent;
             float slotInner = outerExtent - st.cellPitchLong;
             ProcGeo.AddBand(mMetal,
-                ProcGeo.RoundedRect(S, S, 0.55f, segs),
+                ProcGeo.RoundedRect(S, S, frameRadius, segs),
                 ProcGeo.RoundedRect(slotOuter * 2f + PAD, slotOuter * 2f + PAD, 0.3f, segs),
-                0f, H, metalTint);
+                0f, H, outlineTint);
             ProcGeo.AddBand(mMetal,
                 ProcGeo.RoundedRect(slotInner * 2f - PAD, slotInner * 2f - PAD, 0.3f, segs),
                 ProcGeo.RoundedRect(INNER, INNER, 0.35f, segs),
-                0f, H, metalTint);
+                0f, H, outlineTint);
 
             // --- liseré blanc fin, sur la marche du châssis (le châssis fait S+0.55 de large,
             // la lèvre extérieure qui vient par-dessus ne fait que S — la différence expose
             // un rebord plat juste après la base, à Y proche de 0). Statique, jamais éteint,
             // via le pixel réservé TRIM_INDEX (n'entre jamais en conflit avec les 40 cases).
-            ProcGeo.AddRing(mNeon, S + 0.25f, S + 0.25f, 0.58f, st.grooveWidth * 0.7f,
+            ProcGeo.AddRing(mNeon, S + 0.25f, S + 0.25f, frameRadius + 0.03f, groove * 0.7f,
                             -0.015f, 0.005f, Color.white, TRIM_INDEX, 0f, 0f, segs);
 
             // --- champ central gravé, en retrait
             float fieldT = H * 0.55f;
             ProcGeo.AddSolid(mMetal,
                 ProcGeo.RoundedRect(INNER + 0.5f, INNER + 0.5f, 0.4f, segs),
-                H * 0.34f - fieldT, H * 0.34f, metalTint * 0.62f);
+                H * 0.34f - fieldT, H * 0.34f, visualTheme != null ? visualTheme.center.linear : metalTint * 0.62f);
 
             // --- par logement : collier de matière, paroi néon, contenu
             // On mute Slots en place pour renseigner surfaceY, utilisé par les ancres.
@@ -511,13 +532,13 @@ namespace PolyRisk
                     Vector2 outward = new Vector2(Mathf.Sign(s.pos.x), Mathf.Sign(s.pos.y));
                     Vector2 center = s.pos + outward * (grow * 0.5f);
                     float cw = s.w + grow, cd = s.d + grow;
-                    float cr = Mathf.Min(cw, cd) * 0.19f;
+                    float cr = Mathf.Min(cw, cd) * (visualTheme != null ? visualTheme.cornerRadiusRatio : 0.19f);
                     float chw = cw + PAD, chd = cd + PAD;
 
                     // collier + paroi néon du logement, redimensionnés avec le coin
                     ProcGeo.AddRing(mMetal, chw + st.gap, chd + st.gap, cr + st.gap * 0.5f,
-                                    st.gap * 0.5f, 0f, H, metalTint, 0f, center.x, center.y, segs);
-                    ProcGeo.AddRing(mNeon, chw, chd, cr, st.grooveWidth,
+                                    st.gap * 0.5f, 0f, H, outlineTint, 0f, center.x, center.y, segs);
+                    ProcGeo.AddRing(mNeon, chw, chd, cr, groove,
                                     0f, H * 0.96f, tint, s.index, center.x, center.y, segs);
 
                     AddCornerInlay(mDark, mNeon, s, darkTint, tint, segs, cw, cd, center);
@@ -527,15 +548,15 @@ namespace PolyRisk
                 else
                 {
                     float hw = s.w + PAD, hd = s.d + PAD;
-                    float r = Mathf.Min(s.w, s.d) * 0.19f;
+                    float r = Mathf.Min(s.w, s.d) * (visualTheme != null ? visualTheme.cornerRadiusRatio : 0.19f);
 
                     // le collier comble l'espace entre logements voisins ;
                     // les colliers se rejoignent exactement au milieu du gap
                     ProcGeo.AddRing(mMetal, hw + st.gap, hd + st.gap, r + st.gap * 0.5f,
-                                    st.gap * 0.5f, 0f, H, metalTint, 0f, s.pos.x, s.pos.y, segs);
+                                    st.gap * 0.5f, 0f, H, outlineTint, 0f, s.pos.x, s.pos.y, segs);
 
                     // paroi lumineuse du logement, sur toute la hauteur
-                    ProcGeo.AddRing(mNeon, hw, hd, r, st.grooveWidth,
+                    ProcGeo.AddRing(mNeon, hw, hd, r, groove,
                                     0f, H * 0.96f, tint, s.index, s.pos.x, s.pos.y, segs);
 
                     // Tuiles standards étirées le long du bord pour se toucher (pas de vide
@@ -565,11 +586,13 @@ namespace PolyRisk
 
             // Liseré blanc statique : intensité fixe, jamais remis à zéro (contrairement aux
             // cases 0..39, TRIM_INDEX n'est jamais touché par SetTile/ResetTile/highlight).
-            statePixels[TRIM_INDEX] = new Color(1f, 1f, 1f, st.emissiveIntensity * 1.3f);
+            statePixels[TRIM_INDEX] = visualTheme != null
+                ? WithAlpha(visualTheme.outline, visualTheme.trimEmission)
+                : new Color(1f, 1f, 1f, st.emissiveIntensity * 1.3f);
             MarkStateDirty();
 
             // PATCH B — ancres Tile_N enfants (colliders + TileIdentifier + TileVisuals)
-            BuildSlotAnchors();
+            if (!preserveAnchors) BuildSlotAnchors();
 
             // PATCH C — auto-branchement
             if (bindToBoardManager) BindToBoardManager();
@@ -582,9 +605,17 @@ namespace PolyRisk
                             float cw, float cd, Vector2 center)
         {
             ProcGeo.AddSolid(dark,
-                ProcGeo.RoundedRect(cw - 0.06f, cd - 0.06f, 0.22f, segs, center.x, center.y),
+                ProcGeo.RoundedRect(cw - 0.06f, cd - 0.06f, visualTheme != null ? Mathf.Min(cw, cd) * visualTheme.cornerRadiusRatio : 0.22f, segs, center.x, center.y),
                 -0.02f, 0.01f, darkTint);
 
+            if (visualTheme != null)
+            {
+                float radius = Mathf.Min(cw, cd) * visualTheme.cornerRadiusRatio;
+                ProcGeo.AddRing(neon, cw - 0.18f, cd - 0.18f, radius,
+                    Mathf.Min(cw, cd) * visualTheme.outlineWidthRatio,
+                    0.008f, 0.034f, tint, s.index, center.x, center.y, segs);
+                return;
+            }
             ProcGeo.AddRing(neon, cw - 0.40f, cd - 0.40f, 0.16f, settings.grooveWidth * 0.8f,
                             0.008f, 0.034f, tint, s.index, center.x, center.y, segs);
             ProcGeo.AddRing(neon, cw - 0.72f, cd - 0.72f, 0.10f, settings.grooveWidth * 0.6f,
@@ -602,22 +633,22 @@ namespace PolyRisk
                       Slot s, Color bodyTint, Color tint, int segs, float H,
                       float tileW, float tileD, Vector2 center)
         {
-            float hb = settings.tileThickness;
-            float r = Mathf.Min(tileW, tileD) * 0.17f;
+            float hb = visualTheme != null ? Mathf.Min(tileW, tileD) * visualTheme.thicknessRatio : settings.tileThickness;
+            float r = Mathf.Min(tileW, tileD) * (visualTheme != null ? visualTheme.cornerRadiusRatio : 0.17f);
 
             // la tuile affleure légèrement le cadre, quelle que soit son épaisseur
-            float baseY = Mathf.Max(0.01f, H + 0.05f - hb - 0.022f);
+            float baseY = visualTheme != null ? visualTheme.tileSurfaceY - hb : Mathf.Max(0.01f, H + 0.05f - hb - 0.022f);
 
             ProcGeo.AddSolid(body,
                 ProcGeo.RoundedRect(tileW, tileD, r, segs, center.x, center.y),
-                baseY, baseY + hb, bodyTint);
+                baseY, baseY + hb, bodyTint, s.index);
 
             // Header : pavé coloré émissif, uniquement sur le bord intérieur.
             Vector2 inward = InwardDir(s.rotY);
             float depthAxis = s.rowIsW ? tileD : tileW;   // taille perpendiculaire au bord
             float rowAxis   = s.rowIsW ? tileW : tileD;   // taille le long du bord
 
-            float headerDepth = depthAxis * 0.24f;
+            float headerDepth = visualTheme != null ? Mathf.Min(tileW, tileD) * visualTheme.categoryBandRatio : depthAxis * 0.24f;
             const float headerInset = 0.06f;
             float headerW = s.rowIsW ? rowAxis - headerInset : headerDepth;
             float headerD = s.rowIsW ? headerDepth : rowAxis - headerInset;
@@ -630,7 +661,7 @@ namespace PolyRisk
 
             ProcGeo.AddSolid(neon,
                 ProcGeo.RoundedRect(headerW, headerD, headerR, segs, headerCenter.x, headerCenter.y),
-                baseY + hb - 0.006f, baseY + hb + 0.018f, tint, s.index);
+                baseY + hb - (visualTheme != null ? 0.002f : 0.006f), baseY + hb + (visualTheme != null ? 0.001f : 0.018f), tint, s.index);
 
             // Surface haute réelle où le pion se pose (top de la dalle)
             return baseY + hb;
@@ -726,6 +757,19 @@ namespace PolyRisk
         void ApplyMaterialSettings()
         {
             var st = settings;
+            if (visualTheme != null)
+            {
+                ConfigureGraphiteMaterial(metalMaterial, visualTheme.frameMetallic, visualTheme.frameSmoothness, 0f);
+                ConfigureGraphiteMaterial(tileMaterial, visualTheme.tileMetallic, visualTheme.tileSmoothness, visualTheme.simulatedReflection);
+                ConfigureGraphiteMaterial(darkMaterial, 0f, 0.1f, 0f);
+                if (neonMaterial != null)
+                {
+                    neonMaterial.SetTexture("_StateTex", stateTex);
+                    neonMaterial.SetFloat("_Count", STATE_WIDTH);
+                    neonMaterial.SetFloat("_Boost", visualTheme.neonBoost);
+                }
+                return;
+            }
             if (metalMaterial != null)
             {
                 metalMaterial.SetColor("_BaseColor", new Color(st.baseGrey, st.baseGrey, st.baseGrey));
@@ -751,6 +795,37 @@ namespace PolyRisk
             }
         }
 
+        void ConfigureGraphiteMaterial(Material material, float metallic, float smoothness, float reflection)
+        {
+            if (material == null) return;
+            material.SetColor("_BaseColor", Color.white);
+            material.SetFloat("_Metallic", metallic);
+            material.SetFloat("_Smoothness", smoothness);
+            material.SetFloat("_ReflectionStrength", reflection);
+            material.SetFloat("_ReflectionFalloff", visualTheme.reflectionFalloff);
+            material.SetFloat("_InnerExtent", outerExtent - settings.cellPitchLong + settings.gap * 0.5f);
+            material.SetTexture("_StateTex", stateTex);
+            bool isTile = material == tileMaterial;
+            float rowWiden = Mathf.Max(0f, settings.gap - settings.rowSeam - settings.slotPlay);
+            float shortWidth = settings.cellPitchShort - settings.gap + rowWiden;
+            float depth = settings.cellPitchLong - settings.gap;
+            material.SetFloat("_TileSurface", isTile ? 1f : 0f);
+            material.SetFloat("_StudioStrength", material == darkMaterial ? 0.025f :
+                (isTile ? visualTheme.tileSheen : visualTheme.frameSheen));
+            material.SetFloat("_EdgeNormalStrength", visualTheme.edgeNormalStrength);
+            material.SetFloat("_EdgeShadingPixels", visualTheme.edgeShadingPixels);
+            material.SetFloat("_MinimumBandPixels", visualTheme.minimumBandPixels);
+            material.SetFloat("_BandBoost", visualTheme.neonBoost);
+            material.SetFloat("_ReflectionReach", visualTheme.reflectionReach);
+            material.SetFloat("_GridPitch", settings.cellPitchShort);
+            material.SetFloat("_CornerOffset", outerExtent - settings.cellPitchLong * 0.5f);
+            material.SetVector("_TileSize", new Vector4(shortWidth, depth,
+                Mathf.Min(shortWidth, depth) * visualTheme.categoryBandRatio, 0.02f));
+        }
+
+        /// <summary>Apply the surface theme without regenerating meshes or touching anchors.</summary>
+        public void RefreshSurfaceMaterials() => ApplyMaterialSettings();
+
         void Spawn(string name, Mesh mesh, Material mat)
         {
             var go = new GameObject(name);
@@ -761,11 +836,12 @@ namespace PolyRisk
             mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         }
 
-        void ClearChildren()
+        void ClearChildren(bool preserveAnchors)
         {
             for (int i = transform.childCount - 1; i >= 0; i--)
             {
                 var c = transform.GetChild(i).gameObject;
+                if (preserveAnchors && c.name == "Tile_Anchors") continue;
                 if (Application.isPlaying) Destroy(c); else DestroyImmediate(c);
             }
             tileAnchors.Clear();

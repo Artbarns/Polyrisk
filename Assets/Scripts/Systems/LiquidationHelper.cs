@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Linq;
 using PolyRisk.Core;
 
 namespace PolyRisk.Systems
@@ -10,6 +11,26 @@ namespace PolyRisk.Systems
     /// </summary>
     public static class LiquidationHelper
     {
+        public static void LiquidateToCover(PlayerModel player, double debt)
+        {
+            var tm = TransactionManager.Instance;
+            foreach (var prop in player.OwnedProperties.Where(p => p.CurrentLevel > 0)
+                         .OrderByDescending(p => p.TotalUpgradeCostInvested).ToList())
+            {
+                if (player.CurrentBalance >= debt) return;
+                double refund = prop.TotalUpgradeCostInvested * 0.5;
+                prop.SetLevel(0);
+                prop.TotalUpgradeCostInvested = 0;
+                if (refund > 0) tm.AddMoney(player, refund);
+            }
+            foreach (var prop in player.OwnedProperties.Where(p => !p.IsMortgaged).OrderBy(p => p.BasePrice).ToList())
+            {
+                if (player.CurrentBalance >= debt) return;
+                MortgageProperty(player, prop);
+            }
+            // Mortgaged titles have no remaining cash value; bankruptcy returns them to the bank.
+        }
+
         /// <summary>Hypothèque la propriété : 50% du prix, plus de loyer ni Burn Rate.</summary>
         public static double MortgageProperty(PlayerModel player, PropertyData prop)
         {

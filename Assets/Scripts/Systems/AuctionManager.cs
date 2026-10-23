@@ -138,6 +138,8 @@ namespace PolyRisk.Systems
                     // Transfer ownership
                     currentHighestBidder.AddProperty(currentAuctionProperty);
                     GameEvents.OnPropertyPurchased?.Invoke(currentHighestBidder.PlayerId, currentAuctionProperty.PropertyName);
+                    AbilitySystem.PublishFamilyCompletionIfNeeded(currentHighestBidder,
+                        new[] { currentAuctionProperty });
 
                     Debug.Log($"Auction won by Player {currentHighestBidder.PlayerId} for {currentHighestBid}.");
                     // [ACQUISITION] diagnostic temporaire — investigation rythme d'upgrade IA (tasks/todo.md).
