@@ -27,9 +27,14 @@ namespace PolyRisk.Systems
         public bool IsArrivalHold { get; private set; }
         public Transform ObservedPawn => trackedPawn;
         public float OverviewOrthographicSize => overviewSize;
+        // PASS 2F.1 uses the same board/pawn envelope and compact viewport. Keep this
+        // reference separate so the permanent enlargement is inspectable on every format.
+        public float StrategicReferenceOrthographicSize { get; private set; }
+        public const float PermanentCloseFactor = 1.40f;
+        public bool IsManuallyExploring { get; private set; }
         public bool ReducedMotionEnabled => PolyRisk.UI.UIUXRuntime.ReducedMotion;
         [Header("Strategic movement camera")]
-        [SerializeField, Range(1.10f,1.18f)] private float movementZoomFactor = 1.14f;
+        [SerializeField, Range(1f,1.05f)] private float movementZoomFactor = 1f;
         [SerializeField, Min(.05f)] private float focusEntryDuration = .30f;
         [SerializeField, Range(0f,1f)] private float movementAnchorX = .50f;
         [SerializeField, Range(0f,1f)] private float movementAnchorY = .52f;
@@ -54,6 +59,12 @@ namespace PolyRisk.Systems
         private int trackedPlayer, startLogicalPosition;
         private TurnManager.TurnState movementPhase;
         private Rect framedSafeArea;
+        private bool restAnchorPending = true, pointerPressed, pointerDragging, reducedMovementPending;
+        private int pointerFingerId = -1;
+        private Vector2 pointerStart, pointerStartCenter;
+        private const float DragThresholdUiPixels = 10f;
+        private Transform restPawn;
+        private int restPlayerId = -1, restLogicalPosition = -1;
 
         public static Quaternion DefaultRotation(Quaternion authored)
         {
@@ -66,24 +77,44 @@ namespace PolyRisk.Systems
             PolyRisk.Visuals.PlayerVisualManager.VisualMovementStarted += BeginVisualMovement;
             GameEvents.OnPawnMovementFinished += HandleVisualMovementFinished;
             GameEvents.OnTurnStarted += HandleTurnStarted;
-            PolyRisk.Multiplayer.OnlineGameController.PresentationStateApplied += RestoreOverview;
+            PolyRisk.Multiplayer.OnlineGameController.PresentationStateApplied += HandlePresentationRestore;
         }
         private void OnDisable()
         {
             PolyRisk.Visuals.PlayerVisualManager.VisualMovementStarted -= BeginVisualMovement;
             GameEvents.OnPawnMovementFinished -= HandleVisualMovementFinished;
             GameEvents.OnTurnStarted -= HandleTurnStarted;
-            PolyRisk.Multiplayer.OnlineGameController.PresentationStateApplied -= RestoreOverview;
+            PolyRisk.Multiplayer.OnlineGameController.PresentationStateApplied -= HandlePresentationRestore;
             RestoreOverview();
         }
-        private void HandleTurnStarted(int _) { if (State != CameraState.StrategicOverview) RestoreOverview(); }
+        private void HandleTurnStarted(int _) => RestoreOverview();
+        private void HandlePresentationRestore()
+        {
+            var active=turnManager?.CurrentPlayer;
+            // An authoritative refresh of the same resting position must not steal an
+            // exploration gesture. A changed turn/position or cancelled motion may resume follow.
+            if (State==CameraState.StrategicOverview && IsManuallyExploring && active!=null &&
+                active.PlayerId==restPlayerId && turnManager.GetPlayerPosition(active)==restLogicalPosition) return;
+            RestoreOverview();
+        }
 
         // Presentation observers only. Neither method owns or invokes the gameplay completion callback.
         public void BeginVisualMovement(int playerId, PolyRisk.Visuals.PawnMovement pawn, System.Collections.Generic.List<Vector3> path)
         {
-            if (!hasFramingTarget || ReducedMotionEnabled || pawn == null || path == null || path.Count == 0 || GameBootstrapper.SkipMovementAnimation) return;
+            if (!hasFramingTarget || pawn == null || path == null || path.Count == 0) return;
             if (turnManager?.CurrentPlayer == null || playerId != turnManager.CurrentPlayer.PlayerId) return;
             if ((path[0]-pawn.transform.position).sqrMagnitude < .0001f) return;
+            CancelPointer(); IsManuallyExploring = false;
+            restPawn = pawn.transform; restPlayerId = playerId;
+            movementDestination=path[path.Count-1]; reducedMovementPending=false;
+            if (ReducedMotionEnabled || GameBootstrapper.SkipMovementAnimation)
+            {
+                // Reduced Motion still interpolates the logical root. Keep the camera fixed
+                // through that interpolation and establish the new resting pose only at completion.
+                reducedMovementPending=true; restAnchorPending=false;
+                restLogicalPosition=turnManager.GetPlayerPosition(turnManager.CurrentPlayer);
+                return;
+            }
             trackedPawn = pawn.transform; trackedPlayer = playerId;
             previousPawnPosition = trackedPawn.position; movementDestination = path[path.Count-1];
             CachePawnFootprint();
@@ -97,9 +128,20 @@ namespace PolyRisk.Systems
             IsArrivalHold = false;
             SetState(CameraState.MovementFocus);
         }
-        private void HandleVisualMovementFinished() => CompleteVisualMovement(trackedPawn);
+        private void HandleVisualMovementFinished()
+        {
+            if (reducedMovementPending) CompleteVisualMovement(restPawn);
+            else if (State == CameraState.MovementFocus) CompleteVisualMovement(trackedPawn);
+            else { IsManuallyExploring = false; restAnchorPending = true; }
+        }
         public void CompleteVisualMovement(Transform pawn)
         {
+            if(reducedMovementPending)
+            {
+                if(pawn==null || pawn!=restPawn || (pawn.position-movementDestination).sqrMagnitude>.0025f) return;
+                reducedMovementPending=false; restAnchorPending=true;
+                return;
+            }
             if (State != CameraState.MovementFocus || IsArrivalHold || pawn == null || pawn != trackedPawn) return;
             if ((pawn.position-movementDestination).sqrMagnitude > .0025f) return;
             IsArrivalHold = true;
@@ -110,9 +152,11 @@ namespace PolyRisk.Systems
         }
         public void RestoreOverview()
         {
-            trackedPawn = null; observedPath=null; IsArrivalHold = false;
+            trackedPawn = null; observedPath=null; IsArrivalHold = false; reducedMovementPending=false;
+            CancelPointer(); IsManuallyExploring = false; restAnchorPending = true;
             SetState(CameraState.StrategicOverview);
             if (mainCamera == null || !hasFramingTarget) return;
+            UpdateRestAnchor();
             WriteCamera(overviewPosition,overviewSize);
         }
         private void SetState(CameraState state)
@@ -134,15 +178,28 @@ namespace PolyRisk.Systems
             {
                 if (!TryMeasureViewport(out Rect viewport)) return;
                 BoardViewport = viewport;
-                overviewSize = FitCameraSize(Screen.height,new Rect(viewport.position+Vector2.one*2f,viewport.size-Vector2.one*4f),boardPlaneMax-boardPlaneMin);
+                StrategicReferenceOrthographicSize = FitCameraSize(Screen.height,new Rect(viewport.position+Vector2.one*2f,viewport.size-Vector2.one*4f),boardPlaneMax-boardPlaneMin);
+                overviewSize = CloseStrategicSize(StrategicReferenceOrthographicSize);
                 overviewPosition = PositionForPlane((boardPlaneMin+boardPlaneMax)*.5f,overviewSize,viewport);
                 framedWidth=Screen.width;framedHeight=Screen.height;framedSafeArea=safe;
                 hasFramingTarget=true;
                 PolyRisk.UI.UIUXRuntime.FitBoardPresentation(actionButtonsWidget.uiDocument.rootVisualElement,viewport);
                 RestoreOverview();
             }
-            if (ReducedMotionEnabled) { if (State != CameraState.StrategicOverview) RestoreOverview(); return; }
-            if (State == CameraState.StrategicOverview) return;
+            if (ReducedMotionEnabled && State != CameraState.StrategicOverview) RestoreOverview();
+            if (State == CameraState.StrategicOverview)
+            {
+                // Logical teleports and roster changes are gameplay events too. Inspection,
+                // cockpit expansion and ordinary replicated UI refreshes do not enter here.
+                var active = turnManager?.CurrentPlayer;
+                int logical = active != null ? turnManager.GetPlayerPosition(active) : -1;
+                if ((!IsManuallyExploring && (restAnchorPending || restPawn == null)) ||
+                    (active != null && (active.PlayerId != restPlayerId || logical != restLogicalPosition)))
+                {
+                    IsManuallyExploring=false; UpdateRestAnchor(); WriteCamera(overviewPosition, overviewSize);
+                }
+                return;
+            }
             if (trackedPawn == null || turnManager?.CurrentPlayer == null || turnManager.CurrentPlayer.PlayerId != trackedPlayer)
             { RestoreOverview(); return; }
             float now=Time.unscaledTime, dt=Time.unscaledDeltaTime;
@@ -152,6 +209,7 @@ namespace PolyRisk.Systems
                 {
                     if(now>=holdDeadline)
                     {
+                        UpdateRestAnchor(trackedPawn);
                         returnStarted=now;returnStartSize=mainCamera.orthographicSize;returnStartPosition=mainCamera.transform.position;
                         IsArrivalHold=false;
                         SetState(CameraState.ReturnToOverview);
@@ -194,7 +252,11 @@ namespace PolyRisk.Systems
             {
                 float t=Mathf.Clamp01((now-returnStarted)/returnDuration), ease=t*t*(3f-2f*t);
                 WriteCamera(Vector3.Lerp(returnStartPosition,overviewPosition,ease),Mathf.Lerp(returnStartSize,overviewSize,ease));
-                if(t>=1f) RestoreOverview();
+                if(t>=1f)
+                {
+                    trackedPawn=null; observedPath=null; IsArrivalHold=false;
+                    SetState(CameraState.StrategicOverview);
+                }
             }
         }
         public static Vector3 SampleAhead(Vector3 ground, System.Collections.Generic.List<Vector3> path, ref int segment, float distance)
@@ -257,6 +319,37 @@ namespace PolyRisk.Systems
         {
             if(mainCamera.transform.position==position && mainCamera.orthographicSize==size) return;
             mainCamera.transform.position=position;mainCamera.orthographicSize=size;FramingChanged?.Invoke();
+        }
+
+        public static float CloseStrategicSize(float referenceSize) => referenceSize / PermanentCloseFactor;
+
+        // Retain a little route context beyond the edge rather than allowing an empty view.
+        // The inset is smaller than the viewport half extent, so every board point remains reachable.
+        public static Vector2 ClampExplorationCenter(Vector2 center,Vector2 min,Vector2 max,Vector2 viewportHalf)
+        {
+            Vector2 inset=Vector2.Min(Vector2.Max(Vector2.zero,viewportHalf)*.30f,(max-min)*.5f);
+            return new Vector2(Mathf.Clamp(center.x,min.x+inset.x,max.x-inset.x),
+                Mathf.Clamp(center.y,min.y+inset.y,max.y-inset.y));
+        }
+
+        private void UpdateRestAnchor(Transform arrivedPawn = null)
+        {
+            var active=turnManager?.CurrentPlayer;
+            if (active==null || boardManager?.visualTiles==null) return;
+            restPlayerId=active.PlayerId;restLogicalPosition=turnManager.GetPlayerPosition(active);
+            if (arrivedPawn!=null) restPawn=arrivedPawn;
+            else if(restPawn==null || restPawn.name!="Pawn_Player_"+restPlayerId)
+                restPawn=GameObject.Find("Pawn_Player_"+restPlayerId)?.transform;
+            if(restPawn==null || restLogicalPosition<0 || restLogicalPosition>=boardManager.visualTiles.Length) return;
+            Vector3 ground=restPawn.position;
+            var next=boardManager.visualTiles[(restLogicalPosition+1)%boardManager.visualTiles.Length];
+            // A small forward lead retains the next decisions, while leaving the pawn central.
+            Vector3 direction=next!=null ? next.position-ground : Vector3.zero;direction.y=0;
+            Vector2 center=ProjectPlane(ground+Vector3.ClampMagnitude(direction,movementLookAhead));
+            center.y+=PawnHeadroom*.25f*mainCamera.transform.up.y;
+            center=ClampExplorationCenter(center,boardPlaneMin,boardPlaneMax,BoardViewport.size*overviewSize/Screen.height);
+            overviewPosition=PositionForPlane(center,overviewSize,BoardViewport);
+            restAnchorPending=false;
         }
 
         public static float SelectionCameraSize(float originalSize, float aspect, float horizontalRadius, float verticalRadius)
@@ -396,11 +489,75 @@ namespace PolyRisk.Systems
 
         private void Update()
         {
-            // Check for left mouse click or touch
-            if (Input.GetMouseButtonDown(0))
+            // Touch owns the gesture when present; do not process its emulated mouse tap.
+            if (Input.touchCount > 0)
             {
-                HandleInput(Input.mousePosition);
+                if (Input.touchCount != 1) { CancelPointer(); return; }
+                Touch touch = Input.GetTouch(0);
+                if (touch.phase == TouchPhase.Began)
+                { BeginPointer(touch.position); pointerFingerId=touch.fingerId; }
+                else if (pointerFingerId == touch.fingerId)
+                {
+                    if (touch.phase == TouchPhase.Canceled) CancelPointer();
+                    else if (touch.phase == TouchPhase.Ended) EndPointer(touch.position);
+                    else MovePointer(touch.position);
+                }
+                return;
             }
+            if (Input.GetMouseButtonDown(0)) { pointerFingerId=-1; BeginPointer(Input.mousePosition); }
+            if (Input.GetMouseButton(0)) MovePointer(Input.mousePosition);
+            if (Input.GetMouseButtonUp(0)) EndPointer(Input.mousePosition);
+        }
+
+        private void BeginPointer(Vector2 position)
+        {
+            CancelPointer();
+            if (mainCamera==null || !hasFramingTarget || IsScreenInputBlocked(position)) return;
+            pointerStart=position; pointerStartCenter=PlaneAtViewportCenter(mainCamera.transform.position,mainCamera.orthographicSize);
+            pointerPressed=true;
+        }
+        private float PointerThreshold
+        {
+            get
+            {
+                var root=topHudWidget?.uiDocument?.rootVisualElement;
+                float uiScale=root!=null && root.worldBound.width>0 ? Screen.width/root.worldBound.width : 1f;
+                return DragThresholdUiPixels*uiScale;
+            }
+        }
+        public static bool ExceedsDragThreshold(Vector2 start, Vector2 current, float threshold) =>
+            (current-start).sqrMagnitude >= threshold*threshold;
+        private void MovePointer(Vector2 position)
+        {
+            if (!pointerPressed) return;
+            if (!pointerDragging && ExceedsDragThreshold(pointerStart,position,PointerThreshold)) pointerDragging=true;
+            if (!pointerDragging || State!=CameraState.StrategicOverview || reducedMovementPending) return;
+            IsManuallyExploring=true; restAnchorPending=false;
+            Vector2 center=pointerStartCenter-(position-pointerStart)*(mainCamera.orthographicSize*2f/Screen.height);
+            center=ClampExplorationCenter(center,boardPlaneMin,boardPlaneMax,BoardViewport.size*mainCamera.orthographicSize/Screen.height);
+            WriteCamera(PositionForPlane(center,mainCamera.orthographicSize,BoardViewport),mainCamera.orthographicSize);
+        }
+        private void EndPointer(Vector2 position)
+        {
+            if (!pointerPressed) return;
+            MovePointer(position);
+            bool tap=!pointerDragging && !IsScreenInputBlocked(position);
+            CancelPointer();
+            if (tap) HandleInput(position);
+        }
+        private void CancelPointer() { pointerPressed=false;pointerDragging=false;pointerFingerId=-1; }
+
+        private bool IsScreenInputBlocked(Vector2 screenPosition)
+        {
+            foreach (var document in FindObjectsOfType<UIDocument>())
+            {
+                var panel = document.rootVisualElement?.panel;
+                if (panel == null) continue;
+                var position = RuntimePanelUtils.ScreenToPanel(panel,
+                    new Vector2(screenPosition.x, Screen.height - screenPosition.y));
+                if (IsBoardInputBlocked(panel.Pick(position))) return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -414,14 +571,7 @@ namespace PolyRisk.Systems
                 if (mainCamera == null) return;
             }
 
-            foreach (var document in FindObjectsOfType<UIDocument>())
-            {
-                var panel = document.rootVisualElement?.panel;
-                if (panel == null) continue;
-                var position = RuntimePanelUtils.ScreenToPanel(panel,
-                    new Vector2(screenPosition.x, Screen.height - screenPosition.y));
-                if (IsBoardInputBlocked(panel.Pick(position))) return;
-            }
+            if (IsScreenInputBlocked(screenPosition)) return;
             Ray ray = mainCamera.ScreenPointToRay(screenPosition);
             
             if (Physics.Raycast(ray, out RaycastHit hit))

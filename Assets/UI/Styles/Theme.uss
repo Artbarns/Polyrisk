@@ -3032,3 +3032,11 @@
 }
 .ux-narrow #Panel_TileDetail.pulse-panel--expanded .marketplace-panel--compact { max-height: 52%; }
 .board-owner-marker, .board-position-marker { display: none; }
+
+/* The dynamic tender summary uses these existing classes without a text colour. */
+#Panel_Marketplace_TenderInit .seller-prop-name {
+    color: #F1F4F8;
+}
+#Panel_Marketplace_TenderInit .seller-prop-income {
+    color: #A4AEBC;
+}

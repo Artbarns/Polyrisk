@@ -107,20 +107,50 @@
       // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
       // expected to change.
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      // iPadOS can request a desktop user agent. Keep its touch presentation and
+      // framebuffer budget consistent with the other mobile Safari devices.
+      var isMobileDevice = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      var viewportPixels = Math.max(1, window.innerWidth * window.innerHeight);
+      // Bound high-density desktop displays as well as phones. Never upscale a
+      // DPR-1 display; retain at least CSS resolution on large viewports.
+      config.devicePixelRatio = Math.max(1, Math.min(
+        window.devicePixelRatio || 1,
+        2,
+        Math.sqrt(2400000 / viewportPixels)
+      ));
+
+      // Read-only QA metadata: dimensions are the actual canvas backing store,
+      // not an assumed DPR. No renderer, game state or quality writes here.
+      function describeCanvas() {
+        var rect = canvas.getBoundingClientRect();
+        canvas.dataset.cssWidth = String(rect.width);
+        canvas.dataset.cssHeight = String(rect.height);
+        canvas.dataset.backingWidth = String(canvas.width);
+        canvas.dataset.backingHeight = String(canvas.height);
+        canvas.dataset.configuredDpr = String(config.devicePixelRatio);
+        canvas.dataset.deviceDpr = String(window.devicePixelRatio || 1);
+      }
+      var describeScheduled = false;
+      function scheduleCanvasDescription() {
+        if (describeScheduled) return;
+        describeScheduled = true;
+        window.requestAnimationFrame(function() {
+          describeScheduled = false;
+          describeCanvas();
+        });
+      }
+      window.addEventListener("resize", scheduleCanvasDescription);
+      if (window.ResizeObserver) new ResizeObserver(scheduleCanvasDescription).observe(canvas);
+      new MutationObserver(scheduleCanvasDescription).observe(canvas, {
+        attributes: true, attributeFilter: ["width", "height"]
+      });
+      describeCanvas();
+
+      if (isMobileDevice) {
         // Mobile device style: fill the whole browser client area with the game canvas:
         container.className = "unity-mobile";
         canvas.className = "unity-mobile";
-
-        // Match high-density displays while bounding the WebGL framebuffer on
-        // phones. DPR 1 made the entire scene (including UI Toolkit text) soft.
-        // A 2x cap keeps a 430x932 viewport near 1.6M rendered pixels.
-        var viewportPixels = Math.max(1, window.innerWidth * window.innerHeight);
-        config.devicePixelRatio = Math.max(1, Math.min(
-          window.devicePixelRatio || 1,
-          2,
-          Math.sqrt(2400000 / viewportPixels)
-        ));
 
 #if SHOW_DIAGNOSTICS
         // position the diagnostics icon in the corner on the canvas

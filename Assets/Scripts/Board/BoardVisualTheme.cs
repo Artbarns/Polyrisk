@@ -68,8 +68,8 @@ namespace PolyRisk
 
             public static SurfaceFinish ReflectiveNeon() => new SurfaceFinish
             {
-                boardMetallic=.36f,tileMetallic=.27f,boardSmoothness=.47f,tileSmoothness=.41f,
-                studioReflection=.46f,edgeSpecular=.040f,neonEmission=.88f,neonReflection=.08f,
+                boardMetallic=.36f,tileMetallic=.27f,boardSmoothness=.49f,tileSmoothness=.45f,
+                studioReflection=.46f,edgeSpecular=.052f,neonEmission=.92f,neonReflection=.08f,
                 reflectionFalloff=.030f,reflectionReach=.10f,contactReflection=.78f,arrivalReflection=1.10f,
                 contactReflectionFalloff=.065f,contactReflectionReach=.22f,activeSurfaceContrast=.14f,
                 contactOutline=1.12f,backgroundSeparation=.014f,pawnMetallic=.48f,pawnSmoothness=.46f,

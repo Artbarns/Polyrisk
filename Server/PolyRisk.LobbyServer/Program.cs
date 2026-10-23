@@ -5,8 +5,9 @@ using System.Text.Json.Nodes;
 using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.WebHost.UseUrls(Environment.GetEnvironmentVariable("POLYRISK_URLS") ?? "http://0.0.0.0:5080");
+builder.WebHost.UseUrls(WebGLHosting.ListenUrls());
 builder.WebHost.ConfigureKestrel(options => options.Limits.MaxRequestBodySize = 384 * 1024);
+int requestBudget = WebGLHosting.RequestBudget();
 var allowedOrigins = (Environment.GetEnvironmentVariable("POLYRISK_ALLOWED_ORIGINS") ?? string.Empty)
     .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
@@ -24,7 +25,7 @@ builder.Services.AddRateLimiter(options =>
             context.Connection.RemoteIpAddress?.ToString() ?? "unknown",
             _ => new FixedWindowRateLimiterOptions
             {
-                PermitLimit = 900,
+                PermitLimit = requestBudget,
                 Window = TimeSpan.FromMinutes(1),
                 QueueLimit = 0,
                 AutoReplenishment = true
@@ -54,6 +55,8 @@ app.Use(async (context, next) =>
     context.Response.Headers.CacheControl = "no-store";
     await next();
 });
+app.UseWebGLHosting();
+app.UseRouting();
 app.UseCors();
 app.UseRateLimiter();
 

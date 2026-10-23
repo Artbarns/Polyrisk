@@ -74,11 +74,11 @@ MonoBehaviour:
     tileTint: {r: 0.88, g: 0.91, b: 0.95, a: 1}
     boardMetallic: 0.36
     tileMetallic: 0.27
-    boardSmoothness: 0.47
-    tileSmoothness: 0.41
+    boardSmoothness: 0.49
+    tileSmoothness: 0.45
     studioReflection: 0.46
-    edgeSpecular: 0.04
-    neonEmission: 0.88
+    edgeSpecular: 0.052
+    neonEmission: 0.92
     neonReflection: 0.08
     reflectionFalloff: 0.03
     reflectionReach: 0.1
