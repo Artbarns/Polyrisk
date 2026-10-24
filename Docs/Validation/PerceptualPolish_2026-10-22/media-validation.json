@@ -1,0 +1,65 @@
+{
+  "baseline-camera": {
+    "frames": 453,
+    "duration": 24.08,
+    "nativeDecodedFramesUnchanged": true,
+    "audioMD5": "MD5=4cbc7fa0498b96c9fad3316f468f3edd",
+    "bytes": 3059412,
+    "codec": "Input #0, matroska,webm, from '/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/PerceptualPolish_2026-10-22/baseline-camera.webm':\n  Metadata:\n    ENCODER         : Lavf61.7.100\n  Duration: 00:00:24.08, start: 0.000000, bitrate: 1016 kb/s\n  Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/bt709/iec61966-2-1), 430x830, SAR 1:1 DAR 43:83, 1k fps, 1k tbr, 1k tbn (default)\n      Metadata:\n        ALPHA_MODE      : 1\n        DURATION        : 00:00:23.867000000\n  Stream #0:1(eng): Audio: opus, 48000 Hz, stereo, fltp (default)\n      Metadata:\n        DURATION        : 00:00:24.083000000\nAt least one output file must be specified\n"
+  },
+  "baseline-contacts": {
+    "frames": 312,
+    "duration": 22.52,
+    "nativeDecodedFramesUnchanged": true,
+    "audioMD5": "MD5=2774ab7d08072e415b87501a83991261",
+    "bytes": 2046560,
+    "codec": "Input #0, matroska,webm, from '/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/PerceptualPolish_2026-10-22/baseline-contacts.webm':\n  Metadata:\n    ENCODER         : Lavf61.7.100\n  Duration: 00:00:22.52, start: 0.000000, bitrate: 727 kb/s\n  Stream #0:0(eng): Audio: opus, 48000 Hz, stereo, fltp (default)\n      Metadata:\n        DURATION        : 00:00:22.519000000\n  Stream #0:1(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/bt709/iec61966-2-1), 430x830, SAR 1:1 DAR 43:83, 1k fps, 1k tbr, 1k tbn (default)\n      Metadata:\n        ALPHA_MODE      : 1\n        DURATION        : 00:00:22.357000000\nAt least one output file must be specified\n"
+  },
+  "after-a-contacts": {
+    "frames": 268,
+    "duration": 25.83,
+    "nativeDecodedFramesUnchanged": true,
+    "audioMD5": "MD5=4644a15d369ad5ee61fb1babdd59ade5",
+    "bytes": 1702658,
+    "codec": "Input #0, matroska,webm, from '/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/PerceptualPolish_2026-10-22/after-a-contacts.webm':\n  Metadata:\n    ENCODER         : Lavf61.7.100\n  Duration: 00:00:25.83, start: 0.000000, bitrate: 527 kb/s\n  Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/bt709/iec61966-2-1), 430x830, SAR 1:1 DAR 43:83, 1k fps, 1k tbr, 1k tbn (default)\n      Metadata:\n        ALPHA_MODE      : 1\n        DURATION        : 00:00:25.561000000\n  Stream #0:1(eng): Audio: opus, 48000 Hz, stereo, fltp (default)\n      Metadata:\n        DURATION        : 00:00:25.831000000\nAt least one output file must be specified\n"
+  },
+  "after-b-contacts": {
+    "frames": 263,
+    "duration": 26.13,
+    "nativeDecodedFramesUnchanged": true,
+    "audioMD5": "MD5=5b6a5167acc9e53bdf282c7fe56fb47a",
+    "bytes": 1836318,
+    "codec": "Input #0, matroska,webm, from '/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/PerceptualPolish_2026-10-22/after-b-contacts.webm':\n  Metadata:\n    ENCODER         : Lavf61.7.100\n  Duration: 00:00:26.13, start: 0.000000, bitrate: 562 kb/s\n  Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/bt709/iec61966-2-1), 430x830, SAR 1:1 DAR 43:83, 1k fps, 1k tbr, 1k tbn (default)\n      Metadata:\n        ALPHA_MODE      : 1\n        DURATION        : 00:00:25.911000000\n  Stream #0:1(eng): Audio: opus, 48000 Hz, stereo, fltp (default)\n      Metadata:\n        DURATION        : 00:00:26.128000000\nAt least one output file must be specified\n"
+  },
+  "after-b-camera": {
+    "frames": 296,
+    "duration": 28.09,
+    "nativeDecodedFramesUnchanged": true,
+    "audioMD5": "MD5=b2c9b61c0c7ffbf1463e0654f0f5fb1c",
+    "bytes": 2013172,
+    "codec": "Input #0, matroska,webm, from '/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/PerceptualPolish_2026-10-22/after-b-camera.webm':\n  Metadata:\n    ENCODER         : Lavf61.7.100\n  Duration: 00:00:28.09, start: 0.000000, bitrate: 573 kb/s\n  Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/bt709/iec61966-2-1), 430x830, SAR 1:1 DAR 43:83, 1k fps, 1k tbr, 1k tbn (default)\n      Metadata:\n        ALPHA_MODE      : 1\n        DURATION        : 00:00:27.813000000\n  Stream #0:1(eng): Audio: opus, 48000 Hz, stereo, fltp (default)\n      Metadata:\n        DURATION        : 00:00:28.094000000\nAt least one output file must be specified\n"
+  },
+  "partie-b-coin": {
+    "frames": 550,
+    "duration": 39.12,
+    "nativeDecodedFramesUnchanged": true,
+    "audioMD5": "MD5=24abbdffad2b59540fc3f1ae33b1aea5",
+    "bytes": 1187767,
+    "codec": "Input #0, matroska,webm, from '/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/PerceptualPolish_2026-10-22/partie-b-coin.webm':\n  Metadata:\n    ENCODER         : Lavf61.7.100\n  Duration: 00:00:39.12, start: 0.000000, bitrate: 242 kb/s\n  Stream #0:0(eng): Audio: opus, 48000 Hz, stereo, fltp (default)\n      Metadata:\n        DURATION        : 00:00:39.116000000\n  Stream #0:1(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/bt709/iec61966-2-1), 430x830, SAR 1:1 DAR 43:83, 1k fps, 1k tbr, 1k tbn (default)\n      Metadata:\n        ALPHA_MODE      : 1\n        DURATION        : 00:00:38.877000000\nAt least one output file must be specified\n"
+  },
+  "realAudio": {
+    "sampleRate": 48000,
+    "channels": 2,
+    "peak": 1832,
+    "clipped": 0
+  },
+  "presentationClip": {
+    "source": "partie-b-coin.webm",
+    "clip": "partie-b-coin-short.webm",
+    "unchangedInitialVideoFramesAndTimestamps": true,
+    "frames": 199,
+    "first14point5SecondsAudioIdentical": true,
+    "audioMD5": "MD5=682abaa8de85d7a2c4c92390bd981630",
+    "edit": "end cut only, stream copy; no internal cut or speed change"
+  }
+}

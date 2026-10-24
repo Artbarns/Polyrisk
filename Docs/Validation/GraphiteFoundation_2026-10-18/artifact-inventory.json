@@ -1,0 +1,218 @@
+{
+  "Builds/GraphiteBaseline/index.html": {
+    "bytes": 5726,
+    "sha256": "603594e6e92734f41914b57eace451360d02ddbf9129e003143cf0897c8e2444"
+  },
+  "Builds/GraphiteBaseline/TemplateData/MemoryProfiler.png": {
+    "bytes": 665,
+    "sha256": "0ce87be20d0c24ab6cb73b57de2004da261cc2a641e69319c6ae3fe11fc85483"
+  },
+  "Builds/GraphiteBaseline/TemplateData/fullscreen-button.png": {
+    "bytes": 175,
+    "sha256": "21221581673a54b8139d408d4a3f8d2b879e86827d4b6fc53b995ff7a99ee3e9"
+  },
+  "Builds/GraphiteBaseline/TemplateData/unity-logo-dark.png": {
+    "bytes": 3042,
+    "sha256": "c1b72d26c096487dabc948b54bc203f8dac7ed4e3f5733918798e858acb4b159"
+  },
+  "Builds/GraphiteBaseline/TemplateData/favicon.ico": {
+    "bytes": 2305,
+    "sha256": "9c13beb90ee8f70580d52a21d5233970d1c89e71e4a34a462c22610941c3c77f"
+  },
+  "Builds/GraphiteBaseline/TemplateData/webmemd-icon.png": {
+    "bytes": 1670,
+    "sha256": "c56f5494640cedda273aad38d58e6ab9da625d5b3f4d875c0ff92c6192a569c2"
+  },
+  "Builds/GraphiteBaseline/TemplateData/progress-bar-empty-light.png": {
+    "bytes": 109,
+    "sha256": "143696c060ad43d6c30f19ff5f49000927a139a2a1e4c9f45fafaa2b90d7d2be"
+  },
+  "Builds/GraphiteBaseline/TemplateData/webgl-logo.png": {
+    "bytes": 2947,
+    "sha256": "b30c3af2a4538c6edf5f2411953760641dfa257f2a4cc5b88d671aa243b1f12f"
+  },
+  "Builds/GraphiteBaseline/TemplateData/style.css": {
+    "bytes": 1600,
+    "sha256": "a41afbb1885cb828b0c63f3137e2f353440849843ee65834abe55bbeefcfc754"
+  },
+  "Builds/GraphiteBaseline/TemplateData/progress-bar-full-dark.png": {
+    "bytes": 74,
+    "sha256": "3306a6244dcb3926fca38a28e3ced589df8ff1beed955eb17c0bbf01c918bc62"
+  },
+  "Builds/GraphiteBaseline/TemplateData/progress-bar-full-light.png": {
+    "bytes": 84,
+    "sha256": "12395ea785480c5cdf12fade6e6cbf49666d5bb1cef7240c113dbcba6bdc5c87"
+  },
+  "Builds/GraphiteBaseline/TemplateData/progress-bar-empty-dark.png": {
+    "bytes": 96,
+    "sha256": "bbee7131afe8a3365906240d89184dc86234c119467f390bc4bc6802328fdb4d"
+  },
+  "Builds/GraphiteBaseline/TemplateData/unity-logo-light.png": {
+    "bytes": 3077,
+    "sha256": "002990aea0d946833cadc1519d5b7e50a4570bd537a0517dd79a59d3eec84da7"
+  },
+  "Builds/GraphiteBaseline/Build/b318f6006bf1c4296479d88e997ed357.wasm": {
+    "bytes": 54067914,
+    "sha256": "e31c452a9d09e3776cac137b5c67e26e082f0a5c2afb92775e69ef456551874d"
+  },
+  "Builds/GraphiteBaseline/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js": {
+    "bytes": 46362,
+    "sha256": "c0b225d624e41656b7790ffcf716c8c986087a938d30e61d28996373b646544a"
+  },
+  "Builds/GraphiteBaseline/Build/d4e6192c8841586403e13c2acf2aab74.framework.js": {
+    "bytes": 751383,
+    "sha256": "42e0f0dc0c3bcca90fa8434898192527142c8a5b159d2ac18d5c2a39d352ee02"
+  },
+  "Builds/GraphiteBaseline/Build/c5ddb60c67dd113968f75bdd2caef769.data": {
+    "bytes": 10107449,
+    "sha256": "78b56d8b865ec998e8d99caf337a34b48c98b90c70d1f9cd712380e167ad0f86"
+  },
+  "Builds/GraphiteFoundation/index.html": {
+    "bytes": 5726,
+    "sha256": "89a6d0de2a9cfda5e5a9711721af27c370646e344c37e1ae1aa37a2536ea9f43"
+  },
+  "Builds/GraphiteFoundation/TemplateData/MemoryProfiler.png": {
+    "bytes": 665,
+    "sha256": "0ce87be20d0c24ab6cb73b57de2004da261cc2a641e69319c6ae3fe11fc85483"
+  },
+  "Builds/GraphiteFoundation/TemplateData/fullscreen-button.png": {
+    "bytes": 175,
+    "sha256": "21221581673a54b8139d408d4a3f8d2b879e86827d4b6fc53b995ff7a99ee3e9"
+  },
+  "Builds/GraphiteFoundation/TemplateData/unity-logo-dark.png": {
+    "bytes": 3042,
+    "sha256": "c1b72d26c096487dabc948b54bc203f8dac7ed4e3f5733918798e858acb4b159"
+  },
+  "Builds/GraphiteFoundation/TemplateData/favicon.ico": {
+    "bytes": 2305,
+    "sha256": "9c13beb90ee8f70580d52a21d5233970d1c89e71e4a34a462c22610941c3c77f"
+  },
+  "Builds/GraphiteFoundation/TemplateData/webmemd-icon.png": {
+    "bytes": 1670,
+    "sha256": "c56f5494640cedda273aad38d58e6ab9da625d5b3f4d875c0ff92c6192a569c2"
+  },
+  "Builds/GraphiteFoundation/TemplateData/progress-bar-empty-light.png": {
+    "bytes": 109,
+    "sha256": "143696c060ad43d6c30f19ff5f49000927a139a2a1e4c9f45fafaa2b90d7d2be"
+  },
+  "Builds/GraphiteFoundation/TemplateData/webgl-logo.png": {
+    "bytes": 2947,
+    "sha256": "b30c3af2a4538c6edf5f2411953760641dfa257f2a4cc5b88d671aa243b1f12f"
+  },
+  "Builds/GraphiteFoundation/TemplateData/style.css": {
+    "bytes": 1600,
+    "sha256": "a41afbb1885cb828b0c63f3137e2f353440849843ee65834abe55bbeefcfc754"
+  },
+  "Builds/GraphiteFoundation/TemplateData/progress-bar-full-dark.png": {
+    "bytes": 74,
+    "sha256": "3306a6244dcb3926fca38a28e3ced589df8ff1beed955eb17c0bbf01c918bc62"
+  },
+  "Builds/GraphiteFoundation/TemplateData/progress-bar-full-light.png": {
+    "bytes": 84,
+    "sha256": "12395ea785480c5cdf12fade6e6cbf49666d5bb1cef7240c113dbcba6bdc5c87"
+  },
+  "Builds/GraphiteFoundation/TemplateData/progress-bar-empty-dark.png": {
+    "bytes": 96,
+    "sha256": "bbee7131afe8a3365906240d89184dc86234c119467f390bc4bc6802328fdb4d"
+  },
+  "Builds/GraphiteFoundation/TemplateData/unity-logo-light.png": {
+    "bytes": 3077,
+    "sha256": "002990aea0d946833cadc1519d5b7e50a4570bd537a0517dd79a59d3eec84da7"
+  },
+  "Builds/GraphiteFoundation/Build/e60a6d124cced80de61fcf7cbd57edec.wasm": {
+    "bytes": 54073868,
+    "sha256": "92917d3834c19aaeaf3906a67cca7a92a94d1b949ade6b2b75eed7d6e14323cb"
+  },
+  "Builds/GraphiteFoundation/Build/4637905a9ae3ae5b7742f275056200a7.data": {
+    "bytes": 9521758,
+    "sha256": "07f62dec537beb33bbd63ff7bda84bb18912108bd59200130c85a4de598f25e8"
+  },
+  "Builds/GraphiteFoundation/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js": {
+    "bytes": 46362,
+    "sha256": "c0b225d624e41656b7790ffcf716c8c986087a938d30e61d28996373b646544a"
+  },
+  "Builds/GraphiteFoundation/Build/fd4de2409126d51a0fcec0a515e3f34d.framework.js": {
+    "bytes": 751383,
+    "sha256": "9b008241cae6f8f37f73b09e5762574348c3ba5855c6ffbb961c7ee6573bc0bb"
+  },
+  "Docs/Validation/GraphiteFoundation_2026-10-18/before-desktop.jpg": {
+    "bytes": 54937,
+    "sha256": "6c18f54e9d4b8c88b39292e364a4c51b3e58d845866dab2ad4b93e61e93adf90",
+    "dimensions": [
+      1200,
+      900
+    ]
+  },
+  "Docs/Validation/GraphiteFoundation_2026-10-18/before-portrait-compact.jpg": {
+    "bytes": 33079,
+    "sha256": "9a457a187124d3b34a3036b7d405a0c3e60b561b719dcb620a5d3e3d1da2644f",
+    "dimensions": [
+      430,
+      830
+    ]
+  },
+  "Docs/Validation/GraphiteFoundation_2026-10-18/before-portrait-expanded.jpg": {
+    "bytes": 37096,
+    "sha256": "0c55ff7a52b4ead5b98d65fa2b0b3996dc00f72e626cba79109ba679e21a81c6",
+    "dimensions": [
+      430,
+      830
+    ]
+  },
+  "Docs/Validation/GraphiteFoundation_2026-10-18/before-property-compact.jpg": {
+    "bytes": 35474,
+    "sha256": "cd2aa0592a643bc6da9b68d6e4174adb3011e1ad13a59b105bdd737863cb68ee",
+    "dimensions": [
+      430,
+      830
+    ]
+  },
+  "Docs/Validation/GraphiteFoundation_2026-10-18/before-property-expanded.jpg": {
+    "bytes": 42312,
+    "sha256": "c51b060d53001953f0c72fdf52125666d013dc67f73c4bb7b6fc1ed29d1ea848",
+    "dimensions": [
+      430,
+      830
+    ]
+  },
+  "Docs/Validation/GraphiteFoundation_2026-10-18/after-desktop.jpg": {
+    "bytes": 53719,
+    "sha256": "1cbac1d010a6fe5d7b583cd784d019579209598e673d1516ed8a41de6d43432d",
+    "dimensions": [
+      1200,
+      900
+    ]
+  },
+  "Docs/Validation/GraphiteFoundation_2026-10-18/after-portrait-compact.jpg": {
+    "bytes": 32797,
+    "sha256": "3041e7ce412d2187465efe1e12860687651357441a0af9d01d1f493974b77532",
+    "dimensions": [
+      430,
+      830
+    ]
+  },
+  "Docs/Validation/GraphiteFoundation_2026-10-18/after-portrait-expanded.jpg": {
+    "bytes": 36861,
+    "sha256": "2b7cca1415395541d1a872caccec6f45c8818d6cfe204075156f8a5f694320e3",
+    "dimensions": [
+      430,
+      830
+    ]
+  },
+  "Docs/Validation/GraphiteFoundation_2026-10-18/after-property-compact.jpg": {
+    "bytes": 35172,
+    "sha256": "586faf76e64e9fe459f5ad9fee7f8aebb03f3a961f271e23ec6614de8b90ffdb",
+    "dimensions": [
+      430,
+      830
+    ]
+  },
+  "Docs/Validation/GraphiteFoundation_2026-10-18/after-property-expanded.jpg": {
+    "bytes": 42033,
+    "sha256": "aacff24e04d751dcb7ad6ffc76736c19abd9eefdb66e405b869ead35cc5154cc",
+    "dimensions": [
+      430,
+      830
+    ]
+  }
+}

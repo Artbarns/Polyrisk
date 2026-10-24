@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37b6d750182a461492b86dea67bc01e, type: 3}
+  m_Name: GraphiteTheme
+  m_EditorClassIdentifier: 
+  board: {r: 0.09019608, g: 0.11372549, b: 0.14509805, a: 1}
+  tile: {r: 0.14509805, g: 0.1764706, b: 0.21568628, a: 1}
+  outline: {r: 0.22745098, g: 0.27058825, b: 0.31764707, a: 1}
+  center: {r: 0.078431375, g: 0.101960786, b: 0.13333334, a: 1}
+  engraving: {r: 0.05882353, g: 0.078431375, b: 0.105882354, a: 1}
+  background: {r: 0.047058824, g: 0.0627451, b: 0.08627451, a: 1}
+  thicknessRatio: 0.045
+  cornerRadiusRatio: 0.025
+  outlineWidthRatio: 0.014
+  categoryBandRatio: 0.018
+  cornerSegments: 3
+  frameCornerRadius: 0.08
+  tileSurfaceY: 0.096
+  frameMetallic: 0.25
+  frameSmoothness: 0.32
+  tileMetallic: 0.12
+  tileSmoothness: 0.23
+  restingEmission: 0.65
+  trimEmission: 0.12
+  categorySaturation: 0.5
+  simulatedReflection: 0.035
+  reflectionFalloff: 0.12

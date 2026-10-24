@@ -1,0 +1,9 @@
+{
+  "oldOnlineInvitationSeconds": 5,
+  "newOnlineInvitationSeconds": 30,
+  "maximumExtraSecondsPerTender": 25,
+  "bidderWindowsRunInParallel": true,
+  "doesNotScaleWithBidderCount": true,
+  "illustrativeMaximumExtraSecondsFor40Tenders": 1000,
+  "scope": "Latency bound, not observed game duration. Does not change cash/ownership formulas; can affect wall-clock 90-minute ending, requires human timing evidence."
+}

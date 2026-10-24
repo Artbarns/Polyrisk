@@ -1,0 +1,535 @@
+127.0.0.1 - - [22/Oct/2026 22:03:54] "GET /MonolithContact/baseline-capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:54] "GET /MonolithContact/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:54] "GET /MonolithContact/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:54] "GET /MonolithContact/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:54] "GET /MonolithContact/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:54] "GET /MonolithContact/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:55] "GET /MonolithContact/Build/0f00d6673ed31880fa0e4b282ad202df.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:55] "GET /MonolithContact/baseline-capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:55] "GET /MonolithContact/Build/3c3ee60ade1493f8f0c28cd5c0add45e.wasm HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 49669)
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 68, in do_GET
+    return super().do_GET()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 667, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 867, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/shutil.py", line 208, in copyfileobj
+    fdst_write(buf)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [22/Oct/2026 22:03:55] "GET /MonolithContact/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:55] "GET /MonolithContact/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:55] "GET /MonolithContact/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:55] "GET /MonolithContact/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:55] "GET /MonolithContact/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:55] "GET /MonolithContact/Build/0f00d6673ed31880fa0e4b282ad202df.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:55] "GET /MonolithContact/Build/47a136a55c6e1fe3ffd17ca25534b9e1.data HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:55] "GET /MonolithContact/Build/3c3ee60ade1493f8f0c28cd5c0add45e.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:03:56] "GET /MonolithContact/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:04:30] "POST /__capture HTTP/1.1" 303 -
+127.0.0.1 - - [22/Oct/2026 22:04:30] "GET /__saved HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:04:30] "GET /MonolithContact/baseline-capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:04:31] "GET /MonolithContact/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:04:31] "GET /MonolithContact/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:04:31] "GET /MonolithContact/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:04:31] "GET /MonolithContact/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:04:31] "GET /MonolithContact/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:04:31] "GET /MonolithContact/Build/0f00d6673ed31880fa0e4b282ad202df.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:04:31] "GET /MonolithContact/Build/47a136a55c6e1fe3ffd17ca25534b9e1.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 22:04:31] "GET /MonolithContact/Build/3c3ee60ade1493f8f0c28cd5c0add45e.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:04:32] "GET /MonolithContact/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:05:28] "POST /__capture HTTP/1.1" 303 -
+127.0.0.1 - - [22/Oct/2026 22:05:28] "GET /__saved HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:52] "GET /ReflectiveNeon/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:52] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:52] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:52] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:52] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:52] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:53] "GET /ReflectiveNeon/Build/802c1012eb38d967878e5c544c35eb79.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:53] "GET /ReflectiveNeon/Build/deb92e59176f31b93faa80f661c2d9cf.data HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:53] "GET /ReflectiveNeon/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:53] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:53] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:53] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:53] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:53] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:53] "GET /ReflectiveNeon/Build/802c1012eb38d967878e5c544c35eb79.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:53] "GET /ReflectiveNeon/Build/deb92e59176f31b93faa80f661c2d9cf.data HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:53] "GET /ReflectiveNeon/Build/9cfba279865e6869f33734c719b8689a.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:13:53] "GET /ReflectiveNeon/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/Build/ed1ef26137304a6f3ee349501ce5111d.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/Build/5ed9c8fa0a36b0d5e43ef779735fc557.data HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/Build/60dc8821f4365ac9d6f86c5b282d7acb.wasm HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 49857)
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 49859)
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 68, in do_GET
+    return super().do_GET()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 667, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 867, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/shutil.py", line 208, in copyfileobj
+    fdst_write(buf)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+Traceback (most recent call last):
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 68, in do_GET
+    return super().do_GET()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 667, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 867, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/shutil.py", line 208, in copyfileobj
+    fdst_write(buf)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/Build/ed1ef26137304a6f3ee349501ce5111d.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/Build/5ed9c8fa0a36b0d5e43ef779735fc557.data HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/Build/60dc8821f4365ac9d6f86c5b282d7acb.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:24:02] "GET /ReflectiveNeon/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:33] "GET /ReflectiveNeon/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:33] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:34] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:34] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:34] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:34] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/Build/25175322149a87921fb9beb125a4c38c.wasm HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 49906)
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 49905)
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+Traceback (most recent call last):
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 68, in do_GET
+    return super().do_GET()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 68, in do_GET
+    return super().do_GET()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 667, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 867, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/shutil.py", line 208, in copyfileobj
+    fdst_write(buf)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 667, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 867, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/shutil.py", line 208, in copyfileobj
+    fdst_write(buf)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+----------------------------------------
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/Build/25175322149a87921fb9beb125a4c38c.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:29:35] "GET /ReflectiveNeon/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:31:30] "GET /ReflectiveNeon/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:31:31] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:31:31] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:31:31] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:31:31] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:31:31] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:31:31] "GET /ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:31:31] "GET /ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 22:31:31] "GET /ReflectiveNeon/Build/25175322149a87921fb9beb125a4c38c.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:31:31] "GET /ReflectiveNeon/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:33:45] "GET /ReflectiveNeon/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:33:45] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:33:46] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:33:46] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:33:46] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:33:46] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:33:46] "GET /ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:33:46] "GET /ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 22:33:46] "GET /ReflectiveNeon/Build/25175322149a87921fb9beb125a4c38c.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:33:46] "GET /ReflectiveNeon/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:01] "GET /ReflectiveNeon/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:02] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:02] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:02] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:02] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:02] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:02] "GET /ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:02] "GET /ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 22:39:02] "GET /ReflectiveNeon/Build/25175322149a87921fb9beb125a4c38c.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:03] "GET /ReflectiveNeon/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:46] "POST /__video?name=variant-b-fixtures.webm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:56] "GET /ReflectiveNeon/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:56] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:57] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:57] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:57] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:57] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:57] "GET /ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:57] "GET /ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 22:39:57] "GET /ReflectiveNeon/Build/25175322149a87921fb9beb125a4c38c.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:39:57] "GET /ReflectiveNeon/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:40:36] "POST /__video?name=variant-b-game.webm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:11] "GET /ReflectiveNeon/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:11] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:11] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:11] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:11] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:11] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:11] "GET /ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:11] "GET /ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 22:42:11] "GET /ReflectiveNeon/Build/25175322149a87921fb9beb125a4c38c.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:11] "GET /ReflectiveNeon/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/variant-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/variant-b-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/baseline-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/variant-a-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/variant-b-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/detail-neutral.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/detail-selected.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/detail-arrival.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/detail-crossing.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/pawn-active.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/pawn-idle.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:42:57] "GET /evidence/variant-b-fixtures-audio.wav HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:42:58] code 404, message File not found
+127.0.0.1 - - [22/Oct/2026 22:42:58] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [22/Oct/2026 22:43:05] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:43:25] "GET /evidence/variant-b-fixtures.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:43:25] "GET /evidence/variant-b-fixtures.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:46:12] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/variant-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/variant-b-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/baseline-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/variant-b-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/variant-a-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/detail-neutral.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/detail-selected.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/detail-crossing.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/detail-arrival.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/pawn-active.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/pawn-idle.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/variant-b-fixtures-audio.wav HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/variant-b-fixtures.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:46:13] "GET /evidence/variant-b-fixtures.webm HTTP/1.1" 206 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 50093)
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 49, in do_GET
+    self.wfile.write(body[start:end+1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+ConnectionResetError: [Errno 54] Connection reset by peer
+----------------------------------------
+127.0.0.1 - - [22/Oct/2026 22:46:26] "GET /evidence/variant-b-fixtures.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:46:26] "GET /evidence/variant-b-fixtures.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:46:45] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:46:45] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:47:03] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/variant-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/variant-a-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/variant-b-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/detail-neutral.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/baseline-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/detail-selected.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/variant-b-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/detail-crossing.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/detail-arrival.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/pawn-idle.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/pawn-active.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:47:04] "GET /evidence/variant-b-fixtures-audio.wav HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:48:04] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/variant-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/variant-b-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/baseline-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/variant-a-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/variant-b-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/detail-neutral.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/detail-crossing.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/detail-selected.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/detail-arrival.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/pawn-idle.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/pawn-active.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:48:06] "GET /evidence/variant-b-fixtures-audio.wav HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:48:07] code 404, message File not found
+127.0.0.1 - - [22/Oct/2026 22:48:07] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [22/Oct/2026 22:49:22] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:49:22] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 50148)
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 49, in do_GET
+    self.wfile.write(body[start:end+1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+ConnectionResetError: [Errno 54] Connection reset by peer
+----------------------------------------
+127.0.0.1 - - [22/Oct/2026 22:49:33] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:35] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/variant-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/variant-b-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/baseline-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/variant-a-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/variant-b-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/detail-neutral.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/detail-crossing.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/detail-selected.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/detail-arrival.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/pawn-idle.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/pawn-active.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:49:36] "GET /evidence/variant-b-fixtures-audio.wav HTTP/1.1" 206 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 50164)
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 49, in do_GET
+    self.wfile.write(body[start:end+1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [22/Oct/2026 22:49:43] "GET /evidence/variant-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/variant-b-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/variant-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/variant-a-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/baseline-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/detail-neutral.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/variant-b-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/detail-selected.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/detail-crossing.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/detail-arrival.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/pawn-idle.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/pawn-active.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/variant-b-fixtures-audio.wav HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:49:49] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:49:50] "GET /evidence/variant-b-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/variant-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/variant-b-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/variant-a-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/baseline-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/variant-b-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/detail-neutral.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/detail-crossing.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/detail-selected.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/detail-arrival.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/pawn-idle.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/pawn-active.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:49:58] "GET /evidence/variant-b-fixtures-audio.wav HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:49:59] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:49:59] "GET /evidence/variant-a-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:04] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/variant-b-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/variant-a-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/variant-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/baseline-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/detail-neutral.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/variant-b-desktop.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/detail-selected.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/detail-arrival.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/detail-crossing.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/pawn-idle.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/pawn-active.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/variant-b-fixtures-audio.wav HTTP/1.1" 206 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 50214)
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/ReflectiveNeon_2026-10-22/serve_webgl.py", line 49, in do_GET
+    self.wfile.write(body[start:end+1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+ConnectionResetError: [Errno 54] Connection reset by peer
+----------------------------------------
+127.0.0.1 - - [22/Oct/2026 22:50:05] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:50:11] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:50:11] code 404, message File not found
+127.0.0.1 - - [22/Oct/2026 22:50:11] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [22/Oct/2026 22:50:33] "GET /evidence/variant-b-game.webm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:50:51] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:51:04] "GET /evidence/variant-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:51:14] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:51:25] "GET /evidence/variant-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:51:33] "GET /evidence/variant-b-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:54:51] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:56:40] "GET /evidence/variant-b-fixtures.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:56:40] "GET /evidence/variant-b-fixtures.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:56:42] "GET /evidence/variant-b-fixtures.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:57:04] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:57:04] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 22:57:06] "GET /evidence/variant-b-game.webm HTTP/1.1" 206 -

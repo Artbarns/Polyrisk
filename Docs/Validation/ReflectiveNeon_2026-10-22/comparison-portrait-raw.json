@@ -1,0 +1,2784 @@
+{
+  "a": [
+    {
+      "level": "log",
+      "message": "navigator.mediaDevices support available",
+      "timestamp": "2026-10-22T20:29:36.007Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[UnityCache] 'http://127.0.0.1:9004/ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data' successfully downloaded and stored in the indexedDB cache",
+      "timestamp": "2026-10-22T20:29:36.420Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+    },
+    {
+      "level": "log",
+      "message": "[UnityMemory] Configuration Parameters - Can be set up in boot.config\n",
+      "timestamp": "2026-10-22T20:29:37.594Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-nav-mesh-worker=65536\"\n",
+      "timestamp": "2026-10-22T20:29:37.595Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-audio-worker=65536\"\n",
+      "timestamp": "2026-10-22T20:29:37.599Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-background-worker=32768\"\n",
+      "timestamp": "2026-10-22T20:29:37.599Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-allocator-temp-initial-block-size-main=262144\"\n",
+      "timestamp": "2026-10-22T20:29:37.600Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-allocator-temp-initial-block-size-worker=262144\"\n",
+      "timestamp": "2026-10-22T20:29:37.602Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-granularity=16\"\n",
+      "timestamp": "2026-10-22T20:29:37.603Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-bucket-count=8\"\n",
+      "timestamp": "2026-10-22T20:29:37.609Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:29:37.611Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-block-count=1\"\n",
+      "timestamp": "2026-10-22T20:29:37.611Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-main-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:29:37.612Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-thread-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:29:37.616Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-gfx-main-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:29:37.617Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-gfx-thread-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:29:37.619Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-cache-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:29:37.621Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-typetree-allocator-block-size=2097152\"\n",
+      "timestamp": "2026-10-22T20:29:37.624Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-granularity=16\"\n",
+      "timestamp": "2026-10-22T20:29:37.626Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-bucket-count=8\"\n",
+      "timestamp": "2026-10-22T20:29:37.629Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:29:37.631Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-block-count=1\"\n",
+      "timestamp": "2026-10-22T20:29:37.634Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:29:37.636Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-editor-allocator-block-size=1048576\"\n",
+      "timestamp": "2026-10-22T20:29:37.639Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-main=4194304\"\n",
+      "timestamp": "2026-10-22T20:29:37.641Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-block-size=2097152\"\n",
+      "timestamp": "2026-10-22T20:29:37.643Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-block-size-background=1048576\"\n",
+      "timestamp": "2026-10-22T20:29:37.653Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-reduction-small-platforms=262144\"\n",
+      "timestamp": "2026-10-22T20:29:37.654Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Found NO interfaces on host .\n",
+      "timestamp": "2026-10-22T20:29:38.165Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Input System module state changed to: Initialized.\n",
+      "timestamp": "2026-10-22T20:29:38.189Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+      "timestamp": "2026-10-22T20:29:38.207Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Loading player data from data.unity3d\n",
+      "timestamp": "2026-10-22T20:29:38.234Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Initialize engine version: 2022.3.62f3 (96770f904ca7)\n",
+      "timestamp": "2026-10-22T20:29:38.263Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Subsystems] Discovering subsystems at path UnitySubsystems\n",
+      "timestamp": "2026-10-22T20:29:38.267Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Creating WebGL 2.0 context.",
+      "timestamp": "2026-10-22T20:29:38.273Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+    },
+    {
+      "level": "log",
+      "message": "Renderer: WebKit WebGL\n",
+      "timestamp": "2026-10-22T20:29:38.632Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Vendor:   WebKit\n",
+      "timestamp": "2026-10-22T20:29:38.633Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Version:  OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))\n",
+      "timestamp": "2026-10-22T20:29:38.634Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GLES:     3\n",
+      "timestamp": "2026-10-22T20:29:38.635Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": " EXT_clip_control EXT_color_buffer_float EXT_color_buffer_half_float EXT_conservative_depth EXT_depth_clamp EXT_disjoint_timer_query_webgl2 EXT_float_blend EXT_polygon_offset_clamp EXT_render_snorm EXT_texture_compression_bptc EXT_texture_compression_rgtc EXT_texture_filter_anisotropic EXT_texture_mirror_clamp_to_edge EXT_texture_norm16 KHR_parallel_shader_compile NV_shader_noperspective_interpolation OES_draw_buffers_indexed OES_sample_variables OES_shader_multisample_interpolation OES_texture_float_linear WEBGL_blend_func_extended WEBGL_clip_cull_distance WEBGL_compressed_texture_s3tc WEBGL_compressed_texture_s3tc_srgb WEBGL_debug_renderer_info WEBGL_debug_shaders WEBGL_lose_context WEBGL_multi_draw WEBGL_polygon_mode WEBGL_provoking_vertex WEBGL_stencil_texturing GL_EXT_clip_control GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_depth_clamp GL_EXT_disjoint_timer_query_webgl2 GL_EXT_float_blend GL_EXT_polygon_offset_clamp GL_EXT_render_snorm GL_EXT_texture_compres\n",
+      "timestamp": "2026-10-22T20:29:38.636Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "sion_bptc GL_EXT_texture_compression_rgtc GL_EXT_texture_filter_anisotropic GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_KHR_parallel_shader_compile GL_NV_shader_noperspective_interpolation GL_OES_draw_buffers_indexed GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_texture_float_linear GL_WEBGL_blend_func_extended GL_WEBGL_clip_cull_distance GL_WEBGL_compressed_texture_s3tc GL_WEBGL_compressed_texture_s3tc_srgb GL_WEBGL_debug_renderer_info GL_WEBGL_debug_shaders GL_WEBGL_lose_context GL_WEBGL_multi_draw GL_WEBGL_polygon_mode GL_WEBGL_provoking_vertex GL_WEBGL_stencil_texturing\n",
+      "timestamp": "2026-10-22T20:29:38.637Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "OPENGL LOG: Creating OpenGL ES 3.0 graphics device ; Context level  <OpenGL ES 3.0> ; Context handle 1\n",
+      "timestamp": "2026-10-22T20:29:38.961Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "ERROR: Shader ",
+      "timestamp": "2026-10-22T20:29:39.542Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Hidden/Universal/HDRDebugView shader is not supported on this GPU (none of subshaders/fallbacks are suitable)\n",
+      "timestamp": "2026-10-22T20:29:39.586Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Input Manager initialize...\n",
+      "timestamp": "2026-10-22T20:29:39.586Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+      "timestamp": "2026-10-22T20:29:40.132Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "UnloadTime: 11.600000 ms\n",
+      "timestamp": "2026-10-22T20:29:40.133Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Starting initialization...\n",
+      "timestamp": "2026-10-22T20:29:43.537Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Initializing Board Data...\n",
+      "timestamp": "2026-10-22T20:29:43.539Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Board initialized with 40 tiles.\n",
+      "timestamp": "2026-10-22T20:29:43.539Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Venture Deck initialized and shuffled.\n",
+      "timestamp": "2026-10-22T20:29:43.540Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Creating Players...\n",
+      "timestamp": "2026-10-22T20:29:47.396Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 1 assigned profile: Predator\n",
+      "timestamp": "2026-10-22T20:29:47.397Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 2 assigned profile: Rentier\n",
+      "timestamp": "2026-10-22T20:29:47.397Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 3 assigned profile: Negotiator\n",
+      "timestamp": "2026-10-22T20:29:47.398Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Spawning Visuals...\n",
+      "timestamp": "2026-10-22T20:29:47.398Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Trying to get length of sound which is not loaded yet.",
+      "timestamp": "2026-10-22T20:29:47.427Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Trying to get length of sound which is not loaded yet.",
+      "timestamp": "2026-10-22T20:29:47.427Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Spawned 4 player pawns at (4.55, 3.95, -8.13).\n",
+      "timestamp": "2026-10-22T20:29:47.528Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Starting Game Loop...\n",
+      "timestamp": "2026-10-22T20:29:47.528Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Game loop deferred until a game mode is selected.\n",
+      "timestamp": "2026-10-22T20:29:47.529Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Audio context resumed after 56.563 seconds.",
+      "timestamp": "2026-10-22T20:30:35.588Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Turn Start: Player 0\n",
+      "timestamp": "2026-10-22T20:30:36.075Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Deferred local game started.\n",
+      "timestamp": "2026-10-22T20:30:36.091Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Clicked on Background_Plate, but it's not a recognized tile.\n",
+      "timestamp": "2026-10-22T20:30:36.172Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":40,\"collidersInside\":40,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":235.9512481689453,\"y\":258.28759765625},\"tile32\":{\"x\":253.67922973632813,\"y\":269.6829833984375},\"tile0\":{\"x\":398.7264404296875,\"y\":364.0},\"tile10\":{\"x\":215.00003051757813,\"y\":482.0970764160156},\"tile20\":{\"x\":31.273582458496095,\"y\":364.0},\"tile30\":{\"x\":214.99996948242188,\"y\":245.90289306640626},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-15.24795150756836,\"y\":316.6114196777344,\"width\":460.495849609375,\"height\":296.4462585449219},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":18.208171844482423,\"minTileEdgePixels\":17.62591552734375,\"minTileAltitudePixels\":16.034400939941408,\"minTileAreaPixels\":405.5008544921875}}\n",
+      "timestamp": "2026-10-22T20:30:36.578Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS 40 unique indices\n",
+      "timestamp": "2026-10-22T20:30:36.647Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin camera identical\n",
+      "timestamp": "2026-10-22T20:30:36.648Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin 40 anchor collider contracts unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.651Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin same four fused mesh objects\n",
+      "timestamp": "2026-10-22T20:30:36.653Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin all persistent state pixels unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.656Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin pawn positions audio and locks unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.658Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin actual full economic snapshot identical\n",
+      "timestamp": "2026-10-22T20:30:36.659Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin quality accessibility preference unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.660Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 0\n",
+      "timestamp": "2026-10-22T20:30:36.662Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 1\n",
+      "timestamp": "2026-10-22T20:30:36.663Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 2\n",
+      "timestamp": "2026-10-22T20:30:36.665Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 3\n",
+      "timestamp": "2026-10-22T20:30:36.666Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 4\n",
+      "timestamp": "2026-10-22T20:30:36.668Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 5\n",
+      "timestamp": "2026-10-22T20:30:36.670Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 6\n",
+      "timestamp": "2026-10-22T20:30:36.671Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 7\n",
+      "timestamp": "2026-10-22T20:30:36.673Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 8\n",
+      "timestamp": "2026-10-22T20:30:36.675Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 9\n",
+      "timestamp": "2026-10-22T20:30:36.677Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 10\n",
+      "timestamp": "2026-10-22T20:30:36.679Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 11\n",
+      "timestamp": "2026-10-22T20:30:36.681Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 12\n",
+      "timestamp": "2026-10-22T20:30:36.683Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 13\n",
+      "timestamp": "2026-10-22T20:30:36.684Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 14\n",
+      "timestamp": "2026-10-22T20:30:36.686Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 15\n",
+      "timestamp": "2026-10-22T20:30:36.689Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 16\n",
+      "timestamp": "2026-10-22T20:30:36.691Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 17\n",
+      "timestamp": "2026-10-22T20:30:36.694Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 18\n",
+      "timestamp": "2026-10-22T20:30:36.697Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 19\n",
+      "timestamp": "2026-10-22T20:30:36.698Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 20\n",
+      "timestamp": "2026-10-22T20:30:36.701Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 21\n",
+      "timestamp": "2026-10-22T20:30:36.703Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 22\n",
+      "timestamp": "2026-10-22T20:30:36.706Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 23\n",
+      "timestamp": "2026-10-22T20:30:36.708Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 24\n",
+      "timestamp": "2026-10-22T20:30:36.710Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 25\n",
+      "timestamp": "2026-10-22T20:30:36.712Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 26\n",
+      "timestamp": "2026-10-22T20:30:36.714Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 27\n",
+      "timestamp": "2026-10-22T20:30:36.716Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 28\n",
+      "timestamp": "2026-10-22T20:30:36.718Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 29\n",
+      "timestamp": "2026-10-22T20:30:36.720Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 30\n",
+      "timestamp": "2026-10-22T20:30:36.722Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 31\n",
+      "timestamp": "2026-10-22T20:30:36.724Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 32\n",
+      "timestamp": "2026-10-22T20:30:36.726Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 33\n",
+      "timestamp": "2026-10-22T20:30:36.728Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 34\n",
+      "timestamp": "2026-10-22T20:30:36.731Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 35\n",
+      "timestamp": "2026-10-22T20:30:36.735Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 36\n",
+      "timestamp": "2026-10-22T20:30:36.739Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 37\n",
+      "timestamp": "2026-10-22T20:30:36.741Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 38\n",
+      "timestamp": "2026-10-22T20:30:36.744Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 39\n",
+      "timestamp": "2026-10-22T20:30:36.747Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon camera identical\n",
+      "timestamp": "2026-10-22T20:30:36.751Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon 40 anchor collider contracts unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.755Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon same four fused mesh objects\n",
+      "timestamp": "2026-10-22T20:30:36.757Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon all persistent state pixels unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.760Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon pawn positions audio and locks unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.763Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon actual full economic snapshot identical\n",
+      "timestamp": "2026-10-22T20:30:36.765Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon quality accessibility preference unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.771Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 0\n",
+      "timestamp": "2026-10-22T20:30:36.774Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 1\n",
+      "timestamp": "2026-10-22T20:30:36.778Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 2\n",
+      "timestamp": "2026-10-22T20:30:36.781Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 3\n",
+      "timestamp": "2026-10-22T20:30:36.785Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 4\n",
+      "timestamp": "2026-10-22T20:30:36.789Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 5\n",
+      "timestamp": "2026-10-22T20:30:36.793Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 6\n",
+      "timestamp": "2026-10-22T20:30:36.797Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 7\n",
+      "timestamp": "2026-10-22T20:30:36.799Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 8\n",
+      "timestamp": "2026-10-22T20:30:36.802Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 9\n",
+      "timestamp": "2026-10-22T20:30:36.805Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 10\n",
+      "timestamp": "2026-10-22T20:30:36.808Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 11\n",
+      "timestamp": "2026-10-22T20:30:36.811Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 12\n",
+      "timestamp": "2026-10-22T20:30:36.814Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 13\n",
+      "timestamp": "2026-10-22T20:30:36.818Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 14\n",
+      "timestamp": "2026-10-22T20:30:36.821Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 15\n",
+      "timestamp": "2026-10-22T20:30:36.824Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 16\n",
+      "timestamp": "2026-10-22T20:30:36.828Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 17\n",
+      "timestamp": "2026-10-22T20:30:36.831Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 18\n",
+      "timestamp": "2026-10-22T20:30:36.835Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 19\n",
+      "timestamp": "2026-10-22T20:30:36.837Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 20\n",
+      "timestamp": "2026-10-22T20:30:36.840Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 21\n",
+      "timestamp": "2026-10-22T20:30:36.844Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 22\n",
+      "timestamp": "2026-10-22T20:30:36.848Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 23\n",
+      "timestamp": "2026-10-22T20:30:36.852Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 24\n",
+      "timestamp": "2026-10-22T20:30:36.857Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 25\n",
+      "timestamp": "2026-10-22T20:30:36.858Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 26\n",
+      "timestamp": "2026-10-22T20:30:36.862Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 27\n",
+      "timestamp": "2026-10-22T20:30:36.864Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 28\n",
+      "timestamp": "2026-10-22T20:30:36.866Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 29\n",
+      "timestamp": "2026-10-22T20:30:36.869Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 30\n",
+      "timestamp": "2026-10-22T20:30:36.871Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 31\n",
+      "timestamp": "2026-10-22T20:30:36.874Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 32\n",
+      "timestamp": "2026-10-22T20:30:36.879Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 33\n",
+      "timestamp": "2026-10-22T20:30:36.880Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 34\n",
+      "timestamp": "2026-10-22T20:30:36.882Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 35\n",
+      "timestamp": "2026-10-22T20:30:36.886Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 36\n",
+      "timestamp": "2026-10-22T20:30:36.889Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 37\n",
+      "timestamp": "2026-10-22T20:30:36.892Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 38\n",
+      "timestamp": "2026-10-22T20:30:36.894Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 39\n",
+      "timestamp": "2026-10-22T20:30:36.897Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_QA {\"treatment\":\"GraphiteReflectiveNeon\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"mainLight\":\"PerPixel\",\"srpBatcher\":true,\"width\":430,\"height\":830,\"indices\":40,\"meshes\":4,\"lights\":1,\"realtimeProbes\":0,\"bloom\":0.07999999821186066,\"exposure\":0.15000000596046449,\"size\":18.208171844482423,\"camera\":{\"x\":-13.41923999786377,\"y\":15.593729019165039,\"z\":-14.70443058013916},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"finish\":{\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.41999998688697817,\"tileMetallic\":0.3400000035762787,\"boardSmoothness\":0.5299999713897705,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.5600000023841858,\"edgeSpecular\":0.04500000178813934,\"neonEmission\":1.059999942779541,\"neonReflection\":0.5199999809265137,\"reflectionFalloff\":0.04500000178813934,\"reflectionReach\":0.14000000059604646,\"contactReflection\":0.23999999463558198,\"arrivalReflection\":0.41999998688697817,\"contactOutline\":1.0399999618530274,\"backgroundSeparation\":0.01600000075995922,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.04500000178813934}}\n",
+      "timestamp": "2026-10-22T20:30:36.903Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_VARIANTS_DONE\n",
+      "timestamp": "2026-10-22T20:30:36.905Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_MEASURE {\"quality\":\"Low\",\"treatment\":\"GraphiteReflectiveNeon\",\"frames\":39,\"seconds\":6.650997161865234,\"meanFrameMs\":169.71795654296876,\"maxFrameMs\":656.0,\"renderCountersAvailable\":true,\"drawCalls\":76,\"batches\":67,\"setPass\":37,\"totalAllocatedBytes\":51876311,\"totalReservedBytes\":60220868}\n",
+      "timestamp": "2026-10-22T20:30:43.781Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[UnityCache] 'http://127.0.0.1:9004/ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data' successfully revalidated and served from the indexedDB cache",
+      "timestamp": "2026-10-22T20:31:31.654Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+    },
+    {
+      "level": "log",
+      "message": "navigator.mediaDevices support available",
+      "timestamp": "2026-10-22T20:31:31.723Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[UnityMemory] Configuration Parameters - Can be set up in boot.config\n",
+      "timestamp": "2026-10-22T20:31:32.527Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-nav-mesh-worker=65536\"\n",
+      "timestamp": "2026-10-22T20:31:32.528Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-audio-worker=65536\"\n",
+      "timestamp": "2026-10-22T20:31:32.528Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-background-worker=32768\"\n",
+      "timestamp": "2026-10-22T20:31:32.529Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-allocator-temp-initial-block-size-main=262144\"\n",
+      "timestamp": "2026-10-22T20:31:32.529Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-allocator-temp-initial-block-size-worker=262144\"\n",
+      "timestamp": "2026-10-22T20:31:32.529Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-granularity=16\"\n",
+      "timestamp": "2026-10-22T20:31:32.530Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-bucket-count=8\"\n",
+      "timestamp": "2026-10-22T20:31:32.530Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:31:32.531Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-block-count=1\"\n",
+      "timestamp": "2026-10-22T20:31:32.532Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-main-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:31:32.533Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-thread-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:31:32.533Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-gfx-main-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:31:32.534Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-gfx-thread-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:31:32.534Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-cache-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:31:32.535Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-typetree-allocator-block-size=2097152\"\n",
+      "timestamp": "2026-10-22T20:31:32.535Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-granularity=16\"\n",
+      "timestamp": "2026-10-22T20:31:32.536Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-bucket-count=8\"\n",
+      "timestamp": "2026-10-22T20:31:32.536Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:31:32.536Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-block-count=1\"\n",
+      "timestamp": "2026-10-22T20:31:32.548Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:31:32.549Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-editor-allocator-block-size=1048576\"\n",
+      "timestamp": "2026-10-22T20:31:32.549Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-main=4194304\"\n",
+      "timestamp": "2026-10-22T20:31:32.549Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-block-size=2097152\"\n",
+      "timestamp": "2026-10-22T20:31:32.549Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-block-size-background=1048576\"\n",
+      "timestamp": "2026-10-22T20:31:32.549Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-reduction-small-platforms=262144\"\n",
+      "timestamp": "2026-10-22T20:31:32.550Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Found NO interfaces on host .\n",
+      "timestamp": "2026-10-22T20:31:32.777Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Input System module state changed to: Initialized.\n",
+      "timestamp": "2026-10-22T20:31:32.779Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+      "timestamp": "2026-10-22T20:31:32.783Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Loading player data from data.unity3d\n",
+      "timestamp": "2026-10-22T20:31:32.785Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Initialize engine version: 2022.3.62f3 (96770f904ca7)\n",
+      "timestamp": "2026-10-22T20:31:32.787Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Subsystems] Discovering subsystems at path UnitySubsystems\n",
+      "timestamp": "2026-10-22T20:31:32.789Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Creating WebGL 2.0 context.",
+      "timestamp": "2026-10-22T20:31:32.790Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+    },
+    {
+      "level": "log",
+      "message": "Renderer: WebKit WebGL\n",
+      "timestamp": "2026-10-22T20:31:32.977Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Vendor:   WebKit\n",
+      "timestamp": "2026-10-22T20:31:32.978Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Version:  OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))\n",
+      "timestamp": "2026-10-22T20:31:32.980Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GLES:     3\n",
+      "timestamp": "2026-10-22T20:31:32.981Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": " EXT_clip_control EXT_color_buffer_float EXT_color_buffer_half_float EXT_conservative_depth EXT_depth_clamp EXT_disjoint_timer_query_webgl2 EXT_float_blend EXT_polygon_offset_clamp EXT_render_snorm EXT_texture_compression_bptc EXT_texture_compression_rgtc EXT_texture_filter_anisotropic EXT_texture_mirror_clamp_to_edge EXT_texture_norm16 KHR_parallel_shader_compile NV_shader_noperspective_interpolation OES_draw_buffers_indexed OES_sample_variables OES_shader_multisample_interpolation OES_texture_float_linear WEBGL_blend_func_extended WEBGL_clip_cull_distance WEBGL_compressed_texture_s3tc WEBGL_compressed_texture_s3tc_srgb WEBGL_debug_renderer_info WEBGL_debug_shaders WEBGL_lose_context WEBGL_multi_draw WEBGL_polygon_mode WEBGL_provoking_vertex WEBGL_stencil_texturing GL_EXT_clip_control GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_depth_clamp GL_EXT_disjoint_timer_query_webgl2 GL_EXT_float_blend GL_EXT_polygon_offset_clamp GL_EXT_render_snorm GL_EXT_texture_compres\n",
+      "timestamp": "2026-10-22T20:31:32.981Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "sion_bptc GL_EXT_texture_compression_rgtc GL_EXT_texture_filter_anisotropic GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_KHR_parallel_shader_compile GL_NV_shader_noperspective_interpolation GL_OES_draw_buffers_indexed GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_texture_float_linear GL_WEBGL_blend_func_extended GL_WEBGL_clip_cull_distance GL_WEBGL_compressed_texture_s3tc GL_WEBGL_compressed_texture_s3tc_srgb GL_WEBGL_debug_renderer_info GL_WEBGL_debug_shaders GL_WEBGL_lose_context GL_WEBGL_multi_draw GL_WEBGL_polygon_mode GL_WEBGL_provoking_vertex GL_WEBGL_stencil_texturing\n",
+      "timestamp": "2026-10-22T20:31:32.984Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "OPENGL LOG: Creating OpenGL ES 3.0 graphics device ; Context level  <OpenGL ES 3.0> ; Context handle 1\n",
+      "timestamp": "2026-10-22T20:31:32.998Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "ERROR: Shader ",
+      "timestamp": "2026-10-22T20:31:33.389Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Hidden/Universal/HDRDebugView shader is not supported on this GPU (none of subshaders/fallbacks are suitable)\n",
+      "timestamp": "2026-10-22T20:31:33.390Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Input Manager initialize...\n",
+      "timestamp": "2026-10-22T20:31:33.394Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+      "timestamp": "2026-10-22T20:31:33.768Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "UnloadTime: 1.900000 ms\n",
+      "timestamp": "2026-10-22T20:31:33.770Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Starting initialization...\n",
+      "timestamp": "2026-10-22T20:31:36.934Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Initializing Board Data...\n",
+      "timestamp": "2026-10-22T20:31:36.934Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Board initialized with 40 tiles.\n",
+      "timestamp": "2026-10-22T20:31:37.021Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Venture Deck initialized and shuffled.\n",
+      "timestamp": "2026-10-22T20:31:37.023Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Creating Players...\n",
+      "timestamp": "2026-10-22T20:31:38.500Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 1 assigned profile: Predator\n",
+      "timestamp": "2026-10-22T20:31:38.504Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 2 assigned profile: Rentier\n",
+      "timestamp": "2026-10-22T20:31:38.505Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 3 assigned profile: Negotiator\n",
+      "timestamp": "2026-10-22T20:31:38.519Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Spawning Visuals...\n",
+      "timestamp": "2026-10-22T20:31:38.547Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Trying to get length of sound which is not loaded yet.",
+      "timestamp": "2026-10-22T20:31:38.548Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Trying to get length of sound which is not loaded yet.",
+      "timestamp": "2026-10-22T20:31:38.548Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Spawned 4 player pawns at (4.55, 3.95, -8.13).\n",
+      "timestamp": "2026-10-22T20:31:38.549Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Starting Game Loop...\n",
+      "timestamp": "2026-10-22T20:31:38.550Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Game loop deferred until a game mode is selected.\n",
+      "timestamp": "2026-10-22T20:31:38.550Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Turn Start: Player 0\n",
+      "timestamp": "2026-10-22T20:32:30.930Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Deferred local game started.\n",
+      "timestamp": "2026-10-22T20:32:30.930Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Clicked on Background_Plate, but it's not a recognized tile.\n",
+      "timestamp": "2026-10-22T20:32:30.930Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":40,\"collidersInside\":40,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":235.9512481689453,\"y\":258.28759765625},\"tile32\":{\"x\":253.67922973632813,\"y\":269.6829833984375},\"tile0\":{\"x\":398.7264404296875,\"y\":364.0},\"tile10\":{\"x\":215.00003051757813,\"y\":482.0970764160156},\"tile20\":{\"x\":31.273582458496095,\"y\":364.0},\"tile30\":{\"x\":214.99996948242188,\"y\":245.90289306640626},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-15.24795150756836,\"y\":316.6114196777344,\"width\":460.495849609375,\"height\":296.4462585449219},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":18.208171844482423,\"minTileEdgePixels\":17.62591552734375,\"minTileAltitudePixels\":16.034400939941408,\"minTileAreaPixels\":405.5008544921875}}\n",
+      "timestamp": "2026-10-22T20:32:30.949Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Audio context resumed after 57.954 seconds.",
+      "timestamp": "2026-10-22T20:32:31.030Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_QA {\"treatment\":\"GraphiteReflectiveNeon\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"mainLight\":\"PerPixel\",\"srpBatcher\":true,\"width\":430,\"height\":830,\"indices\":40,\"meshes\":4,\"lights\":1,\"realtimeProbes\":0,\"bloom\":0.07999999821186066,\"exposure\":0.15000000596046449,\"size\":18.208171844482423,\"camera\":{\"x\":-13.41923999786377,\"y\":15.593729019165039,\"z\":-14.70443058013916},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"finish\":{\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.41999998688697817,\"tileMetallic\":0.3400000035762787,\"boardSmoothness\":0.5299999713897705,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.5600000023841858,\"edgeSpecular\":0.04500000178813934,\"neonEmission\":1.059999942779541,\"neonReflection\":0.5199999809265137,\"reflectionFalloff\":0.04500000178813934,\"reflectionReach\":0.14000000059604646,\"contactReflection\":0.23999999463558198,\"arrivalReflection\":0.41999998688697817,\"contactOutline\":1.0399999618530274,\"backgroundSeparation\":0.01600000075995922,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.04500000178813934}}\n",
+      "timestamp": "2026-10-22T20:32:31.320Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_QA {\"treatment\":\"GraphiteSatin\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"mainLight\":\"PerPixel\",\"srpBatcher\":true,\"width\":430,\"height\":830,\"indices\":40,\"meshes\":4,\"lights\":1,\"realtimeProbes\":0,\"bloom\":0.07999999821186066,\"exposure\":0.15000000596046449,\"size\":18.208171844482423,\"camera\":{\"x\":-13.41923999786377,\"y\":15.593729019165039,\"z\":-14.70443058013916},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"finish\":{\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.4699999988079071,\"tileSmoothness\":0.4099999964237213,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.8199999928474426,\"neonReflection\":0.05999999865889549,\"reflectionFalloff\":0.02500000037252903,\"reflectionReach\":0.09000000357627869,\"contactReflection\":0.03500000014901161,\"arrivalReflection\":0.07500000298023224,\"contactOutline\":0.8999999761581421,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.41999998688697817,\"pawnSmoothness\":0.4000000059604645,\"pawnEmission\":0.8799999952316284,\"pawnRing\":0.8999999761581421,\"pawnTop\":0.8999999761581421,\"pawnBaseReflection\":0.00800000037997961}}\n",
+      "timestamp": "2026-10-22T20:32:39.141Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    }
+  ],
+  "b": [
+    {
+      "level": "log",
+      "message": "navigator.mediaDevices support available",
+      "timestamp": "2026-10-22T20:29:36.007Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[UnityCache] 'http://127.0.0.1:9004/ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data' successfully downloaded and stored in the indexedDB cache",
+      "timestamp": "2026-10-22T20:29:36.420Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+    },
+    {
+      "level": "log",
+      "message": "[UnityMemory] Configuration Parameters - Can be set up in boot.config\n",
+      "timestamp": "2026-10-22T20:29:37.594Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-nav-mesh-worker=65536\"\n",
+      "timestamp": "2026-10-22T20:29:37.595Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-audio-worker=65536\"\n",
+      "timestamp": "2026-10-22T20:29:37.599Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-background-worker=32768\"\n",
+      "timestamp": "2026-10-22T20:29:37.599Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-allocator-temp-initial-block-size-main=262144\"\n",
+      "timestamp": "2026-10-22T20:29:37.600Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-allocator-temp-initial-block-size-worker=262144\"\n",
+      "timestamp": "2026-10-22T20:29:37.602Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-granularity=16\"\n",
+      "timestamp": "2026-10-22T20:29:37.603Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-bucket-count=8\"\n",
+      "timestamp": "2026-10-22T20:29:37.609Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:29:37.611Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-block-count=1\"\n",
+      "timestamp": "2026-10-22T20:29:37.611Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-main-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:29:37.612Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-thread-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:29:37.616Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-gfx-main-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:29:37.617Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-gfx-thread-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:29:37.619Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-cache-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:29:37.621Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-typetree-allocator-block-size=2097152\"\n",
+      "timestamp": "2026-10-22T20:29:37.624Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-granularity=16\"\n",
+      "timestamp": "2026-10-22T20:29:37.626Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-bucket-count=8\"\n",
+      "timestamp": "2026-10-22T20:29:37.629Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:29:37.631Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-block-count=1\"\n",
+      "timestamp": "2026-10-22T20:29:37.634Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:29:37.636Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-editor-allocator-block-size=1048576\"\n",
+      "timestamp": "2026-10-22T20:29:37.639Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-main=4194304\"\n",
+      "timestamp": "2026-10-22T20:29:37.641Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-block-size=2097152\"\n",
+      "timestamp": "2026-10-22T20:29:37.643Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-block-size-background=1048576\"\n",
+      "timestamp": "2026-10-22T20:29:37.653Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-reduction-small-platforms=262144\"\n",
+      "timestamp": "2026-10-22T20:29:37.654Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Found NO interfaces on host .\n",
+      "timestamp": "2026-10-22T20:29:38.165Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Input System module state changed to: Initialized.\n",
+      "timestamp": "2026-10-22T20:29:38.189Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+      "timestamp": "2026-10-22T20:29:38.207Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Loading player data from data.unity3d\n",
+      "timestamp": "2026-10-22T20:29:38.234Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Initialize engine version: 2022.3.62f3 (96770f904ca7)\n",
+      "timestamp": "2026-10-22T20:29:38.263Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Subsystems] Discovering subsystems at path UnitySubsystems\n",
+      "timestamp": "2026-10-22T20:29:38.267Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Creating WebGL 2.0 context.",
+      "timestamp": "2026-10-22T20:29:38.273Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+    },
+    {
+      "level": "log",
+      "message": "Renderer: WebKit WebGL\n",
+      "timestamp": "2026-10-22T20:29:38.632Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Vendor:   WebKit\n",
+      "timestamp": "2026-10-22T20:29:38.633Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Version:  OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))\n",
+      "timestamp": "2026-10-22T20:29:38.634Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GLES:     3\n",
+      "timestamp": "2026-10-22T20:29:38.635Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": " EXT_clip_control EXT_color_buffer_float EXT_color_buffer_half_float EXT_conservative_depth EXT_depth_clamp EXT_disjoint_timer_query_webgl2 EXT_float_blend EXT_polygon_offset_clamp EXT_render_snorm EXT_texture_compression_bptc EXT_texture_compression_rgtc EXT_texture_filter_anisotropic EXT_texture_mirror_clamp_to_edge EXT_texture_norm16 KHR_parallel_shader_compile NV_shader_noperspective_interpolation OES_draw_buffers_indexed OES_sample_variables OES_shader_multisample_interpolation OES_texture_float_linear WEBGL_blend_func_extended WEBGL_clip_cull_distance WEBGL_compressed_texture_s3tc WEBGL_compressed_texture_s3tc_srgb WEBGL_debug_renderer_info WEBGL_debug_shaders WEBGL_lose_context WEBGL_multi_draw WEBGL_polygon_mode WEBGL_provoking_vertex WEBGL_stencil_texturing GL_EXT_clip_control GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_depth_clamp GL_EXT_disjoint_timer_query_webgl2 GL_EXT_float_blend GL_EXT_polygon_offset_clamp GL_EXT_render_snorm GL_EXT_texture_compres\n",
+      "timestamp": "2026-10-22T20:29:38.636Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "sion_bptc GL_EXT_texture_compression_rgtc GL_EXT_texture_filter_anisotropic GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_KHR_parallel_shader_compile GL_NV_shader_noperspective_interpolation GL_OES_draw_buffers_indexed GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_texture_float_linear GL_WEBGL_blend_func_extended GL_WEBGL_clip_cull_distance GL_WEBGL_compressed_texture_s3tc GL_WEBGL_compressed_texture_s3tc_srgb GL_WEBGL_debug_renderer_info GL_WEBGL_debug_shaders GL_WEBGL_lose_context GL_WEBGL_multi_draw GL_WEBGL_polygon_mode GL_WEBGL_provoking_vertex GL_WEBGL_stencil_texturing\n",
+      "timestamp": "2026-10-22T20:29:38.637Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "OPENGL LOG: Creating OpenGL ES 3.0 graphics device ; Context level  <OpenGL ES 3.0> ; Context handle 1\n",
+      "timestamp": "2026-10-22T20:29:38.961Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "ERROR: Shader ",
+      "timestamp": "2026-10-22T20:29:39.542Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Hidden/Universal/HDRDebugView shader is not supported on this GPU (none of subshaders/fallbacks are suitable)\n",
+      "timestamp": "2026-10-22T20:29:39.586Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Input Manager initialize...\n",
+      "timestamp": "2026-10-22T20:29:39.586Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+      "timestamp": "2026-10-22T20:29:40.132Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "UnloadTime: 11.600000 ms\n",
+      "timestamp": "2026-10-22T20:29:40.133Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Starting initialization...\n",
+      "timestamp": "2026-10-22T20:29:43.537Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Initializing Board Data...\n",
+      "timestamp": "2026-10-22T20:29:43.539Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Board initialized with 40 tiles.\n",
+      "timestamp": "2026-10-22T20:29:43.539Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Venture Deck initialized and shuffled.\n",
+      "timestamp": "2026-10-22T20:29:43.540Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Creating Players...\n",
+      "timestamp": "2026-10-22T20:29:47.396Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 1 assigned profile: Predator\n",
+      "timestamp": "2026-10-22T20:29:47.397Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 2 assigned profile: Rentier\n",
+      "timestamp": "2026-10-22T20:29:47.397Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 3 assigned profile: Negotiator\n",
+      "timestamp": "2026-10-22T20:29:47.398Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Spawning Visuals...\n",
+      "timestamp": "2026-10-22T20:29:47.398Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Trying to get length of sound which is not loaded yet.",
+      "timestamp": "2026-10-22T20:29:47.427Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Trying to get length of sound which is not loaded yet.",
+      "timestamp": "2026-10-22T20:29:47.427Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Spawned 4 player pawns at (4.55, 3.95, -8.13).\n",
+      "timestamp": "2026-10-22T20:29:47.528Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Starting Game Loop...\n",
+      "timestamp": "2026-10-22T20:29:47.528Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Game loop deferred until a game mode is selected.\n",
+      "timestamp": "2026-10-22T20:29:47.529Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Audio context resumed after 56.563 seconds.",
+      "timestamp": "2026-10-22T20:30:35.588Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Turn Start: Player 0\n",
+      "timestamp": "2026-10-22T20:30:36.075Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Deferred local game started.\n",
+      "timestamp": "2026-10-22T20:30:36.091Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Clicked on Background_Plate, but it's not a recognized tile.\n",
+      "timestamp": "2026-10-22T20:30:36.172Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":40,\"collidersInside\":40,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":235.9512481689453,\"y\":258.28759765625},\"tile32\":{\"x\":253.67922973632813,\"y\":269.6829833984375},\"tile0\":{\"x\":398.7264404296875,\"y\":364.0},\"tile10\":{\"x\":215.00003051757813,\"y\":482.0970764160156},\"tile20\":{\"x\":31.273582458496095,\"y\":364.0},\"tile30\":{\"x\":214.99996948242188,\"y\":245.90289306640626},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-15.24795150756836,\"y\":316.6114196777344,\"width\":460.495849609375,\"height\":296.4462585449219},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":18.208171844482423,\"minTileEdgePixels\":17.62591552734375,\"minTileAltitudePixels\":16.034400939941408,\"minTileAreaPixels\":405.5008544921875}}\n",
+      "timestamp": "2026-10-22T20:30:36.578Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS 40 unique indices\n",
+      "timestamp": "2026-10-22T20:30:36.647Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin camera identical\n",
+      "timestamp": "2026-10-22T20:30:36.648Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin 40 anchor collider contracts unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.651Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin same four fused mesh objects\n",
+      "timestamp": "2026-10-22T20:30:36.653Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin all persistent state pixels unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.656Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin pawn positions audio and locks unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.658Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin actual full economic snapshot identical\n",
+      "timestamp": "2026-10-22T20:30:36.659Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin quality accessibility preference unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.660Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 0\n",
+      "timestamp": "2026-10-22T20:30:36.662Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 1\n",
+      "timestamp": "2026-10-22T20:30:36.663Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 2\n",
+      "timestamp": "2026-10-22T20:30:36.665Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 3\n",
+      "timestamp": "2026-10-22T20:30:36.666Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 4\n",
+      "timestamp": "2026-10-22T20:30:36.668Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 5\n",
+      "timestamp": "2026-10-22T20:30:36.670Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 6\n",
+      "timestamp": "2026-10-22T20:30:36.671Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 7\n",
+      "timestamp": "2026-10-22T20:30:36.673Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 8\n",
+      "timestamp": "2026-10-22T20:30:36.675Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 9\n",
+      "timestamp": "2026-10-22T20:30:36.677Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 10\n",
+      "timestamp": "2026-10-22T20:30:36.679Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 11\n",
+      "timestamp": "2026-10-22T20:30:36.681Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 12\n",
+      "timestamp": "2026-10-22T20:30:36.683Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 13\n",
+      "timestamp": "2026-10-22T20:30:36.684Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 14\n",
+      "timestamp": "2026-10-22T20:30:36.686Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 15\n",
+      "timestamp": "2026-10-22T20:30:36.689Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 16\n",
+      "timestamp": "2026-10-22T20:30:36.691Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 17\n",
+      "timestamp": "2026-10-22T20:30:36.694Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 18\n",
+      "timestamp": "2026-10-22T20:30:36.697Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 19\n",
+      "timestamp": "2026-10-22T20:30:36.698Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 20\n",
+      "timestamp": "2026-10-22T20:30:36.701Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 21\n",
+      "timestamp": "2026-10-22T20:30:36.703Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 22\n",
+      "timestamp": "2026-10-22T20:30:36.706Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 23\n",
+      "timestamp": "2026-10-22T20:30:36.708Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 24\n",
+      "timestamp": "2026-10-22T20:30:36.710Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 25\n",
+      "timestamp": "2026-10-22T20:30:36.712Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 26\n",
+      "timestamp": "2026-10-22T20:30:36.714Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 27\n",
+      "timestamp": "2026-10-22T20:30:36.716Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 28\n",
+      "timestamp": "2026-10-22T20:30:36.718Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 29\n",
+      "timestamp": "2026-10-22T20:30:36.720Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 30\n",
+      "timestamp": "2026-10-22T20:30:36.722Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 31\n",
+      "timestamp": "2026-10-22T20:30:36.724Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 32\n",
+      "timestamp": "2026-10-22T20:30:36.726Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 33\n",
+      "timestamp": "2026-10-22T20:30:36.728Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 34\n",
+      "timestamp": "2026-10-22T20:30:36.731Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 35\n",
+      "timestamp": "2026-10-22T20:30:36.735Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 36\n",
+      "timestamp": "2026-10-22T20:30:36.739Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 37\n",
+      "timestamp": "2026-10-22T20:30:36.741Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 38\n",
+      "timestamp": "2026-10-22T20:30:36.744Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 39\n",
+      "timestamp": "2026-10-22T20:30:36.747Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon camera identical\n",
+      "timestamp": "2026-10-22T20:30:36.751Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon 40 anchor collider contracts unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.755Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon same four fused mesh objects\n",
+      "timestamp": "2026-10-22T20:30:36.757Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon all persistent state pixels unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.760Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon pawn positions audio and locks unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.763Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon actual full economic snapshot identical\n",
+      "timestamp": "2026-10-22T20:30:36.765Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon quality accessibility preference unchanged\n",
+      "timestamp": "2026-10-22T20:30:36.771Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 0\n",
+      "timestamp": "2026-10-22T20:30:36.774Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 1\n",
+      "timestamp": "2026-10-22T20:30:36.778Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 2\n",
+      "timestamp": "2026-10-22T20:30:36.781Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 3\n",
+      "timestamp": "2026-10-22T20:30:36.785Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 4\n",
+      "timestamp": "2026-10-22T20:30:36.789Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 5\n",
+      "timestamp": "2026-10-22T20:30:36.793Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 6\n",
+      "timestamp": "2026-10-22T20:30:36.797Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 7\n",
+      "timestamp": "2026-10-22T20:30:36.799Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 8\n",
+      "timestamp": "2026-10-22T20:30:36.802Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 9\n",
+      "timestamp": "2026-10-22T20:30:36.805Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 10\n",
+      "timestamp": "2026-10-22T20:30:36.808Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 11\n",
+      "timestamp": "2026-10-22T20:30:36.811Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 12\n",
+      "timestamp": "2026-10-22T20:30:36.814Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 13\n",
+      "timestamp": "2026-10-22T20:30:36.818Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 14\n",
+      "timestamp": "2026-10-22T20:30:36.821Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 15\n",
+      "timestamp": "2026-10-22T20:30:36.824Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 16\n",
+      "timestamp": "2026-10-22T20:30:36.828Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 17\n",
+      "timestamp": "2026-10-22T20:30:36.831Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 18\n",
+      "timestamp": "2026-10-22T20:30:36.835Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 19\n",
+      "timestamp": "2026-10-22T20:30:36.837Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 20\n",
+      "timestamp": "2026-10-22T20:30:36.840Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 21\n",
+      "timestamp": "2026-10-22T20:30:36.844Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 22\n",
+      "timestamp": "2026-10-22T20:30:36.848Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 23\n",
+      "timestamp": "2026-10-22T20:30:36.852Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 24\n",
+      "timestamp": "2026-10-22T20:30:36.857Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 25\n",
+      "timestamp": "2026-10-22T20:30:36.858Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 26\n",
+      "timestamp": "2026-10-22T20:30:36.862Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 27\n",
+      "timestamp": "2026-10-22T20:30:36.864Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 28\n",
+      "timestamp": "2026-10-22T20:30:36.866Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 29\n",
+      "timestamp": "2026-10-22T20:30:36.869Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 30\n",
+      "timestamp": "2026-10-22T20:30:36.871Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 31\n",
+      "timestamp": "2026-10-22T20:30:36.874Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 32\n",
+      "timestamp": "2026-10-22T20:30:36.879Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 33\n",
+      "timestamp": "2026-10-22T20:30:36.880Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 34\n",
+      "timestamp": "2026-10-22T20:30:36.882Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 35\n",
+      "timestamp": "2026-10-22T20:30:36.886Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 36\n",
+      "timestamp": "2026-10-22T20:30:36.889Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 37\n",
+      "timestamp": "2026-10-22T20:30:36.892Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 38\n",
+      "timestamp": "2026-10-22T20:30:36.894Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 39\n",
+      "timestamp": "2026-10-22T20:30:36.897Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_QA {\"treatment\":\"GraphiteReflectiveNeon\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"mainLight\":\"PerPixel\",\"srpBatcher\":true,\"width\":430,\"height\":830,\"indices\":40,\"meshes\":4,\"lights\":1,\"realtimeProbes\":0,\"bloom\":0.07999999821186066,\"exposure\":0.15000000596046449,\"size\":18.208171844482423,\"camera\":{\"x\":-13.41923999786377,\"y\":15.593729019165039,\"z\":-14.70443058013916},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"finish\":{\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.41999998688697817,\"tileMetallic\":0.3400000035762787,\"boardSmoothness\":0.5299999713897705,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.5600000023841858,\"edgeSpecular\":0.04500000178813934,\"neonEmission\":1.059999942779541,\"neonReflection\":0.5199999809265137,\"reflectionFalloff\":0.04500000178813934,\"reflectionReach\":0.14000000059604646,\"contactReflection\":0.23999999463558198,\"arrivalReflection\":0.41999998688697817,\"contactOutline\":1.0399999618530274,\"backgroundSeparation\":0.01600000075995922,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.04500000178813934}}\n",
+      "timestamp": "2026-10-22T20:30:36.903Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_VARIANTS_DONE\n",
+      "timestamp": "2026-10-22T20:30:36.905Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_MEASURE {\"quality\":\"Low\",\"treatment\":\"GraphiteReflectiveNeon\",\"frames\":39,\"seconds\":6.650997161865234,\"meanFrameMs\":169.71795654296876,\"maxFrameMs\":656.0,\"renderCountersAvailable\":true,\"drawCalls\":76,\"batches\":67,\"setPass\":37,\"totalAllocatedBytes\":51876311,\"totalReservedBytes\":60220868}\n",
+      "timestamp": "2026-10-22T20:30:43.781Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[UnityCache] 'http://127.0.0.1:9004/ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data' successfully revalidated and served from the indexedDB cache",
+      "timestamp": "2026-10-22T20:31:31.654Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+    },
+    {
+      "level": "log",
+      "message": "navigator.mediaDevices support available",
+      "timestamp": "2026-10-22T20:31:31.723Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[UnityMemory] Configuration Parameters - Can be set up in boot.config\n",
+      "timestamp": "2026-10-22T20:31:32.527Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-nav-mesh-worker=65536\"\n",
+      "timestamp": "2026-10-22T20:31:32.528Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-audio-worker=65536\"\n",
+      "timestamp": "2026-10-22T20:31:32.528Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-background-worker=32768\"\n",
+      "timestamp": "2026-10-22T20:31:32.529Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-allocator-temp-initial-block-size-main=262144\"\n",
+      "timestamp": "2026-10-22T20:31:32.529Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-allocator-temp-initial-block-size-worker=262144\"\n",
+      "timestamp": "2026-10-22T20:31:32.529Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-granularity=16\"\n",
+      "timestamp": "2026-10-22T20:31:32.530Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-bucket-count=8\"\n",
+      "timestamp": "2026-10-22T20:31:32.530Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:31:32.531Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-block-count=1\"\n",
+      "timestamp": "2026-10-22T20:31:32.532Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-main-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:31:32.533Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-thread-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:31:32.533Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-gfx-main-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:31:32.534Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-gfx-thread-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:31:32.534Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-cache-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:31:32.535Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-typetree-allocator-block-size=2097152\"\n",
+      "timestamp": "2026-10-22T20:31:32.535Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-granularity=16\"\n",
+      "timestamp": "2026-10-22T20:31:32.536Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-bucket-count=8\"\n",
+      "timestamp": "2026-10-22T20:31:32.536Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:31:32.536Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-block-count=1\"\n",
+      "timestamp": "2026-10-22T20:31:32.548Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:31:32.549Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-editor-allocator-block-size=1048576\"\n",
+      "timestamp": "2026-10-22T20:31:32.549Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-main=4194304\"\n",
+      "timestamp": "2026-10-22T20:31:32.549Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-block-size=2097152\"\n",
+      "timestamp": "2026-10-22T20:31:32.549Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-block-size-background=1048576\"\n",
+      "timestamp": "2026-10-22T20:31:32.549Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-reduction-small-platforms=262144\"\n",
+      "timestamp": "2026-10-22T20:31:32.550Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Found NO interfaces on host .\n",
+      "timestamp": "2026-10-22T20:31:32.777Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Input System module state changed to: Initialized.\n",
+      "timestamp": "2026-10-22T20:31:32.779Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+      "timestamp": "2026-10-22T20:31:32.783Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Loading player data from data.unity3d\n",
+      "timestamp": "2026-10-22T20:31:32.785Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Initialize engine version: 2022.3.62f3 (96770f904ca7)\n",
+      "timestamp": "2026-10-22T20:31:32.787Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Subsystems] Discovering subsystems at path UnitySubsystems\n",
+      "timestamp": "2026-10-22T20:31:32.789Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Creating WebGL 2.0 context.",
+      "timestamp": "2026-10-22T20:31:32.790Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+    },
+    {
+      "level": "log",
+      "message": "Renderer: WebKit WebGL\n",
+      "timestamp": "2026-10-22T20:31:32.977Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Vendor:   WebKit\n",
+      "timestamp": "2026-10-22T20:31:32.978Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Version:  OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))\n",
+      "timestamp": "2026-10-22T20:31:32.980Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GLES:     3\n",
+      "timestamp": "2026-10-22T20:31:32.981Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": " EXT_clip_control EXT_color_buffer_float EXT_color_buffer_half_float EXT_conservative_depth EXT_depth_clamp EXT_disjoint_timer_query_webgl2 EXT_float_blend EXT_polygon_offset_clamp EXT_render_snorm EXT_texture_compression_bptc EXT_texture_compression_rgtc EXT_texture_filter_anisotropic EXT_texture_mirror_clamp_to_edge EXT_texture_norm16 KHR_parallel_shader_compile NV_shader_noperspective_interpolation OES_draw_buffers_indexed OES_sample_variables OES_shader_multisample_interpolation OES_texture_float_linear WEBGL_blend_func_extended WEBGL_clip_cull_distance WEBGL_compressed_texture_s3tc WEBGL_compressed_texture_s3tc_srgb WEBGL_debug_renderer_info WEBGL_debug_shaders WEBGL_lose_context WEBGL_multi_draw WEBGL_polygon_mode WEBGL_provoking_vertex WEBGL_stencil_texturing GL_EXT_clip_control GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_depth_clamp GL_EXT_disjoint_timer_query_webgl2 GL_EXT_float_blend GL_EXT_polygon_offset_clamp GL_EXT_render_snorm GL_EXT_texture_compres\n",
+      "timestamp": "2026-10-22T20:31:32.981Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "sion_bptc GL_EXT_texture_compression_rgtc GL_EXT_texture_filter_anisotropic GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_KHR_parallel_shader_compile GL_NV_shader_noperspective_interpolation GL_OES_draw_buffers_indexed GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_texture_float_linear GL_WEBGL_blend_func_extended GL_WEBGL_clip_cull_distance GL_WEBGL_compressed_texture_s3tc GL_WEBGL_compressed_texture_s3tc_srgb GL_WEBGL_debug_renderer_info GL_WEBGL_debug_shaders GL_WEBGL_lose_context GL_WEBGL_multi_draw GL_WEBGL_polygon_mode GL_WEBGL_provoking_vertex GL_WEBGL_stencil_texturing\n",
+      "timestamp": "2026-10-22T20:31:32.984Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "OPENGL LOG: Creating OpenGL ES 3.0 graphics device ; Context level  <OpenGL ES 3.0> ; Context handle 1\n",
+      "timestamp": "2026-10-22T20:31:32.998Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "ERROR: Shader ",
+      "timestamp": "2026-10-22T20:31:33.389Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Hidden/Universal/HDRDebugView shader is not supported on this GPU (none of subshaders/fallbacks are suitable)\n",
+      "timestamp": "2026-10-22T20:31:33.390Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Input Manager initialize...\n",
+      "timestamp": "2026-10-22T20:31:33.394Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+      "timestamp": "2026-10-22T20:31:33.768Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "UnloadTime: 1.900000 ms\n",
+      "timestamp": "2026-10-22T20:31:33.770Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Starting initialization...\n",
+      "timestamp": "2026-10-22T20:31:36.934Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Initializing Board Data...\n",
+      "timestamp": "2026-10-22T20:31:36.934Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Board initialized with 40 tiles.\n",
+      "timestamp": "2026-10-22T20:31:37.021Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Venture Deck initialized and shuffled.\n",
+      "timestamp": "2026-10-22T20:31:37.023Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Creating Players...\n",
+      "timestamp": "2026-10-22T20:31:38.500Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 1 assigned profile: Predator\n",
+      "timestamp": "2026-10-22T20:31:38.504Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 2 assigned profile: Rentier\n",
+      "timestamp": "2026-10-22T20:31:38.505Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 3 assigned profile: Negotiator\n",
+      "timestamp": "2026-10-22T20:31:38.519Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Spawning Visuals...\n",
+      "timestamp": "2026-10-22T20:31:38.547Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Trying to get length of sound which is not loaded yet.",
+      "timestamp": "2026-10-22T20:31:38.548Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Trying to get length of sound which is not loaded yet.",
+      "timestamp": "2026-10-22T20:31:38.548Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Spawned 4 player pawns at (4.55, 3.95, -8.13).\n",
+      "timestamp": "2026-10-22T20:31:38.549Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Starting Game Loop...\n",
+      "timestamp": "2026-10-22T20:31:38.550Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Game loop deferred until a game mode is selected.\n",
+      "timestamp": "2026-10-22T20:31:38.550Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Turn Start: Player 0\n",
+      "timestamp": "2026-10-22T20:32:30.930Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Deferred local game started.\n",
+      "timestamp": "2026-10-22T20:32:30.930Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Clicked on Background_Plate, but it's not a recognized tile.\n",
+      "timestamp": "2026-10-22T20:32:30.930Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":40,\"collidersInside\":40,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":235.9512481689453,\"y\":258.28759765625},\"tile32\":{\"x\":253.67922973632813,\"y\":269.6829833984375},\"tile0\":{\"x\":398.7264404296875,\"y\":364.0},\"tile10\":{\"x\":215.00003051757813,\"y\":482.0970764160156},\"tile20\":{\"x\":31.273582458496095,\"y\":364.0},\"tile30\":{\"x\":214.99996948242188,\"y\":245.90289306640626},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-15.24795150756836,\"y\":316.6114196777344,\"width\":460.495849609375,\"height\":296.4462585449219},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":18.208171844482423,\"minTileEdgePixels\":17.62591552734375,\"minTileAltitudePixels\":16.034400939941408,\"minTileAreaPixels\":405.5008544921875}}\n",
+      "timestamp": "2026-10-22T20:32:30.949Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Audio context resumed after 57.954 seconds.",
+      "timestamp": "2026-10-22T20:32:31.030Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_QA {\"treatment\":\"GraphiteReflectiveNeon\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"mainLight\":\"PerPixel\",\"srpBatcher\":true,\"width\":430,\"height\":830,\"indices\":40,\"meshes\":4,\"lights\":1,\"realtimeProbes\":0,\"bloom\":0.07999999821186066,\"exposure\":0.15000000596046449,\"size\":18.208171844482423,\"camera\":{\"x\":-13.41923999786377,\"y\":15.593729019165039,\"z\":-14.70443058013916},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"finish\":{\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.41999998688697817,\"tileMetallic\":0.3400000035762787,\"boardSmoothness\":0.5299999713897705,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.5600000023841858,\"edgeSpecular\":0.04500000178813934,\"neonEmission\":1.059999942779541,\"neonReflection\":0.5199999809265137,\"reflectionFalloff\":0.04500000178813934,\"reflectionReach\":0.14000000059604646,\"contactReflection\":0.23999999463558198,\"arrivalReflection\":0.41999998688697817,\"contactOutline\":1.0399999618530274,\"backgroundSeparation\":0.01600000075995922,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.04500000178813934}}\n",
+      "timestamp": "2026-10-22T20:32:31.320Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    }
+  ]
+}

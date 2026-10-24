@@ -1,0 +1,8 @@
+[
+  {
+    "level": "log",
+    "message": "GRAPHITE_MEASURE {\"quality\":\"Low\",\"treatment\":\"GraphiteReflectiveNeon\",\"frames\":96,\"seconds\":6.012999534606934,\"meanFrameMs\":62.90625,\"maxFrameMs\":344.0,\"renderCountersAvailable\":true,\"drawCalls\":76,\"batches\":67,\"setPass\":37,\"totalAllocatedBytes\":51592563,\"totalReservedBytes\":59934042}\n",
+    "timestamp": "2026-10-22T21:25:18.847Z",
+    "url": "http://127.0.0.1:9005/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+  }
+]

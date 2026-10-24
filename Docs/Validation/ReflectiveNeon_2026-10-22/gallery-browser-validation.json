@@ -1,0 +1,70 @@
+{
+  "audioDuration": 22.5,
+  "fixture": {
+    "duration": 22.519,
+    "ready": 4,
+    "time": 11.5
+  },
+  "images": [
+    {
+      "height": 830,
+      "src": "baseline-portrait.jpg",
+      "width": 430
+    },
+    {
+      "height": 830,
+      "src": "variant-a-portrait.jpg",
+      "width": 430
+    },
+    {
+      "height": 830,
+      "src": "variant-b-portrait.jpg",
+      "width": 430
+    },
+    {
+      "height": 900,
+      "src": "baseline-desktop.jpg",
+      "width": 1200
+    },
+    {
+      "height": 900,
+      "src": "variant-a-desktop.jpg",
+      "width": 1200
+    },
+    {
+      "height": 900,
+      "src": "variant-b-desktop.jpg",
+      "width": 1200
+    },
+    {
+      "height": 64,
+      "src": "detail-neutral.jpg",
+      "width": 64
+    },
+    {
+      "height": 64,
+      "src": "detail-selected.jpg",
+      "width": 64
+    },
+    {
+      "height": 120,
+      "src": "detail-crossing.jpg",
+      "width": 130
+    },
+    {
+      "height": 120,
+      "src": "detail-arrival.jpg",
+      "width": 130
+    },
+    {
+      "height": 210,
+      "src": "pawn-idle.jpg",
+      "width": 160
+    },
+    {
+      "height": 210,
+      "src": "pawn-active.jpg",
+      "width": 160
+    }
+  ]
+}

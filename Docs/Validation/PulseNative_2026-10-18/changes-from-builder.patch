@@ -1,0 +1,1140 @@
+--- builder/Assets/UI/Layouts/TileDetail_BottomSheet.uxml
++++ pulse/Assets/UI/Layouts/TileDetail_BottomSheet.uxml
+@@ -81,11 +81,11 @@
+ 
+                     <ui:Button name="Btn_PulseGoSummary" class="pulse-go-summary" tooltip="Voir les flux estimés au prochain passage GO">
+                         <ui:VisualElement class="pulse-go-summary__cell">
+-                            <ui:Label text="Prochain GO · base" class="pulse-go-summary__label" />
++                            <ui:Label text="Prochain GO" class="pulse-go-summary__label" />
+                             <ui:Label name="Lbl_PulseGoBase" text="Indisponible" class="pulse-go-summary__value pulse-go-summary__value--base" />
+                         </ui:VisualElement>
+                         <ui:VisualElement class="pulse-go-summary__cell">
+-                            <ui:Label text="COÛTS" class="pulse-go-summary__label" />
++                            <ui:Label text="Coûts" class="pulse-go-summary__label" />
+                             <ui:Label name="Lbl_PulseGoCosts" text="Indisponible" class="pulse-go-summary__value" />
+                         </ui:VisualElement>
+                         <ui:VisualElement class="pulse-go-summary__cell pulse-go-summary__cell--net">
+--- builder/Assets/UI/Styles/Theme.uss
++++ pulse/Assets/UI/Styles/Theme.uss
+@@ -475,6 +475,65 @@
+ .ux-low-height .lobby-code { font-size: 24px; }
+ 
+ 
++.btn-standard {
++    background-color: #05DF72;
++    color: #000000;
++    border-width: 0;
++    border-radius: 14px;
++    padding-top: 12px;
++    padding-bottom: 12px;
++    padding-left: 20px;
++    padding-right: 20px;
++    font-size: 14px;
++    -unity-font-style: bold;
++    -unity-text-align: middle-center;
++    min-height: 48px;
++}
++
++.btn-secondary {
++    background-color: rgba(60, 63, 80, 1);
++    color: #d1d5dc;
++    border-width: 1px;
++    border-color: rgba(64, 65, 78, 1);
++    border-radius: 14px;
++    padding-top: 12px;
++    padding-bottom: 12px;
++    padding-left: 20px;
++    padding-right: 20px;
++    font-size: 14px;
++    -unity-font-style: bold;
++    -unity-text-align: middle-center;
++    min-height: 48px;
++}
++
++.btn-standard:hover, .btn-standard:focus {
++    background-color: #35EE8F;
++}
++
++.btn-secondary:hover, .btn-secondary:focus {
++    background-color: rgba(79, 83, 103, 1);
++    border-color: rgba(194, 122, 255, 0.75);
++}
++
++.text-stack { flex-direction: column; flex-grow: 1; }
++
++.text-stack-center { align-items: center; }
++
++.card-title {
++    color: var(--color-text-white);
++    font-size: 16px;
++    -unity-font-style: bold;
++    margin-bottom: 4px;
++    white-space: normal;
++}
++
++.card-desc {
++    color: var(--color-text-muted);
++    font-size: 14px;
++    white-space: normal;
++}
++
++
+ /* ═══════════════════════════════════════════════════
+    TOP HUD — compact, branded and privacy-safe
+ ═══════════════════════════════════════════════════ */
+@@ -502,8 +561,8 @@
+     align-items: center;
+ }
+ 
+-.top-hud-brand-row { justify-content: space-between; min-height: 13px; }
+-.top-hud-brand-copy { flex-grow: 1; align-items: center; justify-content: space-between; padding-right: 12px; }
++.top-hud-brand-row { position: relative; justify-content: space-between; min-height: 13px; }
++.top-hud-brand-copy { flex-grow: 1; align-items: center; justify-content: space-between; padding-right: 48px; }
+ .top-hud-brand {
+     color: #f2f3f5;
+     font-size: 11px;
+@@ -574,11 +633,14 @@
+     -unity-font-style: normal;
+ }
+ .top-hud-menu-button {
+-    width: 34px;
+-    min-width: 34px;
+-    max-width: 34px;
+-    height: 34px;
+-    min-height: 34px;
++    position: absolute;
++    right: -6px;
++    top: -12px;
++    width: 44px;
++    min-width: 44px;
++    max-width: 44px;
++    height: 44px;
++    min-height: 44px;
+     padding: 0;
+     flex-direction: row;
+     align-items: center;
+@@ -2051,7 +2113,10 @@
+    TILE DETAIL BOTTOM SHEET (TileDetail_BottomSheet.uxml)
+    ──────────────────────────────────────────────────────────────── */
+ 
+-/* Pulse property inspector: one hierarchy for asset, yield, risk and GO cash flow. */
++/* Pulse property inspector: one hierarchy for asset, yield, risk and GO cash flow.
++   UI Toolkit default control margins/padding must not inflate the HTML reference. */
++#Panel_TileDetail Label { margin: 0; padding: 0; }
++#Panel_TileDetail .marketplace-panel Button { margin-top: 0; margin-bottom: 0; }
+ .tile-stat-row { width: 100%; }
+ .tile-stat-value-row { flex-direction: row; align-items: center; }
+ .tile-stat-trend {
+@@ -2066,7 +2131,7 @@
+ 
+ #Panel_TileDetail .marketplace-panel {
+     width: 100%;
+-    max-width: 760px;
++    max-width: 480px;
+     background-color: #0b0e16;
+     border-color: #444956;
+ }
+@@ -2180,7 +2245,7 @@
+     margin-right: 0;
+     border-radius: 12px;
+ }
+-#Panel_TileDetail .pulse-property-copy { margin-left: 11px; }
++#Panel_TileDetail .pulse-property-copy { flex-shrink: 1; min-width: 0; margin-left: 11px; }
+ #Panel_TileDetail .pulse-property-ownership {
+     color: #a1a6b2;
+     font-size: 9px;
+@@ -2219,7 +2284,7 @@
+ .pulse-family-progress__slots { flex-direction: row; justify-content: flex-end; margin-top: 5px; }
+ .pulse-family-progress__slot { width: 8px; height: 3px; margin-left: 4px; background-color: #46505c; border-radius: 2px; }
+ .pulse-family-progress__slot--owned { background-color: #13db83; }
+-.pulse-family-progress__label { margin-top: 4px; color: #a1a6b2; font-size: 10px; -unity-font-style: normal; }
++#Panel_TileDetail .pulse-family-progress__label { margin-top: 4px; color: #a1a6b2; font-size: 10px; -unity-font-style: normal; }
+ #Panel_TileDetail .pulse-family-progress:focus {
+     border-width: 1px;
+     border-color: #edb95c;
+@@ -2245,21 +2310,21 @@
+     letter-spacing: 0;
+ }
+ .pulse-summary__value-row { align-items: center; }
+-.pulse-summary__rent-value {
++#Panel_TileDetail .pulse-summary__rent-value {
+     margin-top: 5px;
+     color: #f2f3f5;
+     font-size: 32px;
+     -unity-font: url("/Assets/UI/Fonts/Inter-500.ttf");
+     -unity-font-style: normal;
+ }
+-.pulse-summary__currency { margin-left: 5px; color: #a1a6b2; font-size: 20px; }
+-.pulse-summary__yield-value {
++#Panel_TileDetail .pulse-summary__currency { margin-left: 5px; color: #a1a6b2; font-size: 20px; }
++#Panel_TileDetail .pulse-summary__yield-value {
+     margin-top: 10px;
+     color: #13db83;
+     font-size: 24px;
+     -unity-font-style: normal;
+ }
+-.pulse-summary__percent { margin-left: 2px; color: #7eb99f; font-size: 17px; }
++#Panel_TileDetail .pulse-summary__percent { margin-left: 2px; color: #7eb99f; font-size: 17px; }
+ .pulse-risk-row {
+     flex-direction: row;
+     align-items: center;
+@@ -2301,20 +2366,24 @@
+ .pulse-go-summary__cell { flex-grow: 1; min-width: 0; }
+ .pulse-go-summary__cell--net { align-items: flex-end; }
+ .pulse-go-summary__label { color: #a1a6b2; font-size: 10px; letter-spacing: 0; white-space: nowrap; }
+-.pulse-go-summary__value {
++#Panel_TileDetail .pulse-go-summary__value {
+     margin-top: 4px;
+     color: #f2f3f5;
+     font-size: 14px;
+     white-space: nowrap;
+ }
+-.pulse-go-summary__value--base { color: #13db83; }
++#Panel_TileDetail .pulse-go-summary__value--base { color: #f2f3f5; }
++#Panel_TileDetail .pulse-go-summary__value--positive { color: #13db83; }
++#Panel_TileDetail .pulse-go-summary__value--negative { color: #e77c72; }
+ #Panel_TileDetail .pulse-go-summary:focus { border-top-width: 2px; border-top-color: #edb95c; }
+ 
+ #Panel_TileDetail .pulse-details {
+     display: none;
+     min-height: 0;
+-    flex-grow: 1;
++    flex-grow: 0;
++    flex-shrink: 1;
+     flex-direction: column;
++    overflow: hidden;
+     margin-top: 4px;
+ }
+ #Panel_TileDetail .pulse-details--visible { display: flex; }
+@@ -2384,10 +2453,17 @@
+ .pulse-property-card__icon { width: 18px; height: 18px; flex-shrink: 0; }
+ .pulse-property-card__level { color: #a1a6b2; font-size: 9px; }
+ .pulse-property-card__name { color: #f2f3f5; font-size: 11px; -unity-font-style: bold; white-space: normal; }
+-.pulse-property-card__state { margin-top: 10px; color: #a1a6b2; font-size: 9px; white-space: normal; }
++#Panel_TileDetail .pulse-property-card__state { margin-top: 10px; color: #a1a6b2; font-size: 9px; white-space: normal; }
+ .pulse-property-card--selected .pulse-property-card__state { color: #edb95c; }
++.pulse-family-grid { flex-direction: row; flex-wrap: wrap; }
+ .pulse-family-card {
+-    min-height: 52px;
++    flex-basis: 46%;
++    flex-grow: 1;
++    flex-shrink: 1;
++    min-width: 0;
++    max-width: 49%;
++    min-height: 128px;
++    margin-right: 3px;
+     margin-bottom: 6px;
+     padding: 10px 12px;
+     align-items: flex-start;
+@@ -2396,9 +2472,10 @@
+     border-color: #303d40;
+     border-radius: 10px;
+ }
+-.pulse-family-card__name { color: #f2f3f5; font-size: 12px; -unity-font-style: bold; }
++.pulse-family-card__icon { width: 22px; height: 22px; }
++.pulse-family-card__name { color: #f2f3f5; font-size: 14px; white-space: normal; }
+ .pulse-family-card__progress { margin-top: 3px; color: #13db83; font-size: 9px; letter-spacing: 0.5px; }
+-.pulse-family-card__slots { flex-direction: row; margin-top: 5px; }
++.pulse-family-card__slots { flex-direction: row; margin-top: 14px; margin-bottom: 6px; }
+ .pulse-family-slot { margin-right: 6px; font-size: 12px; -unity-font-style: bold; }
+ .pulse-family-slot--owned { color: #13db83; }
+ .pulse-family-slot--missing { color: rgba(161, 166, 178, 0.46); }
+@@ -2442,11 +2519,16 @@
+     width: 100%;
+     flex-shrink: 0;
+ }
+-.tile-action-btn { flex-grow: 1; min-width: 0; }
++.tile-action-btn { flex-grow: 1; flex-shrink: 1; flex-basis: 0; min-width: 0; margin-left: 0; }
+ .tile-action-btn--primary { margin-right: 10px; }
+ .tile-action-btn--secondary { margin-right: 0; }
+ #Panel_TileDetail #Btn_Primary {
++    font-size: 12px;
++    -unity-font-style: normal;
++    height: 49px;
+     min-height: 49px;
++    padding-top: 0;
++    padding-bottom: 0;
+     padding-left: 15px;
+     padding-right: 15px;
+     color: #d7eee3;
+@@ -2476,7 +2558,7 @@
+     -unity-text-align: middle-left;
+ }
+ .pulse-action-title { flex-grow: 1; min-width: 0; }
+-.pulse-action-value { display: none; margin-left: 8px; color: #b9f8d5; white-space: nowrap; }
++#Panel_TileDetail .pulse-action-value { display: none; margin-left: 8px; color: #b9f8d5; white-space: nowrap; }
+ #Panel_TileDetail #Btn_Primary.pulse-action--purchase .pulse-action-title {
+     -unity-text-align: middle-left;
+ }
+@@ -2485,8 +2567,13 @@
+ #Panel_TileDetail #Btn_Secondary.pulse-action--pass {
+     flex-grow: 0;
+     flex-shrink: 0;
++    width: 73px;
+     min-width: 73px;
++    flex-basis: 73px;
+     min-height: 49px;
++    height: 49px;
++    padding-top: 0;
++    padding-bottom: 0;
+     padding-left: 12px;
+     padding-right: 12px;
+     color: #c1c6d1;
+@@ -2496,6 +2583,8 @@
+     border-radius: 12px;
+ }
+ #Panel_TileDetail #Btn_Secondary {
++    font-size: 12px;
++    -unity-font-style: normal;
+     color: #c1c6d1;
+     background-color: transparent;
+     border-width: 1px;
+@@ -2710,25 +2799,22 @@
+ 
+ /* Pulse inspector shell and two detents. */
+ #Panel_TileDetail .card-title,
+-#Panel_TileDetail .tile-stat-value { -unity-font: url("/Assets/UI/Fonts/Inter-700.ttf"); }
++#Panel_TileDetail .tile-stat-value { -unity-font: url("/Assets/UI/Fonts/Inter-500.ttf"); }
+ #Panel_TileDetail .card-desc,
+ #Panel_TileDetail .tile-action-btn { -unity-font: url("/Assets/UI/Fonts/Inter-500.ttf"); }
+ #Panel_TileDetail .marketplace-panel--compact {
+-    max-height: 50%;
+-    transition-property: max-height;
+-    transition-duration: 260ms;
+-    transition-timing-function: ease-out;
++    max-height: 82%;
+ }
+ #Panel_TileDetail.pulse-panel--expanded .marketplace-panel--compact { max-height: 82%; }
+-#Panel_TileDetail.ux-wide-landscape-inspector .marketplace-panel--compact { max-height: 55%; }
++#Panel_TileDetail.ux-wide-landscape-inspector .marketplace-panel--compact { max-height: 82%; }
+ #Panel_TileDetail.pulse-panel--expanded.ux-wide-landscape-inspector .marketplace-panel--compact { max-height: 74%; }
+-#Panel_TileDetail.ux-short-landscape-inspector .marketplace-panel--compact { max-height: 48%; }
+-#Panel_TileDetail.pulse-panel--expanded.ux-short-landscape-inspector .marketplace-panel--compact { max-height: 72%; }
++#Panel_TileDetail.ux-short-landscape-inspector .marketplace-panel--compact { max-height: 88%; }
++#Panel_TileDetail.pulse-panel--expanded.ux-short-landscape-inspector .marketplace-panel--compact { max-height: 88%; }
+ .ux-compact-height #Panel_TileDetail.pulse-panel--expanded .marketplace-panel--compact { max-height: 84%; }
+ .ux-compact-height #Panel_TileDetail .game-state-dock--board-receipt { top: 108px; left: 10px; right: 10px; }
+ .ux-compact-height .activity-feed { top: 158px; left: 10px; right: 10px; }
+ .ux-wide-landscape #Panel_TileDetail .game-state-dock--board-receipt {
+-    top: 112px;
++    top: 166px;
+     left: 12px;
+     right: auto;
+     width: 320px;
+@@ -2741,31 +2827,53 @@
+ .pulse-tab-scroll .unity-scroller #unity-high-button { display: none; }
+ .pulse-tab-scroll .unity-scroller #unity-tracker { background-color: transparent; }
+ .pulse-tab-scroll .unity-scroller #unity-dragger { background-color: #596270; border-radius: 2px; min-height: 20px; }
+-#Panel_TileDetail .pulse-property-card:focus { border-width: 2px; border-color: #edb95c; }
+-#Panel_TileDetail .pulse-family-card:focus { border-width: 2px; border-color: #edb95c; }
++#Panel_TileDetail .pulse-property-card:focus { border-width: 1px; border-color: #edb95c; }
++#Panel_TileDetail .pulse-family-card:focus { border-width: 1px; border-color: #edb95c; }
+ #Panel_TileDetail .pulse-toggle:focus,
+-#Panel_TileDetail .pulse-tab:focus,
+-#Panel_TileDetail .pulse-family-progress:focus,
++#Panel_TileDetail .pulse-family-progress:focus {
++    border-width: 0;
++    border-bottom-width: 1px;
++    border-bottom-color: #edb95c;
++    border-radius: 0;
++}
++#Panel_TileDetail .pulse-tab:focus {
++    border-width: 0;
++    border-bottom-width: 2px;
++    border-bottom-color: #edb95c;
++}
+ #Panel_TileDetail .pulse-go-summary:focus {
+-    border-width: 2px;
+-    border-color: #edb95c;
+-}
+-
++    border-width: 0;
++    border-top-width: 1px;
++    border-top-color: #edb95c;
++}
++
++.ux-small-portrait #Panel_TileDetail .pulse-indicator-row ,
+ .ux-compact-height #Panel_TileDetail .pulse-indicator-row {
+     height: 42px;
+     min-height: 42px;
+     padding-top: 7px;
+ }
++.ux-small-portrait #Panel_TileDetail .pulse-indicator-row .indicator-pill ,
+ .ux-compact-height #Panel_TileDetail .pulse-indicator-row .indicator-pill { margin-bottom: 4px; }
++.ux-small-portrait #Panel_TileDetail .pulse-property-header ,
+ .ux-compact-height #Panel_TileDetail .pulse-property-header { min-height: 76px; padding-top: 6px; padding-bottom: 8px; }
++.ux-small-portrait #Panel_TileDetail .pulse-summary ,
+ .ux-compact-height #Panel_TileDetail .pulse-summary { padding: 8px 10px 6px; }
++.ux-small-portrait #Panel_TileDetail .pulse-summary__rent-value ,
+ .ux-compact-height #Panel_TileDetail .pulse-summary__rent-value { font-size: 22px; }
++.ux-small-portrait #Panel_TileDetail .pulse-summary__yield-value ,
+ .ux-compact-height #Panel_TileDetail .pulse-summary__yield-value { font-size: 18px; }
++.ux-small-portrait #Panel_TileDetail .pulse-go-summary ,
+ .ux-compact-height #Panel_TileDetail .pulse-go-summary { min-height: 48px; }
++.ux-small-portrait #Panel_TileDetail .pulse-tab ,
+ .ux-compact-height #Panel_TileDetail .pulse-tab { min-height: 40px; }
++.ux-small-portrait #Panel_TileDetail .pulse-tab-scroll ,
+ .ux-compact-height #Panel_TileDetail .pulse-tab-scroll { max-height: 132px; }
++.ux-small-portrait #Panel_TileDetail .pulse-property-card ,
+ .ux-compact-height #Panel_TileDetail .pulse-property-card { min-height: 98px; padding: 7px 6px; }
++.ux-small-portrait #Panel_TileDetail .pulse-property-card__top ,
+ .ux-compact-height #Panel_TileDetail .pulse-property-card__top { margin-bottom: 8px; }
++.ux-small-portrait #Panel_TileDetail .pulse-actions ,
+ .ux-compact-height #Panel_TileDetail .pulse-actions { padding-top: 8px; }
+ .ux-extra-narrow .top-hud-balances { margin-top: 13px; margin-bottom: 12px; }
+ .ux-extra-narrow .top-hud-segment .top-hud-value { font-size: 17px; }
+@@ -2779,3 +2887,34 @@
+ .ux-extra-narrow #Panel_TileDetail .pulse-go-summary__value { font-size: 12px; }
+ .ux-extra-narrow #Panel_TileDetail .pulse-tab { margin-right: 14px; }
+ .ux-extra-narrow #Panel_TileDetail .pulse-property-card { padding-left: 6px; padding-right: 6px; }
++
++/* Short landscape keeps the HUD clear and puts detail beside the summary. */
++#Panel_TileDetail.ux-short-landscape-inspector .marketplace-panel--compact {
++    width: 70%; max-width: 660px; max-height: 76%; align-self: flex-end;
++}
++.ux-compact-height #Panel_TileDetail.ux-short-landscape-inspector .marketplace-panel--compact { max-height: 76%; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-indicator-row { height: 36px; min-height: 36px; padding-top: 5px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-property-header { min-height: 56px; padding-top: 0; padding-bottom: 6px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-property-icon { width: 36px; min-width: 36px; height: 38px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-property-name { font-size: 18px; margin-top: 2px; margin-bottom: 1px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-content { padding-bottom: 10px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-summary { flex-shrink: 0; margin-bottom: 0; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-summary__rent-value { font-size: 22px; margin-top: 1px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-summary__yield-value { font-size: 18px; margin-top: 3px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-risk-row { margin-top: 2px; padding-bottom: 4px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-go-summary { min-height: 40px; padding-top: 5px; }
++#Panel_TileDetail.ux-short-landscape-inspector.pulse-panel--expanded .pulse-content { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
++#Panel_TileDetail.ux-short-landscape-inspector.pulse-panel--expanded .pulse-property-header { width: 100%; flex-basis: 100%; }
++#Panel_TileDetail.ux-short-landscape-inspector.pulse-panel--expanded .pulse-summary { width: 48%; flex-basis: 48%; margin-right: 3%; }
++#Panel_TileDetail.ux-short-landscape-inspector.pulse-panel--expanded .pulse-details { width: 49%; flex-basis: 49%; max-height: 120px; margin-top: 0; }
++#Panel_TileDetail.ux-short-landscape-inspector.pulse-panel--expanded .pulse-actions { width: 100%; flex-basis: 100%; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-tab { min-height: 32px; padding-top: 5px; padding-bottom: 4px; margin-right: 10px; font-size: 10px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-tab-scroll { max-height: 84px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-tab-content { padding-top: 6px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-property-card { min-height: 84px; padding: 5px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-section-heading { margin-bottom: 4px; font-size: 9px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-property-card__top { margin-bottom: 3px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-property-card__name { font-size: 9px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-property-card__state { font-size: 8px; margin-top: 5px; }
++
++#Panel_TileDetail.ux-wide-landscape-inspector .marketplace-panel--compact { align-self: flex-end; margin-right: 18px; }
+--- builder/Assets/Scripts/UI/ActionButtonsWidget.cs
++++ pulse/Assets/Scripts/UI/ActionButtonsWidget.cs
+@@ -65,6 +65,8 @@
+         private Label primaryActionTitle, primaryActionValue;
+         private string pulseActiveTab = "inspector";
+         private bool pulseExpanded;
++        private bool pulseReturnToArrival;
++        private PulseSheetMotion pulseMotion;
+         private VisualElement gameStateDock, gameStateHistory, gameStateHistoryList;
+         private Label lblGameStateTitle, lblGameStateMessage;
+         private Button btnGameStateHistory, btnSkipGameEvent;
+@@ -108,6 +110,7 @@
+         private void OnDisable()
+         {
+             ResetBuySlide();
++            pulseMotion?.Stop();
+             GameEvents.OnTileSelected -= OnTileSelected;
+             GameEvents.OnTurnStarted -= OnTurnStarted;
+             GameEvents.OnActivityPublished -= OnGameActivityPublished;
+@@ -238,6 +241,7 @@
+         private void TryBindUIToolkit()
+         {
+             if (uiDocument == null) return;
++            UIUXRuntime.PrepareDocument(uiDocument);
+             var root = uiDocument.rootVisualElement;
+             if (root == null) return;
+ 
+@@ -272,6 +276,7 @@
+             tileDetailPanel = root.Q<VisualElement>("Panel_TileDetail");
+             pulsePanel = tileDetailPanel;
+             pulseDetails = root.Q<VisualElement>("PulseDetails");
++            if (pulsePanel != null && pulseDetails != null) pulseMotion = new PulseSheetMotion(pulsePanel, pulseDetails);
+             pulseTabContent = root.Q<VisualElement>("PulseTabContent");
+             pulseToggle = root.Q<Button>("Btn_PulseToggle");
+             pulseToggleState = root.Q<Label>("Lbl_PulseToggleState");
+@@ -350,6 +355,12 @@
+             if (Time.time - lastClickTime < CLICK_COOLDOWN) return;
+             lastClickTime = Time.time;
+ 
++            if (pulseReturnToArrival && turnManager?.CurrentPlayer != null)
++            {
++                HandleTileSelected(boardManager.GetTileAt(turnManager.GetPlayerPosition(turnManager.CurrentPlayer)));
++                return;
++            }
++
+             if (rulesEngine == null || turnManager == null)
+             {
+                 string missing = "";
+@@ -1049,6 +1060,7 @@
+             if (lastReducedMotion != UIUXRuntime.ReducedMotion)
+             {
+                 lastReducedMotion = UIUXRuntime.ReducedMotion;
++                pulseMotion?.SetExpanded(pulseExpanded, false);
+                 UpdateButtonsState(currentSelectedTile, turnManager.CurrentPlayer);
+             }
+             if (turnManager.CurrentState != lastObservedState)
+@@ -1062,6 +1074,7 @@
+         public void UpdateButtonsState(BoardTile tile, PlayerModel currentPlayer)
+         {
+             UpdateInspectorSection(tile);
++            pulseReturnToArrival = false;
+             if (currentPlayer != null && !IsLocalPlayer(currentPlayer))
+             {
+                 SetPrimaryButtonState("PLAYER TURN", false);
+@@ -1159,6 +1172,15 @@
+             {
+                 // Probably rolling dice phase
+                 SetPrimaryButtonState(turnManager.CurrentState == TurnManager.TurnState.MovingPawn ? "MOVING PAWN" : "ROLLING DICE", false);
++                SetSecondaryButtonState(string.Empty, false);
++                return;
++            }
++
++            if (turnManager.CurrentState == TurnManager.TurnState.ResolveTile
++                && tile.TileIndex != turnManager.GetPlayerPosition(currentPlayer))
++            {
++                pulseReturnToArrival = true;
++                SetPrimaryButtonState("Revenir à ma case", true);
+                 SetSecondaryButtonState(string.Empty, false);
+                 return;
+             }
+@@ -1406,15 +1428,20 @@
+         /// </summary>
+         private void UpdateInspectorSection(BoardTile tile)
+         {
+-            double baseGo = turnManager?.financeSystem != null ? turnManager.financeSystem.CurrentSgo : 0;
+-            if (pulseGoBase != null)
+-                pulseGoBase.text = baseGo > 0 ? "+" + CurrencyFormatter.FormatExact(baseGo) : "Indisponible";
+-            if (pulseGoCosts != null) pulseGoCosts.text = "Indisponible";
+-            if (pulseGoNet != null) pulseGoNet.text = "Indisponible";
+-            if (pulseGoSummary != null)
+-            {
+-                pulseGoSummary.tooltip = "Voir le détail du passage GO";
+-            }
++            var finance = turnManager?.financeSystem;
++            var localViewer = turnManager?.GetPlayerById(LocalSeatIndex());
++            bool hasProjection = finance != null && localViewer != null;
++            var projection = hasProjection ? finance.EstimateGoIncome(localViewer) : default;
++            if (pulseGoBase != null) pulseGoBase.text = hasProjection ? SignedAmount(projection.Income) : "—";
++            if (pulseGoCosts != null) pulseGoCosts.text = hasProjection
++                ? (projection.Costs > 0 ? "−" : "") + CurrencyFormatter.FormatExact(projection.Costs) : "—";
++            if (pulseGoNet != null)
++            {
++                pulseGoNet.text = hasProjection ? SignedAmount(projection.Net) : "—";
++                pulseGoNet.EnableInClassList("pulse-go-summary__value--positive", hasProjection && projection.Net >= 0);
++                pulseGoNet.EnableInClassList("pulse-go-summary__value--negative", hasProjection && projection.Net < 0);
++            }
++            if (pulseGoSummary != null) pulseGoSummary.tooltip = "Estimation à état constant : revenus, entretien et taxes. Hors événements futurs et loyers.";
+             bool turboChoice = turnManager != null && turnManager.CurrentState == TurnManager.TurnState.ChooseTurbo;
+             bool precisionChoice = turnManager != null && turnManager.CurrentState == TurnManager.TurnState.AdjustDice;
+             bool hasInspectorContent = tile != null || turboChoice || precisionChoice;
+@@ -1550,7 +1577,7 @@
+                 ClearTrendIndicators();
+                 if (containerTileRisk != null) containerTileRisk.style.display = DisplayStyle.None;
+             }
+-            RenderPulseDetails();
++            if (pulseExpanded) RenderPulseDetails();
+         }
+ 
+         private void TogglePulsePanel()
+@@ -1561,14 +1588,13 @@
+         private void SetPulseExpanded(bool expanded)
+         {
+             pulseExpanded = expanded;
+-            pulsePanel?.EnableInClassList("pulse-panel--expanded", expanded);
+-            pulseDetails?.EnableInClassList("pulse-details--visible", expanded);
++            if (expanded) RenderPulseDetails();
++            pulseMotion?.SetExpanded(expanded, true);
+             UpdatePulseToggleLabel();
+             gameStateDock?.EnableInClassList("game-state-dock--quiet",
+                 !IsGameStateHistoryOpen()
+                 && (((expanded || currentSelectedTile != null) && activeDockEvent == null)
+                     || IsLatestActivityTurnStart()));
+-            if (expanded) RenderPulseDetails();
+         }
+ 
+         private bool IsGameStateHistoryOpen() =>
+@@ -1687,60 +1713,68 @@
+             {
+                 if (viewer == null || allProperties == null)
+                 {
+-                    AddPulseText("Portfolio unavailable.", "pulse-empty-state");
++                    AddPulseText("Portefeuille indisponible.", "pulse-empty-state");
+                     return;
+                 }
+-                var ownedFamilies = allProperties.GroupBy(property => property.FamilyData)
+-                    .OrderBy(group => group.Key.FamilyName, System.StringComparer.Ordinal);
+-                foreach (var group in ownedFamilies)
+-                {
+-                    var total = group.Count();
+-                    var owned = group.Count(property => viewer.OwnedProperties.Contains(property));
++                var families = new VisualElement();
++                families.AddToClassList("pulse-family-grid");
++                foreach (var group in allProperties.GroupBy(property => property.FamilyData)
++                    .Where(group => group.Any(viewer.OwnedProperties.Contains)).OrderBy(group => group.Key.FamilyName))
++                {
++                    var property = group.First(viewer.OwnedProperties.Contains);
++                    int owned = group.Count(viewer.OwnedProperties.Contains), total = group.Count();
+                     var card = new Button(() =>
+                     {
+-                        var property = group.FirstOrDefault(item => viewer.OwnedProperties.Contains(item));
+-                        var tile = property != null ? boardManager.GetTileAt(property.TileIndex) : null;
+-                        if (tile != null)
+-                        {
+-                            pulseActiveTab = "inspector";
+-                            HandleTileSelected(tile);
+-                        }
++                        pulseActiveTab = "inspector";
++                        HandleTileSelected(boardManager.GetTileAt(property.TileIndex));
+                     });
+                     card.AddToClassList("pulse-family-card");
++                    var top = new VisualElement();
++                    top.AddToClassList("pulse-property-card__top");
++                    var icon = new VisualElement();
++                    icon.AddToClassList("pulse-family-card__icon");
++                    TileIconResolver.PopulateIcon(icon, property);
++                    var progress = new Label($"{owned} / {total}");
++                    progress.AddToClassList("pulse-family-card__progress");
++                    top.Add(icon); top.Add(progress); card.Add(top);
+                     var familyName = new Label(group.Key.FamilyName);
+-                    familyName.AddToClassList("pulse-family-card__name");
+-                    var progress = new Label($"{owned} / {total} PROPRIÉTÉS");
+-                    progress.AddToClassList("pulse-family-card__progress");
+-                    var slots = new VisualElement();
+-                    slots.AddToClassList("pulse-family-card__slots");
+-                    foreach (var property in group.OrderBy(item => item.TileIndex))
++                    familyName.AddToClassList("pulse-family-card__name"); card.Add(familyName);
++                    var slots = new VisualElement(); slots.AddToClassList("pulse-family-card__slots");
++                    foreach (var item in group.OrderBy(item => item.TileIndex))
+                     {
+-                        bool hasProperty = viewer.OwnedProperties.Contains(property);
+-                        var slot = new Label(hasProperty ? "●" : "○");
+-                        slot.AddToClassList("pulse-family-slot");
+-                        slot.AddToClassList(hasProperty ? "pulse-family-slot--owned" : "pulse-family-slot--missing");
+-                        slot.tooltip = property.PropertyName;
+-                        slots.Add(slot);
++                        var slot = new VisualElement(); slot.AddToClassList("pulse-family-progress__slot");
++                        slot.EnableInClassList("pulse-family-progress__slot--owned", viewer.OwnedProperties.Contains(item));
++                        slot.tooltip = item.PropertyName; slots.Add(slot);
+                     }
+-                    card.Add(familyName);
+-                    card.Add(progress);
+                     card.Add(slots);
+-                    pulseTabContent.Add(card);
+-                }
+-                if (pulseTabContent.childCount == 0)
+-                    AddPulseText("Aucune propriété dans votre portefeuille.", "pulse-empty-state");
+-                return;
+-            }
+-
+-            AddPulseSectionHeading("Prochain passage GO", "Données confirmées uniquement");
+-            double sgo = turnManager.financeSystem != null ? turnManager.financeSystem.CurrentSgo : 0;
+-            AddPulseMetric("Salaire GO de base", sgo > 0 ? "+" + CurrencyFormatter.FormatExact(sgo) : "Indisponible", "pulse-metric--primary");
+-            AddPulseMetric("Dividendes de famille", "Calculés au passage GO", "");
+-            AddPulseMetric("Entretien des propriétés", "Calculé au passage GO", "");
+-            AddPulseMetric("Impôts et variations de marché", "Réglés au passage GO", "");
+-            AddPulseMetric("Net du prochain GO", "Indisponible avant règlement", "");
+-            AddPulseText("Le salaire affiché est la base actuelle. Le total futur dépend de l’état du marché, des propriétés et des effets actifs au moment du passage.", "pulse-footnote");
+-        }
++                    var remaining = new Label(owned == total ? "Famille complète ↗" : $"{total - owned} manquante(s) ↗");
++                    remaining.AddToClassList("pulse-footnote"); card.Add(remaining);
++                    families.Add(card);
++                }
++                pulseTabContent.Add(families);
++                if (families.childCount == 0) AddPulseText("Votre portefeuille est vide.", "pulse-empty-state");
++                return;
++            }
++
++            AddPulseSectionHeading("Prochain passage GO", "Estimation");
++            var finance = turnManager.financeSystem;
++            if (finance == null || viewer == null)
++            {
++                AddPulseText("Projection indisponible.", "pulse-empty-state");
++                return;
++            }
++            var projection = finance.EstimateGoIncome(viewer);
++            AddPulseMetric("Salaire GO", SignedAmount(projection.Salary), "");
++            AddPulseMetric("Dividendes de famille", SignedAmount(projection.Dividends), "");
++            AddPulseMetric("Entretien", "−" + CurrencyFormatter.FormatExact(projection.Upkeep), "");
++            if (projection.InfrastructureTax > 0)
++                AddPulseMetric("Taxe infrastructure", "−" + CurrencyFormatter.FormatExact(projection.InfrastructureTax), "");
++            AddPulseMetric("Net estimé", SignedAmount(projection.Net), "pulse-metric-row--primary");
++            AddPulseText("À état constant. Hors loyers, événements et changements de marché à venir.", "pulse-footnote");
++        }
++
++        private static string SignedAmount(double amount) =>
++            (amount > 0 ? "+" : "") + CurrencyFormatter.FormatExact(amount);
+ 
+         private void AddPulseSectionHeading(string title, string status)
+         {
+--- builder/Assets/Scripts/UI/TopHUDWidget.cs
++++ pulse/Assets/Scripts/UI/TopHUDWidget.cs
+@@ -132,6 +132,7 @@
+         private void TryBindUIToolkit()
+         {
+             if (uiDocument == null) return;
++            UIUXRuntime.PrepareDocument(uiDocument);
+             var root = uiDocument.rootVisualElement;
+             if (root == null) return;
+ 
+--- builder/Assets/Scripts/UI/UIUXRuntime.cs
++++ pulse/Assets/Scripts/UI/UIUXRuntime.cs
+@@ -1,4 +1,6 @@
+ using System;
++using System.Collections.Generic;
++using System.Runtime.InteropServices;
+ using UnityEngine;
+ using UnityEngine.UIElements;
+ 
+@@ -10,6 +12,45 @@
+     /// </summary>
+     public static class UIUXRuntime
+     {
++        private static readonly Dictionary<PanelSettings, PanelSettings> gamePanels = new Dictionary<PanelSettings, PanelSettings>();
++#if UNITY_WEBGL && !UNITY_EDITOR
++        [DllImport("__Internal")] private static extern float PolyRiskCanvasCssWidth();
++#endif
++
++        public static void PrepareDocument(UIDocument document)
++        {
++            if (document == null || document.panelSettings == null) return;
++            var source = document.panelSettings;
++            if (gamePanels.ContainsValue(source)) return;
++            if (!gamePanels.TryGetValue(source, out var settings))
++            {
++                settings = UnityEngine.Object.Instantiate(source);
++                settings.name = source.name + " (Pulse runtime)";
++#if UNITY_WEBGL || UNITY_EDITOR
++                settings.scaleMode = PanelScaleMode.ConstantPixelSize;
++#else
++                settings.scaleMode = PanelScaleMode.ConstantPhysicalSize;
++                settings.referenceDpi = 160;
++                settings.fallbackDpi = 160;
++#endif
++                settings.sortingOrder = source.sortingOrder - 1;
++                gamePanels.Add(source, settings);
++            }
++            RefreshPanelScale(settings);
++            document.panelSettings = settings;
++            document.rootVisualElement.RegisterCallback<GeometryChangedEvent>(_ => RefreshPanelScale(settings));
++        }
++
++        private static void RefreshPanelScale(PanelSettings settings)
++        {
++            float scale = 1;
++#if UNITY_WEBGL && !UNITY_EDITOR
++            float cssWidth = PolyRiskCanvasCssWidth();
++            if (cssWidth > 0) scale = Screen.width / cssWidth;
++#endif
++            if (!Mathf.Approximately(settings.scale, scale)) settings.scale = scale;
++        }
++
+         private const string PreparedRootClass = "ux-runtime-root";
+         public static bool ReducedMotion => PlayerPrefs.GetInt("PolyRisk.ReduceMotion", 0) == 1;
+ 
+@@ -67,14 +108,15 @@
+             // layouts and avoids polling Screen dimensions every frame.
+             root.EnableInClassList("ux-compact-height", height <= 430f);
+             root.EnableInClassList("ux-low-height", height <= 340f);
+-            bool wideLandscape = Screen.width > Screen.height && Screen.height > 430;
++            bool wideLandscape = width > height && height > 600f;
+             root.EnableInClassList("ux-wide-landscape", wideLandscape);
+             var tileInspector = root.Q<VisualElement>("Panel_TileDetail");
+             tileInspector?.EnableInClassList("ux-wide-landscape-inspector", wideLandscape);
+-            bool shortLandscape = Screen.width > Screen.height && Screen.height <= 430;
++            bool shortLandscape = width > height && height <= 600f;
+             tileInspector?.EnableInClassList("ux-short-landscape-inspector", shortLandscape);
+-            root.EnableInClassList("ux-narrow", Screen.width <= 520 || width <= 480f);
+-            root.EnableInClassList("ux-extra-narrow", Screen.width <= 370 || width <= 370f);
++            root.EnableInClassList("ux-narrow", width <= 480f);
++            root.EnableInClassList("ux-extra-narrow", width <= 370f);
++            root.EnableInClassList("ux-small-portrait", width < height && height < 760f);
+ 
+             Rect safe = Screen.safeArea;
+             root.style.paddingLeft = width * safe.xMin / Screen.width;
+--- builder/Assets/Scripts/Systems/FinanceSystem.cs
++++ pulse/Assets/Scripts/Systems/FinanceSystem.cs
+@@ -229,46 +229,14 @@
+                 return;
+             }
+ 
+-            double totalCredit = 0;
+-            double totalDebit  = 0;
+-
+-            // ── 1. Salaire GO ──────────────────────────────────────────────────────
+-            totalCredit += CurrentSgo;
+-
+-            // ── 2. Dividendes Tiérisés ─────────────────────────────────────────────
+-            // Versés par propriété si le joueur détient le monopole complet de la famille.
+-            // Formule : (BaseRent × Mult_Niveau × 2) × Taux_Tier
+-            var familiesChecked = new System.Collections.Generic.HashSet<FamilyData>();
++            var projection = EstimateGoIncome(player);
++            double totalCredit = projection.Income;
++            double totalDebit = projection.Costs;
++            if (player.DoubleBurnRateNextGo) player.DoubleBurnRateNextGo = false;
++
+             foreach (var prop in player.OwnedProperties)
+             {
+-                if (prop.FamilyData == null || prop.FamilyData.FamilyName.Contains("Logistics")) continue;
+-                if (familiesChecked.Contains(prop.FamilyData)) continue;
+-                if (!HasFullFamilyForPlayer(player, prop.FamilyData)) continue;
+-
+-                familiesChecked.Add(prop.FamilyData);
+-
+-                double tierRate = GetDividendRate(prop.FamilyData);
+-                foreach (var familyProp in player.OwnedProperties)
+-                {
+-                    if (familyProp.FamilyData != prop.FamilyData) continue;
+-                    int lvl = Mathf.Clamp(familyProp.CurrentLevel, 0, RentMultipliers.Length - 1);
+-                    double monopolyRent = familyProp.BaseRent * RentMultipliers[lvl] * 2.0;
+-                    totalCredit += monopolyRent * tierRate;
+-                }
+-            }
+-
+-            // ── 3. Burn Rate ───────────────────────────────────────────────────────
+-            // Prélevé par propriété. Multiplicateur ×2 si DoubleBurnRateNextGo actif.
+-            double burnMultiplier = player.DoubleBurnRateNextGo ? 2.0 : 1.0;
+-            if (player.DoubleBurnRateNextGo) player.DoubleBurnRateNextGo = false;
+-
+-            // Phase C : modificateur cycle (BOOM × 1.20 sur Burn Rate)
+-            var cm = CycleManager.Instance;
+-            if (cm != null && cm.IsActive) burnMultiplier *= cm.GetBurnRateMultiplier();
+-
+-            foreach (var prop in player.OwnedProperties)
+-            {
+-                if (prop.FamilyData != null && prop.FamilyData.FamilyName.Contains("Logistics")) continue;
++                if (prop.FamilyData != null && (prop.FamilyData.FamilyName ?? string.Empty).Contains("Logistics")) continue;
+ 
+                 // Fix #6 Phase F — Hypothèque : pas de Burn Rate. Règle anti-exploit GDD :
+                 // exonération uniquement au GO *suivant* l'hypothèque. On stocke MortgageExemptFromNextGo
+@@ -290,29 +258,14 @@
+                     continue; // Lvl0 : Burn Rate = $0 mais on a bien décrémenté
+                 }
+ 
+-                int lvl = Mathf.Clamp(prop.CurrentLevel, 0, BurnRateActive.Length - 1);
+-                double br = prop.WasVisitedSinceLastGO ? BurnRateActive[lvl] : BurnRateVeille[lvl];
+-                totalDebit += br * burnMultiplier;
+-
+                 // Reset pour le prochain cycle
+                 prop.WasVisitedSinceLastGO = false;
+ 
+                 DecrementDurations(prop);
+             }
+ 
+-            // ── 4. Infrastructure Tax (4 Hubs) ─────────────────────────────────────
+-            // $20,000/GO si le joueur possède les 4 Hubs simultanément (anti-snowball)
+-            int hubCount = player.OwnedProperties.Count(
+-                p => p.FamilyData != null && p.FamilyData.FamilyName.Contains("Logistics"));
+-            if (hubCount == 4)
+-            {
+-                totalDebit += 20000;
++            if (projection.InfrastructureTax > 0)
+                 Debug.Log($"[GO] Player {player.PlayerId} — Infrastructure Tax 4 Hubs : -$20,000");
+-            }
+-
+-            // Le CRASH réduit les revenus, pas les coûts de maintenance.
+-            if (cm != null && cm.IsActive)
+-                totalCredit *= cm.GetGoIncomeMultiplier();
+ 
+             // ── 5. Décrémenter OilGasPenaltyTurns ─────────────────────────────────
+             if (player.OilGasPenaltyTurns > 0)
+@@ -326,6 +279,55 @@
+                 new DebtSettlementContext { kind = "go" });
+         }
+ 
++        public readonly struct GoProjection
++        {
++            public readonly double Salary, Dividends, Upkeep, InfrastructureTax;
++            public double Income => Salary + Dividends;
++            public double Costs => Upkeep + InfrastructureTax;
++            public double Net => Income - Costs;
++
++            public GoProjection(double salary, double dividends, double upkeep, double infrastructureTax)
++            {
++                Salary = salary;
++                Dividends = dividends;
++                Upkeep = upkeep;
++                InfrastructureTax = infrastructureTax;
++            }
++        }
++
++        /// <summary>GO at the current state; never consumes effects, timers, cash or RNG.</summary>
++        public GoProjection EstimateGoIncome(PlayerModel player)
++        {
++            if (player == null) return default;
++            double dividends = 0, upkeep = 0;
++            var familiesChecked = new HashSet<FamilyData>();
++            foreach (var prop in player.OwnedProperties)
++            {
++                if (prop == null || prop.FamilyData == null || (prop.FamilyData.FamilyName ?? string.Empty).Contains("Logistics")) continue;
++                if (!familiesChecked.Add(prop.FamilyData) || !HasFullFamilyForPlayer(player, prop.FamilyData)) continue;
++                double rate = GetDividendRate(prop.FamilyData);
++                foreach (var familyProp in player.OwnedProperties)
++                {
++                    if (familyProp == null || familyProp.FamilyData != prop.FamilyData) continue;
++                    int level = Mathf.Clamp(familyProp.CurrentLevel, 0, RentMultipliers.Length - 1);
++                    dividends += familyProp.BaseRent * RentMultipliers[level] * 2.0 * rate;
++                }
++            }
++            var cycle = CycleManager.Instance;
++            double burnMultiplier = player.DoubleBurnRateNextGo ? 2.0 : 1.0;
++            if (cycle != null && cycle.IsActive) burnMultiplier *= cycle.GetBurnRateMultiplier();
++            foreach (var prop in player.OwnedProperties)
++            {
++                if (prop == null || prop.IsMortgaged || prop.CurrentLevel == 0
++                    || (prop.FamilyData != null && (prop.FamilyData.FamilyName ?? string.Empty).Contains("Logistics"))) continue;
++                int level = Mathf.Clamp(prop.CurrentLevel, 0, BurnRateActive.Length - 1);
++                upkeep += (prop.WasVisitedSinceLastGO ? BurnRateActive[level] : BurnRateVeille[level]) * burnMultiplier;
++            }
++            int hubs = player.OwnedProperties.Count(p => p != null && p.FamilyData != null && (p.FamilyData.FamilyName ?? string.Empty).Contains("Logistics"));
++            double incomeMultiplier = cycle != null && cycle.IsActive ? cycle.GetGoIncomeMultiplier() : 1;
++            return new GoProjection(CurrentSgo * incomeMultiplier, dividends * incomeMultiplier, upkeep, hubs == 4 ? 20000 : 0);
++        }
++
+         /// <summary>Finishes a GO debt after collection, without repeating GO income or taxes.</summary>
+         public void CompleteGoSettlement(PlayerModel player, bool paid)
+         {
+--- builder/Assets/Scripts/Editor/EconomyRegression.cs
++++ pulse/Assets/Scripts/Editor/EconomyRegression.cs
+@@ -156,6 +156,39 @@
+                 Check(creditor.CurrentBalance == 550, "creditor receives remaining cash once");
+                 transactions.ProcessBankruptcyCash(poor, creditor);
+                 Check(creditor.CurrentBalance == 550, "bankruptcy idempotent");
++
++                finance.boardManager = board;
++                board.tileDataList = new List<BoardTileData> { first, second };
++                var completeFamilyOwner = new PlayerModel(16, 10000, true);
++                completeFamilyOwner.AddProperty(first); completeFamilyOwner.AddProperty(second);
++                var familyEstimate = finance.EstimateGoIncome(completeFamilyOwner);
++                Check(familyEstimate.Dividends > 0, "GO projection includes tiered dividends for a complete family");
++                finance.ProcessGoIncome(completeFamilyOwner);
++                Check(Math.Abs(completeFamilyOwner.CurrentBalance - (10000 + familyEstimate.Net)) < 0.000001,
++                    "complete-family GO projection matches the real settlement");
++
++                var projectedAsset = Property(1000); projectedAsset.SetLevel(1);
++                projectedAsset.WasVisitedSinceLastGO = true;
++                projectedAsset.EmbargoTurnsRemaining = 2;
++                projectedAsset.IsEmbargoed = true;
++                var projectedOwner = new PlayerModel(15, 10000, true) { DoubleBurnRateNextGo = true, OilGasPenaltyTurns = 2 };
++                projectedOwner.AddProperty(projectedAsset);
++                var estimate = finance.EstimateGoIncome(projectedOwner);
++                Check(estimate.Income == finance.CurrentSgo && estimate.Costs == 600,
++                    "GO projection includes active upkeep and pending double burn");
++                Check(projectedOwner.CurrentBalance == 10000 && projectedOwner.DoubleBurnRateNextGo
++                    && projectedOwner.OilGasPenaltyTurns == 2 && projectedAsset.WasVisitedSinceLastGO
++                    && projectedAsset.EmbargoTurnsRemaining == 2,
++                    "GO inspection does not consume cash, effects, visits or durations");
++                finance.ProcessGoIncome(projectedOwner);
++                Check(Math.Abs(projectedOwner.CurrentBalance - (10000 + estimate.Net)) < 0.000001
++                    && !projectedOwner.DoubleBurnRateNextGo && !projectedAsset.WasVisitedSinceLastGO
++                    && projectedAsset.EmbargoTurnsRemaining == 1,
++                    "real GO settles the same projection exactly once and consumes effects only on settlement");
++                projectedAsset.IsMortgaged = true; projectedAsset.MortgageExemptFromNextGo = true;
++                estimate = finance.EstimateGoIncome(projectedOwner);
++                Check(estimate.Costs == 0 && projectedAsset.MortgageExemptFromNextGo,
++                    "GO inspection respects mortgage without consuming exemption");
+ 
+                 var upkeep = Property(1000); upkeep.SetLevel(5); upkeep.WasVisitedSinceLastGO = true;
+                 var broke = new PlayerModel(3, 100, true); broke.AddProperty(upkeep);
+--- builder/Assets/WebGLTemplates/PolyRiskResponsive/index.html
++++ pulse/Assets/WebGLTemplates/PolyRiskResponsive/index.html
+@@ -24,7 +24,7 @@
+       <div id="unity-warning"> </div>
+       <div id="unity-footer">
+         <div id="unity-webgl-logo"></div>
+-        <div id="unity-fullscreen-button"></div>
++        <button type="button" id="unity-fullscreen-button" aria-label="Plein écran">Plein écran</button>
+ #if SHOW_DIAGNOSTICS
+         <img id="diagnostics-icon" src="TemplateData/webmemd-icon.png">
+ #endif
+--- builder/Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/style.css
++++ pulse/Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/style.css
+@@ -5,9 +5,10 @@
+ #unity-logo { width: 154px; height: 130px; background: url('unity-logo-{{{ SPLASH_SCREEN_STYLE.toLowerCase() }}}.png') no-repeat center }
+ #unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; margin-left: 6.5px; background: url('progress-bar-empty-{{{ SPLASH_SCREEN_STYLE.toLowerCase() }}}.png') no-repeat center }
+ #unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-{{{ SPLASH_SCREEN_STYLE.toLowerCase() }}}.png') no-repeat center }
+-#unity-footer { position: absolute; right: max(8px, env(safe-area-inset-right)); top: max(8px, env(safe-area-inset-top)); width: 44px; height: 44px }
++#unity-footer { position: absolute; left: max(12px, env(safe-area-inset-left)); bottom: max(12px, env(safe-area-inset-bottom)); width: 96px; height: 36px }
+ #unity-webgl-logo, #unity-build-title { display: none }
+-#unity-fullscreen-button { cursor:pointer; width: 44px; height: 44px; border-radius: 10px; background: rgba(7, 9, 14, 0.72) url('fullscreen-button.png') no-repeat center }
++#unity-fullscreen-button { cursor: pointer; width: 96px; height: 36px; padding: 0; border: 1px solid #2a303b; border-radius: 8px; background: rgba(11, 14, 22, 0.9); color: #a1a6b2; font: 500 11px system-ui, sans-serif }
++#unity-fullscreen-button:focus-visible { outline: 2px solid #edb95c; outline-offset: 2px }
+ #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+ 
+ @media (max-width: 600px), (max-height: 500px) { #unity-footer { display: none } }
+--- builder/Assets/Scripts/UI/PulseSheetMotion.cs
++++ pulse/Assets/Scripts/UI/PulseSheetMotion.cs
+@@ -0,0 +1,94 @@
++using UnityEngine;
++using UnityEngine.UIElements;
++using UnityEngine.UIElements.Experimental;
++
++namespace PolyRisk.UI
++{
++    public sealed class PulseSheetMotion
++    {
++        private readonly VisualElement panel, details;
++        private ValueAnimation<StyleValues> animation;
++        private bool expanded, measuring;
++        private float startHeight;
++        private int generation;
++
++        public PulseSheetMotion(VisualElement panel, VisualElement details)
++        {
++            this.panel = panel;
++            this.details = details;
++            details.RegisterCallback<GeometryChangedEvent>(OnGeometryChanged);
++            details.RegisterCallback<DetachFromPanelEvent>(_ => Stop());
++        }
++
++        public void SetExpanded(bool value, bool animate)
++        {
++            if (value == expanded && !measuring && animation == null) return;
++            startHeight = details.resolvedStyle.display == DisplayStyle.None ? 0 : details.resolvedStyle.height;
++            Stop();
++            expanded = value;
++            if (!animate || UIUXRuntime.ReducedMotion || details.panel == null)
++            {
++                ApplyFinalState();
++                return;
++            }
++            panel.AddToClassList("pulse-panel--expanded");
++            details.AddToClassList("pulse-details--visible");
++            if (!value)
++            {
++                AnimateTo(0);
++                return;
++            }
++            measuring = true;
++            details.style.height = StyleKeyword.Auto;
++            details.MarkDirtyRepaint();
++        }
++
++        private void OnGeometryChanged(GeometryChangedEvent evt)
++        {
++            if (evt.newRect.height <= 0) return;
++            if (measuring)
++            {
++                measuring = false;
++                AnimateTo(evt.newRect.height);
++            }
++            else if (expanded && animation == null && !UIUXRuntime.ReducedMotion
++                && evt.oldRect.height > 0 && Mathf.Abs(evt.newRect.height - evt.oldRect.height) > 2)
++            {
++                startHeight = evt.oldRect.height;
++                AnimateTo(evt.newRect.height);
++            }
++        }
++
++        private void AnimateTo(float height)
++        {
++            int sequence = generation;
++            animation = details.experimental.animation.Start(
++                new StyleValues { height = Mathf.Max(0, startHeight) },
++                new StyleValues { height = height }, 260)
++                .Ease(t => 1f - Mathf.Pow(1f - t, 3f))
++                .OnCompleted(() =>
++                {
++                    if (sequence != generation) return;
++                    animation = null;
++                    ApplyFinalState();
++                });
++        }
++
++        private void ApplyFinalState()
++        {
++            measuring = false;
++            panel.EnableInClassList("pulse-panel--expanded", expanded);
++            details.EnableInClassList("pulse-details--visible", expanded);
++            details.style.height = StyleKeyword.Auto;
++        }
++
++        public void Stop()
++        {
++            generation++;
++            measuring = false;
++            animation?.Stop();
++            animation = null;
++            ApplyFinalState();
++        }
++    }
++}
+--- builder/Assets/Scripts/UI/PulseSheetMotion.cs.meta
++++ pulse/Assets/Scripts/UI/PulseSheetMotion.cs.meta
+@@ -0,0 +1,11 @@
++fileFormatVersion: 2
++guid: 2e59586eb68534af7bac6adab1ec8f87
++MonoImporter:
++  externalObjects: {}
++  serializedVersion: 2
++  defaultReferences: []
++  executionOrder: 0
++  icon: {instanceID: 0}
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+--- builder/Assets/Plugins.meta
++++ pulse/Assets/Plugins.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: 333bb06bc3bb04098bcf6fefd715d06c
++folderAsset: yes
++DefaultImporter:
++  externalObjects: {}
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+--- builder/Assets/Plugins/WebGL.meta
++++ pulse/Assets/Plugins/WebGL.meta
+@@ -0,0 +1,8 @@
++fileFormatVersion: 2
++guid: ee930c24bc7b941269dae537ecd74e0c
++folderAsset: yes
++DefaultImporter:
++  externalObjects: {}
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 
+--- builder/Assets/Plugins/WebGL/PulseViewport.jslib
++++ pulse/Assets/Plugins/WebGL/PulseViewport.jslib
+@@ -0,0 +1,5 @@
++mergeInto(LibraryManager.library, {
++  PolyRiskCanvasCssWidth: function () {
++    return Module.canvas ? Module.canvas.getBoundingClientRect().width : 0;
++  }
++});
+--- builder/Assets/Plugins/WebGL/PulseViewport.jslib.meta
++++ pulse/Assets/Plugins/WebGL/PulseViewport.jslib.meta
+@@ -0,0 +1,32 @@
++fileFormatVersion: 2
++guid: 2164a777aea2848dabcff083af4481ae
++PluginImporter:
++  externalObjects: {}
++  serializedVersion: 2
++  iconMap: {}
++  executionOrder: {}
++  defineConstraints: []
++  isPreloaded: 0
++  isOverridable: 0
++  isExplicitlyReferenced: 0
++  validateReferences: 1
++  platformData:
++  - first:
++      Any: 
++    second:
++      enabled: 0
++      settings: {}
++  - first:
++      Editor: Editor
++    second:
++      enabled: 0
++      settings:
++        DefaultValueInitialized: true
++  - first:
++      WebGL: WebGL
++    second:
++      enabled: 1
++      settings: {}
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 

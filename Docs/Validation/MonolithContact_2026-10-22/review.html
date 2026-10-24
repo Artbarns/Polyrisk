@@ -1,0 +1,21 @@
+<!doctype html><meta charset="utf-8"><title>PolyRisk — PASS 2E.1 · Contact & Arrival</title>
+<style>body{background:#0c1016;color:#a4aebc;font:15px system-ui;margin:24px;max-width:1250px}h1,h2{color:#e2e8ee}a{color:#39d6bb}video{display:block;max-width:100%;max-height:78vh;background:#0c1016}button,input,select{font:inherit}output{display:block;margin:12px 0}.pair{display:flex;gap:16px;align-items:start}.pair figure{flex:1;margin:0}img{max-width:100%;height:auto}section{margin:32px 0}</style>
+<h1>PASS 2E.1 — Pawn Visibility · Tile Contact · Arrival Sync</h1>
+<p><a href="README.md">Rapport, paramètres et limites</a> · <a href="/MonolithContact/index.html">Prototype WebGL</a></p>
+<p>Rendu Unity réel, pistes audio enregistrées depuis la sortie WebAudio du jeu. Aucun microphone, aucune image générée. Les parcours du banc visuel utilisent le prefab et PawnMovement réels sans actions économiques.</p>
+<section><h2>Vidéo portrait native — inspection</h2><video id="viewer" controls preload="metadata" src="portrait-game.webm"></video>
+<p><label>Clip <select id="source"><option value="portrait-game.webm">Portrait — partie réelle</option><option value="portrait-fixtures.webm">Portrait — banc visuel, quatre coins et clics</option></select></label> <label>Temps <input id="time" type="number" step=".05" min="0" value="1"></label> <button id="seek">Afficher</button> <button id="frame">Extraire JPEG original</button></p><output id="meta">Chargement…</output></section>
+<p>Le banc commence par 40 positions rapides de contrôle, puis 1 à 6 occupants. Ces sauts de test ne représentent pas le déplacement normal. Viennent ensuite repos / activation / émission coupée, parcours courts et longs, cadence ralentie et Reduced Motion.</p>
+<section><h2>Contact et lock — frames réelles du clip</h2><div class="pair"><figure><figcaption>Passage — contour local bref</figcaption><img src="crossing.jpg"></figure><figure><figcaption>Arrivée — contour final et lock</figcaption><img src="arrival.jpg"></figure></div></section>
+<section><h2>Audio réel</h2><audio controls preload="metadata" src="portrait-fixtures-audio.wav"></audio></section>
+<section><h2>430 × 830 — avant / après, quatre occupants sur GO</h2><div class="pair"><figure><figcaption>PASS 2E</figcaption><img src="before-portrait-overview.jpg"></figure><figure><figcaption>PASS 2E.1</figcaption><img src="after-portrait-overview.jpg"></figure></div></section>
+<section><h2>1200 × 900 — avant / après</h2><div class="pair"><figure><figcaption>PASS 2E</figcaption><img src="before-desktop-overview.jpg"></figure><figure><figcaption>PASS 2E.1</figcaption><img src="after-desktop-overview.jpg"></figure></div></section>
+<section><h2>Gros plan de matière</h2><p>Spécimen QA déclaré : même géométrie / matériaux, grossissement ×5 au centre pour inspection uniquement. La caméra de jeu reste inchangée ; les captures natives ci-dessus servent à juger la visibilité réelle.</p><div class="pair"><figure><figcaption>PASS 2E</figcaption><img src="specimen-before.jpg"></figure><figure><figcaption>PASS 2E.1</figcaption><img src="specimen.jpg"></figure></div></section>
+<script>
+const v=document.getElementById('viewer'),meta=document.getElementById('meta');
+function info(){meta.textContent=`${v.videoWidth} × ${v.videoHeight} · image ${v.currentTime.toFixed(2)} s · durée ${v.duration.toFixed(2)} s`;}
+v.onloadedmetadata=info;v.onseeked=info;
+document.getElementById('source').onchange=e=>{v.pause();v.src=e.target.value;};
+document.getElementById('seek').onclick=()=>{v.pause();v.currentTime=Number(document.getElementById('time').value);};
+document.getElementById('frame').onclick=async()=>{const c=document.createElement('canvas');c.width=v.videoWidth;c.height=v.videoHeight;c.getContext('2d').drawImage(v,0,0);const name=document.getElementById('source').value.replace('.webm','')+'-frame-'+Math.round(v.currentTime*1000)+'.jpg';const res=await fetch('/__capture',{method:'POST',body:new URLSearchParams({name,image:c.toDataURL('image/jpeg',.94).split(',')[1]})});meta.textContent=res.ok?'Saved '+name:'Save failed';};
+</script>

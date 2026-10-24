@@ -1,0 +1,92 @@
+{
+  "imagesVerified": 7,
+  "beforePlay": [
+    {
+      "duration": 22.519,
+      "ready": 4,
+      "src": "baseline-contacts.webm",
+      "time": 9.718
+    },
+    {
+      "duration": 26.128,
+      "ready": 4,
+      "src": "after-b-contacts.webm",
+      "time": 11.513
+    },
+    {
+      "duration": 14.636,
+      "ready": 4,
+      "src": "partie-b-coin-short.webm",
+      "time": 0
+    }
+  ],
+  "playReachedEnd": [
+    {
+      "paused": true,
+      "src": "baseline-contacts.webm",
+      "time": 22.519
+    },
+    {
+      "paused": true,
+      "src": "after-b-contacts.webm",
+      "time": 26.128
+    },
+    {
+      "paused": true,
+      "src": "partie-b-coin-short.webm",
+      "time": 0
+    }
+  ],
+  "abSeek": [
+    {
+      "duration": 25.831,
+      "height": 830,
+      "ready": 4,
+      "src": "after-a-contacts.webm",
+      "time": 11.59,
+      "width": 430
+    },
+    {
+      "duration": 26.128,
+      "height": 830,
+      "ready": 4,
+      "src": "after-b-contacts.webm",
+      "time": 11.513,
+      "width": 430
+    },
+    {
+      "duration": 14.636,
+      "height": 830,
+      "ready": 4,
+      "src": "partie-b-coin-short.webm",
+      "time": 0,
+      "width": 430
+    }
+  ],
+  "cameraSeek": [
+    {
+      "duration": 24.083,
+      "height": 830,
+      "ready": 4,
+      "src": "baseline-camera.webm",
+      "time": 7.361,
+      "width": 430
+    },
+    {
+      "duration": 28.094,
+      "height": 830,
+      "ready": 4,
+      "src": "after-b-camera.webm",
+      "time": 8.82,
+      "width": 430
+    },
+    {
+      "duration": 14.636,
+      "height": 830,
+      "ready": 4,
+      "src": "partie-b-coin-short.webm",
+      "time": 0,
+      "width": 430
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+
+    <ui:VisualElement class="bottom-panel-container marketplace-nonmodal" name="Panel_TileDetail">
+        <ui:VisualElement name="GameStateDock" class="game-state-dock game-state-dock--board-receipt">
+            <ui:VisualElement class="game-state-dock__main">
+                <ui:VisualElement name="GameStateMarker" class="game-state-dock__marker" />
+                <ui:VisualElement class="game-state-dock__copy">
+                    <ui:Label name="Lbl_GameStateTitle" text="WAITING FOR GAME" class="game-state-dock__title" />
+                    <ui:Label name="Lbl_GameStateMessage" text="Game events will appear here." class="game-state-dock__message" />
+                </ui:VisualElement>
+                <ui:Button name="Btn_SkipGameEvent" text="SKIP" class="game-state-dock__skip-button" tooltip="Skip this visual event" />
+            </ui:VisualElement>
+            <ui:ScrollView name="GameStateHistory" class="game-state-history">
+                <ui:VisualElement name="GameStateHistoryList" class="game-state-history__list" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+
+        <ui:VisualElement class="marketplace-panel marketplace-panel--compact">
+            <ui:VisualElement class="indicator-row pulse-indicator-row">
+                <ui:VisualElement class="indicator-pill" />
+                <ui:VisualElement class="pulse-control-row">
+                    <ui:Button name="Btn_PulseToggle" class="pulse-toggle">
+                        <ui:Label name="Lbl_PulseToggleTitle" text="CENTRE DE CONTRÔLE" class="pulse-toggle__title" />
+                        <ui:Label name="Lbl_PulseToggleState" text="Déplier ↑" class="pulse-toggle__state" />
+                    </ui:Button>
+                    <ui:Button name="Btn_GameStateHistory" text="LOG" class="game-state-dock__history-button pulse-history-button" tooltip="Afficher le journal de jeu" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement class="panel-content pulse-content">
+                <ui:VisualElement class="tile-inspector-heading pulse-property-header">
+                    <ui:VisualElement name="Icon_TileFamily" class="icon-box icon-box--compact pulse-property-icon" />
+                    <ui:VisualElement class="text-stack pulse-property-copy">
+                        <ui:Label name="Lbl_PulseOwnership" text="CASE INSPECTÉE · À ACQUÉRIR" class="pulse-property-ownership" />
+                        <ui:Label name="Lbl_TileName" text="—" class="card-title pulse-property-name" />
+                        <ui:Label name="Lbl_TileFamily" text="" class="card-desc pulse-property-family" />
+                    </ui:VisualElement>
+                    <ui:Button name="Btn_PulseFamilyProgress" class="pulse-family-progress" tooltip="Inspecter la famille">
+                        <ui:VisualElement name="PulseFamilyCount" class="pulse-family-progress__count">
+                            <ui:Label name="Lbl_PulseFamilyOwned" text="0" class="pulse-family-progress__owned" />
+                            <ui:Label name="Lbl_PulseFamilyTotal" text="/0" class="pulse-family-progress__total" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="PulseFamilySlots" class="pulse-family-progress__slots" />
+                        <ui:Label text="Famille ↗" class="pulse-family-progress__label" />
+                    </ui:Button>
+                </ui:VisualElement>
+
+                <ui:Label name="Lbl_TileEffect" text="" class="tile-effect-badge" />
+
+                <ui:VisualElement name="PulsePropertySummary" class="tile-stat-row pulse-summary">
+                    <ui:VisualElement class="pulse-summary__facts">
+                        <ui:VisualElement class="pulse-summary__rent">
+                            <ui:Label text="Loyer par visite" class="pulse-summary__label" />
+                            <ui:VisualElement class="tile-stat-value-row pulse-summary__value-row">
+                                <ui:Label name="Lbl_TileRent" text="—" class="tile-stat-value pulse-summary__rent-value" />
+                                <ui:Label text="$" class="pulse-summary__currency" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="pulse-summary__yield">
+                            <ui:Label text="Rendement" class="pulse-summary__label" />
+                            <ui:VisualElement class="tile-stat-value-row pulse-summary__value-row">
+                                <ui:Label name="Lbl_TileRoi" text="—" class="tile-stat-value pulse-summary__yield-value" />
+                                <ui:Label text="%" class="pulse-summary__percent" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+
+                    <ui:VisualElement name="Container_TileRisk" class="pulse-risk-row">
+                        <ui:VisualElement class="pulse-risk-icon">
+                            <ui:VisualElement class="pulse-risk-icon__shield" />
+                            <ui:Label text="?" class="pulse-risk-icon__question" />
+                        </ui:VisualElement>
+                        <ui:Label name="Lbl_TileRisk" text="Risque non renseigné" class="pulse-risk-row__value" />
+                    </ui:VisualElement>
+
+                    <ui:Button name="Btn_PulseGoSummary" class="pulse-go-summary" tooltip="Voir les flux estimés au prochain passage GO">
+                        <ui:VisualElement class="pulse-go-summary__cell">
+                            <ui:Label text="Prochain GO · base" class="pulse-go-summary__label" />
+                            <ui:Label name="Lbl_PulseGoBase" text="Indisponible" class="pulse-go-summary__value pulse-go-summary__value--base" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="pulse-go-summary__cell">
+                            <ui:Label text="COÛTS" class="pulse-go-summary__label" />
+                            <ui:Label name="Lbl_PulseGoCosts" text="Indisponible" class="pulse-go-summary__value" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="pulse-go-summary__cell pulse-go-summary__cell--net">
+                            <ui:Label text="Net estimé ↗" class="pulse-go-summary__label" />
+                            <ui:Label name="Lbl_PulseGoNet" text="Indisponible" class="pulse-go-summary__value" />
+                        </ui:VisualElement>
+                    </ui:Button>
+                </ui:VisualElement>
+
+                <ui:VisualElement name="PulseDetails" class="pulse-details">
+                    <ui:VisualElement class="pulse-tab-row">
+                        <ui:Button name="Btn_PulseInspector" text="Inspecteur" class="pulse-tab pulse-tab--active" />
+                        <ui:Button name="Btn_PulsePortfolio" text="Portefeuille" class="pulse-tab" />
+                        <ui:Button name="Btn_PulseGo" text="Flux GO" class="pulse-tab" />
+                    </ui:VisualElement>
+                    <ui:ScrollView name="PulseTabScroll" class="pulse-tab-scroll">
+                        <ui:VisualElement name="PulseTabContent" class="pulse-tab-content" />
+                    </ui:ScrollView>
+                </ui:VisualElement>
+
+                <ui:VisualElement class="tile-action-row pulse-actions">
+                    <ui:Button name="Btn_Primary" text="" class="btn-standard tile-action-btn tile-action-btn--primary">
+                        <ui:Label name="Lbl_PrimaryTitle" text="—" class="pulse-action-title" />
+                        <ui:Label name="Lbl_PrimaryValue" text="" class="pulse-action-value" />
+                    </ui:Button>
+                    <ui:VisualElement name="Slider_Buy" class="buy-slide-track tile-action-btn tile-action-btn--primary">
+                        <ui:Label name="Lbl_BuySlide" text="SLIDE TO BUY" class="buy-slide-label" />
+                        <ui:VisualElement name="Handle_BuySlide" class="buy-slide-handle">
+                            <ui:Label text="››" class="buy-slide-chevron" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:Button name="Btn_Secondary" text="—" class="btn-secondary tile-action-btn tile-action-btn--secondary" />
+                    <ui:Button name="Btn_Tertiary" text="—" class="btn-standard tile-action-btn" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,10 +1,7 @@
 # GDD - Familles & Capacités Spéciales
 
 > [!NOTE]
-> **C# Implementation Status of Abilities:**
-> - **Family Passives**: `[MISSING]` — None of the 8 unique family passives (e.g., Optimisation de Chantier, Assistance de Précision) are implemented in the C# codebase.
-> - **Family Ultimates**: `[MOCKED]` — The 8 individual ultimate abilities (Rappel de Dividendes, Protocole Sanitaire, etc.) are **not implemented**. Instead, only a single generic ultimate ability called **Targeted Strike** is coded in `AbilitySystem.cs`.
-> - **Energy / Ultimate charge**: `[OPERATIONAL]` — Energy tracking (0-100%) and energy consumption logic is coded in `AbilitySystem.cs`.
+> **État vérifié le 15 octobre 2026 :** les huit passifs et les huit ultimes décrits ci-dessous sont implémentés dans le code C#. La suite Unity `MechanicsRegression` passe **117/117 assertions**, dont la complétion d'une famille au troisième titre, les effets passifs, les huit activations ultimes et plusieurs routes d'acquisition. Les preuves et limites du contrôle sont consignées dans `Docs/Validation/Mechanics_Family_OPA_2026-10-15.md`. Cette validation moteur ne signifie pas que chaque pouvoir a été rencontré pendant une partie humaine ni que chaque scénario en ligne à six a été vérifié.
 
 ---
 
@@ -20,14 +17,14 @@ Les familles industrielles sont divisées en 3 Tiers, définissant leur difficul
 ## 2. Mécaniques de Maîtrise (Monopole)
 Pour débloquer le potentiel d'une famille, il faut posséder **100% de ses titres**.
 - **Monopole de Loyer** : Le loyer de base est doublé (implémenté).
-- **Passif** : Bonus permanent tant que la famille est complète (`[MISSING]` in C#).
-- **Ultime** : Capacité active puissante (`[MOCKED]` in C#: replaced by *Targeted Strike*).
+- **Passif** : Bonus permanent tant que la famille est complète (implémenté).
+- **Ultime** : Capacité active propre à chaque famille (implémentée).
 
 ---
 
 ## 3. Base de Données des Capacités (Spécifications théoriques)
 
-*Ces capacités font partie du Game Design Document mais ne sont pas codées actuellement dans le moteur C#.*
+*Les effets spécifiés ci-dessous sont implémentés. Les détails de couverture de test et les limites de recette sont indiqués dans la note d'état en tête de document.*
 
 ### TIER 1 — Fondations (Charge : 1 point)
 *   **Real Estate (Immobilier)**
@@ -61,13 +58,17 @@ Pour débloquer le potentiel d'une famille, il faut posséder **100% de ses titr
 
 ---
 
-## 4. Unique Capacité Ultime Implémentée (C# Reality)
+## 4. Correspondance avec le code
 
-### **Targeted Strike (Frappe Ciblée)**
-- **Path**: `Assets/Scripts/Systems/AbilitySystem.cs`
-- **Cost**: Consumes 100% of player ultimate energy.
-- **Effect**: Reduces the targeted property's upgrade level by 1 (e.g., Level 3 to Level 2). Can only target properties with `CurrentLevel > 0`.
-- **Method**: `bool ExecuteTargetedStrike(PlayerModel attacker, PropertyData targetProperty)`
+Les huit méthodes d'activation se trouvent dans `Assets/Scripts/Systems/AbilitySystem.cs` :
+`RealEstate_RappelDividendes`, `Pharma_ProtocoleSanitaire`,
+`Automobile_MoteurTurbo`, `OilGas_BoomEnergetique`,
+`Luxe_TaxeSomptuaire`, `Tech_MaJSysteme`, `Aerospace_SautQuantique` et
+`Armement_CyberSabotage`. Les passifs et la détection du monopole sont répartis
+entre `RulesEngine`, `UpgradeSystem`, `TurnManager` et `FinanceSystem`.
+
+`ExecuteTargetedStrike` est conservée comme alias de compatibilité historique
+vers Cyber-Sabotage ; ce n'est pas une capacité générique distincte.
 
 ---
 

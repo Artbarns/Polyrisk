@@ -1,0 +1,37 @@
+Input #0, matroska,webm, from 'Docs/Validation/MonolithContact_2026-10-22/portrait-fixtures.webm':
+  Metadata:
+    encoder         : Chrome
+  Duration: N/A, start: 0.000000, bitrate: N/A
+  Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/bt709/iec61966-2-1), 430x830, SAR 1:1 DAR 43:83, 1k tbr, 1k tbn (default)
+      Metadata:
+        alpha_mode      : 1
+  Stream #0:1(eng): Audio: opus, 48000 Hz, stereo, fltp (default)
+[Parsed_volumedetect_0 @ 0x7fe4bdd04380] n_samples: 0
+Stream mapping:
+  Stream #0:1 -> #0:0 (opus (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0(eng): Audio: pcm_s16le, 48000 Hz, stereo, s16, 1536 kb/s (default)
+      Metadata:
+        encoder         : Lavc61.19.100 pcm_s16le
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] n_samples: 2666880
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] mean_volume: -61.5 dB
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] max_volume: -24.7 dB
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_24db: 6
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_25db: 16
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_26db: 22
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_27db: 66
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_28db: 86
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_29db: 66
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_30db: 90
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_31db: 118
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_32db: 220
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_33db: 212
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_34db: 328
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_35db: 498
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_36db: 484
+[Parsed_volumedetect_0 @ 0x7fe4bd90b940] histogram_37db: 548
+[out#0/null @ 0x7fe4bcf12e80] video:0KiB audio:5209KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+size=N/A time=00:00:27.79 bitrate=N/A speed= 209x    

@@ -1,0 +1,18 @@
+{
+  "modified": [
+    "Assets/Scripts/Visuals/PlayerVisualManager.cs"
+  ],
+  "created": [
+    "Assets/Scripts/Debug/MonolithValidationDriver.cs",
+    "Assets/Scripts/Debug/MonolithValidationDriver.cs.meta",
+    "Assets/Scripts/Editor/MonolithValidation.cs",
+    "Assets/Scripts/Editor/MonolithValidation.cs.meta",
+    "Assets/Scripts/Visuals/CompactPawnVisual.cs",
+    "Assets/Scripts/Visuals/CompactPawnVisual.cs.meta"
+  ],
+  "unchangedExistingAssetsSettings": 589,
+  "PawnMovement": "byte-identical",
+  "CameraPASS2D": "byte-identical",
+  "pathDicePreparationAndCallback": "byte-identical",
+  "economyRulesTurnManagerNetworkScenePrefabBoardShadersUI": "byte-identical"
+}

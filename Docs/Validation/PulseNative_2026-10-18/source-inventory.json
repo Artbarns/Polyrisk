@@ -1,0 +1,17 @@
+{
+  "Assets/UI/Layouts/TileDetail_BottomSheet.uxml": "4707615e3e7d86cd8ffaf1212ffa4889fb5d734d7ed17c50eb726766136ad5de",
+  "Assets/UI/Styles/Theme.uss": "87ddd93dcf31bcc8466c954b2a062e582c2992e4a0948727fdb2e7a721ff7c25",
+  "Assets/Scripts/UI/ActionButtonsWidget.cs": "ba3b73492dbc9978e84d61a9163df6cb3200bfbc288b8f76d5bdf79e9f312228",
+  "Assets/Scripts/UI/TopHUDWidget.cs": "511379701461173f4fdc7028eca17dfa1f67826f9dedc510d0675db7826b9f0a",
+  "Assets/Scripts/UI/UIUXRuntime.cs": "5a32d6acc0911881b8298a5bf1ab1f6855f1b21a6a0e758c2ec1957e31673f16",
+  "Assets/Scripts/Systems/FinanceSystem.cs": "577a7660717598c803f133783c43daafdc59367b735e93a510475a6ba67fc0b1",
+  "Assets/Scripts/Editor/EconomyRegression.cs": "1cd0f7a25e9310d3556ff367213896a9cc1bdacc3cecd3414616ed9417851875",
+  "Assets/WebGLTemplates/PolyRiskResponsive/index.html": "9b8c82bed229445b30649985deb45e6740727d6bdf7b6ad08d3ec3eaa6e8b117",
+  "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/style.css": "f8ce52a01e2143ef5e8d00d73532f25f48628dc9cf06e344098e3bffdb56ede3",
+  "Assets/Scripts/UI/PulseSheetMotion.cs": "a79ceae540b476b095970073bb67848d262444919fd63c65d6cf28193feae1c5",
+  "Assets/Scripts/UI/PulseSheetMotion.cs.meta": "2fb237012b8da2766a8aab600670065213fc50eca0fa24ee8f1336208fe10ce3",
+  "Assets/Plugins.meta": "a8ee51c3415bfec1577e4f7a3e6c8106380e5dfd5723e7477d0d17d3aeb88f03",
+  "Assets/Plugins/WebGL.meta": "6fb3db5cf477652f4879b6d24591e3613a074de3ecf58217f5b2c369f37b5a63",
+  "Assets/Plugins/WebGL/PulseViewport.jslib": "8774081d24bf7880666c95f4456f54a84282fa8eb325b43a7019155f6a7ea885",
+  "Assets/Plugins/WebGL/PulseViewport.jslib.meta": "a3ef13c6b6c4dfd8e7c86fd56e97396aca236f65ca1bd6aafecaaa11f03421d4"
+}

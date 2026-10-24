@@ -1,0 +1,29 @@
+Input #0, matroska,webm, from 'Docs/Validation/MonolithContact_2026-10-22/portrait-game.webm':
+  Metadata:
+    ENCODER         : Lavf61.7.100
+  Duration: 00:00:24.96, start: 0.000000, bitrate: 149 kb/s
+  Stream #0:0(eng): Audio: opus, 48000 Hz, stereo, fltp (default)
+      Metadata:
+        DURATION        : 00:00:24.959000000
+  Stream #0:1(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/bt709/iec61966-2-1), 430x830, SAR 1:1 DAR 43:83, 1k fps, 1k tbr, 1k tbn (default)
+      Metadata:
+        ALPHA_MODE      : 1
+        DURATION        : 00:00:24.514000000
+Stream mapping:
+  Stream #0:1 -> #0:0 (vp9 (native) -> wrapped_avframe (native))
+  Stream #0:0 -> #0:1 (opus (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0(eng): Video: wrapped_avframe, yuv420p(pc, bt709/bt709/iec61966-2-1, progressive), 430x830 [SAR 1:1 DAR 43:83], q=2-31, 200 kb/s, 1k fps, 1k tbn (default)
+      Metadata:
+        ALPHA_MODE      : 1
+        DURATION        : 00:00:24.514000000
+        encoder         : Lavc61.19.100 wrapped_avframe
+  Stream #0:1(eng): Audio: pcm_s16le, 48000 Hz, stereo, s16, 1536 kb/s (default)
+      Metadata:
+        DURATION        : 00:00:24.959000000
+        encoder         : Lavc61.19.100 pcm_s16le
+[out#0/null @ 0x7fe8dc3122c0] video:78KiB audio:4680KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=  182 fps=0.0 q=-0.0 Lsize=N/A time=00:00:24.51 bitrate=N/A speed= 117x    

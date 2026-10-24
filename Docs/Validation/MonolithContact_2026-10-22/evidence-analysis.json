@@ -1,0 +1,3495 @@
+{
+  "fixtures": {
+    "pass": 157,
+    "fail": [],
+    "cases": [
+      "MONOLITH_CASE PASS faceted visual replaces primitive player 0 t=12.8270",
+      "MONOLITH_CASE PASS faceted visual replaces primitive player 1 t=12.8270",
+      "MONOLITH_CASE PASS faceted visual replaces primitive player 2 t=12.8270",
+      "MONOLITH_CASE PASS faceted visual replaces primitive player 3 t=12.8270",
+      "MONOLITH_CASE PASS faceted visual replaces primitive player 4 t=12.8270",
+      "MONOLITH_CASE PASS faceted visual replaces primitive player 5 t=12.8270",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 0 t=12.8270",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 1 t=12.9410",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 2 t=13.0630",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 3 t=13.1950",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 4 t=13.3130",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 5 t=13.4070",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 6 t=13.5090",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 7 t=13.6360",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 8 t=13.7560",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 9 t=13.8710",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 10 t=13.9590",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 11 t=14.1200",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 12 t=14.2350",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 13 t=14.3540",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 14 t=14.4890",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 15 t=14.6750",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 16 t=14.8190",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 17 t=14.9280",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 18 t=15.0570",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 19 t=15.1860",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 20 t=15.2920",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 21 t=15.4390",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 22 t=15.6450",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 23 t=15.8010",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 24 t=15.9340",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 25 t=16.0470",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 26 t=16.1950",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 27 t=16.3110",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 28 t=16.4460",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 29 t=16.6150",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 30 t=16.7640",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 31 t=16.8920",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 32 t=17.0220",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 33 t=17.1540",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 34 t=17.2990",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 35 t=17.4310",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 36 t=17.5850",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 37 t=17.7530",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 38 t=17.8660",
+      "MONOLITH_CASE PASS real monolith volume visible at anchor 39 t=17.9840",
+      "MONOLITH_CASE PASS shared tile distinct 1 occupants t=18.4300",
+      "MONOLITH_CASE PASS shared offset never changes root 1 player 0 t=18.4300",
+      "MONOLITH_CASE PASS shared tile distinct 2 occupants t=18.8330",
+      "MONOLITH_CASE PASS shared offset never changes root 2 player 0 t=18.8330",
+      "MONOLITH_CASE PASS shared offset never changes root 2 player 1 t=18.8330",
+      "MONOLITH_CASE PASS shared tile distinct 3 occupants t=19.2730",
+      "MONOLITH_CASE PASS shared offset never changes root 3 player 0 t=19.2730",
+      "MONOLITH_CASE PASS shared offset never changes root 3 player 1 t=19.2730",
+      "MONOLITH_CASE PASS shared offset never changes root 3 player 2 t=19.2730",
+      "MONOLITH_CASE PASS shared tile distinct 4 occupants t=19.6630",
+      "MONOLITH_CASE PASS shared offset never changes root 4 player 0 t=19.6630",
+      "MONOLITH_CASE PASS shared offset never changes root 4 player 1 t=19.6630",
+      "MONOLITH_CASE PASS shared offset never changes root 4 player 2 t=19.6630",
+      "MONOLITH_CASE PASS shared offset never changes root 4 player 3 t=19.6630",
+      "MONOLITH_CASE PASS shared tile distinct 6 occupants t=20.0390",
+      "MONOLITH_CASE PASS shared offset never changes root 6 player 0 t=20.0390",
+      "MONOLITH_CASE PASS shared offset never changes root 6 player 1 t=20.0390",
+      "MONOLITH_CASE PASS shared offset never changes root 6 player 2 t=20.0390",
+      "MONOLITH_CASE PASS shared offset never changes root 6 player 3 t=20.0390",
+      "MONOLITH_CASE PASS shared offset never changes root 6 player 4 t=20.0390",
+      "MONOLITH_CASE PASS shared offset never changes root 6 player 5 t=20.0390",
+      "MONOLITH_CASE PASS no floating rotating or pulsing idle t=20.8130",
+      "MONOLITH_CASE PASS silhouette visible with emission disabled t=21.3950",
+      "MONOLITH_CASE PASS two steps corner 10 contact layer once per real reached anchor t=22.4060",
+      "MONOLITH_CASE PASS two steps corner 10 final contact correct index t=22.4060",
+      "MONOLITH_CASE PASS two steps corner 10 final lock same rendered frame as original completion t=22.4060",
+      "MONOLITH_CASE PASS two steps corner 10 tile click lock share clock t=22.4060",
+      "MONOLITH_CASE PASS two steps corner 10 camera hold overlaps lock t=22.4060",
+      "MONOLITH_CASE PASS two steps corner 10 existing persistent category selection state unchanged during contacts t=22.4060",
+      "MONOLITH_CASE PASS two steps corner 10 original callback once exact destination t=22.4060",
+      "MONOLITH_CASE PASS two steps corner 10 one observed crossing per reached waypoint t=22.4060",
+      "MONOLITH_CASE PASS two steps corner 10 one final lock replaces intermediate tick t=22.4060",
+      "MONOLITH_CASE PASS two steps corner 10 no extra or catchup contacts t=22.4060",
+      "MONOLITH_CASE PASS two steps corner 10 child glide is low without hop max=0,0428 t=22.4060",
+      "MONOLITH_CASE PASS two steps corner 10 reduced camera preserved t=22.4060",
+      "MONOLITH_CASE PASS two steps corner 10 stable after lock no repeated sound t=23.5810",
+      "MONOLITH_CASE PASS two steps corner 10 no residual tile trail t=23.5810",
+      "MONOLITH_CASE PASS two steps corner 0 contact layer once per real reached anchor t=24.5080",
+      "MONOLITH_CASE PASS two steps corner 0 final contact correct index t=24.5080",
+      "MONOLITH_CASE PASS two steps corner 0 final lock same rendered frame as original completion t=24.5080",
+      "MONOLITH_CASE PASS two steps corner 0 tile click lock share clock t=24.5080",
+      "MONOLITH_CASE PASS two steps corner 0 camera hold overlaps lock t=24.5080",
+      "MONOLITH_CASE PASS two steps corner 0 existing persistent category selection state unchanged during contacts t=24.5080",
+      "MONOLITH_CASE PASS two steps corner 0 original callback once exact destination t=24.5080",
+      "MONOLITH_CASE PASS two steps corner 0 one observed crossing per reached waypoint t=24.5080",
+      "MONOLITH_CASE PASS two steps corner 0 one final lock replaces intermediate tick t=24.5080",
+      "MONOLITH_CASE PASS two steps corner 0 no extra or catchup contacts t=24.5080",
+      "MONOLITH_CASE PASS two steps corner 0 child glide is low without hop max=0,0428 t=24.5080",
+      "MONOLITH_CASE PASS two steps corner 0 reduced camera preserved t=24.5080",
+      "MONOLITH_CASE PASS two steps corner 0 stable after lock no repeated sound t=25.5880",
+      "MONOLITH_CASE PASS two steps corner 0 no residual tile trail t=25.5880",
+      "MONOLITH_CASE PASS six steps corner 20 contact layer once per real reached anchor t=27.7900",
+      "MONOLITH_CASE PASS six steps corner 20 final contact correct index t=27.7900",
+      "MONOLITH_CASE PASS six steps corner 20 final lock same rendered frame as original completion t=27.7900",
+      "MONOLITH_CASE PASS six steps corner 20 tile click lock share clock t=27.7900",
+      "MONOLITH_CASE PASS six steps corner 20 camera hold overlaps lock t=27.7900",
+      "MONOLITH_CASE PASS six steps corner 20 existing persistent category selection state unchanged during contacts t=27.7900",
+      "MONOLITH_CASE PASS six steps corner 20 original callback once exact destination t=27.7900",
+      "MONOLITH_CASE PASS six steps corner 20 one observed crossing per reached waypoint t=27.7900",
+      "MONOLITH_CASE PASS six steps corner 20 one final lock replaces intermediate tick t=27.7900",
+      "MONOLITH_CASE PASS six steps corner 20 no extra or catchup contacts t=27.7900",
+      "MONOLITH_CASE PASS six steps corner 20 child glide is low without hop max=0,0428 t=27.7900",
+      "MONOLITH_CASE PASS six steps corner 20 reduced camera preserved t=27.7900",
+      "MONOLITH_CASE PASS six steps corner 20 stable after lock no repeated sound t=28.8510",
+      "MONOLITH_CASE PASS six steps corner 20 no residual tile trail t=28.8510",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 contact layer once per real reached anchor t=32.6890",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 final contact correct index t=32.6890",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 final lock same rendered frame as original completion t=32.6890",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 tile click lock share clock t=32.6890",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 camera hold overlaps lock t=32.6890",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 existing persistent category selection state unchanged during contacts t=32.6890",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 original callback once exact destination t=32.6890",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 one observed crossing per reached waypoint t=32.6890",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 one final lock replaces intermediate tick t=32.6890",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 no extra or catchup contacts t=32.6890",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 child glide is low without hop max=0,0428 t=32.6890",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 reduced camera preserved t=32.6890",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 stable after lock no repeated sound t=33.7020",
+      "MONOLITH_CASE PASS twelve steps corners 30 0 no residual tile trail t=33.7020",
+      "MONOLITH_CASE PASS slow frames contact layer once per real reached anchor t=36.0630",
+      "MONOLITH_CASE PASS slow frames final contact correct index t=36.0630",
+      "MONOLITH_CASE PASS slow frames final lock same rendered frame as original completion t=36.0630",
+      "MONOLITH_CASE PASS slow frames tile click lock share clock t=36.0630",
+      "MONOLITH_CASE PASS slow frames camera hold overlaps lock t=36.0630",
+      "MONOLITH_CASE PASS slow frames existing persistent category selection state unchanged during contacts t=36.0630",
+      "MONOLITH_CASE PASS slow frames original callback once exact destination t=36.0630",
+      "MONOLITH_CASE PASS slow frames one observed crossing per reached waypoint t=36.0630",
+      "MONOLITH_CASE PASS slow frames one final lock replaces intermediate tick t=36.0630",
+      "MONOLITH_CASE PASS slow frames no extra or catchup contacts t=36.0630",
+      "MONOLITH_CASE PASS slow frames child glide is low without hop max=0,0428 t=36.0630",
+      "MONOLITH_CASE PASS slow frames reduced camera preserved t=36.0630",
+      "MONOLITH_CASE PASS slow frames actual frame interval above100ms min=0,1440 t=36.0630",
+      "MONOLITH_CASE PASS slow frames stable after lock no repeated sound t=37.0860",
+      "MONOLITH_CASE PASS slow frames no residual tile trail t=37.0860",
+      "MONOLITH_CASE PASS reduced motion contact layer once per real reached anchor t=37.9940",
+      "MONOLITH_CASE PASS reduced motion final contact correct index t=37.9940",
+      "MONOLITH_CASE PASS reduced motion final lock same rendered frame as original completion t=37.9940",
+      "MONOLITH_CASE PASS reduced motion tile click lock share clock t=37.9940",
+      "MONOLITH_CASE PASS reduced motion camera hold overlaps lock t=37.9940",
+      "MONOLITH_CASE PASS reduced motion existing persistent category selection state unchanged during contacts t=37.9940",
+      "MONOLITH_CASE PASS reduced motion original callback once exact destination t=37.9940",
+      "MONOLITH_CASE PASS reduced motion one observed crossing per reached waypoint t=37.9940",
+      "MONOLITH_CASE PASS reduced motion one final lock replaces intermediate tick t=37.9940",
+      "MONOLITH_CASE PASS reduced motion no extra or catchup contacts t=37.9940",
+      "MONOLITH_CASE PASS reduced motion child glide is low without hop max=0,0060 t=37.9940",
+      "MONOLITH_CASE PASS reduced motion reduced camera preserved t=37.9940",
+      "MONOLITH_CASE PASS reduced motion stable after lock no repeated sound t=39.0560",
+      "MONOLITH_CASE PASS reduced motion no residual tile trail t=39.0560",
+      "MONOLITH_CASE PASS teleport pose has no tick or lock t=39.4400",
+      "MONOLITH_CASE PASS real local ApplyState cancels presentation without replay or callback t=40.0830",
+      "MONOLITH_CASE PASS production pawn old coroutine stopped after replicated pose t=40.0830"
+    ],
+    "errors": [],
+    "board": [
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 39,
+        "collidersInside": 34,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 260.0477294921875,
+          "y": 236.44122314453125
+        },
+        "tile32": {
+          "x": 280.2471008300781,
+          "y": 249.425048828125
+        },
+        "tile0": {
+          "x": 445.51446533203125,
+          "y": 356.89031982421875
+        },
+        "tile10": {
+          "x": 236.17584228515625,
+          "y": 491.4505920410156
+        },
+        "tile20": {
+          "x": 26.837169647216797,
+          "y": 356.89031982421875
+        },
+        "tile30": {
+          "x": 236.17578125,
+          "y": 222.33001708984375
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -26.16963768005371,
+            "y": 302.895751953125,
+            "width": 524.69091796875,
+            "height": 337.7720947265625
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.980433464050293,
+          "minTileEdgePixels": 20.083044052124023,
+          "minTileAltitudePixels": 18.26964569091797,
+          "minTileAreaPixels": 526.437255859375
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 39,
+        "collidersInside": 36,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 256.7880859375,
+          "y": 239.90594482421875
+        },
+        "tile32": {
+          "x": 276.5954895019531,
+          "y": 252.637939453125
+        },
+        "tile0": {
+          "x": 438.656005859375,
+          "y": 358.017822265625
+        },
+        "tile10": {
+          "x": 233.37942504882812,
+          "y": 489.9671325683594
+        },
+        "tile20": {
+          "x": 28.102792739868164,
+          "y": 358.01788330078125
+        },
+        "tile30": {
+          "x": 233.37937927246094,
+          "y": 226.06854248046875
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "ReturnToOverview",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -23.875469207763672,
+            "y": 305.071044921875,
+            "width": 514.509765625,
+            "height": 331.21795654296875
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 16.296655654907227,
+          "minTileEdgePixels": 19.69334602355957,
+          "minTileAltitudePixels": 17.915163040161133,
+          "minTileAreaPixels": 506.20599365234375
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 40,
+        "collidersInside": 40,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": false,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 235.9512481689453,
+          "y": 258.28759765625
+        },
+        "tile32": {
+          "x": 253.67922973632812,
+          "y": 269.6829833984375
+        },
+        "tile0": {
+          "x": 398.7264404296875,
+          "y": 364.0
+        },
+        "tile10": {
+          "x": 215.00003051757812,
+          "y": 482.0970764160156
+        },
+        "tile20": {
+          "x": 31.273582458496094,
+          "y": 364.0
+        },
+        "tile30": {
+          "x": 214.99996948242188,
+          "y": 245.90289306640625
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "StrategicOverview",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -15.24795150756836,
+            "y": 316.6114196777344,
+            "width": 460.495849609375,
+            "height": 296.4462585449219
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 18.208171844482422,
+          "minTileEdgePixels": 17.62591552734375,
+          "minTileAltitudePixels": 16.034400939941406,
+          "minTileAreaPixels": 405.5008544921875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 33,
+        "collidersInside": 31,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 171.94615173339844,
+          "y": 236.34783935546875
+        },
+        "tile32": {
+          "x": 192.15606689453125,
+          "y": 249.3385009765625
+        },
+        "tile0": {
+          "x": 357.5098876953125,
+          "y": 356.8598937988281
+        },
+        "tile10": {
+          "x": 148.06178283691406,
+          "y": 491.4906005859375
+        },
+        "tile20": {
+          "x": -61.38637924194336,
+          "y": 356.85992431640625
+        },
+        "tile30": {
+          "x": 148.06170654296875,
+          "y": 222.229248046875
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -114.42089080810547,
+            "y": 302.8371276855469,
+            "width": 524.9652709960938,
+            "height": 337.9487609863281
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.09357261657715,
+          "minTileAltitudePixels": 18.279233932495117,
+          "minTileAreaPixels": 526.9888916015625
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 40,
+        "collidersInside": 40,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": false,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 235.9512481689453,
+          "y": 258.28759765625
+        },
+        "tile32": {
+          "x": 253.67922973632812,
+          "y": 269.6829833984375
+        },
+        "tile0": {
+          "x": 398.7264404296875,
+          "y": 364.0
+        },
+        "tile10": {
+          "x": 215.00003051757812,
+          "y": 482.0970764160156
+        },
+        "tile20": {
+          "x": 31.273582458496094,
+          "y": 364.0
+        },
+        "tile30": {
+          "x": 214.99996948242188,
+          "y": 245.90289306640625
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "StrategicOverview",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -15.24795150756836,
+            "y": 316.6114196777344,
+            "width": 460.495849609375,
+            "height": 296.4462585449219
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 18.208171844482422,
+          "minTileEdgePixels": 17.62591552734375,
+          "minTileAltitudePixels": 16.034400939941406,
+          "minTileAreaPixels": 405.5008544921875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 35,
+        "collidersInside": 33,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 298.22137451171875,
+          "y": 236.34783935546875
+        },
+        "tile32": {
+          "x": 318.4312744140625,
+          "y": 249.3385009765625
+        },
+        "tile0": {
+          "x": 483.7851257324219,
+          "y": 356.8598937988281
+        },
+        "tile10": {
+          "x": 274.3370056152344,
+          "y": 491.4905700683594
+        },
+        "tile20": {
+          "x": 64.88884735107422,
+          "y": 356.85992431640625
+        },
+        "tile30": {
+          "x": 274.3369140625,
+          "y": 222.229248046875
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": 11.854334831237793,
+            "y": 302.8371276855469,
+            "width": 524.96533203125,
+            "height": 337.9487609863281
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.09356689453125,
+          "minTileAltitudePixels": 18.279233932495117,
+          "minTileAreaPixels": 526.988525390625
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 39,
+        "collidersInside": 36,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 258.96929931640625,
+          "y": 236.34783935546875
+        },
+        "tile32": {
+          "x": 279.1791687011719,
+          "y": 249.3385009765625
+        },
+        "tile0": {
+          "x": 444.53302001953125,
+          "y": 356.8598937988281
+        },
+        "tile10": {
+          "x": 235.08489990234375,
+          "y": 491.4905700683594
+        },
+        "tile20": {
+          "x": 25.636737823486328,
+          "y": 356.85992431640625
+        },
+        "tile30": {
+          "x": 235.0848388671875,
+          "y": 222.229248046875
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -27.397775650024414,
+            "y": 302.8371276855469,
+            "width": 524.96533203125,
+            "height": 337.9487609863281
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.09356117248535,
+          "minTileAltitudePixels": 18.279239654541016,
+          "minTileAreaPixels": 526.989013671875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 38,
+        "collidersInside": 36,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 237.01168823242188,
+          "y": 236.34783935546875
+        },
+        "tile32": {
+          "x": 257.2215881347656,
+          "y": 249.3385009765625
+        },
+        "tile0": {
+          "x": 422.5754089355469,
+          "y": 356.8598937988281
+        },
+        "tile10": {
+          "x": 213.1273193359375,
+          "y": 491.4905700683594
+        },
+        "tile20": {
+          "x": 3.679147720336914,
+          "y": 356.85992431640625
+        },
+        "tile30": {
+          "x": 213.1272430419922,
+          "y": 222.229248046875
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -49.355377197265625,
+            "y": 302.8371276855469,
+            "width": 524.96533203125,
+            "height": 337.9487609863281
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.09356689453125,
+          "minTileAltitudePixels": 18.279232025146484,
+          "minTileAreaPixels": 526.9888305664062
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 40,
+        "collidersInside": 40,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": false,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 235.9512481689453,
+          "y": 258.28759765625
+        },
+        "tile32": {
+          "x": 253.67922973632812,
+          "y": 269.6829833984375
+        },
+        "tile0": {
+          "x": 398.7264404296875,
+          "y": 364.0
+        },
+        "tile10": {
+          "x": 215.00003051757812,
+          "y": 482.0970764160156
+        },
+        "tile20": {
+          "x": 31.273582458496094,
+          "y": 364.0
+        },
+        "tile30": {
+          "x": 214.99996948242188,
+          "y": 245.90289306640625
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "StrategicOverview",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -15.24795150756836,
+            "y": 316.6114196777344,
+            "width": 460.495849609375,
+            "height": 296.4462585449219
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 18.208171844482422,
+          "minTileEdgePixels": 17.62591552734375,
+          "minTileAltitudePixels": 16.034400939941406,
+          "minTileAreaPixels": 405.5008544921875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 37,
+        "collidersInside": 35,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 201.183349609375,
+          "y": 240.3626708984375
+        },
+        "tile32": {
+          "x": 221.39324951171875,
+          "y": 253.35333251953125
+        },
+        "tile0": {
+          "x": 386.7470703125,
+          "y": 360.8747253417969
+        },
+        "tile10": {
+          "x": 177.29896545410156,
+          "y": 495.5054016113281
+        },
+        "tile20": {
+          "x": -32.149192810058594,
+          "y": 360.8747863769531
+        },
+        "tile30": {
+          "x": 177.2989044189453,
+          "y": 226.24407958984375
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -85.18370819091797,
+            "y": 298.822265625,
+            "width": 524.9652709960938,
+            "height": 337.94879150390625
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.093549728393555,
+          "minTileAltitudePixels": 18.27922248840332,
+          "minTileAreaPixels": 526.98876953125
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 33,
+        "collidersInside": 31,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 159.78269958496094,
+          "y": 240.3626708984375
+        },
+        "tile32": {
+          "x": 179.9925994873047,
+          "y": 253.35333251953125
+        },
+        "tile0": {
+          "x": 345.346435546875,
+          "y": 360.8747863769531
+        },
+        "tile10": {
+          "x": 135.8983154296875,
+          "y": 495.50543212890625
+        },
+        "tile20": {
+          "x": -73.54984283447266,
+          "y": 360.8747863769531
+        },
+        "tile30": {
+          "x": 135.89825439453125,
+          "y": 226.24407958984375
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -126.5843505859375,
+            "y": 298.822265625,
+            "width": 524.96533203125,
+            "height": 337.94873046875
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.093570709228516,
+          "minTileAltitudePixels": 18.27923011779785,
+          "minTileAreaPixels": 526.9891357421875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 29,
+        "collidersInside": 27,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 123.75655364990234,
+          "y": 240.3626708984375
+        },
+        "tile32": {
+          "x": 143.96646118164062,
+          "y": 253.35333251953125
+        },
+        "tile0": {
+          "x": 309.3202819824219,
+          "y": 360.8747253417969
+        },
+        "tile10": {
+          "x": 99.87217712402344,
+          "y": 495.5054016113281
+        },
+        "tile20": {
+          "x": -109.57598114013672,
+          "y": 360.8747863769531
+        },
+        "tile30": {
+          "x": 99.87210083007812,
+          "y": 226.24407958984375
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -162.61048889160156,
+            "y": 298.822265625,
+            "width": 524.9652709960938,
+            "height": 337.94879150390625
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.09357261657715,
+          "minTileAltitudePixels": 18.27922821044922,
+          "minTileAreaPixels": 526.989013671875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 27,
+        "collidersInside": 25,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 112.05128479003906,
+          "y": 240.362548828125
+        },
+        "tile32": {
+          "x": 132.2611846923828,
+          "y": 253.35321044921875
+        },
+        "tile0": {
+          "x": 297.6150207519531,
+          "y": 360.8746337890625
+        },
+        "tile10": {
+          "x": 88.16690826416016,
+          "y": 495.5052795410156
+        },
+        "tile20": {
+          "x": -121.28125,
+          "y": 360.8746337890625
+        },
+        "tile30": {
+          "x": 88.16683197021484,
+          "y": 226.24395751953125
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -174.31576538085938,
+            "y": 298.8224182128906,
+            "width": 524.96533203125,
+            "height": 337.9486999511719
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.093549728393555,
+          "minTileAltitudePixels": 18.279197692871094,
+          "minTileAreaPixels": 526.987548828125
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 40,
+        "collidersInside": 39,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 231.97421264648438,
+          "y": 257.71221923828125
+        },
+        "tile32": {
+          "x": 249.7818603515625,
+          "y": 269.15875244140625
+        },
+        "tile0": {
+          "x": 395.4808654785156,
+          "y": 363.8996276855469
+        },
+        "tile10": {
+          "x": 210.92884826660156,
+          "y": 482.5274353027344
+        },
+        "tile20": {
+          "x": 26.376766204833984,
+          "y": 363.8996887207031
+        },
+        "tile30": {
+          "x": 210.92880249023438,
+          "y": 245.2718505859375
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "ReturnToOverview",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -20.353805541992188,
+            "y": 316.04046630859375,
+            "width": 462.56524658203125,
+            "height": 297.7784423828125
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 18.126712799072266,
+          "minTileEdgePixels": 17.705116271972656,
+          "minTileAltitudePixels": 16.1064510345459,
+          "minTileAreaPixels": 409.15289306640625
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 37,
+        "collidersInside": 34,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 263.6619873046875,
+          "y": 236.73077392578125
+        },
+        "tile32": {
+          "x": 283.82855224609375,
+          "y": 249.693603515625
+        },
+        "tile0": {
+          "x": 448.8279113769531,
+          "y": 356.98455810546875
+        },
+        "tile10": {
+          "x": 239.82879638671875,
+          "y": 491.3266296386719
+        },
+        "tile20": {
+          "x": 30.82964515686035,
+          "y": 356.98455810546875
+        },
+        "tile30": {
+          "x": 239.82875061035156,
+          "y": 222.64251708984375
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -22.0911865234375,
+            "y": 303.0775451660156,
+            "width": 523.8399047851562,
+            "height": 337.2243347167969
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 16.006393432617188,
+          "minTileEdgePixels": 20.050479888916016,
+          "minTileAltitudePixels": 18.24002456665039,
+          "minTileAreaPixels": 524.7315673828125
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 35,
+        "collidersInside": 33,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 296.1529541015625,
+          "y": 236.34783935546875
+        },
+        "tile32": {
+          "x": 316.36285400390625,
+          "y": 249.3385009765625
+        },
+        "tile0": {
+          "x": 481.7166748046875,
+          "y": 356.8598937988281
+        },
+        "tile10": {
+          "x": 272.2685852050781,
+          "y": 491.4905700683594
+        },
+        "tile20": {
+          "x": 62.820404052734375,
+          "y": 356.85992431640625
+        },
+        "tile30": {
+          "x": 272.26849365234375,
+          "y": 222.229248046875
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": 9.78589153289795,
+            "y": 302.8371276855469,
+            "width": 524.9652709960938,
+            "height": 337.9487609863281
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.09354019165039,
+          "minTileAltitudePixels": 18.279216766357422,
+          "minTileAreaPixels": 526.98876953125
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 33,
+        "collidersInside": 31,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 303.2099914550781,
+          "y": 236.34783935546875
+        },
+        "tile32": {
+          "x": 323.419921875,
+          "y": 249.3385009765625
+        },
+        "tile0": {
+          "x": 488.77374267578125,
+          "y": 356.8598937988281
+        },
+        "tile10": {
+          "x": 279.32562255859375,
+          "y": 491.4905700683594
+        },
+        "tile20": {
+          "x": 69.87745666503906,
+          "y": 356.85992431640625
+        },
+        "tile30": {
+          "x": 279.3255615234375,
+          "y": 222.229248046875
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": 16.842945098876953,
+            "y": 302.8371276855469,
+            "width": 524.9652709960938,
+            "height": 337.9487609863281
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.093549728393555,
+          "minTileAltitudePixels": 18.279220581054688,
+          "minTileAreaPixels": 526.9891967773438
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 40,
+        "collidersInside": 40,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": false,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 235.9512481689453,
+          "y": 258.28759765625
+        },
+        "tile32": {
+          "x": 253.67922973632812,
+          "y": 269.6829833984375
+        },
+        "tile0": {
+          "x": 398.7264404296875,
+          "y": 364.0
+        },
+        "tile10": {
+          "x": 215.00003051757812,
+          "y": 482.0970764160156
+        },
+        "tile20": {
+          "x": 31.273582458496094,
+          "y": 364.0
+        },
+        "tile30": {
+          "x": 214.99996948242188,
+          "y": 245.90289306640625
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "StrategicOverview",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -15.24795150756836,
+            "y": 316.6114196777344,
+            "width": 460.495849609375,
+            "height": 296.4462585449219
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 18.208171844482422,
+          "minTileEdgePixels": 17.62591552734375,
+          "minTileAltitudePixels": 16.034400939941406,
+          "minTileAreaPixels": 405.5008544921875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 40,
+        "collidersInside": 40,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": false,
+        "reducedMotion": true,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 235.9512481689453,
+          "y": 258.28759765625
+        },
+        "tile32": {
+          "x": 253.67922973632812,
+          "y": 269.6829833984375
+        },
+        "tile0": {
+          "x": 398.7264404296875,
+          "y": 364.0
+        },
+        "tile10": {
+          "x": 215.00003051757812,
+          "y": 482.0970764160156
+        },
+        "tile20": {
+          "x": 31.273582458496094,
+          "y": 364.0
+        },
+        "tile30": {
+          "x": 214.99996948242188,
+          "y": 245.90289306640625
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "StrategicOverview",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -15.24795150756836,
+            "y": 316.6114196777344,
+            "width": 460.495849609375,
+            "height": 296.4462585449219
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 18.208171844482422,
+          "minTileEdgePixels": 17.62591552734375,
+          "minTileAltitudePixels": 16.034400939941406,
+          "minTileAreaPixels": 405.5008544921875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 40,
+        "collidersInside": 40,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": false,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 235.9512481689453,
+          "y": 258.28759765625
+        },
+        "tile32": {
+          "x": 253.67922973632812,
+          "y": 269.6829833984375
+        },
+        "tile0": {
+          "x": 398.7264404296875,
+          "y": 364.0
+        },
+        "tile10": {
+          "x": 215.00003051757812,
+          "y": 482.0970764160156
+        },
+        "tile20": {
+          "x": 31.273582458496094,
+          "y": 364.0
+        },
+        "tile30": {
+          "x": 214.99996948242188,
+          "y": 245.90289306640625
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "StrategicOverview",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -15.24795150756836,
+            "y": 316.6114196777344,
+            "width": 460.495849609375,
+            "height": 296.4462585449219
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 18.208171844482422,
+          "minTileEdgePixels": 17.62591552734375,
+          "minTileAltitudePixels": 16.034400939941406,
+          "minTileAreaPixels": 405.5008544921875
+        }
+      }
+    ],
+    "frames": 209,
+    "recordedRange": [
+      0.0859994888305664,
+      27.74700164794922
+    ],
+    "contacts": [
+      {
+        "phase": "BEGIN",
+        "t": 21.541,
+        "vt": 9.319,
+        "audio": false
+      },
+      {
+        "phase": "TICK",
+        "t": 21.673,
+        "vt": 9.451,
+        "audio": true
+      },
+      {
+        "phase": "REACHED",
+        "t": 21.995,
+        "vt": 9.773,
+        "audio": false
+      },
+      {
+        "phase": "LOCK",
+        "t": 22.272,
+        "vt": 10.05,
+        "audio": true
+      },
+      {
+        "phase": "BEGIN",
+        "t": 23.71,
+        "vt": 11.488,
+        "audio": false
+      },
+      {
+        "phase": "TICK",
+        "t": 23.827,
+        "vt": 11.605,
+        "audio": true
+      },
+      {
+        "phase": "REACHED",
+        "t": 24.178,
+        "vt": 11.956,
+        "audio": false
+      },
+      {
+        "phase": "LOCK",
+        "t": 24.373,
+        "vt": 12.151,
+        "audio": true
+      },
+      {
+        "phase": "BEGIN",
+        "t": 25.727,
+        "vt": 13.505,
+        "audio": false
+      },
+      {
+        "phase": "TICK",
+        "t": 25.932,
+        "vt": 13.71,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 26.203,
+        "vt": 13.981,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 26.579,
+        "vt": 14.357,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 26.819,
+        "vt": 14.597,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 27.084,
+        "vt": 14.862,
+        "audio": true
+      },
+      {
+        "phase": "REACHED",
+        "t": 27.417,
+        "vt": 15.195,
+        "audio": false
+      },
+      {
+        "phase": "LOCK",
+        "t": 27.665,
+        "vt": 15.443,
+        "audio": true
+      },
+      {
+        "phase": "BEGIN",
+        "t": 28.921,
+        "vt": 16.699,
+        "audio": false
+      },
+      {
+        "phase": "TICK",
+        "t": 29.241,
+        "vt": 17.019,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 29.59,
+        "vt": 17.368,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 29.871,
+        "vt": 17.649,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 30.128,
+        "vt": 17.906,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 30.384,
+        "vt": 18.162,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 30.658,
+        "vt": 18.436,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 30.901,
+        "vt": 18.679,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 31.154,
+        "vt": 18.932,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 31.402,
+        "vt": 19.18,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 31.678,
+        "vt": 19.456,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 32.01,
+        "vt": 19.788,
+        "audio": true
+      },
+      {
+        "phase": "REACHED",
+        "t": 32.281,
+        "vt": 20.059,
+        "audio": false
+      },
+      {
+        "phase": "LOCK",
+        "t": 32.561,
+        "vt": 20.339,
+        "audio": true
+      },
+      {
+        "phase": "BEGIN",
+        "t": 33.785,
+        "vt": 21.563,
+        "audio": false
+      },
+      {
+        "phase": "TICK",
+        "t": 34.063,
+        "vt": 21.841,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 34.433,
+        "vt": 22.211,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 34.804,
+        "vt": 22.582,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 35.164,
+        "vt": 22.942,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 35.394,
+        "vt": 23.172,
+        "audio": true
+      },
+      {
+        "phase": "REACHED",
+        "t": 35.689,
+        "vt": 23.467,
+        "audio": false
+      },
+      {
+        "phase": "LOCK",
+        "t": 36.018,
+        "vt": 23.796,
+        "audio": true
+      },
+      {
+        "phase": "BEGIN",
+        "t": 37.208,
+        "vt": 24.986,
+        "audio": false
+      },
+      {
+        "phase": "TICK",
+        "t": 37.364,
+        "vt": 25.142,
+        "audio": true
+      },
+      {
+        "phase": "REACHED",
+        "t": 37.73,
+        "vt": 25.508,
+        "audio": false
+      },
+      {
+        "phase": "LOCK",
+        "t": 37.86,
+        "vt": 25.638,
+        "audio": true
+      },
+      {
+        "phase": "BEGIN",
+        "t": 39.44,
+        "vt": 27.218,
+        "audio": false
+      }
+    ],
+    "tileContacts": [
+      {
+        "index": 9,
+        "arrival": false,
+        "t": 21.673,
+        "vt": 9.451
+      },
+      {
+        "index": 10,
+        "arrival": true,
+        "t": 22.272,
+        "vt": 10.05
+      },
+      {
+        "index": 39,
+        "arrival": false,
+        "t": 23.827,
+        "vt": 11.605
+      },
+      {
+        "index": 0,
+        "arrival": true,
+        "t": 24.373,
+        "vt": 12.151
+      },
+      {
+        "index": 19,
+        "arrival": false,
+        "t": 25.932,
+        "vt": 13.71
+      },
+      {
+        "index": 20,
+        "arrival": false,
+        "t": 26.203,
+        "vt": 13.981
+      },
+      {
+        "index": 21,
+        "arrival": false,
+        "t": 26.579,
+        "vt": 14.357
+      },
+      {
+        "index": 22,
+        "arrival": false,
+        "t": 26.819,
+        "vt": 14.597
+      },
+      {
+        "index": 23,
+        "arrival": false,
+        "t": 27.084,
+        "vt": 14.862
+      },
+      {
+        "index": 24,
+        "arrival": true,
+        "t": 27.665,
+        "vt": 15.443
+      },
+      {
+        "index": 29,
+        "arrival": false,
+        "t": 29.241,
+        "vt": 17.019
+      },
+      {
+        "index": 30,
+        "arrival": false,
+        "t": 29.59,
+        "vt": 17.368
+      },
+      {
+        "index": 31,
+        "arrival": false,
+        "t": 29.871,
+        "vt": 17.649
+      },
+      {
+        "index": 32,
+        "arrival": false,
+        "t": 30.128,
+        "vt": 17.906
+      },
+      {
+        "index": 33,
+        "arrival": false,
+        "t": 30.384,
+        "vt": 18.162
+      },
+      {
+        "index": 34,
+        "arrival": false,
+        "t": 30.658,
+        "vt": 18.436
+      },
+      {
+        "index": 35,
+        "arrival": false,
+        "t": 30.901,
+        "vt": 18.679
+      },
+      {
+        "index": 36,
+        "arrival": false,
+        "t": 31.154,
+        "vt": 18.932
+      },
+      {
+        "index": 37,
+        "arrival": false,
+        "t": 31.402,
+        "vt": 19.18
+      },
+      {
+        "index": 38,
+        "arrival": false,
+        "t": 31.678,
+        "vt": 19.456
+      },
+      {
+        "index": 39,
+        "arrival": false,
+        "t": 32.01,
+        "vt": 19.788
+      },
+      {
+        "index": 0,
+        "arrival": true,
+        "t": 32.561,
+        "vt": 20.339
+      },
+      {
+        "index": 9,
+        "arrival": false,
+        "t": 34.063,
+        "vt": 21.841
+      },
+      {
+        "index": 10,
+        "arrival": false,
+        "t": 34.433,
+        "vt": 22.211
+      },
+      {
+        "index": 11,
+        "arrival": false,
+        "t": 34.804,
+        "vt": 22.582
+      },
+      {
+        "index": 12,
+        "arrival": false,
+        "t": 35.164,
+        "vt": 22.942
+      },
+      {
+        "index": 13,
+        "arrival": false,
+        "t": 35.394,
+        "vt": 23.172
+      },
+      {
+        "index": 14,
+        "arrival": true,
+        "t": 36.018,
+        "vt": 23.796
+      },
+      {
+        "index": 9,
+        "arrival": false,
+        "t": 37.364,
+        "vt": 25.142
+      },
+      {
+        "index": 10,
+        "arrival": true,
+        "t": 37.86,
+        "vt": 25.638
+      }
+    ],
+    "ticks": 24,
+    "locks": 6,
+    "audioContacts": 30,
+    "lockHoldDeltaSeconds": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "allTileContactsSharePawnAudioFrame": true,
+    "contactHasActiveRenderedSample": true,
+    "cameraAngles40and45": true,
+    "visualXZEqualsRootPlusOffset": true,
+    "arrivalSamplesWithHold": 10
+  },
+  "portraitGame": {
+    "pass": 0,
+    "fail": [],
+    "cases": [],
+    "errors": [],
+    "board": [
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 40,
+        "collidersInside": 40,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": false,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 235.9512481689453,
+          "y": 258.28759765625
+        },
+        "tile32": {
+          "x": 253.67922973632812,
+          "y": 269.6829833984375
+        },
+        "tile0": {
+          "x": 398.7264404296875,
+          "y": 364.0
+        },
+        "tile10": {
+          "x": 215.00003051757812,
+          "y": 482.0970764160156
+        },
+        "tile20": {
+          "x": 31.273582458496094,
+          "y": 364.0
+        },
+        "tile30": {
+          "x": 214.99996948242188,
+          "y": 245.90289306640625
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "RollDice",
+        "cameraState": "StrategicOverview",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -15.24795150756836,
+            "y": 316.6114196777344,
+            "width": 460.495849609375,
+            "height": 296.4462585449219
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 18.208171844482422,
+          "minTileEdgePixels": 17.62591552734375,
+          "minTileAltitudePixels": 16.034400939941406,
+          "minTileAreaPixels": 405.5008544921875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 40,
+        "collidersInside": 40,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": false,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 235.9512481689453,
+          "y": 258.28759765625
+        },
+        "tile32": {
+          "x": 253.67922973632812,
+          "y": 269.6829833984375
+        },
+        "tile0": {
+          "x": 398.7264404296875,
+          "y": 364.0
+        },
+        "tile10": {
+          "x": 215.00003051757812,
+          "y": 482.0970764160156
+        },
+        "tile20": {
+          "x": 31.273582458496094,
+          "y": 364.0
+        },
+        "tile30": {
+          "x": 214.99996948242188,
+          "y": 245.90289306640625
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "MovingPawn",
+        "cameraState": "StrategicOverview",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -15.24795150756836,
+            "y": 316.6114196777344,
+            "width": 460.495849609375,
+            "height": 296.4462585449219
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 18.208171844482422,
+          "minTileEdgePixels": 17.62591552734375,
+          "minTileAltitudePixels": 16.034400939941406,
+          "minTileAreaPixels": 405.5008544921875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 39,
+        "collidersInside": 37,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 204.94598388671875,
+          "y": 250.4912109375
+        },
+        "tile32": {
+          "x": 223.555908203125,
+          "y": 262.45343017578125
+        },
+        "tile0": {
+          "x": 375.81915283203125,
+          "y": 361.46270751953125
+        },
+        "tile10": {
+          "x": 182.9524383544922,
+          "y": 485.43505859375
+        },
+        "tile20": {
+          "x": -9.914298057556152,
+          "y": 361.4627380371094
+        },
+        "tile30": {
+          "x": 182.95240783691406,
+          "y": 237.4903564453125
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "MovingPawn",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -58.75025939941406,
+            "y": 311.7167053222656,
+            "width": 483.40533447265625,
+            "height": 311.1943054199219
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 17.345252990722656,
+          "minTileEdgePixels": 18.502803802490234,
+          "minTileAltitudePixels": 16.83210563659668,
+          "minTileAreaPixels": 446.85125732421875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 38,
+        "collidersInside": 38,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 238.3449249267578,
+          "y": 236.34783935546875
+        },
+        "tile32": {
+          "x": 258.5548400878906,
+          "y": 249.3385009765625
+        },
+        "tile0": {
+          "x": 423.9086608886719,
+          "y": 356.8598937988281
+        },
+        "tile10": {
+          "x": 214.4605712890625,
+          "y": 491.4905700683594
+        },
+        "tile20": {
+          "x": 5.012394428253174,
+          "y": 356.85992431640625
+        },
+        "tile30": {
+          "x": 214.4604949951172,
+          "y": 222.229248046875
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "MovingPawn",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -48.022132873535156,
+            "y": 302.8371276855469,
+            "width": 524.96533203125,
+            "height": 337.9487609863281
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.093549728393555,
+          "minTileAltitudePixels": 18.279220581054688,
+          "minTileAreaPixels": 526.98876953125
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 35,
+        "collidersInside": 33,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 286.6855773925781,
+          "y": 236.34783935546875
+        },
+        "tile32": {
+          "x": 306.8954772949219,
+          "y": 249.3385009765625
+        },
+        "tile0": {
+          "x": 472.2492980957031,
+          "y": 356.8598937988281
+        },
+        "tile10": {
+          "x": 262.80120849609375,
+          "y": 491.4905700683594
+        },
+        "tile20": {
+          "x": 53.353031158447266,
+          "y": 356.85992431640625
+        },
+        "tile30": {
+          "x": 262.8011169433594,
+          "y": 222.229248046875
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "MovingPawn",
+        "cameraState": "MovementFocus",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": 0.3185167908668518,
+            "y": 302.8371276855469,
+            "width": 524.9652709960938,
+            "height": 337.9487609863281
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.093557357788086,
+          "minTileAltitudePixels": 18.27923583984375,
+          "minTileAreaPixels": 526.989013671875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 35,
+        "collidersInside": 33,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 7,
+        "expanded": false,
+        "focused": true,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 289.59844970703125,
+          "y": 236.34783935546875
+        },
+        "tile32": {
+          "x": 309.808349609375,
+          "y": 249.3385009765625
+        },
+        "tile0": {
+          "x": 475.1622009277344,
+          "y": 356.8598937988281
+        },
+        "tile10": {
+          "x": 265.7140808105469,
+          "y": 491.4905700683594
+        },
+        "tile20": {
+          "x": 56.26591873168945,
+          "y": 356.85992431640625
+        },
+        "tile30": {
+          "x": 265.7140197753906,
+          "y": 222.229248046875
+        },
+        "economy": "0:18000:7:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "ResolveTile",
+        "cameraState": "MovementFocus",
+        "inspectionName": "Venture",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": 3.2314043045043945,
+            "y": 302.8371276855469,
+            "width": 524.96533203125,
+            "height": 337.9487609863281
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 15.972081184387207,
+          "minTileEdgePixels": 20.093557357788086,
+          "minTileAltitudePixels": 18.27923583984375,
+          "minTileAreaPixels": 526.989013671875
+        }
+      },
+      {
+        "width": 430,
+        "height": 830,
+        "indices": 40,
+        "anchorsVisible": 40,
+        "collidersInside": 40,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 7,
+        "expanded": false,
+        "focused": false,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 696.0,
+          "width": 430.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "width": 430.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 19.0,
+          "y": 10.0,
+          "width": 309.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 8.0,
+          "y": 244.0,
+          "width": 414.0,
+          "height": 444.0
+        },
+        "tile31": {
+          "x": 235.9512481689453,
+          "y": 258.28759765625
+        },
+        "tile32": {
+          "x": 253.67922973632812,
+          "y": 269.6829833984375
+        },
+        "tile0": {
+          "x": 398.7264404296875,
+          "y": 364.0
+        },
+        "tile10": {
+          "x": 215.00003051757812,
+          "y": 482.0970764160156
+        },
+        "tile20": {
+          "x": 31.273582458496094,
+          "y": 364.0
+        },
+        "tile30": {
+          "x": 214.99996948242188,
+          "y": 245.90289306640625
+        },
+        "economy": "0:18000:7:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "ResolveTile",
+        "cameraState": "StrategicOverview",
+        "inspectionName": "Venture",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": -15.24795150756836,
+            "y": 316.6114196777344,
+            "width": 460.495849609375,
+            "height": 296.4462585449219
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 18.208171844482422,
+          "minTileEdgePixels": 17.62591552734375,
+          "minTileAltitudePixels": 16.034400939941406,
+          "minTileAreaPixels": 405.5008544921875
+        }
+      }
+    ],
+    "frames": 190,
+    "recordedRange": [
+      0.18599987030029297,
+      24.91900062561035
+    ],
+    "contacts": [
+      {
+        "phase": "BEGIN",
+        "t": 17.852,
+        "vt": 2.466,
+        "audio": false
+      },
+      {
+        "phase": "TICK",
+        "t": 18.098,
+        "vt": 2.712,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 18.446,
+        "vt": 3.06,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 18.711,
+        "vt": 3.325,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 18.943,
+        "vt": 3.557,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 19.193,
+        "vt": 3.807,
+        "audio": true
+      },
+      {
+        "phase": "TICK",
+        "t": 19.453,
+        "vt": 4.067,
+        "audio": true
+      },
+      {
+        "phase": "REACHED",
+        "t": 19.868,
+        "vt": 4.482,
+        "audio": false
+      },
+      {
+        "phase": "LOCK",
+        "t": 20.319,
+        "vt": 4.933,
+        "audio": true
+      }
+    ],
+    "tileContacts": [
+      {
+        "index": 1,
+        "arrival": false,
+        "t": 18.098,
+        "vt": 2.712
+      },
+      {
+        "index": 2,
+        "arrival": false,
+        "t": 18.446,
+        "vt": 3.06
+      },
+      {
+        "index": 3,
+        "arrival": false,
+        "t": 18.711,
+        "vt": 3.325
+      },
+      {
+        "index": 4,
+        "arrival": false,
+        "t": 18.943,
+        "vt": 3.557
+      },
+      {
+        "index": 5,
+        "arrival": false,
+        "t": 19.193,
+        "vt": 3.807
+      },
+      {
+        "index": 6,
+        "arrival": false,
+        "t": 19.453,
+        "vt": 4.067
+      },
+      {
+        "index": 7,
+        "arrival": true,
+        "t": 20.319,
+        "vt": 4.933
+      }
+    ],
+    "ticks": 6,
+    "locks": 1,
+    "audioContacts": 7,
+    "lockHoldDeltaSeconds": [
+      0.0
+    ],
+    "allTileContactsSharePawnAudioFrame": true,
+    "contactHasActiveRenderedSample": true,
+    "cameraAngles40and45": true,
+    "visualXZEqualsRootPlusOffset": true,
+    "arrivalSamplesWithHold": 2
+  },
+  "desktop": {
+    "pass": 0,
+    "fail": [],
+    "cases": [],
+    "errors": [],
+    "board": [
+      {
+        "width": 1200,
+        "height": 900,
+        "indices": 40,
+        "anchorsVisible": 40,
+        "collidersInside": 40,
+        "identityMarkers": 40,
+        "ownedMarkers": 0,
+        "selected": 0,
+        "expanded": false,
+        "focused": false,
+        "reducedMotion": false,
+        "viewport": {
+          "serializedVersion": "2",
+          "x": 12.0,
+          "y": 248.0,
+          "width": 1176.0,
+          "height": 506.0
+        },
+        "hud": {
+          "serializedVersion": "2",
+          "x": 0.0,
+          "y": 766.0,
+          "width": 1200.0,
+          "height": 134.0
+        },
+        "cockpit": {
+          "serializedVersion": "2",
+          "x": 534.0,
+          "y": 0.0,
+          "width": 648.0,
+          "height": 236.0
+        },
+        "primary": {
+          "serializedVersion": "2",
+          "x": 553.0,
+          "y": 10.0,
+          "width": 521.0,
+          "height": 49.0
+        },
+        "presentation": {
+          "serializedVersion": "2",
+          "x": 12.0,
+          "y": 248.0,
+          "width": 1176.0,
+          "height": 506.0
+        },
+        "tile31": {
+          "x": 636.6688232421875,
+          "y": 213.9825439453125
+        },
+        "tile32": {
+          "x": 667.6962280273438,
+          "y": 233.9266357421875
+        },
+        "tile0": {
+          "x": 921.5574951171875,
+          "y": 399.0
+        },
+        "tile10": {
+          "x": 600.0000610351562,
+          "y": 605.6931762695312
+        },
+        "tile20": {
+          "x": 278.4425048828125,
+          "y": 399.00006103515625
+        },
+        "tile30": {
+          "x": 599.9999389648438,
+          "y": 192.306884765625
+        },
+        "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+        "turnState": "Planning",
+        "cameraState": "StrategicOverview",
+        "inspectionName": "GO",
+        "rent": "\u2014",
+        "risk": "Risque \u2014",
+        "yield": "\u2014",
+        "ownership": "CASE SP\u00c9CIALE",
+        "projection": {
+          "boardPixels": {
+            "serializedVersion": "2",
+            "x": 197.02069091796875,
+            "y": 239.54052734375,
+            "width": 805.9585571289062,
+            "height": 518.8394165039062
+          },
+          "elevation": 40.000003814697266,
+          "azimuth": 45.00000762939453,
+          "orthographicSize": 11.280900955200195,
+          "minTileEdgePixels": 30.84880828857422,
+          "minTileAltitudePixels": 28.063369750976562,
+          "minTileAreaPixels": 1242.125244140625
+        }
+      }
+    ]
+  },
+  "audio": {
+    "sampleRate": 48000,
+    "channels": 2,
+    "duration": 27.78,
+    "peakDbFS": -24.67924094039273,
+    "clippedSamples": 0,
+    "sourceContacts": 30,
+    "strongOnsetGroups": 30,
+    "onsets": [
+      9.405479166666666,
+      10.003395833333334,
+      11.553333333333333,
+      12.099,
+      13.660541666666667,
+      13.962395833333334,
+      14.304895833333333,
+      14.542895833333333,
+      14.838958333333334,
+      15.396229166666666,
+      16.969375,
+      17.3176875,
+      17.636958333333332,
+      17.857541666666666,
+      18.112958333333335,
+      18.385791666666666,
+      18.6238125,
+      18.879229166666665,
+      19.128833333333333,
+      19.4365,
+      19.7325625,
+      20.324666666666666,
+      21.787520833333332,
+      22.159041666666667,
+      22.5305625,
+      22.925291666666666,
+      23.116854166666666,
+      23.7728125,
+      25.0905625,
+      25.583979166666666
+    ],
+    "nearestOnsetSeconds": [
+      0.0455,
+      0.0466,
+      0.0517,
+      0.052,
+      0.0495,
+      0.0186,
+      0.0521,
+      0.0541,
+      0.023,
+      0.0468,
+      0.0496,
+      0.0503,
+      0.012,
+      0.0485,
+      0.049,
+      0.0502,
+      0.0552,
+      0.0528,
+      0.0512,
+      0.0195,
+      0.0554,
+      0.0143,
+      0.0535,
+      0.052,
+      0.0514,
+      0.0167,
+      0.0551,
+      0.0232,
+      0.0514,
+      0.054
+    ]
+  }
+}

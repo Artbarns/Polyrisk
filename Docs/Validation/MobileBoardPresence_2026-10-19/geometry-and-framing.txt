@@ -1,0 +1,1 @@
+PASS: 70 checks; 40 indices/raycasts, 4 meshes, portrait/desktop compact/expanded/analysis, safe insets and short landscape.

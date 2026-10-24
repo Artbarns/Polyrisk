@@ -1,0 +1,29 @@
+{
+  "code": "M23EXU",
+  "players": [
+    {
+      "displayName": "QA_Six6",
+      "isReady": true
+    },
+    {
+      "displayName": "QA_Six5",
+      "isReady": true
+    },
+    {
+      "displayName": "Player",
+      "isReady": true
+    },
+    {
+      "displayName": "QA_V8Fourth",
+      "isReady": true
+    },
+    {
+      "displayName": "QA_V8Fifth",
+      "isReady": true
+    },
+    {
+      "displayName": "QA_V8Sixth",
+      "isReady": true
+    }
+  ]
+}

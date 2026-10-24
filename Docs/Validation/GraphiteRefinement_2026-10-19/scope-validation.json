@@ -1,0 +1,23 @@
+{
+  "changed_existing_files": [
+    "Assets/Scripts/Board/BoardVisualTheme.cs",
+    "Assets/Scripts/Board/PolyRiskBoard.cs",
+    "Assets/Settings/GraphiteFoundation/GraphiteAccents.mat",
+    "Assets/Settings/GraphiteFoundation/GraphiteEngraving.mat",
+    "Assets/Settings/GraphiteFoundation/GraphiteFrame.mat",
+    "Assets/Settings/GraphiteFoundation/GraphiteTheme.asset",
+    "Assets/Settings/GraphiteFoundation/GraphiteTiles.mat",
+    "Assets/Shaders/GraphiteSurface.shader"
+  ],
+  "created_assets": [
+    "Assets/Scripts/Debug/GraphiteVisualIsolation.cs",
+    "Assets/Scripts/Debug/GraphiteVisualIsolation.cs.meta",
+    "Assets/Scripts/Editor/GraphiteRefinementValidation.cs",
+    "Assets/Scripts/Editor/GraphiteRefinementValidation.cs.meta"
+  ],
+  "unexpected_changes": [],
+  "preexisting_files_unchanged": 572,
+  "scene_and_embedded_meshes_byte_identical": true,
+  "geometry_and_anchor_generation_code_unchanged": true,
+  "final_build_no_shader_errors_or_warnings": true
+}

@@ -1,0 +1,1 @@
+PASS: 746 checks; 40 indices/raycasts, 4 meshes, portrait/desktop compact/expanded; official 40-degree projection, bounded focus with active pawn and selected tile, movement callbacks; no analysis UI, safe insets and short landscape.

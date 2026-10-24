@@ -1,0 +1,49 @@
+{
+  "code": "B29WNJ",
+  "versionBefore": 2,
+  "versionAfter": 3,
+  "sequence": 1,
+  "authorityTarget": {
+    "tileIndex": 33,
+    "ownerPlayerId": 1,
+    "currentLevel": 0,
+    "isMortgaged": false,
+    "mortgageExemptFromNextGo": false,
+    "totalUpgradeCostInvested": 0.0,
+    "wasVisitedSinceLastGo": false,
+    "isEmbargoed": false,
+    "embargoTurnsRemaining": 0,
+    "hijackedByPlayerId": -1,
+    "hijackTurnsRemaining": 0
+  },
+  "guestSeen": {
+    "version": 3,
+    "sequence": 1,
+    "target": {
+      "tileIndex": 33,
+      "ownerPlayerId": 1,
+      "currentLevel": 0,
+      "isMortgaged": false,
+      "mortgageExemptFromNextGo": false,
+      "totalUpgradeCostInvested": 0.0,
+      "wasVisitedSinceLastGo": false,
+      "isEmbargoed": false,
+      "embargoTurnsRemaining": 0,
+      "hijackedByPlayerId": -1,
+      "hijackTurnsRemaining": 0
+    }
+  },
+  "guestPolls": 14,
+  "checks": {
+    "authority_ack_once": true,
+    "refusal_no_energy_change": true,
+    "cash_unchanged": true,
+    "target_still_guest_owned": true,
+    "no_sabotage": true,
+    "no_power_activity": true,
+    "guest_rendered_client_received_version_and_sequence": true,
+    "guest_rendered_client_has_unchanged_target": true,
+    "no_js_exceptions": true,
+    "host_logged_immunity": true
+  }
+}

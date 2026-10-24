@@ -1,0 +1,21 @@
+{
+  "modified": [
+    "Assets/Scripts/Debug/MobileBoardValidationProbe.cs",
+    "Assets/Scripts/Editor/MobileBoardPresenceValidation.cs",
+    "Assets/Scripts/Multiplayer/OnlineGameController.cs",
+    "Assets/Scripts/Systems/BoardInteractionManager.cs",
+    "Assets/Scripts/UI/ActionButtonsWidget.cs",
+    "Assets/Scripts/Visuals/PlayerVisualManager.cs",
+    "Assets/UI/Layouts/TopHUD.uxml",
+    "Assets/UI/Styles/Theme.uss"
+  ],
+  "created": [
+    "Assets/Scripts/Debug/StrategicCameraValidationDriver.cs",
+    "Assets/Scripts/Debug/StrategicCameraValidationDriver.cs.meta"
+  ],
+  "unchangedAssetsAndSettings": 578,
+  "rulesEconomyTurnManagerPawnMovementGeometryMaterialsShadersSceneNetworkDtos": "byte-identical",
+  "pawnMovementCompletionCallback": "byte-identical",
+  "networkApplyState": "same result/logic plus local presentation-success notification",
+  "inputAndPermissions": "unchanged; obsolete manual focus bookkeeping removed"
+}

@@ -1,0 +1,225 @@
+{
+  "unity": "2022.3.62f3",
+  "pipeline": "URP 14.0.12",
+  "build": "Builds/MobileBoardPresence",
+  "configuration": "IL2CPP WebGL Development",
+  "normal": {
+    "viewport": [
+      430,
+      830
+    ],
+    "canvas": [
+      430,
+      830
+    ],
+    "dpr": 1,
+    "free_rect_bottom_left": [
+      12,
+      248,
+      406,
+      436
+    ],
+    "cockpit_rect_bottom_left": [
+      0,
+      0,
+      430,
+      236
+    ],
+    "indices": 40,
+    "anchors_inside": 40,
+    "colliders_inside": 40,
+    "identity_markers": 40,
+    "financial_badges": 0,
+    "financial_badge_pair_overlaps": 0,
+    "expanded": false,
+    "selected": 0,
+    "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+    "presentation_rect_equals_free_rect": true
+  },
+  "analysis": {
+    "viewport": [
+      430,
+      830
+    ],
+    "canvas": [
+      430,
+      830
+    ],
+    "dpr": 1,
+    "free_rect_bottom_left": [
+      12,
+      248,
+      406,
+      408
+    ],
+    "cockpit_rect_bottom_left": [
+      0,
+      0,
+      430,
+      236
+    ],
+    "indices": 40,
+    "anchors_inside": 40,
+    "colliders_inside": 40,
+    "identity_markers": 40,
+    "financial_badges": 26,
+    "financial_badge_pair_overlaps": 0,
+    "expanded": false,
+    "selected": 0,
+    "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+    "presentation_rect_equals_free_rect": true
+  },
+  "expanded": {
+    "viewport": [
+      430,
+      830
+    ],
+    "canvas": [
+      430,
+      830
+    ],
+    "dpr": 1,
+    "free_rect_bottom_left": [
+      12,
+      444,
+      406,
+      240
+    ],
+    "cockpit_rect_bottom_left": [
+      0,
+      0,
+      430,
+      432
+    ],
+    "indices": 40,
+    "anchors_inside": 40,
+    "colliders_inside": 40,
+    "identity_markers": 40,
+    "financial_badges": 0,
+    "financial_badge_pair_overlaps": 0,
+    "expanded": true,
+    "selected": 31,
+    "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+    "presentation_rect_equals_free_rect": true
+  },
+  "desktop": {
+    "viewport": [
+      1200,
+      900
+    ],
+    "canvas": [
+      1200,
+      900
+    ],
+    "dpr": 1,
+    "free_rect_bottom_left": [
+      12,
+      248,
+      1176,
+      506
+    ],
+    "cockpit_rect_bottom_left": [
+      534,
+      0,
+      648,
+      236
+    ],
+    "indices": 40,
+    "anchors_inside": 40,
+    "colliders_inside": 40,
+    "identity_markers": 40,
+    "financial_badges": 0,
+    "financial_badge_pair_overlaps": 0,
+    "expanded": false,
+    "selected": 0,
+    "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+    "presentation_rect_equals_free_rect": true
+  },
+  "mode_switch": {
+    "normal_analysis_return_clicked": true,
+    "return_to_zero_badges_visually_verified": true,
+    "economic_fingerprint_unchanged": true,
+    "legend": "LOYER DE BASE / PRIX DE BASE"
+  },
+  "selection": {
+    "tap": [
+      233,
+      308
+    ],
+    "index": 31,
+    "name": "Quantum AI Labs",
+    "rent_shown": 450,
+    "base_yield_shown": "10,0%",
+    "capital_unchanged": 18000
+  },
+  "gameplay": {
+    "manual_roll_completed": true,
+    "landing_index": 5,
+    "property": "Temu Sweatshop Terminal",
+    "buy_price": 1000,
+    "p0_balance_before": 18000,
+    "p0_balance_after": 17000,
+    "p0_owned_count_after": 1,
+    "owner_markers_after": 1,
+    "colliders_inside_after_movement": 40,
+    "warnings_or_errors_during_manual_test": []
+  },
+  "controls": {
+    "analysis_rect_bottom_left": [
+      276,
+      781,
+      88,
+      36
+    ],
+    "primary_rect_bottom_left": [
+      19,
+      12,
+      309,
+      49
+    ],
+    "menu_click": [
+      388,
+      24
+    ],
+    "menu_opened": true,
+    "menu_analysis_hit_targets_no_longer_overlap": true
+  },
+  "desktop_warnings_or_errors": [],
+  "baseline": {
+    "desktop": "before-desktop.jpg",
+    "portrait": "before-portrait.jpg",
+    "origin": "PASS 2A.1 captures, same initial game state and viewport dimensions"
+  },
+  "limits": [
+    "Desktop browser at DPR 1, no physical mobile test.",
+    "DPR 2 equivalence and safe-area insets tested mathematically, not on a physical notch.",
+    "No GPU profiling, no Release or online multi-client execution in this pass.",
+    "The existing 60-second Planning safety timeout and acquisition warnings may appear after the initial captures; these are unchanged gameplay diagnostics."
+  ],
+  "deployed_movement": {
+    "observed": true,
+    "landing_index": 6,
+    "expanded": true,
+    "anchors_inside": 40,
+    "colliders_inside": 40,
+    "free_rect_bottom_left": [
+      12,
+      444,
+      406,
+      240
+    ],
+    "presentation_rect_bottom_left": [
+      12,
+      444,
+      406,
+      240
+    ],
+    "capture": "expanded-movement.jpg",
+    "trigger": "Unchanged existing 60-second Planning safety timeout, intentionally exercised.",
+    "expected_warning": "Planning Safety net at 2026-10-19T18:21:38.515Z",
+    "runtime_errors": [],
+    "dice_animation_frame_captured": false
+  },
+  "manual_gameplay_runtime_errors": [],
+  "evidence_capture_note": "Initial compact images: GO, four players, 18000 capital/net worth. Expanded image: same initial game state, inspector on Quantum AI Labs (31), after camera and panel settled. Gameplay evidence uses separate subsequent actions/sessions."
+}

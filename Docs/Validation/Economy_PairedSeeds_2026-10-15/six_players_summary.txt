@@ -1,0 +1,5 @@
+Completed: 30; anomalies: 0; players: 6; first seed: 20261016
+TIME OUT — HIGHEST NET WORTH: 12
+LAST PLAYER STANDING: 18
+Mean winner cash: 1905578.62
+TurnsStarted counts individual turns; laps are recorded per player. Real time is accelerated, not human session duration.

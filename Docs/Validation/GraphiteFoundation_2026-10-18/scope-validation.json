@@ -1,0 +1,11 @@
+{
+  "serialized_anchor_objects_and_components_unchanged": 40,
+  "final_webgl_build_without_shader_or_csharp_errors": true,
+  "index_and_collider_creation_methods_unchanged": true,
+  "changed_existing_files": [
+    "Assets/Scenes/SampleScene.unity",
+    "Assets/Scripts/Board/PolyRiskBoard.cs"
+  ],
+  "unexpected_changes": [],
+  "protected_existing_files_unchanged": 556
+}

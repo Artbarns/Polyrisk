@@ -1,0 +1,265 @@
+127.0.0.1 - - [22/Oct/2026 23:07:21] "GET /ReflectiveNeon/capture-f1.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:07:21] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:07:21] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:07:21] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:07:21] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:07:21] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:07:22] "GET /ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:07:22] "GET /ReflectiveNeon/Build/25175322149a87921fb9beb125a4c38c.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:07:22] "GET /ReflectiveNeon/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:07:22] "GET /ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:10:17] "GET /ReflectiveNeon/capture-f1.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:10:17] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:10:17] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:10:17] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:10:17] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:10:17] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:10:17] "GET /ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:10:17] "GET /ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 23:10:17] "GET /ReflectiveNeon/Build/25175322149a87921fb9beb125a4c38c.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:10:17] "GET /ReflectiveNeon/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:11:25] "POST /__video?name=baseline-camera.webm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:13:19] "GET /ReflectiveNeon/capture-f1.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:13:19] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:13:19] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:13:19] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:13:19] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:13:19] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:13:20] "GET /ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:13:20] "GET /ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 23:13:20] "GET /ReflectiveNeon/Build/25175322149a87921fb9beb125a4c38c.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:13:20] "GET /ReflectiveNeon/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:20:59] "GET /PerceptualPolish/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:20:59] "GET /PerceptualPolish/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:20:59] "GET /PerceptualPolish/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:20:59] "GET /PerceptualPolish/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:20:59] "GET /PerceptualPolish/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:20:59] "GET /PerceptualPolish/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:21:00] "GET /PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:21:00] "GET /PerceptualPolish/Build/5eaf7d05aa284ba910eb73658fb8e9ae.data HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:21:00] "GET /PerceptualPolish/Build/1a2b69f3c9353617360b5a87b9bea90d.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:21:00] "GET /PerceptualPolish/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:22:19] "GET /PerceptualPolish/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:22:19] "GET /PerceptualPolish/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:22:20] "GET /PerceptualPolish/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:22:20] "GET /PerceptualPolish/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:22:20] "GET /PerceptualPolish/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:22:20] "GET /PerceptualPolish/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:22:20] "GET /PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:22:20] "GET /PerceptualPolish/Build/5eaf7d05aa284ba910eb73658fb8e9ae.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 23:22:20] "GET /PerceptualPolish/Build/1a2b69f3c9353617360b5a87b9bea90d.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:22:20] "GET /PerceptualPolish/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:23:52] "POST /__video?name=after-b-contacts.webm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:10] "GET /ReflectiveNeon/capture-f1.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:10] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:10] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:10] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:10] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:10] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:11] "GET /ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:11] "GET /ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 23:24:11] "GET /ReflectiveNeon/Build/25175322149a87921fb9beb125a4c38c.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:58] "GET /ReflectiveNeon/capture-f1.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:59] "GET /ReflectiveNeon/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:59] "GET /ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:59] "GET /ReflectiveNeon/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:59] "GET /ReflectiveNeon/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:59] "GET /ReflectiveNeon/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:59] "GET /ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:24:59] "GET /ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 23:25:00] "GET /ReflectiveNeon/Build/25175322149a87921fb9beb125a4c38c.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:25:00] "GET /ReflectiveNeon/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:29:43] "GET /PerceptualPolish/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:29:43] "GET /PerceptualPolish/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:29:43] "GET /PerceptualPolish/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:29:43] "GET /PerceptualPolish/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:29:43] "GET /PerceptualPolish/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:29:43] "GET /PerceptualPolish/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:29:43] "GET /PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:29:43] "GET /PerceptualPolish/Build/6ff55d448ecd36dd43482e6a881be4d4.data HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:29:43] "GET /PerceptualPolish/Build/7399a77ccf8d4f8bbc47d0cb92242e49.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:30:55] "POST /__video?name=after-b-contacts.webm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:31:08] "GET /PerceptualPolish/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:31:09] "GET /PerceptualPolish/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:31:09] "GET /PerceptualPolish/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:31:10] "GET /PerceptualPolish/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:31:10] "GET /PerceptualPolish/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:31:10] "GET /PerceptualPolish/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:31:10] "GET /PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:31:11] "GET /PerceptualPolish/Build/7399a77ccf8d4f8bbc47d0cb92242e49.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:31:11] "GET /PerceptualPolish/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:31:11] "GET /PerceptualPolish/Build/6ff55d448ecd36dd43482e6a881be4d4.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 23:31:58] "POST /__video?name=after-a-contacts.webm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:32:18] "GET /PerceptualPolish/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:32:19] "GET /PerceptualPolish/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:32:19] "GET /PerceptualPolish/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:32:19] "GET /PerceptualPolish/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:32:19] "GET /PerceptualPolish/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:32:19] "GET /PerceptualPolish/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:32:19] "GET /PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:32:19] "GET /PerceptualPolish/Build/6ff55d448ecd36dd43482e6a881be4d4.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 23:32:19] "GET /PerceptualPolish/Build/7399a77ccf8d4f8bbc47d0cb92242e49.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:32:19] "GET /PerceptualPolish/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:33:27] "POST /__video?name=after-b-camera.webm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:33:42] "GET /PerceptualPolish/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:33:42] "GET /PerceptualPolish/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:33:42] "GET /PerceptualPolish/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:33:42] "GET /PerceptualPolish/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:33:43] "GET /PerceptualPolish/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:33:43] "GET /PerceptualPolish/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:33:43] "GET /PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:33:43] "GET /PerceptualPolish/Build/6ff55d448ecd36dd43482e6a881be4d4.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 23:33:43] "GET /PerceptualPolish/Build/7399a77ccf8d4f8bbc47d0cb92242e49.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:33:43] "GET /PerceptualPolish/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 23:35:15] "POST /__video?name=partie-b.webm HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:52:43] "POST /__video?name=partie-b.webm HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:53:23] "POST /__video?name=partie-b-coin.webm HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:55:09] "GET /PerceptualPolish/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:55:09] "GET /PerceptualPolish/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:55:09] "GET /PerceptualPolish/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:55:09] "GET /PerceptualPolish/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:55:09] "GET /PerceptualPolish/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:55:09] "GET /PerceptualPolish/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:55:10] "GET /PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:55:10] "GET /PerceptualPolish/Build/7399a77ccf8d4f8bbc47d0cb92242e49.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:55:10] "GET /PerceptualPolish/Build/6ff55d448ecd36dd43482e6a881be4d4.data HTTP/1.1" 304 -
+127.0.0.1 - - [23/Oct/2026 20:57:35] "POST /__video?name=performance-captured.webm HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:59:53] "GET /PerceptualPolish/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:59:53] "GET /PerceptualPolish/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:59:53] "GET /PerceptualPolish/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:59:53] "GET /PerceptualPolish/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:59:53] "GET /PerceptualPolish/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:59:53] "GET /PerceptualPolish/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:59:54] "GET /PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 20:59:54] "GET /PerceptualPolish/Build/6ff55d448ecd36dd43482e6a881be4d4.data HTTP/1.1" 304 -
+127.0.0.1 - - [23/Oct/2026 20:59:54] "GET /PerceptualPolish/Build/7399a77ccf8d4f8bbc47d0cb92242e49.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:00:42] "GET /PerceptualPolish/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:00:42] "GET /PerceptualPolish/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:00:42] "GET /PerceptualPolish/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:00:42] "GET /PerceptualPolish/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:00:42] "GET /PerceptualPolish/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:00:42] "GET /PerceptualPolish/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:00:42] "GET /PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:00:42] "GET /PerceptualPolish/Build/6ff55d448ecd36dd43482e6a881be4d4.data HTTP/1.1" 304 -
+127.0.0.1 - - [23/Oct/2026 21:00:42] "GET /PerceptualPolish/Build/7399a77ccf8d4f8bbc47d0cb92242e49.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:00:42] "GET /PerceptualPolish/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:01:38] "POST /__video?name=performance-captured.webm HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/after-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/after-b-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/real-contact.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/contact-a-native.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/contact-b-native.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/selection-mobile.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/cockpit-expanded.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/comparison-data.json HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/partie-b-coin-short.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/baseline-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /evidence/after-b-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:06:53] code 404, message File not found
+127.0.0.1 - - [23/Oct/2026 21:06:53] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [23/Oct/2026 21:07:14] "GET /evidence/after-b-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:07:14] "GET /evidence/baseline-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:07:14] "GET /evidence/baseline-contacts.webm HTTP/1.1" 206 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 51591)
+127.0.0.1 - - [23/Oct/2026 21:07:14] "GET /evidence/after-b-contacts.webm HTTP/1.1" 206 -
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/PerceptualPolish_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/PerceptualPolish_2026-10-22/serve_webgl.py", line 49, in do_GET
+    self.wfile.write(body[start:end+1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+ConnectionResetError: [Errno 54] Connection reset by peer
+----------------------------------------
+127.0.0.1 - - [23/Oct/2026 21:08:03] "GET /evidence/baseline-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:08:03] "GET /evidence/after-b-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:08:21] "GET /evidence/after-a-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:08:21] "GET /evidence/after-a-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:08:33] "GET /evidence/after-b-contacts.webm HTTP/1.1" 206 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 51605)
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/PerceptualPolish_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/PerceptualPolish_2026-10-22/serve_webgl.py", line 49, in do_GET
+    self.wfile.write(body[start:end+1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+ConnectionResetError: [Errno 54] Connection reset by peer
+----------------------------------------
+127.0.0.1 - - [23/Oct/2026 21:08:33] "GET /evidence/after-b-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:08:33] "GET /evidence/after-a-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:08:33] "GET /evidence/after-b-camera.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:08:33] "GET /evidence/baseline-camera.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:08:33] "GET /evidence/after-b-camera.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:08:33] "GET /evidence/baseline-camera.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:09:26] "GET /evidence/after-b-camera.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:09:26] "GET /evidence/baseline-camera.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:09:26] "GET /evidence/after-b-camera.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:09:27] "GET /evidence/baseline-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:09:27] "GET /evidence/after-b-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:09:27] "GET /evidence/baseline-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:09:27] "GET /evidence/after-b-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:31:47] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:31:47] "GET /evidence/baseline-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:31:47] "GET /evidence/after-a-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:31:47] "GET /evidence/after-b-portrait.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:31:47] "GET /evidence/real-contact.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:31:47] "GET /evidence/contact-b-native.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:31:47] "GET /evidence/contact-a-native.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:31:47] "GET /evidence/selection-mobile.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:31:47] "GET /evidence/cockpit-expanded.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:31:48] "GET /evidence/comparison-data.json HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:31:48] "GET /evidence/partie-b-coin-short.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:31:48] "GET /evidence/baseline-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:31:48] "GET /evidence/after-b-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:33:51] "GET /evidence/baseline-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:33:51] "GET /evidence/after-b-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:33:51] "GET /evidence/baseline-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:33:51] "GET /evidence/after-b-contacts.webm HTTP/1.1" 206 -
+127.0.0.1 - - [23/Oct/2026 21:59:12] "HEAD /PerceptualPolish/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:59:24] "GET /PerceptualPolish/capture.html HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:59:24] "GET /PerceptualPolish/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:59:24] "GET /PerceptualPolish/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:59:24] "GET /PerceptualPolish/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:59:24] "GET /PerceptualPolish/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:59:24] "GET /PerceptualPolish/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:59:24] "GET /PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:59:24] "GET /PerceptualPolish/Build/7399a77ccf8d4f8bbc47d0cb92242e49.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 21:59:24] "GET /PerceptualPolish/Build/6ff55d448ecd36dd43482e6a881be4d4.data HTTP/1.1" 304 -
+127.0.0.1 - - [23/Oct/2026 22:25:40] "GET /PerceptualPolish/baseline-dpr2.html HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 22:25:40] "GET /PerceptualPolish/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 22:25:40] "GET /PerceptualPolish/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 22:25:40] "GET /PerceptualPolish/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 22:25:40] "GET /PerceptualPolish/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 22:25:40] "GET /PerceptualPolish/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 22:25:40] "GET /PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 22:25:40] "GET /PerceptualPolish/Build/7399a77ccf8d4f8bbc47d0cb92242e49.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 22:25:41] "GET /PerceptualPolish/Build/6ff55d448ecd36dd43482e6a881be4d4.data HTTP/1.1" 304 -

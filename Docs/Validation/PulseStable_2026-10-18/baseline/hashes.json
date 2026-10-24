@@ -1,0 +1,8 @@
+{
+  "Assets/UI/Styles/Theme.uss": "87ddd93dcf31bcc8466c954b2a062e582c2992e4a0948727fdb2e7a721ff7c25",
+  "Assets/UI/Layouts/TileDetail_BottomSheet.uxml": "4707615e3e7d86cd8ffaf1212ffa4889fb5d734d7ed17c50eb726766136ad5de",
+  "Assets/Scripts/UI/TopHUDWidget.cs": "511379701461173f4fdc7028eca17dfa1f67826f9dedc510d0675db7826b9f0a",
+  "Assets/Scripts/UI/ActionButtonsWidget.cs": "ba3b73492dbc9978e84d61a9163df6cb3200bfbc288b8f76d5bdf79e9f312228",
+  "Assets/Scripts/Systems/BoardInteractionManager.cs": "d092e3985d81f23fc2641c6392ea3403cd63006e52aac77f426f266edf72467c",
+  "Assets/Scripts/Editor/EconomyRegression.cs": "1cd0f7a25e9310d3556ff367213896a9cc1bdacc3cecd3414616ed9417851875"
+}

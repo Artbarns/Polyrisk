@@ -1,0 +1,499 @@
+--- before/Assets/Scripts/Board/BoardVisualTheme.cs
++++ after/Assets/Scripts/Board/BoardVisualTheme.cs
+@@ -60,6 +60,7 @@
+             [Range(0,2)] public float neonEmission=.82f, neonReflection=.06f;
+             public float reflectionFalloff=.025f, reflectionReach=.09f;
+             public float contactReflection=.035f, arrivalReflection=.075f, contactOutline=.90f;
++            public float contactReflectionFalloff=.025f, contactReflectionReach=.09f, activeSurfaceContrast=0;
+             public float backgroundSeparation=.012f;
+             public Color pawnBody = new Color(.23f,.28f,.33f);
+             public float pawnMetallic=.42f, pawnSmoothness=.40f;
+@@ -67,17 +68,20 @@
+ 
+             public static SurfaceFinish ReflectiveNeon() => new SurfaceFinish
+             {
+-                boardMetallic=.42f,tileMetallic=.34f,boardSmoothness=.53f,tileSmoothness=.48f,
+-                studioReflection=.56f,edgeSpecular=.045f,neonEmission=1.06f,neonReflection=.52f,
+-                reflectionFalloff=.045f,reflectionReach=.14f,contactReflection=.24f,arrivalReflection=.42f,
+-                contactOutline=1.04f,backgroundSeparation=.016f,pawnMetallic=.48f,pawnSmoothness=.46f,
+-                pawnEmission=1.10f,pawnRing=1.12f,pawnTop=1.02f,pawnBaseReflection=.045f
++                boardMetallic=.36f,tileMetallic=.27f,boardSmoothness=.47f,tileSmoothness=.41f,
++                studioReflection=.46f,edgeSpecular=.040f,neonEmission=.88f,neonReflection=.08f,
++                reflectionFalloff=.030f,reflectionReach=.10f,contactReflection=.78f,arrivalReflection=1.10f,
++                contactReflectionFalloff=.065f,contactReflectionReach=.22f,activeSurfaceContrast=.14f,
++                contactOutline=1.12f,backgroundSeparation=.014f,pawnMetallic=.48f,pawnSmoothness=.46f,
++                pawnEmission=1.10f,pawnRing=1.12f,pawnTop=1.02f,pawnBaseReflection=.065f
+             };
+         }
+         [Header("PASS 2F — shared finish system, no geometry or gameplay")]
+         public SurfaceTreatment surfaceTreatment=SurfaceTreatment.GraphiteReflectiveNeon;
+         public SurfaceFinish graphiteSatin=new SurfaceFinish();
+         public SurfaceFinish reflectiveNeon=SurfaceFinish.ReflectiveNeon();
++        [Header("PASS 2F.1 — continuous contact envelope")]
++        public PolyRisk.Visuals.BoardContactFeedback.Tuning contactLight=new PolyRisk.Visuals.BoardContactFeedback.Tuning();
+         [Header("Shared architectural lighting — same exposure for A / B")]
+         public Color fillColor=new Color(.32f,.35f,.39f);
+         public Color keyColor=new Color(.94f,.96f,.98f);
+--- before/Assets/Scripts/Systems/BoardInteractionManager.cs
++++ after/Assets/Scripts/Systems/BoardInteractionManager.cs
+@@ -31,21 +31,21 @@
+         [Header("Strategic movement camera")]
+         [SerializeField, Range(1.10f,1.18f)] private float movementZoomFactor = 1.14f;
+         [SerializeField, Min(.05f)] private float focusEntryDuration = .30f;
+-        [SerializeField, Min(.1f)] private float followHorizontalStrength = 1f;
+-        [SerializeField, Min(.1f)] private float followVerticalCorrectionStrength = .55f;
+-        [SerializeField, Range(.2f,.95f)] private float comfortZoneWidth = .62f;
+-        [SerializeField, Range(.2f,.95f)] private float comfortZoneHeight = .82f;
+-        [SerializeField, Min(.02f)] private float cameraDamping = .16f;
++        [SerializeField, Range(0f,1f)] private float movementAnchorX = .50f;
++        [SerializeField, Range(0f,1f)] private float movementAnchorY = .52f;
++        [SerializeField, Min(.02f)] private float followHorizontalDamping = .08f;
++        [SerializeField, Min(.02f)] private float followVerticalDamping = .12f;
++        [SerializeField] private Vector2 movementComfortZone = new Vector2(.16f,.22f);
++        [SerializeField, Min(.02f)] private float cornerTransitionSmoothing = .14f;
+         [SerializeField, Range(.2f,.3f)] private float arrivalHoldDuration = .25f;
+         [SerializeField, Range(.3f,.45f)] private float returnDuration = .375f;
+         private const float CompactCockpitHeight = 236f, PawnRadius = .35f, PawnHeadroom = 1.45f;
+         private const float PawnBoundsPadding = 1.04f, PawnHopAllowance = .6f;
+-        [SerializeField, Range(0f,1f)] private float horizontalTravelShare = .5f;
+-        [SerializeField, Range(0f,4f)] private float lookAheadDistance = 1.8f;
+-        [SerializeField, Range(0f,1f)] private float lookAheadStrength = .55f;
++        [SerializeField, Range(0f,4f)] private float movementLookAhead = .75f;
++        private Vector2 smoothedLookAhead;
+         private System.Collections.Generic.List<Vector3> observedPath;
+         private int pathSegment;
+-        private Vector2 entryPlaneCenter, startPawnPlane;
++        private Vector2 entryPlaneCenter;
+         private Vector2 pawnPlaneMin, pawnPlaneMax;
+         private Vector3 overviewPosition, previousPawnPosition, returnStartPosition;
+         private Transform trackedPawn;
+@@ -92,7 +92,7 @@
+             entryStartSize = mainCamera.orthographicSize; entryStarted = Time.unscaledTime;
+             entryDuration = Mathf.Min(focusEntryDuration, Mathf.Max(.08f,path.Count*.14f));
+             observedPath=path;pathSegment=0;
+-            startPawnPlane=ProjectPlane(new Vector3(trackedPawn.position.x,floorY,trackedPawn.position.z));
++            smoothedLookAhead=Vector2.zero;
+             entryPlaneCenter=PlaneAtViewportCenter(mainCamera.transform.position,mainCamera.orthographicSize);
+             IsArrivalHold = false;
+             SetState(CameraState.MovementFocus);
+@@ -169,15 +169,22 @@
+                 Vector3 ground=new Vector3(pawnPosition.x,floorY,pawnPosition.z);
+                 Vector2 point=ProjectPlane(ground);
+                 Vector2 min=point+pawnPlaneMin, max=point+pawnPlaneMax;
+-                Vector2 half=Vector2.Scale(BoardViewport.size,new Vector2(comfortZoneWidth,comfortZoneHeight))*size/Screen.height;
+-                Vector2 correction=ComfortCorrection(center,min,max,half);
+-                Vector2 ahead=ProjectPlane(SampleAhead(ground,observedPath,ref pathSegment,lookAheadDistance));
+-                float anticipated=entryPlaneCenter.x+(point.x-startPawnPlane.x)*horizontalTravelShare+
+-                    (ahead.x-point.x)*lookAheadStrength;
+-                float horizontal=anticipated-center.x;
+-                center.x+=horizontal*(1f-Mathf.Exp(-dt*followHorizontalStrength/cameraDamping));
+-                center.x+=ComfortCorrection(center,min,max,half).x*(1f-Mathf.Exp(-dt*followHorizontalStrength/cameraDamping));
+-                center.y+=correction.y*(1f-Mathf.Exp(-dt*followVerticalCorrectionStrength/cameraDamping));
++                // Anchor is relative to the usable board viewport, never the full screen.
++                // Ground tracking excludes the logical hop and the monolith's presentation pulse.
++                Vector2 lead=ProjectPlane(SampleAhead(ground,observedPath,ref pathSegment,movementLookAhead))-point;
++                smoothedLookAhead=Vector2.Lerp(smoothedLookAhead,lead,1f-Mathf.Exp(-dt/Mathf.Max(.02f,cornerTransitionSmoothing)));
++                Vector2 anchorOffset=Vector2.Scale(new Vector2(.5f-movementAnchorX,.5f-movementAnchorY),BoardViewport.size)*(size*2f/Screen.height);
++                Vector2 target=point+anchorOffset+smoothedLookAhead;
++                float entryEase=t*t*(3f-2f*t);
++                target=Vector2.Lerp(entryPlaneCenter,target,entryEase);
++                center.x=Mathf.Lerp(center.x,target.x,1f-Mathf.Exp(-dt/Mathf.Max(.02f,followHorizontalDamping)));
++                center.y=Mathf.Lerp(center.y,target.y,1f-Mathf.Exp(-dt/Mathf.Max(.02f,followVerticalDamping)));
++                // A small soft comfort guard supplements continuous following; it never waits
++                // for a screen edge before starting. Blend it in with the original focus entry.
++                Vector2 half=Vector2.Scale(BoardViewport.size,movementComfortZone)*size/Screen.height;
++                Vector2 correction=ComfortCorrection(center-anchorOffset,min,max,half);
++                center.x+=correction.x*entryEase*(1f-Mathf.Exp(-dt/Mathf.Max(.02f,followHorizontalDamping)));
++                center.y+=correction.y*entryEase*(1f-Mathf.Exp(-dt/Mathf.Max(.02f,followVerticalDamping)));
+                 // Visibility guard for a long frame; ground tracking does not follow the pawn's hop oscillation.
+                 Vector2 safetyHalf=(BoardViewport.size-Vector2.one*8f)*size/Screen.height;
+                 center+=ComfortCorrection(center,min,max,safetyHalf);
+--- before/Assets/Scripts/Visuals/BoardContactFeedback.cs
++++ after/Assets/Scripts/Visuals/BoardContactFeedback.cs
+@@ -10,10 +10,13 @@
+         [System.Serializable]
+         public sealed class Tuning
+         {
+-            public float tileContactPulseDuration=.12f, tileContactPulseIntensity=1.15f;
++            public float tileContactAttackDuration=.032f, tileContactDecayDuration=.145f;
++            public float tileContactPulseIntensity=1.15f;
++            public float tileContactPulseDuration => tileContactAttackDuration+tileContactDecayDuration;
+             public float tileContactOutlineIntensity=1f, tileContactInnerGlowIntensity=.075f;
+-            [Range(0,1)] public float tileContactColorBlend=.55f;
+-            public float tileArrivalPulseDuration=.24f, tileArrivalPulseIntensity=1.65f;
++            [Range(0,1)] public float tileContactColorBlend=.70f;
++            public float tileArrivalDecayDuration=.215f, tileArrivalPulseIntensity=1.65f;
++            public float tileArrivalPulseDuration => tileContactAttackDuration+tileArrivalDecayDuration;
+             public float reducedMotionIntensity=.45f;
+         }
+         public Tuning tuning=new Tuning();
+@@ -24,7 +27,7 @@
+         public bool LastArrival { get; private set; }
+         public bool HasActiveContacts { get; private set; }
+         const int Width=64;
+-        struct Pulse { public float began,duration,intensity; public Color color; }
++        struct Pulse { public float began,attack,decay,intensity,startStrength; public Color color; }
+         readonly Pulse[] pulses=new Pulse[40];
+         readonly Color[] pixels=new Color[Width*2];
+         readonly Transform[] anchors=new Transform[40];
+@@ -34,6 +37,7 @@
+         void OnEnable()
+         {
+             board=GetComponent<PolyRiskBoard>();
++            if(board!=null&&board.visualTheme!=null)tuning=board.visualTheme.contactLight;
+             foreach(var id in GetComponentsInChildren<TileIdentifier>())
+                 if(id.TileIndex>=0&&id.TileIndex<40)anchors[id.TileIndex]=id.transform;
+             texture=new Texture2D(Width,2,TextureFormat.RGBAHalf,false,true)
+@@ -64,9 +68,14 @@
+             int index=-1;
+             for(int i=0;i<40;i++)if(anchors[i]!=null&&(anchors[i].position-reached).sqrMagnitude<.0001f){index=i;break;}
+             if(index<0)return; // Only a real indexed anchor can receive a contact.
+-            float duration=arrival?tuning.tileArrivalPulseDuration:tuning.tileContactPulseDuration;
++            float attack=Mathf.Max(.001f,tuning.tileContactAttackDuration);
++            float decay=Mathf.Max(.01f,arrival?tuning.tileArrivalDecayDuration:tuning.tileContactDecayDuration);
++            float gap=Time.unscaledTime-LastContactTime;
++            if(!arrival&&gap>.001f&&gap<attack+decay)decay=Mathf.Min(decay,Mathf.Max(.055f,gap*.8f));
++            var previous=pulses[index];
++            float current=Strength(previous,Time.unscaledTime-previous.began);
+             float intensity=(arrival?tuning.tileArrivalPulseIntensity:tuning.tileContactPulseIntensity)*(reduced?tuning.reducedMotionIntensity:1);
+-            pulses[index]=new Pulse{began=Time.unscaledTime,duration=Mathf.Max(.01f,duration),intensity=intensity,
++            pulses[index]=new Pulse{began=Time.unscaledTime,attack=attack,decay=decay,intensity=intensity,startStrength=Mathf.Min(current,intensity),
+                 color=Color.Lerp(new Color(.70f,.80f,.84f),identity,tuning.tileContactColorBlend)};
+             pixels[Width+index]=new Color(tuning.tileContactOutlineIntensity,tuning.tileContactInnerGlowIntensity,arrival?1:0,0);
+             Contacts++;LastIndex=index;LastContactTime=Time.unscaledTime;LastIntensity=intensity;LastArrival=arrival;HasActiveContacts=true;
+@@ -74,16 +83,28 @@
+             Debug.Log("TILE_CONTACT index="+index+" arrival="+arrival+" reduced="+reduced+" intensity="+intensity.ToString("F3",System.Globalization.CultureInfo.InvariantCulture)+" t="+LastContactTime.ToString("F4",System.Globalization.CultureInfo.InvariantCulture));
+ #endif
+         }
++        public static float Envelope(float age,float attack,float decay)
++        {
++            if(age<0||age>=attack+decay)return 0;
++            if(age<attack)return Mathf.SmoothStep(0,1,age/Mathf.Max(.001f,attack));
++            return 1-Mathf.SmoothStep(0,1,(age-attack)/Mathf.Max(.001f,decay));
++        }
++        static float Strength(Pulse pulse,float age)
++        {
++            if(pulse.attack<=0)return 0;
++            if(age<pulse.attack)return Mathf.Lerp(pulse.startStrength,pulse.intensity,Mathf.SmoothStep(0,1,Mathf.Clamp01(age/pulse.attack)));
++            return pulse.intensity*Envelope(age,pulse.attack,pulse.decay);
++        }
+         void LateUpdate()
+         {
+             if(!HasActiveContacts)return;
+             HasActiveContacts=false;float now=Time.unscaledTime;
+             for(int i=0;i<40;i++)
+             {
+-                var pulse=pulses[i];float phase=pulse.duration>0?(now-pulse.began)/pulse.duration:1;
+-                float strength=phase<1?pulse.intensity*(1-Mathf.SmoothStep(0,1,Mathf.InverseLerp(.18f,1,phase))):0;
++                var pulse=pulses[i];float age=now-pulse.began;
++                float strength=Strength(pulse,age);
+                 var color=pulse.color;color.a=strength;pixels[i]=color;
+-                HasActiveContacts|=strength>0;
++                HasActiveContacts|=pulse.attack>0&&age<pulse.attack+pulse.decay;
+             }
+             // One tiny texture upload only while a contact is alive, including its final clear.
+             texture.SetPixels(pixels);texture.Apply(false,false);Bind(texture);
+--- before/Assets/Scripts/Visuals/BoardSurfaceLighting.cs
++++ after/Assets/Scripts/Visuals/BoardSurfaceLighting.cs
+@@ -53,6 +53,9 @@
+                 material.SetFloat("_ContactReflectionStrength",Finish.contactReflection);
+                 material.SetFloat("_ArrivalReflectionStrength",Finish.arrivalReflection);
+                 material.SetFloat("_ContactOutlineGain",Finish.contactOutline);
++                material.SetFloat("_ContactReflectionFalloff",Finish.contactReflectionFalloff);
++                material.SetFloat("_ContactReflectionReach",Finish.contactReflectionReach);
++                material.SetFloat("_ActiveSurfaceContrast",Finish.activeSurfaceContrast);
+             }
+             if(board.neonMaterial!=null)
+             {
+--- before/Assets/Settings/GraphiteFoundation/GraphiteTheme.asset
++++ after/Assets/Settings/GraphiteFoundation/GraphiteTheme.asset
+@@ -58,6 +58,9 @@
+     contactReflection: 0.035
+     arrivalReflection: 0.075
+     contactOutline: 0.9
++    contactReflectionFalloff: 0.025
++    contactReflectionReach: 0.09
++    activeSurfaceContrast: 0
+     backgroundSeparation: 0.012
+     pawnBody: {r: 0.23, g: 0.28, b: 0.33, a: 1}
+     pawnMetallic: 0.42
+@@ -69,27 +72,40 @@
+   reflectiveNeon:
+     boardTint: {r: 0.8, g: 0.83, b: 0.87, a: 1}
+     tileTint: {r: 0.88, g: 0.91, b: 0.95, a: 1}
+-    boardMetallic: 0.42
+-    tileMetallic: 0.34
+-    boardSmoothness: 0.53
+-    tileSmoothness: 0.48
+-    studioReflection: 0.56
+-    edgeSpecular: 0.045
+-    neonEmission: 1.06
+-    neonReflection: 0.52
+-    reflectionFalloff: 0.045
+-    reflectionReach: 0.14
+-    contactReflection: 0.24
+-    arrivalReflection: 0.42
+-    contactOutline: 1.04
+-    backgroundSeparation: 0.016
++    boardMetallic: 0.36
++    tileMetallic: 0.27
++    boardSmoothness: 0.47
++    tileSmoothness: 0.41
++    studioReflection: 0.46
++    edgeSpecular: 0.04
++    neonEmission: 0.88
++    neonReflection: 0.08
++    reflectionFalloff: 0.03
++    reflectionReach: 0.1
++    contactReflection: 0.78
++    arrivalReflection: 1.1
++    contactOutline: 1.12
++    contactReflectionFalloff: 0.065
++    contactReflectionReach: 0.22
++    activeSurfaceContrast: 0.14
++    backgroundSeparation: 0.014
+     pawnBody: {r: 0.23, g: 0.28, b: 0.33, a: 1}
+     pawnMetallic: 0.48
+     pawnSmoothness: 0.46
+     pawnEmission: 1.1
+     pawnRing: 1.12
+     pawnTop: 1.02
+-    pawnBaseReflection: 0.045
++    pawnBaseReflection: 0.065
++  contactLight:
++    tileContactAttackDuration: 0.032
++    tileContactDecayDuration: 0.145
++    tileContactPulseIntensity: 1.15
++    tileContactOutlineIntensity: 1
++    tileContactInnerGlowIntensity: 0.075
++    tileContactColorBlend: 0.7
++    tileArrivalDecayDuration: 0.215
++    tileArrivalPulseIntensity: 1.65
++    reducedMotionIntensity: 0.45
+   fillColor: {r: 0.32, g: 0.35, b: 0.39, a: 1}
+   keyColor: {r: 0.94, g: 0.96, b: 0.98, a: 1}
+   keyIntensity: 0.55
+--- before/Assets/Shaders/GraphiteSurface.shader
++++ after/Assets/Shaders/GraphiteSurface.shader
+@@ -11,6 +11,9 @@
+         _ContactReflectionStrength ("Contact reflection", Float) = 0
+         _ArrivalReflectionStrength ("Arrival reflection", Float) = 0
+         _ContactOutlineGain ("Contact outline gain", Float) = 1
++        _ContactReflectionFalloff ("Contact reflection falloff", Float) = 0.025
++        _ContactReflectionReach ("Contact reflection reach", Float) = 0.09
++        _ActiveSurfaceContrast ("Active satin contrast", Range(0,1)) = 0
+         _PawnFoot ("Active pawn footprint x z radius energy", Vector) = (0,0,1,0)
+         _PawnFootColor ("Active pawn reflection tint", Color) = (0,0,0,0)
+         _BaseColor ("Surface tint", Color) = (1,1,1,1)
+@@ -51,6 +54,9 @@
+                 half _ContactReflectionStrength;
+                 half _ArrivalReflectionStrength;
+                 half _ContactOutlineGain;
++                float _ContactReflectionFalloff;
++                float _ContactReflectionReach;
++                half _ActiveSurfaceContrast;
+                 float4 _PawnFoot;
+                 half4 _PawnFootColor;
+                 half _Metallic;
+@@ -186,9 +192,15 @@
+                 surface.emission += contact.rgb * contact.a *
+                     (contactLine * contactStyle.r * _ContactOutlineGain + contactInner * contactStyle.g) * topMask;
+                 half reflectedContact = lerp(_ContactReflectionStrength,_ArrivalReflectionStrength,contactStyle.b);
+-                half contactSpill = exp2(-max(0,edgeDistance)/max(.015,_ReflectionFalloff)) *
+-                    (1-smoothstep(_ReflectionReach*.45,_ReflectionReach,max(0,edgeDistance)));
++                // B's dynamic reflection covers a short, derivative-aware neighborhood.
++                // Width is bounded in board space; no full-tile wash at distance.
++                float contactFalloff=max(.015,_ContactReflectionFalloff);
++                float contactReach=max(.02,_ContactReflectionReach);
++                float coveredFalloff=min(contactReach*.45,max(contactFalloff,edgePixel*.70*_ActiveSurfaceContrast));
++                half contactSpill = exp2(-max(0,edgeDistance)/coveredFalloff) *
++                    (1-smoothstep(contactReach*.45,contactReach,max(0,edgeDistance)));
+                 surface.emission += contact.rgb*contact.a*contactSpill*reflectedContact*topMask*_Polish;
++                surface.smoothness=saturate(surface.smoothness+contact.a*contactSpill*_ActiveSurfaceContrast*topMask);
+                 // One actual active child footprint, including its shared-tile offset.
+                 float2 foot = (input.boardPosition.xz-_PawnFoot.xy)/max(.001,_PawnFoot.z);
+                 float footRadius2=dot(foot,foot);
+--- /dev/null
++++ after/Assets/Scripts/Debug/PerceptualPolishValidationDriver.cs
+@@ -0,0 +1,77 @@
++using UnityEngine;
++#if UNITY_EDITOR || DEVELOPMENT_BUILD
++using System.Collections;
++using System.Linq;
++using System.Reflection;
++using PolyRisk.Visuals;
++using PolyRisk.Systems;
++#endif
++namespace PolyRisk.DebugTools
++{
++    /// <summary>Development-only readback and isolated visual tests. No shipping gameplay writes.</summary>
++    [DefaultExecutionOrder(110)]
++    public sealed class PerceptualPolishValidationDriver : MonoBehaviour
++    {
++#if UNITY_EDITOR || DEVELOPMENT_BUILD
++        BoardInteractionManager rig;BoardContactFeedback contact;PolyRiskBoard board;
++        bool recording,running;float epoch,next;
++        static readonly BindingFlags Private=BindingFlags.NonPublic|BindingFlags.Instance;
++        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
++        static void Mount(){if(!Application.isBatchMode)new GameObject("[QA] Perceptual").AddComponent<PerceptualPolishValidationDriver>();}
++        void Cache(){if(rig==null)rig=FindObjectOfType<BoardInteractionManager>();if(contact==null)contact=FindObjectOfType<BoardContactFeedback>();if(board==null)board=FindObjectOfType<PolyRiskBoard>();}
++        public void CaptureMarker(){Cache();recording=true;epoch=Time.unscaledTime;}
++        public void EndCapture(){recording=false;}
++        [System.Serializable] sealed class Frame
++        {public float t,vt,x,y,alpha,sum,reflection;public int index,active;public string state;public bool hold,reduced;public Rect viewport;}
++        void LateUpdate()
++        {
++            if(!recording||Time.unscaledTime<next)return;next=Time.unscaledTime+.025f;Cache();
++            if(rig==null||contact==null||board==null)return;
++            var pawn=rig.ObservedPawn;float x=-1,y=-1;
++            if(pawn!=null)
++            {
++                var ground=pawn.position;ground.y=BoardManager.Instance.visualTiles[0].position.y;
++                var point=Camera.main.WorldToScreenPoint(ground);x=(point.x-rig.BoardViewport.x)/rig.BoardViewport.width;y=(point.y-rig.BoardViewport.y)/rig.BoardViewport.height;
++            }
++            var texture=(Texture2D)typeof(BoardContactFeedback).GetField("texture",Private).GetValue(contact);
++            float sum=0;int active=0;for(int i=0;i<40;i++){float a=texture.GetPixel(i,0).a;sum+=a;if(a>.001f)active++;}
++            var lighting=board.GetComponent<BoardSurfaceLighting>();
++            Debug.Log("PERCEPTUAL_FRAME "+JsonUtility.ToJson(new Frame{t=Time.unscaledTime,vt=Time.unscaledTime-epoch,x=x,y=y,
++                alpha=contact.LastIndex>=0?texture.GetPixel(contact.LastIndex,0).a:0,sum=sum,active=active,index=contact.LastIndex,
++                reflection=lighting!=null?lighting.Finish.contactReflection:0,state=rig.State.ToString(),hold=rig.IsArrivalHold,reduced=rig.ReducedMotionEnabled,viewport=rig.BoardViewport}));
++        }
++        static void Check(bool ok,string name){Debug.Log("PERCEPTUAL_CASE "+(ok?"PASS ":"FAIL ")+name);}
++        public void RunEnvelope(){if(!running)StartCoroutine(EnvelopeCases());}
++        float Alpha(int i)=>((Texture2D)typeof(BoardContactFeedback).GetField("texture",Private).GetValue(contact)).GetPixel(i,0).a;
++        IEnumerator EnvelopeCases()
++        {
++            running=true;Cache();
++            var stateField=typeof(PolyRiskBoard).GetField("statePixels",Private);
++            var persistent=(Color[])((Color[])stateField.GetValue(board)).Clone();
++            var camera=Camera.main;var pose=camera.transform.position;float size=camera.orthographicSize;
++            contact.Clear();float began=Time.unscaledTime;contact.PulseAt(BoardManager.Instance.visualTiles[31].position,Color.cyan,false,false);
++            yield return new WaitForEndOfFrame();
++            float age=Time.unscaledTime-began;
++            float expected=BoardContactFeedback.Envelope(age,contact.tuning.tileContactAttackDuration,contact.tuning.tileContactDecayDuration)*contact.tuning.tileContactPulseIntensity;
++            Check(Mathf.Abs(Alpha(31)-expected)<.005f,"actual texture matches continuous envelope at measured first-frame age");
++            Debug.Log("PERCEPTUAL_FIRST_SAMPLE age="+age.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+" alpha="+Alpha(31).ToString("R",System.Globalization.CultureInfo.InvariantCulture));
++            yield return new WaitForSecondsRealtime(.045f);yield return new WaitForEndOfFrame();
++            Check(Alpha(31)>0&&Alpha(31)<=contact.tuning.tileContactPulseIntensity+.002f,"actual texture carries bounded progressive pulse");
++            float before=Alpha(31);contact.PulseAt(BoardManager.Instance.visualTiles[31].position,Color.cyan,false,false);
++            yield return new WaitForEndOfFrame();
++            Check(Alpha(31)>=before-.02f,"retrigger preserves current intensity at attack start");
++            for(int n=0;n<6;n++){contact.PulseAt(BoardManager.Instance.visualTiles[31+n].position,Color.cyan,false,false);yield return null;}
++            yield return new WaitForSecondsRealtime(.45f);
++            Check(!contact.HasActiveContacts&&Enumerable.Range(0,40).All(i=>Alpha(i)==0),"rapid contacts clear without residual light");
++            contact.PulseAt(BoardManager.Instance.visualTiles[31].position,Color.cyan,true,true);
++            yield return new WaitForSecondsRealtime(.05f);yield return new WaitForEndOfFrame();
++            Check(Alpha(31)<=contact.tuning.tileArrivalPulseIntensity*contact.tuning.reducedMotionIntensity+.002f,"Reduced Motion retains lower bounded contact");
++            yield return new WaitForSecondsRealtime(.4f);
++            Check(!contact.HasActiveContacts,"arrival clears independently of callbacks");
++            Check(persistent.SequenceEqual((Color[])stateField.GetValue(board)),"all persistent tile state pixels unchanged through retrigger stress");
++            Check(camera.transform.position==pose&&camera.orthographicSize==size,"isolated contact never moves camera");
++            running=false;Debug.Log("PERCEPTUAL_ENVELOPE_DONE");
++        }
++#endif
++    }
++}
+--- /dev/null
++++ after/Assets/Scripts/Debug/PerceptualPolishValidationDriver.cs.meta
+@@ -0,0 +1,2 @@
++fileFormatVersion: 2
++guid: d6049de7d9f94fffa9598711e557ec7a
+--- /dev/null
++++ after/Assets/Scripts/Editor/PerceptualPolishValidation.cs
+@@ -0,0 +1,91 @@
++using System;
++using System.IO;
++using System.Linq;
++using System.Reflection;
++using System.Security.Cryptography;
++using UnityEngine;
++using UnityEditor;
++using UnityEditor.SceneManagement;
++using UnityEngine.Rendering.Universal;
++using PolyRisk.Visuals;
++namespace PolyRisk.Editor
++{
++    public static class PerceptualPolishValidation
++    {
++        const string Report="Docs/Validation/PerceptualPolish_2026-10-22";
++        static int checks;
++        static void Check(bool ok,string name){checks++;if(!ok)throw new Exception("GRAPHITE FINISH FAIL "+name);}
++        static string Hash(string text){using(var h=SHA256.Create())return BitConverter.ToString(h.ComputeHash(System.Text.Encoding.UTF8.GetBytes(text)));}
++        public static void RunAndBuild()
++        {
++            EconomyBatchValidation.RunAllEditorRegressions();
++            EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");
++            var board=UnityEngine.Object.FindObjectOfType<PolyRiskBoard>();var theme=board.visualTheme;
++            theme.surfaceTreatment=BoardVisualTheme.SurfaceTreatment.GraphiteReflectiveNeon;
++            EditorUtility.SetDirty(theme);AssetDatabase.SaveAssets();
++            var anchors=board.GetComponentsInChildren<TileIdentifier>().OrderBy(x=>x.TileIndex).ToArray();
++            Check(anchors.Length==40&&anchors.Select(x=>x.TileIndex).SequenceEqual(Enumerable.Range(0,40)),"40 indices");
++            var meshes=board.GetComponentsInChildren<MeshFilter>();
++            Check(meshes.Length==4,"four original fused meshes");
++            var geometry=meshes.Select(m=>Hash(EditorJsonUtility.ToJson(m.sharedMesh))).ToArray();
++            var anchorState=anchors.Select(a=>Hash(EditorJsonUtility.ToJson(a.transform)+EditorJsonUtility.ToJson(a.GetComponent<BoxCollider>()))).ToArray();
++            string camera=Hash(EditorJsonUtility.ToJson(Camera.main)+EditorJsonUtility.ToJson(Camera.main.transform));
++            var lighting=board.gameObject.AddComponent<BoardSurfaceLighting>();
++            foreach(var treatment in new[]{BoardVisualTheme.SurfaceTreatment.GraphiteSatin,BoardVisualTheme.SurfaceTreatment.GraphiteReflectiveNeon})
++            {
++                lighting.Apply(treatment);var finish=theme.Finish(treatment);
++                Check(geometry.SequenceEqual(meshes.Select(m=>Hash(EditorJsonUtility.ToJson(m.sharedMesh)))),treatment+" identical meshes");
++                Check(anchorState.SequenceEqual(anchors.Select(a=>Hash(EditorJsonUtility.ToJson(a.transform)+EditorJsonUtility.ToJson(a.GetComponent<BoxCollider>())))),treatment+" identical anchors colliders");
++                Check(camera==Hash(EditorJsonUtility.ToJson(Camera.main)+EditorJsonUtility.ToJson(Camera.main.transform)),treatment+" identical camera");
++                Check(board.tileMaterial.GetFloat("_Polish")==1&&board.tileMaterial.GetFloat("_ReflectionStrength")==finish.neonReflection,treatment+" actual material uses profile");
++                Physics.SyncTransforms();foreach(var anchor in anchors){RaycastHit hit;Check(Physics.Raycast(anchor.transform.position+Vector3.up*2,Vector3.down,out hit,3)&&hit.collider.gameObject==anchor.gameObject,treatment+" raycast "+anchor.TileIndex);}
++            }
++            Check(theme.reflectiveNeon.neonReflection>theme.graphiteSatin.neonReflection,"B local reflection exceeds A");
++            Check(theme.reflectiveNeon.arrivalReflection>theme.reflectiveNeon.contactReflection,"arrival reflection stronger");
++            var contact=new BoardContactFeedback.Tuning();Check(contact.tileContactPulseDuration>=.14f&&contact.tileContactPulseDuration<=.21f,"short attack and longer decay");
++            Check(contact.tileArrivalPulseDuration>contact.tileContactPulseDuration,"arrival light longer without blocking callback");
++            Check(BoardContactFeedback.Envelope(0,.032f,.145f)==0&&BoardContactFeedback.Envelope(.032f,.032f,.145f)==1&&BoardContactFeedback.Envelope(.177f,.032f,.145f)==0,"envelope endpoints");
++            float previous=0;
++            for(int n=0;n<=100;n++){float value=BoardContactFeedback.Envelope(n*.032f/100,.032f,.145f);Check(value>=previous-1e-6f&&value>=0&&value<=1,"monotonic attack "+n);previous=value;}
++            previous=1;
++            for(int n=0;n<=100;n++){float value=BoardContactFeedback.Envelope(.032f+n*.145f/100,.032f,.145f);Check(value<=previous+1e-6f&&value>=0&&value<=1,"monotonic decay "+n);previous=value;}
++            Check(BoardContactFeedback.Envelope(-.01f,.032f,.145f)==0&&BoardContactFeedback.Envelope(1,.032f,.145f)==0,"no envelope outside lifetime");
++            foreach(var field in new[]{"boardMetallic","tileMetallic","boardSmoothness","tileSmoothness","studioReflection"})
++                Check((float)typeof(BoardVisualTheme.SurfaceFinish).GetField(field).GetValue(theme.reflectiveNeon)==(float)typeof(BoardVisualTheme.SurfaceFinish).GetField(field).GetValue(theme.graphiteSatin),"same neutral material "+field);
++            Check(theme.reflectiveNeon.contactReflection>theme.graphiteSatin.contactReflection*5&&theme.reflectiveNeon.activeSurfaceContrast>0,"B primarily differs under contact");
++            var rig=UnityEngine.Object.FindObjectOfType<PolyRisk.Systems.BoardInteractionManager>();
++            var fields=BindingFlags.Instance|BindingFlags.NonPublic;
++            Check((float)rig.GetType().GetField("movementZoomFactor",fields).GetValue(rig)==1.14f,"unchanged action zoom");
++            Check((float)rig.GetType().GetField("movementAnchorX",fields).GetValue(rig)==.5f,"anchor centered in usable viewport");
++            Check((float)rig.GetType().GetField("followHorizontalDamping",fields).GetValue(rig)<(float)rig.GetType().GetField("followVerticalDamping",fields).GetValue(rig),"horizontal priority with measured vertical correction");
++            var low=AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>("Assets/Settings/Low_PipelineAsset.asset");
++            var medium=AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>("Assets/Settings/Medium_PipelineAsset.asset");
++            Check(low.mainLightRenderingMode==LightRenderingMode.PerPixel&&low.supportsMainLightShadows==false,"Low one main light with no shadow passes");
++            Check(low.useSRPBatcher&&medium.useSRPBatcher,"SRP Batcher enabled Low Medium");
++            string diagnostics="";
++            foreach(var name in new[]{"PolyRisk/GraphiteSurface","PolyRisk/NeonState"})
++            {
++                var shader=Shader.Find(name);Check(shader!=null,name+" included");
++                Check(ShaderUtil.GetShaderMessages(shader).All(m=>m.severity.ToString()!="Error"),name+" import diagnostics");
++                var sample=new Material(shader);bool compiled=sample.SetPass(0);UnityEngine.Object.DestroyImmediate(sample);
++                var method=typeof(ShaderUtil).GetMethod("GetSRPBatcherCompatibilityCode",BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Static,null,new[]{typeof(Shader),typeof(int)},null);
++                if(method!=null&&compiled&&SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null)
++                {
++                    int code=(int)method.Invoke(null,new object[]{shader,0});
++                    var reason=typeof(ShaderUtil).GetMethod("GetSRPBatcherCompatibilityIssueReason",BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Static);
++                    string message=reason!=null?(string)reason.Invoke(null,new object[]{shader,0,code}):"unavailable";
++                    diagnostics+=name+" SRP compatibility code="+code+" "+message+" device="+SystemInfo.graphicsDeviceType+"\n";
++                    Debug.Log(diagnostics);Check(code==0,name+" SRP Batcher compatible after material compilation");
++                }
++                else diagnostics+=name+" SRP compatibility measurement unavailable on this graphics device; CBUFFER layout reviewed\n";
++
++            }
++            lighting.Apply(theme.surfaceTreatment);
++            Directory.CreateDirectory(Report);File.WriteAllText(Report+"/theme-after.json",EditorJsonUtility.ToJson(theme,true));
++            File.WriteAllText(Report+"/editor-checks.txt","GRAPHITE FINISH PASS "+checks+" checks + 612 existing assertions\n"+diagnostics);
++            Debug.Log("GRAPHITE FINISH EDITOR PASS "+checks+" checks\n"+diagnostics);
++            UnityEngine.Object.DestroyImmediate(lighting);
++            EconomyBatchValidation.BuildWebGL();
++        }
++    }
++}
+--- /dev/null
++++ after/Assets/Scripts/Editor/PerceptualPolishValidation.cs.meta
+@@ -0,0 +1,2 @@
++fileFormatVersion: 2
++guid: ad033479036a47ce933848ef04958615

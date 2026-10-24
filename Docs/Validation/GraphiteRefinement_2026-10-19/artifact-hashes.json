@@ -1,0 +1,118 @@
+{
+  "Builds/GraphiteRefinement/index.html": {
+    "bytes": 5726,
+    "sha256": "794d3ffca2923049c33b0285b3778822e360d8ac382f5830c6724e6ba46d25a4"
+  },
+  "Builds/GraphiteRefinement/TemplateData/MemoryProfiler.png": {
+    "bytes": 665,
+    "sha256": "0ce87be20d0c24ab6cb73b57de2004da261cc2a641e69319c6ae3fe11fc85483"
+  },
+  "Builds/GraphiteRefinement/TemplateData/fullscreen-button.png": {
+    "bytes": 175,
+    "sha256": "21221581673a54b8139d408d4a3f8d2b879e86827d4b6fc53b995ff7a99ee3e9"
+  },
+  "Builds/GraphiteRefinement/TemplateData/unity-logo-dark.png": {
+    "bytes": 3042,
+    "sha256": "c1b72d26c096487dabc948b54bc203f8dac7ed4e3f5733918798e858acb4b159"
+  },
+  "Builds/GraphiteRefinement/TemplateData/favicon.ico": {
+    "bytes": 2305,
+    "sha256": "9c13beb90ee8f70580d52a21d5233970d1c89e71e4a34a462c22610941c3c77f"
+  },
+  "Builds/GraphiteRefinement/TemplateData/webmemd-icon.png": {
+    "bytes": 1670,
+    "sha256": "c56f5494640cedda273aad38d58e6ab9da625d5b3f4d875c0ff92c6192a569c2"
+  },
+  "Builds/GraphiteRefinement/TemplateData/progress-bar-empty-light.png": {
+    "bytes": 109,
+    "sha256": "143696c060ad43d6c30f19ff5f49000927a139a2a1e4c9f45fafaa2b90d7d2be"
+  },
+  "Builds/GraphiteRefinement/TemplateData/webgl-logo.png": {
+    "bytes": 2947,
+    "sha256": "b30c3af2a4538c6edf5f2411953760641dfa257f2a4cc5b88d671aa243b1f12f"
+  },
+  "Builds/GraphiteRefinement/TemplateData/style.css": {
+    "bytes": 1600,
+    "sha256": "a41afbb1885cb828b0c63f3137e2f353440849843ee65834abe55bbeefcfc754"
+  },
+  "Builds/GraphiteRefinement/TemplateData/progress-bar-full-dark.png": {
+    "bytes": 74,
+    "sha256": "3306a6244dcb3926fca38a28e3ced589df8ff1beed955eb17c0bbf01c918bc62"
+  },
+  "Builds/GraphiteRefinement/TemplateData/progress-bar-full-light.png": {
+    "bytes": 84,
+    "sha256": "12395ea785480c5cdf12fade6e6cbf49666d5bb1cef7240c113dbcba6bdc5c87"
+  },
+  "Builds/GraphiteRefinement/TemplateData/progress-bar-empty-dark.png": {
+    "bytes": 96,
+    "sha256": "bbee7131afe8a3365906240d89184dc86234c119467f390bc4bc6802328fdb4d"
+  },
+  "Builds/GraphiteRefinement/TemplateData/unity-logo-light.png": {
+    "bytes": 3077,
+    "sha256": "002990aea0d946833cadc1519d5b7e50a4570bd537a0517dd79a59d3eec84da7"
+  },
+  "Builds/GraphiteRefinement/Build/938b0cef5c65be419513d9ab2fc03c40.data": {
+    "bytes": 9526666,
+    "sha256": "c66cfd7ccb5d8d27d7366c774a7033d3d37d10aa246b79c644f0b4352bea14bb"
+  },
+  "Builds/GraphiteRefinement/Build/88132c9c2f86f08328e6d67d1696f489.wasm": {
+    "bytes": 54078344,
+    "sha256": "9bb3249803a29333170d93a79ca94ec5d92447b03dd089528716d41fa63839d6"
+  },
+  "Builds/GraphiteRefinement/Build/f0710ae991c87b5298c0933d10bc9391.framework.js": {
+    "bytes": 751383,
+    "sha256": "ca6c1d464706b280f186ed5c0556d3ec4a6c465cb80a25ff7b8fdce913f01bcf"
+  },
+  "Builds/GraphiteRefinement/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js": {
+    "bytes": 46362,
+    "sha256": "c0b225d624e41656b7790ffcf716c8c986087a938d30e61d28996373b646544a"
+  },
+  "Docs/Validation/GraphiteRefinement_2026-10-19/pass2a-portrait-compact.jpg": {
+    "bytes": 32797,
+    "sha256": "3041e7ce412d2187465efe1e12860687651357441a0af9d01d1f493974b77532"
+  },
+  "Docs/Validation/GraphiteRefinement_2026-10-19/pass2a1-desktop.jpg": {
+    "bytes": 58275,
+    "sha256": "fe094d9ad60f56a370169f91f533919e9c28786da13b11efea715f97dc6d6f13"
+  },
+  "Docs/Validation/GraphiteRefinement_2026-10-19/selection-index31.jpg": {
+    "bytes": 36353,
+    "sha256": "ebf33fd40ef4ffc6c81afd8fddfc94d0f05ecb2a2289f58d47ee394e94475963"
+  },
+  "Docs/Validation/GraphiteRefinement_2026-10-19/pass2a1-portrait-isolation.jpg": {
+    "bytes": 30483,
+    "sha256": "9f067781945407c7d6470be6161eaeec9ae5e14a30883a7978e86e7b50b507dc"
+  },
+  "Docs/Validation/GraphiteRefinement_2026-10-19/pass2a1-portrait-compact.jpg": {
+    "bytes": 33962,
+    "sha256": "4f53d71d09cef6941e7aa498b0990167dbaf7e46ea1ec9400f4ad0b348b19b67"
+  },
+  "Docs/Validation/GraphiteRefinement_2026-10-19/pass2a1-desktop-isolation.jpg": {
+    "bytes": 52264,
+    "sha256": "e492077e223ecf00c621989bc2421553514b25fadcf94278d6ce9c010cdebb73"
+  },
+  "Docs/Validation/GraphiteRefinement_2026-10-19/art-reference.jpg": {
+    "bytes": 211587,
+    "sha256": "e074c30b26e277baf6a59d7062b5c65de4901d91941bbf499e4bdcb0b046776b"
+  },
+  "Docs/Validation/GraphiteRefinement_2026-10-19/pass2a-desktop.jpg": {
+    "bytes": 53719,
+    "sha256": "1cbac1d010a6fe5d7b583cd784d019579209598e673d1516ed8a41de6d43432d"
+  },
+  "Docs/Validation/GraphiteRefinement_2026-10-19/badges-restored-qa.jpg": {
+    "bytes": 38356,
+    "sha256": "23eac6368f3e984399b3c5c3993e53ea861e7a6874ded23f7330adbca561c2fb"
+  },
+  "Assets/Scenes/SampleScene.unity": {
+    "bytes": 5136480,
+    "sha256": "21c1108c22096a4dd67f41b3a5eb7200f4f69ec34312982f61c592e0ffbc5ecf"
+  },
+  "Docs/Validation/GraphiteRefinement_2026-10-19/build.log": {
+    "bytes": 931241,
+    "sha256": "b942827ddf34dbe4b7c8cedb76a81ae58fc69862193774965ef9867c98dec2c1"
+  },
+  "Docs/Validation/GraphiteRefinement_2026-10-19/after-source-inventory.json": {
+    "bytes": 70295,
+    "sha256": "b7aa60d094a5573b36dbac82d35cfdad8118e8128d6ec0a6251236ae08637834"
+  }
+}

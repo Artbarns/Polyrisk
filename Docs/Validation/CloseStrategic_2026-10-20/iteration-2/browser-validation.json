@@ -1,0 +1,669 @@
+{
+  "static": {
+    "portraitOverview": {
+      "width": 430,
+      "height": 830,
+      "indices": 40,
+      "anchorsVisible": 40,
+      "collidersInside": 40,
+      "identityMarkers": 40,
+      "ownedMarkers": 0,
+      "selected": 0,
+      "expanded": false,
+      "focused": false,
+      "reducedMotion": false,
+      "viewport": {
+        "serializedVersion": "2",
+        "x": 8,
+        "y": 244,
+        "width": 414,
+        "height": 444
+      },
+      "hud": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 696,
+        "width": 430,
+        "height": 134
+      },
+      "cockpit": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 236
+      },
+      "primary": {
+        "serializedVersion": "2",
+        "x": 19,
+        "y": 10,
+        "width": 309,
+        "height": 49
+      },
+      "presentation": {
+        "serializedVersion": "2",
+        "x": 8,
+        "y": 244,
+        "width": 414,
+        "height": 444
+      },
+      "tile31": {
+        "x": 235.9512481689453,
+        "y": 258.28759765625
+      },
+      "tile32": {
+        "x": 253.67922973632812,
+        "y": 269.6829833984375
+      },
+      "tile0": {
+        "x": 398.7264404296875,
+        "y": 364
+      },
+      "tile10": {
+        "x": 215.00003051757812,
+        "y": 482.0970764160156
+      },
+      "tile20": {
+        "x": 31.273582458496094,
+        "y": 364
+      },
+      "tile30": {
+        "x": 214.99996948242188,
+        "y": 245.90289306640625
+      },
+      "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+      "turnState": "Planning",
+      "cameraState": "StrategicOverview",
+      "inspectionName": "GO",
+      "rent": "\u2014",
+      "risk": "Risque \u2014",
+      "yield": "\u2014",
+      "ownership": "CASE SP\u00c9CIALE",
+      "projection": {
+        "boardPixels": {
+          "serializedVersion": "2",
+          "x": -15.24795150756836,
+          "y": 316.6114196777344,
+          "width": 460.495849609375,
+          "height": 296.4462585449219
+        },
+        "elevation": 40.000003814697266,
+        "azimuth": 45.00000762939453,
+        "orthographicSize": 18.208171844482422,
+        "minTileEdgePixels": 17.62591552734375,
+        "minTileAltitudePixels": 16.034400939941406,
+        "minTileAreaPixels": 405.5008544921875
+      }
+    },
+    "portraitInspected": {
+      "width": 430,
+      "height": 830,
+      "indices": 40,
+      "anchorsVisible": 40,
+      "collidersInside": 40,
+      "identityMarkers": 40,
+      "ownedMarkers": 0,
+      "selected": 31,
+      "expanded": false,
+      "focused": false,
+      "reducedMotion": false,
+      "viewport": {
+        "serializedVersion": "2",
+        "x": 8,
+        "y": 244,
+        "width": 414,
+        "height": 444
+      },
+      "hud": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 696,
+        "width": 430,
+        "height": 134
+      },
+      "cockpit": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 236
+      },
+      "primary": {
+        "serializedVersion": "2",
+        "x": 19,
+        "y": 10,
+        "width": 309,
+        "height": 49
+      },
+      "presentation": {
+        "serializedVersion": "2",
+        "x": 8,
+        "y": 244,
+        "width": 414,
+        "height": 444
+      },
+      "tile31": {
+        "x": 235.9512481689453,
+        "y": 258.28759765625
+      },
+      "tile32": {
+        "x": 253.67922973632812,
+        "y": 269.6829833984375
+      },
+      "tile0": {
+        "x": 398.7264404296875,
+        "y": 364
+      },
+      "tile10": {
+        "x": 215.00003051757812,
+        "y": 482.0970764160156
+      },
+      "tile20": {
+        "x": 31.273582458496094,
+        "y": 364
+      },
+      "tile30": {
+        "x": 214.99996948242188,
+        "y": 245.90289306640625
+      },
+      "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+      "turnState": "Planning",
+      "cameraState": "StrategicOverview",
+      "inspectionName": "Quantum AI Labs",
+      "rent": "450",
+      "risk": "Risque \u2014",
+      "yield": "10,0",
+      "ownership": "\u00c0 ACQU\u00c9RIR",
+      "projection": {
+        "boardPixels": {
+          "serializedVersion": "2",
+          "x": -15.24795150756836,
+          "y": 316.6114196777344,
+          "width": 460.495849609375,
+          "height": 296.4462585449219
+        },
+        "elevation": 40.000003814697266,
+        "azimuth": 45.00000762939453,
+        "orthographicSize": 18.208171844482422,
+        "minTileEdgePixels": 17.62591552734375,
+        "minTileAltitudePixels": 16.034400939941406,
+        "minTileAreaPixels": 405.5008544921875
+      }
+    },
+    "portraitExpanded": {
+      "width": 430,
+      "height": 830,
+      "indices": 40,
+      "anchorsVisible": 40,
+      "collidersInside": 40,
+      "identityMarkers": 40,
+      "ownedMarkers": 0,
+      "selected": 31,
+      "expanded": true,
+      "focused": false,
+      "reducedMotion": false,
+      "viewport": {
+        "serializedVersion": "2",
+        "x": 8,
+        "y": 244,
+        "width": 414,
+        "height": 444
+      },
+      "hud": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 696,
+        "width": 430,
+        "height": 134
+      },
+      "cockpit": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 432
+      },
+      "primary": {
+        "serializedVersion": "2",
+        "x": 19,
+        "y": 12,
+        "width": 309,
+        "height": 49
+      },
+      "presentation": {
+        "serializedVersion": "2",
+        "x": 8,
+        "y": 244,
+        "width": 414,
+        "height": 444
+      },
+      "tile31": {
+        "x": 235.9512481689453,
+        "y": 258.28759765625
+      },
+      "tile32": {
+        "x": 253.67922973632812,
+        "y": 269.6829833984375
+      },
+      "tile0": {
+        "x": 398.7264404296875,
+        "y": 364
+      },
+      "tile10": {
+        "x": 215.00003051757812,
+        "y": 482.0970764160156
+      },
+      "tile20": {
+        "x": 31.273582458496094,
+        "y": 364
+      },
+      "tile30": {
+        "x": 214.99996948242188,
+        "y": 245.90289306640625
+      },
+      "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+      "turnState": "Planning",
+      "cameraState": "StrategicOverview",
+      "inspectionName": "Quantum AI Labs",
+      "rent": "450",
+      "risk": "Risque \u2014",
+      "yield": "10,0",
+      "ownership": "\u00c0 ACQU\u00c9RIR",
+      "projection": {
+        "boardPixels": {
+          "serializedVersion": "2",
+          "x": -15.24795150756836,
+          "y": 316.6114196777344,
+          "width": 460.495849609375,
+          "height": 296.4462585449219
+        },
+        "elevation": 40.000003814697266,
+        "azimuth": 45.00000762939453,
+        "orthographicSize": 18.208171844482422,
+        "minTileEdgePixels": 17.62591552734375,
+        "minTileAltitudePixels": 16.034400939941406,
+        "minTileAreaPixels": 405.5008544921875
+      }
+    },
+    "portraitPortfolio": {
+      "width": 430,
+      "height": 830,
+      "indices": 40,
+      "anchorsVisible": 40,
+      "collidersInside": 40,
+      "identityMarkers": 40,
+      "ownedMarkers": 0,
+      "selected": 31,
+      "expanded": true,
+      "focused": false,
+      "reducedMotion": false,
+      "viewport": {
+        "serializedVersion": "2",
+        "x": 8,
+        "y": 244,
+        "width": 414,
+        "height": 444
+      },
+      "hud": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 696,
+        "width": 430,
+        "height": 134
+      },
+      "cockpit": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 340
+      },
+      "primary": {
+        "serializedVersion": "2",
+        "x": 19,
+        "y": 12,
+        "width": 309,
+        "height": 49
+      },
+      "presentation": {
+        "serializedVersion": "2",
+        "x": 8,
+        "y": 244,
+        "width": 414,
+        "height": 444
+      },
+      "tile31": {
+        "x": 235.9512481689453,
+        "y": 258.28759765625
+      },
+      "tile32": {
+        "x": 253.67922973632812,
+        "y": 269.6829833984375
+      },
+      "tile0": {
+        "x": 398.7264404296875,
+        "y": 364
+      },
+      "tile10": {
+        "x": 215.00003051757812,
+        "y": 482.0970764160156
+      },
+      "tile20": {
+        "x": 31.273582458496094,
+        "y": 364
+      },
+      "tile30": {
+        "x": 214.99996948242188,
+        "y": 245.90289306640625
+      },
+      "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+      "turnState": "Planning",
+      "cameraState": "StrategicOverview",
+      "inspectionName": "Quantum AI Labs",
+      "rent": "450",
+      "risk": "Risque \u2014",
+      "yield": "10,0",
+      "ownership": "\u00c0 ACQU\u00c9RIR",
+      "projection": {
+        "boardPixels": {
+          "serializedVersion": "2",
+          "x": -15.24795150756836,
+          "y": 316.6114196777344,
+          "width": 460.495849609375,
+          "height": 296.4462585449219
+        },
+        "elevation": 40.000003814697266,
+        "azimuth": 45.00000762939453,
+        "orthographicSize": 18.208171844482422,
+        "minTileEdgePixels": 17.62591552734375,
+        "minTileAltitudePixels": 16.034400939941406,
+        "minTileAreaPixels": 405.5008544921875
+      }
+    },
+    "portraitFluxScroll": {
+      "width": 430,
+      "height": 830,
+      "indices": 40,
+      "anchorsVisible": 40,
+      "collidersInside": 40,
+      "identityMarkers": 40,
+      "ownedMarkers": 0,
+      "selected": 31,
+      "expanded": true,
+      "focused": false,
+      "reducedMotion": false,
+      "viewport": {
+        "serializedVersion": "2",
+        "x": 8,
+        "y": 244,
+        "width": 414,
+        "height": 444
+      },
+      "hud": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 696,
+        "width": 430,
+        "height": 134
+      },
+      "cockpit": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 432
+      },
+      "primary": {
+        "serializedVersion": "2",
+        "x": 19,
+        "y": 12,
+        "width": 309,
+        "height": 49
+      },
+      "presentation": {
+        "serializedVersion": "2",
+        "x": 8,
+        "y": 244,
+        "width": 414,
+        "height": 444
+      },
+      "tile31": {
+        "x": 235.9512481689453,
+        "y": 258.28759765625
+      },
+      "tile32": {
+        "x": 253.67922973632812,
+        "y": 269.6829833984375
+      },
+      "tile0": {
+        "x": 398.7264404296875,
+        "y": 364
+      },
+      "tile10": {
+        "x": 215.00003051757812,
+        "y": 482.0970764160156
+      },
+      "tile20": {
+        "x": 31.273582458496094,
+        "y": 364
+      },
+      "tile30": {
+        "x": 214.99996948242188,
+        "y": 245.90289306640625
+      },
+      "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+      "turnState": "Planning",
+      "cameraState": "StrategicOverview",
+      "inspectionName": "Quantum AI Labs",
+      "rent": "450",
+      "risk": "Risque \u2014",
+      "yield": "10,0",
+      "ownership": "\u00c0 ACQU\u00c9RIR",
+      "projection": {
+        "boardPixels": {
+          "serializedVersion": "2",
+          "x": -15.24795150756836,
+          "y": 316.6114196777344,
+          "width": 460.495849609375,
+          "height": 296.4462585449219
+        },
+        "elevation": 40.000003814697266,
+        "azimuth": 45.00000762939453,
+        "orthographicSize": 18.208171844482422,
+        "minTileEdgePixels": 17.62591552734375,
+        "minTileAltitudePixels": 16.034400939941406,
+        "minTileAreaPixels": 405.5008544921875
+      }
+    },
+    "portraitClosed": {
+      "width": 430,
+      "height": 830,
+      "indices": 40,
+      "anchorsVisible": 40,
+      "collidersInside": 40,
+      "identityMarkers": 40,
+      "ownedMarkers": 0,
+      "selected": 31,
+      "expanded": false,
+      "focused": false,
+      "reducedMotion": false,
+      "viewport": {
+        "serializedVersion": "2",
+        "x": 8,
+        "y": 244,
+        "width": 414,
+        "height": 444
+      },
+      "hud": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 696,
+        "width": 430,
+        "height": 134
+      },
+      "cockpit": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 236
+      },
+      "primary": {
+        "serializedVersion": "2",
+        "x": 19,
+        "y": 10,
+        "width": 309,
+        "height": 49
+      },
+      "presentation": {
+        "serializedVersion": "2",
+        "x": 8,
+        "y": 244,
+        "width": 414,
+        "height": 444
+      },
+      "tile31": {
+        "x": 235.9512481689453,
+        "y": 258.28759765625
+      },
+      "tile32": {
+        "x": 253.67922973632812,
+        "y": 269.6829833984375
+      },
+      "tile0": {
+        "x": 398.7264404296875,
+        "y": 364
+      },
+      "tile10": {
+        "x": 215.00003051757812,
+        "y": 482.0970764160156
+      },
+      "tile20": {
+        "x": 31.273582458496094,
+        "y": 364
+      },
+      "tile30": {
+        "x": 214.99996948242188,
+        "y": 245.90289306640625
+      },
+      "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+      "turnState": "Planning",
+      "cameraState": "StrategicOverview",
+      "inspectionName": "Quantum AI Labs",
+      "rent": "450",
+      "risk": "Risque \u2014",
+      "yield": "10,0",
+      "ownership": "\u00c0 ACQU\u00c9RIR",
+      "projection": {
+        "boardPixels": {
+          "serializedVersion": "2",
+          "x": -15.24795150756836,
+          "y": 316.6114196777344,
+          "width": 460.495849609375,
+          "height": 296.4462585449219
+        },
+        "elevation": 40.000003814697266,
+        "azimuth": 45.00000762939453,
+        "orthographicSize": 18.208171844482422,
+        "minTileEdgePixels": 17.62591552734375,
+        "minTileAltitudePixels": 16.034400939941406,
+        "minTileAreaPixels": 405.5008544921875
+      }
+    },
+    "desktopOverview": {
+      "width": 1200,
+      "height": 900,
+      "indices": 40,
+      "anchorsVisible": 40,
+      "collidersInside": 40,
+      "identityMarkers": 40,
+      "ownedMarkers": 0,
+      "selected": 0,
+      "expanded": false,
+      "focused": false,
+      "reducedMotion": false,
+      "viewport": {
+        "serializedVersion": "2",
+        "x": 12,
+        "y": 248,
+        "width": 1176,
+        "height": 506
+      },
+      "hud": {
+        "serializedVersion": "2",
+        "x": 0,
+        "y": 766,
+        "width": 1200,
+        "height": 134
+      },
+      "cockpit": {
+        "serializedVersion": "2",
+        "x": 534,
+        "y": 0,
+        "width": 648,
+        "height": 236
+      },
+      "primary": {
+        "serializedVersion": "2",
+        "x": 553,
+        "y": 10,
+        "width": 521,
+        "height": 49
+      },
+      "presentation": {
+        "serializedVersion": "2",
+        "x": 12,
+        "y": 248,
+        "width": 1176,
+        "height": 506
+      },
+      "tile31": {
+        "x": 637.7677001953125,
+        "y": 208.43780517578125
+      },
+      "tile32": {
+        "x": 669.7250366210938,
+        "y": 228.9796142578125
+      },
+      "tile0": {
+        "x": 931.1941528320312,
+        "y": 399.00006103515625
+      },
+      "tile10": {
+        "x": 600,
+        "y": 611.8875732421875
+      },
+      "tile20": {
+        "x": 268.80584716796875,
+        "y": 399.00006103515625
+      },
+      "tile30": {
+        "x": 599.9999389648438,
+        "y": 186.11248779296875
+      },
+      "economy": "0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0",
+      "turnState": "Planning",
+      "cameraState": "StrategicOverview",
+      "inspectionName": "GO",
+      "rent": "\u2014",
+      "risk": "Risque \u2014",
+      "yield": "\u2014",
+      "ownership": "CASE SP\u00c9CIALE",
+      "projection": {
+        "boardPixels": {
+          "serializedVersion": "2",
+          "x": 184.9438934326172,
+          "y": 231.7048797607422,
+          "width": 830.1121215820312,
+          "height": 534.3883666992188
+        },
+        "elevation": 40.000003814697266,
+        "azimuth": 45.00000762939453,
+        "orthographicSize": 10.952662467956543,
+        "minTileEdgePixels": 31.773313522338867,
+        "minTileAltitudePixels": 28.90439224243164,
+        "minTileAreaPixels": 1317.69140625
+      }
+    }
+  }
+}

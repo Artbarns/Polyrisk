@@ -1,0 +1,25 @@
+{
+  "startingCash": [
+    18000,
+    18000
+  ],
+  "expectedCashBySeat": [
+    15500,
+    20500
+  ],
+  "expectedCashTotal": 36000,
+  "expectedOwnerByTile": {
+    "1": 0,
+    "3": 1
+  },
+  "expectedLevelByTile": {
+    "1": 2,
+    "3": 0
+  },
+  "expectedUpgradeInvestmentByTile": {
+    "1": 1000,
+    "3": 0
+  },
+  "expectedClearedTender": true,
+  "scope": "Native seller accepts restored mixed offer; then reload clients and verify no repeated transfer."
+}

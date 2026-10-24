@@ -1,0 +1,14 @@
+[
+  {
+    "sequence": 1,
+    "expectedStateVersion": 2,
+    "type": "ultimate.use",
+    "createdUtc": "2026-10-15T22:05:45.982131+00:00"
+  },
+  {
+    "sequence": 2,
+    "expectedStateVersion": 3,
+    "type": "turn.roll",
+    "createdUtc": "2026-10-15T22:05:49.460028+00:00"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "timestamp": "2026-10-12T08:49:15.119Z",
+    "message": "[Planning] Safety net : 60s écoulées sans EndPlanningPhase — auto-skip vers RollDice. Vérifie que le Planning Widget est dans la scène.\n"
+  },
+  {
+    "timestamp": "2026-10-12T08:50:40.299Z",
+    "message": "[Planning] Safety net : 60s écoulées sans EndPlanningPhase — auto-skip vers RollDice. Vérifie que le Planning Widget est dans la scène.\n"
+  },
+  {
+    "timestamp": "2026-10-12T08:52:33.640Z",
+    "message": "[Planning] Safety net : 60s écoulées sans EndPlanningPhase — auto-skip vers RollDice. Vérifie que le Planning Widget est dans la scène.\n"
+  },
+  {
+    "timestamp": "2026-10-12T08:50:43.372Z",
+    "message": "Player 0 arrived at tile 8.\n"
+  },
+  {
+    "timestamp": "2026-10-12T08:52:35.752Z",
+    "message": "Player 1 arrived at tile 4.\n"
+  },
+  {
+    "timestamp": "2026-10-12T08:52:39.002Z",
+    "message": "Player 1 arrived at tile 12.\n"
+  },
+  {
+    "timestamp": "2026-10-12T08:51:33.434Z",
+    "message": "Primary action executed: Buy Property Opioid Paradise\n"
+  },
+  {
+    "timestamp": "2026-10-12T08:52:35.820Z",
+    "message": "Primary action executed: Tax\n"
+  }
+]

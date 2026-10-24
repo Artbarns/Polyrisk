@@ -1,0 +1,24 @@
+<!doctype html><meta charset="utf-8"><title>PolyRisk — PASS 2E · Monolith</title>
+<style>body{background:#0c1016;color:#a4aebc;font:15px system-ui;margin:24px;max-width:1250px}h1,h2{color:#e2e8ee}a{color:#39d6bb}video{display:block;max-width:100%;max-height:78vh;background:#0c1016}button,input,select{font:inherit}output{display:block;margin:12px 0}.pair{display:flex;gap:16px;align-items:start}.pair figure{flex:1;margin:0}img{max-width:100%;height:auto}section{margin:32px 0}</style>
+<h1>PASS 2E — Compact Tech Monolith</h1>
+<p><a href="README.md">Rapport, paramètres et limites</a> · <a href="/Monolith/index.html">Prototype WebGL</a></p>
+<p>Rendu Unity réel. « Partie » utilise les données du moteur. Le banc visuel utilise le prefab et PawnMovement réels sur des parcours déterministes, sans actions économiques. Les pistes audio proviennent de la sortie WebAudio de ce WebGL ; aucun microphone.</p>
+<section><h2>Lecteur d’inspection</h2><video id="viewer" controls preload="metadata" src="portrait-game.webm"></video>
+<p><label>Clip <select id="source"><option value="portrait-game.webm">Portrait — partie réelle</option><option value="portrait-fixtures.webm">Portrait — banc visuel et clics</option><option value="desktop-game.webm">Desktop — partie réelle</option></select></label> <label>Temps <input id="time" type="number" step=".05" min="0" value="1"></label> <button id="seek">Afficher</button> <button id="frame">Extraire JPEG original</button></p><output id="meta">Chargement…</output></section>
+<p>Banc visuel : 0–2,9 s, contrôles rapides des 40 positions ; vers 4,4 s, quatre occupants ; 5–6,4 s, activation / repos / émission coupée ; 6,5 s, deux cases ; 8,7 s, six cases ; 11,5 s, douze cases et deux coins ; 16 s, frames lentes ; 19,3 s, Reduced Motion. Ces sauts de contrôle initiaux ne sont pas un mouvement normal du jeu.</p><p><a href="portrait-fixtures-frame-4400.jpg">Quatre occupants — image native</a> · <a href="portrait-fixtures-frame-6150.jpg">Pion testé sans émission</a> · <a href="portrait-fixtures-frame-13000.jpg">Glide et suivi</a></p><section><h2>Audio réel enregistré</h2><p>Contacts légers et verrouillages du banc portrait. Volume de prototype, à juger avec les vidéos.</p><audio id="sound" controls preload="metadata" src="portrait-fixtures-audio.wav"></audio><p><button id="analyze">Vérifier les échantillons audio</button></p><output id="audioMeta"></output></section>
+<section><h2>430 × 830 — avant / après</h2><div class="pair"><figure><figcaption>PASS 2D</figcaption><img src="before-portrait-overview.jpg"></figure><figure><figcaption>PASS 2E — quatre occupants</figcaption><img src="after-portrait-overview.jpg"></figure></div></section>
+<section><h2>1200 × 900 — avant / après</h2><div class="pair"><figure><figcaption>PASS 2D</figcaption><img src="before-desktop-overview.jpg"></figure><figure><figcaption>PASS 2E</figcaption><img src="after-desktop-overview.jpg"></figure></div></section>
+<section><h2>Spécimen de matière — grossissement QA déclaré</h2><p>Même géométrie et mêmes matériaux. Agrandissement d’exposition uniquement, caméra de jeu inchangée.</p><img src="specimen.jpg"></section>
+<script>
+const v=document.getElementById('viewer'),meta=document.getElementById('meta');
+function info(){meta.textContent=`${v.videoWidth} × ${v.videoHeight} · image ${v.currentTime.toFixed(2)} s · durée ${v.duration.toFixed(2)} s`;}
+v.onloadedmetadata=info;v.onseeked=info;
+document.getElementById('source').onchange=e=>{v.pause();v.src=e.target.value;};
+document.getElementById('seek').onclick=()=>{v.pause();v.currentTime=Number(document.getElementById('time').value);};
+document.getElementById('frame').onclick=async()=>{const c=document.createElement('canvas');c.width=v.videoWidth;c.height=v.videoHeight;c.getContext('2d').drawImage(v,0,0);const name=document.getElementById('source').value.replace('.webm','')+'-frame-'+Math.round(v.currentTime*1000)+'.jpg';const res=await fetch('/__capture',{method:'POST',body:new URLSearchParams({name,image:c.toDataURL('image/jpeg',.94).split(',')[1]})});meta.textContent=res.ok?'Saved '+name:'Save failed';};
+document.getElementById('analyze').onclick=async()=>{try{
+ const bytes=await(await fetch('portrait-fixtures-audio.wav')).arrayBuffer(),ctx=new AudioContext(),b=await ctx.decodeAudioData(bytes);let peak=0,sum=0,nonzero=0;
+ for(let channel=0;channel<b.numberOfChannels;channel++){const data=b.getChannelData(channel);for(let i=0;i<data.length;i++){const a=Math.abs(data[i]);peak=Math.max(peak,a);sum+=a*a;if(a>.00001)nonzero++;}}
+ const result={duration:b.duration,sampleRate:b.sampleRate,channels:b.numberOfChannels,peak,rms:Math.sqrt(sum/(b.length*b.numberOfChannels)),nonzero};document.getElementById('audioMeta').textContent=JSON.stringify(result);ctx.close();
+ }catch(e){document.getElementById('audioMeta').textContent='Décodage indisponible : '+e.message;}};
+</script>

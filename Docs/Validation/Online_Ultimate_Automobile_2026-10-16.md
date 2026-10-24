@@ -1,0 +1,9 @@
+# Reconnexion invitée pendant Moteur turbo — 16 octobre 2026
+
+Deux clients WebGL Release indépendants ont rejoint un lobby QA local. La fixture a attribué à l’hôte les propriétés Automobile 13, 14 et 16, puis démarré un tour `Planning` à deux joueurs avec 100 points d’énergie. Le pouvoir a été activé depuis le sélecteur affiché dans l’interface hôte.
+
+Le serveur a accepté `ultimate.use` à la séquence 1. L’état autoritaire est passé à la version 3, conserve le tour `Planning` du joueur 0, consomme l’énergie (100 → 0), active `autoTurboReady` et publie une seule activité « active Moteur turbo ». Après rechargement complet de l’invité, un second relevé serveur est identique : version 3, séquence 1, position 0, énergie 0 et pouvoir prêt. Aucun lancer automatique ni nouvelle commande n’est survenu pendant cette fenêtre. Les snapshots avant/après sont dans ce dossier, expurgés du code de lobby et des identifiants de reconnexion.
+
+Un second parcours a vérifié le retour visuel de l’enchaînement : après `ultimate.use` (séquence 1), l’hôte a lancé les dés (`turn.roll`, séquence 2), puis l’invité a rechargé la page. À son retour, le WebGL affichait le panneau « Moteur Turbo — Choisissez votre jet » ; l’état serveur est `ChooseTurbo`, version 4/séquence 2, sans nouvelle commande après le reload. Cela confirme la reprise de la décision et son panneau à l’invité. Le feed/bandeau d’activité est éphémère et n’est pas l’indicateur retenu pour cette reprise. `commands.json` et `state_after_guest_reload_choice.json` consignent cette seconde observation.
+
+Recette exécutée sur le build WebGL Release en navigateur de bureau et serveur QA sur loopback. Aucun code du jeu, règle, donnée économique ou build publié n’a été modifié. Ce test ne remplace ni un test Safari/iPhone, ni une partie humaine.

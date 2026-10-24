@@ -1,0 +1,1 @@
+PASS: 524 checks; 40 indices/raycasts, 4 meshes, portrait/desktop compact/expanded; official 40-degree projection, comfort-zone continuity, unchanged movement callbacks; no analysis UI, safe insets and short landscape.

@@ -1,0 +1,25 @@
+{
+  "modified": [
+    "Assets/Scripts/Board/BoardVisualTheme.cs",
+    "Assets/Scripts/Visuals/BoardContactFeedback.cs",
+    "Assets/Scripts/Visuals/CompactPawnVisual.cs",
+    "Assets/Settings/GraphiteFoundation/GraphiteTheme.asset",
+    "Assets/Settings/Low_PipelineAsset.asset",
+    "Assets/Shaders/GraphiteSurface.shader",
+    "Assets/Shaders/NeonState.shader"
+  ],
+  "created": [
+    "Assets/Scripts/Debug/SurfaceLightingValidationDriver.cs",
+    "Assets/Scripts/Debug/SurfaceLightingValidationDriver.cs.meta",
+    "Assets/Scripts/Editor/SurfaceLightingValidation.cs",
+    "Assets/Scripts/Editor/SurfaceLightingValidation.cs.meta",
+    "Assets/Scripts/Visuals/BoardSurfaceLighting.cs",
+    "Assets/Scripts/Visuals/BoardSurfaceLighting.cs.meta"
+  ],
+  "unchangedExistingFiles": 593,
+  "boardGeometryScene40IndicesCollidersCameraPawnMovementBusinessEconomyNetworkDiceCockpitSelection": "byte-identical",
+  "pawnMotionAndAudioGeometryTriggers": "byte-identical",
+  "contactSystem": "byte-identical except final-arrival flag in unused texture channel",
+  "LowProfile": "one main light enabled, no shadow settings changed",
+  "shaderPassCounts": "unchanged"
+}

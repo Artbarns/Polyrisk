@@ -1,0 +1,24 @@
+{
+  "pass2a_visual_sources_identical": [
+    "Assets/Scenes/SampleScene.unity",
+    "Assets/Scripts/Board/PolyRiskBoard.cs",
+    "Assets/Scripts/Board/BoardVisualTheme.cs",
+    "Assets/Shaders/GraphiteSurface.shader",
+    "Assets/Settings/GraphiteFoundation/GraphiteAccents.mat.meta",
+    "Assets/Settings/GraphiteFoundation/GraphiteBackground.mat.meta",
+    "Assets/Settings/GraphiteFoundation/GraphitePost.asset.meta",
+    "Assets/Settings/GraphiteFoundation/GraphiteAccents.mat",
+    "Assets/Settings/GraphiteFoundation/GraphitePost.asset",
+    "Assets/Settings/GraphiteFoundation/GraphiteEngraving.mat.meta",
+    "Assets/Settings/GraphiteFoundation/GraphiteTiles.mat.meta",
+    "Assets/Settings/GraphiteFoundation/GraphiteTheme.asset.meta",
+    "Assets/Settings/GraphiteFoundation/GraphiteEngraving.mat",
+    "Assets/Settings/GraphiteFoundation/GraphiteFrame.mat.meta",
+    "Assets/Settings/GraphiteFoundation/GraphiteTiles.mat",
+    "Assets/Settings/GraphiteFoundation/GraphiteFrame.mat",
+    "Assets/Settings/GraphiteFoundation/GraphiteTheme.asset",
+    "Assets/Settings/GraphiteFoundation/GraphiteBackground.mat"
+  ],
+  "reference_build": "Builds/GraphiteFoundation",
+  "captured_state": "Local turn 1, GO, compact, 18000 capital/net worth; 1200x900 and 430x830."
+}

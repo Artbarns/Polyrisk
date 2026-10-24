@@ -1,0 +1,140 @@
+{
+  "portraitGame": {
+    "sampleCount": 272,
+    "movingSamples": 21,
+    "movingOutsideReferenceViewport": 0,
+    "holdOutsideReferenceViewport": 0,
+    "rotation40azimuth45": true,
+    "holdsConstantPoseAndZoom": [
+      true
+    ],
+    "observedHoldSeconds": [
+      0.268
+    ],
+    "observedReturnSeconds": [
+      0.395
+    ],
+    "holdsInterruptedBeforeReturn": 0,
+    "traceVideoRange": [
+      0.03800010681152344,
+      21.130001068115234
+    ],
+    "sampledCameraPlaneTravel": {
+      "horizontal": 1.642,
+      "vertical": 0.0
+    },
+    "fixturePass": 0,
+    "fixtureFail": 0,
+    "errors": []
+  },
+  "fixtures": {
+    "sampleCount": 223,
+    "movingSamples": 158,
+    "movingOutsideReferenceViewport": 0,
+    "holdOutsideReferenceViewport": 0,
+    "rotation40azimuth45": true,
+    "holdsConstantPoseAndZoom": [
+      true,
+      true
+    ],
+    "observedHoldSeconds": [
+      0.263,
+      0.253
+    ],
+    "observedReturnSeconds": [
+      0.4,
+      0.474
+    ],
+    "holdsInterruptedBeforeReturn": 0,
+    "traceVideoRange": [
+      0.035999298095703125,
+      17.31599998474121
+    ],
+    "sampledCameraPlaneTravel": {
+      "horizontal": 10.1602,
+      "vertical": 0.0267
+    },
+    "fixturePass": 18,
+    "fixtureFail": 0,
+    "errors": []
+  },
+  "desktopGame": {
+    "sampleCount": 420,
+    "movingSamples": 72,
+    "movingOutsideReferenceViewport": 0,
+    "holdOutsideReferenceViewport": 0,
+    "rotation40azimuth45": true,
+    "holdsConstantPoseAndZoom": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "observedHoldSeconds": [
+      0.277,
+      0.269
+    ],
+    "observedReturnSeconds": [
+      0.474,
+      0.396,
+      0.442
+    ],
+    "holdsInterruptedBeforeReturn": 1,
+    "traceVideoRange": [
+      9.043000221252441,
+      44.77799987792969
+    ],
+    "sampledCameraPlaneTravel": {
+      "horizontal": 0.0114,
+      "vertical": 2.0512
+    },
+    "fixturePass": 0,
+    "fixtureFail": 0,
+    "errors": []
+  },
+  "desktopFixtures": {
+    "sampleCount": 210,
+    "movingSamples": 147,
+    "movingOutsideReferenceViewport": 0,
+    "holdOutsideReferenceViewport": 0,
+    "rotation40azimuth45": true,
+    "holdsConstantPoseAndZoom": [
+      true,
+      true
+    ],
+    "observedHoldSeconds": [
+      0.279,
+      0.325
+    ],
+    "observedReturnSeconds": [
+      0.452,
+      0.458
+    ],
+    "holdsInterruptedBeforeReturn": 0,
+    "traceVideoRange": [
+      0.0670003890991211,
+      17.957000732421875
+    ],
+    "sampledCameraPlaneTravel": {
+      "horizontal": 2.0152,
+      "vertical": 10.2579
+    },
+    "fixturePass": 18,
+    "fixtureFail": 0,
+    "errors": []
+  },
+  "consultation": {
+    "portraitProjectionExactlyEqual": true,
+    "portraitEconomyExactlyEqual": true,
+    "selected31": true,
+    "statesRecorded": [
+      "portraitOverview",
+      "portraitInspection",
+      "portraitExpanded",
+      "portraitPortfolio",
+      "portraitFluxScroll",
+      "portraitClosed",
+      "desktopOverview"
+    ]
+  }
+}

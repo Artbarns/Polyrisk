@@ -1,0 +1,18 @@
+{
+  "portraitGame": {
+    "width": 430,
+    "height": 830,
+    "duration": 24.959,
+    "seekingTo4_95Seconds": "verified via visible player metadata after HTTP Range support"
+  },
+  "portraitFixtures": {
+    "width": 430,
+    "height": 830,
+    "duration": 27.792,
+    "readyState": 4
+  },
+  "audioDuration": 27.78,
+  "allEightImagesLoadedAtNativeDimensions": true,
+  "viewportOverride": "reset",
+  "tab": "http://127.0.0.1:9003/evidence/review.html"
+}

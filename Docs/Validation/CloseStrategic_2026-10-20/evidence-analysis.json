@@ -1,0 +1,398 @@
+{
+  "portraitGame": {
+    "sampleCount": 346,
+    "movingSamples": 23,
+    "movingOutsideReferenceViewport": 0,
+    "holdOutsideReferenceViewport": 0,
+    "rotation40azimuth45": true,
+    "holdsConstantPoseAndZoom": [
+      true
+    ],
+    "observedHoldSeconds": [
+      0.263
+    ],
+    "observedReturnSeconds": [
+      0.392
+    ],
+    "holdsInterruptedBeforeReturn": 0,
+    "earlyFollowSamples": [
+      {
+        "firstSampledPanDelay": 0.054,
+        "firstSampledZoomDelay": 0.054
+      }
+    ],
+    "sampledCameraPlaneTravel": {
+      "horizontal": 2.5675,
+      "vertical": 0.0
+    },
+    "fixturePass": 0,
+    "fixtureFail": 0,
+    "restPawnPositionsPass": 0,
+    "resultFacesUpInAllVisibleResultSamples": true,
+    "dice": [
+      {
+        "id": 1,
+        "actor": 0,
+        "values": [
+          2,
+          3
+        ],
+        "begin": 24.067,
+        "result": 24.848,
+        "resultUp": true,
+        "fade": 25.022,
+        "resultDelay": 0.781,
+        "movementLeadIn": 0.955,
+        "readableBeforeMovement": 0.174,
+        "cameraStableBeforeMovement": false
+      }
+    ],
+    "errors": [],
+    "traceVideoRange": [
+      0.04500007629394531,
+      22.01799774169922
+    ]
+  },
+  "fixtures": {
+    "sampleCount": 353,
+    "movingSamples": 172,
+    "movingOutsideReferenceViewport": 0,
+    "holdOutsideReferenceViewport": 0,
+    "rotation40azimuth45": true,
+    "holdsConstantPoseAndZoom": [
+      true,
+      true
+    ],
+    "observedHoldSeconds": [
+      0.3,
+      0.326
+    ],
+    "observedReturnSeconds": [
+      0.421,
+      0.404
+    ],
+    "holdsInterruptedBeforeReturn": 0,
+    "earlyFollowSamples": [
+      {
+        "firstSampledPanDelay": 0.0,
+        "firstSampledZoomDelay": 0.056
+      },
+      {
+        "firstSampledPanDelay": 0.0,
+        "firstSampledZoomDelay": 0.064
+      },
+      {
+        "firstSampledPanDelay": 0.057,
+        "firstSampledZoomDelay": 0.057
+      }
+    ],
+    "sampledCameraPlaneTravel": {
+      "horizontal": 18.3373,
+      "vertical": 0.0945
+    },
+    "fixturePass": 76,
+    "fixtureFail": 0,
+    "restPawnPositionsPass": 40,
+    "resultFacesUpInAllVisibleResultSamples": true,
+    "dice": [
+      {
+        "id": -201,
+        "actor": 0,
+        "values": [
+          1,
+          6
+        ],
+        "begin": 17.05,
+        "result": 17.818,
+        "resultUp": true,
+        "resultDelay": 0.768
+      },
+      {
+        "id": -202,
+        "actor": 0,
+        "values": [
+          2,
+          5
+        ],
+        "begin": 17.989,
+        "result": 18.775,
+        "resultUp": true,
+        "resultDelay": 0.786
+      },
+      {
+        "id": -203,
+        "actor": 0,
+        "values": [
+          3,
+          4
+        ],
+        "begin": 18.999,
+        "result": 19.763,
+        "resultUp": true,
+        "resultDelay": 0.764
+      },
+      {
+        "id": -206,
+        "actor": 0,
+        "values": [
+          6,
+          6
+        ],
+        "begin": 19.994,
+        "result": 19.994,
+        "resultUp": true,
+        "resultDelay": 0.0
+      },
+      {
+        "id": -201,
+        "actor": 0,
+        "values": [
+          1,
+          1
+        ],
+        "begin": 20.601,
+        "result": 21.388,
+        "resultUp": true,
+        "fade": 21.559,
+        "resultDelay": 0.787,
+        "movementLeadIn": 0.958,
+        "readableBeforeMovement": 0.171,
+        "cameraStableBeforeMovement": true
+      },
+      {
+        "id": -201,
+        "actor": 0,
+        "values": [
+          1,
+          1
+        ],
+        "begin": 37.412,
+        "result": 37.412,
+        "resultUp": true,
+        "fade": 37.688,
+        "resultDelay": 0.0,
+        "movementLeadIn": 0.276,
+        "readableBeforeMovement": 0.276,
+        "cameraStableBeforeMovement": true
+      }
+    ],
+    "errors": [],
+    "traceVideoRange": [
+      0.049999237060546875,
+      24.589000701904297
+    ]
+  },
+  "desktopGame": {
+    "sampleCount": 246,
+    "movingSamples": 14,
+    "movingOutsideReferenceViewport": 0,
+    "holdOutsideReferenceViewport": 0,
+    "rotation40azimuth45": true,
+    "holdsConstantPoseAndZoom": [
+      true
+    ],
+    "observedHoldSeconds": [
+      0.282
+    ],
+    "observedReturnSeconds": [
+      0.474
+    ],
+    "holdsInterruptedBeforeReturn": 0,
+    "earlyFollowSamples": [
+      {
+        "firstSampledPanDelay": 0.0,
+        "firstSampledZoomDelay": 0.107
+      }
+    ],
+    "sampledCameraPlaneTravel": {
+      "horizontal": 1.9736,
+      "vertical": 0.0
+    },
+    "fixturePass": 0,
+    "fixtureFail": 0,
+    "restPawnPositionsPass": 0,
+    "resultFacesUpInAllVisibleResultSamples": true,
+    "dice": [
+      {
+        "id": 1,
+        "actor": 0,
+        "values": [
+          5,
+          2
+        ],
+        "begin": 782.337,
+        "result": 783.129,
+        "resultUp": true,
+        "fade": 783.476,
+        "resultDelay": 0.792,
+        "movementLeadIn": 1.139,
+        "readableBeforeMovement": 0.347,
+        "cameraStableBeforeMovement": true
+      }
+    ],
+    "errors": [],
+    "traceVideoRange": [
+      0.1400146484375,
+      21.82000732421875
+    ]
+  },
+  "desktopFixtures": {
+    "sampleCount": 306,
+    "movingSamples": 148,
+    "movingOutsideReferenceViewport": 0,
+    "holdOutsideReferenceViewport": 0,
+    "rotation40azimuth45": true,
+    "holdsConstantPoseAndZoom": [
+      true,
+      true
+    ],
+    "observedHoldSeconds": [
+      0.334,
+      0.256
+    ],
+    "observedReturnSeconds": [
+      0.406,
+      0.405
+    ],
+    "holdsInterruptedBeforeReturn": 0,
+    "earlyFollowSamples": [
+      {
+        "firstSampledPanDelay": 0.071,
+        "firstSampledZoomDelay": 0.071
+      },
+      {
+        "firstSampledPanDelay": 0.105,
+        "firstSampledZoomDelay": 0.105
+      },
+      {
+        "firstSampledPanDelay": 0.0,
+        "firstSampledZoomDelay": 0.081
+      }
+    ],
+    "sampledCameraPlaneTravel": {
+      "horizontal": 17.6465,
+      "vertical": 9.2192
+    },
+    "fixturePass": 76,
+    "fixtureFail": 0,
+    "restPawnPositionsPass": 40,
+    "resultFacesUpInAllVisibleResultSamples": true,
+    "dice": [
+      {
+        "id": -201,
+        "actor": 0,
+        "values": [
+          1,
+          6
+        ],
+        "begin": 25.012,
+        "result": 25.803,
+        "resultUp": true,
+        "resultDelay": 0.791
+      },
+      {
+        "id": -202,
+        "actor": 0,
+        "values": [
+          2,
+          5
+        ],
+        "begin": 26.009,
+        "result": 26.85,
+        "resultUp": true,
+        "resultDelay": 0.841
+      },
+      {
+        "id": -203,
+        "actor": 0,
+        "values": [
+          3,
+          4
+        ],
+        "begin": 27.067,
+        "result": 27.834,
+        "resultUp": true,
+        "resultDelay": 0.767
+      },
+      {
+        "id": -206,
+        "actor": 0,
+        "values": [
+          6,
+          6
+        ],
+        "begin": 28.068,
+        "result": 28.068,
+        "resultUp": true,
+        "resultDelay": 0.0
+      },
+      {
+        "id": -201,
+        "actor": 0,
+        "values": [
+          1,
+          1
+        ],
+        "begin": 28.694,
+        "result": 29.457,
+        "resultUp": true,
+        "fade": 29.689,
+        "resultDelay": 0.763,
+        "movementLeadIn": 0.995,
+        "readableBeforeMovement": 0.232,
+        "cameraStableBeforeMovement": false
+      },
+      {
+        "id": -201,
+        "actor": 0,
+        "values": [
+          1,
+          1
+        ],
+        "begin": 45.922,
+        "result": 45.922,
+        "resultUp": true,
+        "fade": 46.196,
+        "resultDelay": 0.0,
+        "movementLeadIn": 0.274,
+        "readableBeforeMovement": 0.274,
+        "cameraStableBeforeMovement": true
+      }
+    ],
+    "errors": [],
+    "traceVideoRange": [
+      0.05399894714355469,
+      27.035999298095703
+    ]
+  },
+  "consultation": {
+    "portraitProjectionExactlyEqual": true,
+    "portraitEconomyExactlyEqual": true,
+    "selected31": true,
+    "statesRecorded": [
+      "desktopOverview",
+      "desktopExpanded",
+      "portraitOverview",
+      "portraitInspected",
+      "portraitExpanded"
+    ]
+  },
+  "restComparison": {
+    "portraitOverview": {
+      "oldSize": 20.25311279296875,
+      "newSize": 18.208171844482422,
+      "linearGainPercent": 11.231,
+      "areaGainPercent": 23.723,
+      "collidersVisible": 40,
+      "indices": 40
+    },
+    "desktopOverview": {
+      "oldSize": 11.567147254943848,
+      "newSize": 11.280900955200195,
+      "linearGainPercent": 2.537,
+      "areaGainPercent": 5.139,
+      "collidersVisible": 40,
+      "indices": 40
+    }
+  }
+}

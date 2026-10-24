@@ -1,0 +1,12 @@
+{
+  "Assets/Scripts/Editor/EconomyRegression.cs": "215c2367d66389ebf41041a7f2de765eed1e27156f2937fe3e00ead4cdf5304a",
+  "Assets/Scripts/Editor/GameEventRegression.cs": "70d7b86006d617c604591e7c54833a4812b5b2aceb2516b95bd4e669d095fbb9",
+  "Assets/Scripts/Systems/BoardInteractionManager.cs": "4404cedf4c32b8169a1310123c84221fbd2347ab08c27c39f3167d90863828e9",
+  "Assets/Scripts/Systems/GameEventPresenter.cs": "73146708a8e15775ce9454374df8d8f7f3826b1b9cd90138a347bc13cbbe8754",
+  "Assets/Scripts/UI/ActionButtonsWidget.cs": "a85be4685a963e48bf6350529a9595a8ceaf06e38a0aca693f78f12a5b5ea239",
+  "Assets/Scripts/UI/GameEventTextFormatter.cs": "720c8fed129b46c92d81ffe015a563c1024ce59e02eb47525da9564b91a9c4ae",
+  "Assets/Scripts/UI/PulseDiceView.cs": "423c50e4dde8ec2c8f481a0037a167878b03f4956a6ecf3ede3910decb287d8d",
+  "Assets/Scripts/UI/TopHUDWidget.cs": "c9d6756b6d3b098adc07cad32bb97ed22b4385ffcbabb21eeed4cfadbeb98a1b",
+  "Assets/UI/Layouts/TileDetail_BottomSheet.uxml": "215e2bdd59994cd662f076b7997016dc82e4e78d3ffaa0c83f71f1b2e9983639",
+  "Assets/UI/Styles/Theme.uss": "6cfabe7190f04c0b8d7c204837f49717e579a0872736990505f8c3dd9241f602"
+}

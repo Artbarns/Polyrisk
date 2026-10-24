@@ -1,0 +1,20 @@
+{
+  "portrait-fixtures": {
+    "video": "Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/bt709/iec61966-2-1), 430x830, SAR 1:1 DAR 43:83, 1k tbr, 1k tbn (default)",
+    "audio": "Stream #0:1(eng): Audio: opus, 48000 Hz, stereo, fltp (default)",
+    "peakDbFS": -28.0,
+    "decoded": true
+  },
+  "portrait-game": {
+    "video": "Stream #0:1(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/bt709/iec61966-2-1), 430x830, SAR 1:1 DAR 43:83, 1k tbr, 1k tbn (default)",
+    "audio": "Stream #0:0(eng): Audio: opus, 48000 Hz, stereo, fltp (default)",
+    "peakDbFS": -28.1,
+    "decoded": true
+  },
+  "desktop-game": {
+    "video": "Stream #0:1(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/bt709/iec61966-2-1), 1200x900, SAR 1:1 DAR 4:3, 1k tbr, 1k tbn (default)",
+    "audio": "Stream #0:0(eng): Audio: opus, 48000 Hz, stereo, fltp (default)",
+    "peakDbFS": -27.6,
+    "decoded": true
+  }
+}

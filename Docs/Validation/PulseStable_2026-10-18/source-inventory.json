@@ -1,0 +1,11 @@
+{
+  "Assets/UI/Styles/Theme.uss": "88065f13c04025089bb3cf50b0e1ee6057c6ec68883ed6c10c89c4c97e823e59",
+  "Assets/UI/Layouts/TileDetail_BottomSheet.uxml": "2111b7e47409371d53298cfa385e7f6f45ab08387f5f03d8279c390e1e59312c",
+  "Assets/Scripts/UI/ActionButtonsWidget.cs": "8f712a6e9a861f440786f66f7ec5a22a84f81667f73a91d5b90f431cab6a9a1a",
+  "Assets/Scripts/UI/TopHUDWidget.cs": "a585b9332d3ad32e3817a671f6f8c9e56d728619bf052f1c467d85763f887a5b",
+  "Assets/Scripts/Systems/BoardInteractionManager.cs": "41b0cac8a60cea9e3bcf0691ad54a32b42612b0393f2d726cbc5fd3092d34cfb",
+  "Assets/Scripts/Editor/EconomyRegression.cs": "2e50e40bae3a478e90858b657a4eb9d4c614a4fee1cc828807733b17a3d29d3b",
+  "Assets/Scripts/Editor/UIAssetRegression.cs": "e6a0ee6a433581310a30047f72d7b7a7821b3994b0133de981ff5435ca782380",
+  "Assets/Scripts/UI/PulseDiceView.cs": "4727aa0f12a9970d5b5eefaec16cc9cfad428c2feb0ee05a4bcaa60da771a841",
+  "Assets/Scripts/UI/PulseDiceView.cs.meta": "0eb22c82ca68668585c31c0e5659e3d7bc209fd0a906dc220beb944b6708a89e"
+}

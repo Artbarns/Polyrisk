@@ -1,0 +1,16 @@
+{
+  "portrait-game": {
+    "width": 430,
+    "height": 830,
+    "decodedFrames": 182,
+    "indexedContainerHasIdenticalDecodedFramesAndAudio": true,
+    "sha256": "9b761c552b6ad59a77fd6df17b5747116d87556d604d1d59fc951c7900d957fd"
+  },
+  "portrait-fixtures": {
+    "width": 430,
+    "height": 830,
+    "decodedFrames": 197,
+    "indexedContainerHasIdenticalDecodedFramesAndAudio": true,
+    "sha256": "15149162fd439960eee8f46928406468901ac28e43bd9765a7a31782fd688003"
+  }
+}

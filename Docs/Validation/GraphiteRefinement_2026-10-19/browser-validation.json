@@ -1,0 +1,97 @@
+{
+  "build": "Builds/GraphiteRefinement",
+  "render_pipeline": "URP 14.0.12",
+  "unity": "2022.3.62f3",
+  "configuration": "IL2CPP WebGL Development",
+  "date": "2026-10-19",
+  "state": {
+    "mode": "Play Local",
+    "turn": 1,
+    "tile": "GO",
+    "capital": 18000,
+    "net_worth": 18000,
+    "players": 4,
+    "dice_rolled_before_capture": false
+  },
+  "desktop": {
+    "viewport": [
+      1200,
+      900
+    ],
+    "canvas": [
+      1200,
+      900
+    ],
+    "dpr": 1,
+    "warnings_and_errors": [],
+    "capture": "pass2a1-desktop.jpg"
+  },
+  "portrait": {
+    "viewport": [
+      430,
+      830
+    ],
+    "canvas": [
+      430,
+      830
+    ],
+    "dpr": 1,
+    "warnings_and_errors": [],
+    "cockpit": "compact",
+    "capture": "pass2a1-portrait-compact.jpg"
+  },
+  "portrait_isolation": {
+    "viewport": [
+      430,
+      830
+    ],
+    "canvas": [
+      430,
+      830
+    ],
+    "dpr": 1,
+    "warnings_and_errors": [],
+    "launch_query": "graphiteIsolation=1",
+    "capture": "pass2a1-portrait-isolation.jpg",
+    "hidden_log_utc": "2026-10-19T17:29:26.485Z",
+    "restore_via_F10_log_utc": "2026-10-19T17:29:33.150Z",
+    "restoration_visually_verified": true,
+    "financial_state_before_after": [
+      18000,
+      18000
+    ]
+  },
+  "selection": {
+    "tap": [
+      239,
+      272
+    ],
+    "selected_index": 31,
+    "property": "Quantum AI Labs",
+    "log_utc": "2026-10-19T17:28:51.701Z",
+    "capture": "selection-index31.jpg"
+  },
+  "baseline": "Exact PASS 2A images reused after source identity checks; same viewport, framing and initial game state.",
+  "limitations": [
+    "Desktop browser at DPR 1; no physical mobile test.",
+    "No GPU frame time, draw call, GPU memory or post-processing profile measured.",
+    "No Release build or Safari mobile test in this iteration.",
+    "Overlay occlusion and portrait board clipping preserved by scope."
+  ],
+  "desktop_isolation": {
+    "viewport": [
+      1200,
+      900
+    ],
+    "canvas": [
+      1200,
+      900
+    ],
+    "dpr": 1,
+    "warnings_and_errors": [],
+    "launch_query": "graphiteIsolation=1",
+    "capture": "pass2a1-desktop-isolation.jpg",
+    "hidden_log_utc": "2026-10-19T17:29:46.050Z"
+  },
+  "screenshots_dimensions_verified": true
+}

@@ -1,0 +1,1 @@
+PASS: 189 checks; 40 indices/raycasts, 4 meshes, portrait/desktop compact/expanded; A/B/C projection and screen raycasts; no analysis UI, safe insets and short landscape.

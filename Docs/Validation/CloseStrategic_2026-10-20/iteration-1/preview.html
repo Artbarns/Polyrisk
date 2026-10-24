@@ -1,0 +1,12 @@
+<!doctype html><meta charset="utf-8"><title>PolyRisk — PASS 2D · preuves WebGL</title>
+<style>body{background:#0c1016;color:#a4aebc;font:15px system-ui;margin:24px;max-width:1250px}h1,h2{color:#eee}video{max-width:100%;max-height:75vh;background:black;display:block}section{margin:30px 0}button,input{font:inherit}a{color:#39d6bb}output{display:block;margin:8px 0}</style>
+<h1>PolyRisk — PASS 2D</h1><p><a href="comparisons.html">Comparatifs avant / après</a> · <a href="README.md">Rapport et limites</a></p><p>Captures du canvas WebGL. Les clips « partie » emploient les vrais dés. Les clips « fixtures » utilisent une copie du pion existant, le vrai PawnMovement et les waypoints du plateau ; ils ne représentent pas une partie économique.</p>
+<section><h2>Lecteur d’inspection — partie portrait par défaut</h2><video id="portrait" controls preload="metadata" src="preview-portrait.webm"></video><p><label>Clip à inspecter <select id="source"><option value="preview-portrait.webm">Aperçu portrait</option><option value="portrait-fixtures.webm">Parcours portrait</option><option value="desktop-game.webm">Partie desktop</option><option value="desktop-fixtures.webm">Parcours desktop</option></select></label> <label>Temps <input id="time" type="number" value="1" min="0" step=".05"></label><button id="seek">Afficher</button><button id="frame">Extraire JPEG original</button></p><output id="meta">Chargement des métadonnées…</output></section>
+<script>
+const v=document.getElementById('portrait'),out=document.getElementById('meta');
+function meta(){out.textContent=`${v.videoWidth} × ${v.videoHeight} · durée ${v.duration.toFixed(2)} s · image ${v.currentTime.toFixed(2)} s`;}
+v.onloadedmetadata=meta;v.onseeked=meta;
+document.getElementById('source').onchange=e=>{v.pause();v.src=e.target.value;};
+document.getElementById('seek').onclick=()=>{v.pause();v.currentTime=Number(document.getElementById('time').value);};
+document.getElementById('frame').onclick=async()=>{let c=document.createElement('canvas');c.width=v.videoWidth;c.height=v.videoHeight;c.getContext('2d').drawImage(v,0,0);let name=document.getElementById('source').value.replace('.webm','')+'-frame-'+Math.round(v.currentTime*1000)+'.jpg';let response=await fetch('/__capture',{method:'POST',body:new URLSearchParams({name,image:c.toDataURL('image/jpeg',.94).split(',')[1]})});out.textContent=response.ok?'Saved '+name:'Save failed';};
+</script>

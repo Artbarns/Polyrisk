@@ -1,0 +1,130 @@
+{
+  "Builds/MobileBoardPresence/index.html": {
+    "bytes": 5726,
+    "sha256": "c654da6d6ea71675097cb10ff9f5908bd461dd33d312e88a136df51a065219d8"
+  },
+  "Builds/MobileBoardPresence/TemplateData/MemoryProfiler.png": {
+    "bytes": 665,
+    "sha256": "0ce87be20d0c24ab6cb73b57de2004da261cc2a641e69319c6ae3fe11fc85483"
+  },
+  "Builds/MobileBoardPresence/TemplateData/fullscreen-button.png": {
+    "bytes": 175,
+    "sha256": "21221581673a54b8139d408d4a3f8d2b879e86827d4b6fc53b995ff7a99ee3e9"
+  },
+  "Builds/MobileBoardPresence/TemplateData/unity-logo-dark.png": {
+    "bytes": 3042,
+    "sha256": "c1b72d26c096487dabc948b54bc203f8dac7ed4e3f5733918798e858acb4b159"
+  },
+  "Builds/MobileBoardPresence/TemplateData/favicon.ico": {
+    "bytes": 2305,
+    "sha256": "9c13beb90ee8f70580d52a21d5233970d1c89e71e4a34a462c22610941c3c77f"
+  },
+  "Builds/MobileBoardPresence/TemplateData/webmemd-icon.png": {
+    "bytes": 1670,
+    "sha256": "c56f5494640cedda273aad38d58e6ab9da625d5b3f4d875c0ff92c6192a569c2"
+  },
+  "Builds/MobileBoardPresence/TemplateData/progress-bar-empty-light.png": {
+    "bytes": 109,
+    "sha256": "143696c060ad43d6c30f19ff5f49000927a139a2a1e4c9f45fafaa2b90d7d2be"
+  },
+  "Builds/MobileBoardPresence/TemplateData/webgl-logo.png": {
+    "bytes": 2947,
+    "sha256": "b30c3af2a4538c6edf5f2411953760641dfa257f2a4cc5b88d671aa243b1f12f"
+  },
+  "Builds/MobileBoardPresence/TemplateData/style.css": {
+    "bytes": 1600,
+    "sha256": "a41afbb1885cb828b0c63f3137e2f353440849843ee65834abe55bbeefcfc754"
+  },
+  "Builds/MobileBoardPresence/TemplateData/progress-bar-full-dark.png": {
+    "bytes": 74,
+    "sha256": "3306a6244dcb3926fca38a28e3ced589df8ff1beed955eb17c0bbf01c918bc62"
+  },
+  "Builds/MobileBoardPresence/TemplateData/progress-bar-full-light.png": {
+    "bytes": 84,
+    "sha256": "12395ea785480c5cdf12fade6e6cbf49666d5bb1cef7240c113dbcba6bdc5c87"
+  },
+  "Builds/MobileBoardPresence/TemplateData/progress-bar-empty-dark.png": {
+    "bytes": 96,
+    "sha256": "bbee7131afe8a3365906240d89184dc86234c119467f390bc4bc6802328fdb4d"
+  },
+  "Builds/MobileBoardPresence/TemplateData/unity-logo-light.png": {
+    "bytes": 3077,
+    "sha256": "002990aea0d946833cadc1519d5b7e50a4570bd537a0517dd79a59d3eec84da7"
+  },
+  "Builds/MobileBoardPresence/Build/c662cf9b9d37a62b1e6dd58dcc3612be.framework.js": {
+    "bytes": 752263,
+    "sha256": "be2024ba83b93ccfb176f8f2f94696f5817542f182e68cb5478fb59408a2209b"
+  },
+  "Builds/MobileBoardPresence/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js": {
+    "bytes": 46362,
+    "sha256": "c0b225d624e41656b7790ffcf716c8c986087a938d30e61d28996373b646544a"
+  },
+  "Builds/MobileBoardPresence/Build/e1b2af14665dd577a303585a656e35f6.data": {
+    "bytes": 9536811,
+    "sha256": "e126cdd22250acc7576b7ad5bb8ae7e42edf04ddde384a03cf7948fd6b30edcc"
+  },
+  "Builds/MobileBoardPresence/Build/43eee960876d224ec7b2f5b44dac0da3.wasm": {
+    "bytes": 54175087,
+    "sha256": "58fc52447dee33f17672bbf7a52e3baf4c5f7da641eb88059998b5c4d1cdb6de"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/before-desktop.jpg": {
+    "bytes": 58275,
+    "sha256": "fe094d9ad60f56a370169f91f533919e9c28786da13b11efea715f97dc6d6f13"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/manual-roll-start.jpg": {
+    "bytes": 28306,
+    "sha256": "a0ca7c2fa4864306d78fd80e6b42df1490422ab570582a416e4e0bd1ecab4256"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/inspection-index31.jpg": {
+    "bytes": 29473,
+    "sha256": "3781372c60080aacbdf7ef02db6ccc9b120525908e15c04923f37025ac151f25"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/desktop-normal.jpg": {
+    "bytes": 53967,
+    "sha256": "357780889bd205e6a6fca65f74605a8ed6bd45971e958fa6a3add989c1068d03"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/portrait-analysis.jpg": {
+    "bytes": 35003,
+    "sha256": "e4941d58f15f971d890e87e6943d01b5a75c4ed7f10cc9ccc3f2e7c9328640c5"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/before-portrait.jpg": {
+    "bytes": 33962,
+    "sha256": "4f53d71d09cef6941e7aa498b0990167dbaf7e46ea1ec9400f4ad0b348b19b67"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/portrait-expanded.jpg": {
+    "bytes": 38018,
+    "sha256": "f8f555fbb40ba0ae3ef0c6553f8f4e3f4957c1f1b573bea659dc91395ac393a2"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/ownership-gameplay.jpg": {
+    "bytes": 30704,
+    "sha256": "90a4b36cb5e0c268042b6862d40cde5369b3a5abbeb23fa629e56bb7539628a0"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/portrait-normal.jpg": {
+    "bytes": 27340,
+    "sha256": "1fe178251edb4a662609b52583f05d9cda3c7a5f972651425b430b9177f35584"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/expanded-movement.jpg": {
+    "bytes": 36737,
+    "sha256": "e4a0f069ff7fb81c38dd6a25d2c14d1b61d9e886a95b0fb7b713637ed3843dae"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/menu-access.jpg": {
+    "bytes": 18754,
+    "sha256": "6bd20809e84aab5c80765a7355e3fb0924b94d26c10280e34a89077fad655eef"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/build.log": {
+    "bytes": 635928,
+    "sha256": "787e2b746455314b72aa3a464c29aaf7ed4bbfa55ab0d3549142ccf753ad2459"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/browser-validation.json": {
+    "bytes": 5200,
+    "sha256": "06034dbc685866ab2ce25639f2ff3f5bc74994a551d2de9db9105305d572629a"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/scope-validation.json": {
+    "bytes": 842,
+    "sha256": "630d36ea167732b0b2488187f55fea255c0d0bfe7c47900f136fcbef9fd0f4ba"
+  },
+  "Docs/Validation/MobileBoardPresence_2026-10-19/after-source-inventory.json": {
+    "bytes": 70809,
+    "sha256": "cc8ef11137f6e8a3844eb56638b32886e06b7b4e58d2a60df6f8cf931d639acf"
+  }
+}

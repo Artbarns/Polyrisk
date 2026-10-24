@@ -1,0 +1,82 @@
+{
+  "portrait-fixtures.webm": {
+    "bytes": 1800376,
+    "sha256": "840efa0845108c7b0d02f9643527e705719a4023c9e81cc468cf84f4e8aa815d"
+  },
+  "portrait-game.webm": {
+    "bytes": 974440,
+    "sha256": "67c3f29c82d6ff6d7b206858c739027e8b2d9ff39058b80295cb27793595bef4"
+  },
+  "desktop-game.webm": {
+    "bytes": 3942884,
+    "sha256": "849459aadb07532a92cf60ae16def8063825ec31eb23464d63c59937f2ac5db3"
+  },
+  "desktop-fixtures.webm": {
+    "bytes": 2380870,
+    "sha256": "857ce38559ec0c8ef68935db4d0f6b4f164eddef10aeb05e88290174bdbeb88a"
+  },
+  "after-portrait-overview.jpg": {
+    "bytes": 33296,
+    "sha256": "b9fb5253302b49b363f7f09002437ceae5ea88178130e018eb612adbd48e0840",
+    "dimensions": [
+      430,
+      830
+    ]
+  },
+  "before-desktop-overview.jpg": {
+    "bytes": 61032,
+    "sha256": "f0efd08d6ae0d18f29c353a3f4bff0e327f27d125e78b6993f646187f22acffb",
+    "dimensions": [
+      1200,
+      900
+    ]
+  },
+  "after-portrait-expanded-overview.jpg": {
+    "bytes": 40398,
+    "sha256": "4cbd6801ea715c6be7aa71fa3b864dd1af9b8e4d09eb963c4b952150d087bce1",
+    "dimensions": [
+      430,
+      830
+    ]
+  },
+  "portrait-fixtures-frame-9000.jpg": {
+    "bytes": 60540,
+    "sha256": "ebeb081e5f4aaacec55893833a9e3b33196f64fab872a854dbead87b53253e05",
+    "dimensions": [
+      430,
+      830
+    ]
+  },
+  "before-portrait-expanded-overview.jpg": {
+    "bytes": 44095,
+    "sha256": "aea4333d813d583a9bd7294aaa5d1d84230e8d2c432adae1d930f3cdffc962f8",
+    "dimensions": [
+      430,
+      830
+    ]
+  },
+  "before-portrait-overview.jpg": {
+    "bytes": 33872,
+    "sha256": "55873441b2865035833746dabb909c6c5582e9625b3b7d8971061eb905bdf627",
+    "dimensions": [
+      430,
+      830
+    ]
+  },
+  "after-desktop-overview.jpg": {
+    "bytes": 60434,
+    "sha256": "dc52ed1c5e95296b6b4ea81267f3c82ca01bbfcde1b6415da42dc294ad4cfb6e",
+    "dimensions": [
+      1200,
+      900
+    ]
+  },
+  "desktop-fixtures-frame-14000.jpg": {
+    "bytes": 111617,
+    "sha256": "7c015a9a500afada12e88608ae344fad006a3638921203ffd19987f7c621d9a6",
+    "dimensions": [
+      1200,
+      900
+    ]
+  }
+}

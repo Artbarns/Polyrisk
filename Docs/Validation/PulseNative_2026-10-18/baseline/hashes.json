@@ -1,0 +1,10 @@
+{
+  "Assets/UI/Layouts/TileDetail_BottomSheet.uxml": "de57a8e34f564f4266d3829964e774f769c79cd623626cf61f05ba82f5cefa71",
+  "Assets/UI/Layouts/TopHUD.uxml": "c85b94acf03eacb8dc1317e035a95be0adbde78ecd788e5d88688c83bc5cd308",
+  "Assets/UI/Styles/Theme.uss": "f7c5ac2f4993368cc83f02fd74aa17923c721077ab4ce14dd07e9b9c2848009f",
+  "Assets/Scripts/UI/ActionButtonsWidget.cs": "4760cff170ae35ac52794a888c8415b340b94e59991a60b8fb2690af20364ebb",
+  "Assets/Scripts/UI/TopHUDWidget.cs": "482474a4fcb1afef88c7fc243f981310130cc0690e93601f1ac5bd1cba522af5",
+  "Assets/Scripts/UI/UIUXRuntime.cs": "6bff8ddd6f7c464846c2c53dd3165906382b56685dfc4918bcb7c8d3e621473c",
+  "Assets/Scripts/Systems/FinanceSystem.cs": "870fbae1aa87ce7e2a73e0884723bed923a104483021aaa75614cfa61e21b8dd",
+  "Assets/Scripts/Editor/EconomyRegression.cs": "161207e137140a6addbffbe78c75b0d5f1633ba85dc6970fb894c2863680bb22"
+}

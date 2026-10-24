@@ -1,0 +1,14 @@
+{
+  "modified": [
+    "Assets/Scripts/Debug/MobileBoardValidationProbe.cs",
+    "Assets/Scripts/Editor/MobileBoardPresenceValidation.cs",
+    "Assets/Scripts/Systems/BoardInteractionManager.cs",
+    "Assets/UI/Layouts/TopHUD.uxml",
+    "Assets/UI/Styles/Theme.uss"
+  ],
+  "newRuntimeAssets": [],
+  "deletedRuntimeAssets": [],
+  "unchangedAssetsAndSettings": 581,
+  "rulesEconomyInspectorPawnsMovementCallbacksNetworkSceneGeometryShadersMaterials": "byte-identical",
+  "inputAndPermissionRouting": "unchanged; only remembers a successful manual inspection for the camera"
+}

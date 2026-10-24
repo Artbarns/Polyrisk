@@ -41,7 +41,7 @@ V35 : Economy 106 + Mechanics 99 assertions PASS, `WEBGL PLAYER BUILD PASS`, sor
 V37 : card inspecteur en portrait 430 × 900. Le badge famille/niveau est conditionné à une propriété réelle, donc absent de la case neutre et visible sur « Opioid Paradise » (`Pharma · Level 0`). L'action Acheter est pleine, Passer est en contour ; les statistiques affichées restent Rent / Level / Rent Yield, conformes aux données disponibles. Capture : `inspector_property_v37.png`. Economy 106 + Mechanics 99 assertions PASS, `WEBGL PLAYER BUILD PASS`, sortie 0. Le rendu Risk / ROI et la comparaison au mockup attendent des données/visuels fiables ; la réduction puis restauration du panneau en marketplace reste à contrôler.
 Préversion HTTPS V37 : index et loader identiques au build, données/framework/WASM identiques après décompression HTTP, réponses 200 et accueil chargé en portrait. Le lien temporaire à jour figure dans `Docs/Validation/Mobile_Online_Preview_2026-10-12.md`.
 
-V38 — enchère Marketplace, avant correction de l'état vide : Economy 106 + Mechanics 99 assertions PASS et build WebGL PASS, sortie 0. Dossier 12 428 KiB contre 12 424 KiB en V37. Salon local QA à deux sièges, fixture `InvitingPlayers` : notification lisible en 430 × 900, minuteur orange à 28 s puis rouge à 2 s (`auction_invitation_v38.png`, `auction_timer_critical_v38.png`). Fixture `Reviewing` : avatar rond coloré pour le joueur, nom et offres propriété/cash alignées, boutons accessibles (`auction_review_v38.png`). Fixture sans offre : message encore brut, d'où la correction USS V39 (`auction_empty_before_v38.png`). Ces fixtures valident le rendu, pas une partie humaine complète ni la réception d'offres en direct.
+V38 — enchère Marketplace, avant correction de l'état vide : Economy 106 + Mechanics 99 assertions PASS et build WebGL PASS, sortie 0. Dossier 12 428 KiB contre 12 424 KiB en V37. Salon local QA à deux sièges, fixture `InvitingPlayers` : notification lisible en 430 × 900, minuteur orange à 28 s (`auction_invitation_v38.png`). La capture nommée `auction_timer_critical_v38.png` montre en réalité le formulaire Submit Your Bid ; elle ne prouve pas l'état rouge à 2 s. Fixture `Reviewing` : avatar rond coloré pour le joueur, nom et offres propriété/cash alignées, boutons accessibles (`auction_review_v38.png`). Fixture sans offre : message encore brut, d'où la correction USS V39 (`auction_empty_before_v38.png`). Ces fixtures valident le rendu, pas une partie humaine complète ni la réception d'offres en direct.
 
 V39 : Economy 106 + Mechanics 99 assertions PASS, build WebGL PASS, sortie 0. Dossier 12 424 KiB. Le message sans offre devient une carte sombre lisible (`auction_empty_v39.png`). Dans un salon QA de six sièges, le vendeur voit cinq lignes d'offres avec avatar et montant ; la barre permet d'accéder à toutes en portrait 430 × 900 (`auction_review_six_v39.png`). En paysage 900 × 430, les actions sont tronquées en bas (`auction_review_six_landscape_clipped_v39.png`) : V39 n'est pas publiée ; V40 cible une hauteur flexible de la liste et un pied d'action fixe.
 
@@ -62,3 +62,87 @@ Validation : Economy 106 + Mechanics 99 assertions PASS, build Unity WebGL PASS 
 V45 — audit des accents lumineux et de la profondeur, sans changement de code : sur V44, l’éclairage au repos reste discret et les cases admissibles concentrent la mise en évidence en sélection Marketplace. `PlayerPawn.prefab` ainsi que les meshes du plateau autorisent déjà les ombres temps réel. Les profils URP Low et Very Low désactivent cependant les ombres ; Medium et au-dessus les prennent en charge. Ajouter une ombre factice à chaque pion coûterait des rendus supplémentaires et ferait doublon sur les profils compatibles. Décision : garder la solution native, puis vérifier la visibilité et la performance sur les niveaux réellement utilisés sur iPhone ; ne pas activer les ombres par défaut sans mesure.
 
 Le build V44 a été observé dans le navigateur à 430 × 900 : HUD, accents de familles et rendement par tuile sont visibles, sans glow uniforme marqué. Ce contrôle confirme le rendu WebGL existant, mais ne mesure ni GPU/FPS ni le rendu d’ombres sur appareil physique.
+
+## HUD Release — vérification responsive du 15 octobre 2026
+
+Le build Release frais `/tmp/PolyRiskFinalCheckpoint_20261015` a été ouvert
+dans Chrome 155 accéléré par Metal. Après entrée en partie locale, les quatre
+indicateurs CAPITAL / NET WORTH / TURN / MARKET et le bouton de menu restent
+sur une ligne en 430 × 900 et 932 × 430 ; les séparateurs sont visibles, les
+valeurs suivent les couleurs positives/or patrimonial/neutre/état du marché,
+et la police Inter est rendue. Aucune erreur JavaScript n’a été relevée.
+Captures : `hud_final_release_430x900_2026-10-15.png` et
+`hud_final_release_932x430_2026-10-15.png`.
+
+Cette passe vérifie le build et ces deux viewports ; elle ne compare pas la
+grille d’espacement au mockup absent de l’espace de travail et ne vaut pas
+recette Safari/iPhone physique. Aucun code ni réglage d’affichage n’a été
+modifié.
+
+## Mouvement réduit global — 15 octobre 2026
+
+Le réglage persistant marquait déjà chaque document UI via `UIUXRuntime` et les
+effets pilotés par code (déplacement des pions, achat, compteurs et arrivée
+d’offres) consultaient déjà ce réglage. Il manquait une couverture commune aux
+transitions USS des panneaux et boutons. Une règle unique en fin de
+`Theme.uss` force désormais leur durée et leur délai à zéro pour les racines
+`ux-reduced-motion`, afin que les prochains effets CSS héritent aussi du réglage.
+Les éléments et confirmations restent présents ; leurs transitions deviennent
+instantanées.
+
+Validation groupée dans l’Éditeur Unity 2022.3.62f3 : Economy 114/114,
+Mechanics 99/99, build WebGL Release `BuildOptions.None` PASS. Le navigateur a
+chargé index, style, loader, framework, WASM et données en HTTP 200 depuis la
+sortie isolée `/tmp/PolyRiskReducedMotionFinal`. La préversion partagée n’a pas
+été remplacée.
+
+Contrôle interactif WebGL local : à 1048 × 720, le toggle a été activé, conservé
+après rechargement, puis une partie locale a démarré ; les quatre indicateurs du
+HUD, le menu de partie et les boutons d’action tenaient dans le viewport après
+chargement à froid. À 430 × 900, l’accueil portrait affichait les champs, Join,
+Play Local, Connection et le toggle toujours coché. Ce test d’émulation valide
+l’activation, la persistance et la mise en page, mais n’a pas comparé une même
+séquence avec les animations activées puis réduites, ni remplacé Safari sur
+iPhone physique. Le retour d’un utilisateur sensible au mouvement reste ouvert.
+
+## Marketplace V67 — arrivée d’une nouvelle offre observée en direct
+
+Le 15 octobre, le build WebGL Release courant a été lancé contre une API de
+recette isolée sur le port 5096, via un relais QA sur le port historique 5080
+attendu par les pages localhost. Le scénario a trois sièges : le client Unity
+hôte, un enchérisseur automatisé par le protocole et le vendeur. Un snapshot
+de recette place le tender en `Bidding` avec une offre existante de 2 500 $.
+Après restauration du client hôte, l’enchérisseur envoie une vraie commande
+`marketplace.bid.submit` à 3 000 $. Le client Unity hôte met alors la fiche
+spectateur à jour : l’activité « QA Bidder soumet une offre » apparaît et la
+liste passe à deux offres sans reconstruire le panneau. Le snapshot autoritaire
+confirme `Reviewing`, séquence 1 et les offres 2 500 $ / 3 000 $.
+
+Cette recette valide la réception réseau, le rendu de la nouvelle ligne et le
+rafraîchissement en direct du panneau. L'audit source confirme une transition
+de 180 ms via `bid-entry--incoming` ; la classe n'est ajoutée que si « Réduire
+les animations » est désactivé, et l'USS donne une durée de 0 ms aux lignes dans
+l'état réduit. La comparaison visuelle de ces deux états et la mesure de la
+transition restent à recetter en runtime. La recette Safari sur iPhone reste
+également ouverte. L'erreur « Unknown Error » du premier essai venait du banc :
+les pages localhost visaient le port 5080, alors que le serveur local était
+démarré sur un autre port.
+
+
+## Invitation Marketplace — test final en Release WebGL, 15 octobre 2026
+
+Le fond à 97 % et le tri au-dessus du HUD ne suffisaient pas à masquer
+complètement les badges ROI. `TopHUDWidget.SetBoardYieldOverlayVisible` masque
+désormais l'overlay existant pendant une modale Marketplace ;
+`Marketplace_UIManager` le rétablit à la fermeture ou à l'expiration de la
+notification. Aucun Canvas ou shader supplémentaire, polling, ni changement
+de règle/donnée n'est impliqué.
+
+Build Unity 2022.3.62f3 : Economy 114/114, Mechanics 130/130, Release WebGL
+`BuildOptions.None` PASS. Dans un lobby local neuf avec fixture d'invitation,
+le titre et le vendeur sont lisibles à 19 s, le minuteur passe au rouge à 3 s,
+puis les badges de rendement réapparaissent après fermeture automatique. Le
+test valide cet état Marketplace en navigateur desktop local ; il ne remplace
+pas la recette iPhone Safari ni le contrôle sur le lien public. La capture
+historique `auction_timer_critical_v38.png` reste mal étiquetée et ne prouve
+pas ce résultat récent.

@@ -1,0 +1,21 @@
+{
+  "modified": [
+    "Assets/Scripts/Debug/MobileBoardValidationProbe.cs",
+    "Assets/Scripts/Editor/MobileBoardPresenceValidation.cs",
+    "Assets/Scripts/Systems/BoardInteractionManager.cs",
+    "Assets/Scripts/UI/BoardTileOverlayWidget.cs",
+    "Assets/Scripts/UI/Marketplace_UIManager.cs",
+    "Assets/Scripts/UI/TopHUDWidget.cs",
+    "Assets/UI/Layouts/TopHUD.uxml",
+    "Assets/UI/Styles/Theme.uss"
+  ],
+  "deleted": [
+    "Assets/Scripts/Debug/GraphiteVisualIsolation.cs",
+    "Assets/Scripts/Debug/GraphiteVisualIsolation.cs.meta"
+  ],
+  "createdAssets": [],
+  "unchangedFiles": 578,
+  "inputAndPermissionRouting": "byte-identical",
+  "inspectorAndEconomicSources": "byte-identical",
+  "sceneGeometryShadersMaterialsPawnsNetwork": "byte-identical"
+}

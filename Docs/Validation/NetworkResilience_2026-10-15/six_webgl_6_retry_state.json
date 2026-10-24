@@ -1,0 +1,64 @@
+{
+  "lobbyCode": "LE59FY",
+  "lobbyStatus": 1,
+  "players": [
+    {
+      "displayName": "Player",
+      "ready": true
+    },
+    {
+      "displayName": "QA Player 2",
+      "ready": true
+    },
+    {
+      "displayName": "QA Player 3",
+      "ready": true
+    },
+    {
+      "displayName": "QA Player 4",
+      "ready": true
+    },
+    {
+      "displayName": "QA Player 5",
+      "ready": true
+    },
+    {
+      "displayName": "QA Player 6",
+      "ready": true
+    }
+  ],
+  "lobbyVersion": 15,
+  "gameStateVersion": 2,
+  "lastAppliedCommandSequence": 1,
+  "latestCommandSequence": 1,
+  "queuedCommands": 0,
+  "turnState": "ResolveTile",
+  "activePlayer": 0,
+  "dice": [
+    2,
+    6
+  ],
+  "lastActivities": [
+    {
+      "id": 1,
+      "kind": "turn",
+      "playerId": 0,
+      "text": "commence son tour",
+      "emphasis": false
+    },
+    {
+      "id": 2,
+      "kind": "dice",
+      "playerId": 0,
+      "text": "lance 2 + 6 · total 8",
+      "emphasis": false
+    },
+    {
+      "id": 3,
+      "kind": "move",
+      "playerId": 0,
+      "text": "arrive sur Opioid Paradise",
+      "emphasis": false
+    }
+  ]
+}

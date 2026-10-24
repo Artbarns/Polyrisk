@@ -1,14 +1,16 @@
 # GDD - Économie & Systèmes Financiers
 
 > [!NOTE]
-> **C# Implementation Status of Economic Systems:**
-> - **Victory Condition**: `[OPERATIONAL]` — Checked in the turn loop.
-> - **Sgo (Salaire GO) Indexation**: `[OPERATIONAL]` — Sgo is initialized at $2,000 and increments by $1,000 when all players complete a lap.
-> - **Burn Rate (Maintenance Cost)**: `[MISSING]` — Infrastructure maintenance costs and "Sleep Mode" penalties are **not implemented** in the C# loop.
-> - **Passive Dividends**: `[MISSING]` — Tiered dividends (10%/14%/25%) are **not implemented**. Passing GO only awards flat Sgo.
-> - **Stock Market**: `[MOCKED]` — The 1/3/5 turns investment logic is fully coded in `FinanceSystem.cs`. However, market cycle modulators (BOOM/CRASH) are missing.
-> - **Casino**: `[OPERATIONAL]` — Safe, Standard, and High Risk betting options are fully implemented in `FinanceSystem.cs`.
-> - **Dark Board**: `[MISSING]` — Players' exact cash amounts are visible in the HUD and logs; no `WealthStatus` enums or obfuscation are implemented.
+> **État C# vérifié le 15 octobre 2026 :**
+> - **Victoire** : `[OPÉRATIONNEL]` — Le seuil de 10 M$ est contrôlé après le règlement GO ; les autres issues sont contrôlées par le tour.
+> - **Indexation Sgo** : `[OPÉRATIONNEL]` — Sgo commence à 2 000 $ ; chaque passage individuel augmente l’indice de `floor(1 000 $ / joueurs actifs)`, modulé par le cycle et Aggressive Growth.
+> - **Burn Rate et taxe Hubs** : `[OPÉRATIONNEL]` — Modes actif/veille, hypothèque, double prélèvement Venture, BOOM et taxe des quatre Hubs sont traités dans `FinanceSystem.ProcessGoIncome`.
+> - **Dividendes** : `[OPÉRATIONNEL]` — Taux par tier, avec monopole complet, dans le règlement GO.
+> - **Aggressive Growth** : `[OPÉRATIONNEL]` — Après strictement 90 minutes, croissance Sgo à 5 000 $ par passage et Bouclier à 30×Sgo ; horloge UTC répliquée en ligne.
+> - **Bourse, Casino et cycles macro** : `[OPÉRATIONNELS]` — Investissements de 1/3/5 tours, modificateurs BOOM/CRASH et paris sont codés. Les revenus GO CRASH et les bornes de rendement CRASH sont alignés sur §7 depuis le 15 octobre.
+> - **Dark Board** : `[PARTIEL — hôte de confiance]` — Les snapshots invités projettent le cash adverse dans sa tranche ; l’hôte autoritaire conserve l’état exact et peut inspecter son client.
+>
+> Régressions Unity Economy 114/114 et Mechanics 126/126, build WebGL Release et build serveur Release passent. Lot IA corrigé : 30 parties à quatre joueurs, puis 5 graines appariées à six ; détails dans `Docs/Validation/Economy_Cycle_Conformance_2026-10-15.md`. L’équilibrage humain reste ouvert.
 
 ---
 
@@ -32,7 +34,7 @@
 
 ---
 
-## 3. Burn Rate (Coût de Maintenance) — `[MISSING]`
+## 3. Burn Rate (Coût de Maintenance) — `[OPÉRATIONNEL]`
 
 Prévelé **par propriété** au passage GO du joueur propriétaire.
 
@@ -65,7 +67,7 @@ pas le Burn Rate. Les Logistics Hubs n'ont pas de Burn Rate individuel par nivea
 
 ---
 
-## 4. Dividendes Passifs (Revenu Garanti) — `[MISSING]`
+## 4. Dividendes Passifs (Revenu Garanti) — `[OPÉRATIONNEL]`
 
 Versés **par propriété** à chaque passage GO, uniquement si le joueur détient le
 **monopole complet** de la famille.
@@ -97,7 +99,7 @@ sans payer le Burn Rate du deuxième Armement".
 ## 5. Outils Financiers Spéculatifs
 
 ### Stock Market
-- **Plafond d'investissement par durée** (à mettre à jour dans `FinanceSystem.cs`) :
+- **Plafond d'investissement par durée** (implémenté dans `FinanceSystem.cs`) :
   - 1 Tour : **15 × Sgo** par joueur
   - 3 Tours : **15 × Sgo** par joueur
   - 5 Tours : **20 × Sgo** par joueur (prime pour immobilisation longue — différencie les options)
@@ -105,7 +107,7 @@ sans payer le Burn Rate du deuxième Armement".
   - **1 Tour** : -30% à +40% ROI.
   - **3 Tours** : -30% à +70% ROI.
   - **5 Tours** : -20% à +120% ROI (20% de probabilité de perte totale).
-- **Cycles (BOOM / CRASH)** : `[MISSING]` (non implémenté).
+- **Cycles (BOOM / CRASH)** : `[OPÉRATIONNEL]` (voir §7).
 
 ### Casino
 Trois niveaux de risque pour tenter de multiplier son cash immédiat (implémenté dans `FinanceSystem.cs` via `PlayCasino`) :
@@ -129,7 +131,7 @@ banque au prix initial.
 
 ---
 
-## 7. Cycles Macro-Économiques — `[MISSING]`
+## 7. Cycles Macro-Économiques — `[OPÉRATIONNELS]`
 
 ### NORMAL (état par défaut)
 Aucun modificateur actif.
@@ -140,8 +142,8 @@ Aucun modificateur actif.
 
 ### CRASH
 **Déclencheur** : Carte Venture #20 → résultat CRASH. **Durée** : 5 tours.
-- Tous les revenus (loyers, dividendes, Sgo) : ×0.6
-- Stock Market : 1T: −50%/+20% | 3T: −50%/+42% | 5T: −40%/+72% | Proba perte totale ×1.75
+- Tous les revenus (loyers, dividendes, salaire Sgo) : ×0.6 ; le Burn Rate reste inchangé.
+- Stock Market : 1T: −50%/+20% | 3T: −50%/+42% | 5T: −40%/+72% | probabilité de perte totale ×1.75 (35% à 5 tours).
 
 ### WAR
 **Déclencheur** : Carte Venture #11 "Guerre Terres Rares". **Durée** : durée de la carte.
@@ -151,7 +153,7 @@ Aucun modificateur actif.
 
 ---
 
-## 8. Dark Board (Information Cachée) — `[MISSING]`
+## 8. Dark Board (Information Cachée) — `[PARTIEL — hôte de confiance]`
 
 | WealthStatus | Seuil liquidités |
 |-------------|-----------------|
@@ -161,16 +163,28 @@ Aucun modificateur actif.
 | MOGUL       | > 50 × Sgo      |
 
 **Règles** :
-- HUD en jeu : WealthStatus uniquement (pas le montant exact).
+- HUD : capital exact du joueur local ; ses adversaires sont représentés par leur WealthStatus.
 - Case 20 Marketplace : WealthStatus visible lors des enchères, liquidités masquées.
 - Case 0 : vérification $10M interne. Montant révélé uniquement si victoire déclenchée.
 - Écran fin de partie : tous les montants révélés.
 
+**Limite réseau** : les invités reçoivent leur solde exact et une valeur de
+projection correspondant à la tranche de richesse pour les autres sièges ; le
+snapshot complet reste stocké côté service afin qu’un nouvel hôte puisse
+reprendre l’autorité après un transfert. L’hôte actif conserve le snapshot
+complet pour exécuter le moteur de règles localement. La règle protège donc les
+soldes exacts contre l’inspection du client invité, mais le modèle actuel ne
+protège pas contre l’hôte qui inspecte ou modifie son client.
+
 ---
 
-## 9. Mode Aggressive Growth — `[MISSING]`
+## 9. Mode Aggressive Growth — `[OPERATIONAL]`
 
 **Déclencheur** : automatique si chronomètre > 90 minutes.
 **Effets jusqu'à fin de partie** :
 - Croissance Sgo : +$5,000 par GO individuel (remplace la formule $1,000/P standard).
 - Seuil Bouclier de Liquidité : 30 × Sgo (remplace 10 × Sgo).
+
+L’horloge débute à `TurnManager.StartGame`. En ligne, son timestamp UTC est transmis
+dans le snapshot autoritaire et restauré lors d’une reprise/changement d’hôte. Le
+multiplicateur de cycle Sgo déjà actif continue de s’appliquer à la croissance.

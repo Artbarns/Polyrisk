@@ -1,0 +1,183 @@
+{
+  "baseline": {
+    "monolithPass": 157,
+    "cameraPass": 0,
+    "errors": [],
+    "cancellationTailContacts": [],
+    "finalClockDeltaMs": 0.0
+  },
+  "a": {
+    "monolithPass": 157,
+    "cameraPass": 0,
+    "errors": [],
+    "cancellationTailContacts": [
+      "TILE_CONTACT index=21 arrival=False reduced=True intensity=0.518 t=39.8360\n"
+    ],
+    "finalClockDeltaMs": 0.0
+  },
+  "b": {
+    "monolithPass": 157,
+    "cameraPass": 0,
+    "errors": [],
+    "cancellationTailContacts": [],
+    "finalClockDeltaMs": 0.0
+  },
+  "cameraBefore": {
+    "monolithPass": 0,
+    "cameraPass": 23,
+    "errors": []
+  },
+  "cameraAfter": {
+    "monolithPass": 0,
+    "cameraPass": 75,
+    "errors": []
+  },
+  "real": {
+    "monolithPass": 0,
+    "cameraPass": 0,
+    "errors": [],
+    "cancellationTailContacts": [],
+    "finalClockDeltaMs": 0.0
+  },
+  "groundAnchor": {
+    "baseline": {
+      "samples": 61,
+      "xMin": 0.1273062581516275,
+      "xMax": 0.8549690673773259,
+      "yMin": 0.21285909907601128,
+      "yMax": 0.8036626548838218,
+      "meanHorizontalDistanceFromAnchor": 0.1490665002431982,
+      "meanVerticalDistanceFromAnchor": 0.12207179338128984
+    },
+    "a": {
+      "samples": 46,
+      "xMin": 0.467552988197483,
+      "xMax": 0.5326421820210718,
+      "yMin": 0.49876361131714575,
+      "yMax": 0.525856952397498,
+      "meanHorizontalDistanceFromAnchor": 0.02470294519217628,
+      "meanVerticalDistanceFromAnchor": 0.008441503239272402
+    },
+    "b": {
+      "samples": 51,
+      "xMin": 0.4675148979455694,
+      "xMax": 0.533041558312385,
+      "yMin": 0.4983624497171909,
+      "yMax": 0.5261722676833558,
+      "meanHorizontalDistanceFromAnchor": 0.025136742351016275,
+      "meanVerticalDistanceFromAnchor": 0.00798985256351603
+    }
+  },
+  "liveAnchorReadback": {
+    "samples": 67,
+    "xMin": 0.4675147235393524,
+    "xMax": 0.5330414772033691,
+    "yMin": 0.49836236238479614,
+    "yMax": 0.5261722803115845
+  },
+  "normalContactsMaxSimultaneous": 1,
+  "runtime": {
+    "variantPass": 95,
+    "envelopePass": 8,
+    "firstSamples": [
+      "PERCEPTUAL_FIRST_SAMPLE age=0.05300045 alpha=1.08496094\n"
+    ]
+  },
+  "cockpitActuallyExpanded": true,
+  "inspectionCameraUnchanged": true,
+  "realInspectedTile": {
+    "width": 430,
+    "height": 830,
+    "indices": 40,
+    "anchorsVisible": 40,
+    "collidersInside": 40,
+    "identityMarkers": 40,
+    "ownedMarkers": 1,
+    "selected": 31,
+    "expanded": false,
+    "focused": false,
+    "reducedMotion": false,
+    "viewport": {
+      "serializedVersion": "2",
+      "x": 8.0,
+      "y": 244.0,
+      "width": 414.0,
+      "height": 444.0
+    },
+    "hud": {
+      "serializedVersion": "2",
+      "x": 0.0,
+      "y": 696.0,
+      "width": 430.0,
+      "height": 134.0
+    },
+    "cockpit": {
+      "serializedVersion": "2",
+      "x": 0.0,
+      "y": 0.0,
+      "width": 430.0,
+      "height": 236.0
+    },
+    "primary": {
+      "serializedVersion": "2",
+      "x": 19.0,
+      "y": 10.0,
+      "width": 309.0,
+      "height": 49.0
+    },
+    "presentation": {
+      "serializedVersion": "2",
+      "x": 8.0,
+      "y": 244.0,
+      "width": 414.0,
+      "height": 444.0
+    },
+    "tile31": {
+      "x": 235.9512481689453,
+      "y": 258.28759765625
+    },
+    "tile32": {
+      "x": 253.67922973632812,
+      "y": 269.6829833984375
+    },
+    "tile0": {
+      "x": 398.7264404296875,
+      "y": 364.0
+    },
+    "tile10": {
+      "x": 215.00003051757812,
+      "y": 482.0970764160156
+    },
+    "tile20": {
+      "x": 31.273582458496094,
+      "y": 364.0
+    },
+    "tile30": {
+      "x": 214.99996948242188,
+      "y": 245.90289306640625
+    },
+    "economy": "0:16920:19:1;1:17880:9:0;2:18000:10:0;3:12000:7:0",
+    "turnState": "ResolveTile",
+    "cameraState": "StrategicOverview",
+    "inspectionName": "Quantum AI Labs",
+    "rent": "450",
+    "risk": "Risque \u2014",
+    "yield": "10,0",
+    "ownership": "\u00c0 ACQU\u00c9RIR",
+    "projection": {
+      "boardPixels": {
+        "serializedVersion": "2",
+        "x": -15.24795150756836,
+        "y": 316.6114196777344,
+        "width": 460.495849609375,
+        "height": 296.4462585449219
+      },
+      "elevation": 40.000003814697266,
+      "azimuth": 45.00000762939453,
+      "orthographicSize": 18.208171844482422,
+      "minTileEdgePixels": 17.62591552734375,
+      "minTileAltitudePixels": 16.034400939941406,
+      "minTileAreaPixels": 405.5008544921875
+    }
+  }
+}

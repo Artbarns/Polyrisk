@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "created": "2026-10-17",
+  "project": "PolyRisk",
+  "approval": {
+    "dice": "approved",
+    "pulse": "approved",
+    "optionalMoments": "not_approved"
+  },
+  "authoritativePreviews": [
+    "previews/dice-approved.html",
+    "previews/pulse-approved.html"
+  ],
+  "optionalPreview": "previews/key-moments-optional.html",
+  "historicalShellSource": "sources/pulse-shell-history.fragment.html",
+  "unityImplementationPerformed": false,
+  "files": [
+    {
+      "path": "01_DICE_APPROVED.md",
+      "bytes": 13310,
+      "sha256": "817dec65052f699ca8e8aa89d3ffc27c1222a2d03e73f3cbe6f955694034c195"
+    },
+    {
+      "path": "02_PULSE_APPROVED.md",
+      "bytes": 9426,
+      "sha256": "92e5cbc2ce0110cfd7309e572fe1fbabbda72825ac5ce5c7ca374becfa4acf63"
+    },
+    {
+      "path": "03_OPTIONAL_MOMENTS.md",
+      "bytes": 3808,
+      "sha256": "8da9a3555a968bc5deb9c602433023143d87b0c32279e0244c41cf26def8e54a"
+    },
+    {
+      "path": "04_ACCEPTANCE.md",
+      "bytes": 4393,
+      "sha256": "3d1ebaaed142d2a829f5e5853cbd69341663c5f443cfe410815983e693cc7f3a"
+    },
+    {
+      "path": "DIRECTION_MEMORY_SNAPSHOT.md",
+      "bytes": 8014,
+      "sha256": "5f9c733ff336c3a3360dc10dbb6f941f3212bebfabf11643df72aef84ca5d542"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3317,
+      "sha256": "5c693d0c654628b62626fc5be5c0a1c339a43f4895b096f05556acd3b91a0a25"
+    },
+    {
+      "path": "START_HERE_GPT6.md",
+      "bytes": 4154,
+      "sha256": "836aa386c7facbd459a1cf8f67d0b64b86235e2b3ec56c0d292140adb1416340"
+    },
+    {
+      "path": "VALIDATION_PACKAGE.md",
+      "bytes": 2087,
+      "sha256": "71ee965aba4e5f297e90afbca0b9c478ba4696ffd5a03c2c6eac328818e7348c"
+    },
+    {
+      "path": "audio/contact_light.wav",
+      "bytes": 9644,
+      "sha256": "b3fd42d2574e87f69ba9928ded487b126f65c5d9f10a5f6dbb1c5096a5ba591e"
+    },
+    {
+      "path": "audio/contact_tac.wav",
+      "bytes": 9644,
+      "sha256": "e5ea52eba559645b18ce5ad6ddf7b3f2ed16ced267e51d9556bb63acc799480b"
+    },
+    {
+      "path": "audio/double_green.wav",
+      "bytes": 41324,
+      "sha256": "dc71242942a80b8387b29c53a84de2c52aff6ade907c41d7ca983ca173d8a834"
+    },
+    {
+      "path": "design-motion-tokens.json",
+      "bytes": 2784,
+      "sha256": "81ebd204d703d15df33771389d5fbcccae9f0104ef9c83620eb6bde7fb4171d0"
+    },
+    {
+      "path": "previews/dice-approved.html",
+      "bytes": 106036,
+      "sha256": "8a5aa002143f775af5b7c0285afff0fd7f89820f5ece475d1c89ef22961313f5"
+    },
+    {
+      "path": "previews/key-moments-optional.html",
+      "bytes": 92987,
+      "sha256": "1768bfa9a25c2ac0440e6a4096012b10ad7b3e8be93e570d6dd1628967624576"
+    },
+    {
+      "path": "previews/pulse-approved.html",
+      "bytes": 513206,
+      "sha256": "7829cbe31cc74a08b665643a22a44ce790742dd1edda629970eb8297647c918a"
+    },
+    {
+      "path": "sources/dice-approved.fragment.html",
+      "bytes": 23456,
+      "sha256": "1b9c6aee2fe774d87520145a856ce3d35685796a0f1bb04506e7b399091beea4"
+    },
+    {
+      "path": "sources/key-moments-optional.fragment.html",
+      "bytes": 12841,
+      "sha256": "398b27bc6a726dc59464d98e00d86e963aa14f3eb73c63dac46e6a4f38fb2dbd"
+    },
+    {
+      "path": "sources/pulse-approved.fragment.html",
+      "bytes": 430823,
+      "sha256": "70584f9b4a3d868e76a9218599f6bcfa61516095bcaa373515e81247bb95a626"
+    },
+    {
+      "path": "sources/pulse-shell-history.fragment.html",
+      "bytes": 432799,
+      "sha256": "e410605882fcf0b3d505be26fb774904720d5c60af44ea94e31501a481e4c2c7"
+    },
+    {
+      "path": "verify_package.py",
+      "bytes": 669,
+      "sha256": "8a6f15c503e5266a4ed15aa8a8c0bd3f5c92c36345c9072ff938f3ed77be983c"
+    }
+  ]
+}

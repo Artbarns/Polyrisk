@@ -1,0 +1,66 @@
+{
+  "detail-neutral.jpg": {
+    "source": "variant-b-medium-desktop.jpg",
+    "crop": [
+      500,
+      201,
+      64,
+      64
+    ],
+    "quality": "Medium"
+  },
+  "detail-selected.jpg": {
+    "source": "selection-desktop.jpg",
+    "crop": [
+      500,
+      201,
+      64,
+      64
+    ],
+    "quality": "Medium"
+  },
+  "pawn-idle.jpg": {
+    "source": "pawn-idle-context.jpg",
+    "crop": [
+      520,
+      240,
+      160,
+      210
+    ],
+    "specimenScale": 5,
+    "quality": "Medium"
+  },
+  "pawn-active.jpg": {
+    "source": "pawn-active-context.jpg",
+    "crop": [
+      520,
+      240,
+      160,
+      210
+    ],
+    "specimenScale": 5,
+    "quality": "Medium"
+  },
+  "detail-crossing.jpg": {
+    "source": "variant-b-game.webm",
+    "seconds": 8.4,
+    "crop": [
+      300,
+      340,
+      130,
+      120
+    ],
+    "quality": "Low"
+  },
+  "detail-arrival.jpg": {
+    "source": "variant-b-game.webm",
+    "seconds": 8.95,
+    "crop": [
+      300,
+      340,
+      130,
+      120
+    ],
+    "quality": "Low"
+  }
+}

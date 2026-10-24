@@ -1,0 +1,18 @@
+{
+  "modified": [
+    "Assets/Scripts/Debug/StrategicCameraValidationDriver.cs",
+    "Assets/Scripts/Editor/MobileBoardPresenceValidation.cs",
+    "Assets/Scripts/Systems/BoardInteractionManager.cs",
+    "Assets/Scripts/UI/TopHUDWidget.cs",
+    "Assets/Scripts/Visuals/PlayerVisualManager.cs"
+  ],
+  "created": [
+    "Assets/Scripts/Visuals/BoardDicePresenter.cs",
+    "Assets/Scripts/Visuals/BoardDicePresenter.cs.meta"
+  ],
+  "unchangedAssetsAndSettings": 583,
+  "rulesEconomyDiceSystemTurnManagerPawnMovementGeometryMaterialsShadersSceneNetworkUI": "byte-identical to start of PASS 2D",
+  "pawnMovementCompletionCallback": "byte-identical",
+  "inputAndPermissions": "byte-identical",
+  "visualPreparation": "at most 1.1 s before existing dispatch; no post-callback wait"
+}

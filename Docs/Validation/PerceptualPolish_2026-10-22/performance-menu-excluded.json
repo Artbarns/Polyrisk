@@ -1,0 +1,20 @@
+[
+  {
+    "level": "log",
+    "message": "GRAPHITE_MEASURE {\"quality\":\"Low\",\"treatment\":\"GraphiteReflectiveNeon\",\"frames\":105,\"seconds\":6.003002166748047,\"meanFrameMs\":57.46665954589844,\"maxFrameMs\":312.0,\"renderCountersAvailable\":true,\"drawCalls\":60,\"batches\":57,\"setPass\":38,\"totalAllocatedBytes\":51402254,\"totalReservedBytes\":59742410}\n",
+    "timestamp": "2026-10-22T21:34:19.205Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_MEASURE {\"quality\":\"Low\",\"treatment\":\"GraphiteReflectiveNeon\",\"frames\":105,\"seconds\":6.003002166748047,\"meanFrameMs\":57.46665954589844,\"maxFrameMs\":312.0,\"renderCountersAvailable\":true,\"drawCalls\":60,\"batches\":57,\"setPass\":38,\"totalAllocatedBytes\":51402254,\"totalReservedBytes\":59742410}\n",
+    "timestamp": "2026-10-22T21:34:19.205Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_MEASURE {\"quality\":\"Low\",\"treatment\":\"GraphiteReflectiveNeon\",\"frames\":75,\"seconds\":6.0,\"meanFrameMs\":80.38665771484375,\"maxFrameMs\":330.0,\"renderCountersAvailable\":true,\"drawCalls\":60,\"batches\":57,\"setPass\":38,\"totalAllocatedBytes\":51482108,\"totalReservedBytes\":59822966}\n",
+    "timestamp": "2026-10-22T21:34:37.319Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js"
+  }
+]

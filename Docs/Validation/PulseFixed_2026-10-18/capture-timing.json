@@ -1,0 +1,314 @@
+{
+  "roll": [
+    {
+      "file": "roll-00-00130.jpg",
+      "ms": 130
+    },
+    {
+      "file": "roll-01-00381.jpg",
+      "ms": 381
+    },
+    {
+      "file": "roll-02-00590.jpg",
+      "ms": 590
+    },
+    {
+      "file": "roll-03-00897.jpg",
+      "ms": 897
+    },
+    {
+      "file": "roll-04-01179.jpg",
+      "ms": 1179
+    },
+    {
+      "file": "roll-05-01514.jpg",
+      "ms": 1514
+    },
+    {
+      "file": "roll-06-01717.jpg",
+      "ms": 1717
+    },
+    {
+      "file": "roll-07-02012.jpg",
+      "ms": 2012
+    },
+    {
+      "file": "roll-08-02228.jpg",
+      "ms": 2228
+    },
+    {
+      "file": "roll-09-02466.jpg",
+      "ms": 2466
+    },
+    {
+      "file": "roll-10-02772.jpg",
+      "ms": 2772
+    },
+    {
+      "file": "roll-11-02970.jpg",
+      "ms": 2970
+    },
+    {
+      "file": "roll-12-03174.jpg",
+      "ms": 3174
+    },
+    {
+      "file": "roll-13-03471.jpg",
+      "ms": 3471
+    },
+    {
+      "file": "roll-14-03679.jpg",
+      "ms": 3679
+    },
+    {
+      "file": "roll-15-03864.jpg",
+      "ms": 3864
+    },
+    {
+      "file": "roll-16-04079.jpg",
+      "ms": 4079
+    },
+    {
+      "file": "roll-17-04388.jpg",
+      "ms": 4388
+    },
+    {
+      "file": "roll-18-04691.jpg",
+      "ms": 4691
+    },
+    {
+      "file": "roll-19-04902.jpg",
+      "ms": 4902
+    },
+    {
+      "file": "roll-20-05096.jpg",
+      "ms": 5096
+    },
+    {
+      "file": "roll-21-05305.jpg",
+      "ms": 5305
+    },
+    {
+      "file": "roll-22-05512.jpg",
+      "ms": 5512
+    },
+    {
+      "file": "roll-23-05707.jpg",
+      "ms": 5707
+    },
+    {
+      "file": "roll-24-05891.jpg",
+      "ms": 5891
+    },
+    {
+      "file": "roll-25-06111.jpg",
+      "ms": 6111
+    },
+    {
+      "file": "roll-26-06314.jpg",
+      "ms": 6314
+    }
+  ],
+  "turns": [
+    {
+      "file": "turns-00-00069.jpg",
+      "ms": 69
+    },
+    {
+      "file": "turns-01-00320.jpg",
+      "ms": 320
+    },
+    {
+      "file": "turns-02-00525.jpg",
+      "ms": 525
+    },
+    {
+      "file": "turns-03-00726.jpg",
+      "ms": 726
+    },
+    {
+      "file": "turns-04-00939.jpg",
+      "ms": 939
+    },
+    {
+      "file": "turns-05-01138.jpg",
+      "ms": 1138
+    },
+    {
+      "file": "turns-06-01343.jpg",
+      "ms": 1343
+    },
+    {
+      "file": "turns-07-01648.jpg",
+      "ms": 1648
+    },
+    {
+      "file": "turns-08-01851.jpg",
+      "ms": 1851
+    },
+    {
+      "file": "turns-09-02049.jpg",
+      "ms": 2049
+    },
+    {
+      "file": "turns-10-02356.jpg",
+      "ms": 2356
+    },
+    {
+      "file": "turns-11-02658.jpg",
+      "ms": 2658
+    },
+    {
+      "file": "turns-12-02966.jpg",
+      "ms": 2966
+    },
+    {
+      "file": "turns-13-03168.jpg",
+      "ms": 3168
+    },
+    {
+      "file": "turns-14-03369.jpg",
+      "ms": 3369
+    },
+    {
+      "file": "turns-15-03569.jpg",
+      "ms": 3569
+    },
+    {
+      "file": "turns-16-03859.jpg",
+      "ms": 3859
+    },
+    {
+      "file": "turns-17-04072.jpg",
+      "ms": 4072
+    },
+    {
+      "file": "turns-18-04376.jpg",
+      "ms": 4376
+    },
+    {
+      "file": "turns-19-04587.jpg",
+      "ms": 4587
+    },
+    {
+      "file": "turns-20-04786.jpg",
+      "ms": 4786
+    },
+    {
+      "file": "turns-21-04987.jpg",
+      "ms": 4987
+    },
+    {
+      "file": "turns-22-05299.jpg",
+      "ms": 5299
+    },
+    {
+      "file": "turns-23-05602.jpg",
+      "ms": 5602
+    },
+    {
+      "file": "turns-24-05871.jpg",
+      "ms": 5871
+    },
+    {
+      "file": "turns-25-06113.jpg",
+      "ms": 6113
+    },
+    {
+      "file": "turns-26-06315.jpg",
+      "ms": 6315
+    },
+    {
+      "file": "turns-27-06546.jpg",
+      "ms": 6546
+    },
+    {
+      "file": "turns-28-06848.jpg",
+      "ms": 6848
+    },
+    {
+      "file": "turns-29-07041.jpg",
+      "ms": 7041
+    },
+    {
+      "file": "turns-30-07253.jpg",
+      "ms": 7253
+    },
+    {
+      "file": "turns-31-07448.jpg",
+      "ms": 7448
+    },
+    {
+      "file": "turns-32-07653.jpg",
+      "ms": 7653
+    },
+    {
+      "file": "turns-33-07855.jpg",
+      "ms": 7855
+    },
+    {
+      "file": "turns-34-08028.jpg",
+      "ms": 8028
+    },
+    {
+      "file": "turns-35-08265.jpg",
+      "ms": 8265
+    },
+    {
+      "file": "turns-36-08464.jpg",
+      "ms": 8464
+    },
+    {
+      "file": "turns-37-08702.jpg",
+      "ms": 8702
+    },
+    {
+      "file": "turns-38-08976.jpg",
+      "ms": 8976
+    },
+    {
+      "file": "turns-39-09178.jpg",
+      "ms": 9178
+    },
+    {
+      "file": "turns-40-09379.jpg",
+      "ms": 9379
+    },
+    {
+      "file": "turns-41-09592.jpg",
+      "ms": 9592
+    },
+    {
+      "file": "turns-42-09786.jpg",
+      "ms": 9786
+    },
+    {
+      "file": "turns-43-09986.jpg",
+      "ms": 9986
+    },
+    {
+      "file": "turns-44-10298.jpg",
+      "ms": 10298
+    },
+    {
+      "file": "turns-45-10502.jpg",
+      "ms": 10502
+    },
+    {
+      "file": "turns-46-10695.jpg",
+      "ms": 10695
+    },
+    {
+      "file": "turns-47-11006.jpg",
+      "ms": 11006
+    },
+    {
+      "file": "turns-48-11211.jpg",
+      "ms": 11211
+    },
+    {
+      "file": "turns-49-11412.jpg",
+      "ms": 11412
+    }
+  ]
+}

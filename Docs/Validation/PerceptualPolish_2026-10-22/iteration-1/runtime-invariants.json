@@ -1,0 +1,620 @@
+[
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS 40 unique indices\n",
+    "timestamp": "2026-10-22T21:22:09.314Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin camera identical\n",
+    "timestamp": "2026-10-22T21:22:09.314Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin 40 anchor collider contracts unchanged\n",
+    "timestamp": "2026-10-22T21:22:09.320Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin same four fused mesh objects\n",
+    "timestamp": "2026-10-22T21:22:09.323Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin all persistent state pixels unchanged\n",
+    "timestamp": "2026-10-22T21:22:09.323Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin pawn positions audio and locks unchanged\n",
+    "timestamp": "2026-10-22T21:22:09.328Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin actual full economic snapshot identical\n",
+    "timestamp": "2026-10-22T21:22:09.328Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin quality accessibility preference unchanged\n",
+    "timestamp": "2026-10-22T21:22:09.347Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 0\n",
+    "timestamp": "2026-10-22T21:22:09.394Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 1\n",
+    "timestamp": "2026-10-22T21:22:09.395Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 2\n",
+    "timestamp": "2026-10-22T21:22:09.395Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 3\n",
+    "timestamp": "2026-10-22T21:22:09.395Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 4\n",
+    "timestamp": "2026-10-22T21:22:09.396Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 5\n",
+    "timestamp": "2026-10-22T21:22:09.396Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 6\n",
+    "timestamp": "2026-10-22T21:22:09.396Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 7\n",
+    "timestamp": "2026-10-22T21:22:09.396Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 8\n",
+    "timestamp": "2026-10-22T21:22:09.396Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 9\n",
+    "timestamp": "2026-10-22T21:22:09.396Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 10\n",
+    "timestamp": "2026-10-22T21:22:09.396Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 11\n",
+    "timestamp": "2026-10-22T21:22:09.397Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 12\n",
+    "timestamp": "2026-10-22T21:22:09.398Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 13\n",
+    "timestamp": "2026-10-22T21:22:09.398Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 14\n",
+    "timestamp": "2026-10-22T21:22:09.398Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 15\n",
+    "timestamp": "2026-10-22T21:22:09.398Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 16\n",
+    "timestamp": "2026-10-22T21:22:09.398Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 17\n",
+    "timestamp": "2026-10-22T21:22:09.398Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 18\n",
+    "timestamp": "2026-10-22T21:22:09.398Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 19\n",
+    "timestamp": "2026-10-22T21:22:09.398Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 20\n",
+    "timestamp": "2026-10-22T21:22:09.398Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 21\n",
+    "timestamp": "2026-10-22T21:22:09.398Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 22\n",
+    "timestamp": "2026-10-22T21:22:09.398Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 23\n",
+    "timestamp": "2026-10-22T21:22:09.398Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 24\n",
+    "timestamp": "2026-10-22T21:22:09.399Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 25\n",
+    "timestamp": "2026-10-22T21:22:09.399Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 26\n",
+    "timestamp": "2026-10-22T21:22:09.399Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 27\n",
+    "timestamp": "2026-10-22T21:22:09.399Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 28\n",
+    "timestamp": "2026-10-22T21:22:09.399Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 29\n",
+    "timestamp": "2026-10-22T21:22:09.399Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 30\n",
+    "timestamp": "2026-10-22T21:22:09.400Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 31\n",
+    "timestamp": "2026-10-22T21:22:09.400Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 32\n",
+    "timestamp": "2026-10-22T21:22:09.400Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 33\n",
+    "timestamp": "2026-10-22T21:22:09.400Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 34\n",
+    "timestamp": "2026-10-22T21:22:09.400Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 35\n",
+    "timestamp": "2026-10-22T21:22:09.400Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 36\n",
+    "timestamp": "2026-10-22T21:22:09.401Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 37\n",
+    "timestamp": "2026-10-22T21:22:09.401Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 38\n",
+    "timestamp": "2026-10-22T21:22:09.401Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteSatin raycast 39\n",
+    "timestamp": "2026-10-22T21:22:09.401Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon camera identical\n",
+    "timestamp": "2026-10-22T21:22:09.402Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon 40 anchor collider contracts unchanged\n",
+    "timestamp": "2026-10-22T21:22:09.402Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon same four fused mesh objects\n",
+    "timestamp": "2026-10-22T21:22:09.402Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon all persistent state pixels unchanged\n",
+    "timestamp": "2026-10-22T21:22:09.402Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon pawn positions audio and locks unchanged\n",
+    "timestamp": "2026-10-22T21:22:09.402Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon actual full economic snapshot identical\n",
+    "timestamp": "2026-10-22T21:22:09.402Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon quality accessibility preference unchanged\n",
+    "timestamp": "2026-10-22T21:22:09.402Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 0\n",
+    "timestamp": "2026-10-22T21:22:09.402Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 1\n",
+    "timestamp": "2026-10-22T21:22:09.403Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 2\n",
+    "timestamp": "2026-10-22T21:22:09.403Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 3\n",
+    "timestamp": "2026-10-22T21:22:09.403Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 4\n",
+    "timestamp": "2026-10-22T21:22:09.403Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 5\n",
+    "timestamp": "2026-10-22T21:22:09.403Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 6\n",
+    "timestamp": "2026-10-22T21:22:09.404Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 7\n",
+    "timestamp": "2026-10-22T21:22:09.404Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 8\n",
+    "timestamp": "2026-10-22T21:22:09.404Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 9\n",
+    "timestamp": "2026-10-22T21:22:09.404Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 10\n",
+    "timestamp": "2026-10-22T21:22:09.404Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 11\n",
+    "timestamp": "2026-10-22T21:22:09.405Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 12\n",
+    "timestamp": "2026-10-22T21:22:09.405Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 13\n",
+    "timestamp": "2026-10-22T21:22:09.405Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 14\n",
+    "timestamp": "2026-10-22T21:22:09.411Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 15\n",
+    "timestamp": "2026-10-22T21:22:09.413Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 16\n",
+    "timestamp": "2026-10-22T21:22:09.413Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 17\n",
+    "timestamp": "2026-10-22T21:22:09.414Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 18\n",
+    "timestamp": "2026-10-22T21:22:09.414Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 19\n",
+    "timestamp": "2026-10-22T21:22:09.415Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 20\n",
+    "timestamp": "2026-10-22T21:22:09.416Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 21\n",
+    "timestamp": "2026-10-22T21:22:09.416Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 22\n",
+    "timestamp": "2026-10-22T21:22:09.416Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 23\n",
+    "timestamp": "2026-10-22T21:22:09.417Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 24\n",
+    "timestamp": "2026-10-22T21:22:09.417Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 25\n",
+    "timestamp": "2026-10-22T21:22:09.417Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 26\n",
+    "timestamp": "2026-10-22T21:22:09.418Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 27\n",
+    "timestamp": "2026-10-22T21:22:09.419Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 28\n",
+    "timestamp": "2026-10-22T21:22:09.420Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 29\n",
+    "timestamp": "2026-10-22T21:22:09.420Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 30\n",
+    "timestamp": "2026-10-22T21:22:09.420Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 31\n",
+    "timestamp": "2026-10-22T21:22:09.421Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 32\n",
+    "timestamp": "2026-10-22T21:22:09.421Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 33\n",
+    "timestamp": "2026-10-22T21:22:09.421Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 34\n",
+    "timestamp": "2026-10-22T21:22:09.422Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 35\n",
+    "timestamp": "2026-10-22T21:22:09.422Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 36\n",
+    "timestamp": "2026-10-22T21:22:09.423Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 37\n",
+    "timestamp": "2026-10-22T21:22:09.424Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 38\n",
+    "timestamp": "2026-10-22T21:22:09.425Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GRAPHITE_CASE PASS GraphiteReflectiveNeon raycast 39\n",
+    "timestamp": "2026-10-22T21:22:09.425Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE FAIL real contact starts below peak instead of binary flash\n",
+    "timestamp": "2026-10-22T21:22:09.800Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS actual texture carries bounded progressive pulse\n",
+    "timestamp": "2026-10-22T21:22:09.864Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS retrigger preserves current intensity at attack start\n",
+    "timestamp": "2026-10-22T21:22:09.867Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS rapid contacts clear without residual light\n",
+    "timestamp": "2026-10-22T21:22:10.816Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS Reduced Motion retains lower bounded contact\n",
+    "timestamp": "2026-10-22T21:22:10.917Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS arrival clears independently of callbacks\n",
+    "timestamp": "2026-10-22T21:22:11.322Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS all persistent tile state pixels unchanged through retrigger stress\n",
+    "timestamp": "2026-10-22T21:22:11.322Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS isolated contact never moves camera\n",
+    "timestamp": "2026-10-22T21:22:11.322Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/cd3e087f669d93545c1901b474ce9e7c.framework.js"
+  }
+]

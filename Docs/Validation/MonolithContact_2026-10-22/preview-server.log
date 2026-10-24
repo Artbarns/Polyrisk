@@ -1,0 +1,161 @@
+127.0.0.1 - - [22/Oct/2026 21:45:08] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:08] "GET /evidence/arrival.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:08] "GET /evidence/crossing.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:08] "GET /evidence/before-portrait-overview.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:08] "GET /evidence/after-portrait-overview.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:08] "GET /evidence/before-desktop-overview.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:08] "GET /evidence/after-desktop-overview.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:08] "GET /evidence/specimen-before.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:08] "GET /evidence/specimen.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:09] "GET /evidence/portrait-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 21:45:09] "GET /evidence/portrait-fixtures-audio.wav HTTP/1.1" 206 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 49525)
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/MonolithContact_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/MonolithContact_2026-10-22/serve_webgl.py", line 49, in do_GET
+    self.wfile.write(body[start:end+1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [22/Oct/2026 21:45:10] code 404, message File not found
+127.0.0.1 - - [22/Oct/2026 21:45:10] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [22/Oct/2026 21:45:17] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:17] "GET /evidence/portrait-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 21:45:44] "GET /evidence/review.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:45] "GET /evidence/crossing.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:45] "GET /evidence/arrival.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:46] "GET /evidence/before-portrait-overview.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:46] "GET /evidence/after-portrait-overview.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:46] "GET /evidence/before-desktop-overview.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:46] "GET /evidence/after-desktop-overview.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:46] "GET /evidence/specimen-before.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:46] "GET /evidence/specimen.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:45:47] "GET /evidence/portrait-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 21:45:47] "GET /evidence/portrait-fixtures-audio.wav HTTP/1.1" 206 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 49547)
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/MonolithContact_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/MonolithContact_2026-10-22/serve_webgl.py", line 49, in do_GET
+    self.wfile.write(body[start:end+1])
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [22/Oct/2026 21:45:47] code 404, message File not found
+127.0.0.1 - - [22/Oct/2026 21:45:47] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [22/Oct/2026 21:45:48] "GET /evidence/portrait-game.webm HTTP/1.1" 206 -
+127.0.0.1 - - [22/Oct/2026 21:45:59] "GET /evidence/portrait-game.webm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:42] "GET /MonolithContact/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:42] "GET /MonolithContact/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:43] "GET /MonolithContact/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:43] "GET /MonolithContact/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:43] "GET /MonolithContact/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:43] "GET /MonolithContact/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:43] "GET /MonolithContact/Build/0f00d6673ed31880fa0e4b282ad202df.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:43] "GET /MonolithContact/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:43] "GET /MonolithContact/Build/3c3ee60ade1493f8f0c28cd5c0add45e.wasm HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 49607)
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/MonolithContact_2026-10-22/serve_webgl.py", line 19, in __init__
+    super().__init__(*a, directory=args.build_root, **kw)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 660, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 434, in handle
+    self.handle_one_request()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 422, in handle_one_request
+    method()
+  File "/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Docs/Validation/MonolithContact_2026-10-22/serve_webgl.py", line 68, in do_GET
+    return super().do_GET()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 667, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 867, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/shutil.py", line 208, in copyfileobj
+    fdst_write(buf)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [22/Oct/2026 21:55:44] "GET /MonolithContact/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:44] "GET /MonolithContact/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:44] "GET /MonolithContact/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:44] "GET /MonolithContact/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:44] "GET /MonolithContact/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:44] "GET /MonolithContact/Build/0f00d6673ed31880fa0e4b282ad202df.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:44] "GET /MonolithContact/Build/47a136a55c6e1fe3ffd17ca25534b9e1.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 21:55:44] "GET /MonolithContact/Build/3c3ee60ade1493f8f0c28cd5c0add45e.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:55:44] "GET /MonolithContact/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:56:08] "GET /MonolithContact/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:56:09] "GET /MonolithContact/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:56:09] "GET /MonolithContact/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:56:09] "GET /MonolithContact/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:56:09] "GET /MonolithContact/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:56:09] "GET /MonolithContact/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:56:09] "GET /MonolithContact/Build/0f00d6673ed31880fa0e4b282ad202df.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:56:09] "GET /MonolithContact/Build/47a136a55c6e1fe3ffd17ca25534b9e1.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 21:56:09] "GET /MonolithContact/Build/3c3ee60ade1493f8f0c28cd5c0add45e.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 21:56:10] "GET /MonolithContact/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/Build/0f00d6673ed31880fa0e4b282ad202df.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/Build/47a136a55c6e1fe3ffd17ca25534b9e1.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/Build/0f00d6673ed31880fa0e4b282ad202df.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/Build/47a136a55c6e1fe3ffd17ca25534b9e1.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/Build/3c3ee60ade1493f8f0c28cd5c0add45e.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:07:38] "GET /MonolithContact/TemplateData/favicon.ico HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:08:17] "GET /MonolithContact/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:08:17] "GET /MonolithContact/TemplateData/style.css?v=polyrisk-responsive-1 HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:08:18] "GET /MonolithContact/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:08:18] "GET /MonolithContact/TemplateData/unity-logo-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:08:18] "GET /MonolithContact/TemplateData/progress-bar-empty-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:08:18] "GET /MonolithContact/TemplateData/progress-bar-full-dark.png HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:08:18] "GET /MonolithContact/Build/0f00d6673ed31880fa0e4b282ad202df.framework.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:08:18] "GET /MonolithContact/Build/47a136a55c6e1fe3ffd17ca25534b9e1.data HTTP/1.1" 304 -
+127.0.0.1 - - [22/Oct/2026 22:08:18] "GET /MonolithContact/Build/3c3ee60ade1493f8f0c28cd5c0add45e.wasm HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2026 22:08:18] "GET /MonolithContact/TemplateData/favicon.ico HTTP/1.1" 200 -

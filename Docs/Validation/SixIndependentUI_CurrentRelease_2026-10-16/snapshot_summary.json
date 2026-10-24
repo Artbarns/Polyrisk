@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-16",
+  "release": "Unity WebGL Release BuildOptions.None, previously built and validated 2026-10-16",
+  "transport": "local Release lobby server on isolated QA storage",
+  "lobbyCode": "3UFAE2",
+  "lobbyStatus": "started",
+  "lobbyVersion": 29,
+  "playerCount": 6,
+  "players": [
+    {
+      "name": "Player",
+      "host": true,
+      "ready": true
+    },
+    {
+      "name": "Guest2",
+      "host": false,
+      "ready": true
+    },
+    {
+      "name": "Guest3",
+      "host": false,
+      "ready": true
+    },
+    {
+      "name": "Guest4",
+      "host": false,
+      "ready": true
+    },
+    {
+      "name": "Guest5",
+      "host": false,
+      "ready": true
+    },
+    {
+      "name": "Guest6",
+      "host": false,
+      "ready": true
+    }
+  ],
+  "game": {
+    "latestCommandSequence": 12,
+    "lastAppliedCommandSequence": 12,
+    "stateVersion": 14,
+    "turnState": "ResolveTile",
+    "currentPlayer": 0,
+    "positions": [
+      {
+        "name": "Player",
+        "position": 14,
+        "balance": 18000.0,
+        "hasGetOutOfAuditCard": false
+      },
+      {
+        "name": "Guest2",
+        "position": 9,
+        "balance": 18000.0,
+        "hasGetOutOfAuditCard": false
+      },
+      {
+        "name": "Guest3",
+        "position": 3,
+        "balance": 18000.0,
+        "hasGetOutOfAuditCard": false
+      },
+      {
+        "name": "Guest4",
+        "position": 11,
+        "balance": 18000.0,
+        "hasGetOutOfAuditCard": false
+      },
+      {
+        "name": "Guest5",
+        "position": 4,
+        "balance": 17400.0,
+        "hasGetOutOfAuditCard": false
+      },
+      {
+        "name": "Guest6",
+        "position": 7,
+        "balance": 18000.0,
+        "hasGetOutOfAuditCard": true
+      }
+    ],
+    "recentActivities": [
+      {
+        "id": 16,
+        "kind": "pass",
+        "playerId": 3,
+        "text": "passe sur Fentanyl Labs",
+        "emphasis": false
+      },
+      {
+        "id": 17,
+        "kind": "turn",
+        "playerId": 4,
+        "text": "commence son tour",
+        "emphasis": false
+      },
+      {
+        "id": 18,
+        "kind": "dice",
+        "playerId": 4,
+        "text": "lance 3 + 1 · total 4",
+        "emphasis": false
+      },
+      {
+        "id": 19,
+        "kind": "move",
+        "playerId": 4,
+        "text": "arrive sur Taxe Douanière",
+        "emphasis": false
+      },
+      {
+        "id": 20,
+        "kind": "tax",
+        "playerId": 4,
+        "text": "paie $600 · Taxe Douanière",
+        "emphasis": false
+      },
+      {
+        "id": 21,
+        "kind": "turn",
+        "playerId": 5,
+        "text": "commence son tour",
+        "emphasis": false
+      },
+      {
+        "id": 22,
+        "kind": "dice",
+        "playerId": 5,
+        "text": "lance 6 + 1 · total 7",
+        "emphasis": false
+      },
+      {
+        "id": 23,
+        "kind": "move",
+        "playerId": 5,
+        "text": "arrive sur Venture",
+        "emphasis": false
+      },
+      {
+        "id": 24,
+        "kind": "venture",
+        "playerId": 5,
+        "text": "pioche Venture #08",
+        "emphasis": false
+      },
+      {
+        "id": 25,
+        "kind": "turn",
+        "playerId": 0,
+        "text": "commence son tour",
+        "emphasis": false
+      },
+      {
+        "id": 26,
+        "kind": "dice",
+        "playerId": 0,
+        "text": "lance 3 + 6 · total 9",
+        "emphasis": false
+      },
+      {
+        "id": 27,
+        "kind": "move",
+        "playerId": 0,
+        "text": "arrive sur CyberTruck Factory",
+        "emphasis": false
+      }
+    ]
+  }
+}

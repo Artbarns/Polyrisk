@@ -1,0 +1,27 @@
+{
+  "created": "2026-10-17",
+  "purpose": "Visual fidelity recovery, not a new design",
+  "runtimeModified": false,
+  "files": [
+    {
+      "path": "START_HERE_FIX_PULSE.md",
+      "bytes": 9816,
+      "sha256": "675f5db6669ee32023d851d520518896293fa5cfb71721628f2d58330aa065df"
+    },
+    {
+      "path": "reference-approved.fragment.html",
+      "bytes": 430823,
+      "sha256": "70584f9b4a3d868e76a9218599f6bcfa61516095bcaa373515e81247bb95a626"
+    },
+    {
+      "path": "reference-approved.html",
+      "bytes": 513206,
+      "sha256": "7829cbe31cc74a08b665643a22a44ce790742dd1edda629970eb8297647c918a"
+    },
+    {
+      "path": "result-rejected.png",
+      "bytes": 300271,
+      "sha256": "acc6087f77be9a11b78628cbe82ebd2cef938d8dd9fa26e91f00ad2b1973dfa0"
+    }
+  ]
+}

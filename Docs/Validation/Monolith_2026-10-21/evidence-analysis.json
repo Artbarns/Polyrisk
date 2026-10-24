@@ -1,0 +1,626 @@
+{
+  "fixtures": {
+    "samples": 269,
+    "recordedRange": [
+      0.05500030517578125,
+      21.801998138427734
+    ],
+    "pass": 108,
+    "fail": [],
+    "restPositionsPass": 40,
+    "cameraAngles40and45": true,
+    "visualXZEqualsRootPlusOffset": true,
+    "recordedContacts": [
+      {
+        "phase": "BEGIN",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 0,
+        "crossings": 0,
+        "audio": false,
+        "videoTime": 6.463
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 0,
+        "crossings": 1,
+        "audio": true,
+        "videoTime": 6.677
+      },
+      {
+        "phase": "LOCK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 1,
+        "crossings": 2,
+        "audio": true,
+        "videoTime": 6.972
+      },
+      {
+        "phase": "BEGIN",
+        "actor": 0,
+        "sequence": 2,
+        "waypoint": 0,
+        "crossings": 2,
+        "audio": false,
+        "videoTime": 8.683
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 2,
+        "waypoint": 0,
+        "crossings": 3,
+        "audio": true,
+        "videoTime": 8.842
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 2,
+        "waypoint": 1,
+        "crossings": 4,
+        "audio": true,
+        "videoTime": 9.141
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 2,
+        "waypoint": 2,
+        "crossings": 5,
+        "audio": true,
+        "videoTime": 9.407
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 2,
+        "waypoint": 3,
+        "crossings": 6,
+        "audio": true,
+        "videoTime": 9.69
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 2,
+        "waypoint": 4,
+        "crossings": 7,
+        "audio": true,
+        "videoTime": 9.952
+      },
+      {
+        "phase": "LOCK",
+        "actor": 0,
+        "sequence": 2,
+        "waypoint": 5,
+        "crossings": 8,
+        "audio": true,
+        "videoTime": 10.22
+      },
+      {
+        "phase": "BEGIN",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 0,
+        "crossings": 8,
+        "audio": false,
+        "videoTime": 11.534
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 0,
+        "crossings": 9,
+        "audio": true,
+        "videoTime": 11.733
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 1,
+        "crossings": 10,
+        "audio": true,
+        "videoTime": 12.054
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 2,
+        "crossings": 11,
+        "audio": true,
+        "videoTime": 12.375
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 3,
+        "crossings": 12,
+        "audio": true,
+        "videoTime": 12.622
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 4,
+        "crossings": 13,
+        "audio": true,
+        "videoTime": 12.843
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 5,
+        "crossings": 14,
+        "audio": true,
+        "videoTime": 13.093
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 6,
+        "crossings": 15,
+        "audio": true,
+        "videoTime": 13.348
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 7,
+        "crossings": 16,
+        "audio": true,
+        "videoTime": 13.598
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 8,
+        "crossings": 17,
+        "audio": true,
+        "videoTime": 13.88
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 9,
+        "crossings": 18,
+        "audio": true,
+        "videoTime": 14.158
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 10,
+        "crossings": 19,
+        "audio": true,
+        "videoTime": 14.432
+      },
+      {
+        "phase": "LOCK",
+        "actor": 0,
+        "sequence": 3,
+        "waypoint": 11,
+        "crossings": 20,
+        "audio": true,
+        "videoTime": 14.757
+      },
+      {
+        "phase": "BEGIN",
+        "actor": 0,
+        "sequence": 4,
+        "waypoint": 0,
+        "crossings": 20,
+        "audio": false,
+        "videoTime": 16.028
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 4,
+        "waypoint": 0,
+        "crossings": 21,
+        "audio": true,
+        "videoTime": 16.34
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 4,
+        "waypoint": 1,
+        "crossings": 22,
+        "audio": true,
+        "videoTime": 16.63
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 4,
+        "waypoint": 2,
+        "crossings": 23,
+        "audio": true,
+        "videoTime": 16.962
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 4,
+        "waypoint": 3,
+        "crossings": 24,
+        "audio": true,
+        "videoTime": 17.274
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 4,
+        "waypoint": 4,
+        "crossings": 25,
+        "audio": true,
+        "videoTime": 17.589
+      },
+      {
+        "phase": "LOCK",
+        "actor": 0,
+        "sequence": 4,
+        "waypoint": 5,
+        "crossings": 26,
+        "audio": true,
+        "videoTime": 17.896
+      },
+      {
+        "phase": "BEGIN",
+        "actor": 0,
+        "sequence": 5,
+        "waypoint": 0,
+        "crossings": 26,
+        "audio": false,
+        "videoTime": 19.328
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 5,
+        "waypoint": 0,
+        "crossings": 27,
+        "audio": true,
+        "videoTime": 19.457
+      },
+      {
+        "phase": "LOCK",
+        "actor": 0,
+        "sequence": 5,
+        "waypoint": 1,
+        "crossings": 28,
+        "audio": true,
+        "videoTime": 19.758
+      },
+      {
+        "phase": "BEGIN",
+        "actor": 0,
+        "sequence": 6,
+        "waypoint": 0,
+        "crossings": 28,
+        "audio": false,
+        "videoTime": 21.245
+      }
+    ],
+    "ticks": 23,
+    "locks": 5,
+    "audibleContacts": 28,
+    "lockToHistoricalCameraHoldSeconds": [
+      0.223,
+      0.18,
+      0.176,
+      0.316
+    ],
+    "errors": [],
+    "overviewSizes": [
+      18.208171844482422
+    ]
+  },
+  "portraitGame": {
+    "samples": 299,
+    "recordedRange": [
+      0.07199859619140625,
+      25.010997772216797
+    ],
+    "pass": 0,
+    "fail": [],
+    "restPositionsPass": 0,
+    "cameraAngles40and45": true,
+    "visualXZEqualsRootPlusOffset": true,
+    "recordedContacts": [
+      {
+        "phase": "BEGIN",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 0,
+        "crossings": 0,
+        "audio": false,
+        "videoTime": 8.241
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 0,
+        "crossings": 1,
+        "audio": true,
+        "videoTime": 8.447
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 1,
+        "crossings": 2,
+        "audio": true,
+        "videoTime": 8.72
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 2,
+        "crossings": 3,
+        "audio": true,
+        "videoTime": 8.958
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 3,
+        "crossings": 4,
+        "audio": true,
+        "videoTime": 9.19
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 4,
+        "crossings": 5,
+        "audio": true,
+        "videoTime": 9.428
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 5,
+        "crossings": 6,
+        "audio": true,
+        "videoTime": 9.663
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 6,
+        "crossings": 7,
+        "audio": true,
+        "videoTime": 9.886
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 7,
+        "crossings": 8,
+        "audio": true,
+        "videoTime": 10.161
+      },
+      {
+        "phase": "LOCK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 8,
+        "crossings": 9,
+        "audio": true,
+        "videoTime": 10.403
+      },
+      {
+        "phase": "BEGIN",
+        "actor": 1,
+        "sequence": 1,
+        "waypoint": 0,
+        "crossings": 0,
+        "audio": false,
+        "videoTime": 24.527
+      },
+      {
+        "phase": "TICK",
+        "actor": 1,
+        "sequence": 1,
+        "waypoint": 0,
+        "crossings": 1,
+        "audio": true,
+        "videoTime": 24.749
+      }
+    ],
+    "ticks": 9,
+    "locks": 1,
+    "audibleContacts": 10,
+    "lockToHistoricalCameraHoldSeconds": [
+      0.272
+    ],
+    "errors": [],
+    "overviewSizes": [
+      18.208171844482422
+    ]
+  },
+  "desktopGame": {
+    "samples": 242,
+    "recordedRange": [
+      0.10499954223632812,
+      24.939998626708984
+    ],
+    "pass": 0,
+    "fail": [],
+    "restPositionsPass": 0,
+    "cameraAngles40and45": true,
+    "visualXZEqualsRootPlusOffset": true,
+    "recordedContacts": [
+      {
+        "phase": "BEGIN",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 0,
+        "crossings": 0,
+        "audio": false,
+        "videoTime": 6.419
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 0,
+        "crossings": 1,
+        "audio": true,
+        "videoTime": 6.651
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 1,
+        "crossings": 2,
+        "audio": true,
+        "videoTime": 6.901
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 2,
+        "crossings": 3,
+        "audio": true,
+        "videoTime": 7.158
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 3,
+        "crossings": 4,
+        "audio": true,
+        "videoTime": 7.43
+      },
+      {
+        "phase": "TICK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 4,
+        "crossings": 5,
+        "audio": true,
+        "videoTime": 7.722
+      },
+      {
+        "phase": "LOCK",
+        "actor": 0,
+        "sequence": 1,
+        "waypoint": 5,
+        "crossings": 6,
+        "audio": true,
+        "videoTime": 7.949
+      }
+    ],
+    "ticks": 5,
+    "locks": 1,
+    "audibleContacts": 6,
+    "lockToHistoricalCameraHoldSeconds": [
+      0.275
+    ],
+    "errors": [],
+    "overviewSizes": [
+      11.280900955200195
+    ]
+  },
+  "audio": {
+    "file": "portrait-fixtures-audio.wav",
+    "duration": 21.78,
+    "sampleRate": 48000,
+    "channels": 2,
+    "peak": 0.03961181640625,
+    "peakDbFS": -28.04350484990735,
+    "rms": 0.0007415608173804081,
+    "clippedSamples": 0,
+    "sourceContacts": 28,
+    "strongOnsetGroups": 28,
+    "strongOnsetTimes": [
+      6.661333333333333,
+      6.951583333333334,
+      8.826583333333334,
+      9.128458333333333,
+      9.4245,
+      9.674125,
+      9.935354166666666,
+      10.237208333333333,
+      11.717479166666667,
+      12.03675,
+      12.356020833333334,
+      12.605645833333334,
+      12.826229166666666,
+      13.075854166666666,
+      13.331270833333333,
+      13.580875,
+      13.8653125,
+      14.143958333333334,
+      14.416791666666667,
+      14.741875,
+      16.309229166666668,
+      16.599479166666665,
+      16.936166666666665,
+      17.243833333333335,
+      17.580520833333335,
+      17.864958333333334,
+      19.4265,
+      19.7225625
+    ],
+    "nearestStrongOnsetDistanceSeconds": [
+      0.0157,
+      0.0204,
+      0.0154,
+      0.0125,
+      0.0175,
+      0.0159,
+      0.0166,
+      0.0172,
+      0.0155,
+      0.0173,
+      0.019,
+      0.0164,
+      0.0168,
+      0.0171,
+      0.0167,
+      0.0171,
+      0.0147,
+      0.014,
+      0.0152,
+      0.0151,
+      0.0308,
+      0.0305,
+      0.0258,
+      0.0302,
+      0.0085,
+      0.031,
+      0.0305,
+      0.0354
+    ]
+  }
+}

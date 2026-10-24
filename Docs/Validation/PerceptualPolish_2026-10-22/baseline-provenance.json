@@ -1,0 +1,7 @@
+{
+  "baseline-contacts.webm": "Docs/Validation/ReflectiveNeon_2026-10-22/variant-b-fixtures.webm",
+  "baseline-portrait.jpg": "Docs/Validation/ReflectiveNeon_2026-10-22/variant-b-portrait.jpg",
+  "baseline-desktop.jpg": "Docs/Validation/ReflectiveNeon_2026-10-22/variant-b-desktop.jpg",
+  "baseline-camera.webm": "new capture of unchanged PASS 2F WebGL binary on 9005; camera fixtures only",
+  "source": "PASS 2F final verified binary:91dbd2b5170248af0a78eba716789078.framework.js"
+}

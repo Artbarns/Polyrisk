@@ -1,0 +1,512 @@
+--- before/Assets/Scripts/Debug/MonolithValidationDriver.cs
++++ after/Assets/Scripts/Debug/MonolithValidationDriver.cs
+@@ -18,7 +18,7 @@
+         [System.Serializable] sealed class Frame
+         {
+             public float t,vt,size;public Vector3 camera,rotation,root,visual,scale,offset;
+-            public bool moving,arriving,shared,reduced,playing;public int steps,contacts,locks;
++            public bool moving,arriving,shared,reduced,playing,hold,pending,tileActive;public int steps,contacts,locks,tileContacts,tileIndex;public float lockTime,tileTime;
+         }
+         bool recording,running;float epoch,next;
+         CompactPawnVisual observed;
+@@ -35,11 +35,14 @@
+             var pawn=observed;
+             if(pawn==null)foreach(var p in CompactPawnVisual.Instances)if(p.IsActive){pawn=p;break;}
+             if(pawn==null||pawn.Visual==null)return;
+-            var c=Camera.main;
++            var c=Camera.main;var feedback=FindObjectOfType<BoardContactFeedback>();var rig=FindObjectOfType<BoardInteractionManager>();
+             Debug.Log("MONOLITH_FRAME "+JsonUtility.ToJson(new Frame{t=Time.unscaledTime,vt=Time.unscaledTime-epoch,
+                 size=c.orthographicSize,camera=c.transform.position,rotation=c.transform.eulerAngles,
+                 root=pawn.transform.position,visual=pawn.Visual.position,scale=pawn.Visual.lossyScale,offset=pawn.SharedOffset,
+                 moving=pawn.IsMoving,arriving=pawn.IsArriving,shared=pawn.IsShared,reduced=UIUXRuntime.ReducedMotion,
++                hold=rig!=null&&rig.IsArrivalHold,pending=pawn.IsAwaitingArrival,lockTime=pawn.LastLockTime,
++                tileActive=feedback!=null&&feedback.HasActiveContacts,tileContacts=feedback!=null?feedback.Contacts:0,
++                tileIndex=feedback!=null?feedback.LastIndex:-1,tileTime=feedback!=null?feedback.LastContactTime:-1,
+                 playing=pawn.GetComponent<AudioSource>()?.isPlaying??false,steps=pawn.Crossings,contacts=pawn.AudibleContacts,locks=pawn.FinalLocks}));
+         }
+         public void RunAll(){if(!running)StartCoroutine(Run());}
+@@ -107,6 +110,7 @@
+             Check(observed.Visual.position==stable&&observed.Visual.rotation==rotation,"no floating rotating or pulsing idle");
+             observed.GlowEnabled=false;yield return new WaitForSecondsRealtime(.5f);Check(observed.Visual.gameObject.activeInHierarchy,"silhouette visible with emission disabled");observed.GlowEnabled=true;
+             yield return PathCase(8,2,"two steps corner 10",false,false);
++            yield return PathCase(38,2,"two steps corner 0",false,false);
+             yield return PathCase(18,6,"six steps corner 20",false,false);
+             yield return PathCase(28,12,"twelve steps corners 30 0",false,false);
+             yield return PathCase(8,6,"slow frames",false,true);
+@@ -145,10 +149,18 @@
+             UIUXRuntime.SetReducedMotion(reduced);var board=BoardManager.Instance;var rig=FindObjectOfType<BoardInteractionManager>();rig.RestoreOverview();
+             observed.transform.position=board.visualTiles[start].position;observed.ResetPresentation();yield return null;
+             var motion=observed.GetComponent<PawnMovement>();var path=board.GetPath(start,steps);int actor=TurnManager.Instance.CurrentPlayer.PlayerId;
++            var feedback=FindObjectOfType<BoardContactFeedback>();int tileBefore=feedback.Contacts;
++            var geometry=FindObjectOfType<PolyRiskBoard>();
++            var stateField=typeof(PolyRiskBoard).GetField("statePixels",BindingFlags.Instance|BindingFlags.NonPublic);
++            int finalIndex=(start+steps)%40;
++            var original=((Color[])stateField.GetValue(geometry))[finalIndex];
++            geometry.SetTile(finalIndex,new Color(.23f,.75f,.48f),2.1f); // Simultaneous selection/owner-like accent.
++            var persistent=(Color[])((Color[])stateField.GetValue(geometry)).Clone();
+             int before=observed.Crossings,sounds=observed.AudibleContacts,locks=observed.FinalLocks,callbacks=0;
++            float completedAt=-1;bool holdAtLock=false;
+             float began=Time.unscaledTime,maxLift=0,minDt=10;int frames=0;Vector3 camera=Camera.main.transform.position;
+             PlayerVisualManager.NotifyVisualMovementStarted(actor,motion,path);
+-            motion.MoveAlongPath(path,()=>{callbacks++;rig.CompleteVisualMovement(motion.transform);});
++            motion.MoveAlongPath(path,()=>{callbacks++;rig.CompleteVisualMovement(motion.transform);completedAt=Time.unscaledTime;});
+             while(callbacks==0&&Time.unscaledTime-began<8f)
+             {
+                 if(slow){var clock=System.Diagnostics.Stopwatch.StartNew();while(clock.ElapsedMilliseconds<130){} }
+@@ -157,6 +169,15 @@
+                 maxLift=Mathf.Max(maxLift,observed.Visual.position.y-board.visualTiles[start].position.y);
+             }
+             yield return null;
++            holdAtLock=rig.IsArrivalHold;
++            Check(feedback.Contacts-tileBefore==steps,name+" contact layer once per real reached anchor");
++            Check(feedback.LastIndex==finalIndex&&feedback.LastArrival,name+" final contact correct index");
++            Check(Mathf.Abs(observed.LastLockTime-completedAt)<.001f,name+" final lock same rendered frame as original completion");
++            Check(Mathf.Abs(feedback.LastContactTime-observed.LastLockTime)<.001f,name+" tile click lock share clock");
++            Check(reduced||holdAtLock,name+" camera hold overlaps lock");
++            bool unchanged=true;var after=(Color[])stateField.GetValue(geometry);
++            for(int i=0;i<40;i++)unchanged&=after[i]==persistent[i];
++            Check(unchanged,name+" existing persistent category selection state unchanged during contacts");
+             Check(callbacks==1&&(motion.transform.position-path[path.Count-1]).sqrMagnitude<.00001f,name+" original callback once exact destination");
+             Check(observed.Crossings-before==steps,name+" one observed crossing per reached waypoint");
+             Check(observed.FinalLocks-locks==1,name+" one final lock replaces intermediate tick");
+@@ -167,6 +188,8 @@
+             yield return new WaitForSecondsRealtime(.8f);
+             int quiet=observed.AudibleContacts;yield return new WaitForSecondsRealtime(.15f);
+             Check(quiet==observed.AudibleContacts&&!observed.IsArriving&&!observed.IsMoving,name+" stable after lock no repeated sound");
++            Check(!feedback.HasActiveContacts,name+" no residual tile trail");
++            geometry.SetTile(finalIndex,original,original.a);
+             Debug.Log("MONOLITH_PATH "+name+" frames="+frames+" duration="+(Time.unscaledTime-began).ToString("F4"));
+         }
+ #endif
+--- before/Assets/Scripts/Editor/MonolithValidation.cs
++++ after/Assets/Scripts/Editor/MonolithValidation.cs
+@@ -51,6 +51,12 @@
+                 }
+             }
+             finally{UnityEngine.Object.DestroyImmediate(shell);UnityEngine.Object.DestroyImmediate(ring);}
++            var contact=new BoardContactFeedback.Tuning();
++            Check(contact.tileContactPulseDuration>=.09f&&contact.tileContactPulseDuration<=.14f,"tile contact 90-140ms");
++            Check(contact.tileArrivalPulseDuration>=.18f&&contact.tileArrivalPulseDuration<=.26f,"tile arrival 180-260ms");
++            Check(contact.tileArrivalPulseIntensity>contact.tileContactPulseIntensity,"final tile stronger than crossing");
++            Check(config.visibleSlitWidth>.20f&&config.movingEmissionMultiplier>1,"readable slit and moving emphasis");
++            Check(config.baseRingIntensity>1&&config.topAccentIntensity>0,"ring and crown independent controls");
+             Check(Resources.Load<AudioClip>("PolyRiskAudio/contact_light")!=null&&Resources.Load<AudioClip>("PolyRiskAudio/contact_tac")!=null,"reused audio clips available");
+             var host=new GameObject("[QA] callback");bool skip=GameBootstrapper.SkipMovementAnimation;
+             try
+@@ -63,8 +69,8 @@
+             }
+             finally{GameBootstrapper.SkipMovementAnimation=skip;UnityEngine.Object.DestroyImmediate(host);}
+             string report="MONOLITH EDITOR PASS "+checks+" checks, plus existing 612 regression assertions.\n";
+-            Directory.CreateDirectory("Docs/Validation/Monolith_2026-10-21");
+-            File.WriteAllText("Docs/Validation/Monolith_2026-10-21/editor-checks.txt",report);Debug.Log(report);
++            Directory.CreateDirectory("Docs/Validation/MonolithContact_2026-10-22");
++            File.WriteAllText("Docs/Validation/MonolithContact_2026-10-22/editor-checks.txt",report);Debug.Log(report);
+             EconomyBatchValidation.BuildWebGL();
+         }
+     }
+--- before/Assets/Scripts/Visuals/CompactPawnVisual.cs
++++ after/Assets/Scripts/Visuals/CompactPawnVisual.cs
+@@ -16,13 +16,15 @@
+         [System.Serializable]
+         public sealed class Tuning
+         {
+-            public Color bodyColor = new Color(.18f,.22f,.27f);
++            public Color bodyColor = new Color(.24f,.29f,.34f);
+             [Range(0,1)] public float metallic=.48f, smoothness=.44f;
+             public float heightRatio=.62f, baseWidthRatio=.30f;
+-            public float emissionIntensity=.50f, activeEmissionMultiplier=1.65f;
++            public float emissionIntensity=.65f, activeEmissionMultiplier=1.85f, movingEmissionMultiplier=1.25f;
++            public float baseRingIntensity=1.15f, baseRingActiveMultiplier=1.2f, topAccentIntensity=.8f;
++            [Range(.07f,.38f)] public float visibleSlitWidth=.26f;
+             public float glideElevation=.04f, stepPulseDuration=.09f, stepPulseIntensity=.55f;
+             public float clickVolume=.22f, clickPitchVariation=.018f;
+-            public float arrivalPulseDuration=.22f, arrivalPulseIntensity=.85f, arrivalClickVolume=.18f;
++            public float arrivalPulseDuration=.22f, arrivalPulseIntensity=1.15f, arrivalClickVolume=.26f;
+             public float sharedTileSpacing=.32f, offsetDuration=.16f, fxIntensity=1f;
+         }
+         public Tuning tuning = new Tuning();
+@@ -40,19 +42,26 @@
+         public bool AudioEnabled { get; set; } = true;
+         public static readonly List<CompactPawnVisual> Instances = new List<CompactPawnVisual>(8);
+ 
+-        static Mesh shellMesh,ringMesh;
++        static Mesh shellMesh,ringMesh,slitMesh;
+         static readonly Mesh[] signatureMeshes=new Mesh[6];
+         static Material sharedBody,sharedMetal;
+         static AudioClip stepClip,lockClip;
+         static int users;
+         Transform visual,ring;
+         Material signature;
++        MaterialPropertyBlock ringProperties,topProperties;
++        Renderer ringRenderer,topRenderer;
++        Transform slit;
++        BoardContactFeedback boardContact;
+         AudioSource source;
+         PawnMovement movement;
+         List<Vector3> path;
+         int next,sequence;
+         float shortWidth=1f,floor,lift,pulseEnd,arrivalEnd,turnPulseEnd,lastAudio=-100f;
+-        bool initialized,moving,holdingFloor,restored;
++        bool initialized,moving,holdingFloor,restored,pendingArrival;
++        int finalWaypoint;
++        public float LastLockTime { get; private set; } = -1;
++        public bool IsAwaitingArrival => pendingArrival;
+         Vector3 offset,previousRoot,offsetStart,offsetTarget;
+         float offsetTime;
+         Color identity;
+@@ -69,8 +78,13 @@
+             signature=new Material(Shader.Find("Universal Render Pipeline/Lit")){name="Pawn signature "+playerId};
+             signature.SetFloat("_Metallic",.25f);signature.SetFloat("_Smoothness",.48f);
+             signature.SetColor("_BaseColor",Color.Lerp(identity,Color.white,.16f));signature.EnableKeyword("_EMISSION");
+-            MakePart("Identity slit and head code",signatureMeshes[IdentitySlot(playerId)],new[]{signature},visual);
++            slit=MakePart("Visible front slit",slitMesh,new[]{signature},visual);
++            var crown=MakePart("Precision luminous crown",signatureMeshes[IdentitySlot(playerId)],new[]{signature},visual);
++            topRenderer=crown.GetComponent<Renderer>();topProperties=new MaterialPropertyBlock();
+             ring=MakePart("Precision base ring",ringMesh,new[]{signature},visual);
++            ringRenderer=ring.GetComponent<Renderer>();ringProperties=new MaterialPropertyBlock();
++            var board=FindObjectOfType<PolyRiskBoard>();
++            if(board!=null){boardContact=board.GetComponent<BoardContactFeedback>();if(boardContact==null)boardContact=board.gameObject.AddComponent<BoardContactFeedback>();}
+             source=gameObject.AddComponent<AudioSource>();source.playOnAwake=false;source.spatialBlend=0;
+             source.loop=false;source.volume=1;source.dopplerLevel=0;
+             floor=transform.position.y;previousRoot=transform.position;
+@@ -92,9 +106,9 @@
+             Instances.Remove(this);
+             if(signature!=null)Destroy(signature);
+             if(!initialized || --users>0)return;
+-            Destroy(shellMesh);Destroy(ringMesh);Destroy(sharedBody);Destroy(sharedMetal);
++            Destroy(shellMesh);Destroy(ringMesh);Destroy(slitMesh);Destroy(sharedBody);Destroy(sharedMetal);
+             for(int i=0;i<signatureMeshes.Length;i++){Destroy(signatureMeshes[i]);signatureMeshes[i]=null;}
+-            shellMesh=null;ringMesh=null;sharedBody=null;sharedMetal=null;
++            shellMesh=null;ringMesh=null;slitMesh=null;sharedBody=null;sharedMetal=null;
+         }
+         public void SetActive(bool active,bool turnImpulse=true)
+         {
+@@ -118,7 +132,7 @@
+         }
+         public void ResetPresentation()
+         {
+-            moving=false;holdingFloor=false;path=null;lift=0;pulseEnd=arrivalEnd=turnPulseEnd=0;
++            moving=false;pendingArrival=false;holdingFloor=false;path=null;lift=0;pulseEnd=arrivalEnd=turnPulseEnd=0;
+             restored=true;
+             if(source!=null)source.Stop();
+             if(initialized){floor=transform.position.y;previousRoot=transform.position;SetEmission(0);}
+@@ -138,16 +152,32 @@
+                     floor=path[next].y;Crossings++;bool final=next==path.Count-1;
+                     if(final)
+                     {
+-                        moving=false;arrivalEnd=now+tuning.arrivalPulseDuration;FinalLocks++;
+-                        if(!reduced)pulseEnd=arrivalEnd;
++                        // The root has reached the final tile, but its historical bounce
++                        // still owns completion. Keep the child settled until that clock ends.
++                        moving=false;pendingArrival=true;finalWaypoint=next;
++                        Trace("REACHED",next,false);
+                     }
+-                    else if(!reduced)pulseEnd=now+tuning.stepPulseDuration;
+-                    bool played=Contact(final,now);Trace(final?"LOCK":"TICK",next,played);next++;
++                    else
++                    {
++                        if(!reduced)pulseEnd=now+tuning.stepPulseDuration;
++                        TileContact(path[next],false);
++                        bool played=Contact(false,now);Trace("TICK",next,played);
++                    }
++                    next++;
+                 }
++            }
++            // Camera completes through the untouched business callback earlier this frame.
++            // Its hold and this lock therefore share the same rendered frame, even at low FPS.
++            if(pendingArrival&&movement.IsVisuallySettled)
++            {
++                pendingArrival=false;arrivalEnd=now+tuning.arrivalPulseDuration;FinalLocks++;
++                LastLockTime=now;if(!reduced)pulseEnd=arrivalEnd;
++                TileContact(path[finalWaypoint],true);
++                bool played=Contact(true,now);Trace("LOCK",finalWaypoint,played);
+             }
+             // Keep the original final 80ms bounce/callback entirely on the invisible root.
+             // Only the child is settled. No coroutine delays any business consequence.
+-            if(holdingFloor&&!moving&&now>=arrivalEnd)
++            if(holdingFloor&&!moving&&!pendingArrival&&now>=arrivalEnd)
+             {holdingFloor=false;floor=transform.position.y;}
+             if(!holdingFloor)floor=transform.position.y;
+             float targetLift=moving&&!reduced?tuning.glideElevation*shortWidth:0;
+@@ -160,13 +190,14 @@
+                 if(now<pulseEnd)
+                 {
+                     float duration=IsArriving?tuning.arrivalPulseDuration:tuning.stepPulseDuration;
+-                    pulse=Mathf.Max(pulse,Mathf.Sin(Mathf.Clamp01(1-(pulseEnd-now)/duration)*Mathf.PI)*
++                    pulse=Mathf.Max(pulse,(1-Mathf.SmoothStep(0,1,Mathf.Clamp01(1-(pulseEnd-now)/duration)))*
+                         (IsArriving?tuning.arrivalPulseIntensity:tuning.stepPulseIntensity));
+                 }
+             }
+             SetEmission(pulse*tuning.fxIntensity);
+             float spread=!reduced&&IsArriving?1+Mathf.Sin(Mathf.Clamp01(1-(arrivalEnd-now)/tuning.arrivalPulseDuration)*Mathf.PI)*.15f*tuning.fxIntensity:1;
+-            ring.localScale=new Vector3(spread,1,spread);ApplyPose();
++            ring.localScale=new Vector3(spread,1,spread);
++            slit.localScale=new Vector3(tuning.visibleSlitWidth/.07f,1,1);ApplyPose();
+         }
+         void UpdateSharedOffset(float dt,bool reduced)
+         {
+@@ -198,9 +229,18 @@
+         void SetEmission(float pulse)
+         {
+             if(signature==null)return;
+-            float value=GlowEnabled?tuning.emissionIntensity*(IsActive?tuning.activeEmissionMultiplier:.48f)+pulse:0;
++            float value=GlowEnabled?tuning.emissionIntensity*(IsActive?tuning.activeEmissionMultiplier:.65f)*
++                (moving?tuning.movingEmissionMultiplier:1)+pulse:0;
+             if(Mathf.Abs(value-previousEmission)<.0001f)return;
+-            signature.SetColor("_EmissionColor",identity*value);previousEmission=value;
++            signature.SetColor("_EmissionColor",identity*value);
++            ringProperties.SetColor("_EmissionColor",identity*value*tuning.baseRingIntensity*(IsActive?tuning.baseRingActiveMultiplier:1));
++            ringRenderer.SetPropertyBlock(ringProperties);
++            topProperties.SetColor("_EmissionColor",identity*value*tuning.topAccentIntensity);
++            topRenderer.SetPropertyBlock(topProperties);previousEmission=value;
++        }
++        void TileContact(Vector3 reached,bool final)
++        {
++            if(boardContact!=null)boardContact.PulseAt(reached,identity,final,UIUXRuntime.ReducedMotion);
+         }
+         bool Contact(bool final,float now)
+         {
+@@ -241,9 +281,9 @@
+             if(shellMesh!=null)return;
+             sharedBody=new Material(Shader.Find("Universal Render Pipeline/Lit")){name="Shared pawn satin graphite"};
+             sharedBody.SetColor("_BaseColor",config.bodyColor);sharedBody.SetFloat("_Metallic",config.metallic);sharedBody.SetFloat("_Smoothness",config.smoothness);
+-            sharedMetal=new Material(sharedBody){name="Shared pawn precision edges"};sharedMetal.SetColor("_BaseColor",new Color(.30f,.36f,.41f));
++            sharedMetal=new Material(sharedBody){name="Shared pawn precision edges"};sharedMetal.SetColor("_BaseColor",new Color(.42f,.48f,.54f));
+             sharedMetal.SetFloat("_Metallic",.62f);sharedMetal.SetFloat("_Smoothness",.55f);
+-            shellMesh=Shell();ringMesh=Ring();for(int i=0;i<6;i++)signatureMeshes[i]=Signature(i+1);
++            shellMesh=Shell();ringMesh=Ring();slitMesh=Signature();for(int i=0;i<6;i++)signatureMeshes[i]=Crown(i+1);
+             stepClip=Resources.Load<AudioClip>("PolyRiskAudio/contact_light");lockClip=Resources.Load<AudioClip>("PolyRiskAudio/contact_tac");
+         }
+         sealed class Builder
+@@ -271,22 +311,30 @@
+         static Mesh Shell()
+         {
+             var b=new Builder();Prism(b,.405f,.405f,0,.095f,1);Prism(b,.37f,.34f,.095f,.90f,0);
+-            for(int i=0;i<8;i++){int j=(i+1)%8;b.Quad(Section(i,.37f,.34f,.90f),Section(i,.30f,.275f,.98f),Section(j,.30f,.275f,.98f),Section(j,.37f,.34f,.90f),1);}
+-            Prism(b,.30f,.275f,.975f,.98f,0);return b.Finish("Monolith shared faceted shell",2);
++            for(int i=0;i<8;i++){int j=(i+1)%8;b.Quad(Section(i,.37f,.34f,.90f),Section(i,.335f,.305f,.98f),Section(j,.335f,.305f,.98f),Section(j,.37f,.34f,.90f),1);}
++            Prism(b,.335f,.305f,.975f,.98f,1);return b.Finish("Monolith shared faceted shell",2);
+         }
+         static Mesh Ring()
+         {
+             var b=new Builder();
+-            for(int i=0;i<8;i++){int j=(i+1)%8;b.Quad(Section(i,.397f,.397f,.099f),Section(i,.369f,.369f,.099f),Section(j,.369f,.369f,.099f),Section(j,.397f,.397f,.099f));}
++            for(int i=0;i<8;i++){int j=(i+1)%8;b.Quad(Section(i,.397f,.397f,.099f),Section(i,.345f,.345f,.099f),Section(j,.345f,.345f,.099f),Section(j,.397f,.397f,.099f));}
+             return b.Finish("Shared fine octagonal ring");
+         }
+-        static Mesh Signature(int count)
+-        {
+-            var b=new Builder();b.Quad(new Vector3(-.035f,.23f,-.342f),new Vector3(-.035f,.83f,-.342f),new Vector3(.035f,.83f,-.342f),new Vector3(.035f,.23f,-.342f));
++        static Mesh Crown(int count)
++        {
++            var b=new Builder();
++            for(int i=0;i<8;i++){int j=(i+1)%8;
++                b.Quad(Section(i,.326f,.296f,.983f),Section(i,.245f,.215f,.983f),
++                    Section(j,.245f,.215f,.983f),Section(j,.326f,.296f,.983f));}
+             for(int i=0;i<count;i++)
+             {float x=((i%3)-1)*.135f,z=((i/3)-.5f)*.15f;float s=.035f;
+-             b.Quad(new Vector3(x-s,.982f,z-s),new Vector3(x-s,.982f,z+s),new Vector3(x+s,.982f,z+s),new Vector3(x+s,.982f,z-s));}
+-            return b.Finish("Identity code "+count);
++             b.Quad(new Vector3(x-s,.984f,z-s),new Vector3(x-s,.984f,z+s),new Vector3(x+s,.984f,z+s),new Vector3(x+s,.984f,z-s));}
++            return b.Finish("Crown and identity code "+count);
++        }
++        static Mesh Signature()
++        {
++            var b=new Builder();b.Quad(new Vector3(-.035f,.23f,-.342f),new Vector3(-.035f,.83f,-.342f),new Vector3(.035f,.83f,-.342f),new Vector3(.035f,.23f,-.342f));
++            return b.Finish("Shared visible front slit");
+         }
+     }
+ }
+--- before/Assets/Scripts/Visuals/PawnMovement.cs
++++ after/Assets/Scripts/Visuals/PawnMovement.cs
+@@ -13,6 +13,9 @@
+     /// </summary>
+     public class PawnMovement : MonoBehaviour
+     {
++        // Read-only presentation clock; the original completion callback keeps its timing.
++        public bool IsVisuallySettled { get; private set; } = true;
++
+         private const float LandingBounceDuration = 0.08f;
+         private const float LandingBounceHeight = 0.055f;
+         private const float LandingBounceHorizontalScale = 0.025f;
+@@ -47,6 +50,7 @@
+                 return;
+             }
+ 
++            IsVisuallySettled = false;
+             StartCoroutine(MoveRoutine(waypoints, onMovementFinished));
+         }
+ 
+@@ -133,6 +137,7 @@
+             }
+ 
+             transform.localScale = baseScale;
++            IsVisuallySettled = true;
+             onFinished?.Invoke();
+         }
+ 
+--- before/Assets/Shaders/GraphiteSurface.shader
++++ after/Assets/Shaders/GraphiteSurface.shader
+@@ -2,6 +2,7 @@
+ {
+     Properties
+     {
++        _ContactTex ("Transient pawn contact", 2D) = "black" {}
+         _BaseColor ("Surface tint", Color) = (1,1,1,1)
+         _Metallic ("Metallic", Range(0,1)) = 0.12
+         _Smoothness ("Smoothness", Range(0,1)) = 0.23
+@@ -26,6 +27,8 @@
+         HLSLINCLUDE
+         #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+         #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/CommonMaterial.hlsl"
++            TEXTURE2D(_ContactTex);
++            SAMPLER(sampler_ContactTex);
+             TEXTURE2D(_StateTex);
+             SAMPLER(sampler_StateTex);
+             CBUFFER_START(UnityPerMaterial)
+@@ -148,6 +151,16 @@
+                 half spill = exp2(-distanceToBand / max(0.001, _ReflectionFalloff));
+                 spill *= 1 - smoothstep(_ReflectionReach * 0.5, _ReflectionReach, distanceToBand);
+                 surface.emission = input.tileLight * (band * _BandBoost + spill * _ReflectionStrength) * topMask;
++                // Add contact only at the tile perimeter; the category/selection channel
++                // remains untouched. Derivative coverage keeps a ~1.1 px line on mobile.
++                float2 contactUV = float2((input.tileIndex + 0.5) / 64.0, 0.25);
++                half4 contact = SAMPLE_TEXTURE2D(_ContactTex, sampler_ContactTex, contactUV);
++                half2 contactStyle = SAMPLE_TEXTURE2D(_ContactTex, sampler_ContactTex, contactUV + float2(0,0.5)).rg;
++                half contactLine = 1 - smoothstep(edgePixel * .30, edgePixel * 1.40, edgeDistance);
++                half contactInner = exp2(-max(0,edgeDistance) / .035) *
++                    (1 - smoothstep(.035,.085,edgeDistance));
++                surface.emission += contact.rgb * contact.a *
++                    (contactLine * contactStyle.r + contactInner * contactStyle.g) * topMask;
+                 half4 color = UniversalFragmentPBR(lighting, surface);
+                 // A broad virtual neutral studio panel supplies a restrained satin response.
+                 // Analytic reflection only: no texture, probe, animated light or extra pass.
+--- before/Assets/Shaders/NeonState.shader
++++ after/Assets/Shaders/NeonState.shader
+@@ -12,6 +12,7 @@
+ {
+     Properties
+     {
++        _ContactTex ("Transient pawn contact", 2D) = "black" {}
+         _StateTex   ("État des cases (64x1)", 2D) = "black" {}
+         _Count      ("Largeur de la texture d'état", Float) = 64
+         _Boost      ("Multiplicateur global", Float) = 1
+@@ -43,6 +44,8 @@
+ 
+             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+ 
++            TEXTURE2D(_ContactTex);
++            SAMPLER(sampler_ContactTex);
+             TEXTURE2D(_StateTex);
+             SAMPLER(sampler_StateTex);
+ 
+@@ -84,7 +87,8 @@
+                 // état inexistant (case jamais initialisée) : on retombe sur la
+                 // teinte encodée dans le mesh, à intensité nulle
+                 float3 tint = state.a > 0.0001 ? state.rgb : IN.color.rgb;
+-                OUT.emissive = tint * state.a * _Boost;
++                float4 contact = SAMPLE_TEXTURE2D_LOD(_ContactTex, sampler_ContactTex, float2(u, 0.25), 0);
++                OUT.emissive = tint * state.a * _Boost + contact.rgb * contact.a;
+ 
+                 // les faces horizontales rendent un peu plus fort que les parois :
+                 // ça creuse la lecture du logement sans coûter un second matériau
+--- /dev/null
++++ after/Assets/Scripts/Visuals/BoardContactFeedback.cs
+@@ -0,0 +1,92 @@
++using UnityEngine;
++using PolyRisk.Multiplayer;
++
++namespace PolyRisk.Visuals
++{
++    /// <summary>Independent transient layer. Never reads/writes the persistent tile-state pixels.</summary>
++    [DefaultExecutionOrder(90)]
++    public sealed class BoardContactFeedback : MonoBehaviour
++    {
++        [System.Serializable]
++        public sealed class Tuning
++        {
++            public float tileContactPulseDuration=.12f, tileContactPulseIntensity=1.15f;
++            public float tileContactOutlineIntensity=1f, tileContactInnerGlowIntensity=.075f;
++            [Range(0,1)] public float tileContactColorBlend=.55f;
++            public float tileArrivalPulseDuration=.24f, tileArrivalPulseIntensity=1.65f;
++            public float reducedMotionIntensity=.45f;
++        }
++        public Tuning tuning=new Tuning();
++        public int Contacts { get; private set; }
++        public int LastIndex { get; private set; } = -1;
++        public float LastContactTime { get; private set; } = -1;
++        public float LastIntensity { get; private set; }
++        public bool LastArrival { get; private set; }
++        public bool HasActiveContacts { get; private set; }
++        const int Width=64;
++        struct Pulse { public float began,duration,intensity; public Color color; }
++        readonly Pulse[] pulses=new Pulse[40];
++        readonly Color[] pixels=new Color[Width*2];
++        readonly Transform[] anchors=new Transform[40];
++        PolyRiskBoard board;
++        Texture2D texture;
++        static readonly int ContactTex=Shader.PropertyToID("_ContactTex");
++        void OnEnable()
++        {
++            board=GetComponent<PolyRiskBoard>();
++            foreach(var id in GetComponentsInChildren<TileIdentifier>())
++                if(id.TileIndex>=0&&id.TileIndex<40)anchors[id.TileIndex]=id.transform;
++            texture=new Texture2D(Width,2,TextureFormat.RGBAHalf,false,true)
++                {name="Board transient contact only",filterMode=FilterMode.Point,wrapMode=TextureWrapMode.Clamp};
++            Clear();
++            OnlineGameController.PresentationStateApplied+=Clear;
++        }
++        void OnDisable()
++        {
++            OnlineGameController.PresentationStateApplied-=Clear;
++            Bind(Texture2D.blackTexture);
++            if(texture!=null)Destroy(texture);
++        }
++        void Bind(Texture value)
++        {
++            if(board==null)return;
++            if(board.tileMaterial!=null)board.tileMaterial.SetTexture(ContactTex,value);
++            if(board.neonMaterial!=null)board.neonMaterial.SetTexture(ContactTex,value);
++        }
++        public void Clear()
++        {
++            System.Array.Clear(pulses,0,pulses.Length);System.Array.Clear(pixels,0,pixels.Length);
++            HasActiveContacts=false;
++            if(texture!=null){texture.SetPixels(pixels);texture.Apply(false,false);Bind(texture);}
++        }
++        public void PulseAt(Vector3 reached,Color identity,bool arrival,bool reduced)
++        {
++            int index=-1;
++            for(int i=0;i<40;i++)if(anchors[i]!=null&&(anchors[i].position-reached).sqrMagnitude<.0001f){index=i;break;}
++            if(index<0)return; // Only a real indexed anchor can receive a contact.
++            float duration=arrival?tuning.tileArrivalPulseDuration:tuning.tileContactPulseDuration;
++            float intensity=(arrival?tuning.tileArrivalPulseIntensity:tuning.tileContactPulseIntensity)*(reduced?tuning.reducedMotionIntensity:1);
++            pulses[index]=new Pulse{began=Time.unscaledTime,duration=Mathf.Max(.01f,duration),intensity=intensity,
++                color=Color.Lerp(new Color(.70f,.80f,.84f),identity,tuning.tileContactColorBlend)};
++            pixels[Width+index]=new Color(tuning.tileContactOutlineIntensity,tuning.tileContactInnerGlowIntensity,0,0);
++            Contacts++;LastIndex=index;LastContactTime=Time.unscaledTime;LastIntensity=intensity;LastArrival=arrival;HasActiveContacts=true;
++#if UNITY_EDITOR || DEVELOPMENT_BUILD
++            Debug.Log("TILE_CONTACT index="+index+" arrival="+arrival+" reduced="+reduced+" intensity="+intensity.ToString("F3",System.Globalization.CultureInfo.InvariantCulture)+" t="+LastContactTime.ToString("F4",System.Globalization.CultureInfo.InvariantCulture));
++#endif
++        }
++        void LateUpdate()
++        {
++            if(!HasActiveContacts)return;
++            HasActiveContacts=false;float now=Time.unscaledTime;
++            for(int i=0;i<40;i++)
++            {
++                var pulse=pulses[i];float phase=pulse.duration>0?(now-pulse.began)/pulse.duration:1;
++                float strength=phase<1?pulse.intensity*(1-Mathf.SmoothStep(0,1,Mathf.InverseLerp(.18f,1,phase))):0;
++                var color=pulse.color;color.a=strength;pixels[i]=color;
++                HasActiveContacts|=strength>0;
++            }
++            // One tiny texture upload only while a contact is alive, including its final clear.
++            texture.SetPixels(pixels);texture.Apply(false,false);Bind(texture);
++        }
++    }
++}
+--- /dev/null
++++ after/Assets/Scripts/Visuals/BoardContactFeedback.cs.meta
+@@ -0,0 +1,2 @@
++fileFormatVersion: 2
++guid: 8bef78802b814ec5a0266b95ab010d20

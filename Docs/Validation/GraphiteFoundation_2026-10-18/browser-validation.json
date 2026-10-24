@@ -1,0 +1,27 @@
+{
+  "desktop": {
+    "viewport": [
+      1200,
+      900
+    ],
+    "warnings_and_errors": []
+  },
+  "portrait": {
+    "viewport": [
+      430,
+      830
+    ],
+    "warnings_and_errors": []
+  },
+  "selection": {
+    "tap": [
+      239,
+      272
+    ],
+    "before_index": 31,
+    "after_index": 31,
+    "property": "Quantum AI Labs"
+  },
+  "fixture": "First local human turn, 18000 capital and net worth, no dice roll or purchase; GO or read-only inspection of tile 31.",
+  "device": "Desktop browser; no physical mobile test."
+}

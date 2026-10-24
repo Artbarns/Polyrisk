@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "status": "Design approved; values are adjustable starting points",
+  "runtime": "Unity 2022.3.62f3 / UI Toolkit",
+  "notUnityImportable": true,
+  "palette": {
+    "background": "#0b0e16",
+    "surface": "#111620",
+    "divider": "#2a303b",
+    "foreground": "#f2f3f5",
+    "secondary": "#a1a6b2",
+    "neonGreen": "#13db83",
+    "amber": "#edb95c",
+    "doubleAccentReference": "#8aff82",
+    "familyColors": "Use existing semantic family palette"
+  },
+  "dice": {
+    "defaultRecommended": "vertical",
+    "cosmeticVariants": [
+      "vertical",
+      "forward",
+      "slide"
+    ],
+    "faceSizeReferenceUiUnits": 72,
+    "firstSettleMs": 520,
+    "secondEdgeArrivalMs": 640,
+    "edgeHoldMs": 200,
+    "edgeHoldRangeMs": [
+      80,
+      400
+    ],
+    "edgeAnglesDeg": [
+      38,
+      35,
+      37
+    ],
+    "fallToFlatMs": 95,
+    "fallCubicBezier": [
+      0.55,
+      0,
+      0.95,
+      0.55
+    ],
+    "ordinaryRecoveryMs": 125,
+    "firstLiftReferenceUiUnits": 64,
+    "secondLiftReferenceUiUnits": 73,
+    "totalBehindDice": true,
+    "showAdditionText": false,
+    "confirmedResultsOnly": true
+  },
+  "double": {
+    "localCompressionMs": 65,
+    "compressionScale": 0.97,
+    "haloMs": 500,
+    "raysMs": 360,
+    "accentBarsMs": 850,
+    "pairReleaseMs": 280,
+    "pairReleaseScale": 1.055,
+    "labelMs": 240,
+    "freezeGameplay": false,
+    "celebrateAdverseOutcome": false
+  },
+  "ui": {
+    "detents": [
+      "compact",
+      "expanded"
+    ],
+    "hardcodedPanelHeight": false,
+    "sheetTransitionMs": 260,
+    "sheetCubicBezier": [
+      0.2,
+      0.8,
+      0.2,
+      1
+    ],
+    "cardSelectionMs": 170,
+    "cardSelectionTranslateUiUnits": 3,
+    "buttonPressedScale": 0.97,
+    "buttonTransitionMs": 90,
+    "preferredTouchTargetUiUnits": 44,
+    "keepSelectionAcrossDetents": true,
+    "familySizeFromModel": true,
+    "goFiguresAreEstimates": true,
+    "previewDataIsFixture": true
+  },
+  "optionalNotApproved": {
+    "slider": {
+      "commitThresholdReferencePercent": 90,
+      "cancelReturnMs": 220,
+      "mustProvideTapAndKeyboardAlternatives": true,
+      "confirmedCommandOnly": true
+    },
+    "familyCompletion": {
+      "cardSettleMs": 330,
+      "linkMs": 650
+    },
+    "rentCredit": {
+      "balanceMs": 230,
+      "annotationMs": 350,
+      "annotationHoldMs": 1600
+    }
+  },
+  "reducedMotion": "Set correct final state immediately; retain readable status, selection, receipt and independently controlled audio",
+  "audio": {
+    "sampleRateHz": 48000,
+    "channels": 1,
+    "sampleFormat": "PCM16",
+    "files": [
+      "audio/contact_light.wav",
+      "audio/contact_tac.wav",
+      "audio/double_green.wav"
+    ],
+    "origin": "Original synthesis for PolyRisk handoff; no third-party samples"
+  }
+}

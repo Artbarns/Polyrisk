@@ -1,0 +1,18 @@
+{
+  "modified": [
+    "Assets/Scripts/Debug/MonolithValidationDriver.cs",
+    "Assets/Scripts/Editor/MonolithValidation.cs",
+    "Assets/Scripts/Visuals/CompactPawnVisual.cs",
+    "Assets/Scripts/Visuals/PawnMovement.cs",
+    "Assets/Shaders/GraphiteSurface.shader",
+    "Assets/Shaders/NeonState.shader"
+  ],
+  "created": [
+    "Assets/Scripts/Visuals/BoardContactFeedback.cs",
+    "Assets/Scripts/Visuals/BoardContactFeedback.cs.meta"
+  ],
+  "unchangedExistingAssetsSettings": 590,
+  "movementAlgorithmAndCallback": "identical after removing read-only presentation clock",
+  "cameraPASS2D": "byte-identical",
+  "geometry40IndicesCollidersSelectionRulesEconomyNetworkDiceCockpitScenePrefab": "byte-identical"
+}

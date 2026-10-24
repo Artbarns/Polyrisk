@@ -1,0 +1,12 @@
+PASS: 40 anchors; indices 0..39; original anchor/collider signatures; 40 raycasts; 36 surface heights; four meshes; unchanged framing.
+
+BEFORE
+Board_Metal: 11264 vertices, 5568 triangles
+Board_Tiles: 9216 vertices, 3456 triangles
+Board_Neon: 20736 vertices, 9216 triangles
+Board_Dark: 1024 vertices, 384 triangles
+AFTER
+Board_Metal: 11264 vertices, 5568 triangles
+Board_Tiles: 9216 vertices, 3456 triangles
+Board_Neon: 20736 vertices, 9216 triangles
+Board_Dark: 1024 vertices, 384 triangles

@@ -1,0 +1,1 @@
+PASS: 11 runtime states; all 40 anchors/colliders/identities visible, initial economy unchanged; direct property-31 inspection A/B/C; compact framing restored exactly B/C; 11 JPEGs including baseline at 430x830; actual WebGL canvas 430x830, DPR 1.

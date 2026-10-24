@@ -1,0 +1,20 @@
+{
+  "modified": [
+    "Assets/Scripts/Board/BoardVisualTheme.cs",
+    "Assets/Scripts/Systems/BoardInteractionManager.cs",
+    "Assets/Scripts/Visuals/BoardContactFeedback.cs",
+    "Assets/Scripts/Visuals/BoardSurfaceLighting.cs",
+    "Assets/Settings/GraphiteFoundation/GraphiteTheme.asset",
+    "Assets/Shaders/GraphiteSurface.shader"
+  ],
+  "created": [
+    "Assets/Scripts/Debug/PerceptualPolishValidationDriver.cs",
+    "Assets/Scripts/Debug/PerceptualPolishValidationDriver.cs.meta",
+    "Assets/Scripts/Editor/PerceptualPolishValidation.cs",
+    "Assets/Scripts/Editor/PerceptualPolishValidation.cs.meta"
+  ],
+  "unchangedExistingFiles": 600,
+  "restFramingCalibrationSelectionCockpitCallbacksPawnMovementEconomyNetworkDice": "unchanged; camera movement-only and visual envelope authorized",
+  "shaderPassesAndKeywords": "unchanged",
+  "AExistingCoefficientsAndGeometryPalette": "byte-identical"
+}

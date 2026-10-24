@@ -1,0 +1,606 @@
+--- before/Assets/Scripts/Board/BoardVisualTheme.cs
++++ after/Assets/Scripts/Board/BoardVisualTheme.cs
+@@ -47,5 +47,42 @@
+         [Range(0f, 2f)] public float neonBoost = 1.15f;
+         [Tooltip("Maximum world-space reach of the simulated colored reflection.")]
+         [Range(0.02f, 0.2f)] public float reflectionReach = 0.10f;
++        public enum SurfaceTreatment { GraphiteSatin, GraphiteReflectiveNeon }
++
++        [System.Serializable]
++        public sealed class SurfaceFinish
++        {
++            public Color boardTint = new Color(.80f,.83f,.87f);
++            public Color tileTint = new Color(.88f,.91f,.95f);
++            [Range(0,1)] public float boardMetallic=.36f, tileMetallic=.27f;
++            [Range(0,1)] public float boardSmoothness=.47f, tileSmoothness=.41f;
++            [Range(0,1)] public float studioReflection=.46f, edgeSpecular=.035f;
++            [Range(0,2)] public float neonEmission=.82f, neonReflection=.06f;
++            public float reflectionFalloff=.025f, reflectionReach=.09f;
++            public float contactReflection=.035f, arrivalReflection=.075f, contactOutline=.90f;
++            public float backgroundSeparation=.012f;
++            public Color pawnBody = new Color(.23f,.28f,.33f);
++            public float pawnMetallic=.42f, pawnSmoothness=.40f;
++            public float pawnEmission=.88f, pawnRing=.9f, pawnTop=.9f, pawnBaseReflection=.008f;
++
++            public static SurfaceFinish ReflectiveNeon() => new SurfaceFinish
++            {
++                boardMetallic=.42f,tileMetallic=.34f,boardSmoothness=.53f,tileSmoothness=.48f,
++                studioReflection=.56f,edgeSpecular=.045f,neonEmission=1.06f,neonReflection=.52f,
++                reflectionFalloff=.045f,reflectionReach=.14f,contactReflection=.24f,arrivalReflection=.42f,
++                contactOutline=1.04f,backgroundSeparation=.016f,pawnMetallic=.48f,pawnSmoothness=.46f,
++                pawnEmission=1.10f,pawnRing=1.12f,pawnTop=1.02f,pawnBaseReflection=.045f
++            };
++        }
++        [Header("PASS 2F — shared finish system, no geometry or gameplay")]
++        public SurfaceTreatment surfaceTreatment=SurfaceTreatment.GraphiteReflectiveNeon;
++        public SurfaceFinish graphiteSatin=new SurfaceFinish();
++        public SurfaceFinish reflectiveNeon=SurfaceFinish.ReflectiveNeon();
++        [Header("Shared architectural lighting — same exposure for A / B")]
++        public Color fillColor=new Color(.32f,.35f,.39f);
++        public Color keyColor=new Color(.94f,.96f,.98f);
++        [Range(0,2)] public float keyIntensity=.55f;
++        public SurfaceFinish Finish(SurfaceTreatment treatment) =>
++            treatment==SurfaceTreatment.GraphiteSatin?graphiteSatin:reflectiveNeon;
+     }
+ }
+--- before/Assets/Scripts/Visuals/BoardContactFeedback.cs
++++ after/Assets/Scripts/Visuals/BoardContactFeedback.cs
+@@ -68,7 +68,7 @@
+             float intensity=(arrival?tuning.tileArrivalPulseIntensity:tuning.tileContactPulseIntensity)*(reduced?tuning.reducedMotionIntensity:1);
+             pulses[index]=new Pulse{began=Time.unscaledTime,duration=Mathf.Max(.01f,duration),intensity=intensity,
+                 color=Color.Lerp(new Color(.70f,.80f,.84f),identity,tuning.tileContactColorBlend)};
+-            pixels[Width+index]=new Color(tuning.tileContactOutlineIntensity,tuning.tileContactInnerGlowIntensity,0,0);
++            pixels[Width+index]=new Color(tuning.tileContactOutlineIntensity,tuning.tileContactInnerGlowIntensity,arrival?1:0,0);
+             Contacts++;LastIndex=index;LastContactTime=Time.unscaledTime;LastIntensity=intensity;LastArrival=arrival;HasActiveContacts=true;
+ #if UNITY_EDITOR || DEVELOPMENT_BUILD
+             Debug.Log("TILE_CONTACT index="+index+" arrival="+arrival+" reduced="+reduced+" intensity="+intensity.ToString("F3",System.Globalization.CultureInfo.InvariantCulture)+" t="+LastContactTime.ToString("F4",System.Globalization.CultureInfo.InvariantCulture));
+--- before/Assets/Scripts/Visuals/CompactPawnVisual.cs
++++ after/Assets/Scripts/Visuals/CompactPawnVisual.cs
+@@ -225,18 +225,34 @@
+                 shortWidth*tuning.heightRatio/Mathf.Max(.001f,parent.y),
+                 shortWidth*tuning.baseWidthRatio/Mathf.Max(.001f,parent.z))*emphasis;
+         }
+-        float previousEmission=-1;
++        BoardVisualTheme.SurfaceFinish lightingFinish;
++        internal BoardVisualTheme.SurfaceFinish LightingFinish => lightingFinish;
++        internal void ApplyLightingFinish(BoardVisualTheme.SurfaceFinish finish)
++        {
++            lightingFinish=finish;
++            if(sharedBody!=null)
++            {
++                sharedBody.SetColor("_BaseColor",finish.pawnBody);
++                sharedBody.SetFloat("_Metallic",finish.pawnMetallic);sharedBody.SetFloat("_Smoothness",finish.pawnSmoothness);
++                sharedMetal.SetFloat("_Metallic",.58f);sharedMetal.SetFloat("_Smoothness",finish.pawnSmoothness+.08f);
++            }
++            previousEmission=previousRingEmission=previousTopEmission=-1;SetEmission(0);
++        }
++        float previousEmission=-1,previousRingEmission=-1,previousTopEmission=-1;
+         void SetEmission(float pulse)
+         {
+             if(signature==null)return;
+             float value=GlowEnabled?tuning.emissionIntensity*(IsActive?tuning.activeEmissionMultiplier:.65f)*
+                 (moving?tuning.movingEmissionMultiplier:1)+pulse:0;
+-            if(Mathf.Abs(value-previousEmission)<.0001f)return;
++            value*=lightingFinish!=null?lightingFinish.pawnEmission:1;
++            float ringValue=value*tuning.baseRingIntensity*(IsActive?tuning.baseRingActiveMultiplier:1)*(lightingFinish!=null?lightingFinish.pawnRing:1);
++            float topValue=value*tuning.topAccentIntensity*(lightingFinish!=null?lightingFinish.pawnTop:1);
++            if(Mathf.Abs(value-previousEmission)<.0001f&&Mathf.Abs(ringValue-previousRingEmission)<.0001f&&Mathf.Abs(topValue-previousTopEmission)<.0001f)return;
+             signature.SetColor("_EmissionColor",identity*value);
+-            ringProperties.SetColor("_EmissionColor",identity*value*tuning.baseRingIntensity*(IsActive?tuning.baseRingActiveMultiplier:1));
++            ringProperties.SetColor("_EmissionColor",identity*ringValue);
+             ringRenderer.SetPropertyBlock(ringProperties);
+-            topProperties.SetColor("_EmissionColor",identity*value*tuning.topAccentIntensity);
+-            topRenderer.SetPropertyBlock(topProperties);previousEmission=value;
++            topProperties.SetColor("_EmissionColor",identity*topValue);
++            topRenderer.SetPropertyBlock(topProperties);previousEmission=value;previousRingEmission=ringValue;previousTopEmission=topValue;
+         }
+         void TileContact(Vector3 reached,bool final)
+         {
+--- before/Assets/Settings/GraphiteFoundation/GraphiteTheme.asset
++++ after/Assets/Settings/GraphiteFoundation/GraphiteTheme.asset
+@@ -41,3 +41,55 @@
+   minimumBandPixels: 1.2
+   neonBoost: 1.5
+   reflectionReach: 0.1
++  surfaceTreatment: 1
++  graphiteSatin:
++    boardTint: {r: 0.8, g: 0.83, b: 0.87, a: 1}
++    tileTint: {r: 0.88, g: 0.91, b: 0.95, a: 1}
++    boardMetallic: 0.36
++    tileMetallic: 0.27
++    boardSmoothness: 0.47
++    tileSmoothness: 0.41
++    studioReflection: 0.46
++    edgeSpecular: 0.035
++    neonEmission: 0.82
++    neonReflection: 0.06
++    reflectionFalloff: 0.025
++    reflectionReach: 0.09
++    contactReflection: 0.035
++    arrivalReflection: 0.075
++    contactOutline: 0.9
++    backgroundSeparation: 0.012
++    pawnBody: {r: 0.23, g: 0.28, b: 0.33, a: 1}
++    pawnMetallic: 0.42
++    pawnSmoothness: 0.4
++    pawnEmission: 0.88
++    pawnRing: 0.9
++    pawnTop: 0.9
++    pawnBaseReflection: 0.008
++  reflectiveNeon:
++    boardTint: {r: 0.8, g: 0.83, b: 0.87, a: 1}
++    tileTint: {r: 0.88, g: 0.91, b: 0.95, a: 1}
++    boardMetallic: 0.42
++    tileMetallic: 0.34
++    boardSmoothness: 0.53
++    tileSmoothness: 0.48
++    studioReflection: 0.56
++    edgeSpecular: 0.045
++    neonEmission: 1.06
++    neonReflection: 0.52
++    reflectionFalloff: 0.045
++    reflectionReach: 0.14
++    contactReflection: 0.24
++    arrivalReflection: 0.42
++    contactOutline: 1.04
++    backgroundSeparation: 0.016
++    pawnBody: {r: 0.23, g: 0.28, b: 0.33, a: 1}
++    pawnMetallic: 0.48
++    pawnSmoothness: 0.46
++    pawnEmission: 1.1
++    pawnRing: 1.12
++    pawnTop: 1.02
++    pawnBaseReflection: 0.045
++  fillColor: {r: 0.32, g: 0.35, b: 0.39, a: 1}
++  keyColor: {r: 0.94, g: 0.96, b: 0.98, a: 1}
++  keyIntensity: 0.55
+--- before/Assets/Settings/Low_PipelineAsset.asset
++++ after/Assets/Settings/Low_PipelineAsset.asset
+@@ -33,7 +33,7 @@
+   m_EnableLODCrossFade: 1
+   m_LODCrossFadeDitheringType: 1
+   m_ShEvalMode: 0
+-  m_MainLightRenderingMode: 0
++  m_MainLightRenderingMode: 1
+   m_MainLightShadowsSupported: 0
+   m_MainLightShadowmapResolution: 1024
+   m_AdditionalLightsRenderingMode: 2
+--- before/Assets/Shaders/GraphiteSurface.shader
++++ after/Assets/Shaders/GraphiteSurface.shader
+@@ -3,6 +3,16 @@
+     Properties
+     {
+         _ContactTex ("Transient pawn contact", 2D) = "black" {}
++        _Polish ("Architectural finish enabled", Float) = 0
++        _SurfaceTint ("Graphite finish tint", Color) = (1,1,1,1)
++        _EdgeSpecular ("Precision edge reflection", Float) = 0
++        _BackgroundSeparation ("Outer edge separation", Float) = 0
++        _BoardHalfExtent ("Board half extent", Float) = 7
++        _ContactReflectionStrength ("Contact reflection", Float) = 0
++        _ArrivalReflectionStrength ("Arrival reflection", Float) = 0
++        _ContactOutlineGain ("Contact outline gain", Float) = 1
++        _PawnFoot ("Active pawn footprint x z radius energy", Vector) = (0,0,1,0)
++        _PawnFootColor ("Active pawn reflection tint", Color) = (0,0,0,0)
+         _BaseColor ("Surface tint", Color) = (1,1,1,1)
+         _Metallic ("Metallic", Range(0,1)) = 0.12
+         _Smoothness ("Smoothness", Range(0,1)) = 0.23
+@@ -33,6 +43,16 @@
+             SAMPLER(sampler_StateTex);
+             CBUFFER_START(UnityPerMaterial)
+                 half4 _BaseColor;
++                half4 _SurfaceTint;
++                half _Polish;
++                half _EdgeSpecular;
++                half _BackgroundSeparation;
++                float _BoardHalfExtent;
++                half _ContactReflectionStrength;
++                half _ArrivalReflectionStrength;
++                half _ContactOutlineGain;
++                float4 _PawnFoot;
++                half4 _PawnFootColor;
+                 half _Metallic;
+                 half _Smoothness;
+                 half _ReflectionStrength;
+@@ -134,7 +154,7 @@
+                 lighting.normalizedScreenSpaceUV = GetNormalizedScreenSpaceUV(input.positionCS);
+                 lighting.shadowMask = half4(1,1,1,1);
+                 SurfaceData surface = (SurfaceData)0;
+-                surface.albedo = input.color.rgb * _BaseColor.rgb;
++                surface.albedo = input.color.rgb * _BaseColor.rgb * lerp(half3(1,1,1), _SurfaceTint.rgb, _Polish);
+                 surface.metallic = _Metallic;
+                 surface.smoothness = _Smoothness;
+                 surface.normalTS = half3(0,0,1);
+@@ -150,17 +170,30 @@
+                 band *= 1 - smoothstep(_TileSize.x * 0.5 - 0.04, _TileSize.x * 0.5 - 0.03, abs(localAlong));
+                 half spill = exp2(-distanceToBand / max(0.001, _ReflectionFalloff));
+                 spill *= 1 - smoothstep(_ReflectionReach * 0.5, _ReflectionReach, distanceToBand);
++                // A short colored reflection follows the actual category band, never a full-tile wash.
++                half bandLength = 1 - smoothstep(_TileSize.x*.5-.03, _TileSize.x*.5, abs(localAlong));
++                half reflectionDirection = .72 + .28 * saturate(dot(lighting.normalWS,normalize(float3(-.5,1,-.35))));
++                spill *= lerp(1,bandLength * reflectionDirection,_Polish);
+                 surface.emission = input.tileLight * (band * _BandBoost + spill * _ReflectionStrength) * topMask;
+                 // Add contact only at the tile perimeter; the category/selection channel
+                 // remains untouched. Derivative coverage keeps a ~1.1 px line on mobile.
+                 float2 contactUV = float2((input.tileIndex + 0.5) / 64.0, 0.25);
+                 half4 contact = SAMPLE_TEXTURE2D(_ContactTex, sampler_ContactTex, contactUV);
+-                half2 contactStyle = SAMPLE_TEXTURE2D(_ContactTex, sampler_ContactTex, contactUV + float2(0,0.5)).rg;
++                half3 contactStyle = SAMPLE_TEXTURE2D(_ContactTex, sampler_ContactTex, contactUV + float2(0,0.5)).rgb;
+                 half contactLine = 1 - smoothstep(edgePixel * .30, edgePixel * 1.40, edgeDistance);
+                 half contactInner = exp2(-max(0,edgeDistance) / .035) *
+                     (1 - smoothstep(.035,.085,edgeDistance));
+                 surface.emission += contact.rgb * contact.a *
+-                    (contactLine * contactStyle.r + contactInner * contactStyle.g) * topMask;
++                    (contactLine * contactStyle.r * _ContactOutlineGain + contactInner * contactStyle.g) * topMask;
++                half reflectedContact = lerp(_ContactReflectionStrength,_ArrivalReflectionStrength,contactStyle.b);
++                half contactSpill = exp2(-max(0,edgeDistance)/max(.015,_ReflectionFalloff)) *
++                    (1-smoothstep(_ReflectionReach*.45,_ReflectionReach,max(0,edgeDistance)));
++                surface.emission += contact.rgb*contact.a*contactSpill*reflectedContact*topMask*_Polish;
++                // One actual active child footprint, including its shared-tile offset.
++                float2 foot = (input.boardPosition.xz-_PawnFoot.xy)/max(.001,_PawnFoot.z);
++                float footRadius2=dot(foot,foot);
++                half footReflection=exp2(-4*footRadius2)*(1-smoothstep(.25,1,footRadius2));
++                surface.emission += _PawnFootColor.rgb*footReflection*_PawnFoot.w*saturate(input.normalWS.y)*_Polish;
+                 half4 color = UniversalFragmentPBR(lighting, surface);
+                 // A broad virtual neutral studio panel supplies a restrained satin response.
+                 // Analytic reflection only: no texture, probe, animated light or extra pass.
+@@ -170,11 +203,31 @@
+                 float2 panelCoord = float2(dot(panel, float2(0.7071,-0.7071)) / 4.0,
+                     dot(panel, float2(0.7071,0.7071)) / 12.0);
+                 half studio = exp2(-2 * dot(panelCoord, panelCoord) / max(0.25, 1.5 - _Smoothness));
++                if(_Polish>.5)
++                {
++                    // Two neutral virtual softboxes. Analytic and view dependent, no probe/SSR/texture.
++                    float2 reflectedPoint=input.boardPosition.xz+reflectionOS.xz*travel;
++                    float2 key=reflectedPoint-float2(8,10);
++                    float2 keyUV=float2(dot(key,float2(.7071,-.7071))/2.7,dot(key,float2(.7071,.7071))/11);
++                    float2 fill=reflectedPoint-float2(1,11);
++                    float2 fillUV=float2(fill.x/3.0,fill.y/9.0);
++                    studio=exp2(-2*dot(keyUV,keyUV))*.72+exp2(-2*dot(fillUV,fillUV))*.18;
++                }
+                 half facing = saturate(dot(lighting.normalWS, lighting.viewDirectionWS));
+                 half3 f0 = lerp(half3(0.04,0.04,0.04), surface.albedo, _Metallic);
+                 half3 fresnel = f0 + (1 - f0) * pow(1 - facing, 5);
+                 half regionWeight = lerp(0.35,1,saturate(dot(input.color.rgb, half3(0.2126,0.7152,0.0722)) / 0.045));
+                 color.rgb += fresnel * studio * _StudioStrength * regionWeight * saturate(input.normalWS.y);
++                if(_Polish>.5)
++                {
++                    half luma=dot(input.color.rgb,half3(.2126,.7152,.0722));
++                    half metalEdge=smoothstep(.022,.052,luma)*(1-_TileSurface);
++                    half edgeOrientation=.25+.75*saturate(dot(lighting.normalWS,normalize(float3(-.65,.7,-.3))));
++                    color.rgb += (edgeMask+metalEdge*.32)*edgeOrientation*_EdgeSpecular*half3(.89,.94,1);
++                    float boardEdge=min(_BoardHalfExtent-abs(input.boardPosition.x),_BoardHalfExtent-abs(input.boardPosition.z));
++                    half separation=(1-smoothstep(0,max(fwidth(boardEdge)*1.2,.025),boardEdge))*(1-_TileSurface);
++                    color.rgb += separation*_BackgroundSeparation*saturate(input.normalWS.y);
++                }
+                 color.rgb = MixFog(color.rgb, input.fog);
+                 return color;
+             }
+--- before/Assets/Shaders/NeonState.shader
++++ after/Assets/Shaders/NeonState.shader
+@@ -14,6 +14,7 @@
+     {
+         _ContactTex ("Transient pawn contact", 2D) = "black" {}
+         _StateTex   ("État des cases (64x1)", 2D) = "black" {}
++        _ContactGain ("Contact outline gain", Float) = 1
+         _Count      ("Largeur de la texture d'état", Float) = 64
+         _Boost      ("Multiplicateur global", Float) = 1
+         _Falloff    ("Adoucissement des bords", Range(0, 1)) = 0.15
+@@ -50,6 +51,7 @@
+             SAMPLER(sampler_StateTex);
+ 
+             CBUFFER_START(UnityPerMaterial)
++                float _ContactGain;
+                 float _Count;
+                 float _Boost;
+                 float _Falloff;
+@@ -88,7 +90,7 @@
+                 // teinte encodée dans le mesh, à intensité nulle
+                 float3 tint = state.a > 0.0001 ? state.rgb : IN.color.rgb;
+                 float4 contact = SAMPLE_TEXTURE2D_LOD(_ContactTex, sampler_ContactTex, float2(u, 0.25), 0);
+-                OUT.emissive = tint * state.a * _Boost + contact.rgb * contact.a;
++                OUT.emissive = tint * state.a * _Boost + contact.rgb * contact.a * _ContactGain;
+ 
+                 // les faces horizontales rendent un peu plus fort que les parois :
+                 // ça creuse la lecture du logement sans coûter un second matériau
+--- /dev/null
++++ after/Assets/Scripts/Debug/SurfaceLightingValidationDriver.cs
+@@ -0,0 +1,103 @@
++using UnityEngine;
++#if UNITY_EDITOR || DEVELOPMENT_BUILD
++using System.Collections;
++using System.Linq;
++using System.Reflection;
++using PolyRisk.Multiplayer;
++using UnityEngine.Rendering;
++using UnityEngine.Rendering.Universal;
++using UnityEngine.Profiling;
++using Unity.Profiling;
++using PolyRisk.Visuals;
++#endif
++namespace PolyRisk.DebugTools
++{
++    public sealed class SurfaceLightingValidationDriver : MonoBehaviour
++    {
++#if UNITY_EDITOR || DEVELOPMENT_BUILD
++        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
++        static void Mount(){if(!Application.isBatchMode)new GameObject("[QA] Graphite").AddComponent<SurfaceLightingValidationDriver>();}
++        public void Satin(){FindObjectOfType<BoardSurfaceLighting>()?.Apply(BoardVisualTheme.SurfaceTreatment.GraphiteSatin);Describe();}
++        public void Reflective(){FindObjectOfType<BoardSurfaceLighting>()?.Apply(BoardVisualTheme.SurfaceTreatment.GraphiteReflectiveNeon);Describe();}
++        public void Low(){QualitySettings.SetQualityLevel(1,true);Describe();}
++        public void Medium(){QualitySettings.SetQualityLevel(2,true);Describe();}
++        public void Describe()
++        {
++            var board=FindObjectOfType<PolyRiskBoard>();var presenter=FindObjectOfType<BoardSurfaceLighting>();
++            var urp=GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;
++            var volume=FindObjectOfType<Volume>();var bloom=volume!=null?volume.profile.components.OfType<Bloom>().FirstOrDefault():null;
++            var exposure=volume!=null?volume.profile.components.OfType<ColorAdjustments>().FirstOrDefault():null;
++            var camera=Camera.main;int lights=FindObjectsOfType<Light>().Count(l=>l.enabled);
++            Debug.Log("GRAPHITE_QA "+JsonUtility.ToJson(new Status{treatment=presenter!=null?presenter.Treatment.ToString():"missing",
++                quality=QualitySettings.names[QualitySettings.GetQualityLevel()],pipeline=urp!=null?urp.name:"missing",
++                mainLight=urp!=null?urp.mainLightRenderingMode.ToString():"missing",srpBatcher=urp!=null&&urp.useSRPBatcher,
++                width=Screen.width,height=Screen.height,indices=board!=null?board.GetComponentsInChildren<TileIdentifier>().Length:0,
++                meshes=board!=null?board.GetComponentsInChildren<MeshFilter>().Length:0,lights=lights,
++                realtimeProbes=FindObjectsOfType<ReflectionProbe>().Count(p=>p.enabled&&p.mode==ReflectionProbeMode.Realtime),
++                bloom=bloom!=null?bloom.intensity.value:-1,exposure=exposure!=null?exposure.postExposure.value:-999,
++                camera=camera!=null?camera.transform.position:Vector3.zero,angles=camera!=null?camera.transform.eulerAngles:Vector3.zero,
++                size=camera!=null?camera.orthographicSize:0,finish=presenter!=null?presenter.Finish:null}));
++        }
++        static void Check(bool ok,string name){Debug.Log("GRAPHITE_CASE "+(ok?"PASS ":"FAIL ")+name);}
++        public void SpecimenIdle(){foreach(var p in CompactPawnVisual.Instances)if(p!=null&&p.name.StartsWith("[QA] Material specimen"))p.SetActive(false,false);}
++        public void SpecimenActive(){foreach(var p in CompactPawnVisual.Instances)if(p!=null&&p.name.StartsWith("[QA] Material specimen"))p.SetActive(true,false);}
++        public void VerifyVariants()
++        {
++            var presenter=FindObjectOfType<BoardSurfaceLighting>();var board=FindObjectOfType<PolyRiskBoard>();
++            var original=presenter.Treatment;var camera=Camera.main;var position=camera.transform.position;var rotation=camera.transform.rotation;float size=camera.orthographicSize;
++            var anchors=board.GetComponentsInChildren<TileIdentifier>().OrderBy(a=>a.TileIndex).ToArray();
++            var poses=anchors.Select(a=>a.transform.position).ToArray();var boxes=anchors.Select(a=>a.GetComponent<BoxCollider>()).ToArray();
++            var centers=boxes.Select(b=>b.center).ToArray();var sizes=boxes.Select(b=>b.size).ToArray();
++            var meshIds=board.GetComponentsInChildren<MeshFilter>().Select(m=>m.sharedMesh.GetInstanceID()).ToArray();
++            var stateField=typeof(PolyRiskBoard).GetField("statePixels",BindingFlags.NonPublic|BindingFlags.Instance);
++            var state=(Color[])((Color[])stateField.GetValue(board)).Clone();
++            var pawns=CompactPawnVisual.Instances.Where(p=>p!=null).ToArray();var roots=pawns.Select(p=>p.transform.position).ToArray();
++            var sounds=pawns.Select(p=>p.AudibleContacts).ToArray();var locks=pawns.Select(p=>p.FinalLocks).ToArray();
++            int quality=QualitySettings.GetQualityLevel();bool reduced=PolyRisk.UI.UIUXRuntime.ReducedMotion;
++            var online=OnlineGameController.Instance;var snapshot=typeof(OnlineGameController).GetMethod("CaptureSnapshot",BindingFlags.Instance|BindingFlags.NonPublic);
++            string economy=online!=null?JsonUtility.ToJson(snapshot.Invoke(online,null)):null;
++            Check(anchors.Length==40&&anchors.Select(a=>a.TileIndex).SequenceEqual(Enumerable.Range(0,40)),"40 unique indices");
++            foreach(var treatment in new[]{BoardVisualTheme.SurfaceTreatment.GraphiteSatin,BoardVisualTheme.SurfaceTreatment.GraphiteReflectiveNeon})
++            {
++                presenter.Apply(treatment);
++                Check(camera.transform.position==position&&camera.transform.rotation==rotation&&camera.orthographicSize==size,treatment+" camera identical");
++                Check(poses.SequenceEqual(anchors.Select(a=>a.transform.position))&&centers.SequenceEqual(boxes.Select(b=>b.center))&&sizes.SequenceEqual(boxes.Select(b=>b.size)),treatment+" 40 anchor collider contracts unchanged");
++                Check(meshIds.SequenceEqual(board.GetComponentsInChildren<MeshFilter>().Select(m=>m.sharedMesh.GetInstanceID())),treatment+" same four fused mesh objects");
++                Check(state.SequenceEqual((Color[])stateField.GetValue(board)),treatment+" all persistent state pixels unchanged");
++                Check(roots.SequenceEqual(pawns.Select(p=>p.transform.position))&&sounds.SequenceEqual(pawns.Select(p=>p.AudibleContacts))&&locks.SequenceEqual(pawns.Select(p=>p.FinalLocks)),treatment+" pawn positions audio and locks unchanged");
++                Check(economy!=null&&economy==JsonUtility.ToJson(snapshot.Invoke(online,null)),treatment+" actual full economic snapshot identical");
++                Check(QualitySettings.GetQualityLevel()==quality&&PolyRisk.UI.UIUXRuntime.ReducedMotion==reduced,treatment+" quality accessibility preference unchanged");
++                Physics.SyncTransforms();foreach(var a in anchors){RaycastHit hit;Check(a.GetComponent<BoxCollider>().Raycast(new Ray(a.transform.position+Vector3.up*2,Vector3.down),out hit,3)&&hit.collider.gameObject==a.gameObject,treatment+" raycast "+a.TileIndex);}
++            }
++            presenter.Apply(original);Describe();Debug.Log("GRAPHITE_VARIANTS_DONE");
++        }
++        [System.Serializable] sealed class Status
++        {public string treatment,quality,pipeline,mainLight;public bool srpBatcher;public int width,height,indices,meshes,lights,realtimeProbes;public float bloom,exposure,size;public Vector3 camera,angles;public BoardVisualTheme.SurfaceFinish finish;}
++        bool measuring;
++        public void Measure(){if(!measuring)StartCoroutine(MeasureRoutine());}
++        IEnumerator MeasureRoutine()
++        {
++            measuring=true;
++            var draw=ProfilerRecorder.StartNew(ProfilerCategory.Render,"Draw Calls Count");
++            var batches=ProfilerRecorder.StartNew(ProfilerCategory.Render,"Batches Count");
++            var passes=ProfilerRecorder.StartNew(ProfilerCategory.Render,"SetPass Calls Count");
++            float start=Time.realtimeSinceStartup,sum=0,max=0;int frames=0;long maxDraw=0,maxBatches=0,maxPass=0;
++            while(Time.realtimeSinceStartup-start<6)
++            {
++                yield return null;frames++;sum+=Time.unscaledDeltaTime;max=Mathf.Max(max,Time.unscaledDeltaTime);
++                if(draw.Valid)maxDraw=System.Math.Max(maxDraw,draw.LastValue);
++                if(batches.Valid)maxBatches=System.Math.Max(maxBatches,batches.LastValue);
++                if(passes.Valid)maxPass=System.Math.Max(maxPass,passes.LastValue);
++            }
++            var result=new Measurement{quality=QualitySettings.names[QualitySettings.GetQualityLevel()],treatment=FindObjectOfType<BoardSurfaceLighting>().Treatment.ToString(),
++                frames=frames,seconds=Time.realtimeSinceStartup-start,meanFrameMs=frames>0?sum/frames*1000:0,maxFrameMs=max*1000,
++                renderCountersAvailable=draw.Valid&&maxDraw>0,drawCalls=maxDraw,batches=maxBatches,setPass=maxPass,
++                totalAllocatedBytes=Profiler.GetTotalAllocatedMemoryLong(),totalReservedBytes=Profiler.GetTotalReservedMemoryLong()};
++            draw.Dispose();batches.Dispose();passes.Dispose();measuring=false;
++            Debug.Log("GRAPHITE_MEASURE "+JsonUtility.ToJson(result));
++        }
++        [System.Serializable] sealed class Measurement
++        {public string quality,treatment;public int frames;public float seconds,meanFrameMs,maxFrameMs;public bool renderCountersAvailable;public long drawCalls,batches,setPass,totalAllocatedBytes,totalReservedBytes;}
++#endif
++    }
++}
+--- /dev/null
++++ after/Assets/Scripts/Debug/SurfaceLightingValidationDriver.cs.meta
+@@ -0,0 +1,2 @@
++fileFormatVersion: 2
++guid: f278422548ec4d6dbf29741569c76d6c
+--- /dev/null
++++ after/Assets/Scripts/Editor/SurfaceLightingValidation.cs
+@@ -0,0 +1,76 @@
++using System;
++using System.IO;
++using System.Linq;
++using System.Reflection;
++using System.Security.Cryptography;
++using UnityEngine;
++using UnityEditor;
++using UnityEditor.SceneManagement;
++using UnityEngine.Rendering.Universal;
++using PolyRisk.Visuals;
++namespace PolyRisk.Editor
++{
++    public static class SurfaceLightingValidation
++    {
++        const string Report="Docs/Validation/ReflectiveNeon_2026-10-22";
++        static int checks;
++        static void Check(bool ok,string name){checks++;if(!ok)throw new Exception("GRAPHITE FINISH FAIL "+name);}
++        static string Hash(string text){using(var h=SHA256.Create())return BitConverter.ToString(h.ComputeHash(System.Text.Encoding.UTF8.GetBytes(text)));}
++        public static void RunAndBuild()
++        {
++            EconomyBatchValidation.RunAllEditorRegressions();
++            EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");
++            var board=UnityEngine.Object.FindObjectOfType<PolyRiskBoard>();var theme=board.visualTheme;
++            theme.surfaceTreatment=BoardVisualTheme.SurfaceTreatment.GraphiteReflectiveNeon;
++            EditorUtility.SetDirty(theme);AssetDatabase.SaveAssets();
++            var anchors=board.GetComponentsInChildren<TileIdentifier>().OrderBy(x=>x.TileIndex).ToArray();
++            Check(anchors.Length==40&&anchors.Select(x=>x.TileIndex).SequenceEqual(Enumerable.Range(0,40)),"40 indices");
++            var meshes=board.GetComponentsInChildren<MeshFilter>();
++            Check(meshes.Length==4,"four original fused meshes");
++            var geometry=meshes.Select(m=>Hash(EditorJsonUtility.ToJson(m.sharedMesh))).ToArray();
++            var anchorState=anchors.Select(a=>Hash(EditorJsonUtility.ToJson(a.transform)+EditorJsonUtility.ToJson(a.GetComponent<BoxCollider>()))).ToArray();
++            string camera=Hash(EditorJsonUtility.ToJson(Camera.main)+EditorJsonUtility.ToJson(Camera.main.transform));
++            var lighting=board.gameObject.AddComponent<BoardSurfaceLighting>();
++            foreach(var treatment in new[]{BoardVisualTheme.SurfaceTreatment.GraphiteSatin,BoardVisualTheme.SurfaceTreatment.GraphiteReflectiveNeon})
++            {
++                lighting.Apply(treatment);var finish=theme.Finish(treatment);
++                Check(geometry.SequenceEqual(meshes.Select(m=>Hash(EditorJsonUtility.ToJson(m.sharedMesh)))),treatment+" identical meshes");
++                Check(anchorState.SequenceEqual(anchors.Select(a=>Hash(EditorJsonUtility.ToJson(a.transform)+EditorJsonUtility.ToJson(a.GetComponent<BoxCollider>())))),treatment+" identical anchors colliders");
++                Check(camera==Hash(EditorJsonUtility.ToJson(Camera.main)+EditorJsonUtility.ToJson(Camera.main.transform)),treatment+" identical camera");
++                Check(board.tileMaterial.GetFloat("_Polish")==1&&board.tileMaterial.GetFloat("_ReflectionStrength")==finish.neonReflection,treatment+" actual material uses profile");
++                Physics.SyncTransforms();foreach(var anchor in anchors){RaycastHit hit;Check(Physics.Raycast(anchor.transform.position+Vector3.up*2,Vector3.down,out hit,3)&&hit.collider.gameObject==anchor.gameObject,treatment+" raycast "+anchor.TileIndex);}
++            }
++            Check(theme.reflectiveNeon.neonReflection>theme.graphiteSatin.neonReflection,"B local reflection exceeds A");
++            Check(theme.reflectiveNeon.arrivalReflection>theme.reflectiveNeon.contactReflection,"arrival reflection stronger");
++            var contact=new BoardContactFeedback.Tuning();Check(contact.tileContactPulseDuration==.12f&&contact.tileArrivalPulseDuration==.24f,"original contact durations");
++            var low=AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>("Assets/Settings/Low_PipelineAsset.asset");
++            var medium=AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>("Assets/Settings/Medium_PipelineAsset.asset");
++            Check(low.mainLightRenderingMode==LightRenderingMode.PerPixel&&low.supportsMainLightShadows==false,"Low one main light with no shadow passes");
++            Check(low.useSRPBatcher&&medium.useSRPBatcher,"SRP Batcher enabled Low Medium");
++            string diagnostics="";
++            foreach(var name in new[]{"PolyRisk/GraphiteSurface","PolyRisk/NeonState"})
++            {
++                var shader=Shader.Find(name);Check(shader!=null,name+" included");
++                Check(ShaderUtil.GetShaderMessages(shader).All(m=>m.severity.ToString()!="Error"),name+" import diagnostics");
++                var sample=new Material(shader);bool compiled=sample.SetPass(0);UnityEngine.Object.DestroyImmediate(sample);
++                var method=typeof(ShaderUtil).GetMethod("GetSRPBatcherCompatibilityCode",BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Static,null,new[]{typeof(Shader),typeof(int)},null);
++                if(method!=null&&compiled&&SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null)
++                {
++                    int code=(int)method.Invoke(null,new object[]{shader,0});
++                    var reason=typeof(ShaderUtil).GetMethod("GetSRPBatcherCompatibilityIssueReason",BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Static);
++                    string message=reason!=null?(string)reason.Invoke(null,new object[]{shader,0,code}):"unavailable";
++                    diagnostics+=name+" SRP compatibility code="+code+" "+message+" device="+SystemInfo.graphicsDeviceType+"\n";
++                    Debug.Log(diagnostics);Check(code==0,name+" SRP Batcher compatible after material compilation");
++                }
++                else diagnostics+=name+" SRP compatibility measurement unavailable on this graphics device; CBUFFER layout reviewed\n";
++
++            }
++            lighting.Apply(theme.surfaceTreatment);
++            Directory.CreateDirectory(Report);File.WriteAllText(Report+"/theme-after.json",EditorJsonUtility.ToJson(theme,true));
++            File.WriteAllText(Report+"/editor-checks.txt","GRAPHITE FINISH PASS "+checks+" checks + 612 existing assertions\n"+diagnostics);
++            Debug.Log("GRAPHITE FINISH EDITOR PASS "+checks+" checks\n"+diagnostics);
++            UnityEngine.Object.DestroyImmediate(lighting);
++            EconomyBatchValidation.BuildWebGL();
++        }
++    }
++}
+--- /dev/null
++++ after/Assets/Scripts/Editor/SurfaceLightingValidation.cs.meta
+@@ -0,0 +1,2 @@
++fileFormatVersion: 2
++guid: edd6b396a85f4bc788bf16f544296e47
+--- /dev/null
++++ after/Assets/Scripts/Visuals/BoardSurfaceLighting.cs
+@@ -0,0 +1,99 @@
++using UnityEngine;
++using UnityEngine.Rendering;
++
++namespace PolyRisk.Visuals
++{
++    /// <summary>One event-driven finish system for both treatments. No camera or game-state writes.</summary>
++    [DefaultExecutionOrder(95)]
++    public sealed class BoardSurfaceLighting : MonoBehaviour
++    {
++        public BoardVisualTheme.SurfaceTreatment Treatment { get; private set; }
++        public BoardVisualTheme.SurfaceFinish Finish { get; private set; }
++        PolyRiskBoard board;
++        Material[] surfaces;
++        Vector4 lastFoot=new Vector4(-999,-999,0,0),lastColor;
++        static readonly int FootId=Shader.PropertyToID("_PawnFoot"),ColorId=Shader.PropertyToID("_PawnFootColor");
++
++        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
++        static void Mount()
++        {
++            var board=FindObjectOfType<PolyRiskBoard>();
++            if(board!=null&&board.visualTheme!=null&&board.GetComponent<BoardSurfaceLighting>()==null)
++                board.gameObject.AddComponent<BoardSurfaceLighting>();
++        }
++        void Start()
++        {
++            board=GetComponent<PolyRiskBoard>();
++            if(board!=null&&board.visualTheme!=null)Apply(board.visualTheme.surfaceTreatment);
++        }
++        public void Apply(BoardVisualTheme.SurfaceTreatment treatment)
++        {
++            if(board==null)board=GetComponent<PolyRiskBoard>();
++            if(board==null||board.visualTheme==null)return;
++            var theme=board.visualTheme;Treatment=treatment;Finish=theme.Finish(treatment);
++            board.RefreshSurfaceMaterials();
++            if(surfaces==null)surfaces=new[]{board.metalMaterial,board.tileMaterial,board.darkMaterial};
++            var metalFilter=board.transform.Find("Board_Metal")?.GetComponent<MeshFilter>();
++            float extent=metalFilter!=null?metalFilter.sharedMesh.bounds.extents.x:7f;
++            for(int i=0;i<surfaces.Length;i++)
++            {
++                var material=surfaces[i];if(material==null)continue;bool tile=i==1;
++                material.SetFloat("_Polish",1);
++                material.SetColor("_SurfaceTint",tile?Finish.tileTint:Finish.boardTint);
++                material.SetFloat("_Metallic",tile?Finish.tileMetallic:Finish.boardMetallic);
++                material.SetFloat("_Smoothness",tile?Finish.tileSmoothness:Finish.boardSmoothness);
++                material.SetFloat("_StudioStrength",i==2?.045f:Finish.studioReflection);
++                material.SetFloat("_EdgeSpecular",Finish.edgeSpecular);
++                material.SetFloat("_BackgroundSeparation",Finish.backgroundSeparation);
++                material.SetFloat("_BoardHalfExtent",extent);
++                material.SetFloat("_BandBoost",theme.neonBoost*Finish.neonEmission);
++                material.SetFloat("_ReflectionStrength",tile?Finish.neonReflection:0);
++                material.SetFloat("_ReflectionFalloff",Finish.reflectionFalloff);
++                material.SetFloat("_ReflectionReach",Finish.reflectionReach);
++                material.SetFloat("_ContactReflectionStrength",Finish.contactReflection);
++                material.SetFloat("_ArrivalReflectionStrength",Finish.arrivalReflection);
++                material.SetFloat("_ContactOutlineGain",Finish.contactOutline);
++            }
++            if(board.neonMaterial!=null)
++            {
++                board.neonMaterial.SetFloat("_Boost",theme.neonBoost*Finish.neonEmission);
++                board.neonMaterial.SetFloat("_ContactGain",Finish.contactOutline);
++            }
++            if(Application.isPlaying)
++            {
++                RenderSettings.ambientMode=AmbientMode.Flat;RenderSettings.ambientLight=theme.fillColor;
++                foreach(var light in FindObjectsOfType<Light>())if(light.type==LightType.Directional)
++                {light.color=theme.keyColor;light.intensity=theme.keyIntensity;}
++            }
++            foreach(var pawn in CompactPawnVisual.Instances)if(pawn!=null)pawn.ApplyLightingFinish(Finish);
++            lastFoot=new Vector4(-999,-999,0,0);
++        }
++        void LateUpdate()
++        {
++            if(Finish==null||board==null)return;
++            CompactPawnVisual active=null;
++            foreach(var pawn in CompactPawnVisual.Instances)
++            {
++                if(pawn==null||!pawn.isActiveAndEnabled||pawn.Visual==null)continue;
++                if(pawn.LightingFinish!=Finish)pawn.ApplyLightingFinish(Finish);
++                if(pawn.IsActive&&(active==null||pawn.IsMoving||pawn.IsArriving||(!active.IsMoving&&!active.IsArriving)))active=pawn;
++            }
++            Vector4 foot=Vector4.zero,color=Vector4.zero;
++            if(active!=null&&Finish.pawnBaseReflection>0&&active.GlowEnabled)
++            {
++                Vector3 local=board.transform.InverseTransformPoint(active.Visual.position);
++                float radius=board.transform.InverseTransformVector(Vector3.right*active.Visual.lossyScale.x*.66f).magnitude;
++                float pulse=active.IsArriving&&!PolyRisk.UI.UIUXRuntime.ReducedMotion?1-Mathf.SmoothStep(0,1,Mathf.Clamp01((Time.unscaledTime-active.LastLockTime)/active.tuning.arrivalPulseDuration)):0;
++                foot=new Vector4(local.x,local.z,Mathf.Max(.01f,radius),Finish.pawnBaseReflection*(1+pulse*.65f));
++                color=PlayerVisualManager.GetPlayerColor(active.PlayerId);
++            }
++            if(foot==lastFoot&&color==lastColor)return;
++            foreach(var material in surfaces)if(material!=null){material.SetVector(FootId,foot);material.SetVector(ColorId,color);}
++            lastFoot=foot;lastColor=color;
++        }
++        void OnDisable()
++        {
++            if(surfaces!=null)foreach(var material in surfaces)if(material!=null)material.SetVector(FootId,Vector4.zero);
++        }
++    }
++}
+--- /dev/null
++++ after/Assets/Scripts/Visuals/BoardSurfaceLighting.cs.meta
+@@ -0,0 +1,2 @@
++fileFormatVersion: 2
++guid: 2a576c9ee0bf4be8b317fd890e520541

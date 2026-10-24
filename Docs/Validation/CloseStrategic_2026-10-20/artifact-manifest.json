@@ -1,0 +1,118 @@
+{
+  "AUDIT.md": {
+    "bytes": 2957,
+    "sha256": "e70d89913b2df918a9817e7820b69c57b4bc51bda9329f95688f32e0cec61985"
+  },
+  "README.md": {
+    "bytes": 17042,
+    "sha256": "7f6860824a9c13af367bfd7bd3932a467fc479363f7fe38c2f2cbe5ac44ead9a"
+  },
+  "after-desktop-overview.jpg": {
+    "bytes": 63441,
+    "sha256": "90f15d4b16e3822f3ea3f6d182ea2ef18c6af159fbc0da01c6e91c45d214b90b"
+  },
+  "after-portrait-expanded-overview.jpg": {
+    "bytes": 41421,
+    "sha256": "eab0e35545984a3379009b6e831e4f8cc661fc8b5be1f39cd69eeee2bee99f9e"
+  },
+  "after-portrait-overview.jpg": {
+    "bytes": 36038,
+    "sha256": "36841037874ecc96108e6d682e7c92a4d7f6a90db911fdd549ddf2ef8850ad55"
+  },
+  "before-desktop-overview.jpg": {
+    "bytes": 60434,
+    "sha256": "dc52ed1c5e95296b6b4ea81267f3c82ca01bbfcde1b6415da42dc294ad4cfb6e"
+  },
+  "before-portrait-expanded-overview.jpg": {
+    "bytes": 40398,
+    "sha256": "4cbd6801ea715c6be7aa71fa3b864dd1af9b8e4d09eb963c4b952150d087bce1"
+  },
+  "before-portrait-overview.jpg": {
+    "bytes": 33296,
+    "sha256": "b9fb5253302b49b363f7f09002437ceae5ea88178130e018eb612adbd48e0840"
+  },
+  "browser-validation.json": {
+    "bytes": 1311151,
+    "sha256": "9be4fe220c283f2ada87f214aae1a71f285fc847ff8072ab8571dd7fb32ec789"
+  },
+  "build-sha256.json": {
+    "bytes": 343,
+    "sha256": "31009cc804ca0c25ac1ea2a0fb03762fb6457f0327c49ba14ae5edddadaed0b4"
+  },
+  "build.log": {
+    "bytes": 635227,
+    "sha256": "af966c5bd35e57dd7bf32b8cf99bd41b81226f12e9fe7dd1276f8a65722bfce9"
+  },
+  "comparisons.html": {
+    "bytes": 1531,
+    "sha256": "c11a33307e6768fca896e0926d5c76c45f191ded767055faf5890034f634c57f"
+  },
+  "desktop-fixtures-frame-18000.jpg": {
+    "bytes": 107023,
+    "sha256": "f9ed5e7e4061521091dada74e117c19e320df730265f2b81effa207eaa248667"
+  },
+  "desktop-fixtures.webm": {
+    "bytes": 2540867,
+    "sha256": "e55456131c65a012223d3214638fd67b4be48eda5eda78919134c69d993a043b"
+  },
+  "desktop-game-frame-0.jpg": {
+    "bytes": 93309,
+    "sha256": "3dcbeeaac9ce751973771037c718d91a94c3e7419fafb37c68f9e56576b5e3e0"
+  },
+  "desktop-game-frame-350.jpg": {
+    "bytes": 105822,
+    "sha256": "a2ca07659a57b2143249a64097aa163f45d1dcbdeecb9cd903c73a73fdb4f076"
+  },
+  "desktop-game-frame-4550.jpg": {
+    "bytes": 104645,
+    "sha256": "4b722448e81f5b53be9096d89c1f7a70892da9d639a132f22f499abe597e724a"
+  },
+  "desktop-game.webm": {
+    "bytes": 1085939,
+    "sha256": "9161f318dbbcb515b03de880fd71238bc00421cba25ee71a5c5df5569887ce1d"
+  },
+  "evidence-analysis.json": {
+    "bytes": 8506,
+    "sha256": "5e75b3e916fe6865fc1b5c40546edd833e36a4a5f36983d07f73a8f6ff1e942c"
+  },
+  "geometry-and-framing.txt": {
+    "bytes": 219,
+    "sha256": "149c25f86e65b2d5576561f588e01e057922c5c4555e4a23108a54ead7c62cd3"
+  },
+  "pass-2d-only.diff": {
+    "bytes": 49399,
+    "sha256": "39f71750f73c24d9fd50fe6bea2b379fae690bcffacdfa4c771f430c0915d187"
+  },
+  "portrait-fixtures-frame-15000.jpg": {
+    "bytes": 62879,
+    "sha256": "4d6b9a802c47971a822050ec60e026adb9b0ea6d4e8a31bea3f50e592a0e1290"
+  },
+  "portrait-fixtures.webm": {
+    "bytes": 2484127,
+    "sha256": "fc7ddd4eb89e8726b6b8a48b1986a1913c365de5612d936381bbe439920ace81"
+  },
+  "portrait-game-frame-0.jpg": {
+    "bytes": 58286,
+    "sha256": "574b187ea13fd09934f2613a8a793fe4f2b48079d8f70335584f5c8554c3f7ff"
+  },
+  "portrait-game-frame-11820.jpg": {
+    "bytes": 62537,
+    "sha256": "4d542c79ccf0dcf0464d34932fb10f36f143bf6060465a498d636f0fcd4edaa0"
+  },
+  "portrait-game-frame-8000.jpg": {
+    "bytes": 67034,
+    "sha256": "a01cf488678282a0e8f9be2628c33ce371b96e18b7b7d71d2ea959d14d0637f0"
+  },
+  "portrait-game.webm": {
+    "bytes": 956246,
+    "sha256": "a9311580122330e5262a6355b41c1dfe22caff8537331c5c85d513bb8f249ddc"
+  },
+  "review.html": {
+    "bytes": 2885,
+    "sha256": "c549f27911cbe4ae9ce98511fef3c6c4e644c254fa3e92988818278cb4798733"
+  },
+  "scope-validation.json": {
+    "bytes": 775,
+    "sha256": "b9255a0abe6772fb3f748eb42915c7bc66f59d400edbf3e7f244a59c07271d8b"
+  }
+}

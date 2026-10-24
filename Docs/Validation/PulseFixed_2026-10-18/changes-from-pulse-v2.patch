@@ -1,0 +1,976 @@
+--- a/Assets/Scripts/Editor/EconomyRegression.cs
++++ b/Assets/Scripts/Editor/EconomyRegression.cs
+@@ -626,8 +626,9 @@
+                 Set(actionWidget, "pulsePanel", cockpitPanel);
+                 PolyRisk.UI.ActionButtonsWidget.SetTransientDicePresentation(true);
+                 Check(cockpitPanel.style.display.value == UnityEngine.UIElements.DisplayStyle.Flex
+-                    && cockpitPanel.ClassListContains("pulse-panel--dice"),
+-                    "confirmed dice switch cockpit mode without hiding its panel");
++                    && !cockpitPanel.ClassListContains("pulse-panel--dice")
++                    && cockpitPanel.ClassListContains("pulse-panel--presenting-dice"),
++                    "confirmed dice preserve the compact sheet and never activate a different shape");
+                 PolyRisk.UI.ActionButtonsWidget.SetTransientDicePresentation(false);
+                 Check(cockpitPanel.style.display.value == UnityEngine.UIElements.DisplayStyle.Flex,
+                     "ending dice presentation keeps the same cockpit mounted");
+@@ -664,6 +665,42 @@
+                         && front + top != 7 && front + right != 7 && top + right != 7,
+                         "visible dice faces are physically adjacent for front " + front);
+                 }
++                Set(actionWidget, "pulseExpanded", true);
++                PolyRisk.UI.ActionButtonsWidget.SetTransientDicePresentation(true);
++                Check((bool)typeof(PolyRisk.UI.ActionButtonsWidget).GetField("pulseExpanded",
++                    BindingFlags.Instance | BindingFlags.NonPublic).GetValue(actionWidget),
++                    "a confirmed roll cannot reset the user's chosen inspector detent");
++                Check(!actionWidget.CanInspect, "inspection is unavailable during the dice presentation");
++                PolyRisk.UI.ActionButtonsWidget.SetTransientDicePresentation(false);
++                Check(actionWidget.CanInspect, "inspection becomes available again on the local human turn");
++                var opponent = new PlayerModel(100, 18000, true);
++                turns.StartGame(new List<PlayerModel> { nextHuman, opponent }, false);
++                turns.ApplyReplicaTurnState(opponent.PlayerId, "Planning", 3, 0, false);
++                GameEvents.OnTurnStarted?.Invoke(opponent.PlayerId);
++                Check(!actionWidget.CanInspect && cockpitPanel.ClassListContains("pulse-panel--spectating")
++                    && !primaryAction.enabledSelf, "opponent turns dim the fixed sheet and prohibit inspection and gameplay actions");
++                var selectionBefore = typeof(PolyRisk.UI.ActionButtonsWidget).GetField("currentSelectedTile",
++                    BindingFlags.Instance | BindingFlags.NonPublic).GetValue(actionWidget);
++                actionWidget.InspectTile(null);
++                Check(selectionBefore == typeof(PolyRisk.UI.ActionButtonsWidget).GetField("currentSelectedTile",
++                    BindingFlags.Instance | BindingFlags.NonPublic).GetValue(actionWidget),
++                    "an attempted opponent-turn inspection cannot override the followed case");
++                var pulsePaidReceipt = GameEvents.PublishGameEvent(GameEventPhase.Resolution, GameEventKind.TransferConfirmed,
++                    GameEventPriority.Normal, opponent.PlayerId, nextHuman.PlayerId, amount: -130,
++                    reason: GameEventReason.Rent);
++                Check(PolyRisk.UI.ActionButtonsWidget.ReceiptTone(pulsePaidReceipt) == "payment"
++                    && PolyRisk.UI.GameEventTextFormatter.FormatCenter(pulsePaidReceipt, opponent.PlayerId, id => "P2", id => "Property")
++                        .Contains("Vous payez 130 $\nà P2"), "payment receipt identifies the payer, recipient and exact debit");
++                var bought = GameEvents.PublishGameEvent(GameEventPhase.Action, GameEventKind.PropertyPurchased,
++                    GameEventPriority.Normal, opponent.PlayerId, tileId: 1, amount: -1300);
++                var passed = GameEvents.PublishGameEvent(GameEventPhase.Action, GameEventKind.PropertyPassed,
++                    GameEventPriority.Normal, opponent.PlayerId, tileId: 1);
++                Check(PolyRisk.UI.ActionButtonsWidget.ReceiptTone(bought) == "purchase"
++                    && PolyRisk.UI.ActionButtonsWidget.ReceiptTone(passed) == "pass",
++                    "confirmed purchases and passes have distinct green and yellow feedback semantics");
++                Check(!cockpitPanel.ClassListContains("pulse-panel--dice")
++                    && cockpitPanel.style.display.value == UnityEngine.UIElements.DisplayStyle.Flex,
++                    "mixed turn and transaction events leave the same property sheet mounted");
+                 Debug.Log($"ECONOMY REGRESSION PASS: {assertions} assertions");
+             }
+             finally
+--- a/Assets/Scripts/Editor/GameEventRegression.cs
++++ b/Assets/Scripts/Editor/GameEventRegression.cs
+@@ -25,6 +25,20 @@
+             GameEvents.OnGameEventPublished = null;
+             try
+             {
++                using (var center = new GameEventPresenter { PreserveChronology = true })
++                {
++                    var payment = GameEvents.PublishGameEvent(GameEventPhase.Resolution,
++                        GameEventKind.TaxPaid, GameEventPriority.Normal, 0, amount: -600);
++                    var roll = GameEvents.PublishGameEvent(GameEventPhase.Action,
++                        GameEventKind.DiceRolled, GameEventPriority.Major, 1, valueA: 3, valueB: 4);
++                    Check(center.TryBeginNext(out var first) && first.Id == payment.Id,
++                        "Central presentation keeps a payment before the following player's higher-priority roll");
++                    Check(!center.TryBeginNext(out _), "An active receipt cannot overlap the next central roll");
++                    center.SkipCurrent();
++                    Check(center.TryBeginNext(out var second) && second.Id == roll.Id,
++                        "After the receipt, the confirmed dice event remains queued unchanged");
++                }
++
+                 using (var presenter = new GameEventPresenter { LocalPlayerId = 0 })
+                 {
+                     long splitCorrelation = GameEvents.CreateCorrelationId();
+--- a/Assets/Scripts/Systems/BoardInteractionManager.cs
++++ b/Assets/Scripts/Systems/BoardInteractionManager.cs
+@@ -297,6 +297,7 @@
+                 return false;
+             }
+ 
++            if (actionButtonsWidget != null && !actionButtonsWidget.CanInspect) return false;
+             if (actionButtonsWidget != null) actionButtonsWidget.InspectTile(tile);
+             else GameEvents.OnTileSelected?.Invoke(tile);
+             Debug.Log("[Input Gateway] Routed click to GameEvents.");
+--- a/Assets/Scripts/Systems/GameEventPresenter.cs
++++ b/Assets/Scripts/Systems/GameEventPresenter.cs
+@@ -26,6 +26,7 @@
+         public int LocalPlayerId { get; set; } = -1;
+         public bool ReducedMotion { get; set; }
+         public bool FastOtherPlayers { get; set; } = true;
++        public bool PreserveChronology { get; set; }
+         public Func<GameEvent, bool> ShouldQueue { get; set; }
+         public GameEvent Current { get; private set; }
+         public GamePresentationBeat CurrentBeat { get; private set; }
+@@ -97,7 +98,8 @@
+             {
+                 var candidate = orderedPending[i];
+                 var selected = orderedPending[nextIndex];
+-                if (candidate.Event.Priority > selected.Event.Priority
++                if (PreserveChronology ? candidate.Order < selected.Order
++                    : candidate.Event.Priority > selected.Event.Priority
+                     || (candidate.Event.Priority == selected.Event.Priority && candidate.Order < selected.Order))
+                     nextIndex = i;
+             }
+--- a/Assets/Scripts/UI/ActionButtonsWidget.cs
++++ b/Assets/Scripts/UI/ActionButtonsWidget.cs
+@@ -23,7 +23,12 @@
+     public class ActionButtonsWidget : MonoBehaviour
+     {
+         private static bool transientDicePresentationActive;
+-        private bool pulseUserInspecting, pulseDiceMode;
++        private bool pulseUserInspecting;
++        private int pulseFeedbackGeneration;
++        private readonly Dictionary<long, int> pulseDiceOrigins = new Dictionary<long, int>();
++        public bool CanInspect => turnManager?.CurrentPlayer != null
++            && !turnManager.CurrentPlayer.IsAI && IsLocalPlayer(turnManager.CurrentPlayer)
++            && !transientDicePresentationActive;
+         public VisualElement DiceHost { get; private set; }
+ 
+         [Header("System References")]
+@@ -102,7 +107,8 @@
+             {
+                 LocalPlayerId = LocalSeatIndex(),
+                 ReducedMotion = UIUXRuntime.ReducedMotion,
+-                ShouldQueue = GameEventTextFormatter.IsDockEvent
++                PreserveChronology = true,
++                ShouldQueue = item => GameEventTextFormatter.IsDockEvent(item) || item.Kind == GameEventKind.DiceRolled
+             };
+             gameEventPresenter.TraceRecorded += OnGameEventTraceRecorded;
+         }
+@@ -116,6 +122,7 @@
+             GameEvents.OnActivityPublished -= OnGameActivityPublished;
+             gameEventPresentationGeneration++;
+             activeDockEvent = null;
++            pulseDiceOrigins.Clear();
+             if (gameEventPresenter != null)
+             {
+                 gameEventPresenter.TraceRecorded -= OnGameEventTraceRecorded;
+@@ -132,8 +139,12 @@
+             if (turnManager == null) return;
+             UpdateGameStateDock();
+             
+-            // Reset selection for the new turn
+-            if (!pulseUserInspecting) currentSelectedTile = null;
++            pulseUserInspecting = false;
++            var nextPlayer = turnManager.GetPlayerById(playerId);
++            if (activeDockEvent == null && nextPlayer != null)
++                currentSelectedTile = boardManager?.GetTileAt(turnManager.GetPlayerPosition(nextPlayer));
++            if (nextPlayer != null && (nextPlayer.IsAI || !IsLocalPlayer(nextPlayer)) && pulseExpanded)
++                SetPulseExpanded(false);
+             RefreshPulseMode();
+             UpdateInspectorSection(currentSelectedTile);
+             CloseInvestmentPicker();
+@@ -201,22 +212,32 @@
+             transientDicePresentationActive = active;
+             foreach (var widget in FindObjectsOfType<ActionButtonsWidget>(true))
+             {
+-                if (active)
+-                {
+-                    widget.pulseUserInspecting = false;
+-                    widget.pulseExpanded = false;
+-                    widget.pulseMotion?.SetExpanded(false, false);
+-                }
++                widget.pulsePanel?.EnableInClassList("pulse-panel--presenting-dice", active);
+                 widget.RefreshPulseMode();
++                widget.UpdateGameStateDock();
++                if (active) continue;
++                if (widget.activeDockEvent?.Kind == GameEventKind.DiceRolled)
++                {
++                    var actor = widget.turnManager?.GetPlayerById(widget.activeDockEvent.ActorId);
++                    if (actor != null && !widget.pulseUserInspecting)
++                    {
++                        widget.currentSelectedTile = widget.boardManager?.GetTileAt(widget.turnManager.GetPlayerPosition(actor));
++                        widget.UpdateInspectorSection(widget.currentSelectedTile);
++                    }
++                    widget.UpdateButtonsState(widget.currentSelectedTile, widget.turnManager?.CurrentPlayer);
++                    widget.gameEventPresenter?.SkipCurrent();
++                    widget.activeDockEvent = null;
++                }
++                widget.BeginNextGameEventPresentation();
+             }
+         }
+ 
+         public void InspectTile(BoardTile tile)
+         {
++            if (!CanInspect || tile == null) return;
+             pulseUserInspecting = true;
+             HandleTileSelected(tile);
+             pulseActiveTab = "inspector";
+-            SetPulseExpanded(false);
+             RefreshPulseMode();
+             UpdateGameStateDock();
+         }
+@@ -224,14 +245,14 @@
+         private void RefreshPulseMode()
+         {
+             if (pulsePanel == null) return;
+-            var player = turnManager?.CurrentPlayer;
+-            var state = turnManager != null ? turnManager.CurrentState : TurnManager.TurnState.Planning;
+-            bool rollingPhase = state == TurnManager.TurnState.Planning || state == TurnManager.TurnState.RollDice
+-                || state == TurnManager.TurnState.MovingPawn || state == TurnManager.TurnState.EndTurn;
+-            pulseDiceMode = transientDicePresentationActive || (!pulseUserInspecting
+-                && (player == null || player.IsAI || !IsLocalPlayer(player) || rollingPhase));
+-            pulsePanel.EnableInClassList("pulse-panel--dice", pulseDiceMode);
+-            pulseToggle?.SetEnabled(!transientDicePresentationActive);
++            bool spectating = turnManager?.CurrentPlayer != null
++                && (turnManager.CurrentPlayer.IsAI || !IsLocalPlayer(turnManager.CurrentPlayer));
++            pulsePanel.EnableInClassList("pulse-panel--spectating", spectating);
++            pulseToggle?.SetEnabled(CanInspect);
++            pulseFamilyProgress?.SetEnabled(CanInspect);
++            pulseGoSummary?.SetEnabled(CanInspect);
++            pulseDetails?.SetEnabled(CanInspect);
++            pulsePanel.Q<VisualElement>(className: "pulse-actions")?.SetEnabled(!spectating);
+             UpdatePulseToggleLabel();
+         }
+ 
+@@ -304,10 +325,15 @@
+             lblGameStateMessage = root.Q<Label>("Lbl_GameStateMessage");
+             gameStateHistory = root.Q<VisualElement>("GameStateHistory");
+             gameStateHistoryList = root.Q<VisualElement>("GameStateHistoryList");
++            if (gameStateHistory != null) pulsePanel.Add(gameStateHistory);
+             btnGameStateHistory = root.Q<Button>("Btn_GameStateHistory");
+             btnSkipGameEvent = root.Q<Button>("Btn_SkipGameEvent");
+             if (btnGameStateHistory != null) btnGameStateHistory.clicked += ToggleGameStateHistory;
+-            if (btnSkipGameEvent != null) btnSkipGameEvent.clicked += SkipCurrentGameEventPresentation;
++            if (btnSkipGameEvent != null)
++            {
++                btnSkipGameEvent.text = "Continuer";
++                btnSkipGameEvent.clicked += SkipCurrentGameEventPresentation;
++            }
+             RenderGameStateHistory();
+             UpdateGameStateDock();
+             BeginNextGameEventPresentation();
+@@ -404,6 +430,7 @@
+                 if (turnManager.CurrentState == TurnManager.TurnState.Planning)
+                 {
+                     pulseUserInspecting = false;
++                    SetPulseExpanded(false);
+                     RefreshPulseMode();
+                     if (OnlineGameController.Instance != null
+                         && OnlineGameController.Instance.TrySubmitLocalCommand("turn.roll"))
+@@ -619,7 +646,7 @@
+ 
+         private void OnTileSelected(BoardTile tile)
+         {
+-            if (!pulseUserInspecting) HandleTileSelected(tile);
++            if (!transientDicePresentationActive && (!CanInspect || !pulseUserInspecting)) HandleTileSelected(tile);
+             RefreshPulseMode();
+             UpdateGameStateDock();
+         }
+@@ -645,6 +672,17 @@
+         private void OnGameEventTraceRecorded(GameEvent gameEvent)
+         {
+             if (gameEvent == null) return;
++            if (gameEvent.Kind == GameEventKind.DiceRolled)
++            {
++                var actor = turnManager?.GetPlayerById(gameEvent.ActorId);
++                if (actor != null) pulseDiceOrigins[gameEvent.Id] = turnManager.GetPlayerPosition(actor);
++            }
++            if (gameEvent.Kind == GameEventKind.PawnArrived && !pulseUserInspecting
++                && (activeDockEvent == null || activeDockEvent.ActorId == gameEvent.ActorId))
++            {
++                currentSelectedTile = ResolvePresentedTile(gameEvent) ?? currentSelectedTile;
++                UpdateInspectorSection(currentSelectedTile);
++            }
+             if (gameEventPresenter != null)
+             {
+                 gameEventPresenter.LocalPlayerId = LocalSeatIndex();
+@@ -716,9 +754,33 @@
+ 
+         private void BeginNextGameEventPresentation()
+         {
+-            if (gameEventPresenter == null || gameStateDock == null || activeDockEvent != null) return;
++            if (gameEventPresenter == null || gameStateDock == null || activeDockEvent != null || transientDicePresentationActive) return;
+             if (!gameEventPresenter.TryBeginNext(out var nextEvent)) return;
+             activeDockEvent = nextEvent;
++            if (nextEvent.Kind == GameEventKind.DiceRolled)
++            {
++                if (pulseDiceOrigins.TryGetValue(nextEvent.Id, out int origin))
++                {
++                    pulseDiceOrigins.Remove(nextEvent.Id);
++                    if (!pulseUserInspecting)
++                    {
++                        currentSelectedTile = boardManager?.GetTileAt(origin) ?? currentSelectedTile;
++                        UpdateInspectorSection(currentSelectedTile);
++                    }
++                }
++                var hud = FindObjectOfType<TopHUDWidget>();
++                if (hud != null && hud.PresentConfirmedDice(nextEvent)) return;
++                gameEventPresenter.SkipCurrent();
++                activeDockEvent = null;
++                BeginNextGameEventPresentation();
++                return;
++            }
++            if (!pulseUserInspecting)
++            {
++                currentSelectedTile = ResolvePresentedTile(nextEvent) ?? currentSelectedTile;
++                UpdateInspectorSection(currentSelectedTile);
++            }
++            ShowPulseReceipt(nextEvent);
+             gameEventPresenter.LocalPlayerId = LocalSeatIndex();
+             gameEventPresenter.ReducedMotion = UIUXRuntime.ReducedMotion;
+             gameStateDock.EnableInClassList("game-state-dock--presenting", true);
+@@ -736,7 +798,9 @@
+             gameStateDock.EnableInClassList("game-state-dock--beat-impact", beat == GamePresentationBeat.Impact);
+             gameStateDock.EnableInClassList("game-state-dock--beat-transfer", beat == GamePresentationBeat.Transfer);
+             gameStateDock.EnableInClassList("game-state-dock--beat-trace", beat == GamePresentationBeat.Trace);
+-            long delayMs = Mathf.Max(0, Mathf.RoundToInt(gameEventPresenter.GetBeatDurationSeconds(activeDockEvent, beat) * 1000f));
++            float duration = gameEventPresenter.GetBeatDurationSeconds(activeDockEvent, beat);
++            if (beat == GamePresentationBeat.Impact) duration = Mathf.Max(duration, 1.05f);
++            long delayMs = Mathf.Max(0, Mathf.RoundToInt(duration * 1000f));
+             gameStateDock.schedule.Execute(() =>
+             {
+                 if (generation != gameEventPresentationGeneration || gameEventPresenter == null) return;
+@@ -771,106 +835,52 @@
+             BeginNextGameEventPresentation();
+         }
+ 
++        private BoardTile ResolvePresentedTile(GameEvent gameEvent)
++        {
++            if (gameEvent.TileId >= 0) return boardManager?.GetTileAt(gameEvent.TileId);
++            var actor = turnManager?.GetPlayerById(gameEvent.ActorId);
++            return actor != null ? boardManager?.GetTileAt(turnManager.GetPlayerPosition(actor)) : null;
++        }
++
++        public static string ReceiptTone(GameEvent gameEvent)
++        {
++            if (gameEvent == null) return "neutral";
++            if (gameEvent.Kind == GameEventKind.PropertyPurchased) return "purchase";
++            if (gameEvent.Kind == GameEventKind.PropertyPassed) return "pass";
++            if (gameEvent.Kind == GameEventKind.TransferConfirmed || gameEvent.Kind == GameEventKind.TaxPaid) return "payment";
++            return "neutral";
++        }
++
++        private void ShowPulseReceipt(GameEvent gameEvent)
++        {
++            if (pulsePanel == null) return;
++            int generation = ++pulseFeedbackGeneration;
++            foreach (string tone in new[] { "purchase", "pass", "payment", "neutral" })
++                pulsePanel.EnableInClassList("pulse-feedback--" + tone, ReceiptTone(gameEvent) == tone);
++            pulsePanel.schedule.Execute(() =>
++            {
++                if (generation != pulseFeedbackGeneration) return;
++                foreach (string tone in new[] { "purchase", "pass", "payment", "neutral" })
++                    pulsePanel.RemoveFromClassList("pulse-feedback--" + tone);
++            }).StartingIn(UIUXRuntime.ReducedMotion ? 900 : 650);
++        }
++
+         private void UpdateGameStateDock()
+         {
+-            if (gameStateDock == null || lblGameStateTitle == null || lblGameStateMessage == null
+-                || turnManager == null) return;
+-
+-            var activePlayer = turnManager.CurrentPlayer;
+-            if (activePlayer == null)
+-            {
+-                gameStateDock.RemoveFromClassList("game-state-dock--quiet");
+-                lblGameStateTitle.text = "WAITING FOR GAME";
+-                lblGameStateMessage.text = "The next game state will appear here.";
+-                return;
+-            }
+-
+-            bool localTurn = IsLocalPlayer(activePlayer) && !activePlayer.IsAI;
+-            bool isAI = activePlayer.IsAI;
+-            bool inspectingTileAction = turnManager.CurrentState == TurnManager.TurnState.ResolveTile;
+-            string playerName = ResolveGameStatePlayerName(activePlayer.PlayerId);
+-            string phase = ResolveGameStatePhase(activePlayer);
+-
+-            gameStateDock.EnableInClassList("game-state-dock--tile-action", inspectingTileAction);
+-            gameStateDock.RemoveFromClassList("game-state-dock--local");
+-            gameStateDock.RemoveFromClassList("game-state-dock--waiting");
+-            gameStateDock.RemoveFromClassList("game-state-dock--attention");
+-            bool decisionState = turnManager.CurrentState == TurnManager.TurnState.WaitingForAuditDecision
+-                || turnManager.CurrentState == TurnManager.TurnState.WaitingForTransitChoice
+-                || turnManager.CurrentState == TurnManager.TurnState.AdjustDice
+-                || turnManager.CurrentState == TurnManager.TurnState.ChooseTurbo;
+-            gameStateDock.AddToClassList(decisionState ? "game-state-dock--attention"
+-                : localTurn ? "game-state-dock--local" : "game-state-dock--waiting");
+-
+-            if (localTurn)
+-                lblGameStateTitle.text = "YOUR TURN · " + phase;
+-            else if (isAI)
+-                lblGameStateTitle.text = playerName.ToUpperInvariant() + " · PLAYING";
+-            else
+-                lblGameStateTitle.text = "WAITING · " + playerName.ToUpperInvariant() + " · " + phase;
+-
+-            var latest = gameStateTimeline.Count > 0 ? gameStateTimeline[gameStateTimeline.Count - 1] : null;
+-            var eventToShow = activeDockEvent != null ? activeDockEvent : latest?.Event;
+-            if (eventToShow != null)
+-            {
+-                bool settledEventUnderInspector = activeDockEvent == null && !IsGameStateHistoryOpen()
+-                    && (pulseExpanded || currentSelectedTile != null);
+-                gameStateDock.EnableInClassList("game-state-dock--quiet", settledEventUnderInspector);
+-                if (settledEventUnderInspector) return;
+-                lblGameStateMessage.text = FormatGameEvent(eventToShow);
+-                gameStateDock.EnableInClassList("game-state-dock--event-purchase",
+-                    eventToShow.Kind == GameEventKind.PropertyPurchased);
+-                gameStateDock.EnableInClassList("game-state-dock--event-pass",
+-                    eventToShow.Kind == GameEventKind.PropertyPassed);
+-                gameStateDock.EnableInClassList("game-state-dock--event-transfer",
+-                    eventToShow.Kind == GameEventKind.TransferConfirmed);
+-                gameStateDock.EnableInClassList("game-state-dock--event-tax",
+-                    eventToShow.Kind == GameEventKind.TaxPaid);
+-                gameStateDock.EnableInClassList("game-state-dock--event-upgrade",
+-                    eventToShow.Kind == GameEventKind.UpgradeApplied);
+-                return;
+-            }
+-
+-            gameStateDock.RemoveFromClassList("game-state-dock--event-purchase");
+-            gameStateDock.RemoveFromClassList("game-state-dock--event-pass");
+-            gameStateDock.RemoveFromClassList("game-state-dock--event-transfer");
+-            gameStateDock.RemoveFromClassList("game-state-dock--event-tax");
+-            gameStateDock.RemoveFromClassList("game-state-dock--event-upgrade");
+-
+-            // A turn-start notice duplicates the turn counter, active-player rail,
+-            // and the primary action. Keep the activity in history without covering
+-            // the market/player row in the HUD.
+-            bool quietNotice = !IsGameStateHistoryOpen()
+-                && (pulseExpanded || currentSelectedTile != null || IsLatestActivityTurnStart());
+-            gameStateDock.EnableInClassList("game-state-dock--quiet", quietNotice);
+-            if (quietNotice) return;
+-
+-            if (latest == null || latest.Activity == null)
+-            {
+-                gameStateDock.RemoveFromClassList("game-state-dock--quiet");
+-                lblGameStateMessage.text = localTurn
+-                    ? "Choose an action below."
+-                    : "Watch the board; the latest action will stay here.";
+-                return;
+-            }
+-
+-            var activity = latest.Activity;
+-            bool actorIsLocal = activity.playerId == LocalSeatIndex();
+-            string actorName = actorIsLocal ? "You" : ResolveGameStatePlayerName(activity.playerId);
+-            string detail = TopHUDWidget.FormatActivityText(activity.text);
+-            if (string.Equals(activity.kind, "rent", System.StringComparison.OrdinalIgnoreCase))
+-                detail = ReplaceActivityVerb(detail, "pays ", actorIsLocal ? "You paid " : actorName + " paid ");
+-            else if (string.Equals(activity.kind, "purchase", System.StringComparison.OrdinalIgnoreCase))
+-                detail = ReplaceActivityVerb(detail, "buys ", actorIsLocal ? "You bought " : actorName + " bought ");
+-            else if (detail.StartsWith("lands on ", System.StringComparison.Ordinal))
+-                detail = (actorIsLocal ? "You" : actorName) + " landed on " + detail.Substring(9);
+-            else if (detail.StartsWith("rolls ", System.StringComparison.Ordinal))
+-                detail = (actorIsLocal ? "You" : actorName) + " rolled " + detail.Substring(6);
+-            else if (string.Equals(detail, "starts their turn", System.StringComparison.Ordinal))
+-                detail = actorIsLocal ? "Your turn has started" : actorName + "'s turn has started";
+-            else
+-                detail = (actorIsLocal ? "You · " : actorName + " · ") + detail;
+-            lblGameStateMessage.text = detail;
++            if (gameStateDock == null || lblGameStateTitle == null || lblGameStateMessage == null) return;
++            gameStateDock.RemoveFromClassList("game-state-dock--quiet");
++            bool visible = activeDockEvent != null && activeDockEvent.Kind != GameEventKind.DiceRolled
++                && !transientDicePresentationActive;
++            gameStateDock.EnableInClassList("game-state-dock--presenting", visible);
++            if (!visible) return;
++            string tone = ReceiptTone(activeDockEvent);
++            foreach (string variant in new[] { "purchase", "pass", "payment", "neutral" })
++                gameStateDock.EnableInClassList("pulse-receipt--" + variant, variant == tone);
++            lblGameStateTitle.text = tone == "purchase" ? "ACHAT CONFIRMÉ"
++                : tone == "pass" ? "ACHAT DÉCLINÉ" : tone == "payment" ? "PAIEMENT" : "ACTION CONFIRMÉE";
++            lblGameStateMessage.text = GameEventTextFormatter.FormatCenter(activeDockEvent, LocalSeatIndex(),
++                ResolveGameStatePlayerName, ResolveGameEventTileName);
++            lblGameStateMessage.tooltip = FormatGameEvent(activeDockEvent);
+         }
+ 
+         private string FormatGameEvent(GameEvent gameEvent)
+@@ -997,6 +1007,11 @@
+             
+             PlayerModel currentPlayer = turnManager.CurrentPlayer;
+ 
++            if (currentPlayer != null && (currentPlayer.IsAI || !IsLocalPlayer(currentPlayer)))
++            {
++                UpdateButtonsState(tile, currentPlayer);
++                return;
++            }
+             // Check if player is in Audit first (Before rolling dice phase)
+             if (currentPlayer != null && currentPlayer.IsInAudit && turnManager.CurrentState == TurnManager.TurnState.WaitingForAuditDecision)
+             {
+@@ -1145,7 +1160,7 @@
+             if (currentPlayer.IsAI)
+             {
+                 SetPrimaryButtonState("AI TURN", false);
+-                SetSecondaryButtonState("AUTOMATIC TURN", false);
++                SetSecondaryButtonState(string.Empty, false);
+                 return;
+             }
+ 
+@@ -1314,10 +1329,10 @@
+                 && label.EndsWith(")", System.StringComparison.Ordinal);
+             bool rollAction = string.Equals(label, "ROLL DICE", System.StringComparison.Ordinal);
+             string displayLabel = rollAction ? "Lancer les dés" : label;
+-            if (pulseDiceMode && (label == "ACTION IN PROGRESS" || label == "ROLLING DICE"))
++            if (label == "ACTION IN PROGRESS" || label == "ROLLING DICE")
+                 displayLabel = "Lancer en cours";
+-            else if (pulseDiceMode && label == "MOVING PAWN") displayLabel = "Déplacement…";
+-            else if (pulseDiceMode && (label == "AI TURN" || label == "PLAYER TURN")) displayLabel = "Tour adverse";
++            else if (label == "MOVING PAWN") displayLabel = "Déplacement…";
++            else if (label == "AI TURN" || label == "PLAYER TURN") displayLabel = "Tour adverse";
+             btnPrimary.EnableInClassList("pulse-action--purchase", propertyPurchase);
+             btnPrimary.EnableInClassList("pulse-action--roll", rollAction);
+             if (primaryActionTitle != null && primaryActionValue != null)
+@@ -1409,12 +1424,12 @@
+             if (btnSecondary == null) return;
+             bool visible = !string.IsNullOrWhiteSpace(label);
+             btnSecondary.EnableInClassList("pulse-action--pass",
+-                (pulseDiceMode && !visible) || string.Equals(label, "PASS", System.StringComparison.OrdinalIgnoreCase));
++                !visible || string.Equals(label, "PASS", System.StringComparison.OrdinalIgnoreCase));
+             btnSecondary.text = visible
+                 ? string.Equals(label, "PASS", System.StringComparison.OrdinalIgnoreCase) ? "Passer" : label
+-                : pulseDiceMode ? "…" : string.Empty;
++                : "…";
+             btnSecondary.SetEnabled(visible && interactable);
+-            btnSecondary.style.display = visible || pulseDiceMode ? DisplayStyle.Flex : DisplayStyle.None;
++            btnSecondary.style.display = DisplayStyle.Flex;
+         }
+ 
+         private void SetTertiaryButtonState(string label, bool interactable, bool visible)
+@@ -1432,6 +1447,8 @@
+         /// </summary>
+         private void UpdateInspectorSection(BoardTile tile)
+         {
++            if (tile == null && turnManager?.CurrentPlayer != null)
++                tile = boardManager?.GetTileAt(turnManager.GetPlayerPosition(turnManager.CurrentPlayer));
+             var finance = turnManager?.financeSystem;
+             var localViewer = turnManager?.GetPlayerById(LocalSeatIndex());
+             bool hasProjection = finance != null && localViewer != null;
+@@ -1451,14 +1468,12 @@
+             bool hasInspectorContent = tile != null || turboChoice || precisionChoice;
+             bool hasPropertyStats = tile != null && tile.Type == TileType.Property && tile.Property != null;
+             if (tileInspectorHeading != null)
+-                tileInspectorHeading.style.display = hasInspectorContent ? DisplayStyle.Flex : DisplayStyle.None;
++                tileInspectorHeading.style.display = DisplayStyle.Flex;
+             if (pulseFamilyProgress != null)
+                 pulseFamilyProgress.style.display = hasPropertyStats && !turboChoice && !precisionChoice
+                     ? DisplayStyle.Flex : DisplayStyle.None;
+             if (tileStats != null)
+-                tileStats.style.display = hasPropertyStats && !turboChoice && !precisionChoice
+-                    ? DisplayStyle.Flex
+-                    : DisplayStyle.None;
++                tileStats.style.display = DisplayStyle.Flex;
+             if (lblTileEffect != null)
+             {
+                 lblTileEffect.text = string.Empty;
+@@ -1468,6 +1483,8 @@
+             }
+             if (turboChoice || precisionChoice)
+             {
++                if (lblTileRent != null) lblTileRent.text = "—";
++                if (lblTileRoi != null) lblTileRoi.text = "—";
+                 if (iconTileFamily != null) TileIconResolver.PopulateIcon(iconTileFamily, null);
+                 if (pulseOwnership != null) pulseOwnership.text = "ACTION DE DÉPLACEMENT";
+                 if (lblTileName != null) lblTileName.text = turboChoice ? "Moteur Turbo" : "Assistance de précision";
+@@ -1586,31 +1603,18 @@
+ 
+         private void TogglePulsePanel()
+         {
+-            if (pulseDiceMode)
+-            {
+-                pulseUserInspecting = true;
+-                var player = turnManager?.GetPlayerById(LocalSeatIndex());
+-                if (currentSelectedTile == null && player != null)
+-                    currentSelectedTile = boardManager?.GetTileAt(turnManager.GetPlayerPosition(player));
+-                pulseActiveTab = "portfolio";
+-                RefreshPulseMode();
+-                UpdateInspectorSection(currentSelectedTile);
+-                SetPulseExpanded(true);
+-                return;
+-            }
++            if (!CanInspect) return;
+             SetPulseExpanded(!pulseExpanded);
+         }
+ 
+         private void SetPulseExpanded(bool expanded)
+         {
++            if (expanded && !CanInspect) return;
+             pulseExpanded = expanded;
+             if (expanded) RenderPulseDetails();
+             pulseMotion?.SetExpanded(expanded, true);
+             UpdatePulseToggleLabel();
+-            gameStateDock?.EnableInClassList("game-state-dock--quiet",
+-                !IsGameStateHistoryOpen()
+-                && (((expanded || currentSelectedTile != null) && activeDockEvent == null)
+-                    || IsLatestActivityTurnStart()));
++            UpdateGameStateDock();
+         }
+ 
+         private bool IsGameStateHistoryOpen() =>
+@@ -1626,7 +1630,7 @@
+         private void UpdatePulseToggleLabel()
+         {
+             if (pulseToggleState != null)
+-                pulseToggleState.text = pulseDiceMode ? "Portefeuille ↑" : pulseExpanded ? "Réduire ↓" : "Déplier ↑";
++                pulseToggleState.text = pulseExpanded ? "Réduire ↓" : "Déplier ↑";
+         }
+ 
+         private void OpenPulseInspector()
+@@ -1741,6 +1745,7 @@
+                     int owned = group.Count(viewer.OwnedProperties.Contains), total = group.Count();
+                     var card = new Button(() =>
+                     {
++                        if (!CanInspect) return;
+                         pulseUserInspecting = true;
+                         pulseActiveTab = "inspector";
+                         HandleTileSelected(boardManager.GetTileAt(property.TileIndex));
+--- a/Assets/Scripts/UI/GameEventTextFormatter.cs
++++ b/Assets/Scripts/UI/GameEventTextFormatter.cs
+@@ -50,6 +50,32 @@
+             return $"{actor} {FormatSigned(gameEvent.Amount)} → {recipients} · {reason}{location}";
+         }
+ 
++        public static string FormatCenter(GameEvent gameEvent, int localPlayerId,
++            Func<int, string> playerName, Func<int, string> tileName)
++        {
++            if (!IsDockEvent(gameEvent)) return string.Empty;
++            bool local = gameEvent.ActorId == localPlayerId;
++            string actor = local ? "Vous" : ResolvePlayerName(gameEvent.ActorId, localPlayerId, playerName);
++            string tile = ResolveTileName(gameEvent.TileId, tileName);
++            string amount = CurrencyFormatter.FormatExact(Math.Abs(gameEvent.Amount));
++            if (gameEvent.Kind == GameEventKind.PropertyPurchased)
++                return actor + (local ? " achetez " : " achète ") + tile + "\n" + amount;
++            if (gameEvent.Kind == GameEventKind.PropertyPassed)
++                return actor + (local ? " passez" : " passe") + "\n" + tile;
++            if (gameEvent.Kind == GameEventKind.TaxPaid)
++                return actor + (local ? " payez " : " paie ") + amount + "\nTaxes";
++            if (gameEvent.Kind == GameEventKind.UpgradeApplied)
++                return actor + (local ? " améliorez " : " améliore ") + tile + "\nNiveau " + gameEvent.ValueB;
++            var recipients = new List<string>();
++            foreach (var split in gameEvent.Splits)
++                recipients.Add((split.PayeeId == localPlayerId ? "vous" : ResolvePlayerName(split.PayeeId, localPlayerId, playerName))
++                    + (gameEvent.Splits.Count > 1 ? " · " + CurrencyFormatter.FormatExact(Math.Abs(split.Amount)) : ""));
++            if (recipients.Count == 0 && gameEvent.TargetId >= 0)
++                recipients.Add(gameEvent.TargetId == localPlayerId ? "vous" : ResolvePlayerName(gameEvent.TargetId, localPlayerId, playerName));
++            return actor + (local ? " payez " : " paie ") + amount + "\nà "
++                + (recipients.Count > 0 ? string.Join(" · ", recipients) : "la banque");
++        }
++
+         private static string FormatSigned(double amount)
+         {
+             string sign = amount < 0 ? "−" : "+";
+--- a/Assets/Scripts/UI/PulseDiceView.cs
++++ b/Assets/Scripts/UI/PulseDiceView.cs
+@@ -77,7 +77,8 @@
+         {
+             Vector2 p = Project(point);
+             p = pivot + Vector2.Scale(p - pivot, new Vector2(pose.ScaleX, pose.ScaleY));
+-            return new Vector2(contentRect.width * .5f, 43) + RotateAtPivot(p, pivot, pose.Angle) - new Vector2(0, pose.Lift);
++            return new Vector2(contentRect.width * .5f + 23, 82)
++                + RotateAtPivot(p, pivot, pose.Angle) - pivot - new Vector2(0, pose.Lift);
+         }
+         private void Draw(MeshGenerationContext ctx)
+         {
+@@ -104,15 +105,11 @@
+             corners[1] = Place(center + right * .5f + up * .5f);
+             corners[2] = Place(center + right * .5f - up * .5f);
+             corners[3] = Place(center - right * .5f - up * .5f);
+-            p.fillColor = color; p.strokeColor = new Color(.50f, .73f, .63f, .85f); p.lineWidth = 1;
++            p.fillColor = color; p.strokeColor = new Color(.40f, .51f, .47f, .85f); p.lineWidth = 1;
++            p.lineJoin = LineJoin.Round;
+             p.BeginPath();
+-            for (int i = 0; i < 4; i++)
+-            {
+-                Vector2 entry = Vector2.Lerp(corners[i], corners[(i + 3) % 4], .08f);
+-                Vector2 exit = Vector2.Lerp(corners[i], corners[(i + 1) % 4], .08f);
+-                if (i == 0) p.MoveTo(entry); else p.LineTo(entry);
+-                p.QuadraticCurveTo(corners[i], exit);
+-            }
++            p.MoveTo(corners[0]);
++            p.LineTo(corners[1]); p.LineTo(corners[2]); p.LineTo(corners[3]);
+             p.ClosePath(); p.Fill(); p.Stroke();
+             p.fillColor = new Color(.93f, .97f, .94f);
+             foreach (int dot in Patterns[number])
+--- a/Assets/Scripts/UI/TopHUDWidget.cs
++++ b/Assets/Scripts/UI/TopHUDWidget.cs
+@@ -54,7 +54,6 @@
+         private int diceRollSequence;
+         private bool diceDockSuppressed;
+         private Coroutine diceMotion;
+-        private bool diceInCockpit;
+         private Label lblLocalPlayerStatus;
+         private bool localPlayerStatusVisible;
+         private readonly List<GameActivityEntry> pendingActivities = new List<GameActivityEntry>();
+@@ -230,7 +229,7 @@
+             diceDoubleTag.AddToClassList("dice-double-tag");
+             card.Add(diceDoubleTag);
+ 
+-            var skip = new Button(SkipDiceRollAnimation) { text = "Passer" };
++            var skip = new Button(SkipDiceRollAnimation) { text = "Abréger" };
+             skip.AddToClassList("dice-roll-skip");
+             card.Add(skip);
+             diceRollStage.Add(card);
+@@ -252,28 +251,21 @@
+         public void AttachDiceToCockpit(VisualElement host)
+         {
+             if (host == null || diceRollStage == null) return;
+-            if (diceRollStage.parent != host) host.Add(diceRollStage);
+-            diceInCockpit = true;
+-            diceRollStage.AddToClassList("dice-roll-stage--cockpit");
+-            diceRollStage.style.display = DisplayStyle.Flex;
+-            if (diceRollConfirmedFirst == 0) PresentDiceReady(turnManager?.CurrentPlayer?.PlayerId ?? 0);
+-        }
+-        public void PresentDiceReady(int actorId)
+-        {
+-            diceRollSequence++;
+-            if (diceMotion != null) StopCoroutine(diceMotion);
+-            diceMotion = null;
+-            RestoreYieldOverlayAfterDice();
+-            if (diceRollStage == null) return;
+-            ResetDiceClasses();
+-            diceRollStage.AddToClassList("dice-roll-stage--idle");
+-            diceRollActor.text = ResolvePlayerName(actorId).ToUpperInvariant();
+-            diceRollTotal.text = "";
+-            diceRollConfirmedFirst = diceRollConfirmedSecond = 0;
+-            diceRollPas.text = "PRÊT À LANCER";
+-            SetDieFace(diceRollFirstDie, 3); SetDieFace(diceRollSecondDie, 4);
+-            SetDicePose(false, new PulseDicePose(0, 0)); SetDicePose(true, new PulseDicePose(0, 0));
+-        }
++            if (diceRollStage.parent != host)
++            {
++                host.Add(diceRollStage);
++                host.RegisterCallback<GeometryChangedEvent>(_ => FitCentralDice(host));
++            }
++            diceRollStage.AddToClassList("dice-roll-stage--central");
++            FitCentralDice(host);
++        }
++        private void FitCentralDice(VisualElement host)
++        {
++            float scale = Mathf.Min(1.12f, Mathf.Min(host.contentRect.width / 300f, host.contentRect.height / 240f));
++            if (float.IsNaN(scale) || scale <= 0) return;
++            diceRollStage.style.scale = new Scale(new Vector3(scale, scale, 1));
++        }
++
+         private void ResetDiceClasses()
+         {
+             foreach (string suffix in new[] { "settled", "double", "penalty-double", "double-release", "double-rest",
+@@ -287,12 +279,13 @@
+             if ((second ? diceRollSecondDie : diceRollFirstDie) is PulseDiceView volume) volume.SetPose(pose);
+         }
+ 
+-        private void OnGameEventPublished(GameEvent gameEvent)
+-        {
+-            UpdatePlayerRoster();
+-            if (gameEvent == null || gameEvent.Kind != GameEventKind.DiceRolled
++        private void OnGameEventPublished(GameEvent gameEvent) => UpdatePlayerRoster();
++
++        public bool PresentConfirmedDice(GameEvent gameEvent)
++        {
++            if (!isActiveAndEnabled || gameEvent == null || gameEvent.Kind != GameEventKind.DiceRolled
+                 || gameEvent.ValueA < 1 || gameEvent.ValueA > 6 || gameEvent.ValueB < 1 || gameEvent.ValueB > 6
+-                || diceRollStage == null) return;
++                || diceRollStage == null) return false;
+             var cockpit = FindObjectOfType<ActionButtonsWidget>(true);
+             if (cockpit?.DiceHost != null) AttachDiceToCockpit(cockpit.DiceHost);
+             int sequence = ++diceRollSequence;
+@@ -315,10 +308,11 @@
+                 SetDicePose(false, new PulseDicePose(0, 0)); SetDicePose(true, new PulseDicePose(0, 0));
+                 RevealDiceResult(sequence);
+                 ScheduleDiceRollHide(sequence, 900);
+-                return;
++                return true;
+             }
+             diceMotion = StartCoroutine(AnimateDice(sequence));
+             ScheduleDiceRollHide(sequence, 1900);
++            return true;
+         }
+         private IEnumerator AnimateDice(int sequence)
+         {
+@@ -393,7 +387,7 @@
+             {
+                 if (sequence != diceRollSequence || diceRollStage == null) return;
+                 diceRollStage.RemoveFromClassList("dice-roll-stage--visible");
+-                if (!diceInCockpit) diceRollStage.style.display = DisplayStyle.None;
++                diceRollStage.style.display = DisplayStyle.None;
+                 RestoreYieldOverlayAfterDice();
+             }).StartingIn(delayMs);
+         }
+@@ -406,9 +400,7 @@
+             SetDicePose(false, new PulseDicePose(0, 0)); SetDicePose(true, new PulseDicePose(0, 0));
+             RevealDiceResult(diceRollSequence);
+             diceRollStage.AddToClassList("dice-roll-stage--skip");
+-            diceRollStage.RemoveFromClassList("dice-roll-stage--visible");
+-            if (!diceInCockpit) diceRollStage.style.display = DisplayStyle.None;
+-            RestoreYieldOverlayAfterDice();
++            ScheduleDiceRollHide(diceRollSequence, 400);
+         }
+ 
+         private void SuppressGameStateDockForDice()
+@@ -421,15 +413,14 @@
+         private void RestoreGameStateDockAfterDice()
+         {
+             if (!diceDockSuppressed) return;
++            diceDockSuppressed = false;
+             ActionButtonsWidget.SetTransientDicePresentation(false);
+-            diceDockSuppressed = false;
+         }
+ 
+         private void RestoreYieldOverlayAfterDice() => RestoreGameStateDockAfterDice();
+ 
+         private void OnTurnStarted(int playerId)
+         {
+-            PresentDiceReady(playerId);
+             UpdateHumanPlayerUI();
+             UpdatePlayerRoster();
+         }
+--- a/Assets/UI/Layouts/TileDetail_BottomSheet.uxml
++++ b/Assets/UI/Layouts/TileDetail_BottomSheet.uxml
+@@ -7,6 +7,8 @@
+     <Style src="project://database/Assets/UI/Styles/Theme.uss" />
+ 
+     <ui:VisualElement class="bottom-panel-container marketplace-nonmodal" name="Panel_TileDetail">
++        <ui:VisualElement name="PulseCenterStage" class="pulse-center-stage" picking-mode="Ignore">
++        <ui:VisualElement name="PulseDiceHost" class="pulse-dice-host" picking-mode="Ignore" />
+         <ui:VisualElement name="GameStateDock" class="game-state-dock game-state-dock--board-receipt">
+             <ui:VisualElement class="game-state-dock__main">
+                 <ui:VisualElement name="GameStateMarker" class="game-state-dock__marker" />
+@@ -19,6 +21,8 @@
+             <ui:ScrollView name="GameStateHistory" class="game-state-history">
+                 <ui:VisualElement name="GameStateHistoryList" class="game-state-history__list" />
+             </ui:ScrollView>
++        </ui:VisualElement>
++
+         </ui:VisualElement>
+ 
+         <ui:VisualElement class="marketplace-panel marketplace-panel--compact">
+@@ -34,7 +38,6 @@
+             </ui:VisualElement>
+ 
+             <ui:VisualElement class="panel-content pulse-content">
+-                <ui:VisualElement name="PulseDiceHost" class="pulse-dice-host" />
+                 <ui:VisualElement class="tile-inspector-heading pulse-property-header">
+                     <ui:VisualElement name="Icon_TileFamily" class="icon-box icon-box--compact pulse-property-icon" />
+                     <ui:VisualElement class="text-stack pulse-property-copy">
+--- a/Assets/UI/Styles/Theme.uss
++++ b/Assets/UI/Styles/Theme.uss
+@@ -2970,45 +2970,6 @@
+ #Panel_TileDetail .pulse-go-summary__cell { flex-basis: 0; min-width: 0; }
+ #Panel_TileDetail .pulse-go-summary__value { font-size: 11px; margin-top: 6px; }
+ #Panel_TileDetail .pulse-actions { padding-top: 9px; }
+-#Panel_TileDetail .pulse-dice-host { display: none; width: 100%; height: 228px; flex-shrink: 0; }
+-#Panel_TileDetail.pulse-panel--dice .marketplace-panel--compact { height: 340px; min-height: 340px; }
+-#Panel_TileDetail.pulse-panel--dice .pulse-dice-host { display: flex; }
+-#Panel_TileDetail.pulse-panel--dice .pulse-property-header,
+-#Panel_TileDetail.pulse-panel--dice .pulse-summary,
+-#Panel_TileDetail.pulse-panel--dice .pulse-details,
+-#Panel_TileDetail.pulse-panel--dice .tile-effect-badge { display: none; }
+-.pulse-modal-covered #Panel_TileDetail .marketplace-panel { opacity: .25; }
+-#Panel_TileDetail .dice-roll-stage--cockpit {
+-    position: relative; left: auto; top: auto; translate: 0 0;
+-    width: 100%; max-width: none; height: 228px; display: flex;
+-}
+-#Panel_TileDetail .dice-roll-card {
+-    height: 100%; padding: 0; background-color: transparent; border-width: 0;
+-    scale: 1 1; transition-duration: 0ms;
+-}
+-#Panel_TileDetail .dice-roll-actor {
+-    position: absolute; top: 2px; left: 0; right: 0; height: 16px;
+-    margin: 0; color: #a1a6b2; font-size: 9px; -unity-text-align: middle-center;
+-}
+-#Panel_TileDetail .dice-roll-visual { position: absolute; top: 16px; left: 0; right: 0; width: auto; height: 204px; }
+-#Panel_TileDetail .dice-roll-pair { top: 77px; translate: -50% 0; }
+-#Panel_TileDetail .pulse-volume-die { width: 96px; height: 100px; margin-left: 7px; margin-right: 7px; flex-shrink: 0; overflow: visible; }
+-#Panel_TileDetail .dice-roll-total {
+-    top: 14px; height: 180px; translate: 0 0; font-size: 164px;
+-    color: rgba(212, 213, 219, .25); -unity-font: url("/Assets/UI/Fonts/Inter-500.ttf");
+-}
+-#Panel_TileDetail .dice-roll-stage--double .dice-roll-total { color: rgba(19, 219, 131, .40); }
+-#Panel_TileDetail .dice-roll-stage--penalty-double .dice-roll-total { color: rgba(237, 185, 92, .4); }
+-#Panel_TileDetail .dice-roll-pas { bottom: 1px; font-size: 8px; }
+-#Panel_TileDetail .dice-roll-stage--idle .dice-roll-pas { opacity: 1; }
+-#Panel_TileDetail .dice-roll-stage--double .dice-roll-pas,
+-#Panel_TileDetail .dice-roll-stage--penalty-double .dice-roll-pas { opacity: 0; }
+-#Panel_TileDetail .dice-double-tag { position: absolute; bottom: 8px; left: 0; right: 0; -unity-text-align: middle-center; }
+-#Panel_TileDetail .dice-roll-skip { position: absolute; bottom: 0; right: 0; min-height: 32px; width: 72px; display: none; }
+-#Panel_TileDetail .dice-roll-stage--visible .dice-roll-skip { display: flex; }
+-#Panel_TileDetail .dice-double-halo { top: 60%; }
+-#Panel_TileDetail .dice-double-ray { top: 60%; }
+-#Panel_TileDetail .dice-double-accent-bar { top: 35px; }
+ #Panel_TileDetail .game-state-dock--board-receipt { top: 142px; }
+ .ux-compact-height #Panel_TileDetail .game-state-dock--board-receipt { top: 102px; }
+ #Panel_TileDetail.ux-short-landscape-inspector .marketplace-panel--compact { height: 220px; }
+@@ -3016,11 +2977,6 @@
+ 
+ 
+ 
+-#Panel_TileDetail.ux-short-landscape-inspector.pulse-panel--dice .marketplace-panel--compact { height: 304px; min-height: 304px; }
+-#Panel_TileDetail.ux-short-landscape-inspector .pulse-dice-host { height: 200px; }
+-#Panel_TileDetail.ux-short-landscape-inspector .dice-roll-stage--cockpit { height: 200px; }
+-#Panel_TileDetail.ux-short-landscape-inspector .dice-roll-visual { top: 0; }
+-#Panel_TileDetail.ux-short-landscape-inspector .dice-roll-skip { bottom: -7px; }
+ .ux-extra-narrow #Panel_TileDetail .pulse-summary__rent-value { font-size: 16px; }
+ .ux-extra-narrow #Panel_TileDetail .pulse-go-summary__value { font-size: 10px; }
+ 
+@@ -3035,15 +2991,67 @@
+ #Panel_TileDetail.ux-short-landscape-inspector .pulse-summary__rent-value { font-size: 16px; }
+ #Panel_TileDetail.ux-short-landscape-inspector .pulse-summary__yield-value { font-size: 12px; }
+ 
+-/* The dedicated dice reveal owns the result; history remains available on demand. */
+-#Panel_TileDetail.pulse-panel--dice .game-state-dock {
+-    padding: 0; background-color: transparent; border-width: 0;
+-}
+-#Panel_TileDetail.pulse-panel--dice .game-state-dock__main { display: none; }
+-#Panel_TileDetail.pulse-panel--dice .game-state-dock--presenting {
+-    padding: 5px 7px 5px 9px; background-color: #111620; border-width: 1px; border-left-width: 3px;
+-}
+-#Panel_TileDetail.pulse-panel--dice .game-state-dock--presenting .game-state-dock__main { display: flex; }
+-#Panel_TileDetail.pulse-panel--dice .game-state-history.is-open {
+-    background-color: #111620; border-width: 1px; border-color: #2a303b; border-radius: 9px; padding: 8px;
+-}
++/* Pulse fixed: only the player changes the detent; transient feedback lives over the board. */
++#Panel_TileDetail .pulse-center-stage {
++    position: absolute; top: 142px; bottom: 252px; left: 12px; right: 12px;
++}
++#Panel_TileDetail .pulse-dice-host { position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
++#Panel_TileDetail .dice-roll-stage--central {
++    position: absolute; left: 50%; top: 50%; width: 300px; max-width: none; height: 240px;
++    translate: -50% -50%; transform-origin: 50% 50%;
++}
++#Panel_TileDetail .dice-roll-card { height: 240px; padding: 0; background-color: transparent; border-width: 0; scale: 1 1; transition-duration: 0ms; }
++#Panel_TileDetail .dice-roll-actor { position: absolute; top: 0; left: 0; right: 0; margin: 0; height: 18px; color: #a1a6b2; font-size: 10px; -unity-text-align: middle-center; }
++#Panel_TileDetail .dice-roll-visual { position: absolute; top: 20px; left: 0; right: 0; width: auto; height: 200px; }
++#Panel_TileDetail .dice-roll-pair { top: 82px; translate: -50% 0; }
++#Panel_TileDetail .pulse-volume-die { width: 96px; height: 100px; margin-left: 7px; margin-right: 7px; flex-shrink: 0; overflow: visible; }
++#Panel_TileDetail .dice-roll-total { top: 0; height: 182px; translate: 0 0; font-size: 164px; color: rgba(232, 235, 242, .28); -unity-font: url("/Assets/UI/Fonts/Inter-500.ttf"); }
++#Panel_TileDetail .dice-roll-stage--double .dice-roll-total { color: rgba(19, 219, 131, .45); }
++#Panel_TileDetail .dice-roll-stage--penalty-double .dice-roll-total { color: rgba(237, 185, 92, .45); }
++#Panel_TileDetail .dice-roll-pas { bottom: 0; font-size: 9px; }
++#Panel_TileDetail .dice-roll-stage--double .dice-roll-pas, #Panel_TileDetail .dice-roll-stage--penalty-double .dice-roll-pas { opacity: 0; }
++#Panel_TileDetail .dice-double-tag { position: absolute; bottom: 11px; left: 0; right: 0; -unity-text-align: middle-center; }
++#Panel_TileDetail .dice-roll-skip { position: absolute; bottom: -8px; right: 6px; min-height: 36px; width: 72px; }
++#Panel_TileDetail .dice-double-halo, #Panel_TileDetail .dice-double-ray { top: 60%; }
++#Panel_TileDetail .dice-double-accent-bar { top: 30px; }
++#Panel_TileDetail .game-state-dock--board-receipt {
++    position: absolute; top: 50%; left: 0; right: 0; width: auto; min-height: 0; max-height: none;
++    translate: 0 -50%; padding: 0; margin: 0; background-color: transparent; border-width: 0;
++}
++#Panel_TileDetail .game-state-dock__main { display: none; height: auto; min-height: 0; max-height: none; flex-direction: column; }
++#Panel_TileDetail .game-state-dock--presenting .game-state-dock__main { display: flex; }
++#Panel_TileDetail.pulse-panel--presenting-dice .game-state-dock__main { display: none; }
++#Panel_TileDetail .game-state-dock__marker { display: none; }
++#Panel_TileDetail .game-state-dock__copy { max-height: none; align-items: center; width: 100%; }
++#Panel_TileDetail .game-state-dock__title { height: auto; min-height: 18px; font-size: 10px; color: #a1a6b2; -unity-text-align: middle-center; }
++#Panel_TileDetail .game-state-dock__message { display: flex; height: auto; min-height: 0; max-height: none; flex-shrink: 0; overflow: visible; text-overflow: clip; margin-top: 7px; width: 100%; font-size: 21px; color: #f2f3f5; white-space: normal; -unity-text-align: middle-center; }
++#Panel_TileDetail .game-state-dock__skip-button { width: 80px; min-height: 36px; margin-top: 8px; border-width: 0; background-color: transparent; }
++#Panel_TileDetail .pulse-receipt--purchase .game-state-dock__title { color: #13db83; }
++#Panel_TileDetail .pulse-receipt--pass .game-state-dock__title { color: #edb95c; }
++#Panel_TileDetail .pulse-receipt--payment .game-state-dock__title { color: #f16b77; }
++#Panel_TileDetail .game-state-history { position: absolute; bottom: 240px; left: 12px; right: 12px; background-color: #111620; border-width: 1px; border-color: #2a303b; border-radius: 9px; padding: 8px; }
++#Panel_TileDetail .marketplace-panel--compact { transition-property: border-color; transition-duration: 280ms; }
++#Panel_TileDetail.pulse-feedback--purchase .marketplace-panel--compact { border-color: #13db83; }
++#Panel_TileDetail.pulse-feedback--pass .marketplace-panel--compact { border-color: #edb95c; }
++#Panel_TileDetail.pulse-feedback--payment .marketplace-panel--compact { border-color: #f16b77; }
++#Panel_TileDetail.pulse-panel--spectating .pulse-property-header,
++#Panel_TileDetail.pulse-panel--spectating .pulse-summary { opacity: .72; }
++#Panel_TileDetail.pulse-panel--spectating .pulse-actions { opacity: .62; }
++#Panel_TileDetail .pulse-property-header { height: 64px; }
++#Panel_TileDetail .tile-effect-badge { position: absolute; top: 86px; left: 64px; right: 20px; font-size: 8px; margin: 0; padding: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-center-stage { top: 102px; bottom: 16px; right: 56%; }
++#Panel_TileDetail.ux-short-landscape-inspector .marketplace-panel--compact { width: 54%; }
++.ux-compact-height #Panel_TileDetail .pulse-center-stage { top: 102px; }
++#Panel_TileDetail.ux-short-landscape-inspector .pulse-property-header { height: 56px; }
++.ux-wide-landscape #Panel_TileDetail .pulse-center-stage { top: 142px; bottom: 16px; right: 56%; }
++.ux-wide-landscape #Panel_TileDetail .marketplace-panel--compact { width: 54%; max-width: 660px; }
++.ux-compact-height.ux-wide-landscape #Panel_TileDetail .pulse-center-stage { top: 102px; }
++.ux-extra-narrow #Panel_TileDetail .game-state-dock__message { font-size: 18px; }
++.ux-reduced-motion #Panel_TileDetail .marketplace-panel--compact { transition-duration: 0ms; }
++
++#Panel_TileDetail .dice-roll-pair--double { transition-duration: 65ms; }
++#Panel_TileDetail .dice-roll-stage--double-release .dice-roll-pair { transition-duration: 180ms; }
++#Panel_TileDetail .dice-roll-stage--double-rest .dice-roll-pair { transition-duration: 220ms; }
++.ux-reduced-motion #Panel_TileDetail .dice-roll-pair { transition-duration: 0ms; }
++
++#Panel_TileDetail.ux-short-landscape-inspector.pulse-panel--expanded .marketplace-panel--compact { width: 70%; }

@@ -1,0 +1,122 @@
+{
+  "AUDIT.md": {
+    "bytes": 2481,
+    "sha256": "526eac1bee33fd58623182542d8e5f454fdf01d9f4fd9a360611639c22b7ae01"
+  },
+  "README.md": {
+    "bytes": 13918,
+    "sha256": "2523fc0e895818a3c77a38122546e1e16be400a794161c9066df6b5e816db5a2"
+  },
+  "after-desktop-overview.jpg": {
+    "bytes": 63498,
+    "sha256": "6ef1cccbd3b71f1794dd6c6fc7c2d895996fb49755b20e0325a0b968ec71f446"
+  },
+  "after-inventory.json": {
+    "bytes": 71792,
+    "sha256": "01bd9c0a9d044ef88323b01d58e4d4dcc1ad052935c532120246f5e0741c65a1"
+  },
+  "after-portrait-overview.jpg": {
+    "bytes": 36028,
+    "sha256": "7387171eb9378e562880fdcdf7e14aa53cc835b498b2a2f65e5135ababff032e"
+  },
+  "analyze.py": {
+    "bytes": 3272,
+    "sha256": "dc4d3e9ecc55494268dfd648bb29c7629f72731eeadbda93c3d85dca5664c2bf"
+  },
+  "before-desktop-overview.jpg": {
+    "bytes": 63441,
+    "sha256": "90f15d4b16e3822f3ea3f6d182ea2ef18c6af159fbc0da01c6e91c45d214b90b"
+  },
+  "before-inventory.json": {
+    "bytes": 71065,
+    "sha256": "c255640755885239724476288dd264000557f6acc07e6b9a23b74d33ab835911"
+  },
+  "before-portrait-overview.jpg": {
+    "bytes": 36038,
+    "sha256": "36841037874ecc96108e6d682e7c92a4d7f6a90db911fdd549ddf2ef8850ad55"
+  },
+  "browser-validation.json": {
+    "bytes": 1120257,
+    "sha256": "2d0c668858bcbb67a764e5ba554f034e93eb588fe4a85a4f07594cdda5843c97"
+  },
+  "build-sha256.json": {
+    "bytes": 343,
+    "sha256": "05db983a9f4e9ca4c08b190d6b40999bc058e604ef25fe99327c9973b0766b1d"
+  },
+  "build.log": {
+    "bytes": 626617,
+    "sha256": "8068c7ae74f3295a8202ca86594cf76d1f75145de087f4b7303202a42d75b805"
+  },
+  "desktop-game.webm": {
+    "bytes": 1276540,
+    "sha256": "62d5537a7ea5c078d9cbfc34bc927ce4282f1bf9406ad15ecf5c912711083d0c"
+  },
+  "editor-checks.txt": {
+    "bytes": 73,
+    "sha256": "d8cec5514b075e4dfbcba88380020af1aeab78db241f79d657058e16e8c9df75"
+  },
+  "evidence-analysis.json": {
+    "bytes": 12628,
+    "sha256": "904e3bd8c1cadc9fa13395104089ee8612b298d3919d4b642dbb793c57cf78c2"
+  },
+  "make_capture.py": {
+    "bytes": 3970,
+    "sha256": "d95b9bc3e73890bdb2438b1857fdb6441d5297256ee28309abce50ad5d9af2c4"
+  },
+  "media-validation.json": {
+    "bytes": 901,
+    "sha256": "7f593995481988a5970111723de609e9308caae9a27798adb7adbf06c7a1dcbc"
+  },
+  "pass-2e-only.diff": {
+    "bytes": 39050,
+    "sha256": "b15bc5e31c36525d905e9c1e7a9067b63704baee576cbf6c62d5fb9500cca1ea"
+  },
+  "portrait-fixtures-audio.wav": {
+    "bytes": 4181838,
+    "sha256": "d74f7e6ee4a8e73ba02ead13c53cf7ca7db4e7783e4e9d1aa830729c27b1e4f1"
+  },
+  "portrait-fixtures-frame-13000.jpg": {
+    "bytes": 60152,
+    "sha256": "6aacf7697e2638472ed90669c279db2ca61b9a10642d4bc3994a1cdab0edb3ef"
+  },
+  "portrait-fixtures-frame-4400.jpg": {
+    "bytes": 60389,
+    "sha256": "9da7a0777e4ae3542d15d4a8d9dab677361f8281656a92ada196b94bd9d2029b"
+  },
+  "portrait-fixtures-frame-6150.jpg": {
+    "bytes": 60396,
+    "sha256": "fd49399ed40f297842634833d9c550c9ffe350273cdf44f0f1a4bc5eda9e0c93"
+  },
+  "portrait-fixtures.webm": {
+    "bytes": 1727258,
+    "sha256": "0e0d6456e1053a9f106664648486c01c1d88e8543cdcd66482f6b0d103f7b345"
+  },
+  "portrait-game.webm": {
+    "bytes": 943393,
+    "sha256": "58f84bcc84e2076d8333c58e98cc9e72448e158c83a2d71fb90ae89e84e82c5d"
+  },
+  "review.html": {
+    "bytes": 4953,
+    "sha256": "36bfde65337204786efbb58664573a9ce9332e5f4dc3dc4774573278bbc00503"
+  },
+  "scope-validation.json": {
+    "bytes": 672,
+    "sha256": "3c5b507f789f3e9588c8ea3f1bb554b069d6f1e9a617fbf4036188ccf61c294c"
+  },
+  "serve_webgl.py": {
+    "bytes": 5273,
+    "sha256": "9f3a93c24ba70ca5c3f7055a337cd28e23b68da339f9c02337951f58cf9d4747"
+  },
+  "specimen-context.jpg": {
+    "bytes": 69954,
+    "sha256": "77f72daa5b9132dcb4ffd7b6e35e16061938d0b84b0c1b5c4238b7b0d28a2755"
+  },
+  "specimen.jpg": {
+    "bytes": 2471,
+    "sha256": "0674ae744091842a96de8a26d7eb5e70c4f859dbd14bb28337859096c4d93b0b"
+  },
+  "verify_scope.py": {
+    "bytes": 1731,
+    "sha256": "91cb628cc6d8153f3800cb13e050fe2140786e0359b5fb4a6ca04854587d139c"
+  }
+}

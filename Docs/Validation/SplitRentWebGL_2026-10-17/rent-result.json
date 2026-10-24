@@ -1,0 +1,72 @@
+{
+  "build": "Unity WebGL Release from GoalContinuation_2026-10-17",
+  "clients": 3,
+  "lobbyStatus": "Started",
+  "stateVersion": 2,
+  "latestCommandSequence": 0,
+  "lastAppliedCommandSequence": 0,
+  "turnAfterResolution": {
+    "playerId": 0,
+    "phase": "Planning"
+  },
+  "property": {
+    "tileIndex": 8,
+    "ownerPlayerId": 1,
+    "hijackedByPlayerId": 0,
+    "hijackTurnsRemaining": 3
+  },
+  "players": [
+    {
+      "id": 0,
+      "name": "Player",
+      "balance": 18027.5,
+      "position": 0
+    },
+    {
+      "id": 1,
+      "name": "Owner",
+      "balance": 18082.5,
+      "position": 20
+    },
+    {
+      "id": 2,
+      "name": "Visitor",
+      "balance": 17890.0,
+      "position": 8
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "correlationId": 1,
+      "type": "TransferConfirmed",
+      "actorId": 2,
+      "recipientId": 0,
+      "tileId": 8,
+      "amount": -27.5,
+      "reason": "Rent",
+      "splits": [
+        {
+          "payeeId": 0,
+          "amount": 27.5
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "correlationId": 1,
+      "type": "TransferConfirmed",
+      "actorId": 2,
+      "recipientId": 1,
+      "tileId": 8,
+      "amount": -82.5,
+      "reason": "Rent",
+      "splits": [
+        {
+          "payeeId": 1,
+          "amount": 82.5
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1206 @@
+{
+  "a": [
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=1 crossings=6 audio=True t=99.5540\n",
+      "timestamp": "2026-10-22T20:41:38.220Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=7 arrival=False reduced=False intensity=1.150 t=99.8110\n",
+      "timestamp": "2026-10-22T20:41:38.476Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=2 crossings=7 audio=True t=99.8110\n",
+      "timestamp": "2026-10-22T20:41:38.477Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=8 arrival=False reduced=False intensity=1.150 t=100.0590\n",
+      "timestamp": "2026-10-22T20:41:38.725Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=3 crossings=8 audio=True t=100.0590\n",
+      "timestamp": "2026-10-22T20:41:38.726Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":35,\"collidersInside\":33,\"identityMarkers\":40,\"ownedMarkers\":2,\"selected\":31,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":292.19580078125,\"y\":236.34783935546876},\"tile32\":{\"x\":312.4057312011719,\"y\":249.3385009765625},\"tile0\":{\"x\":477.7595520019531,\"y\":356.8598937988281},\"tile10\":{\"x\":268.3114318847656,\"y\":491.4905700683594},\"tile20\":{\"x\":58.86326217651367,\"y\":356.85992431640627},\"tile30\":{\"x\":268.3113708496094,\"y\":222.229248046875},\"economy\":\"0:17400:4:0;1:16920:9:1;2:17000:5:1;3:17880:9:0\",\"turnState\":\"MovingPawn\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"Quantum AI Labs\",\"rent\":\"450\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":5.8287482261657719,\"y\":302.8371276855469,\"width\":524.96533203125,\"height\":337.9487609863281},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":15.972081184387207,\"minTileEdgePixels\":20.093557357788087,\"minTileAltitudePixels\":18.279239654541017,\"minTileAreaPixels\":526.989013671875}}\n",
+      "timestamp": "2026-10-22T20:41:38.804Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=9 arrival=False reduced=False intensity=1.150 t=100.3080\n",
+      "timestamp": "2026-10-22T20:41:38.975Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=4 crossings=9 audio=True t=100.3080\n",
+      "timestamp": "2026-10-22T20:41:38.976Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=10 arrival=False reduced=False intensity=1.150 t=100.6160\n",
+      "timestamp": "2026-10-22T20:41:39.281Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=5 crossings=10 audio=True t=100.6160\n",
+      "timestamp": "2026-10-22T20:41:39.283Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":31,\"collidersInside\":29,\"identityMarkers\":40,\"ownedMarkers\":2,\"selected\":31,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":324.8081359863281,\"y\":236.34783935546876},\"tile32\":{\"x\":345.01806640625,\"y\":249.3385009765625},\"tile0\":{\"x\":510.37188720703127,\"y\":356.8598937988281},\"tile10\":{\"x\":300.92376708984377,\"y\":491.4905700683594},\"tile20\":{\"x\":91.47560119628906,\"y\":356.85992431640627},\"tile30\":{\"x\":300.9237060546875,\"y\":222.229248046875},\"economy\":\"0:17400:4:0;1:16920:9:1;2:17000:5:1;3:17880:9:0\",\"turnState\":\"MovingPawn\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"Quantum AI Labs\",\"rent\":\"450\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":38.44108581542969,\"y\":302.8371276855469,\"width\":524.9652709960938,\"height\":337.9487609863281},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":15.972081184387207,\"minTileEdgePixels\":20.093557357788087,\"minTileAltitudePixels\":18.279233932495118,\"minTileAreaPixels\":526.9892578125}}\n",
+      "timestamp": "2026-10-22T20:41:39.608Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=11 arrival=False reduced=False intensity=1.150 t=100.9030\n",
+      "timestamp": "2026-10-22T20:41:39.608Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=6 crossings=11 audio=True t=100.9030\n",
+      "timestamp": "2026-10-22T20:41:39.609Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=12 arrival=False reduced=False intensity=1.150 t=101.1410\n",
+      "timestamp": "2026-10-22T20:41:39.807Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=7 crossings=12 audio=True t=101.1410\n",
+      "timestamp": "2026-10-22T20:41:39.808Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=13 arrival=False reduced=False intensity=1.150 t=101.3870\n",
+      "timestamp": "2026-10-22T20:41:40.052Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=8 crossings=13 audio=True t=101.3870\n",
+      "timestamp": "2026-10-22T20:41:40.053Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=14 arrival=False reduced=False intensity=1.150 t=101.6240\n",
+      "timestamp": "2026-10-22T20:41:40.288Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=9 crossings=14 audio=True t=101.6240\n",
+      "timestamp": "2026-10-22T20:41:40.290Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":29,\"collidersInside\":27,\"identityMarkers\":40,\"ownedMarkers\":2,\"selected\":31,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":353.3490295410156,\"y\":236.34783935546876},\"tile32\":{\"x\":373.5589599609375,\"y\":249.33856201171876},\"tile0\":{\"x\":538.9127197265625,\"y\":356.85992431640627},\"tile10\":{\"x\":329.46466064453127,\"y\":491.4906005859375},\"tile20\":{\"x\":120.01648712158203,\"y\":356.85992431640627},\"tile30\":{\"x\":329.464599609375,\"y\":222.229248046875},\"economy\":\"0:17400:4:0;1:16920:9:1;2:17000:5:1;3:17880:9:0\",\"turnState\":\"MovingPawn\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"Quantum AI Labs\",\"rent\":\"450\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":66.98197174072266,\"y\":302.83709716796877,\"width\":524.9652709960938,\"height\":337.94873046875},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":15.972081184387207,\"minTileEdgePixels\":20.09354019165039,\"minTileAltitudePixels\":18.27923011779785,\"minTileAreaPixels\":526.9881591796875}}\n",
+      "timestamp": "2026-10-22T20:41:40.424Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT REACHED actor=0 seq=2 waypoint=10 crossings=15 audio=False t=101.8770\n",
+      "timestamp": "2026-10-22T20:41:40.541Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "CAMERA_HOLD t=102.0190 size=15.9720812\n",
+      "timestamp": "2026-10-22T20:41:40.716Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Player 0 arrived at tile 15.\n",
+      "timestamp": "2026-10-22T20:41:40.717Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Resolving tile for Player 0...\n",
+      "timestamp": "2026-10-22T20:41:40.717Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Waiting for Human Input...\n",
+      "timestamp": "2026-10-22T20:41:40.717Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=15 arrival=True reduced=False intensity=1.650 t=102.0190\n",
+      "timestamp": "2026-10-22T20:41:40.717Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT LOCK actor=0 seq=2 waypoint=10 crossings=15 audio=True t=102.0190\n",
+      "timestamp": "2026-10-22T20:41:40.717Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "CAMERA_STATE ReturnToOverview t=102.2940\n",
+      "timestamp": "2026-10-22T20:41:40.957Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":35,\"collidersInside\":33,\"identityMarkers\":40,\"ownedMarkers\":2,\"selected\":31,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":290.74749755859377,\"y\":248.079345703125},\"tile32\":{\"x\":309.6302490234375,\"y\":260.21697998046877},\"tile0\":{\"x\":464.1258239746094,\"y\":360.6778259277344},\"tile10\":{\"x\":268.4315185546875,\"y\":486.46771240234377},\"tile20\":{\"x\":72.73713684082031,\"y\":360.6778259277344},\"tile30\":{\"x\":268.43145751953127,\"y\":234.887939453125},\"economy\":\"0:17400:15:0;1:16920:9:1;2:17000:5:1;3:17880:9:0\",\"turnState\":\"ResolveTile\",\"cameraState\":\"ReturnToOverview\",\"inspectionName\":\"Quantum AI Labs\",\"rent\":\"450\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":23.18522834777832,\"y\":310.2024841308594,\"width\":490.49249267578127,\"height\":315.7566833496094},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":17.09463119506836,\"minTileEdgePixels\":18.774065017700197,\"minTileAltitudePixels\":17.07888412475586,\"minTileAreaPixels\":460.0494689941406}}\n",
+      "timestamp": "2026-10-22T20:41:41.323Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "CAMERA_STATE StrategicOverview t=102.7540\n",
+      "timestamp": "2026-10-22T20:41:41.420Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":40,\"collidersInside\":40,\"identityMarkers\":40,\"ownedMarkers\":2,\"selected\":31,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":235.9512481689453,\"y\":258.28759765625},\"tile32\":{\"x\":253.67922973632813,\"y\":269.6829833984375},\"tile0\":{\"x\":398.7264404296875,\"y\":364.0},\"tile10\":{\"x\":215.00003051757813,\"y\":482.0970764160156},\"tile20\":{\"x\":31.273582458496095,\"y\":364.0},\"tile30\":{\"x\":214.99996948242188,\"y\":245.90289306640626},\"economy\":\"0:17400:15:0;1:16920:9:1;2:17000:5:1;3:17880:9:0\",\"turnState\":\"ResolveTile\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"Quantum AI Labs\",\"rent\":\"450\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-15.24795150756836,\"y\":316.6114196777344,\"width\":460.495849609375,\"height\":296.4462585449219},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":18.208171844482423,\"minTileEdgePixels\":17.62591552734375,\"minTileAltitudePixels\":16.034400939941408,\"minTileAreaPixels\":405.5008544921875}}\n",
+      "timestamp": "2026-10-22T20:41:42.128Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[UnityCache] 'http://127.0.0.1:9004/ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data' successfully revalidated and served from the indexedDB cache",
+      "timestamp": "2026-10-22T20:42:11.865Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+    },
+    {
+      "level": "log",
+      "message": "navigator.mediaDevices support available",
+      "timestamp": "2026-10-22T20:42:11.899Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[UnityMemory] Configuration Parameters - Can be set up in boot.config\n",
+      "timestamp": "2026-10-22T20:42:13.230Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-nav-mesh-worker=65536\"\n",
+      "timestamp": "2026-10-22T20:42:13.230Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-audio-worker=65536\"\n",
+      "timestamp": "2026-10-22T20:42:13.231Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-background-worker=32768\"\n",
+      "timestamp": "2026-10-22T20:42:13.231Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-allocator-temp-initial-block-size-main=262144\"\n",
+      "timestamp": "2026-10-22T20:42:13.232Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-allocator-temp-initial-block-size-worker=262144\"\n",
+      "timestamp": "2026-10-22T20:42:13.232Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-granularity=16\"\n",
+      "timestamp": "2026-10-22T20:42:13.233Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-bucket-count=8\"\n",
+      "timestamp": "2026-10-22T20:42:13.233Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:42:13.234Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-block-count=1\"\n",
+      "timestamp": "2026-10-22T20:42:13.234Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-main-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:42:13.235Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-thread-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:42:13.235Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-gfx-main-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:42:13.236Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-gfx-thread-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:42:13.237Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-cache-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:42:13.237Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-typetree-allocator-block-size=2097152\"\n",
+      "timestamp": "2026-10-22T20:42:13.238Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-granularity=16\"\n",
+      "timestamp": "2026-10-22T20:42:13.238Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-bucket-count=8\"\n",
+      "timestamp": "2026-10-22T20:42:13.239Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:42:13.239Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-block-count=1\"\n",
+      "timestamp": "2026-10-22T20:42:13.240Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:42:13.240Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-editor-allocator-block-size=1048576\"\n",
+      "timestamp": "2026-10-22T20:42:13.241Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-main=4194304\"\n",
+      "timestamp": "2026-10-22T20:42:13.242Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-block-size=2097152\"\n",
+      "timestamp": "2026-10-22T20:42:13.243Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-block-size-background=1048576\"\n",
+      "timestamp": "2026-10-22T20:42:13.244Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-reduction-small-platforms=262144\"\n",
+      "timestamp": "2026-10-22T20:42:13.244Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Found NO interfaces on host .\n",
+      "timestamp": "2026-10-22T20:42:13.431Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Input System module state changed to: Initialized.\n",
+      "timestamp": "2026-10-22T20:42:13.433Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+      "timestamp": "2026-10-22T20:42:13.433Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Loading player data from data.unity3d\n",
+      "timestamp": "2026-10-22T20:42:13.435Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Initialize engine version: 2022.3.62f3 (96770f904ca7)\n",
+      "timestamp": "2026-10-22T20:42:13.438Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Subsystems] Discovering subsystems at path UnitySubsystems\n",
+      "timestamp": "2026-10-22T20:42:13.439Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Creating WebGL 2.0 context.",
+      "timestamp": "2026-10-22T20:42:13.440Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+    },
+    {
+      "level": "log",
+      "message": "Renderer: WebKit WebGL\n",
+      "timestamp": "2026-10-22T20:42:13.500Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Vendor:   WebKit\n",
+      "timestamp": "2026-10-22T20:42:13.501Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Version:  OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))\n",
+      "timestamp": "2026-10-22T20:42:13.502Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GLES:     3\n",
+      "timestamp": "2026-10-22T20:42:13.503Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": " EXT_clip_control EXT_color_buffer_float EXT_color_buffer_half_float EXT_conservative_depth EXT_depth_clamp EXT_disjoint_timer_query_webgl2 EXT_float_blend EXT_polygon_offset_clamp EXT_render_snorm EXT_texture_compression_bptc EXT_texture_compression_rgtc EXT_texture_filter_anisotropic EXT_texture_mirror_clamp_to_edge EXT_texture_norm16 KHR_parallel_shader_compile NV_shader_noperspective_interpolation OES_draw_buffers_indexed OES_sample_variables OES_shader_multisample_interpolation OES_texture_float_linear WEBGL_blend_func_extended WEBGL_clip_cull_distance WEBGL_compressed_texture_s3tc WEBGL_compressed_texture_s3tc_srgb WEBGL_debug_renderer_info WEBGL_debug_shaders WEBGL_lose_context WEBGL_multi_draw WEBGL_polygon_mode WEBGL_provoking_vertex WEBGL_stencil_texturing GL_EXT_clip_control GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_depth_clamp GL_EXT_disjoint_timer_query_webgl2 GL_EXT_float_blend GL_EXT_polygon_offset_clamp GL_EXT_render_snorm GL_EXT_texture_compres\n",
+      "timestamp": "2026-10-22T20:42:13.503Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "sion_bptc GL_EXT_texture_compression_rgtc GL_EXT_texture_filter_anisotropic GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_KHR_parallel_shader_compile GL_NV_shader_noperspective_interpolation GL_OES_draw_buffers_indexed GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_texture_float_linear GL_WEBGL_blend_func_extended GL_WEBGL_clip_cull_distance GL_WEBGL_compressed_texture_s3tc GL_WEBGL_compressed_texture_s3tc_srgb GL_WEBGL_debug_renderer_info GL_WEBGL_debug_shaders GL_WEBGL_lose_context GL_WEBGL_multi_draw GL_WEBGL_polygon_mode GL_WEBGL_provoking_vertex GL_WEBGL_stencil_texturing\n",
+      "timestamp": "2026-10-22T20:42:13.504Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "OPENGL LOG: Creating OpenGL ES 3.0 graphics device ; Context level  <OpenGL ES 3.0> ; Context handle 1\n",
+      "timestamp": "2026-10-22T20:42:13.520Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "ERROR: Shader ",
+      "timestamp": "2026-10-22T20:42:13.744Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Hidden/Universal/HDRDebugView shader is not supported on this GPU (none of subshaders/fallbacks are suitable)\n",
+      "timestamp": "2026-10-22T20:42:13.745Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Input Manager initialize...\n",
+      "timestamp": "2026-10-22T20:42:13.748Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+      "timestamp": "2026-10-22T20:42:14.031Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "UnloadTime: 1.400001 ms\n",
+      "timestamp": "2026-10-22T20:42:14.032Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Starting initialization...\n",
+      "timestamp": "2026-10-22T20:42:16.707Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Initializing Board Data...\n",
+      "timestamp": "2026-10-22T20:42:16.708Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Board initialized with 40 tiles.\n",
+      "timestamp": "2026-10-22T20:42:16.708Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Venture Deck initialized and shuffled.\n",
+      "timestamp": "2026-10-22T20:42:16.709Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Creating Players...\n",
+      "timestamp": "2026-10-22T20:42:17.726Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 1 assigned profile: Predator\n",
+      "timestamp": "2026-10-22T20:42:17.728Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 2 assigned profile: Rentier\n",
+      "timestamp": "2026-10-22T20:42:17.728Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 3 assigned profile: Negotiator\n",
+      "timestamp": "2026-10-22T20:42:17.729Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Spawning Visuals...\n",
+      "timestamp": "2026-10-22T20:42:17.730Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Trying to get length of sound which is not loaded yet.",
+      "timestamp": "2026-10-22T20:42:17.742Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Trying to get length of sound which is not loaded yet.",
+      "timestamp": "2026-10-22T20:42:17.743Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Spawned 4 player pawns at (4.55, 3.95, -8.13).\n",
+      "timestamp": "2026-10-22T20:42:17.743Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Starting Game Loop...\n",
+      "timestamp": "2026-10-22T20:42:17.743Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Game loop deferred until a game mode is selected.\n",
+      "timestamp": "2026-10-22T20:42:17.743Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Audio context resumed after 11.760 seconds.",
+      "timestamp": "2026-10-22T20:42:25.293Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Turn Start: Player 0\n",
+      "timestamp": "2026-10-22T20:42:36.820Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Deferred local game started.\n",
+      "timestamp": "2026-10-22T20:42:36.820Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Clicked on Background_Plate, but it's not a recognized tile.\n",
+      "timestamp": "2026-10-22T20:42:36.820Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":1200,\"height\":900,\"indices\":40,\"anchorsVisible\":40,\"collidersInside\":40,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":12.0,\"y\":248.0,\"width\":1176.0,\"height\":506.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":766.0,\"width\":1200.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":534.0,\"y\":0.0,\"width\":648.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":553.0,\"y\":10.0,\"width\":521.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":12.0,\"y\":248.0,\"width\":1176.0,\"height\":506.0},\"tile31\":{\"x\":636.6688232421875,\"y\":213.9825439453125},\"tile32\":{\"x\":667.6962280273438,\"y\":233.9266357421875},\"tile0\":{\"x\":921.5574951171875,\"y\":399.0},\"tile10\":{\"x\":600.0000610351563,\"y\":605.6931762695313},\"tile20\":{\"x\":278.4425048828125,\"y\":399.00006103515627},\"tile30\":{\"x\":599.9999389648438,\"y\":192.306884765625},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":197.02069091796876,\"y\":239.54052734375,\"width\":805.9585571289063,\"height\":518.8394165039063},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":11.280900955200196,\"minTileEdgePixels\":30.84880828857422,\"minTileAltitudePixels\":28.063369750976564,\"minTileAreaPixels\":1242.125244140625}}\n",
+      "timestamp": "2026-10-22T20:42:36.820Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "warn",
+      "message": "Manual synchronization of Unity Application.persistentDataPath via JS_FileSystem_Sync() is deprecated and will be later removed in a future Unity version. The persistent data directory will be automatically synchronized instead on file modification. Pass config.autoSyncPersistentDataPath = true; to configuration in createUnityInstance() to opt in to the new behavior.",
+      "timestamp": "2026-10-22T20:42:36.915Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_QA {\"treatment\":\"GraphiteReflectiveNeon\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"mainLight\":\"PerPixel\",\"srpBatcher\":true,\"width\":1200,\"height\":900,\"indices\":40,\"meshes\":4,\"lights\":1,\"realtimeProbes\":0,\"bloom\":0.07999999821186066,\"exposure\":0.15000000596046449,\"size\":11.280900955200196,\"camera\":{\"x\":-12.983297348022461,\"y\":16.32846450805664,\"z\":-14.268487930297852},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"finish\":{\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.41999998688697817,\"tileMetallic\":0.3400000035762787,\"boardSmoothness\":0.5299999713897705,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.5600000023841858,\"edgeSpecular\":0.04500000178813934,\"neonEmission\":1.059999942779541,\"neonReflection\":0.5199999809265137,\"reflectionFalloff\":0.04500000178813934,\"reflectionReach\":0.14000000059604646,\"contactReflection\":0.23999999463558198,\"arrivalReflection\":0.41999998688697817,\"contactOutline\":1.0399999618530274,\"backgroundSeparation\":0.01600000075995922,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.04500000178813934}}\n",
+      "timestamp": "2026-10-22T20:42:36.921Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_QA {\"treatment\":\"GraphiteSatin\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"mainLight\":\"PerPixel\",\"srpBatcher\":true,\"width\":1200,\"height\":900,\"indices\":40,\"meshes\":4,\"lights\":1,\"realtimeProbes\":0,\"bloom\":0.07999999821186066,\"exposure\":0.15000000596046449,\"size\":11.280900955200196,\"camera\":{\"x\":-12.983297348022461,\"y\":16.32846450805664,\"z\":-14.268487930297852},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"finish\":{\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.4699999988079071,\"tileSmoothness\":0.4099999964237213,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.8199999928474426,\"neonReflection\":0.05999999865889549,\"reflectionFalloff\":0.02500000037252903,\"reflectionReach\":0.09000000357627869,\"contactReflection\":0.03500000014901161,\"arrivalReflection\":0.07500000298023224,\"contactOutline\":0.8999999761581421,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.41999998688697817,\"pawnSmoothness\":0.4000000059604645,\"pawnEmission\":0.8799999952316284,\"pawnRing\":0.8999999761581421,\"pawnTop\":0.8999999761581421,\"pawnBaseReflection\":0.00800000037997961}}\n",
+      "timestamp": "2026-10-22T20:42:37.460Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    }
+  ],
+  "b": [
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=7 arrival=False reduced=False intensity=1.150 t=99.8110\n",
+      "timestamp": "2026-10-22T20:41:38.476Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=2 crossings=7 audio=True t=99.8110\n",
+      "timestamp": "2026-10-22T20:41:38.477Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=8 arrival=False reduced=False intensity=1.150 t=100.0590\n",
+      "timestamp": "2026-10-22T20:41:38.725Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=3 crossings=8 audio=True t=100.0590\n",
+      "timestamp": "2026-10-22T20:41:38.726Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":35,\"collidersInside\":33,\"identityMarkers\":40,\"ownedMarkers\":2,\"selected\":31,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":292.19580078125,\"y\":236.34783935546876},\"tile32\":{\"x\":312.4057312011719,\"y\":249.3385009765625},\"tile0\":{\"x\":477.7595520019531,\"y\":356.8598937988281},\"tile10\":{\"x\":268.3114318847656,\"y\":491.4905700683594},\"tile20\":{\"x\":58.86326217651367,\"y\":356.85992431640627},\"tile30\":{\"x\":268.3113708496094,\"y\":222.229248046875},\"economy\":\"0:17400:4:0;1:16920:9:1;2:17000:5:1;3:17880:9:0\",\"turnState\":\"MovingPawn\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"Quantum AI Labs\",\"rent\":\"450\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":5.8287482261657719,\"y\":302.8371276855469,\"width\":524.96533203125,\"height\":337.9487609863281},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":15.972081184387207,\"minTileEdgePixels\":20.093557357788087,\"minTileAltitudePixels\":18.279239654541017,\"minTileAreaPixels\":526.989013671875}}\n",
+      "timestamp": "2026-10-22T20:41:38.804Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=9 arrival=False reduced=False intensity=1.150 t=100.3080\n",
+      "timestamp": "2026-10-22T20:41:38.975Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=4 crossings=9 audio=True t=100.3080\n",
+      "timestamp": "2026-10-22T20:41:38.976Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=10 arrival=False reduced=False intensity=1.150 t=100.6160\n",
+      "timestamp": "2026-10-22T20:41:39.281Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=5 crossings=10 audio=True t=100.6160\n",
+      "timestamp": "2026-10-22T20:41:39.283Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":31,\"collidersInside\":29,\"identityMarkers\":40,\"ownedMarkers\":2,\"selected\":31,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":324.8081359863281,\"y\":236.34783935546876},\"tile32\":{\"x\":345.01806640625,\"y\":249.3385009765625},\"tile0\":{\"x\":510.37188720703127,\"y\":356.8598937988281},\"tile10\":{\"x\":300.92376708984377,\"y\":491.4905700683594},\"tile20\":{\"x\":91.47560119628906,\"y\":356.85992431640627},\"tile30\":{\"x\":300.9237060546875,\"y\":222.229248046875},\"economy\":\"0:17400:4:0;1:16920:9:1;2:17000:5:1;3:17880:9:0\",\"turnState\":\"MovingPawn\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"Quantum AI Labs\",\"rent\":\"450\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":38.44108581542969,\"y\":302.8371276855469,\"width\":524.9652709960938,\"height\":337.9487609863281},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":15.972081184387207,\"minTileEdgePixels\":20.093557357788087,\"minTileAltitudePixels\":18.279233932495118,\"minTileAreaPixels\":526.9892578125}}\n",
+      "timestamp": "2026-10-22T20:41:39.608Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=11 arrival=False reduced=False intensity=1.150 t=100.9030\n",
+      "timestamp": "2026-10-22T20:41:39.608Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=6 crossings=11 audio=True t=100.9030\n",
+      "timestamp": "2026-10-22T20:41:39.609Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=12 arrival=False reduced=False intensity=1.150 t=101.1410\n",
+      "timestamp": "2026-10-22T20:41:39.807Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=7 crossings=12 audio=True t=101.1410\n",
+      "timestamp": "2026-10-22T20:41:39.808Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=13 arrival=False reduced=False intensity=1.150 t=101.3870\n",
+      "timestamp": "2026-10-22T20:41:40.052Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=8 crossings=13 audio=True t=101.3870\n",
+      "timestamp": "2026-10-22T20:41:40.053Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=14 arrival=False reduced=False intensity=1.150 t=101.6240\n",
+      "timestamp": "2026-10-22T20:41:40.288Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=9 crossings=14 audio=True t=101.6240\n",
+      "timestamp": "2026-10-22T20:41:40.290Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":29,\"collidersInside\":27,\"identityMarkers\":40,\"ownedMarkers\":2,\"selected\":31,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":353.3490295410156,\"y\":236.34783935546876},\"tile32\":{\"x\":373.5589599609375,\"y\":249.33856201171876},\"tile0\":{\"x\":538.9127197265625,\"y\":356.85992431640627},\"tile10\":{\"x\":329.46466064453127,\"y\":491.4906005859375},\"tile20\":{\"x\":120.01648712158203,\"y\":356.85992431640627},\"tile30\":{\"x\":329.464599609375,\"y\":222.229248046875},\"economy\":\"0:17400:4:0;1:16920:9:1;2:17000:5:1;3:17880:9:0\",\"turnState\":\"MovingPawn\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"Quantum AI Labs\",\"rent\":\"450\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":66.98197174072266,\"y\":302.83709716796877,\"width\":524.9652709960938,\"height\":337.94873046875},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":15.972081184387207,\"minTileEdgePixels\":20.09354019165039,\"minTileAltitudePixels\":18.27923011779785,\"minTileAreaPixels\":526.9881591796875}}\n",
+      "timestamp": "2026-10-22T20:41:40.424Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT REACHED actor=0 seq=2 waypoint=10 crossings=15 audio=False t=101.8770\n",
+      "timestamp": "2026-10-22T20:41:40.541Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "CAMERA_HOLD t=102.0190 size=15.9720812\n",
+      "timestamp": "2026-10-22T20:41:40.716Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Player 0 arrived at tile 15.\n",
+      "timestamp": "2026-10-22T20:41:40.717Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Resolving tile for Player 0...\n",
+      "timestamp": "2026-10-22T20:41:40.717Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Waiting for Human Input...\n",
+      "timestamp": "2026-10-22T20:41:40.717Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "TILE_CONTACT index=15 arrival=True reduced=False intensity=1.650 t=102.0190\n",
+      "timestamp": "2026-10-22T20:41:40.717Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "MONOLITH_CONTACT LOCK actor=0 seq=2 waypoint=10 crossings=15 audio=True t=102.0190\n",
+      "timestamp": "2026-10-22T20:41:40.717Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "CAMERA_STATE ReturnToOverview t=102.2940\n",
+      "timestamp": "2026-10-22T20:41:40.957Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":35,\"collidersInside\":33,\"identityMarkers\":40,\"ownedMarkers\":2,\"selected\":31,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":290.74749755859377,\"y\":248.079345703125},\"tile32\":{\"x\":309.6302490234375,\"y\":260.21697998046877},\"tile0\":{\"x\":464.1258239746094,\"y\":360.6778259277344},\"tile10\":{\"x\":268.4315185546875,\"y\":486.46771240234377},\"tile20\":{\"x\":72.73713684082031,\"y\":360.6778259277344},\"tile30\":{\"x\":268.43145751953127,\"y\":234.887939453125},\"economy\":\"0:17400:15:0;1:16920:9:1;2:17000:5:1;3:17880:9:0\",\"turnState\":\"ResolveTile\",\"cameraState\":\"ReturnToOverview\",\"inspectionName\":\"Quantum AI Labs\",\"rent\":\"450\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":23.18522834777832,\"y\":310.2024841308594,\"width\":490.49249267578127,\"height\":315.7566833496094},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":17.09463119506836,\"minTileEdgePixels\":18.774065017700197,\"minTileAltitudePixels\":17.07888412475586,\"minTileAreaPixels\":460.0494689941406}}\n",
+      "timestamp": "2026-10-22T20:41:41.323Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "CAMERA_STATE StrategicOverview t=102.7540\n",
+      "timestamp": "2026-10-22T20:41:41.420Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":40,\"collidersInside\":40,\"identityMarkers\":40,\"ownedMarkers\":2,\"selected\":31,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":235.9512481689453,\"y\":258.28759765625},\"tile32\":{\"x\":253.67922973632813,\"y\":269.6829833984375},\"tile0\":{\"x\":398.7264404296875,\"y\":364.0},\"tile10\":{\"x\":215.00003051757813,\"y\":482.0970764160156},\"tile20\":{\"x\":31.273582458496095,\"y\":364.0},\"tile30\":{\"x\":214.99996948242188,\"y\":245.90289306640626},\"economy\":\"0:17400:15:0;1:16920:9:1;2:17000:5:1;3:17880:9:0\",\"turnState\":\"ResolveTile\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"Quantum AI Labs\",\"rent\":\"450\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-15.24795150756836,\"y\":316.6114196777344,\"width\":460.495849609375,\"height\":296.4462585449219},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":18.208171844482423,\"minTileEdgePixels\":17.62591552734375,\"minTileAltitudePixels\":16.034400939941408,\"minTileAreaPixels\":405.5008544921875}}\n",
+      "timestamp": "2026-10-22T20:41:42.128Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[UnityCache] 'http://127.0.0.1:9004/ReflectiveNeon/Build/c1b01c92ad0137a55d7955b3dd9cfa6c.data' successfully revalidated and served from the indexedDB cache",
+      "timestamp": "2026-10-22T20:42:11.865Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+    },
+    {
+      "level": "log",
+      "message": "navigator.mediaDevices support available",
+      "timestamp": "2026-10-22T20:42:11.899Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[UnityMemory] Configuration Parameters - Can be set up in boot.config\n",
+      "timestamp": "2026-10-22T20:42:13.230Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-nav-mesh-worker=65536\"\n",
+      "timestamp": "2026-10-22T20:42:13.230Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-audio-worker=65536\"\n",
+      "timestamp": "2026-10-22T20:42:13.231Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-background-worker=32768\"\n",
+      "timestamp": "2026-10-22T20:42:13.231Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-allocator-temp-initial-block-size-main=262144\"\n",
+      "timestamp": "2026-10-22T20:42:13.232Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-allocator-temp-initial-block-size-worker=262144\"\n",
+      "timestamp": "2026-10-22T20:42:13.232Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-granularity=16\"\n",
+      "timestamp": "2026-10-22T20:42:13.233Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-bucket-count=8\"\n",
+      "timestamp": "2026-10-22T20:42:13.233Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:42:13.234Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-bucket-allocator-block-count=1\"\n",
+      "timestamp": "2026-10-22T20:42:13.234Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-main-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:42:13.235Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-thread-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:42:13.235Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-gfx-main-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:42:13.236Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-gfx-thread-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:42:13.237Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-cache-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:42:13.237Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-typetree-allocator-block-size=2097152\"\n",
+      "timestamp": "2026-10-22T20:42:13.238Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-granularity=16\"\n",
+      "timestamp": "2026-10-22T20:42:13.238Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-bucket-count=8\"\n",
+      "timestamp": "2026-10-22T20:42:13.239Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-block-size=4194304\"\n",
+      "timestamp": "2026-10-22T20:42:13.239Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-bucket-allocator-block-count=1\"\n",
+      "timestamp": "2026-10-22T20:42:13.240Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-allocator-block-size=16777216\"\n",
+      "timestamp": "2026-10-22T20:42:13.240Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-profiler-editor-allocator-block-size=1048576\"\n",
+      "timestamp": "2026-10-22T20:42:13.241Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-temp-allocator-size-main=4194304\"\n",
+      "timestamp": "2026-10-22T20:42:13.242Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-block-size=2097152\"\n",
+      "timestamp": "2026-10-22T20:42:13.243Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-block-size-background=1048576\"\n",
+      "timestamp": "2026-10-22T20:42:13.244Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "    \"memorysetup-job-temp-allocator-reduction-small-platforms=262144\"\n",
+      "timestamp": "2026-10-22T20:42:13.244Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Found NO interfaces on host .\n",
+      "timestamp": "2026-10-22T20:42:13.431Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Input System module state changed to: Initialized.\n",
+      "timestamp": "2026-10-22T20:42:13.433Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+      "timestamp": "2026-10-22T20:42:13.433Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Loading player data from data.unity3d\n",
+      "timestamp": "2026-10-22T20:42:13.435Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Initialize engine version: 2022.3.62f3 (96770f904ca7)\n",
+      "timestamp": "2026-10-22T20:42:13.438Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Subsystems] Discovering subsystems at path UnitySubsystems\n",
+      "timestamp": "2026-10-22T20:42:13.439Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Creating WebGL 2.0 context.",
+      "timestamp": "2026-10-22T20:42:13.440Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+    },
+    {
+      "level": "log",
+      "message": "Renderer: WebKit WebGL\n",
+      "timestamp": "2026-10-22T20:42:13.500Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Vendor:   WebKit\n",
+      "timestamp": "2026-10-22T20:42:13.501Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Version:  OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))\n",
+      "timestamp": "2026-10-22T20:42:13.502Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GLES:     3\n",
+      "timestamp": "2026-10-22T20:42:13.503Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": " EXT_clip_control EXT_color_buffer_float EXT_color_buffer_half_float EXT_conservative_depth EXT_depth_clamp EXT_disjoint_timer_query_webgl2 EXT_float_blend EXT_polygon_offset_clamp EXT_render_snorm EXT_texture_compression_bptc EXT_texture_compression_rgtc EXT_texture_filter_anisotropic EXT_texture_mirror_clamp_to_edge EXT_texture_norm16 KHR_parallel_shader_compile NV_shader_noperspective_interpolation OES_draw_buffers_indexed OES_sample_variables OES_shader_multisample_interpolation OES_texture_float_linear WEBGL_blend_func_extended WEBGL_clip_cull_distance WEBGL_compressed_texture_s3tc WEBGL_compressed_texture_s3tc_srgb WEBGL_debug_renderer_info WEBGL_debug_shaders WEBGL_lose_context WEBGL_multi_draw WEBGL_polygon_mode WEBGL_provoking_vertex WEBGL_stencil_texturing GL_EXT_clip_control GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_depth_clamp GL_EXT_disjoint_timer_query_webgl2 GL_EXT_float_blend GL_EXT_polygon_offset_clamp GL_EXT_render_snorm GL_EXT_texture_compres\n",
+      "timestamp": "2026-10-22T20:42:13.503Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "sion_bptc GL_EXT_texture_compression_rgtc GL_EXT_texture_filter_anisotropic GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_KHR_parallel_shader_compile GL_NV_shader_noperspective_interpolation GL_OES_draw_buffers_indexed GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_texture_float_linear GL_WEBGL_blend_func_extended GL_WEBGL_clip_cull_distance GL_WEBGL_compressed_texture_s3tc GL_WEBGL_compressed_texture_s3tc_srgb GL_WEBGL_debug_renderer_info GL_WEBGL_debug_shaders GL_WEBGL_lose_context GL_WEBGL_multi_draw GL_WEBGL_polygon_mode GL_WEBGL_provoking_vertex GL_WEBGL_stencil_texturing\n",
+      "timestamp": "2026-10-22T20:42:13.504Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "OPENGL LOG: Creating OpenGL ES 3.0 graphics device ; Context level  <OpenGL ES 3.0> ; Context handle 1\n",
+      "timestamp": "2026-10-22T20:42:13.520Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "ERROR: Shader ",
+      "timestamp": "2026-10-22T20:42:13.744Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Hidden/Universal/HDRDebugView shader is not supported on this GPU (none of subshaders/fallbacks are suitable)\n",
+      "timestamp": "2026-10-22T20:42:13.745Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Input Manager initialize...\n",
+      "timestamp": "2026-10-22T20:42:13.748Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+      "timestamp": "2026-10-22T20:42:14.031Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "UnloadTime: 1.400001 ms\n",
+      "timestamp": "2026-10-22T20:42:14.032Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Starting initialization...\n",
+      "timestamp": "2026-10-22T20:42:16.707Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Initializing Board Data...\n",
+      "timestamp": "2026-10-22T20:42:16.708Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Board initialized with 40 tiles.\n",
+      "timestamp": "2026-10-22T20:42:16.708Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Venture Deck initialized and shuffled.\n",
+      "timestamp": "2026-10-22T20:42:16.709Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Creating Players...\n",
+      "timestamp": "2026-10-22T20:42:17.726Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 1 assigned profile: Predator\n",
+      "timestamp": "2026-10-22T20:42:17.728Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 2 assigned profile: Rentier\n",
+      "timestamp": "2026-10-22T20:42:17.728Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "[Bootstrap] Player 3 assigned profile: Negotiator\n",
+      "timestamp": "2026-10-22T20:42:17.729Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Spawning Visuals...\n",
+      "timestamp": "2026-10-22T20:42:17.730Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Trying to get length of sound which is not loaded yet.",
+      "timestamp": "2026-10-22T20:42:17.742Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Trying to get length of sound which is not loaded yet.",
+      "timestamp": "2026-10-22T20:42:17.743Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Spawned 4 player pawns at (4.55, 3.95, -8.13).\n",
+      "timestamp": "2026-10-22T20:42:17.743Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Starting Game Loop...\n",
+      "timestamp": "2026-10-22T20:42:17.743Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Game loop deferred until a game mode is selected.\n",
+      "timestamp": "2026-10-22T20:42:17.743Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Audio context resumed after 11.760 seconds.",
+      "timestamp": "2026-10-22T20:42:25.293Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Turn Start: Player 0\n",
+      "timestamp": "2026-10-22T20:42:36.820Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Bootstrapper: Deferred local game started.\n",
+      "timestamp": "2026-10-22T20:42:36.820Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "Clicked on Background_Plate, but it's not a recognized tile.\n",
+      "timestamp": "2026-10-22T20:42:36.820Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "BOARD_QA {\"width\":1200,\"height\":900,\"indices\":40,\"anchorsVisible\":40,\"collidersInside\":40,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":12.0,\"y\":248.0,\"width\":1176.0,\"height\":506.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":766.0,\"width\":1200.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":534.0,\"y\":0.0,\"width\":648.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":553.0,\"y\":10.0,\"width\":521.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":12.0,\"y\":248.0,\"width\":1176.0,\"height\":506.0},\"tile31\":{\"x\":636.6688232421875,\"y\":213.9825439453125},\"tile32\":{\"x\":667.6962280273438,\"y\":233.9266357421875},\"tile0\":{\"x\":921.5574951171875,\"y\":399.0},\"tile10\":{\"x\":600.0000610351563,\"y\":605.6931762695313},\"tile20\":{\"x\":278.4425048828125,\"y\":399.00006103515627},\"tile30\":{\"x\":599.9999389648438,\"y\":192.306884765625},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":197.02069091796876,\"y\":239.54052734375,\"width\":805.9585571289063,\"height\":518.8394165039063},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":11.280900955200196,\"minTileEdgePixels\":30.84880828857422,\"minTileAltitudePixels\":28.063369750976564,\"minTileAreaPixels\":1242.125244140625}}\n",
+      "timestamp": "2026-10-22T20:42:36.820Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "warn",
+      "message": "Manual synchronization of Unity Application.persistentDataPath via JS_FileSystem_Sync() is deprecated and will be later removed in a future Unity version. The persistent data directory will be automatically synchronized instead on file modification. Pass config.autoSyncPersistentDataPath = true; to configuration in createUnityInstance() to opt in to the new behavior.",
+      "timestamp": "2026-10-22T20:42:36.915Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_QA {\"treatment\":\"GraphiteReflectiveNeon\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"mainLight\":\"PerPixel\",\"srpBatcher\":true,\"width\":1200,\"height\":900,\"indices\":40,\"meshes\":4,\"lights\":1,\"realtimeProbes\":0,\"bloom\":0.07999999821186066,\"exposure\":0.15000000596046449,\"size\":11.280900955200196,\"camera\":{\"x\":-12.983297348022461,\"y\":16.32846450805664,\"z\":-14.268487930297852},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"finish\":{\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.41999998688697817,\"tileMetallic\":0.3400000035762787,\"boardSmoothness\":0.5299999713897705,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.5600000023841858,\"edgeSpecular\":0.04500000178813934,\"neonEmission\":1.059999942779541,\"neonReflection\":0.5199999809265137,\"reflectionFalloff\":0.04500000178813934,\"reflectionReach\":0.14000000059604646,\"contactReflection\":0.23999999463558198,\"arrivalReflection\":0.41999998688697817,\"contactOutline\":1.0399999618530274,\"backgroundSeparation\":0.01600000075995922,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.04500000178813934}}\n",
+      "timestamp": "2026-10-22T20:42:36.921Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_QA {\"treatment\":\"GraphiteSatin\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"mainLight\":\"PerPixel\",\"srpBatcher\":true,\"width\":1200,\"height\":900,\"indices\":40,\"meshes\":4,\"lights\":1,\"realtimeProbes\":0,\"bloom\":0.07999999821186066,\"exposure\":0.15000000596046449,\"size\":11.280900955200196,\"camera\":{\"x\":-12.983297348022461,\"y\":16.32846450805664,\"z\":-14.268487930297852},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"finish\":{\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.4699999988079071,\"tileSmoothness\":0.4099999964237213,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.8199999928474426,\"neonReflection\":0.05999999865889549,\"reflectionFalloff\":0.02500000037252903,\"reflectionReach\":0.09000000357627869,\"contactReflection\":0.03500000014901161,\"arrivalReflection\":0.07500000298023224,\"contactOutline\":0.8999999761581421,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.41999998688697817,\"pawnSmoothness\":0.4000000059604645,\"pawnEmission\":0.8799999952316284,\"pawnRing\":0.8999999761581421,\"pawnTop\":0.8999999761581421,\"pawnBaseReflection\":0.00800000037997961}}\n",
+      "timestamp": "2026-10-22T20:42:37.460Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    },
+    {
+      "level": "log",
+      "message": "GRAPHITE_QA {\"treatment\":\"GraphiteReflectiveNeon\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"mainLight\":\"PerPixel\",\"srpBatcher\":true,\"width\":1200,\"height\":900,\"indices\":40,\"meshes\":4,\"lights\":1,\"realtimeProbes\":0,\"bloom\":0.07999999821186066,\"exposure\":0.15000000596046449,\"size\":11.280900955200196,\"camera\":{\"x\":-12.983297348022461,\"y\":16.32846450805664,\"z\":-14.268487930297852},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"finish\":{\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.41999998688697817,\"tileMetallic\":0.3400000035762787,\"boardSmoothness\":0.5299999713897705,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.5600000023841858,\"edgeSpecular\":0.04500000178813934,\"neonEmission\":1.059999942779541,\"neonReflection\":0.5199999809265137,\"reflectionFalloff\":0.04500000178813934,\"reflectionReach\":0.14000000059604646,\"contactReflection\":0.23999999463558198,\"arrivalReflection\":0.41999998688697817,\"contactOutline\":1.0399999618530274,\"backgroundSeparation\":0.01600000075995922,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.04500000178813934}}\n",
+      "timestamp": "2026-10-22T20:42:48.524Z",
+      "url": "http://127.0.0.1:9004/ReflectiveNeon/Build/91dbd2b5170248af0a78eba716789078.framework.js"
+    }
+  ]
+}

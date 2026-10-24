@@ -4,7 +4,7 @@
 > **C# Implementation Status of Board Features:**
 > - **Board Mapping**: `[OPERATIONAL]` — Exactly 40 tiles generated according to `PolyRiskBoardGenerator.cs` (12 is Stock Market, 22 is Tax/Impôt, 32 is Casino).
 > - **Logistics Hubs Loyer/Scaling**: `[OPERATIONAL]` — Handled dynamically in `RulesEngine.cs`.
-> - **Transit Express (Hub teleportation)**: `[MISSING]` — Not implemented in `TurnManager.cs` or `RulesEngine.cs`.
+> - **Transit Express (Hub teleportation)**: `[OPERATIONAL]` — After landing on an owned Hub with all four Hubs, a human can choose to teleport to the next Hub or stay; the choice is host-authoritative online and restored from the turn state. AI retains its automatic transit policy.
 > - **Upgrade System Scaling**: `[OPERATIONAL]` — Sigmoid pricing and monopoly multiplier (2x) is fully integrated into `UpgradeSystem.cs` and rent payments.
 
 ---
@@ -95,7 +95,7 @@ Aucun coût pour 1, 2 ou 3 Hubs. *Statut C#* : `[MISSING]`
 - **Effet** : Téléportation optionnelle vers le Hub suivant dans le sens horaire.
 - **Sgo** : Non collecté si la téléportation traverse la Case 0 (Case 35 → Case 5).
 - **Séquence** : Case 5 → Case 15 → Case 25 → Case 35 → Case 5.
-- *Statut C#* : `[MISSING]` — Non implémenté dans `TurnManager.cs` ou `RulesEngine.cs`.
+- *Statut C#* : `[OPERATIONAL]` — Le choix humain est facultatif, disponible en local et via commande autoritaire en ligne ; la traversée 35 → 5 n'accorde pas de Sgo supplémentaire.
 
 ---
 

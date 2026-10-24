@@ -1,0 +1,38 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><title>PolyRisk — PASS 2F · Graphite Satin / Reflective Neon</title>
+<style>body{background:#0c1016;color:#a4aebc;font:15px system-ui;margin:24px auto;padding:0 18px;max-width:1320px}h1,h2{color:#e1e7ee}a{color:#39d6bb}p{line-height:1.5}video{display:block;max-height:78vh;max-width:100%;background:#0c1016}button,input,select{font:inherit}.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}figure{margin:0}img{max-width:100%;height:auto}figcaption{margin:8px 0;color:#d9e1ea}.details{display:flex;gap:16px;flex-wrap:wrap}.details figure{max-width:260px}section{margin:32px 0}output{display:block;margin:12px 0}@media(max-width:650px){.compare{grid-template-columns:1fr}}
+</style>
+<h1>PASS 2F — Graphite Satin · Reflective Neon</h1>
+<p><a href="README.md">Rapport, paramètres et limites</a> · <a href="/ReflectiveNeon/index.html">Prototype — B par défaut</a> · <a href="/ReflectiveNeon/capture.html">Comparateur temps réel A/B — outils QA</a></p>
+<p>Rendu Unity WebGL réel. Géométrie, caméra, état initial à quatre joueurs et exposition identiques dans les comparatifs. Aucun visuel généré. Le cockpit et les couleurs fonctionnelles sont conservés.</p>
+<section><h2>430 × 830 · Low · cockpit compact</h2><div class="compare">
+<figure><figcaption>Baseline — PASS 2E.1</figcaption><a href="baseline-portrait.jpg"><img src="baseline-portrait.jpg"></a></figure>
+<figure><figcaption>A — Graphite Satin</figcaption><a href="variant-a-portrait.jpg"><img src="variant-a-portrait.jpg"></a></figure>
+<figure><figcaption>B — Graphite Reflective Neon</figcaption><a href="variant-b-portrait.jpg"><img src="variant-b-portrait.jpg"></a></figure>
+</div></section>
+<section><h2>1200 × 900 · Low · mêmes conditions</h2><div class="compare">
+<figure><figcaption>Baseline — PASS 2E.1</figcaption><a href="baseline-desktop.jpg"><img src="baseline-desktop.jpg"></a></figure>
+<figure><figcaption>A — Graphite Satin</figcaption><a href="variant-a-desktop.jpg"><img src="variant-a-desktop.jpg"></a></figure>
+<figure><figcaption>B — Graphite Reflective Neon</figcaption><a href="variant-b-desktop.jpg"><img src="variant-b-desktop.jpg"></a></figure>
+</div></section>
+<section><h2>B en action — vidéo portrait avec audio réel</h2>
+<video id="viewer" controls preload="metadata" src="variant-b-game.webm"></video>
+<p><label>Clip <select id="source"><option value="variant-b-game.webm">Partie réelle — dés, glide, contact, lock</option><option value="variant-b-fixtures.webm">Banc visuel — quatre coins, cohabitation, Reduced Motion</option></select></label> <label>Temps <input id="time" type="number" step=".05" min="0" value="1"></label> <button id="seek">Afficher</button></p><output id="meta">Chargement…</output>
+<p>Le banc emploie le prefab et PawnMovement réels sur des parcours déterministes sans actions économiques. Ses premières poses rapides vérifient les 40 positions ; elles ne représentent pas un déplacement normal. Le clip « Partie réelle » utilise les dés et le moteur de la partie.</p>
+<audio controls preload="metadata" src="variant-b-fixtures-audio.wav"></audio></section>
+<p>Partie réelle : dés vers ~6 s, contacts ~8 s, lock ~8,9 s. Son discret du jeu ; aucune prise microphone. La capture vidéo tourne autour de 14 images distinctes/s sur ce poste. <a href="frame-dice.png">Dés</a> · <a href="frame-arrival.png">Arrivée en plein cadre</a> · <a href="selection-mobile.jpg">Sélection et inspecteur mobile</a>.</p>
+<section><h2>Détails réels — la vue native reste la référence</h2><div class="details">
+<figure><figcaption>Case au repos, sans sélection — Medium</figcaption><img src="detail-neutral.jpg"></figure>
+<figure><figcaption>Case sélectionnée — Medium</figcaption><img src="detail-selected.jpg"></figure>
+<figure><figcaption>Contact de passage — Low</figcaption><img src="detail-crossing.jpg"></figure>
+<figure><figcaption>Arrivée et reflet local — Low</figcaption><img src="detail-arrival.jpg"></figure>
+</div><p>Les détails de cases sont des recadrages de captures natives. Le monolithe ci-dessous est un spécimen QA ×5 déclaré, avec la caméra de jeu inchangée ; il ne remplace pas la preuve de lisibilité en 430 × 830.</p><div class="details">
+<figure><figcaption>Monolithe — repos, spécimen ×5, Medium</figcaption><img src="pawn-idle.jpg"></figure>
+<figure><figcaption>Monolithe — actif, spécimen ×5, Medium</figcaption><img src="pawn-active.jpg"></figure>
+</div></section>
+<script>
+const v=document.getElementById('viewer'),meta=document.getElementById('meta');
+function info(){meta.textContent=`${v.videoWidth} × ${v.videoHeight} · ${v.currentTime.toFixed(2)} / ${Number.isFinite(v.duration)?v.duration.toFixed(2):'…'} s`;}
+v.onloadedmetadata=info;v.onseeked=info;
+document.getElementById('source').onchange=e=>{v.pause();v.src=e.target.value;};
+document.getElementById('seek').onclick=()=>{v.pause();v.currentTime=Number(document.getElementById('time').value);};
+</script><p>Arrêt après PASS 2F. Recommandation B, sous réserve de validation artistique. Aucun test sur téléphone physique ni mesure GPU. La différence A/B est subtile en vue mobile ; les petits contours gardent les limites d’échantillonnage du cadrage existant.</p></html>

@@ -1,0 +1,3 @@
+PASS: scene byte-identical; four meshes unchanged; geometry parameters unchanged; 40 indices, anchors, colliders and raycasts unchanged; camera unchanged.
+Vertices: 42240
+Triangles: 18624

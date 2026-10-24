@@ -1,0 +1,83 @@
+<div id="pulse-key-moments" class="viz-dotted-background">
+<div class="km-console" aria-label="Pulse — achat glissé, famille complète et loyer reçu">
+<header><span>PULSE / MOMENTS CLÉS</span><button type="button" class="km-reset cursor-interaction">Rejouer ↺</button></header>
+<div class="km-capital"><div><small>CAPITAL DISPONIBLE</small><strong class="km-balance">18 000 $</strong></div><div class="km-gain" aria-live="polite"></div></div>
+<div class="km-family-head"><div><small>PORTEFEUILLE / PHARMA</small><h3>Une famille à compléter.</h3></div><span class="km-count">2<span>/3</span></span></div>
+<div class="km-cards" aria-label="Famille Pharma">
+<div class="km-card"><i data-lucide="plus" aria-hidden="true"></i><strong>Opioid<br>Paradise</strong><small>À vous <span>✓</span></small></div>
+<div class="km-card"><i data-lucide="plus" aria-hidden="true"></i><strong>Prescription<br>Factory</strong><small>À vous <span>✓</span></small></div>
+<div class="km-card km-pending"><i data-lucide="plus" aria-hidden="true"></i><strong>Fentanyl<br>Labs</strong><small class="km-last-card">1 300 $ <span>↗</span></small></div>
+<div class="km-link" aria-hidden="true"></div>
+</div>
+<div class="km-family-feedback" aria-live="polite">Une acquisition pour compléter la famille.</div>
+<div class="km-slider"><div class="km-slider-fill"></div><span class="km-slider-caption">Glisser pour acheter <b>1 300 $</b></span><span class="km-thumb" aria-hidden="true">››</span><input type="range" min="0" max="100" step="1" value="0" aria-label="Glisser pour acheter Fentanyl Labs pour 1 300 dollars. Au clavier, atteindre la fin puis appuyer sur Entrée." /></div>
+<div class="km-controls"><button type="button" class="km-click-buy cursor-interaction">Acheter sans glisser</button><button type="button" class="km-rent cursor-interaction">Simuler un loyer +130 $</button></div>
+<div class="km-receipt" aria-live="polite">Aucune transaction.</div>
+</div><div class="km-caption">Démonstration · données illustratives · aucun effet sur la partie</div>
+</div>
+<style>
+#pulse-key-moments{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+#pulse-key-moments .km-console{--km-bg:#0c1018;--km-surface:#141c24;--km-line:#303a42;--km-text:#edf2f0;--km-muted:#a0abb0;--km-green:#16d88a;--km-gold:#e6bc73;position:relative;max-width:430px;margin:20px auto 0;padding:21px;border-radius:22px;background:var(--km-bg);color:var(--km-text);box-sizing:border-box;overflow:hidden;border:1px solid var(--km-line)}
+#pulse-key-moments .km-console *{box-sizing:border-box}
+#pulse-key-moments header{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:40px;padding-right:50px;font-size:11px;letter-spacing:1.3px;color:var(--km-muted)}
+#pulse-key-moments button{font:400 11px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:44px;background:transparent;border:0;color:var(--km-muted)}
+#pulse-key-moments .km-reset{padding:0 3px;white-space:nowrap;letter-spacing:0}
+#pulse-key-moments small{display:block;font-size:11px;font-weight:400;letter-spacing:.6px;color:var(--km-muted)}
+#pulse-key-moments .km-capital{display:flex;justify-content:space-between;align-items:flex-end;min-height:76px;padding:14px 0 21px;border-bottom:1px solid var(--km-line)}
+#pulse-key-moments .km-balance{display:block;font-size:32px;line-height:1.15;font-weight:500;color:var(--km-green);letter-spacing:-1px;margin-top:7px}
+#pulse-key-moments .km-gain{font-size:18px;color:var(--km-green);letter-spacing:-.5px;padding-bottom:3px;min-width:70px;text-align:right}
+#pulse-key-moments .km-family-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:23px 0 15px}
+#pulse-key-moments h3{font-size:18px;line-height:1.3;font-weight:500;margin:5px 0 0;letter-spacing:-.4px}
+#pulse-key-moments .km-count{font-size:29px;font-weight:500;white-space:nowrap;letter-spacing:-1px}
+#pulse-key-moments .km-count span{font-size:17px;color:var(--km-muted)}
+#pulse-key-moments .km-cards{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#pulse-key-moments .km-card{position:relative;z-index:1;background:var(--km-surface);border:1px solid #2b3d39;border-radius:10px;padding:12px 10px;min-width:0;min-height:138px;display:flex;flex-direction:column}
+#pulse-key-moments .km-card>svg{width:19px;height:19px;color:#8fc9ac;margin-bottom:24px}
+#pulse-key-moments .km-card>strong{font-size:12px;line-height:1.35;font-weight:500;letter-spacing:-.2px;overflow-wrap:anywhere}
+#pulse-key-moments .km-card small{display:flex;align-items:center;justify-content:space-between;gap:3px;font-size:10px;letter-spacing:0;margin-top:auto;padding-top:12px;color:#9bcbb4;white-space:nowrap}
+#pulse-key-moments .km-pending{border-color:#786443;background:#221f19}
+#pulse-key-moments .km-pending small{color:var(--km-gold)}
+#pulse-key-moments .km-link{position:absolute;left:12px;right:12px;bottom:-7px;height:2px;background:var(--km-gold);opacity:0;transform-origin:right center}
+#pulse-key-moments .km-family-feedback{font-size:11px;min-height:40px;padding:13px 0 10px;color:var(--km-muted)}
+#pulse-key-moments .km-console.is-complete .km-family-feedback{color:var(--km-gold);letter-spacing:.7px}
+#pulse-key-moments .km-console.is-complete .km-pending{background:#142820;border-color:#3a8261}
+#pulse-key-moments .km-console.is-complete .km-pending small{color:#a4dfc0}
+#pulse-key-moments .km-slider{position:relative;height:58px;border-radius:14px;border:1px solid #327455;background:#102c22;overflow:hidden;isolation:isolate}
+#pulse-key-moments .km-slider-fill{position:absolute;inset:0;background:#1b6848;transform:scaleX(0);transform-origin:left center;z-index:-1}
+#pulse-key-moments .km-slider-caption{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;padding-left:42px;font-size:12px;color:#c4e6d6;pointer-events:none}
+#pulse-key-moments .km-slider-caption b{font-weight:500;color:#e7f6ee;white-space:nowrap}
+#pulse-key-moments .km-thumb{position:absolute;left:5px;top:5px;width:46px;height:46px;border-radius:10px;background:var(--km-green);color:#10271b;display:grid;place-items:center;font-size:23px;letter-spacing:-3px;padding-right:3px;pointer-events:none;will-change:transform}
+#pulse-key-moments .km-slider input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:.01;touch-action:none;cursor:ew-resize}
+#pulse-key-moments .km-slider:has(input:focus-visible){outline:2px solid var(--km-green);outline-offset:3px}
+#pulse-key-moments .km-controls{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:5px;flex-wrap:wrap}
+#pulse-key-moments .km-controls button{padding:5px 0;text-align:left}
+#pulse-key-moments .km-rent{color:#b6c8e2}
+#pulse-key-moments button:disabled{opacity:.4}
+#pulse-key-moments .km-receipt{font-size:11px;min-height:37px;padding:12px 0 0;border-top:1px solid var(--km-line);color:var(--km-muted)}
+#pulse-key-moments .km-caption{font-size:11px;color:light-dark(#5d6772,#a7b1bb);text-align:center;padding:12px 8px}
+@media(max-width:370px){#pulse-key-moments .km-console{padding:16px 13px}#pulse-key-moments header{padding-right:45px;font-size:10px;letter-spacing:1px}#pulse-key-moments .km-cards{gap:5px}#pulse-key-moments .km-card{padding:10px 7px}#pulse-key-moments .km-card>strong{font-size:11px}#pulse-key-moments .km-slider-caption{font-size:11px;gap:6px}}
+</style>
+<script>
+(()=>{
+const root=document.getElementById('pulse-key-moments'),box=root.querySelector('.km-console'),slider=root.querySelector('.km-slider'),input=slider.querySelector('input'),thumb=root.querySelector('.km-thumb'),fill=root.querySelector('.km-slider-fill'),caption=root.querySelector('.km-slider-caption'),balance=root.querySelector('.km-balance'),gain=root.querySelector('.km-gain'),receipt=root.querySelector('.km-receipt'),alt=root.querySelector('.km-click-buy'),rent=root.querySelector('.km-rent'),pending=root.querySelector('.km-pending'),family=root.querySelector('.km-family-feedback');
+const reduced=matchMedia('(prefers-reduced-motion:reduce)');let cash=18000,bought=false,busy=false,armed=false,dragging=false,rentTimer=null,epoch=0;
+function persist(type){window.openai?.setWidgetState?.({modelContent:{preview:'Pulse — moments clés',interaction:type,achatSimule:bought},privateContent:{}})?.catch(()=>{});}
+function paint(value){input.value=value;const progress=Number(value)/100,travel=Math.max(0,slider.getBoundingClientRect().width-58);thumb.style.transform='translateX('+(travel*progress)+'px)';fill.style.transform='scaleX('+progress+')';caption.style.opacity=String(Math.max(.15,1-progress*.8));input.setAttribute('aria-valuetext',value>=90?'Relâcher ou appuyer sur Entrée pour confirmer':'Achat non confirmé');}
+function resetSlider(){const from=thumb.style.transform;paint(0);if(!reduced.matches){thumb.animate([{transform:from},{transform:'translateX(0)'}],{duration:220,easing:'cubic-bezier(.2,.9,.3,1)'});}}
+function updateCash(amount){cash+=amount;balance.textContent=cash.toLocaleString('fr-FR')+' $';if(!reduced.matches)balance.animate([{transform:'translateY(3px)',opacity:.65},{transform:'translateY(0)',opacity:1}],{duration:230,easing:'ease-out'});}
+function pulseMoney(text,positive){clearTimeout(rentTimer);gain.textContent=text;gain.style.color=positive?'#16d88a':'#e6bc73';if(!reduced.matches)gain.animate([{transform:'translateY(15px)',opacity:0},{transform:'translateY(0)',opacity:1}],{duration:350,easing:'cubic-bezier(.2,.8,.2,1)'});rentTimer=setTimeout(()=>gain.textContent='',1600);}
+async function commit(){if(busy||bought)return;busy=true;const token=epoch;paint(100);input.disabled=true;alt.disabled=true;caption.style.opacity='1';caption.textContent='Confirmation…';thumb.textContent='···';await new Promise(resolve=>setTimeout(resolve,reduced.matches?0:180));if(token!==epoch)return;
+bought=true;box.classList.add('is-complete');updateCash(-1300);pulseMoney('−1 300 $',false);caption.textContent='Propriété acquise';thumb.textContent='✓';root.querySelector('.km-last-card').innerHTML='À vous <span>✓</span>';root.querySelector('.km-count').innerHTML='3<span>/3</span>';box.querySelector('h3').textContent='Pharma, au complet.';family.textContent='FAMILLE COMPLÈTE · 3 / 3';receipt.textContent='Acquisition confirmée · Fentanyl Labs · −1 300 $';alt.textContent='Achat confirmé';
+if(!reduced.matches){pending.animate([{transform:'translateY(8px) scale(.96)'},{transform:'translateY(-3px) scale(1.025)',offset:.6},{transform:'translateY(0) scale(1)'}],{duration:330,easing:'cubic-bezier(.2,.8,.2,1)'});root.querySelector('.km-link').animate([{opacity:0,transform:'scaleX(.05)'},{opacity:1,transform:'scaleX(1)',offset:.55},{opacity:0,transform:'scaleX(1)'}],{duration:650});family.animate([{opacity:0,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:250,delay:160});}
+busy=false;persist('achat + famille complète');}
+input.addEventListener('pointerdown',e=>{if(bought||busy)return;const start=input.getBoundingClientRect();if(e.clientX-start.left>65){e.preventDefault();dragging=false;return;}dragging=true;});
+input.addEventListener('input',()=>{if(!bought)paint(input.value);});
+input.addEventListener('pointerup',()=>{if(!dragging)return;dragging=false;if(Number(input.value)>=90)commit();else{resetSlider();persist('glissé annulé');}});
+input.addEventListener('pointercancel',()=>{dragging=false;if(!bought)resetSlider();});
+input.addEventListener('keydown',e=>{if(e.key==='Enter'&&Number(input.value)>=90){e.preventDefault();commit();}if(e.key==='Escape'){e.preventDefault();resetSlider();}});
+alt.addEventListener('click',()=>{if(armed){commit();return;}armed=true;alt.textContent='Confirmer l’achat · 1 300 $';});
+rent.addEventListener('click',()=>{if(busy)return;updateCash(130);pulseMoney('+130 $',true);receipt.textContent='Loyer reçu · +130 $ crédités au capital';persist('loyer reçu');});
+root.querySelector('.km-reset').addEventListener('click',()=>{epoch++;clearTimeout(rentTimer);root.getAnimations({subtree:true}).forEach(a=>a.cancel());cash=18000;bought=false;busy=false;armed=false;dragging=false;balance.textContent='18 000 $';gain.textContent='';input.disabled=false;alt.disabled=false;alt.textContent='Acheter sans glisser';box.classList.remove('is-complete');caption.innerHTML='Glisser pour acheter <b>1 300 $</b>';thumb.textContent='››';root.querySelector('.km-last-card').innerHTML='1 300 $ <span>↗</span>';root.querySelector('.km-count').innerHTML='2<span>/3</span>';box.querySelector('h3').textContent='Une famille à compléter.';family.textContent='Une acquisition pour compléter la famille.';receipt.textContent='Aucune transaction.';paint(0);persist('rejouer');});
+new ResizeObserver(()=>paint(input.value)).observe(slider);paint(0);
+})();
+</script>

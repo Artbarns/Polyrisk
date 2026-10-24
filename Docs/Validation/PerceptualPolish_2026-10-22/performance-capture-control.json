@@ -1,0 +1,8 @@
+[
+  {
+    "level": "log",
+    "message": "GRAPHITE_MEASURE {\"quality\":\"Low\",\"treatment\":\"GraphiteReflectiveNeon\",\"frames\":129,\"seconds\":6.0050048828125,\"meanFrameMs\":46.62789535522461,\"maxFrameMs\":109.0,\"renderCountersAvailable\":true,\"drawCalls\":76,\"batches\":67,\"setPass\":37,\"totalAllocatedBytes\":51619970,\"totalReservedBytes\":59966579}\n",
+    "timestamp": "2026-10-23T18:57:01.720Z",
+    "url": "http://127.0.0.1:9005/PerceptualPolish/Build/65b06ed1aba9b4b893d928307479a582.framework.js"
+  }
+]

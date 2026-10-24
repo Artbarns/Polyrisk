@@ -1,0 +1,442 @@
+Unity Editor version:    2022.3.62f3 (96770f904ca7)
+Branch:                  2022.3/respin/2022.3.62f2-4af31df585-v2
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.7.9 (Build 24G830)
+Darwin version:          24.6.0
+Architecture:            x86_64
+Running under Rosetta:   NO
+Available memory:        8192 MB
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Channel LicenseClient-arthurbarreau doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/Frameworks/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 71862)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-arthurbarreau" at "2026-10-18T21:40:24.752753Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 71862, path: "/Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/Frameworks/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.16.2+bdef8f5
+  Session Id:              86b7be0057d346789d21c0d6fe8c0aa1
+  Correlation Id:          08ed52218c03100f1ad94b7bd759b2eb
+  External correlation Id: 4771254719969173681
+  Machine Id:              hlatXqUyc4l5m2gFOUScxsuQGPI=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-arthurbarreau" (connect: 4.43s, validation: 0.21s, handshake: 2.89s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-arthurbarreau-notifications" at "2026-10-18T21:40:27.850681Z"
+[Licensing::Module] Connected to LicensingClient (PId: 71862, launch time: 0.00, total connection time: 7.53s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Error: Code 500 while processing request (status: Unable to update licenses. Errors: No ULF license found.,Token not found in cache)
+[Licensing::Client] Error: Code 500 while updating license in client (status: Unable to update licenses. Errors: No ULF license found.,Token not found in cache)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "9072339036153-UnityPersXXXX"
+Pro License: NO
+[Licensing::Client] Successfully resolved entitlement details
+Launching external process: /Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/Resources/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/MacOS/Unity
+-batchmode
+-nographics
+-quit
+-projectPath
+/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk
+-executeMethod
+PolyRisk.Editor.GraphiteFoundationValidation.ApplyAndBuild
+-logFile
+/tmp/polyrisk-graphite-foundation.log
+Successfully changed project path to: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk
+/Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [140704712917376]  Target information:
+
+Player connection [140704712917376]  * "[IP] 172.20.10.6 [Port] 55504 [Flags] 2 [Guid] 545544220 [EditorId] 545544220 [Version] 1048832 [Id] OSXEditor(0,MacBook-Air-de-Arthur.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [140704712917376] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [140704712917376] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[Package Manager] UpmClient::Connect -- Connected to IPC stream "Upm-71861" after 1.3 seconds.
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 57 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.collab-proxy@2.11.4 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.collab-proxy@2.11.4)
+    com.unity.device-simulator.devices@1.0.1 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.device-simulator.devices@1.0.1)
+    com.unity.textmeshpro@3.0.7 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.textmeshpro@3.0.7)
+    com.unity.timeline@1.7.7 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.timeline@1.7.7)
+    com.unity.visualscripting@1.9.4 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.visualscripting@1.9.4)
+    com.unity.mathematics@1.2.6 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.mathematics@1.2.6)
+    com.unity.burst@1.8.21 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.burst@1.8.21)
+    com.unity.ide.visualstudio@2.0.22 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.ide.visualstudio@2.0.22)
+    com.unity.ide.rider@3.0.36 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.ide.rider@3.0.36)
+    com.unity.ide.vscode@1.2.5 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.ide.vscode@1.2.5)
+    com.unity.editorcoroutines@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.editorcoroutines@1.0.0)
+    com.unity.performance.profile-analyzer@1.2.3 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.3)
+    com.unity.testtools.codecoverage@1.2.6 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.testtools.codecoverage@1.2.6)
+    com.unity.nuget.newtonsoft-json@3.2.1 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.2.1)
+    com.unity.test-framework@1.3.3 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.test-framework@1.3.3)
+    com.unity.searcher@4.9.2 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.searcher@4.9.2)
+    com.unity.settings-manager@2.1.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.settings-manager@2.1.0)
+    com.unity.ext.nunit@2.0.3 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.ext.nunit@2.0.3)
+  Built-in packages:
+    com.unity.feature.development@1.0.1 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.feature.development@1.0.1)
+    com.unity.render-pipelines.universal@14.0.12 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.render-pipelines.universal@14.0.12)
+    com.unity.ugui@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.ugui@1.0.0)
+    com.unity.modules.ai@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.ai@1.0.0)
+    com.unity.modules.androidjni@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.androidjni@1.0.0)
+    com.unity.modules.animation@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.animation@1.0.0)
+    com.unity.modules.assetbundle@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.assetbundle@1.0.0)
+    com.unity.modules.audio@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.audio@1.0.0)
+    com.unity.modules.cloth@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.cloth@1.0.0)
+    com.unity.modules.director@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.director@1.0.0)
+    com.unity.modules.imageconversion@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.imageconversion@1.0.0)
+    com.unity.modules.imgui@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.imgui@1.0.0)
+    com.unity.modules.jsonserialize@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.jsonserialize@1.0.0)
+    com.unity.modules.particlesystem@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.particlesystem@1.0.0)
+    com.unity.modules.physics@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.physics@1.0.0)
+    com.unity.modules.physics2d@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.physics2d@1.0.0)
+    com.unity.modules.screencapture@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.screencapture@1.0.0)
+    com.unity.modules.terrain@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.terrain@1.0.0)
+    com.unity.modules.terrainphysics@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.terrainphysics@1.0.0)
+    com.unity.modules.tilemap@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.tilemap@1.0.0)
+    com.unity.modules.ui@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.ui@1.0.0)
+    com.unity.modules.uielements@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.uielements@1.0.0)
+    com.unity.modules.umbra@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.umbra@1.0.0)
+    com.unity.modules.unityanalytics@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.unityanalytics@1.0.0)
+    com.unity.modules.unitywebrequest@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.unitywebrequest@1.0.0)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.unitywebrequestassetbundle@1.0.0)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.unitywebrequestaudio@1.0.0)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.unitywebrequesttexture@1.0.0)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.unitywebrequestwww@1.0.0)
+    com.unity.modules.vehicles@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.vehicles@1.0.0)
+    com.unity.modules.video@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.video@1.0.0)
+    com.unity.modules.vr@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.vr@1.0.0)
+    com.unity.modules.wind@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.wind@1.0.0)
+    com.unity.modules.xr@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.xr@1.0.0)
+    com.unity.modules.subsystems@1.0.0 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.modules.subsystems@1.0.0)
+    com.unity.render-pipelines.core@14.0.12 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.render-pipelines.core@14.0.12)
+    com.unity.shadergraph@14.0.12 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.shadergraph@14.0.12)
+    com.unity.render-pipelines.universal-config@14.0.10 (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.unity.render-pipelines.universal-config@14.0.10)
+  Git packages:
+    com.gamelovers.mcp-unity@https://github.com/CoderGamester/mcp-unity.git (location: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Library/PackageCache/com.gamelovers.mcp-unity@5dc92f5401)
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 1.31 seconds
+Refreshing native plugins compatible for Editor in 80.62 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.62f3 (96770f904ca7)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0; jobified=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+[Licensing::Client] Successfully resolved entitlement details
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56861
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2022.3.62f3/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: /Applications/Unity/Hub/Editor/2022.3.62f3/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.031177 seconds.
+- Loaded All Assemblies, in  1.899 seconds
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+Native extension for iOS target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.597 seconds
+Domain Reload Profiling: 3497ms
+	BeginReloadAssembly (469ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (3ms)
+	RebuildCommonClasses (172ms)
+	RebuildNativeTypeToScriptingClass (47ms)
+	initialDomainReloadingComplete (264ms)
+	LoadAllAssembliesAndSetupDomain (946ms)
+		LoadAssemblies (473ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (933ms)
+			TypeCache.Refresh (923ms)
+				TypeCache.ScanAssembly (862ms)
+			ScanForSourceGeneratedMonoScriptInfo (2ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (1599ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1350ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (362ms)
+			SetLoadedEditorAssemblies (31ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (21ms)
+			ProcessInitializeOnLoadAttributes (700ms)
+			ProcessInitializeOnLoadMethodAttributes (234ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://unix:/tmp/ilpp.sock-5c6462a5dad4fdd366a25da01a971c11
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Content root path: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 222.4759ms
+Starting: /Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/2000b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk
+DisplayProgressbar: Compiling Scripts
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc -
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+[40m[1m[33mwarn[39m[22m[49m: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly unityeditor.ios.extensions.xcode has duplicate hint path. Ignoring "/Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.iOS.Extensions.Xcode.dll" in favor of "/Applications/Unity/Hub/Editor/2022.3.62f3/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
+[40m[1m[33mwarn[39m[22m[49m: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "/Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "/Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
+[40m[1m[33mwarn[39m[22m[49m: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "/Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/UnityReferenceAssemblies/unity-4.8-api/System.ComponentModel.Composition.dll" in favor of "/Applications/Unity/Hub/Editor/2022.3.62f3/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx/System.ComponentModel.Composition.dll"
+[40m[32minfo[39m[22m[49m: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library/PackageCache/com.unity.burst@1.8.21/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors application/grpc - - 200 - application/grpc 148.0031ms
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly application/grpc -
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/PostProcessAssembly'
+[40m[32minfo[39m[22m[49m: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      Processing assembly Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp-Editor.dll, with 100 defines and 275 references
+[40m[32minfo[39m[22m[49m: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      processors: zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[40m[32minfo[39m[22m[49m: Unity.ILPP.Runner.PostProcessingPipeline[0]
+      running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[40m[32minfo[39m[22m[49m: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil.Rocks, Version=0.11.4.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library/PackageCache/com.unity.burst@1.8.21/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/PostProcessAssembly'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/PostProcessAssembly application/grpc - - 200 - application/grpc 996.8592ms
+ExitCode: 0 Duration: 10s
+[459/593    1s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[BUSY       6s] Csc Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[589/593    8s] Csc Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[590/593    1s] ILPostProcess Library/Bee/artifacts/2000b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp-Editor.dll, with 100 defines and 275 references
+processors: zzzUnity.Burst.CodeGen.BurstILPostProcessor
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[591/593    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[592/593    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (10.82 seconds), 5 items updated, 593 evaluated
+AssetDatabase: script compilation time: 14.156668s
+Begin MonoManager ReloadAssembly
+Total cache size 268100040
+Total cache size after purge 268100040
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  3.987 seconds
+Refreshing native plugins compatible for Editor in 24.21 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Start importing Assets/Scripts/Editor/GraphiteFoundationValidation.cs using Guid(bdc12da734fb340bfa5617d1c903c053) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '5a211ff8323eefddf76313a85108c620') in 0.047298 seconds
+Refreshing native plugins compatible for Editor in 9.85 ms, found 2 plugins.
+Native extension for iOS target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 11.481 seconds
+Domain Reload Profiling: 15469ms
+	BeginReloadAssembly (865ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (30ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (185ms)
+	RebuildCommonClasses (176ms)
+	RebuildNativeTypeToScriptingClass (55ms)
+	initialDomainReloadingComplete (150ms)
+	LoadAllAssembliesAndSetupDomain (2740ms)
+		LoadAssemblies (1854ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (1324ms)
+			TypeCache.Refresh (1133ms)
+				TypeCache.ScanAssembly (1070ms)
+			ScanForSourceGeneratedMonoScriptInfo (118ms)
+			ResolveRequiredComponents (60ms)
+	FinalizeReload (11483ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (10401ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (108ms)
+			SetLoadedEditorAssemblies (30ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (296ms)
+			ProcessInitializeOnLoadAttributes (9455ms)
+			ProcessInitializeOnLoadMethodAttributes (507ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (24ms)
+Refreshing native plugins compatible for Editor in 11.36 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=90db9bd57e9ca495290e79f41356bd64): Total: 41.542 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=9 (actual=1, local cache=8, cache server=0)
+		Asset DB Process Time: managed=25 ms, native=11118 ms
+		Asset DB Callback time: managed=327 ms, native=18 ms
+		Scripting: domain reloads=1, domain reload time=15725 ms, compile time=14182 ms, other=143 ms
+		Project Asset Count: scripts=6251, non-scripts=1931
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokeBeforeRefreshCallbacks: 0.529ms
+	ApplyChangesToAssetFolders: 0.123ms
+	Scan: 1534.177ms
+	OnSourceAssetsModified: 13.050ms
+	GetAllGuidsForCategorization: 6.920ms
+	CategorizeAssets: 1159.985ms
+	ImportOutOfDateAssets: 11741.282ms (-2603.730ms without children)
+		ImportManagerImport: 64.573ms (8.844ms without children)
+			ImportInProcess: 55.667ms
+			UpdateCategorizedAssets: 0.063ms
+		CompileScripts: 14181.686ms
+		ReloadNativeAssets: 0.051ms
+		UnloadImportedAssets: 79.999ms
+		ReloadImportedAssets: 0.895ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 9.997ms
+		InitializingProgressBar: 0.002ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 7.807ms
+	PostProcessAllAssets: 319.820ms
+	Hotreload: 13.157ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.013ms
+	UnloadStreamsBegin: 5.320ms
+	PersistCurrentRevisions: 3.160ms
+	UnloadStreamsEnd: 0.276ms
+	GenerateScriptTypeHashes: 12.326ms
+	Untracked: 26744.318ms
+Application.AssetDatabase Initial Refresh End
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Scanning for USB devices : 1.961ms
+Initializing Unity extensions:
+[Licensing::Client] Successfully resolved entitlement details
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-PolyRisk
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ProgressiveSceneManager::Cancel()
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 88 unused Assets / (511.3 KB). Loaded Objects now: 5851.
+Memory consumption went from 154.2 MB to 153.7 MB.
+Total: 23.412736 ms (FindLiveObjects: 6.488419 ms CreateObjectMapping: 1.224782 ms MarkObjects: 14.471689 ms  DeleteObjects: 1.222331 ms)
+
+Asset Pipeline Refresh (id=811e2900651534df38477f1c57d69c3a): Total: 1.065 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1065 ms
+		Asset DB Callback time: managed=0 ms, native=0 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=6251, non-scripts=1931
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokeBeforeRefreshCallbacks: 0.012ms
+	ApplyChangesToAssetFolders: 0.224ms
+	Scan: 917.234ms
+	OnSourceAssetsModified: 0.003ms
+	GetAllGuidsForCategorization: 2.560ms
+	CategorizeAssets: 22.550ms
+	ImportOutOfDateAssets: 12.332ms (2.116ms without children)
+		ReloadNativeAssets: 0.050ms
+		UnloadImportedAssets: 0.298ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 4.403ms
+		InitializingProgressBar: 0.002ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 5.462ms
+	GatherAllCurrentPrimaryArtifactRevisions: 3.313ms
+	UnloadStreamsBegin: 0.524ms
+	PersistCurrentRevisions: 1.415ms
+	UnloadStreamsEnd: 0.198ms
+	Untracked: 104.762ms
+Opening scene 'Assets/Scenes/SampleScene.unity'
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+Unloading 81 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/Scenes/SampleScene.unity'
+	Deserialize:            905.870 ms
+	Integration:            1389.372 ms
+	Integration of assets:  198.841 ms
+	Thread Wait Time:       -5.940 ms
+	Total Operation Time:   2488.144 ms
+Unloading 3 unused Assets / (1.4 KB). Loaded Objects now: 6335.
+Memory consumption went from 158.0 MB to 158.0 MB.
+Total: 25.984574 ms (FindLiveObjects: 3.729292 ms CreateObjectMapping: 5.642917 ms MarkObjects: 16.413243 ms  DeleteObjects: 0.196445 ms)
+
+Exception: Graphite validation failed: No Graphite shader import error
+  at PolyRisk.Editor.GraphiteFoundationValidation.Require (System.Boolean condition, System.String message) [0x00014] in /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Assets/Scripts/Editor/GraphiteFoundationValidation.cs:182 
+  at PolyRisk.Editor.GraphiteFoundationValidation.Apply () [0x0053a] in /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Assets/Scripts/Editor/GraphiteFoundationValidation.cs:94 
+  at PolyRisk.Editor.GraphiteFoundationValidation.ApplyAndBuild () [0x00000] in /Users/arthurbarreau/Desktop/Divers/CODE PROJECT/PolyRisk/PolyRisk/Assets/Scripts/Editor/GraphiteFoundationValidation.cs:107 
+
+(Filename: Assets/Scripts/Editor/GraphiteFoundationValidation.cs Line: 182)
+
+executeMethod method PolyRisk.Editor.GraphiteFoundationValidation.ApplyAndBuild threw exception.
+[Package Manager] Server::Kill -- Server was shutdown
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+[40m[32minfo[39m[22m[49m: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      ALC ILPP context 1 is unloading

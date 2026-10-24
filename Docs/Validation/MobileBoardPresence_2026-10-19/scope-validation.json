@@ -1,0 +1,22 @@
+{
+  "modified": [
+    "Assets/Plugins/WebGL/PulseViewport.jslib",
+    "Assets/Scripts/Systems/BoardInteractionManager.cs",
+    "Assets/Scripts/UI/ActionButtonsWidget.cs",
+    "Assets/Scripts/UI/BoardTileOverlayWidget.cs",
+    "Assets/Scripts/UI/UIUXRuntime.cs",
+    "Assets/UI/Layouts/TopHUD.uxml",
+    "Assets/UI/Styles/Theme.uss"
+  ],
+  "created": [
+    "Assets/Scripts/Debug/MobileBoardValidationProbe.cs",
+    "Assets/Scripts/Debug/MobileBoardValidationProbe.cs.meta",
+    "Assets/Scripts/Editor/MobileBoardPresenceValidation.cs",
+    "Assets/Scripts/Editor/MobileBoardPresenceValidation.cs.meta"
+  ],
+  "unchanged_preexisting": 577,
+  "scene_meshes_materials_theme_shaders_unchanged": true,
+  "rules_economy_pawns_network_unchanged": true,
+  "raycast_and_selection_routing_byte_identical": true,
+  "base_yield_formula_unchanged": true
+}

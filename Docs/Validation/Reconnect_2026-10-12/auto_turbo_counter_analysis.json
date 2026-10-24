@@ -1,0 +1,38 @@
+{
+  "scope": "Analytical enumeration of the current Auto Turbo maximum-sum policy; not a production Unity execution or proof of human choice UX.",
+  "normalMeanSum": 7,
+  "maximumOfTwoMeanSum": "5425/648",
+  "maximumOfTwoMeanSumDecimal": 8.371913580246913,
+  "rows": [
+    {
+      "incomingDoubles": 0,
+      "counterMismatches": 228,
+      "penaltyMismatches": 0,
+      "outcomes": 1296
+    },
+    {
+      "incomingDoubles": 1,
+      "counterMismatches": 312,
+      "penaltyMismatches": 0,
+      "outcomes": 1296
+    },
+    {
+      "incomingDoubles": 2,
+      "counterMismatches": 312,
+      "penaltyMismatches": 0,
+      "outcomes": 1296
+    },
+    {
+      "incomingDoubles": 3,
+      "counterMismatches": 312,
+      "penaltyMismatches": 36,
+      "outcomes": 1296
+    },
+    {
+      "incomingDoubles": 4,
+      "counterMismatches": 312,
+      "penaltyMismatches": 180,
+      "outcomes": 1296
+    }
+  ]
+}

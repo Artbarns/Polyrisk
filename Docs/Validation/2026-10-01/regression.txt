@@ -1,0 +1,29 @@
+Unity 2022.3.62f3 — 2026-10-01 — process exit code 0
+PASS: partial family has no bonus
+PASS: full GDD net worth
+PASS: debt paid once
+PASS: AI liquidates upgrades and mortgage without UI
+PASS: insolvent AI eliminated and assets returned
+PASS: creditor receives remaining cash once
+PASS: bankruptcy idempotent
+PASS: unaffordable GO maintenance cannot be forgiven
+PASS: human GO waits for debt decision
+PASS: human settlement resumes after payment
+PASS: 10M cash stops game
+PASS: victory emitted only once
+PASS: zero survivors terminates without loop
+PASS: new game owns clean property instances
+PASS: runtime changes do not mutate source assets
+PASS: 2-player start
+PASS: 3-player start
+PASS: 4-player start
+PASS: 5-player start
+PASS: 6-player start
+PASS: lap 50 ranks full net worth and ignores eliminated lap counters
+PASS: gross crossing of 10M before maintenance does not win
+PASS: Venture deck reproducible with seed
+PASS: bankrupt hijacker receives no kickback from their own unpaid rent
+PASS: bankruptcy clears sabotage on other players' properties
+PASS: partial rent recovered at bankruptcy counts as income for maintenance
+PASS: later rent goes entirely to the owner after hijacker elimination
+ECONOMY REGRESSION PASS: 27 assertions
