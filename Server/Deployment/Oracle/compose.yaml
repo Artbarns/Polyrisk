@@ -1,0 +1,50 @@
+name: polyrisk
+services:
+  app:
+    image: polyrisk:${POLYRISK_RELEASE_ID:?Set POLYRISK_RELEASE_ID in .env}
+    build:
+      context: ./release
+    restart: unless-stopped
+    environment:
+      PORT: "8080"
+      ASPNETCORE_ENVIRONMENT: Production
+      POLYRISK_WEBGL_ROOT: /app/wwwroot
+      POLYRISK_DATA_PATH: /data/lobbies.json
+      POLYRISK_ALLOWED_ORIGINS: https://${POLYRISK_DOMAIN:?Set POLYRISK_DOMAIN in .env}
+      AllowedHosts: ${POLYRISK_DOMAIN:?Set POLYRISK_DOMAIN in .env}
+      POLYRISK_REQUESTS_PER_MINUTE: "3600"
+    volumes:
+      - ./data:/data
+    # Only the reverse proxy can reach the backend; no public port 8080.
+    expose:
+      - "8080"
+    mem_limit: 1g
+    cpus: 1.5
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+  proxy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - app
+    environment:
+      POLYRISK_DOMAIN: ${POLYRISK_DOMAIN:?Set POLYRISK_DOMAIN in .env}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    mem_limit: 256m
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+volumes:
+  caddy_data:
+  caddy_config:

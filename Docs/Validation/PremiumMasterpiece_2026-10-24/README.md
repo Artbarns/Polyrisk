@@ -2,7 +2,7 @@
 
 La proposition ajoute une lecture satinée des faces et des arêtes, relie les monolithes au matériau du plateau et fait recevoir les contacts lumineux aux quatre coins. Le bloom global est retiré : l'essai.045 ne modifiait aucun pixel de la zone de plateau au repos comparée, mais ajoutait16drawcalls et16SetPass. La différence A/B doit être appréciée dans les vraies images ; elle n'est pas déclarée artistiquement validée par la compilation.
 
-Ouvrir **[la galerie portable](review.html)** depuis ce dossier, ou utiliser [la galerie locale](http://127.0.0.1:9007/evidence/review.html) pendant que son serveur tourne. Les fichiers et vidéos restent accessibles dans le dossier si le lien local s'arrête. Ce lien loopback n'est pas un jeu publié pour des iPhone distants.
+Ouvrir **[la galerie publique](https://artbarns.github.io/Polyrisk/Docs/Validation/PremiumMasterpiece_2026-10-24/review.html)**, [la galerie portable](review.html) depuis ce dossier, ou [la galerie locale](http://127.0.0.1:9007/evidence/review.html) pendant que son serveur tourne. Les fichiers et vidéos restent accessibles dans le dossier si le lien local s'arrête. Ce lien loopback n'est pas un jeu publié pour des iPhone distants.
 
 ## Preuves visuelles finales
 
@@ -74,13 +74,13 @@ La priseA haute densité avait une condition de visibilité du navigateur diffé
 
 Le paquet same-origin réunit le client final et le backend.NET10 existant, une instance avec stockage persistant hors racine Web. Les tests locaux du protocole sont distincts de la validation graphique. Docker n'est pas disponible ici ; l'image de conteneur n'est donc pas construite/testée dans cette passe.
 
-Le dépôtPolyRisk cible n'apparaît pas parmi les dépôtsGitHub accessibles, aucun remote n'est configuré, et aucun hébergement persistant connecté n'est disponible. Aucun dépôt sans rapport n'a été renommé. Pas de push, PR, URLHTTPS publique, partie distante ni test sur iPhone physique revendiqué. Le bundle est préparé pour la publication ; cette dépendance externe reste à résoudre.
+Mise à jour après publication par Arthur : le dépôt https://github.com/Artbarns/Polyrisk et le remote origin sont configurés. main local et distant correspondent au commit73dd655. La galerie GitHub Pages est publique enHTTPS et ses médias ont été vérifiés ; elle ne livre pas le jeu multijoueur. Aucun hébergement de serveur persistant n'est encore connecté, aucune partie distante ni validation sur iPhone physique n'est revendiquée. Voir [la reprise après synchronisation GitHub](GITHUB_RESYNC.md).
 
 Prochaine action : apprécier les vrais comparatifs, puis valider les performances/Safari/tactile sur appareils et le multijoueur sur un hébergementHTTPS persistant. La finition artistique et la release publique ne sont pas déclarées terminées sur la seule base des tests locaux.
 
 ## Livraison et reprise de la prévisualisation
 
-Le code artistique et le banc sont enregistrés dans le commit local **040d456** de la branche `art/premium-masterpiece-20261024`. Les documents et captures forment un commit séparé. Les modifications locales préexistantes hors périmètre ne sont pas incluses.
+Le code artistique et le banc proviennent du commit **040d456** ; les documents et captures ont été enregistrés séparément. Arthur les a publiés sur `main` avec son import **73dd655**, qui ajoute également des archives et documents préexistants. Cet import ne modifie aucun fichier sous Assets, Server, Packages ou ProjectSettings par rapport au dernier point artistique9773edb.
 
 La recette de reprise confirme les dix couples A/B à caméra, résolution, position logique et hash économique identiques : [contrôle A/B](ab-consistency-validation.json). Le serveur rouvert valide les 20 captures et les 4 vidéos avec requêtes partielles206 ; son proxy passe également le protocole six joueurs : [médias](reopened-gallery-validation.json) · [protocole](reopened-proxy-protocol.log).
 
@@ -98,4 +98,4 @@ Ce lanceur conserve le serveur 5097 et la galerie 9007 dans des processus détac
 - Build Release local : http://127.0.0.1:5097/
 - Paquet préparé : `Builds/PolyRisk-PremiumMasterpiece-20261024.zip` ; SHA256 `c4ee1cc85131296e1829b55bc2a3487e4d9f782d17ca5fa51304a81e5a92c0be`.
 
-La connexion GitHub a été revérifiée lors de la reprise : les six dépôts accessibles ne comprennent toujours pas PolyRisk. L'adresse du dépôt cible et l'accès à l'hébergement avec stockage persistant restent les dépendances nécessaires à la publication HTTPS. Aucun dépôt sans rapport n'a été réutilisé.
+La reprise confirme GitHub main73dd655 et la galerie publique. Les14empreintes des sources artistiques, les24fichiers du bundle, leurs entrées actuelles et les25ressources de galerie correspondent. Aucun reset ni push forcé. L'accès à un hébergement avec stockage persistant reste nécessaire à la publication du jeu multijoueur ; le choix gratuit envisagé est Oracle Always Free, sous réserve de compte et de capacité disponible. Railway reste une alternative gérée payante, sans abonnement souscrit.

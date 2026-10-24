@@ -1,0 +1,4 @@
+{$POLYRISK_DOMAIN} {
+    # Preserve the export's compression headers. Do not recompress Unity assets.
+    reverse_proxy app:8080
+}

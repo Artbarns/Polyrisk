@@ -16,7 +16,15 @@ The output contains only backend sources, export directories, Dockerfile, entryp
 manifest. It excludes the export's galleries and other root files. Do not stage a development QA build
 with validation controls enabled. The script refuses to overwrite a previous bundle.
 
-## Railway
+## Oracle Always Free — selected initial target
+
+The authorized initial target is one free-eligible Oracle A1 VM with a private persistent
+data directory and a Caddy HTTPS proxy. See [Oracle preparation and live checks](Oracle/README.md).
+The wrapper verifies the reviewed release before staging. It does not create an account,
+provision resources, install software on this Mac, or claim an existing public deployment.
+Free capacity and actual remote/device performance still require validation.
+
+## Railway — managed paid alternative
 
 Use an explicitly authorized Railway project/service. Deploy the **bundle directory**, not the Unity
 repository. Railway detects its root Dockerfile. Attach one persistent volume at `/data`, run **one

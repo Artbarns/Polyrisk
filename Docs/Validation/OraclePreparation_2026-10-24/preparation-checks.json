@@ -1,0 +1,81 @@
+{
+  "checks": [
+    {
+      "check": "Refuse altered release before writing",
+      "pass": true
+    },
+    {
+      "check": "Refuse unreviewed private files",
+      "pass": true
+    },
+    {
+      "check": "Refuse symlink",
+      "pass": true
+    },
+    {
+      "check": "Prepare intact release while excluding generated caches",
+      "pass": true
+    },
+    {
+      "check": "24 release files unchanged",
+      "pass": true
+    },
+    {
+      "check": "No generated caches or credentials copied",
+      "pass": true
+    },
+    {
+      "check": "Docker context filter supplied",
+      "pass": true
+    },
+    {
+      "check": "Refuse overwriting delivery",
+      "pass": true
+    },
+    {
+      "check": "Backup command succeeds",
+      "pass": true
+    },
+    {
+      "check": "Private intact backup",
+      "pass": true
+    },
+    {
+      "check": "Reject corrupt snapshot",
+      "pass": true
+    },
+    {
+      "check": "Reject unsupported schema",
+      "pass": true
+    },
+    {
+      "check": "Compose refuses missing domain or release tag",
+      "pass": true
+    },
+    {
+      "check": "Official Compose validates prepared configuration",
+      "pass": true
+    },
+    {
+      "check": "Backend has no published ports",
+      "pass": true
+    },
+    {
+      "check": "Only HTTP and HTTPS published",
+      "pass": true
+    },
+    {
+      "check": "Private storage separated from public root",
+      "pass": true
+    },
+    {
+      "check": "Strict public origin and hostname",
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "composeVersion": "v5.6.1",
+  "composeSha256": "245c191b11a6345dd3b32b8f6eadeed1e1dcd5147aa46dfa423462e95f587e93",
+  "dockerEngineAvailable": false,
+  "oracleProvisioned": false
+}

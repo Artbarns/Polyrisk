@@ -1,0 +1,17 @@
+# Build only the reviewed sources/export. Keep local C# tooling caches out.
+**
+!Dockerfile
+!entrypoint.sh
+!backend/
+!backend/*.cs
+!backend/*.csproj
+!backend/appsettings.json
+!webgl/
+!webgl/index.html
+!webgl/favicon.ico
+!webgl/Build/
+!webgl/Build/**
+!webgl/TemplateData/
+!webgl/TemplateData/**
+!webgl/StreamingAssets/
+!webgl/StreamingAssets/**

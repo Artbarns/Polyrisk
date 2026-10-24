@@ -1,0 +1,9 @@
+{
+  "archive": "Builds/PolyRisk-OracleReady-20261024.zip",
+  "sha256": "fdd331701506b6c1822fc413364776bfef9d51af2f1ac3073fe6254d59566976",
+  "files": 31,
+  "reviewedReleaseFiles": 24,
+  "originalReleaseUnchanged": true,
+  "dockerImageBuilt": false,
+  "deployed": false
+}

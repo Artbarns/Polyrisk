@@ -1,0 +1,440 @@
+{
+  "verifiedAt": "2026-10-24T09:24:58.160953+00:00",
+  "commit": "73dd655e997da70af0a1067b18301daddc188fb0",
+  "remote": "73dd655e997da70af0a1067b18301daddc188fb0",
+  "sourceChecks": [
+    {
+      "path": "Assets/Scripts/Board/BoardVisualTheme.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/UI/BoardTileOverlayWidget.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Visuals/BoardContactFeedback.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Visuals/BoardSurfaceLighting.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Visuals/CompactPawnVisual.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Settings/GraphiteFoundation/GraphiteTheme.asset",
+      "matches": true
+    },
+    {
+      "path": "Assets/Shaders/GraphiteSurface.shader",
+      "matches": true
+    },
+    {
+      "path": "Assets/Shaders/NeonState.shader",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Debug/ArtCalibrationDriver.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Debug/ArtCalibrationDriver.cs.meta",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Editor/ArtCalibrationValidation.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Editor/ArtCalibrationValidation.cs.meta",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Editor/ArtCalibrationWindow.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Editor/ArtCalibrationWindow.cs.meta",
+      "matches": true
+    }
+  ],
+  "bundleChecks": [
+    {
+      "path": "Dockerfile",
+      "matches": true
+    },
+    {
+      "path": "backend/LobbyPersistence.cs",
+      "matches": true
+    },
+    {
+      "path": "backend/PolyRisk.LobbyServer.csproj",
+      "matches": true
+    },
+    {
+      "path": "backend/Program.cs",
+      "matches": true
+    },
+    {
+      "path": "backend/WebGLHosting.cs",
+      "matches": true
+    },
+    {
+      "path": "backend/appsettings.json",
+      "matches": true
+    },
+    {
+      "path": "entrypoint.sh",
+      "matches": true
+    },
+    {
+      "path": "webgl/Build/00259140ff37058b1aa33adc34496237.wasm.gz",
+      "matches": true
+    },
+    {
+      "path": "webgl/Build/0baf44af5908f1c03747d46c6b08299e.data.gz",
+      "matches": true
+    },
+    {
+      "path": "webgl/Build/7a2dbded24d57e056180125b1583e7c4.loader.js",
+      "matches": true
+    },
+    {
+      "path": "webgl/Build/f078938e653b10e66fd9a348a89ae63f.framework.js.gz",
+      "matches": true
+    },
+    {
+      "path": "webgl/TemplateData/MemoryProfiler.png",
+      "matches": true
+    },
+    {
+      "path": "webgl/TemplateData/favicon.ico",
+      "matches": true
+    },
+    {
+      "path": "webgl/TemplateData/fullscreen-button.png",
+      "matches": true
+    },
+    {
+      "path": "webgl/TemplateData/progress-bar-empty-dark.png",
+      "matches": true
+    },
+    {
+      "path": "webgl/TemplateData/progress-bar-empty-light.png",
+      "matches": true
+    },
+    {
+      "path": "webgl/TemplateData/progress-bar-full-dark.png",
+      "matches": true
+    },
+    {
+      "path": "webgl/TemplateData/progress-bar-full-light.png",
+      "matches": true
+    },
+    {
+      "path": "webgl/TemplateData/style.css",
+      "matches": true
+    },
+    {
+      "path": "webgl/TemplateData/unity-logo-dark.png",
+      "matches": true
+    },
+    {
+      "path": "webgl/TemplateData/unity-logo-light.png",
+      "matches": true
+    },
+    {
+      "path": "webgl/TemplateData/webgl-logo.png",
+      "matches": true
+    },
+    {
+      "path": "webgl/TemplateData/webmemd-icon.png",
+      "matches": true
+    },
+    {
+      "path": "webgl/index.html",
+      "matches": true
+    }
+  ],
+  "archiveSha256": "c4ee1cc85131296e1829b55bc2a3487e4d9f782d17ca5fa51304a81e5a92c0be",
+  "archiveMatchesPrevious": true,
+  "publicGallery": [
+    {
+      "file": "reviewed-final-inactive-a.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-inactive-b.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-colored-a.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-colored-b.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-selected-a.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-selected-b.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-contact-a.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-contact-b.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-arrival-a.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-arrival-b.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-pawn-idle-a.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-pawn-idle-b.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-pawn-active-a.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-pawn-active-b.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-metal-a.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-metal-b.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-reflection-a.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-reflection-b.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-corner-arrival-a.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "reviewed-final-corner-arrival-b.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "range": null,
+      "matches": true
+    },
+    {
+      "file": "final-short-b.mp4",
+      "status": 206,
+      "contentType": "video/mp4",
+      "range": "bytes 0-255/478993",
+      "matches": true
+    },
+    {
+      "file": "final-long-b.mp4",
+      "status": 206,
+      "contentType": "video/mp4",
+      "range": "bytes 0-255/963766",
+      "matches": true
+    },
+    {
+      "file": "final-long-a.mp4",
+      "status": 206,
+      "contentType": "video/mp4",
+      "range": "bytes 0-255/1056355",
+      "matches": true
+    },
+    {
+      "file": "final-live-turns-b.mp4",
+      "status": 206,
+      "contentType": "video/mp4",
+      "range": "bytes 0-255/2472203",
+      "matches": true
+    },
+    {
+      "file": "review.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "range": null,
+      "matches": true
+    }
+  ],
+  "pass": true,
+  "initialProbeError": "First media probe used HTTPResponse.read(-1), rejected on this Python/macOS; corrected to read() and rerun.",
+  "bundleInputChecks": [
+    {
+      "path": "Dockerfile",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "backend/LobbyPersistence.cs",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "backend/PolyRisk.LobbyServer.csproj",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "backend/Program.cs",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "backend/WebGLHosting.cs",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "backend/appsettings.json",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "entrypoint.sh",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/Build/00259140ff37058b1aa33adc34496237.wasm.gz",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/Build/0baf44af5908f1c03747d46c6b08299e.data.gz",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/Build/7a2dbded24d57e056180125b1583e7c4.loader.js",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/Build/f078938e653b10e66fd9a348a89ae63f.framework.js.gz",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/TemplateData/MemoryProfiler.png",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/TemplateData/favicon.ico",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/TemplateData/fullscreen-button.png",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/TemplateData/progress-bar-empty-dark.png",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/TemplateData/progress-bar-empty-light.png",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/TemplateData/progress-bar-full-dark.png",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/TemplateData/progress-bar-full-light.png",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/TemplateData/style.css",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/TemplateData/unity-logo-dark.png",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/TemplateData/unity-logo-light.png",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/TemplateData/webgl-logo.png",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/TemplateData/webmemd-icon.png",
+      "matchesCurrentInput": true
+    },
+    {
+      "path": "webgl/index.html",
+      "matchesCurrentInput": true
+    }
+  ]
+}
