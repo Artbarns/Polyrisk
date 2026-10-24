@@ -64,6 +64,30 @@ with the persistent volume before declaring public multiplayer ready. Keep test 
 A successful local protocol test is not proof of iPhone Safari or cross-device multiplayer. Record
 actual external/device evidence separately.
 
+## Portability and a later hosting migration
+
+The release has no Oracle-specific dependency: it uses a standard Linux .NET container,
+static WebGL files, environment settings, and a private JSON data directory. Another Linux
+VM or a container host with persistent storage can run it. Rebuild the image for the destination
+architecture when moving between ARM64 and AMD64; do not copy a Mac binary to Linux.
+
+For a planned migration, prepare the destination with the same reviewed release first. Then
+pause the game service, take a final private backup, transfer the complete snapshot and restore
+it with the correct file ownership. Keep the old server stopped while the new one can write.
+The current store supports one writer; two live copies would diverge. Retain the old release
+and a private backup until destination persistence and reconnect have been verified.
+
+Move the existing DNS name to the destination if possible and reconfigure TLS, AllowedHosts
+and allowed origins. Keeping the same public hostname also preserves the browser origin used
+for saved reconnect credentials. Changing domains can require players to join again because
+browser storage is origin-specific; a manually saved server URL may also need updating.
+Do not promise an uninterrupted migration or session transfer until tested. Room expiry rules
+still apply. Never publish snapshots, reconnect data, TLS keys or account credentials in Git.
+
+This migrates the existing single-instance architecture. Running several backend replicas
+would require shared transactional persistence and its own validation; changing provider alone
+does not require that redesign.
+
 References: [Microsoft static file middleware](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/static-files?view=aspnetcore-10.0),
 [Railway Docker deployment](https://docs.railway.com/builds/dockerfiles),
 [Railway persistent volumes](https://docs.railway.com/volumes).
