@@ -1,0 +1,227 @@
+{
+  "date": "2026-10-24",
+  "head": "6b56c2718c93a032288210aba3f9d2aef7a2c001",
+  "remoteMain": "6b56c2718c93a032288210aba3f9d2aef7a2c001",
+  "source": [
+    {
+      "path": "Assets/Scripts/Board/BoardVisualTheme.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/UI/BoardTileOverlayWidget.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Visuals/BoardContactFeedback.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Visuals/BoardSurfaceLighting.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Visuals/CompactPawnVisual.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Settings/GraphiteFoundation/GraphiteTheme.asset",
+      "matches": true
+    },
+    {
+      "path": "Assets/Shaders/GraphiteSurface.shader",
+      "matches": true
+    },
+    {
+      "path": "Assets/Shaders/NeonState.shader",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Debug/ArtCalibrationDriver.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Debug/ArtCalibrationDriver.cs.meta",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Editor/ArtCalibrationValidation.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Editor/ArtCalibrationValidation.cs.meta",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Editor/ArtCalibrationWindow.cs",
+      "matches": true
+    },
+    {
+      "path": "Assets/Scripts/Editor/ArtCalibrationWindow.cs.meta",
+      "matches": true
+    }
+  ],
+  "runtimeChangesSinceArtLock": [],
+  "publicGallery": "https://artbarns.github.io/Polyrisk/Docs/Validation/PremiumMasterpiece_2026-10-24/review.html",
+  "images": [
+    {
+      "name": "reviewed-final-arrival-a.jpg",
+      "status": 200,
+      "bytes": 33920,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-colored-a.jpg",
+      "status": 200,
+      "bytes": 33657,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-contact-a.jpg",
+      "status": 200,
+      "bytes": 33867,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-corner-arrival-a.jpg",
+      "status": 200,
+      "bytes": 33804,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-inactive-a.jpg",
+      "status": 200,
+      "bytes": 33602,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-metal-a.jpg",
+      "status": 200,
+      "bytes": 33673,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-pawn-active-a.jpg",
+      "status": 200,
+      "bytes": 33673,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-pawn-idle-a.jpg",
+      "status": 200,
+      "bytes": 33632,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-reflection-a.jpg",
+      "status": 200,
+      "bytes": 33867,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-selected-a.jpg",
+      "status": 200,
+      "bytes": 33788,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-arrival-b.jpg",
+      "status": 200,
+      "bytes": 33136,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-colored-b.jpg",
+      "status": 200,
+      "bytes": 32974,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-contact-b.jpg",
+      "status": 200,
+      "bytes": 33068,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-corner-arrival-b.jpg",
+      "status": 200,
+      "bytes": 33164,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-inactive-b.jpg",
+      "status": 200,
+      "bytes": 32886,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-metal-b.jpg",
+      "status": 200,
+      "bytes": 32905,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-pawn-active-b.jpg",
+      "status": 200,
+      "bytes": 32905,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-pawn-idle-b.jpg",
+      "status": 200,
+      "bytes": 32924,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-reflection-b.jpg",
+      "status": 200,
+      "bytes": 33068,
+      "matchesLocal": true
+    },
+    {
+      "name": "reviewed-final-selected-b.jpg",
+      "status": 200,
+      "bytes": 33063,
+      "matchesLocal": true
+    }
+  ],
+  "videos": [
+    {
+      "name": "final-short-b.mp4",
+      "status": 206,
+      "contentRange": "bytes 239496-241543/478993",
+      "partialBytes": 2048,
+      "matchesLocalSlice": true
+    },
+    {
+      "name": "final-long-b.mp4",
+      "status": 206,
+      "contentRange": "bytes 481883-483930/963766",
+      "partialBytes": 2048,
+      "matchesLocalSlice": true
+    },
+    {
+      "name": "final-long-a.mp4",
+      "status": 206,
+      "contentRange": "bytes 528177-530224/1056355",
+      "partialBytes": 2048,
+      "matchesLocalSlice": true
+    },
+    {
+      "name": "final-live-turns-b.mp4",
+      "status": 206,
+      "contentRange": "bytes 1236101-1238148/2472203",
+      "partialBytes": 2048,
+      "matchesLocalSlice": true
+    }
+  ],
+  "bundleManifestEntries": 24,
+  "bundleMismatches": [],
+  "archiveHashMatches": true,
+  "localGalleryHTTP": 200,
+  "localGameHTTP": 200,
+  "browserUIAvailableThisResume": false,
+  "publicGameDeployed": false,
+  "physicalIPhoneTested": false,
+  "note": "Integrity and HTTP checks rerun; prior Unity/browser/gameplay tests retained because source matches. No new GPU or physical-device test.",
+  "pass": true
+}

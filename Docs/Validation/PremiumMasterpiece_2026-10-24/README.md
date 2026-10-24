@@ -1,5 +1,7 @@
 # PolyRisk — Graphite architectural, 24 octobre 2026
 
+**Reprise finale :** [revue avant validation artistique](FINAL_REVIEW.md) et [contrôles des sources, médias publics et paquet](final-resume-validation.json). Les anciens états Git et accès d’hébergement ci-dessous sont historiques ; la revue finale donne le dernier état constaté.
+
 La proposition ajoute une lecture satinée des faces et des arêtes, relie les monolithes au matériau du plateau et fait recevoir les contacts lumineux aux quatre coins. Le bloom global est retiré : l'essai.045 ne modifiait aucun pixel de la zone de plateau au repos comparée, mais ajoutait16drawcalls et16SetPass. La différence A/B doit être appréciée dans les vraies images ; elle n'est pas déclarée artistiquement validée par la compilation.
 
 Ouvrir **[la galerie publique](https://artbarns.github.io/Polyrisk/Docs/Validation/PremiumMasterpiece_2026-10-24/review.html)**, [la galerie portable](review.html) depuis ce dossier, ou [la galerie locale](http://127.0.0.1:9007/evidence/review.html) pendant que son serveur tourne. Les fichiers et vidéos restent accessibles dans le dossier si le lien local s'arrête. Ce lien loopback n'est pas un jeu publié pour des iPhone distants.
