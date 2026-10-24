@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37b6d750182a461492b86dea67bc01e, type: 3}
+  m_Name: GraphiteTheme
+  m_EditorClassIdentifier: 
+  board: {r: 0.09019608, g: 0.11372549, b: 0.14509805, a: 1}
+  tile: {r: 0.14509805, g: 0.1764706, b: 0.21568628, a: 1}
+  outline: {r: 0.22745098, g: 0.27058825, b: 0.31764707, a: 1}
+  center: {r: 0.078431375, g: 0.101960786, b: 0.13333334, a: 1}
+  engraving: {r: 0.05882353, g: 0.078431375, b: 0.105882354, a: 1}
+  background: {r: 0.047058824, g: 0.0627451, b: 0.08627451, a: 1}
+  thicknessRatio: 0.045
+  cornerRadiusRatio: 0.025
+  outlineWidthRatio: 0.014
+  categoryBandRatio: 0.018
+  cornerSegments: 3
+  frameCornerRadius: 0.08
+  tileSurfaceY: 0.096
+  frameMetallic: 0.4
+  frameSmoothness: 0.52
+  tileMetallic: 0.28
+  tileSmoothness: 0.44
+  restingEmission: 1.2
+  trimEmission: 0.18
+  categorySaturation: 0.62
+  simulatedReflection: 0.18
+  reflectionFalloff: 0.025
+  frameSheen: 0.3
+  tileSheen: 0.24
+  edgeNormalStrength: 0.2
+  edgeShadingPixels: 0.85
+  minimumBandPixels: 1.2
+  neonBoost: 1.5
+  reflectionReach: 0.1
+  surfaceTreatment: 1
+  graphiteSatin:
+    boardTint: {r: 0.8, g: 0.83, b: 0.87, a: 1}
+    tileTint: {r: 0.88, g: 0.91, b: 0.95, a: 1}
+    boardMetallic: 0.36
+    tileMetallic: 0.27
+    boardSmoothness: 0.47
+    tileSmoothness: 0.41
+    studioReflection: 0.46
+    edgeSpecular: 0.035
+    neonEmission: 0.82
+    neonReflection: 0.06
+    reflectionFalloff: 0.025
+    reflectionReach: 0.09
+    contactReflection: 0.035
+    arrivalReflection: 0.075
+    contactOutline: 0.9
+    contactReflectionFalloff: 0.025
+    contactReflectionReach: 0.09
+    activeSurfaceContrast: 0
+    backgroundSeparation: 0.012
+    pawnBody: {r: 0.23, g: 0.28, b: 0.33, a: 1}
+    pawnMetallic: 0.42
+    pawnSmoothness: 0.4
+    pawnEmission: 0.88
+    pawnRing: 0.9
+    pawnTop: 0.9
+    pawnBaseReflection: 0.008
+  reflectiveNeon:
+    boardTint: {r: 0.8, g: 0.83, b: 0.87, a: 1}
+    tileTint: {r: 0.88, g: 0.91, b: 0.95, a: 1}
+    boardMetallic: 0.36
+    tileMetallic: 0.27
+    boardSmoothness: 0.49
+    tileSmoothness: 0.45
+    studioReflection: 0.46
+    edgeSpecular: 0.052
+    neonEmission: 0.92
+    neonReflection: 0.08
+    reflectionFalloff: 0.03
+    reflectionReach: 0.1
+    contactReflection: 0.78
+    arrivalReflection: 1.1
+    contactOutline: 1.12
+    contactReflectionFalloff: 0.065
+    contactReflectionReach: 0.22
+    activeSurfaceContrast: 0.14
+    backgroundSeparation: 0.014
+    pawnBody: {r: 0.23, g: 0.28, b: 0.33, a: 1}
+    pawnMetallic: 0.48
+    pawnSmoothness: 0.46
+    pawnEmission: 1.1
+    pawnRing: 1.12
+    pawnTop: 1.02
+    pawnBaseReflection: 0.065
+  contactLight:
+    tileContactAttackDuration: 0.032
+    tileContactDecayDuration: 0.145
+    tileContactPulseIntensity: 1.15
+    tileContactOutlineIntensity: 1
+    tileContactInnerGlowIntensity: 0.075
+    tileContactColorBlend: 0.7
+    tileArrivalDecayDuration: 0.215
+    tileArrivalPulseIntensity: 1.65
+    reducedMotionIntensity: 0.45
+  fillColor: {r: 0.32, g: 0.35, b: 0.39, a: 1}
+  keyColor: {r: 0.94, g: 0.96, b: 0.98, a: 1}
+  keyIntensity: 0.55

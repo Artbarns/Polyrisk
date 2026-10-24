@@ -1,0 +1,14 @@
+{
+  "source": "final-natural-b.webm",
+  "mp4": "iteration2-natural-b.mp4",
+  "seconds": 16.08,
+  "decodePass": true,
+  "audio": {
+    "samples": 1544192,
+    "peak16bit": 1723,
+    "clippedSamples": 0
+  },
+  "retimed": false,
+  "encode": "H264/AAC, VFR preserved, faststart",
+  "note": "Historical optical/shader experiment. Original WebM was inadvertently replaced by a later recording under the same filename; only the old MP4 is retained. Not final evidence."
+}

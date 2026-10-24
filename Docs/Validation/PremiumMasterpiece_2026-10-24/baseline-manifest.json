@@ -1,0 +1,2558 @@
+[
+  {
+    "path": "Assets/.DS_Store",
+    "sha256": "2bc8976d28880a32e93981dcd17d1ffc0de836bee00fd028051d353b13ba78e2"
+  },
+  {
+    "path": "Assets/Data.meta",
+    "sha256": "0258eb5d3011c596cb2bfce224ce11b53f9470511be7cf54234e94f89819890a"
+  },
+  {
+    "path": "Assets/Data/Families.meta",
+    "sha256": "dc63a2965b471266c36eb69c48061efc8f6c61088384ae72675d5d4f22efcc64"
+  },
+  {
+    "path": "Assets/Data/Families/Aerospace Family.asset",
+    "sha256": "a517eb86437d8398a7a91c79d0bfff5ebd701e8b1873b48c2bd7a07c5e26d708"
+  },
+  {
+    "path": "Assets/Data/Families/Aerospace Family.asset.meta",
+    "sha256": "21bc39b4c8a0c9bbc5e08b235243c24fd22067ab52212f53dd32ba093332d74a"
+  },
+  {
+    "path": "Assets/Data/Families/Armement Family.asset",
+    "sha256": "86ce46d17207dc8917306b3e7c762dacd441318f487723324537f50e31e7d76b"
+  },
+  {
+    "path": "Assets/Data/Families/Armement Family.asset.meta",
+    "sha256": "2ed1222137e4a886d06d79fc0a63a33cc8f3feb6b67d402d67be752a8d70c299"
+  },
+  {
+    "path": "Assets/Data/Families/Automobile Family.asset",
+    "sha256": "b719ea88d1a4bda429b2a3165931802d7831d12701996cbe2dfd20c4aa29d12f"
+  },
+  {
+    "path": "Assets/Data/Families/Automobile Family.asset.meta",
+    "sha256": "dcfcb52a4e7afed1618ed997b1cc26115642f0482017d7ce9b25ce58208d2a7a"
+  },
+  {
+    "path": "Assets/Data/Families/Logistics Family.asset",
+    "sha256": "50e001795f56d274efb0553c1960f6325161cb8a6b3add46cd56402f465d1c3a"
+  },
+  {
+    "path": "Assets/Data/Families/Logistics Family.asset.meta",
+    "sha256": "dffac7b46d97b4e31e7ed9c1d70edaf10cc0dc1649254d128b6f37da83c2a997"
+  },
+  {
+    "path": "Assets/Data/Families/Luxe Family.asset",
+    "sha256": "5436d057f2e4cc9dacbdaff7ec718095bbc1ec0dcf6b8419856f9bf88e979133"
+  },
+  {
+    "path": "Assets/Data/Families/Luxe Family.asset.meta",
+    "sha256": "0e289bc344d97214f9f120f0010620e89e4e2dbea1e2bcbb132645db0beac2d1"
+  },
+  {
+    "path": "Assets/Data/Families/Oil & Gas Family.asset",
+    "sha256": "535c9528b05c5a750e4860b9b3a80b8c22fae37fa42a274cc178b752ad10a586"
+  },
+  {
+    "path": "Assets/Data/Families/Oil & Gas Family.asset.meta",
+    "sha256": "2859d301c2add23b20841ebebd767121c49a43a5ed1bfae51f512ebaec3934b2"
+  },
+  {
+    "path": "Assets/Data/Families/Pharma Family.asset",
+    "sha256": "5fde524cabefc529950d897202978988271a6e64572bad17c1e6cbaba90837dc"
+  },
+  {
+    "path": "Assets/Data/Families/Pharma Family.asset.meta",
+    "sha256": "9e79afc4b811c4c4f8797070a7726d1f47e50d46c2fc6ca96fb92e647de4acdf"
+  },
+  {
+    "path": "Assets/Data/Families/Real Estate Family.asset",
+    "sha256": "84c6f0c82b32c08fffa2c9a0cebee3840ea2b41d1fee080bea052f3fcbff2500"
+  },
+  {
+    "path": "Assets/Data/Families/Real Estate Family.asset.meta",
+    "sha256": "e9b398a36220152f70122e1fa7a7ca7a962ccd37587650e86aa6295ea2cabefa"
+  },
+  {
+    "path": "Assets/Data/Families/Tech Family.asset",
+    "sha256": "9f557b8de554dd49e0dbd7cfa304374ae8ea4292c05db417f54f257ea618c24c"
+  },
+  {
+    "path": "Assets/Data/Families/Tech Family.asset.meta",
+    "sha256": "b8e208dcc863f9867a86c4351f5d6e25f77b055283aca3922d49284b7005545e"
+  },
+  {
+    "path": "Assets/Data/Properties.meta",
+    "sha256": "bbfbab17448d94e87e7be9f5fb640ee5b6ac22e8b685029fbc510363d8c039ac"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_11_Fentanyl_Labs.asset",
+    "sha256": "79ac25c1a9eb0d186b840f1bda7e1f7260157be83af13acaf4dc4b4f00e1d701"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_11_Fentanyl_Labs.asset.meta",
+    "sha256": "88111c32800dd840bd1f2da59fb9cf397049ac28192273e82de1a9260e45d374"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_13_Hydrogen_Speedways.asset",
+    "sha256": "914e3c796573a8fb7b9c0ff4054e5c07d88866eacb4d6e22bacbe3cfc037352f"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_13_Hydrogen_Speedways.asset.meta",
+    "sha256": "95a3525df59377e80f7a301439c3cb90f406fd893d21d36f7d65f78c1d585f18"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_14_CyberTruck_Factory.asset",
+    "sha256": "e2b71854259ef0a13934ff746b8d6b85d15f4dce7cc033a4b61ab70bfb0b89c1"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_14_CyberTruck_Factory.asset.meta",
+    "sha256": "eb475d70ad112ac2975e7c8ff67a82c64c9c9112094d3a3a21850a7c059d62e4"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_15_Amazon_Prime_Drone-Pad.asset",
+    "sha256": "04ca5ada75c95f4111cdac355757d94018776bc3f43551f0b2b5ee8bf968f3b9"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_15_Amazon_Prime_Drone-Pad.asset.meta",
+    "sha256": "acc40e91d792ee5e9624c4439ea4ce4ddbf7fdc3488f908d182d873ef8a6d4b1"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_16_Ferrari_Maranello.asset",
+    "sha256": "4b1e68a638ba33b266bd603932e7c940fd193db8c0e44797530f0abfc1515de1"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_16_Ferrari_Maranello.asset.meta",
+    "sha256": "739bde431e90671986668fea6c1237c779c48139bded9bb717a4d0a9a3f0ccc8"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_18_Greenwashing_Solutions.asset",
+    "sha256": "80bb1730a3ebec45798301f6ade57327ef12c29abb5b8bc6d8d554406129775a"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_18_Greenwashing_Solutions.asset.meta",
+    "sha256": "667c037f1380b94f65d288740aaa0ef04e65b5461221ac162ee285f5dd4a7ee3"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_19_Deep_Ocean_Drill.asset",
+    "sha256": "85372ad94d04294a1728b5aeb675a4395c3c16e7e4f5fb834835d6a072c214cc"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_19_Deep_Ocean_Drill.asset.meta",
+    "sha256": "18d65c490a4c62d56461f03344c891444e529a3e154b0946da122ea987b154b0"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_1_Zuckerbergs_Bunker.asset",
+    "sha256": "77c0a2ed2c4eb18eff296f605ca39d628766235fd9c3aeed4b8b90038d151b0d"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_1_Zuckerbergs_Bunker.asset.meta",
+    "sha256": "56d8a5193121441fd8e1c4ee7d21f10716d76bb770be3e0cec2b37c3f0d4f7bc"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_21_Nord_Stream_Pipe.asset",
+    "sha256": "2e329e08227f0e144bae1c9af03959a804c1f551a821ee3cc7e23847ebd15cdd"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_21_Nord_Stream_Pipe.asset.meta",
+    "sha256": "8ff40fb8c9b782abe464ddc788ccb96c8caf5bfc26f4d09ea547864f0839d0f6"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_23_LVMH_Palace.asset",
+    "sha256": "7ec2cae7607d383c665ba605d4d3eea4864b6d4b036a12a755024b67c59c28dd"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_23_LVMH_Palace.asset.meta",
+    "sha256": "815e8e45d7be9cef27cd6f489685ea64a833494a07e3870966c5dc08659d22c5"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_24_Rolex_Tower.asset",
+    "sha256": "34087a3a407aa0fa40465cda589fc4cab13dfa6180ba81438115797f2339335c"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_24_Rolex_Tower.asset.meta",
+    "sha256": "f2070f68698e88c825b5010b15dc9bae75569ccf6f916dc77177d30ee3b83e10"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_25_SpaceX_Uplink_Hub.asset",
+    "sha256": "58418f0a18b5d1dc1610b1f62f59c925aa8b35ca034e534b2225dcb333414b77"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_25_SpaceX_Uplink_Hub.asset.meta",
+    "sha256": "cff31600d1733c38f558caae915a5752ba1a258b73e3a2ae30c51146f262f35c"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_26_Tax-Haven_Island.asset",
+    "sha256": "e0c12398b3848362635e06e0f39272a46897ed002cbd75e2d6b789bb87192462"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_26_Tax-Haven_Island.asset.meta",
+    "sha256": "3d5b9237eed38db3dcb2854d0e4539bb7c684aeb3766d09bb5588294e472f904"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_27_Antarctica_Datacenter.asset",
+    "sha256": "06807ef5beed2b039b7af4da3af6001f8e68c73f0f0b4d242761d69c3bbed16c"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_27_Antarctica_Datacenter.asset.meta",
+    "sha256": "6f7996571c014af339058881a61eba638b114431c9210e9e3f07b496788f4ba4"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_28_Boston_Dynamics_Factory.asset",
+    "sha256": "d8db248c40853ca1136151dd70cfacfabb6f769a271e294f7675337b7b65dd54"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_28_Boston_Dynamics_Factory.asset.meta",
+    "sha256": "2d94ed23ebfb3f223ac117c599b4a6b983cbe1b4f40f0fc03c808fe45ba101d5"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_31_Quantum_AI_Labs.asset",
+    "sha256": "0b39514db8e3cb4e7a0c1d045a47d9661f86d3946f4b276a9303baadab4f0e79"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_31_Quantum_AI_Labs.asset.meta",
+    "sha256": "cdac76d597801416812fceb82e7833720fc33c7341fe7d6ebf5a66bfcd3bd337"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_33_NASA_Moonbase.asset",
+    "sha256": "0d675a88a2e4b2591359ab4e73f114467a1daf7dc704c3564849173d4b7e9121"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_33_NASA_Moonbase.asset.meta",
+    "sha256": "f8297f3bf25823da215806483483e874376676f68526bca51f68aa4e53f50327"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_35_Silk_Road_3.0_Port.asset",
+    "sha256": "bb811d63c91412dde2f2ef5092d21fdbf674d98dbd0d5011eabe426369d382f3"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_35_Silk_Road_3.0_Port.asset.meta",
+    "sha256": "3498d7de0bc9610223b2885778ae7e8fd1aa8e6596e5229b684cd4fcbd969365"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_36_SpaceX_Orbital_Station.asset",
+    "sha256": "45b82485c32eb795b724f13079247eb0e7d3d7ab01c32e1f656d1cfc61b8c886"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_36_SpaceX_Orbital_Station.asset.meta",
+    "sha256": "1525900596f119192b87ee43c4fea5db99a123c553b04bd531f515f71472ecd7"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_38_Lockheed_Martin.asset",
+    "sha256": "da2f3830edb14561c171436ea731d910aeaf671e74faadbae5e5d8de1dc9421e"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_38_Lockheed_Martin.asset.meta",
+    "sha256": "3f932ee2e3f93758b83a3f97fa8066020da13e40dde0b042706c22a934f4f5a8"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_39_Wagner_Army_Base.asset",
+    "sha256": "b4b1560d8f639ce8a10a5d02a0e599e0bfa83cc53d2969fcb80023fd7b657d70"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_39_Wagner_Army_Base.asset.meta",
+    "sha256": "69db88c7962ec8cad078d7aa4cfd4ca65a1b2f20d079de7a83d654605fa6ec88"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_3_Trump_Tower.asset",
+    "sha256": "e6404f0d8371b80b94e463ee49280f9e7de52edada026f15daf0fa4b5d353920"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_3_Trump_Tower.asset.meta",
+    "sha256": "af0a3e361589de6d3054437dd58ef31f0c57a7722c83036dcf3f8e377295608b"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_5_Temu_Sweatshop_Terminal.asset",
+    "sha256": "4c4699eb71cba9f762b2e807e7598f97e9a24f84a683dc64129172a70aa70be0"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_5_Temu_Sweatshop_Terminal.asset.meta",
+    "sha256": "f2e853e67a94e331dab5fb45e385bbffbc30cb72791305e97a7b55cacc58d850"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_6_French_Riviera.asset",
+    "sha256": "90a9b58aecd8875772307b6a550daebacf3b8fee1914adf9fdf268c1eb2b9a24"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_6_French_Riviera.asset.meta",
+    "sha256": "a4512334d0853e437c6dc61c339f9f4cdf017172a9357d050e03754cbef20251"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_8_Opioid_Paradise.asset",
+    "sha256": "aaa4ce192dbf851976db5aa47256224ef46848d432b5cc431229e72d4399cfdf"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_8_Opioid_Paradise.asset.meta",
+    "sha256": "0c97a17ff78ce3146fd8ec96d7c482750b5fd29425b53b0decd348dc0a2ff6a0"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_9_Pfizer-BioTech.asset",
+    "sha256": "f09c537475b10cd7d900f2ef9aa8d40f7f5b522e990f1893ad336fbf27176e8c"
+  },
+  {
+    "path": "Assets/Data/Properties/Tile_9_Pfizer-BioTech.asset.meta",
+    "sha256": "cc9a692c376bb0afbd4c16ee41419535b071aa42afa0cbf11015b094fa7b1db5"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles.meta",
+    "sha256": "d39eee0fc20b06c581ed94544dc038df1a023de9d6800277b24e422cad6a6cc6"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_0_GO.asset",
+    "sha256": "65fc3236d6539cc4bf9de6cfa3682795a470ba4504af20cce38dcf9d580813f1"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_0_GO.asset.meta",
+    "sha256": "46ba788b97c08a8d50f47fd37e3d6421e72b910716e23faf69e8413e1839df43"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_10_AUDIT_FISCAL.asset",
+    "sha256": "93bf9758844f1d38d4842f2faf04066af228e25aaa02b3a64b65b1e9174d3dbb"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_10_AUDIT_FISCAL.asset.meta",
+    "sha256": "6d591b21a29b01d115760efe025e58a03b67bd44dd3ffed52711b90022713d23"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_12_Stock_Market.asset",
+    "sha256": "88986335f55c744b573651ce20010ff743cb2cb821f8888c98615a1d59449e48"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_12_Stock_Market.asset.meta",
+    "sha256": "7de140dff325c35e19aecf4d4b32444e3a8c2667230c96da0bab33e8e3a644b9"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_17_Venture.asset",
+    "sha256": "787ce1b41ee3f11ab49c370d232f644408c8646a508e47ec6aa63c26d8be60a5"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_17_Venture.asset.meta",
+    "sha256": "cb1bc8ba741044ccd46980133d838c15a6688645a9113dbb286b49dc4e5a9a2e"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_20_MARKETPLACE.asset",
+    "sha256": "d29233e98191d183c75ec8c9b819cb0425986c4c32c101cfb0405c9ce29b7d26"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_20_MARKETPLACE.asset.meta",
+    "sha256": "787bf6f2c25c3d25e078f12d97aa7ecf0c9a78d92afb21a5527de47364f9c786"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_22_Tax___Imp\u00f4t.asset",
+    "sha256": "133ca9f4fd2debd4cb947f5adfb5be20e59abd43d69408ee1c286817f279c831"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_22_Tax___Imp\u00f4t.asset.meta",
+    "sha256": "d0f6114d66041517400d0d7da92c8f73c210051bf4fd811225378f3ca217cd81"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_29_Venture.asset",
+    "sha256": "779773b3d0e49c69dcba12dcbc7c7762788cddd7f0fe1f6bda2181cdd8462939"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_29_Venture.asset.meta",
+    "sha256": "adf08123759204e979adbff5333239fc4025f9e8df54ed71cc7d21368631da91"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_2_Venture.asset",
+    "sha256": "2fc93e3f384cbc4bd276d76b82c06f18c07ce14be96f2b167a6d8ca1a2a298d8"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_2_Venture.asset.meta",
+    "sha256": "5d792f060c1243b03f8fe10a77fe5f84f96513796a66f05539c8e27a978c0f13"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_30_DIRECTION_AUDIT.asset",
+    "sha256": "1bf8d1e7f5264a8fc889351b456ad103c9792cf85fe9a11e00e251ad860eb756"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_30_DIRECTION_AUDIT.asset.meta",
+    "sha256": "5cc51212834db18127badcc9a2bc7eef465510c891c0915d47425d9d2d9b3ff0"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_32_CASINO.asset",
+    "sha256": "fb536d36dc59c29f6205fee6399dc546dec9ec3a13adc800e0767e1631e6243a"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_32_CASINO.asset.meta",
+    "sha256": "d9857a551cba8c90989434e5e369fa030a9ddf0b04aeb01d57f25b5a1254dd68"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_34_Venture.asset",
+    "sha256": "096334451427d513934a0fb549d8bb885d8af36cd26db4422aed8f2f93f6cbed"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_34_Venture.asset.meta",
+    "sha256": "472691d5023cf699c45bec72db44701cda88aec86be566e5a9efb10fe4683386"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_37_Venture.asset",
+    "sha256": "5f10bd3d5d473332a3a4767f8e172a26c0af326015e55453fed22b3bff1e802c"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_37_Venture.asset.meta",
+    "sha256": "1af502f9a745fb2c854c67f440ff17370aac233771c20f8ca4cacb14f23b12b7"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_4_Taxe_Douani\u00e8re.asset",
+    "sha256": "1a03669867fd4bcf8a11c23aaf1f1776ec9a04b378eafe2b85fa22743875421f"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_4_Taxe_Douani\u00e8re.asset.meta",
+    "sha256": "df00282617a1c1ee37b8824c612f982f171e2ae531078f67ca94718db627b2aa"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_7_Venture.asset",
+    "sha256": "cb437e469ee32a7cd15a87fc03d07c244a5169370b9a7e2386f0df5a60b7c9cc"
+  },
+  {
+    "path": "Assets/Data/SpecialTiles/Tile_7_Venture.asset.meta",
+    "sha256": "690470379b8b385ae1f9aef7769dc9516f3175b5211d2f703858534158fcdc8f"
+  },
+  {
+    "path": "Assets/Editor.meta",
+    "sha256": "185426fa80940df519a1c4ce4d5a897ea003ebb79ab790384f59bdc70ac071ab"
+  },
+  {
+    "path": "Assets/Editor/.DS_Store",
+    "sha256": "d40550212530c751dcbd92e5b6953fb95e52fb65260daccc097c6dd66fba741b"
+  },
+  {
+    "path": "Assets/Editor/PolyRiskLightingSetup.cs",
+    "sha256": "dc890c03760e5980af88b82d8b7830716298a7f74493a7c7c6f7daa213b17fb2"
+  },
+  {
+    "path": "Assets/Editor/PolyRiskLightingSetup.cs.meta",
+    "sha256": "1e3ad737bff9bf10650598103a912c503e49364dd26ca936fecd955ce38ae837"
+  },
+  {
+    "path": "Assets/MainURPAsset.asset",
+    "sha256": "d489aa0e34893668b60b83c5af01afc96e76e1abb8fd0d472950d5819ba98690"
+  },
+  {
+    "path": "Assets/MainURPAsset.asset.meta",
+    "sha256": "bed003f263459341ba5235fa5cb637ec3492142c6e54470e1bd1422b4a9f48c2"
+  },
+  {
+    "path": "Assets/MainURPAsset_Renderer.asset",
+    "sha256": "54b606bfbae81be2908c2349b0872bf20b0f5390cb360266b639f44927595dfd"
+  },
+  {
+    "path": "Assets/MainURPAsset_Renderer.asset.meta",
+    "sha256": "686942ece86b9da85060e7ab00d02158c14a550c443865081b093afb8c7cec45"
+  },
+  {
+    "path": "Assets/Materials.meta",
+    "sha256": "8722e2eb9b872b59f62ccac23ecaa5e29d9eff71f91bd63d66cc7e8456ac80b5"
+  },
+  {
+    "path": "Assets/Materials/Default_Material.mat",
+    "sha256": "433badf2cc2802e4045f4417accbb77afbb07c7d223673f9daee2e4720b5eba9"
+  },
+  {
+    "path": "Assets/Materials/Default_Material.mat.meta",
+    "sha256": "26a30c76b1e39e581dae16caa71035efdd46a306ed2d09047a0d06b62616ddf9"
+  },
+  {
+    "path": "Assets/Materials/M_BackgroundPlate.mat",
+    "sha256": "225811f90f59df0fb983f93cbf9cbd04d0f6f7352d5e1cebc6d410e417a01fb5"
+  },
+  {
+    "path": "Assets/Materials/M_BackgroundPlate.mat.meta",
+    "sha256": "20925fde77ffcf033e8266380462dade58a0257bd68c4602bea74e4edf4462ba"
+  },
+  {
+    "path": "Assets/Materials/M_BoardDark.mat",
+    "sha256": "4943e43acfa285bfd37122838e4f65daba29cc47594c9468d1629c4b40c4d992"
+  },
+  {
+    "path": "Assets/Materials/M_BoardDark.mat.meta",
+    "sha256": "0c6b567454d319ae82c1b4f2fcb4cbce4e4cfdc417eb48c92885bbab039eaba6"
+  },
+  {
+    "path": "Assets/Materials/M_BoardMetal.mat",
+    "sha256": "f9ac085dbc3c440eb0198dafcaba54847d8a5d3b16239e37959c9807d703f70c"
+  },
+  {
+    "path": "Assets/Materials/M_BoardMetal.mat.meta",
+    "sha256": "5c48792f522b579dcbc1b6a55cc45352bf1dce208ac6efa747555a091f229080"
+  },
+  {
+    "path": "Assets/Materials/M_BoardNeon.mat",
+    "sha256": "2e7e34e0561610e1d8a232867ba5f4cb4fceedfb6702a29e2596212f93141841"
+  },
+  {
+    "path": "Assets/Materials/M_BoardNeon.mat.meta",
+    "sha256": "c03243c608e117526c9111a40150077055ad110401305825ad57ea852f25402d"
+  },
+  {
+    "path": "Assets/Materials/M_BoardTile.mat",
+    "sha256": "416031f693950443cc5523ac1a207a8541f70d7d8b6d97c2444470cdd9b84443"
+  },
+  {
+    "path": "Assets/Materials/M_BoardTile.mat.meta",
+    "sha256": "c63f445b78908dffa4947f3d459895085ad3969a52467f1f2627159f1de10126"
+  },
+  {
+    "path": "Assets/Materials/Neon_Base.mat",
+    "sha256": "3db6200bc2c598100a4b36f501d7e1b582437cfd3855fa622fb846178680b8d6"
+  },
+  {
+    "path": "Assets/Materials/Neon_Base.mat.meta",
+    "sha256": "3be0422ab5a658b99ead0895aeb868139ad0e9a68b392f83dc9fe69a383784f6"
+  },
+  {
+    "path": "Assets/Plugins.meta",
+    "sha256": "a8ee51c3415bfec1577e4f7a3e6c8106380e5dfd5723e7477d0d17d3aeb88f03"
+  },
+  {
+    "path": "Assets/Plugins/WebGL.meta",
+    "sha256": "6fb3db5cf477652f4879b6d24591e3613a074de3ecf58217f5b2c369f37b5a63"
+  },
+  {
+    "path": "Assets/Plugins/WebGL/PulseViewport.jslib",
+    "sha256": "f1dda7cac1f33148a5b52eb17d1837b649e422c8956a655931f8473b8a6a0ed6"
+  },
+  {
+    "path": "Assets/Plugins/WebGL/PulseViewport.jslib.meta",
+    "sha256": "a3ef13c6b6c4dfd8e7c86fd56e97396aca236f65ca1bd6aafecaaa11f03421d4"
+  },
+  {
+    "path": "Assets/Prefab.meta",
+    "sha256": "d27a282d13fe1845f7075df11845683e27c803dc779ed0932d04a297b5169b52"
+  },
+  {
+    "path": "Assets/Prefab/Cube.prefab",
+    "sha256": "43e0745d837fe676bfa359afa9dc08f7c9eb115bbbbecbe6c374682e7e21471c"
+  },
+  {
+    "path": "Assets/Prefab/Cube.prefab.meta",
+    "sha256": "aee013221f1586c246ffb85ee64e65246047c7bb87df3d00d57ee5089d23895c"
+  },
+  {
+    "path": "Assets/Prefab/PlayerPawn.prefab",
+    "sha256": "f2cf4cd556ae18dc4fb9d98822b90e76da921081818933ee76fad600ba0a75da"
+  },
+  {
+    "path": "Assets/Prefab/PlayerPawn.prefab.meta",
+    "sha256": "14dfbc5b93c7e0c2074c611f4d3e97d32639f1ae39e5e5fa4ee11fcc697b7ffd"
+  },
+  {
+    "path": "Assets/Resources.meta",
+    "sha256": "d0a83edf3cfe1aa453af427e315d05591f8340c0a0fbb394d9294594a5e8129a"
+  },
+  {
+    "path": "Assets/Resources/PolyRiskAudio.meta",
+    "sha256": "15608d79f342f09d416e8fb4515f3c78b46cae39bc4e8221a7a76360439538e8"
+  },
+  {
+    "path": "Assets/Resources/PolyRiskAudio/contact_light.wav",
+    "sha256": "b3fd42d2574e87f69ba9928ded487b126f65c5d9f10a5f6dbb1c5096a5ba591e"
+  },
+  {
+    "path": "Assets/Resources/PolyRiskAudio/contact_light.wav.meta",
+    "sha256": "91b4438a0c8c2d542a3597cbeef9f1f4ebbaa87d503a23c1b9cbcfea89805047"
+  },
+  {
+    "path": "Assets/Resources/PolyRiskAudio/contact_tac.wav",
+    "sha256": "e5ea52eba559645b18ce5ad6ddf7b3f2ed16ced267e51d9556bb63acc799480b"
+  },
+  {
+    "path": "Assets/Resources/PolyRiskAudio/contact_tac.wav.meta",
+    "sha256": "0bf6b67da8963cade45a6edf1decf5c268e7145da7cb3a1f477f46a6bda448d7"
+  },
+  {
+    "path": "Assets/Resources/PolyRiskAudio/double_green.wav",
+    "sha256": "dc71242942a80b8387b29c53a84de2c52aff6ade907c41d7ca983ca173d8a834"
+  },
+  {
+    "path": "Assets/Resources/PolyRiskAudio/double_green.wav.meta",
+    "sha256": "4f71142e62c5fbfcb63830f983449903d5ae218eaee109623e248c685084b452"
+  },
+  {
+    "path": "Assets/Scenes.meta",
+    "sha256": "16eee8fe77b4e6dc94950b8f9c4c9b2a8dc0efd190dfe019942b1586c727a6f9"
+  },
+  {
+    "path": "Assets/Scenes/SampleScene.meta",
+    "sha256": "ab67a6d773dbe410af00908ab84bb6fa085073f81a93c679738ff38e6de5d626"
+  },
+  {
+    "path": "Assets/Scenes/SampleScene.unity",
+    "sha256": "21c1108c22096a4dd67f41b3a5eb7200f4f69ec34312982f61c592e0ffbc5ecf"
+  },
+  {
+    "path": "Assets/Scenes/SampleScene.unity.meta",
+    "sha256": "aceab14f038dbd3a1778159772cd9e89d7d8188f9158f06c204a8912438d8c96"
+  },
+  {
+    "path": "Assets/Scenes/SampleScene/LightingData.asset",
+    "sha256": "e73c4ff1382d6e1db637aec220f5878d48119c8fdc50c84bab2e223621a98dc9"
+  },
+  {
+    "path": "Assets/Scenes/SampleScene/LightingData.asset.meta",
+    "sha256": "7dff372fbee32aea970ab2b163d37549d0d221c8abbcaa6b6e48c523c2a3716a"
+  },
+  {
+    "path": "Assets/Scenes/SampleScene/Post_Volume Profile.asset",
+    "sha256": "7c12a43f4489a87fb55923501ac027ed83a8f7327a2afa47f7e331ba82361245"
+  },
+  {
+    "path": "Assets/Scenes/SampleScene/Post_Volume Profile.asset.meta",
+    "sha256": "b02315134f1e4d979c871d60e574120355babb621dee0fe0eb1000223f10615d"
+  },
+  {
+    "path": "Assets/Scenes/SampleScene/ReflectionProbe-0.exr",
+    "sha256": "879f38bee2b7a5c2f8845d7a694976fa1e7826a7319e5b7cd050c4d07b2c053a"
+  },
+  {
+    "path": "Assets/Scenes/SampleScene/ReflectionProbe-0.exr.meta",
+    "sha256": "b09d2b421563a7334df785fbf1f3c12331f10b20602e00350d7728ab5a6a3d1e"
+  },
+  {
+    "path": "Assets/Scripts.meta",
+    "sha256": "806ef3388cb77136bca5f4b876f3d4d522ecd45854c77d5520b92eb57f73c1be"
+  },
+  {
+    "path": "Assets/Scripts/.DS_Store",
+    "sha256": "922be097ad77e18b6daaadcacb9357ddf630f66a32c63dc857e857a182c4172e"
+  },
+  {
+    "path": "Assets/Scripts/Board.meta",
+    "sha256": "e2afa993593211ef8fd18994e2aadc06fc0a469db368e7f5cadc7cf8e2a1cb70"
+  },
+  {
+    "path": "Assets/Scripts/Board/BoardVisualTheme.cs",
+    "sha256": "277c56f01fc2c81de9763459cd692a1344c39ee1c6f473fd9681d51cedc86f0a"
+  },
+  {
+    "path": "Assets/Scripts/Board/BoardVisualTheme.cs.meta",
+    "sha256": "459418b7122d6965944a25e1890c7d98bdc7d4379b9c3472461e5875906542b6"
+  },
+  {
+    "path": "Assets/Scripts/Board/PolyRiskBoard.cs",
+    "sha256": "98923d0f68287e3734c35304b188fe564bf3ebf36340084d64e6694902427c1e"
+  },
+  {
+    "path": "Assets/Scripts/Board/PolyRiskBoard.cs.meta",
+    "sha256": "6ec08684b231b7498f2b36e9ae8d87fc9a032e4e6a9db238221ecadcfb5ed028"
+  },
+  {
+    "path": "Assets/Scripts/Board/ProcGeo.cs",
+    "sha256": "113da184457b6cc4adae2420b9503e12f34ffaead1da844c8aad0dcc7bebccad"
+  },
+  {
+    "path": "Assets/Scripts/Board/ProcGeo.cs.meta",
+    "sha256": "d22e0c1c0e46f77cd0bd6bfdede2475c8d660d10910e01c5bf56973423585b58"
+  },
+  {
+    "path": "Assets/Scripts/Core.meta",
+    "sha256": "c59b6ab8d0e8aba131953eb9f35c49d216ab3d294b79d90b08f2e777c6cde1b4"
+  },
+  {
+    "path": "Assets/Scripts/Core/.DS_Store",
+    "sha256": "24678de56c094869038e7d5430ded6b73202af639633916e445515ecb30a07ba"
+  },
+  {
+    "path": "Assets/Scripts/Core/BoardTile.cs",
+    "sha256": "5c466d4a186cf646bba639342b61e8fb93320b3f0b2f1cfab790f8051301e417"
+  },
+  {
+    "path": "Assets/Scripts/Core/BoardTile.cs.meta",
+    "sha256": "07b0957e97eb802c1c846a872e3f2f241f5940a54edfcea761261c77d8b7cbc9"
+  },
+  {
+    "path": "Assets/Scripts/Core/BoardTileData.cs",
+    "sha256": "c5c8234311ffbfd751cd7e5dd47abd8a9ebfeb1be0b2d5fcec547c343158b5b0"
+  },
+  {
+    "path": "Assets/Scripts/Core/BoardTileData.cs.meta",
+    "sha256": "bb4db00528f0156e345fd0ffa83929b0244b5b7994e59ed22ed3748019282047"
+  },
+  {
+    "path": "Assets/Scripts/Core/ColorGroup.cs",
+    "sha256": "06c334be2ec560162e7ff2fd20728a216810ec93404f44ca697c10ef163058f8"
+  },
+  {
+    "path": "Assets/Scripts/Core/ColorGroup.cs.meta",
+    "sha256": "c86ae1fd0571b0159fb20f31440069f1dce12a64e417b1e5df79c9a9df3307ca"
+  },
+  {
+    "path": "Assets/Scripts/Core/FamilyData.cs",
+    "sha256": "782c9fbf6bb9fd97b6ae54b3464667dce76992ecc8399ba85f0bed0768c2726c"
+  },
+  {
+    "path": "Assets/Scripts/Core/FamilyData.cs.meta",
+    "sha256": "36f7f1fe16864d36ca031956b2d99d1571a26d76eb3cc6d604549ff402f2713d"
+  },
+  {
+    "path": "Assets/Scripts/Core/GameEvent.cs",
+    "sha256": "c63e4eccc30986b581a13e8adbbebda2d154d131f519c322892f00b9ee4c24c7"
+  },
+  {
+    "path": "Assets/Scripts/Core/GameEvent.cs.meta",
+    "sha256": "7e9a4e4b1f3b711725c401b38bf2690c8dae3e9a36746de85bd8858bb7d5647d"
+  },
+  {
+    "path": "Assets/Scripts/Core/GameEvents.cs",
+    "sha256": "07aaa9e0896102526406fd060ad5fbde49a750fc2a156c5006d20e1fd479c745"
+  },
+  {
+    "path": "Assets/Scripts/Core/GameEvents.cs.meta",
+    "sha256": "91e561037661cfe4cad3b630cb32d9ade83cda81ab5a7fb412b0f61b07e5cbc2"
+  },
+  {
+    "path": "Assets/Scripts/Core/NetWorth.cs",
+    "sha256": "aef7dc3308c72454a0206c1e4190f043245c65f2d27be958f6ceb1b8cfeadd2d"
+  },
+  {
+    "path": "Assets/Scripts/Core/NetWorth.cs.meta",
+    "sha256": "f2364c976cca3d4c0f566275a4d27edb534e53aae6489da33a915d0c42961d2d"
+  },
+  {
+    "path": "Assets/Scripts/Core/PlayerModel.cs",
+    "sha256": "62aec28b58626978b8bd21ae3c9f40e9d44b6f5ca62e5cfeb110fb8a8be18ee1"
+  },
+  {
+    "path": "Assets/Scripts/Core/PlayerModel.cs.meta",
+    "sha256": "6aa43e9385b24670da10e15c349ea37c4ea312cd6d2863055ae8c97b9fa728de"
+  },
+  {
+    "path": "Assets/Scripts/Core/PropertyData.cs",
+    "sha256": "ff8950e76dc91d69fa0d7d8e40311e804348dc915e9246779333f4ba358ef4e8"
+  },
+  {
+    "path": "Assets/Scripts/Core/PropertyData.cs.meta",
+    "sha256": "a1f8d9f9d10b00d5f4212778ce0d76c2cf900f0ada1c2ec41f1bff0b5252cc05"
+  },
+  {
+    "path": "Assets/Scripts/Core/RulesEngine.cs",
+    "sha256": "881c4f07e308305588ebd10295904aafc2cb055e041ff3e1686095136cb40ab2"
+  },
+  {
+    "path": "Assets/Scripts/Core/RulesEngine.cs.meta",
+    "sha256": "e4bdfa2cf94c80c60d2498af863519496e5940703dbead2f70a8eca79a018017"
+  },
+  {
+    "path": "Assets/Scripts/Core/TileType.cs",
+    "sha256": "b579d624bd2ece8726b17186ca74a0325ba6db8bfdaeaaebfc4b25b08b5a3dd6"
+  },
+  {
+    "path": "Assets/Scripts/Core/TileType.cs.meta",
+    "sha256": "8cf8b4f4aec88bd5721327de3037d685ef6ac65f9dbe04b72723adaa54cf362c"
+  },
+  {
+    "path": "Assets/Scripts/Core/TransactionManager.cs",
+    "sha256": "ebfc3bcd77053d23ae63a0f8191c7f5d112e2782aeea54b33f889031eae53d8b"
+  },
+  {
+    "path": "Assets/Scripts/Core/TransactionManager.cs.meta",
+    "sha256": "d34d91824a370413c78dfb56e809d99dfcb5a493d70236b4f100a914cd44b5e8"
+  },
+  {
+    "path": "Assets/Scripts/Debug.meta",
+    "sha256": "3b8529f4c0b9323811506f556f115c2f62c59830d47efbcf4cca9591392c60c8"
+  },
+  {
+    "path": "Assets/Scripts/Debug/CloseStrategicCameraValidationDriver.cs",
+    "sha256": "4fbb0b761df0c030a849602a433a81539be39cb8faca0632382cd823efd898bd"
+  },
+  {
+    "path": "Assets/Scripts/Debug/CloseStrategicCameraValidationDriver.cs.meta",
+    "sha256": "cd7c361586a1957a21b58abb96e2073002af5b5edfa973f8d150e061fc5be2d3"
+  },
+  {
+    "path": "Assets/Scripts/Debug/DebugMarketplaceSetup.cs",
+    "sha256": "961bd2ed232c812097d0bbf6d8989f55ad5f24e8b0cf160d3f33b347113b749d"
+  },
+  {
+    "path": "Assets/Scripts/Debug/DebugMarketplaceSetup.cs.meta",
+    "sha256": "2492ac972421fd870e2c57f786d3de382cb951be2394b8631bb9ef1af40ba635"
+  },
+  {
+    "path": "Assets/Scripts/Debug/DebugUIShowcase.cs",
+    "sha256": "670e707cc7645b848233ea697c7450c7a01c016aa5cfa7473ab28719c14f6938"
+  },
+  {
+    "path": "Assets/Scripts/Debug/DebugUIShowcase.cs.meta",
+    "sha256": "2756f4c3e4c6d94176f197db5b7a4eb5dcb139f90d790b3eca0d964ef8424c4d"
+  },
+  {
+    "path": "Assets/Scripts/Debug/MobileBoardValidationProbe.cs",
+    "sha256": "e6956c186c61c303b03517a304ee0795f35d078476d09143f03ce71ae86afa20"
+  },
+  {
+    "path": "Assets/Scripts/Debug/MobileBoardValidationProbe.cs.meta",
+    "sha256": "13e485de129970f9edeb38427e6b4572bd7f096244dd87ecaded7da66eb6d401"
+  },
+  {
+    "path": "Assets/Scripts/Debug/MonolithValidationDriver.cs",
+    "sha256": "ffe117eba63d4a931f3cb9e33e00d4235f73e02f97feb28aa16f2c7ba9b01baa"
+  },
+  {
+    "path": "Assets/Scripts/Debug/MonolithValidationDriver.cs.meta",
+    "sha256": "6bed2c2bcd4029b378fd9a3c2f2a0517472214792b5b27a7abe29571c475225b"
+  },
+  {
+    "path": "Assets/Scripts/Debug/PerceptualPolishValidationDriver.cs",
+    "sha256": "b3fa8c7ac6c458c9dadd62f870021679c62258d529cfbdd8f07aa84d3f04370b"
+  },
+  {
+    "path": "Assets/Scripts/Debug/PerceptualPolishValidationDriver.cs.meta",
+    "sha256": "44fa07c20c54283e99ce7d2aef7ddf1ded85b5603a244afe6e18f0a9cff5725b"
+  },
+  {
+    "path": "Assets/Scripts/Debug/StrategicCameraValidationDriver.cs",
+    "sha256": "003d684cc2315e7175bed9462239f1415e6f172b7c4ccbc7b32952a2d22557ad"
+  },
+  {
+    "path": "Assets/Scripts/Debug/StrategicCameraValidationDriver.cs.meta",
+    "sha256": "0cf67297ff9a6d8f62b19f6631e7dd3bece10bfd8a632080f77b901b9cba7933"
+  },
+  {
+    "path": "Assets/Scripts/Debug/StressTestRunner.cs",
+    "sha256": "d39bc8edd32d29f04554044d2cf8352d15ac8cf492d36d8873ddb6fdd0cdcf39"
+  },
+  {
+    "path": "Assets/Scripts/Debug/StressTestRunner.cs.meta",
+    "sha256": "9c44f5fe37afb0cf74e7098bf7cf61a0b0141baa4819b3e9bd09597ff77f37cf"
+  },
+  {
+    "path": "Assets/Scripts/Debug/SurfaceLightingValidationDriver.cs",
+    "sha256": "4ac51ddcc1650fa5dbfbf2e1f25410e75b962524b59d28b8d1d4b86f9cb7ade8"
+  },
+  {
+    "path": "Assets/Scripts/Debug/SurfaceLightingValidationDriver.cs.meta",
+    "sha256": "8da3338b6e2e2f67e9a453416989ec02b1c259eef2787d79558b82e98e36fc13"
+  },
+  {
+    "path": "Assets/Scripts/Editor.meta",
+    "sha256": "c2685e7968446c678a9b492bd41250d481f2caa4fac15bfa720781f313c08e27"
+  },
+  {
+    "path": "Assets/Scripts/Editor/CloseStrategicCameraValidation.cs",
+    "sha256": "ffb6191bc4aa08937e16fb5aefeaa67d74846815d5b9cfe33cc1e847d9340c74"
+  },
+  {
+    "path": "Assets/Scripts/Editor/CloseStrategicCameraValidation.cs.meta",
+    "sha256": "26a82841757664653187f2b2bd5b2e1171eb5fcc7b62a8539836463b05760e1d"
+  },
+  {
+    "path": "Assets/Scripts/Editor/EconomyBatchValidation.cs",
+    "sha256": "87257c1c58cd963d20c2c21e58b9d62f0be830498532aa934729b04c60cbdd03"
+  },
+  {
+    "path": "Assets/Scripts/Editor/EconomyBatchValidation.cs.meta",
+    "sha256": "7f5232683f38389cd56133a38b744e0099a9ae18256ec3f074105c0275ab4c3c"
+  },
+  {
+    "path": "Assets/Scripts/Editor/EconomyRegression.cs",
+    "sha256": "215c2367d66389ebf41041a7f2de765eed1e27156f2937fe3e00ead4cdf5304a"
+  },
+  {
+    "path": "Assets/Scripts/Editor/EconomyRegression.cs.meta",
+    "sha256": "9c41b58562bf5e24871d1f247764852212e8606e78a7c37012a03e43d951749f"
+  },
+  {
+    "path": "Assets/Scripts/Editor/FinalExperienceValidation.cs",
+    "sha256": "5243209d93ad07977341cf8304dab991533a9a6558323413576554686db55552"
+  },
+  {
+    "path": "Assets/Scripts/Editor/FinalExperienceValidation.cs.meta",
+    "sha256": "1196c8e1ccb08cadabd92471f06114afd1e7ac158ad1e43f0058fd5269d0c83f"
+  },
+  {
+    "path": "Assets/Scripts/Editor/GameEventRegression.cs",
+    "sha256": "70d7b86006d617c604591e7c54833a4812b5b2aceb2516b95bd4e669d095fbb9"
+  },
+  {
+    "path": "Assets/Scripts/Editor/GameEventRegression.cs.meta",
+    "sha256": "acc1ea702b7849580dc0b5ca7c189b4580aab0d3a38591032d1c738474204fd6"
+  },
+  {
+    "path": "Assets/Scripts/Editor/GraphiteFoundationValidation.cs",
+    "sha256": "2268d7942198ec7d5219bf10312885ba1a9b76ccb2ebb4c6ee4c77f346d66b73"
+  },
+  {
+    "path": "Assets/Scripts/Editor/GraphiteFoundationValidation.cs.meta",
+    "sha256": "9a21ae036846c7478c9f44643795f88aa4209b976316685f700c3dc31003c225"
+  },
+  {
+    "path": "Assets/Scripts/Editor/GraphiteRefinementValidation.cs",
+    "sha256": "829e5abdecdbe33b05909f7b2cf7c82502b6c0524ecf3016659b1da55b6a3187"
+  },
+  {
+    "path": "Assets/Scripts/Editor/GraphiteRefinementValidation.cs.meta",
+    "sha256": "c4f5ad73da86792c653ca09087ca3bdc7ba4ab6c7f1eeb222e7af6426227a76d"
+  },
+  {
+    "path": "Assets/Scripts/Editor/MechanicsRegression.cs",
+    "sha256": "b6b6de4010fec10d806f61d1641da0ded17ef6bc02a1e20eea049ce8cdcb7c1d"
+  },
+  {
+    "path": "Assets/Scripts/Editor/MechanicsRegression.cs.meta",
+    "sha256": "f12b46f3dd71609f1d37090d7193bf4b651060d204b9b73b68dd60a855b9936e"
+  },
+  {
+    "path": "Assets/Scripts/Editor/MobileBoardPresenceValidation.cs",
+    "sha256": "d565770f961e6e3242670f499d3446464ce3461428195bcbb1ffe1b44c08912e"
+  },
+  {
+    "path": "Assets/Scripts/Editor/MobileBoardPresenceValidation.cs.meta",
+    "sha256": "2b71b87944a9550a067fbe4249098b452a6f59ed228b4a7cbb12f9751d27af52"
+  },
+  {
+    "path": "Assets/Scripts/Editor/MonolithValidation.cs",
+    "sha256": "294c4cb3434882f2d892420c91e7e093000aa2b0e33f3671ebdf75f159e97ba4"
+  },
+  {
+    "path": "Assets/Scripts/Editor/MonolithValidation.cs.meta",
+    "sha256": "9394a71e00ddbf93e0ca1abe555be2c7da56229d75de169ab40eb0889f8adb43"
+  },
+  {
+    "path": "Assets/Scripts/Editor/PerceptualPolishValidation.cs",
+    "sha256": "6c3ff32b78c047cba59756184f585f22588e38a830f1f868258311283a748ea4"
+  },
+  {
+    "path": "Assets/Scripts/Editor/PerceptualPolishValidation.cs.meta",
+    "sha256": "92618b5f1f06506bb8e506a66dee48d71d57cc0ff570c232f437f472dae41334"
+  },
+  {
+    "path": "Assets/Scripts/Editor/PolyRiskBoardGenerator.cs",
+    "sha256": "5c850f5bd7cd38c61408f60c1493f65528ed90eef298da3ae497d6d7e51dbe3f"
+  },
+  {
+    "path": "Assets/Scripts/Editor/PolyRiskBoardGenerator.cs.meta",
+    "sha256": "a24c9c8b750a3faecfc2aead50b4a7a134f4246010178db6ce8d2ef88bc9500d"
+  },
+  {
+    "path": "Assets/Scripts/Editor/SurfaceLightingValidation.cs",
+    "sha256": "83e0ea5454c496cc04ef9820ac6a194a61683fe92923819a7a6f3e0461ea1042"
+  },
+  {
+    "path": "Assets/Scripts/Editor/SurfaceLightingValidation.cs.meta",
+    "sha256": "b43bb918525feedc0db85f60bfdb7944601b6bd7b5ed90777060e7518b81ced2"
+  },
+  {
+    "path": "Assets/Scripts/Editor/UIAssetRegression.cs",
+    "sha256": "e6a0ee6a433581310a30047f72d7b7a7821b3994b0133de981ff5435ca782380"
+  },
+  {
+    "path": "Assets/Scripts/Editor/UIAssetRegression.cs.meta",
+    "sha256": "c463769c7fd771b063af4d5f76cd740c1ef6e77062361a886a47235bc47b9f36"
+  },
+  {
+    "path": "Assets/Scripts/Multiplayer.meta",
+    "sha256": "9d694d28eace8d83a208430ed704027fe996af64cdfd01520f28a4f201a1c789"
+  },
+  {
+    "path": "Assets/Scripts/Multiplayer/LobbyDtos.cs",
+    "sha256": "d3bc52334d359d3e1188417e53aca5ed069da40a2f6d6a731714ad07d351671f"
+  },
+  {
+    "path": "Assets/Scripts/Multiplayer/LobbyDtos.cs.meta",
+    "sha256": "18dcbb3dd7b6d31d2e9fc84caca6ab04caa119724d8eebc6a5afc6fcbb067e83"
+  },
+  {
+    "path": "Assets/Scripts/Multiplayer/LobbySession.cs",
+    "sha256": "561b9f40e811407be57b9a3b53e86119deb091708c997f1f0d98e2aab4370f44"
+  },
+  {
+    "path": "Assets/Scripts/Multiplayer/LobbySession.cs.meta",
+    "sha256": "261b764fae6f1d507d077f23e73e9018dab970220b2174bc2ae0eb5cdd0a86a9"
+  },
+  {
+    "path": "Assets/Scripts/Multiplayer/MainMenuController.cs",
+    "sha256": "5a03fb0a8a9d58bc33dfc98c2b0dc1b5f76df313184df9ecf587d8f9c37f9415"
+  },
+  {
+    "path": "Assets/Scripts/Multiplayer/MainMenuController.cs.meta",
+    "sha256": "9b78cdd8185c61c5cb59770a95eaa40810888317f5037ed7836b677d2af90651"
+  },
+  {
+    "path": "Assets/Scripts/Multiplayer/OnlineGameController.cs",
+    "sha256": "1ec829398805a19b8e69bd3eb8fc7bf74bac294596b41c248e798e60685361c6"
+  },
+  {
+    "path": "Assets/Scripts/Multiplayer/OnlineGameController.cs.meta",
+    "sha256": "85e7218ef9236f0d1a99ab74fd9499bb12dd79781b3fe735e0052663db5e6e7c"
+  },
+  {
+    "path": "Assets/Scripts/Systems.meta",
+    "sha256": "6e70ce59762f53edaf67bb72558d539611c722d8bcffc9d10ffb0d67f27b2895"
+  },
+  {
+    "path": "Assets/Scripts/Systems/.DS_Store",
+    "sha256": "3ed6194d6ee96649281f5511023234dc68dc3211e1136ba36d5aa4ed102d9a02"
+  },
+  {
+    "path": "Assets/Scripts/Systems/AIManager.cs",
+    "sha256": "1b16e569ca3c3c07bf3437993ecc58360e661d94d9d9bbf4476569a61df02fef"
+  },
+  {
+    "path": "Assets/Scripts/Systems/AIManager.cs.meta",
+    "sha256": "7c80a0dd1f157cf708632322c5eb5797a8ce057e90b4580a439e9efef02d4815"
+  },
+  {
+    "path": "Assets/Scripts/Systems/AbilitySystem.cs",
+    "sha256": "349ad182d627df85cfa19453ca8c73eaadc1fdd85e89c7146fef9c38d116f3fa"
+  },
+  {
+    "path": "Assets/Scripts/Systems/AbilitySystem.cs.meta",
+    "sha256": "56a3f11d64b6fd29415f1559cadf9a50dbfce959806e11d52923140df4527379"
+  },
+  {
+    "path": "Assets/Scripts/Systems/AnalyticsTracker.cs",
+    "sha256": "bda349738c49173b4e244496b585a208a5ab931d6f0ecdf1953bec1110b3aae9"
+  },
+  {
+    "path": "Assets/Scripts/Systems/AnalyticsTracker.cs.meta",
+    "sha256": "00f67f82fd934e447ccd452e3394ce6a69bca0cfbae6f02c43835d4fd5989a8c"
+  },
+  {
+    "path": "Assets/Scripts/Systems/AuctionManager.cs",
+    "sha256": "ef817e16a12577ad8b757db3903f5f6eebd23a5b62e09940ff0c017f27108391"
+  },
+  {
+    "path": "Assets/Scripts/Systems/AuctionManager.cs.meta",
+    "sha256": "05cc26855e6d2833484d795972dad93b9db2b16ed7101b24be87cf3d3b8604c5"
+  },
+  {
+    "path": "Assets/Scripts/Systems/BoardInteractionManager.cs",
+    "sha256": "0dc914bb047cc7883f03c489c1db3ffced4f0c26b874e49733bf4a41cf732042"
+  },
+  {
+    "path": "Assets/Scripts/Systems/BoardInteractionManager.cs.meta",
+    "sha256": "7a0047b9241dddad8164389564d5c34ba35e48ffb5153391f31cdac65788e3cb"
+  },
+  {
+    "path": "Assets/Scripts/Systems/BoardManager.cs",
+    "sha256": "b7ed66a6419b14d388fe7d0f727c6175cca6fec08b4aff673ab6f74ed0e166c8"
+  },
+  {
+    "path": "Assets/Scripts/Systems/BoardManager.cs.meta",
+    "sha256": "f81547b0084104d6ba8e198b457c01105993991d9fb33cadd8a98a73500ec3e5"
+  },
+  {
+    "path": "Assets/Scripts/Systems/CycleManager.cs",
+    "sha256": "6f087bbc7b861c062a75fea289b57836fa69b635b6ab0a356f66cbf31ba536d6"
+  },
+  {
+    "path": "Assets/Scripts/Systems/CycleManager.cs.meta",
+    "sha256": "214bc88cc732c7428a373c1b837f03fd84cda25a53deabd3f9598c50d1268313"
+  },
+  {
+    "path": "Assets/Scripts/Systems/DiceSystem.cs",
+    "sha256": "af0737d888640dbcf27f6c65892aa266d1a5f767093c486ca466eca3514df9c2"
+  },
+  {
+    "path": "Assets/Scripts/Systems/DiceSystem.cs.meta",
+    "sha256": "9a0efeb3dae1f06835955261884d3f2e1404a2e12a6129a6121cf0855aa7d896"
+  },
+  {
+    "path": "Assets/Scripts/Systems/FinanceSystem.cs",
+    "sha256": "577a7660717598c803f133783c43daafdc59367b735e93a510475a6ba67fc0b1"
+  },
+  {
+    "path": "Assets/Scripts/Systems/FinanceSystem.cs.meta",
+    "sha256": "c626743e4e1abc98dee79df189f54b8daf3922510cfb4d295968d944541a1b13"
+  },
+  {
+    "path": "Assets/Scripts/Systems/FinancialMarket.cs",
+    "sha256": "8538261c412822db3f944a260b8377cefb395f11f30c2ea589d3f1d832248d4c"
+  },
+  {
+    "path": "Assets/Scripts/Systems/FinancialMarket.cs.meta",
+    "sha256": "b3bab4d7de88724e51478ca718756924e7ff73fc702f4d73c4a277afde0f7025"
+  },
+  {
+    "path": "Assets/Scripts/Systems/GameBootstrapper.cs",
+    "sha256": "38d204354a8097454df79364572f608a5830da631b49fa90ce69850c86935f35"
+  },
+  {
+    "path": "Assets/Scripts/Systems/GameBootstrapper.cs.meta",
+    "sha256": "5efc4bca40c81b2be5dd9dd9850b0477036558d095dd39824517d80020ffc579"
+  },
+  {
+    "path": "Assets/Scripts/Systems/GameEventPresenter.cs",
+    "sha256": "73146708a8e15775ce9454374df8d8f7f3826b1b9cd90138a347bc13cbbe8754"
+  },
+  {
+    "path": "Assets/Scripts/Systems/GameEventPresenter.cs.meta",
+    "sha256": "6609c7aba3e45910aa6643180071981fbc3f556a24403ecdbccd1634c944505e"
+  },
+  {
+    "path": "Assets/Scripts/Systems/GameSession.cs",
+    "sha256": "a6b49dc925927e4819774eff09a82cde93a8c85784c63eea2c98430e47fc2bc2"
+  },
+  {
+    "path": "Assets/Scripts/Systems/GameSession.cs.meta",
+    "sha256": "ff9c970eabcd5d868dbfc9f32f9ac0648f2859092bc500070d4f6c7c6be5dd61"
+  },
+  {
+    "path": "Assets/Scripts/Systems/LiquidationHelper.cs",
+    "sha256": "6fba2c28de78898ee19151dd12fdea755f7ba4ad1b55f8015d29fdb94f1c2c31"
+  },
+  {
+    "path": "Assets/Scripts/Systems/LiquidationHelper.cs.meta",
+    "sha256": "39f5615907c6dabbc790af01358d9d05166c3a456a1478b18610d9ede30cbf82"
+  },
+  {
+    "path": "Assets/Scripts/Systems/MarketplaceSystem.cs",
+    "sha256": "2cf43711d46e55c7d670d46f624edc4fcdacee5db936511cc782fd88f1da1a5e"
+  },
+  {
+    "path": "Assets/Scripts/Systems/MarketplaceSystem.cs.meta",
+    "sha256": "69f151dca877df4cb001ede13b3d5112a782ee4264f87b6c453d15c8a3a28e0f"
+  },
+  {
+    "path": "Assets/Scripts/Systems/TurnManager.cs",
+    "sha256": "754eee5fa43e847a9b27a68348f30f5b954781f978a85eded28b0a5089945866"
+  },
+  {
+    "path": "Assets/Scripts/Systems/TurnManager.cs.meta",
+    "sha256": "17e0a9ca2169b5d9bc6978a0b808633761cdc6de005fd65d45d7e774063b5430"
+  },
+  {
+    "path": "Assets/Scripts/Systems/UpgradeSystem.cs",
+    "sha256": "d66edcc927c1909408cbe5ee357706d8e77609c2e755ac74e74602b38ca8f9a3"
+  },
+  {
+    "path": "Assets/Scripts/Systems/UpgradeSystem.cs.meta",
+    "sha256": "b558eadfbdd8a9108e99ce2d1e4829bd9e75c6a53ca7e6f3a09e5828b1c712e5"
+  },
+  {
+    "path": "Assets/Scripts/Systems/VentureSystem.cs",
+    "sha256": "5cd92a49afee15a5478c0e54ec71d9d87adabab8c5e540ff5fa16c258669c0f2"
+  },
+  {
+    "path": "Assets/Scripts/Systems/VentureSystem.cs.meta",
+    "sha256": "5cc12412803740633611b2b6afd2e98f00f20c9ce559745a18866a123541acd0"
+  },
+  {
+    "path": "Assets/Scripts/UI.meta",
+    "sha256": "563b928476bdd561427ccdd88a4355042bcdc989de05cce5b595b6246c06c394"
+  },
+  {
+    "path": "Assets/Scripts/UI/ActionButtonsWidget.cs",
+    "sha256": "e7ee3da37923cde7fe2f27df217b56568f26377909f55eb1fb28e41a698ccf40"
+  },
+  {
+    "path": "Assets/Scripts/UI/ActionButtonsWidget.cs.meta",
+    "sha256": "3b465ddeb95ea9b77d70fa375cdc135c29e43fd03021ef6f014f102ae5529ddb"
+  },
+  {
+    "path": "Assets/Scripts/UI/AutoPrecisionWidget.cs",
+    "sha256": "481c570ae494cb6ec1e65009cf9222e9c315abbb20da756432b4a702755766be"
+  },
+  {
+    "path": "Assets/Scripts/UI/AutoPrecisionWidget.cs.meta",
+    "sha256": "bc7299225808dde0dbea0bf0d5b13934b8ead7f375081f40edaf611b08af38df"
+  },
+  {
+    "path": "Assets/Scripts/UI/BankruptcyScreenController.cs",
+    "sha256": "a92b5896c19807a796c6d8d197976c8e721eae7cef987c4bba512bc88970caa2"
+  },
+  {
+    "path": "Assets/Scripts/UI/BankruptcyScreenController.cs.meta",
+    "sha256": "8d52d0c28ad5b77d866f706c09d4db17d5ba75fb495c356c4f190e1c94d0cbab"
+  },
+  {
+    "path": "Assets/Scripts/UI/BoardTileOverlayWidget.cs",
+    "sha256": "927e3c4eb0edf91222b297fb301afd11a421f95cec751ac84176b0eb600d6dfb"
+  },
+  {
+    "path": "Assets/Scripts/UI/BoardTileOverlayWidget.cs.meta",
+    "sha256": "3c51512a89e6ba1a15c70acbc9886577d31650b055138bea8e7386782cdad009"
+  },
+  {
+    "path": "Assets/Scripts/UI/CurrencyFormatter.cs",
+    "sha256": "f411c2e628b81ab578ef090282c8ed9e19bca0c386825b8db244a47f42eab521"
+  },
+  {
+    "path": "Assets/Scripts/UI/CurrencyFormatter.cs.meta",
+    "sha256": "1e3cf4e579afd5a583c5f7584a6005f3014e65ba246db6cfb6b98e4037bdcbc5"
+  },
+  {
+    "path": "Assets/Scripts/UI/GameEventTextFormatter.cs",
+    "sha256": "720c8fed129b46c92d81ffe015a563c1024ce59e02eb47525da9564b91a9c4ae"
+  },
+  {
+    "path": "Assets/Scripts/UI/GameEventTextFormatter.cs.meta",
+    "sha256": "1f06ab09133ab255bddc69f1a3feb60a6ebac0ab7ba606b34b7504fb8c35f3ab"
+  },
+  {
+    "path": "Assets/Scripts/UI/InspectorWidget.cs",
+    "sha256": "c3002488395c912907c3afa554efd7d8d3dc3113ecb37ea6196ad0c994b808e0"
+  },
+  {
+    "path": "Assets/Scripts/UI/InspectorWidget.cs.meta",
+    "sha256": "89f114e2e8b261dcecb6b62a4d8071926cfda81fa99d36f0376e9c0a4da1ac1a"
+  },
+  {
+    "path": "Assets/Scripts/UI/MarketplaceUI.cs",
+    "sha256": "e2bb51098d2af7ad902cbcc425e3222fc19dfdf26d4e2d335e8e103f3d125d43"
+  },
+  {
+    "path": "Assets/Scripts/UI/MarketplaceUI.cs.meta",
+    "sha256": "ea49d249d3c3b61e178df4a9610a5e97b1bf95032e560722f30fae3716e38918"
+  },
+  {
+    "path": "Assets/Scripts/UI/Marketplace_UIManager.cs",
+    "sha256": "2633797f2a161087bba3b738f4ec0b507b1a08ad60d5c40d2222580f28f3a513"
+  },
+  {
+    "path": "Assets/Scripts/UI/Marketplace_UIManager.cs.meta",
+    "sha256": "fc996c761728a76f0da3f0b5bf07e421833ee17e41804967f99832733bcb091b"
+  },
+  {
+    "path": "Assets/Scripts/UI/PulseDiceView.cs",
+    "sha256": "423c50e4dde8ec2c8f481a0037a167878b03f4956a6ecf3ede3910decb287d8d"
+  },
+  {
+    "path": "Assets/Scripts/UI/PulseDiceView.cs.meta",
+    "sha256": "0eb22c82ca68668585c31c0e5659e3d7bc209fd0a906dc220beb944b6708a89e"
+  },
+  {
+    "path": "Assets/Scripts/UI/PulseSheetMotion.cs",
+    "sha256": "a79ceae540b476b095970073bb67848d262444919fd63c65d6cf28193feae1c5"
+  },
+  {
+    "path": "Assets/Scripts/UI/PulseSheetMotion.cs.meta",
+    "sha256": "2fb237012b8da2766a8aab600670065213fc50eca0fa24ee8f1336208fe10ce3"
+  },
+  {
+    "path": "Assets/Scripts/UI/TileIconResolver.cs",
+    "sha256": "37612acc62d95b7b0cbf24131eea3875b560ceaf7cde3b9b4448dce4b472185f"
+  },
+  {
+    "path": "Assets/Scripts/UI/TileIconResolver.cs.meta",
+    "sha256": "a1578e0dffdcf1b8b2f4d690dad5607229df6d6749e064414e2abc5be56dacbf"
+  },
+  {
+    "path": "Assets/Scripts/UI/TopHUDWidget.cs",
+    "sha256": "5e18a4b3f21cfdf64500baf4b337a6b76fb61265fb5ca46a013703c53bd3e252"
+  },
+  {
+    "path": "Assets/Scripts/UI/TopHUDWidget.cs.meta",
+    "sha256": "aff48f6e22e582f11b3c4dbded110dd8586bffef5ccece9c8509dfd2a117aefa"
+  },
+  {
+    "path": "Assets/Scripts/UI/UIToolkitTransitions.cs",
+    "sha256": "f20bdcd59c719477767a052bf1beec82c5675c9f8e12374b33a95bad2a14919e"
+  },
+  {
+    "path": "Assets/Scripts/UI/UIToolkitTransitions.cs.meta",
+    "sha256": "0d46b4e4f032d7da7d27925d3b343a1d5fe0f2676197424b9ce42c87564e3a3d"
+  },
+  {
+    "path": "Assets/Scripts/UI/UIUXRuntime.cs",
+    "sha256": "e8c82679ec850b013a10414d4ad34e72db82640496a725a6c1f24f93b411cd9c"
+  },
+  {
+    "path": "Assets/Scripts/UI/UIUXRuntime.cs.meta",
+    "sha256": "dfddb2725597703a2f83c7decf94471f23df458bcc0b0bebf5b88a743eea4c8f"
+  },
+  {
+    "path": "Assets/Scripts/UI/VentureCardCatalog.cs",
+    "sha256": "3c44a50c552b6f2fb7698ba7c1128332f57a6d83ead5be13d53bed8c1f37747c"
+  },
+  {
+    "path": "Assets/Scripts/UI/VentureCardCatalog.cs.meta",
+    "sha256": "c037acf7d15122ac580ff33f8a6576577edd23b3dd77c937ed53bb21bc180d61"
+  },
+  {
+    "path": "Assets/Scripts/UI/VentureCardModalController.cs",
+    "sha256": "5954f676e95f8c08ac58f0af64d4d461bce9d7be1f6d98259e4f695a75ac0a49"
+  },
+  {
+    "path": "Assets/Scripts/UI/VentureCardModalController.cs.meta",
+    "sha256": "4c822302e2161a7c1f48650b8c45b26c1bf29e3a75bd06cfff21d7d7c6980790"
+  },
+  {
+    "path": "Assets/Scripts/UI/VictoryScreenController.cs",
+    "sha256": "57b5dfe01bb41cd64cac039b59a0e8e24d4253a83637369e162898e36fddc94e"
+  },
+  {
+    "path": "Assets/Scripts/UI/VictoryScreenController.cs.meta",
+    "sha256": "306a24b56f7b66192ccd788a2560fd6e2b53f230d4c2714ab3971a4c6771cda9"
+  },
+  {
+    "path": "Assets/Scripts/Visuals.meta",
+    "sha256": "29ad0bce00d4a90577ad50b45c147a6cc8058e9b8a2559ec4187d8b694e206d8"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BoardContactFeedback.cs",
+    "sha256": "d081792164a7c381add21064d9a2bdce5b576db85e78af3aea1d8af2869ceaa1"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BoardContactFeedback.cs.meta",
+    "sha256": "a1e7313fae1c1e28f841d3399eed043bd972601135289f7fd470124ba02f3220"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BoardDicePresenter.cs",
+    "sha256": "2d4bcec58425a002deaabeba02389efdcd2dfa6ad9144497cf55045a92de81f7"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BoardDicePresenter.cs.meta",
+    "sha256": "8c19771b445daf38ef24cc6687b46215297e9119fc6731e9febbb8acc3771294"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BoardGenerator.cs",
+    "sha256": "32b6c91d38004ab3ae7e37dca9e2a6de3d3cbb718834c1d9443c446bfecd89b9"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BoardGenerator.cs.meta",
+    "sha256": "126700201354d5e2b4643dc251c7ee3226ac4d8c17fea63005fb8bc0a5714096"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BoardSurfaceLighting.cs",
+    "sha256": "c9fd8c04737676c792d512a7c726a288682b6133fe7b9cb76c1ec7c50a7cf9fb"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/BoardSurfaceLighting.cs.meta",
+    "sha256": "e6bee1688581516bea2aecec78eef6c7dd42bfec7389f63b0a94c43706e29a8c"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/CompactPawnVisual.cs",
+    "sha256": "17cbc6b4580fec50bd4f464dcebf653bb81221e2fdcbc0fae9c0de130cfd3a38"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/CompactPawnVisual.cs.meta",
+    "sha256": "c9cd9341d313f18ccc2ad8f65581b47d830f5dcf679501510f9ea417ca71c8d3"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/PawnMovement.cs",
+    "sha256": "19c39e2f61adc54209cf94788c6a11ddfc2f8c2ae84a59cb710d8e00fd37889a"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/PawnMovement.cs.meta",
+    "sha256": "a2a2bb5765b6eb6db4fb2633509394079034c09067810160747ced989f8de0d6"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/PlayerVisualManager.cs",
+    "sha256": "f160c44e2bd00fa111e016c04c6b14bef31f96a9c7d9f5cb58dfb1fb66e6ce31"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/PlayerVisualManager.cs.meta",
+    "sha256": "939a335261db425a0a2dc4e29341c381c520e7e2a18fb243a7c1b746e1bc652d"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/TileIdentifier.cs",
+    "sha256": "7d2d1b72f747df1a20a1fb963c7f6b1d9434af296799b3f16953c8ad9c6045e2"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/TileIdentifier.cs.meta",
+    "sha256": "39ecec987a9c0266c40059202284bc164f3cfab353b9ac1b6d435cfcd0ecba4f"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/TileVisuals.cs",
+    "sha256": "49ae2f18070e3b8ca95cc528a75e65d38076d49ee42382a4fd145e171ac14109"
+  },
+  {
+    "path": "Assets/Scripts/Visuals/TileVisuals.cs.meta",
+    "sha256": "89898e56b5e5179541e51a7bf95349f1a2134bea2e5e2e0f8272594e5411f8a2"
+  },
+  {
+    "path": "Assets/Settings.meta",
+    "sha256": "f263da5fd26ef7ef7f8bbf3e1bb6c020c8aa9c744958eae89617f5b4363cd4f2"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation.meta",
+    "sha256": "c1bc23781db9b7ac0e22999d2714f528323ddb24d85f91dc6601f2454a0e94c6"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphiteAccents.mat",
+    "sha256": "384fc053fdb2ea2009099746a42761f2e4ce0db1f2e06601c1bec3398393fd9c"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphiteAccents.mat.meta",
+    "sha256": "8524ca5854249c87c4d3b59562426b21c6aabf3ce32cad1f2ac91da8070eaa73"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphiteBackground.mat",
+    "sha256": "3c1e1b5ff506a073eb8b0f0fde8a775cac47c2431163d727fcec4550d7dcec69"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphiteBackground.mat.meta",
+    "sha256": "eeeb779037a74e5cf082b72f092995f2577c152f0462580a897a3e37414afcf2"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphiteEngraving.mat",
+    "sha256": "0938324b817a4241184a0365e87dbb8d41731dd6f584628bd6cd9781e6d13912"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphiteEngraving.mat.meta",
+    "sha256": "334ff0f605e381900b7c558315fd7491cf6a0b151daee8d185a708c74086054b"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphiteFrame.mat",
+    "sha256": "ce06ae8328e31b893807c9776da43baa854ead0bf48394c0e0860402a153339b"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphiteFrame.mat.meta",
+    "sha256": "a4ffef462a770c1e6785ec67390bf32b6ba62dc9d3634f1bcf6bb8d1640ef046"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphitePost.asset",
+    "sha256": "bc5caafa9f7a7f77fe46efc57a5a16aaab06c17962dcfe097006de57503ad97c"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphitePost.asset.meta",
+    "sha256": "1ea106beaacb9c5727ca462b98f856d0def994fa75dd31394b12d849e44b48df"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphiteTheme.asset",
+    "sha256": "b57dc489686cee9af1253e188cc4b05c53ef0454692b14e5a73e450b911e67c9"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphiteTheme.asset.meta",
+    "sha256": "1eb4832f4134b184768dcc7d41f7328e02ce226fbdd8857105b49391b80664ca"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphiteTiles.mat",
+    "sha256": "b0b73ba91ba1b146095905d632054d215d05e6cb8cd08767ae7fa2fed60b208d"
+  },
+  {
+    "path": "Assets/Settings/GraphiteFoundation/GraphiteTiles.mat.meta",
+    "sha256": "155008b9aa61e8ef2fa7f88ab3525decd45baa3a124bf7f3bdc9a91f1cbe499c"
+  },
+  {
+    "path": "Assets/Settings/High_PipelineAsset.asset",
+    "sha256": "d78d1067c18de6a8f5ba5ad339f2c55fdec796bc7bf311d3e438ff1725c9f740"
+  },
+  {
+    "path": "Assets/Settings/High_PipelineAsset.asset.meta",
+    "sha256": "75bafa17194a23b31d00238819348587e435f6a55ca2f564c5d2019eea47da3b"
+  },
+  {
+    "path": "Assets/Settings/High_PipelineAsset_ForwardRenderer.asset",
+    "sha256": "cc75539f2ef535477906102a7c0668a7a937b432b86edce794865ceb7ea51b00"
+  },
+  {
+    "path": "Assets/Settings/High_PipelineAsset_ForwardRenderer.asset.meta",
+    "sha256": "3b48106bb41c7d9c69bbd9ffc7c7db898ba4dde6d0613debf9e25907580e767a"
+  },
+  {
+    "path": "Assets/Settings/Low_PipelineAsset.asset",
+    "sha256": "41246899f8aea4b37d965d3ccb3b1363154c25e7746033380baaf6dfe1cdf0ee"
+  },
+  {
+    "path": "Assets/Settings/Low_PipelineAsset.asset.meta",
+    "sha256": "4dc3b5ea38e4b93cec3a5e451cfd0706d59ab710adbcead27b7033288f5388bc"
+  },
+  {
+    "path": "Assets/Settings/Low_PipelineAsset_ForwardRenderer.asset",
+    "sha256": "759cea5f1ea08fca8eb7b23c8efead6944c9360f8bbb8a42a7a0a94124f0c56c"
+  },
+  {
+    "path": "Assets/Settings/Low_PipelineAsset_ForwardRenderer.asset.meta",
+    "sha256": "8331f0497e121d6c63770ef9e3e77dc673d5af7c05c8c1e07524b4dbc6a1710b"
+  },
+  {
+    "path": "Assets/Settings/Medium_PipelineAsset.asset",
+    "sha256": "19b1891c9308d7120fb2726c96b39d87b0d4b015d737785d4b2766c95d5ed827"
+  },
+  {
+    "path": "Assets/Settings/Medium_PipelineAsset.asset.meta",
+    "sha256": "40fa17a83408b4eedf080e6fb5730d7d187c88a9af131c7d40121e0488750bf4"
+  },
+  {
+    "path": "Assets/Settings/Medium_PipelineAsset_ForwardRenderer.asset",
+    "sha256": "2ef2f9e1782873886f7aeaf31b2203e4e35a4ba3fdfbf3204a6c55c96d82a57e"
+  },
+  {
+    "path": "Assets/Settings/Medium_PipelineAsset_ForwardRenderer.asset.meta",
+    "sha256": "f82ae384e018044a8f847767dcc0976ecf5c8d59b2d2a602c4ebf8e967a5c022"
+  },
+  {
+    "path": "Assets/Settings/PolyRisk_PostProfile.asset",
+    "sha256": "5f626a10ba9e25272fab2fd9295a8197491ee06474ba3a72afde7a9c7c76e652"
+  },
+  {
+    "path": "Assets/Settings/PolyRisk_PostProfile.asset.meta",
+    "sha256": "7442c51860042d93507a8fd584025f1ae5b52b43bea1f6893c29d3d538fd8e9b"
+  },
+  {
+    "path": "Assets/Settings/PolyRisk_Skybox.mat",
+    "sha256": "4b3bca155d47d441c8e8e505fefa3dd839b3998201931e64d339618d493746ee"
+  },
+  {
+    "path": "Assets/Settings/PolyRisk_Skybox.mat.meta",
+    "sha256": "5c5ae6418b99346f3d52ca72c8fcb7e4727ea382f8a606c147f9a0f2183d7281"
+  },
+  {
+    "path": "Assets/Settings/Ultra_PipelineAsset.asset",
+    "sha256": "4f4ac7b79c7a1d56c4f7c8b5e91dac9338052c9605dc06085303de101c63fc25"
+  },
+  {
+    "path": "Assets/Settings/Ultra_PipelineAsset.asset.meta",
+    "sha256": "1b2cf83a5f2e2263e92d4be89f369ef240f985ffd9ff8fa373e4acc1a78ab271"
+  },
+  {
+    "path": "Assets/Settings/Ultra_PipelineAsset_ForwardRenderer.asset",
+    "sha256": "6101f25a6b4c14fd6d0879a7ac0a6543af1e128ebcf7a16d4ed9926254ab1f2d"
+  },
+  {
+    "path": "Assets/Settings/Ultra_PipelineAsset_ForwardRenderer.asset.meta",
+    "sha256": "cb1c0124fc8740b5d2dd57e9938594b3de6302c004e9d10177331c6272d5c5dc"
+  },
+  {
+    "path": "Assets/Settings/Very High_PipelineAsset.asset",
+    "sha256": "1d2a25b181a957ed5b221f2392bffda9c4e31c48a98dd5292bd88dbf2c0b96e2"
+  },
+  {
+    "path": "Assets/Settings/Very High_PipelineAsset.asset.meta",
+    "sha256": "c3f2429b4fbfbc7fa8661e3954ff7d38b8eac425408d43f80719cd82706dd04e"
+  },
+  {
+    "path": "Assets/Settings/Very High_PipelineAsset_ForwardRenderer.asset",
+    "sha256": "8dd277b81d271a705589b365f2ec729f48aaf8675ffed4490f4cae6b4cd50768"
+  },
+  {
+    "path": "Assets/Settings/Very High_PipelineAsset_ForwardRenderer.asset.meta",
+    "sha256": "02882d8eef75a3b700ca5bfdb3bfb8c003d02b55c6d4f7ad14c778a1bb75db59"
+  },
+  {
+    "path": "Assets/Settings/Very Low_PipelineAsset.asset",
+    "sha256": "273f9d5216e4190982bdbf9eb8aa0f1b73ec999f8b590aade9eb51e4d43648fb"
+  },
+  {
+    "path": "Assets/Settings/Very Low_PipelineAsset.asset.meta",
+    "sha256": "b1b176a6db2f3069888160afe432d633f637b225450442a1b30c4f5d76e4e933"
+  },
+  {
+    "path": "Assets/Settings/Very Low_PipelineAsset_ForwardRenderer.asset",
+    "sha256": "e85ffcb74793d9cda2d7242984b716c3003a08de2a7f3e1b36faa0af2d1e66e6"
+  },
+  {
+    "path": "Assets/Settings/Very Low_PipelineAsset_ForwardRenderer.asset.meta",
+    "sha256": "8957378c078ca992e830fac44c039d87142cd4542dcc02deea8f85bd557e7a01"
+  },
+  {
+    "path": "Assets/Shaders.meta",
+    "sha256": "cc1400d79c843743ad913bc9d8e9bfc70b851c1f1b7297f28ba22546921839e9"
+  },
+  {
+    "path": "Assets/Shaders/GraphiteSurface.shader",
+    "sha256": "65a3185c4f5a778325f95a25d718d21ac63d4ba8c1eedec1233340d16e439be8"
+  },
+  {
+    "path": "Assets/Shaders/GraphiteSurface.shader.meta",
+    "sha256": "3136ac41d78da83813926a99f237d17dca8375f75f727f402dbda20274b04f3c"
+  },
+  {
+    "path": "Assets/Shaders/NeonState.shader",
+    "sha256": "66e830111171977cdfaf99ae59c835243f1db1d9f490ffc4d42e675d5a6c936c"
+  },
+  {
+    "path": "Assets/Shaders/NeonState.shader.meta",
+    "sha256": "9ff61dba569414785d25107e50ec56efdc0d432c3f7a9e443516a4401c3f6a6e"
+  },
+  {
+    "path": "Assets/TextMesh Pro.meta",
+    "sha256": "8529d84d190a68aeb1a16e0a90308081bd30a738dbcc63c63b2a93c53b9a11b3"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Documentation.meta",
+    "sha256": "07a8d45855ad4e331c57cd451654a5a454b001ef9677b725b856810b7d58b77b"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf",
+    "sha256": "93d6d3ca8a7d8423b01faacd00fa3921fe055fb2187873653a925e4cc1af85c0"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta",
+    "sha256": "942ef57b7129d587bdee03541cc260cf55af7564d9d2d582ea11eacd3de278ca"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Fonts.meta",
+    "sha256": "11e80153fa39b86efadb8917ecde12a0402fe0729f2c88f6f8d1999f3fb04748"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt",
+    "sha256": "37f8552e9a874ec10710dc0ede6a9adf168e6609fbd02a507f35629373b85a48"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta",
+    "sha256": "5dbec32c014c17d94674af5f1494d49b42ba00edd50397f895f088c868ccbf86"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Fonts/LiberationSans.ttf",
+    "sha256": "e5b0af421ea2bfbc1ac8d251d647268087ae82786234c57f757d1f0b90fa8b49"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta",
+    "sha256": "e2e35a015703584fb119355fa02631764d111c3e112d32519801d46bd697b596"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources.meta",
+    "sha256": "167448559db07c9857b206a0f5a0aedcd6a6dad900d618b35b0702d636573805"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Fonts & Materials.meta",
+    "sha256": "8917470a9265beb1ef55a28c6a3718eb12ec8004554499998cc345056247995f"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat",
+    "sha256": "b6b65c34e4907dd3006c2217fc8a4cef81b6da24df0a3de8e2288199eb6c5a9d"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat.meta",
+    "sha256": "ef2eee63b288d47823da38109e3e8c879f4717a82dc662ac2d5e2460dacde698"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+    "sha256": "6f33cdcd6d203e175a012087a4209442c2b6811baeebce6c875bb8c8d7c64e51"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset.meta",
+    "sha256": "d6d86504040cf6e736767fda9bdef494afb06d5304384243e2dd703eba3a4a3d"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat",
+    "sha256": "25874340976d40e9f9e8abf731b7f32e5a478541dead9288140bd60c7a3287d9"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat.meta",
+    "sha256": "a8cf0ee9888a163e892368b4660b9c62a7375e7f8afdb8ee02e5c91ca1cdb355"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+    "sha256": "c3ff50e3133d989180b187748ffc67903f1fede099a5b85b4fcbd8cb6e8be958"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset.meta",
+    "sha256": "37233890984555987cb585551bc885069f2849a9b0d1c2191af073b9376aa10f"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt",
+    "sha256": "3a73e5ffe2510756dd3c2e982fdc1218b4be82c6e21abde88070d6860e1bc8e6"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta",
+    "sha256": "d5a86d8b7db6aa3ca6f4a63750eb94e0c42a64909b47d8c6c6f2565845534490"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt",
+    "sha256": "62d3f4d5f64aaf885692d2d13a8313f6918e6e4c5aeb3990a43f614652bfd89c"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta",
+    "sha256": "6a925814d5e251a0ced6de210db2bacf2de29b4f0dc2991e85c908632e9565e4"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Sprite Assets.meta",
+    "sha256": "5605affac803b81f876f35577f075c9b7e5ea73cf812fdfcc74277bf0f40140e"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset",
+    "sha256": "155fff99f467baa93dd2d0886df466bd242cd5e3c8c60c9d43e9cdad269f7f54"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta",
+    "sha256": "097525b164260b0fb34b4e0c73b3187c693f4dfe2991f475b5b416dbf07dfbbc"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Style Sheets.meta",
+    "sha256": "1fdf0423552f46284fb97894f36adcd34d32e595aaf5c7cf1ce38a2349faaf89"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset",
+    "sha256": "01222ac025a1f5b90f3f129eee7bfac7fb05223a1edd84aecf2171ec34b10708"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta",
+    "sha256": "b832663ca09ec7af8c8e816fd91a718b2af6c21ab4f126fa818871ad53bce763"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/TMP Settings.asset",
+    "sha256": "a699a043195b71622df343e8c353312cdfdc49c4b8c7043eb14584c34451991c"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Resources/TMP Settings.asset.meta",
+    "sha256": "a65193b095ec3606789a3191751a837704cf52d4f461993ae7903024c6d43f45"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders.meta",
+    "sha256": "c109eb7e331affedb377f7051df3d4881f8529b65f9593234585713e6e94ed30"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader",
+    "sha256": "f45e54dd8d92ae0702621bfc3aaaedac7f9c2509dcb84f721c11aa257171d523"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta",
+    "sha256": "91be1d5618a7da33c878e20cf2be3e13b897d4976c70bde0cda7a67dbd502cd2"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader",
+    "sha256": "86216818723945b88960d3958e744cf7a2433eb306f4f6bfba84f1f09320a25e"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta",
+    "sha256": "7430f3e97ae1b46f34e1ca75508705bb7b944307c41dc568ea728011f327086d"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader",
+    "sha256": "05b182e4a8eefe246a83b8065a38f47524e9492128ea0c5a0f1bafc28cc59974"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta",
+    "sha256": "3d462e6f8ba57f45dc5e6000020db066c36ed5a1a24f74f749727812373c2325"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader",
+    "sha256": "5d014fd30168464ef417514fdc25d19b15ce5705dc352bc7f9703c95008f6dd0"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta",
+    "sha256": "fb8fc84b612e19c169cdf3596195b416e68d227a8987a0eaa90d8c137fb69797"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader",
+    "sha256": "699f0e1291b37a9103fcf5059f44eca257cc63f02728939046311b431e804039"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta",
+    "sha256": "bea74d576f181a8bb04b8cf02eedd0136540325ecb2824928a3aa52c75adcb13"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader",
+    "sha256": "c11c36263a42ec618251c21d1f9b5f2e9df5f0f21f10f82ab6b4388913f7aed7"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta",
+    "sha256": "3744d078f9a8b6d3c5d9bca51e43f9223544fcafaf9396e121f49ea84a0609d3"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader",
+    "sha256": "b2f29604a41934625338b7d1e6bd37fe008366f98932ac49f026dec16fd465d0"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta",
+    "sha256": "1eeca1536c7506f79d4d877b866a5fb88db8f402634e091b6d78aa9d21c9d18b"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader",
+    "sha256": "598b92ea8c4d65802c9273bec594786b8ca896013afaf8f31e2c973518f293b1"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta",
+    "sha256": "e3412891b9306b017e60cba4ae4f6d258ee8b161d986dcde9cefb3d60345514d"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+    "sha256": "970db4b1e73b8289c1dd56cff60877f426b49c9682620b2d14da6cd70b64cb9c"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta",
+    "sha256": "f2112f50c72762d4e6731391495ea11f76975d677b698e9bcfdd38275ea18f9d"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader",
+    "sha256": "79b6e02dbdf65168f2bd81e1a41966ab492bf473be8ba7abd659ab8876c781b1"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta",
+    "sha256": "95aa060f371ee503a22c0a0b018e029c0328bd82b9317feaa784432b0a787343"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader",
+    "sha256": "a1ec7f5beb83b6c2f00570246f542cc3c9d12516e69b4a2c39d58675b5b76d15"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta",
+    "sha256": "42439f5ac7491998f562e8ede73d64c3512953eb99fb1b49e833f5d9999a7660"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF.shader",
+    "sha256": "bbae422625f31bfa560ac5ce44c402fafd16dba55d496c6279ca985b652b58bf"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta",
+    "sha256": "0897fb06d170043fffa2d28783b347bbaee87a3f09f08374ca44b2c3848697d6"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_Sprite.shader",
+    "sha256": "c5d35f56a73324cf1639a4b9b0650a7412230bacaa9b0fdd4ee34f437a9b3f31"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta",
+    "sha256": "9609584c5249687f3765f0018a93dfd6445c7e35d5aee4e87556f111c8852819"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMPro.cginc",
+    "sha256": "14edb7d7b88caf2b82cae68200abe895e5b5b3474c3fffbf0e9b4b09a4e2467e"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMPro.cginc.meta",
+    "sha256": "277459ef190430ad8e4ceb2bb38a8895d11fbbe6c2b2672e818ff970cb59efed"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc",
+    "sha256": "31aa22debdf974d1dc73e90b7feadf7f2e37ad60cf6f9f9e54a6adc71cd792b5"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta",
+    "sha256": "2e16fa15ef884a60a402d8b696f8b09e5315cbb468ba223d256030c7fe2b0667"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc",
+    "sha256": "26c70831a9bdd6a56a37ec1e2358929453d66a064d10a61da49a1d4b05280e06"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta",
+    "sha256": "edace33591894d86d9a4144466fb3606e538d3341030fe22f908551755120ea5"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc",
+    "sha256": "434adb97dfcd9d5772fc11bb3a76f36af13614a664aca840ebcbf635e6e2df24"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta",
+    "sha256": "247746f3a4e39dd24d1ad99e4fae03ae8976586307948b2846529a876dcb0a63"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Sprites.meta",
+    "sha256": "41e002b97ba2235689fba502d1ee4419f50ea0095cd3632cdc50bc90ca8a94de"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt",
+    "sha256": "095907d2631301d08dbff9388fc0c278904fd86e18ba76bb0d401a790ade8f83"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta",
+    "sha256": "9fffc8ac513116b8ac394d86d81ca9ac4ec52ee92c63c114d355808384ea16fc"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Sprites/EmojiOne.json",
+    "sha256": "fa35c4a1b7cfc12e872bcba7d0d20702077a5478472b87d619b2c72bf5bb48d0"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Sprites/EmojiOne.json.meta",
+    "sha256": "ac2c551b5bc7f7d636d54ded634dfc3493e249567283b2efc06d1299f9360061"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Sprites/EmojiOne.png",
+    "sha256": "a87b965a701de3dc31d7401e542b1fc946587f912c51d7a26e46ade9f098bd1a"
+  },
+  {
+    "path": "Assets/TextMesh Pro/Sprites/EmojiOne.png.meta",
+    "sha256": "eb63c0321658b980b138ce5f675d44689b8c7144df43976931e132e7706d1e1a"
+  },
+  {
+    "path": "Assets/UI Toolkit.meta",
+    "sha256": "1afadd693a07cea56cce1b006ccf9528cf71e670e65b2cf5c88f8e33e7eb760a"
+  },
+  {
+    "path": "Assets/UI Toolkit/UnityThemes.meta",
+    "sha256": "8cec5ae3e6966a034a1aff84d3261f5623f5757f11d4ad38bd478fc7652151a7"
+  },
+  {
+    "path": "Assets/UI Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss",
+    "sha256": "341561a31fcbb6f0c53c2ca99c2c311e2904369efb470004dd3ae9701b8cb433"
+  },
+  {
+    "path": "Assets/UI Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss.meta",
+    "sha256": "979ae0fc9e6cad729b2686e27e74fde851ccfbaf18ff5d9a4420cd2b3621b7ce"
+  },
+  {
+    "path": "Assets/UI.meta",
+    "sha256": "7474a4bbfb6f169842ed9f43c3041cd981e2a896bf9c1bd83855d915d5a536ed"
+  },
+  {
+    "path": "Assets/UI/.DS_Store",
+    "sha256": "bc6775c1be8c4a5c500904941c63420b8c3aa28d939b1dedb88de9bf63134844"
+  },
+  {
+    "path": "Assets/UI/Fonts.meta",
+    "sha256": "fe21aaeacb892e5389cf3d9dc9cb83b0ffc56222de70a479cb2177b8cfaad636"
+  },
+  {
+    "path": "Assets/UI/Fonts/Inter-400.ttf",
+    "sha256": "72a6e5d274641c5be347bc5d07e4c24fd66644c106223a3444337562353a1d84"
+  },
+  {
+    "path": "Assets/UI/Fonts/Inter-400.ttf.meta",
+    "sha256": "f1e485dfc62e9fb69b0c592a244e9810bb3cb4295f7fa53d154763f996909b72"
+  },
+  {
+    "path": "Assets/UI/Fonts/Inter-500.ttf",
+    "sha256": "fc407a4ed015719c419f4b686a4c423422fdcee8444d9a26b97b1421347c7f2e"
+  },
+  {
+    "path": "Assets/UI/Fonts/Inter-500.ttf.meta",
+    "sha256": "4fb8f9b693cac8dcddacdfef71b2db7b99de25a51a0cbbfecd81c054d57cc2c5"
+  },
+  {
+    "path": "Assets/UI/Fonts/Inter-600.ttf",
+    "sha256": "2f7d923e292f7c7c03d7a1d266f13ff041a765db8a272cc9cc377735a48ed783"
+  },
+  {
+    "path": "Assets/UI/Fonts/Inter-600.ttf.meta",
+    "sha256": "3c3ac32c4134c14cb36b319676d9d7a6bcdb7197b671c9ae7d86254ca379fde8"
+  },
+  {
+    "path": "Assets/UI/Fonts/Inter-700.ttf",
+    "sha256": "fd64154c8a7f01b783ffa7deb46524faf1e30568aca34e5e88a0e00d79938c52"
+  },
+  {
+    "path": "Assets/UI/Fonts/Inter-700.ttf.meta",
+    "sha256": "410cf268d1f51add3d61c235c9d0aeed8a150a3372ab068a24f6fe7e706df0d0"
+  },
+  {
+    "path": "Assets/UI/Fonts/JetBrains Mono-400.ttf",
+    "sha256": "8e4af7e3e4fcb68cea2d130bf3e453bf8f56b2712bd11091902889d963f6e152"
+  },
+  {
+    "path": "Assets/UI/Fonts/JetBrains Mono-400.ttf.meta",
+    "sha256": "82af1544c9d63341a5c42e40ee7871de0b377090119b759de5411450fcc2dcd2"
+  },
+  {
+    "path": "Assets/UI/Fonts/Outfit-600.ttf",
+    "sha256": "07212b13e42be9828eb14cc626b3e185550d0db31d101cfb6535101101a73614"
+  },
+  {
+    "path": "Assets/UI/Fonts/Outfit-600.ttf.meta",
+    "sha256": "b9da86c3f55f987593c2798a0c8fcb1a0a3d6f73555cc2cf7c1c5d86e1321675"
+  },
+  {
+    "path": "Assets/UI/Fonts/Outfit-700 SDF.asset",
+    "sha256": "f03b247e80709f6dd63fcf8f52b35828a5efe7fe8c0cf05b57576f0cd6c350de"
+  },
+  {
+    "path": "Assets/UI/Fonts/Outfit-700 SDF.asset.meta",
+    "sha256": "834fb907faa8fc735aa47c3e48b519bc673375b18c690004aaca636bf88eb1ff"
+  },
+  {
+    "path": "Assets/UI/Fonts/Outfit-700.ttf",
+    "sha256": "cc3235ab6d698be85a2735d1fd59ba8f73b144cb763c00aaf173b68f0471a9c7"
+  },
+  {
+    "path": "Assets/UI/Fonts/Outfit-700.ttf.meta",
+    "sha256": "f0b7244ac1c03df39fe6b8ae63c22c443ab52cf614009fd23b373708ddd053fb"
+  },
+  {
+    "path": "Assets/UI/Layouts.meta",
+    "sha256": "014d15867a6a2f208869286149a022d7d53c4cec0710eab318c7117fc5e03770"
+  },
+  {
+    "path": "Assets/UI/Layouts/AuctionItem_Component.uxml",
+    "sha256": "287dfe8585647ab2685a22b6d7ec559cdbf368f1e1254da21d573644d560ae1d"
+  },
+  {
+    "path": "Assets/UI/Layouts/AuctionItem_Component.uxml.meta",
+    "sha256": "d2872387aaf97aa6d022fe18fb7a433d9729c8ded8103212e9bf0325b0e63bd4"
+  },
+  {
+    "path": "Assets/UI/Layouts/MarketplaceChoice.uxml",
+    "sha256": "35b865a932a1f3b2a8f833ac1f5595271a209a6744943ebfcc5f7ff5a24c0441"
+  },
+  {
+    "path": "Assets/UI/Layouts/MarketplaceChoice.uxml.meta",
+    "sha256": "d386c0df73fcea54ca9958cf7f6f5e24deedf00168c7404725319d89d01bf90d"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Bidder_Form.uxml",
+    "sha256": "7adb051662c5d025d3299a207a61f9c6fe2ff8217d4218c5cce8859a20984aa4"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Bidder_Form.uxml.meta",
+    "sha256": "d376b9c52395899c76032fb0952e2aee65b65771403a43bfcf860dd3d4c3daf8"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Bidder_Spectator.uxml",
+    "sha256": "177629860a0213a46463b0260b985af99dce597eb3685549867eef7df7f3cd14"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Bidder_Spectator.uxml.meta",
+    "sha256": "a0a817acee96bccc2b95a8127107c9ca60699f24da147fc537cb5e9b955f92e8"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Main.uxml",
+    "sha256": "9d7fd8f961212746a5d01c969f76a79459f100127adc341cec94de01993ad3fa"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Main.uxml.meta",
+    "sha256": "1028431a55914a752d2de1b2f988bbf8eea0ea51e6617bb22a48181b0f8062bc"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Notification.uxml",
+    "sha256": "0906add1549f702de9605d99dbca087b26271420ce5324657a3df7d381fb792d"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Notification.uxml.meta",
+    "sha256": "b9ef72648d7daccca3a04b7cf17c9ca928e178b0bd50d91e32a70d745685ca0c"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Sanctions.uxml",
+    "sha256": "e6bd7ff8952b0ca93023780be400b7216baab5f07ac8eeb2b3056269790e0626"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Sanctions.uxml.meta",
+    "sha256": "981ced83d29438d3784bba7871657fa1d809f3b96264908e46c1d4c9c0751827"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Select_Player.uxml",
+    "sha256": "8f8d62380728d30de2f51ee19bf5d52f151dc39e34c9a5d835064dcb19e9f6d8"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Select_Player.uxml.meta",
+    "sha256": "2c7d4a0ac732e75e474e4d71e1ec53040674fcd692e07bfab2da9302c999af1e"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Tender_Init.uxml",
+    "sha256": "74147b7996ee772952b0300c0d2c2a88cc147801845f11eba78567db90395cd6"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Tender_Init.uxml.meta",
+    "sha256": "a921fccf8940842a5ee9941a11e6ff3d867ae7d4cf4b08ce95c470125f28d323"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Tender_Review.uxml",
+    "sha256": "1a037b12e9fdc551c077cb707c1d4c9f924307bbd84748a11244b901456568e0"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Tender_Review.uxml.meta",
+    "sha256": "c49cb6740573f72787869b28db2c438ca9148f51a275e968f9892dbc03f20a6e"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Waiting.uxml",
+    "sha256": "1903c479db5c9f32e7eeddeaa4f4ba759772e68688ba9cf81c316614e2b84b2c"
+  },
+  {
+    "path": "Assets/UI/Layouts/Marketplace_Waiting.uxml.meta",
+    "sha256": "444ee68ed31fbaa59f47ed39bd5cc9122582e73a4a396808300121f1dd19814a"
+  },
+  {
+    "path": "Assets/UI/Layouts/TileDetail_BottomSheet.uxml",
+    "sha256": "215e2bdd59994cd662f076b7997016dc82e4e78d3ffaa0c83f71f1b2e9983639"
+  },
+  {
+    "path": "Assets/UI/Layouts/TileDetail_BottomSheet.uxml.meta",
+    "sha256": "bf167465e9d6155e36ad9828924e80fbaefbd068651db69115bc108b789e832f"
+  },
+  {
+    "path": "Assets/UI/Layouts/TopHUD.uxml",
+    "sha256": "3cb625a33f4ce6aee904518486bc0f702c5e579c45433a1238230806ae0ad2f0"
+  },
+  {
+    "path": "Assets/UI/Layouts/TopHUD.uxml.meta",
+    "sha256": "537e1f024a17b7f74db1963db7de365774187f529cec66ab111ea045c380c358"
+  },
+  {
+    "path": "Assets/UI/MainPanelSettings.asset",
+    "sha256": "ef4581a0bfe8e5bcb72aa173c4e0a0d2e50a72ea736168e3917fe2adfd483cd1"
+  },
+  {
+    "path": "Assets/UI/MainPanelSettings.asset.meta",
+    "sha256": "2826dec845186ebfa72276cd8039636d6df749612cfc19adc9483dfcca9382b4"
+  },
+  {
+    "path": "Assets/UI/Resources.meta",
+    "sha256": "c899cd74ac9008d52a6b252647d1adbda2d03b9efc7b318b1837d7debab201ee"
+  },
+  {
+    "path": "Assets/UI/Resources/BankruptcyScreen.uxml",
+    "sha256": "91d5ba35738e92f7c38b77505baff3c4feb66de849e55e3ef587337497f65fcd"
+  },
+  {
+    "path": "Assets/UI/Resources/BankruptcyScreen.uxml.meta",
+    "sha256": "6a4dba9b6af32a5182d42803b53066b4eec43e9b68c7c629c4592350edc0f3cc"
+  },
+  {
+    "path": "Assets/UI/Resources/MainMenu.uxml",
+    "sha256": "96c04a14e4e3d7d66cb4472beb97d0c6cb325c5b16e8598a07baa0915fc8a97a"
+  },
+  {
+    "path": "Assets/UI/Resources/MainMenu.uxml.meta",
+    "sha256": "0693834527d24a0881740d4c2569bee8233e66dc4a719943154b91a297d64705"
+  },
+  {
+    "path": "Assets/UI/Resources/VentureCardModal.uxml",
+    "sha256": "62070d0daf0de37f2a145be978dc36ad633c6b7fea9cdc07ce6770eb0a7422a2"
+  },
+  {
+    "path": "Assets/UI/Resources/VentureCardModal.uxml.meta",
+    "sha256": "ad33d2beebec212524e8b531a7967671b6ea6d4fc1ed202329b449b397367643"
+  },
+  {
+    "path": "Assets/UI/Resources/VictoryScreen.uxml",
+    "sha256": "a2421cf1e580994ef2bf283f97963f0303da7a4276235ec8dd8842dc129039f0"
+  },
+  {
+    "path": "Assets/UI/Resources/VictoryScreen.uxml.meta",
+    "sha256": "0cfd49f59a9c32fbb8547a4fd907f3685df4da010079082b222381655eafa3db"
+  },
+  {
+    "path": "Assets/UI/Shaders.meta",
+    "sha256": "a4940c44e89be2ca9c88324c5453838657dc142c8ab3772cea403c9e49c32f35"
+  },
+  {
+    "path": "Assets/UI/Shaders/Glassmorphism.shader",
+    "sha256": "67418ee84fec519915ef654c7a5013964271dee1034ad2d4646d65a9e3b146f5"
+  },
+  {
+    "path": "Assets/UI/Shaders/Glassmorphism.shader.meta",
+    "sha256": "fce596c290686cfa069e91c3db5dd39d1f054540ffd76005e2c386648eea7617"
+  },
+  {
+    "path": "Assets/UI/Sprites.meta",
+    "sha256": "759897f19be6048fa6cd01e06dbc480e2bc8c3f4f58445eb8d0c6ea87e74f6bd"
+  },
+  {
+    "path": "Assets/UI/Sprites/.DS_Store",
+    "sha256": "ff669ec55bffac5ce298a06d93a989ea5dde45e6e92feca9be9492c3ccf5711c"
+  },
+  {
+    "path": "Assets/UI/Sprites/Frames.meta",
+    "sha256": "b2732093db2f61160bf5f4844aa2c0d951143f189f8b21c2ff366ceb4e730a4a"
+  },
+  {
+    "path": "Assets/UI/Sprites/Frames/Frame_CardMask_20px.png",
+    "sha256": "6f331a27ce69c9f4e43f5dfa77a2ac3aae68900612a9c75fe44deef129ae369a"
+  },
+  {
+    "path": "Assets/UI/Sprites/Frames/Frame_CardMask_20px.png.meta",
+    "sha256": "03bfc1248306843171adf552475ead95868f17f0feaf76e950896b63eedd55e2"
+  },
+  {
+    "path": "Assets/UI/Sprites/Frames/Frame_GreenGlow_20px.png",
+    "sha256": "4b4c095cf78b54d66dab9cb6da11bcf32bf3377ce4df841245d2b0d0203b4c4f"
+  },
+  {
+    "path": "Assets/UI/Sprites/Frames/Frame_GreenGlow_20px.png.meta",
+    "sha256": "315cb1178102c0acc9f1353585a0fb39567f09ae7784bf319d84cbea4d3982d8"
+  },
+  {
+    "path": "Assets/UI/Sprites/Frames/Frame_PanelMask_28px.png",
+    "sha256": "840893e575ce1319501556f8c1ea0780d8054374477e1a508290d1d515420ee2"
+  },
+  {
+    "path": "Assets/UI/Sprites/Frames/Frame_PanelMask_28px.png.meta",
+    "sha256": "6b61cb201bc7dbcbd3eb7987d3bf89f04474f6fac3d28878300b1b83871f23ee"
+  },
+  {
+    "path": "Assets/UI/Sprites/Frames/Frame_PurpleGlow_20px.png",
+    "sha256": "30a434a80389c7ec2a85a155f18b53bf16b7ba9207cc394db92fa6753298ef6c"
+  },
+  {
+    "path": "Assets/UI/Sprites/Frames/Frame_PurpleGlow_20px.png.meta",
+    "sha256": "58a9644a6224d0e9b4876e11c02234adcb93c03f98ebccff0b7619b9da2224db"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons.meta",
+    "sha256": "bee89814680efda8b786d813b337fbcacf510c8f7cafa634bc31fb8a0f21362e"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_Audit_Purple.png",
+    "sha256": "2ccc99eb8da8b2dfabc0c211dd4f165834201917e84789941bdeea0c6d4da0ae"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_Audit_Purple.png.meta",
+    "sha256": "6f1fd2a13134bc8d487a8f3a5bac760c4a86512b236f211332dfa6666e001497"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_ChartAuction_Green.png",
+    "sha256": "45b468a2c01cd5a975597e5665a10c6f380c4a962bf40cb9cb477a8c0859a3ed"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_ChartAuction_Green.png.meta",
+    "sha256": "1cb58e0d48bbef189c072db4d3973f99c83bd58e68422a654e82405068fc6f13"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_Embargo_Purple.png",
+    "sha256": "7a645e3e2223d3a1910cca234ef8934890e27aca53907eca4145d21c1c7de863"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_Embargo_Purple.png.meta",
+    "sha256": "56967d75f93dc9f277989f59b1419a6969713fc3812dfbe3d4da15031b4d70d4"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_PropertyBuilding_Purple.png",
+    "sha256": "34bd135ba062964d0a07b721bddd77962ebc70170df8f8af134aead7a7c605c3"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_PropertyBuilding_Purple.png.meta",
+    "sha256": "f5c26f22f8db5a4daf2f63803e9a9fdb2e52c864bfdbe5aa2e8ea4497bf2ee51"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_Sabotage_Purple.png",
+    "sha256": "d6724641f200075a3bb0ad962760afce3a23bd6020eb97bb3f0b9652b14ecd69"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_Sabotage_Purple.png.meta",
+    "sha256": "7fee85c991970c5aba55f244ba1fb4b28e33d69ddc76d356b572044c165d6483"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_Strike_Purple.png",
+    "sha256": "763b4264d7dc75f93bcc2ac386b15b9aa4bf64a0a9b2af906aad709c3a5a15af"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_Strike_Purple.png.meta",
+    "sha256": "a62cfb222c87fa939ff8ee313c1ba7baf8c5f845d99bba6a0b4a67652c145caa"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_WrenchSanctions_Purple.png",
+    "sha256": "85c53c668d29d775dd642e69d7545e8b6451eff53d8b1b08b0ee932332fc1c7e"
+  },
+  {
+    "path": "Assets/UI/Sprites/Icons/Icon_WrenchSanctions_Purple.png.meta",
+    "sha256": "de0b75f7ae82fdffeecf6c1867c006c87790c8cb41688ce099bd3728a732ab9e"
+  },
+  {
+    "path": "Assets/UI/Styles.meta",
+    "sha256": "131f8515cb51d40652f01d9f895ce5bec8f01ddfb588eb90351beb566f0fe33e"
+  },
+  {
+    "path": "Assets/UI/Styles/Theme.uss",
+    "sha256": "86ef38011dd6b7fe79bd614f058b63a38d995fae2c6abc8fa84c5f840d817023"
+  },
+  {
+    "path": "Assets/UI/Styles/Theme.uss.meta",
+    "sha256": "07ef4fc56398be6d442f3f4cde2f888127a2488883003570d69c9f9639600f7f"
+  },
+  {
+    "path": "Assets/UniversalRenderPipelineGlobalSettings.asset",
+    "sha256": "bdac5e6c90cf14fc41a2ee0152632b26464873a2c46926eff322ba060f4dd5c5"
+  },
+  {
+    "path": "Assets/UniversalRenderPipelineGlobalSettings.asset.meta",
+    "sha256": "cb6b31663a0cee404fcd519e91a263736e0b904a9397deb600c8817d75a38ad4"
+  },
+  {
+    "path": "Assets/WebGLTemplates.meta",
+    "sha256": "b77cfde0243a3226b658035a6b4eaa7c5e39a9e77d8f152eacb0c4761483ccec"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive.meta",
+    "sha256": "6738c796ed0b8ab51081d149e6ba1049a5ff52274cc1b456bd8e740a863b5d5f"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData.meta",
+    "sha256": "b164648294d387dc16ea15fd3faaff3394ac435929c717656f1fa64130dc9498"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/MemoryProfiler.png",
+    "sha256": "0ce87be20d0c24ab6cb73b57de2004da261cc2a641e69319c6ae3fe11fc85483"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/MemoryProfiler.png.meta",
+    "sha256": "e7405da92226a6ced1df66eec75367244578d5f5e327ce6bfc8cd0bb3830cf2f"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/favicon.ico",
+    "sha256": "9c13beb90ee8f70580d52a21d5233970d1c89e71e4a34a462c22610941c3c77f"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/favicon.ico.meta",
+    "sha256": "df2b117276d8e84ee79e5e60eb55181f2fdd719be05a67ff720378f4d793ac1e"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/fullscreen-button.png",
+    "sha256": "21221581673a54b8139d408d4a3f8d2b879e86827d4b6fc53b995ff7a99ee3e9"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/fullscreen-button.png.meta",
+    "sha256": "32a3cc5d5b07ab55549c6def184594e187681ca0001062860a5cc522c2624319"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/progress-bar-empty-dark.png",
+    "sha256": "bbee7131afe8a3365906240d89184dc86234c119467f390bc4bc6802328fdb4d"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/progress-bar-empty-dark.png.meta",
+    "sha256": "65c6c21c3bc4430e9d84986d30c0ce4b018241e938153fa597fea4d46918689d"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/progress-bar-empty-light.png",
+    "sha256": "143696c060ad43d6c30f19ff5f49000927a139a2a1e4c9f45fafaa2b90d7d2be"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/progress-bar-empty-light.png.meta",
+    "sha256": "aa270a387d17483628eecac21e1718dd8c167b600da7a0141dbd522ec76fc008"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/progress-bar-full-dark.png",
+    "sha256": "3306a6244dcb3926fca38a28e3ced589df8ff1beed955eb17c0bbf01c918bc62"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/progress-bar-full-dark.png.meta",
+    "sha256": "c47b15e216ecff2690ac621c1430c864aaa91dffe5d5f177c41e4f16a9e61b15"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/progress-bar-full-light.png",
+    "sha256": "12395ea785480c5cdf12fade6e6cbf49666d5bb1cef7240c113dbcba6bdc5c87"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/progress-bar-full-light.png.meta",
+    "sha256": "bb14227c87c192b5770ad909d352ce8419985d35b1f3a9571db5f48974220c41"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/style.css",
+    "sha256": "1994528e1237725967ba271e14d3927c0b43b7ec7093b0e1a1731f0713630bf1"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/style.css.meta",
+    "sha256": "7242cb05f42c2366ab67ab5647b4af4f8af66f522fb202c3edf46d63e83ad038"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/unity-logo-dark.png",
+    "sha256": "c1b72d26c096487dabc948b54bc203f8dac7ed4e3f5733918798e858acb4b159"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/unity-logo-dark.png.meta",
+    "sha256": "128ff0e116df107afc63708281657983dbad3f90872d9076c54f1db4e30bd8e3"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/unity-logo-light.png",
+    "sha256": "002990aea0d946833cadc1519d5b7e50a4570bd537a0517dd79a59d3eec84da7"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/unity-logo-light.png.meta",
+    "sha256": "ee113693ec7391a6756dcbfc94b577b0b17bfeb4f0890b2691b96561221f7feb"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/webgl-logo.png",
+    "sha256": "b30c3af2a4538c6edf5f2411953760641dfa257f2a4cc5b88d671aa243b1f12f"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/webgl-logo.png.meta",
+    "sha256": "4029d5240e1911dfe94b1ba8cbae6d595504f65cec27a77078f23e7003ad8c4b"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/webmemd-icon.png",
+    "sha256": "c56f5494640cedda273aad38d58e6ab9da625d5b3f4d875c0ff92c6192a569c2"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/TemplateData/webmemd-icon.png.meta",
+    "sha256": "5f50240c0d737f0ca12aeb37647d4ef75efa0d7dedf24a0e487f34c33682588d"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/index.html",
+    "sha256": "19a5f7b564ac87a7d058938e3807065487d3e855c3b694c7912b20ce929655f5"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/index.html.meta",
+    "sha256": "9f9f05d8cc7425a2f0eee96e855d95089d352cf2e915f894196dc530b8fe4316"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/thumbnail.png",
+    "sha256": "e5b442bd5fe5283a1a0283408fe87df270e58d7b52171e1ffb7042350b96eaf0"
+  },
+  {
+    "path": "Assets/WebGLTemplates/PolyRiskResponsive/thumbnail.png.meta",
+    "sha256": "74e0a0a0d4004e91af9562e941fe577813f8dabb874c62482cb63ee6f1e22f8c"
+  },
+  {
+    "path": "Packages/manifest.json",
+    "sha256": "78c1ef63d1959fc50cbfa15d7d87d817f1b97eae2abca889ad39e534e1ad2ed4"
+  },
+  {
+    "path": "Packages/packages-lock.json",
+    "sha256": "6aa7eb0b7f1fd0d04058b86df33db3ba257f775355b1b1b488e3661c92a61399"
+  },
+  {
+    "path": "ProjectSettings/AudioManager.asset",
+    "sha256": "f2ed914f70919b6434c647bd820850be731b408f0f0c31e3bf7f98c8cafb617f"
+  },
+  {
+    "path": "ProjectSettings/ClusterInputManager.asset",
+    "sha256": "40e65dd214bf254955d2c8829ca8ce2130fd3510485560ce012e9a1ddd93e623"
+  },
+  {
+    "path": "ProjectSettings/DynamicsManager.asset",
+    "sha256": "80ba5565beefddabba07863f19983c62409753fb36bff400fe36cf9a7db94690"
+  },
+  {
+    "path": "ProjectSettings/EditorBuildSettings.asset",
+    "sha256": "1942c088ddfeeef348fdf12390e2a2d6da51056e197458d67969d44e7b2cbbd3"
+  },
+  {
+    "path": "ProjectSettings/EditorSettings.asset",
+    "sha256": "705e5dde8b4ceb8147971b0c8f3781ebbe566a12b8e280379ee24f2bd9ad9474"
+  },
+  {
+    "path": "ProjectSettings/GraphicsSettings.asset",
+    "sha256": "d68fbfb50c4c258934b2d73f85f85e0c2a94c9bde5e806123fef98fe8625491c"
+  },
+  {
+    "path": "ProjectSettings/InputManager.asset",
+    "sha256": "60c83ae48e29a782141f99032eb38e803d18475124ff5224fbd1fd81b233f051"
+  },
+  {
+    "path": "ProjectSettings/McpUnitySettings.json",
+    "sha256": "b14be658d168655c229aa3adc72623e604200d856461adf06f8d10812a324ab0"
+  },
+  {
+    "path": "ProjectSettings/MemorySettings.asset",
+    "sha256": "1e8379a461b10ae09f3f696911088c16875d63e87ed5f2d95df9e1892703f9fd"
+  },
+  {
+    "path": "ProjectSettings/NavMeshAreas.asset",
+    "sha256": "80106cfa7e6181a1928b142c075f3e510d527441e3d79bc83590e4ac91e7cd66"
+  },
+  {
+    "path": "ProjectSettings/PackageManagerSettings.asset",
+    "sha256": "9c4d407e7f474c73f87c22bf85581146b6389c9554aebb8334e84c8aab9d0b00"
+  },
+  {
+    "path": "ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json",
+    "sha256": "a40f81b0dcc795e422f5ca0881fe7dad4e26cb8fdb33244a70f110835c1a8d44"
+  },
+  {
+    "path": "ProjectSettings/Physics2DSettings.asset",
+    "sha256": "d57a0fe55659c33879e8b70bc01c5ea9cdf082069dab649905c6c5138531e6eb"
+  },
+  {
+    "path": "ProjectSettings/PresetManager.asset",
+    "sha256": "29c125923fe6e29f90190d4fce1c82d660e7051546e2c9d02908d18c9cf2436c"
+  },
+  {
+    "path": "ProjectSettings/ProjectSettings.asset",
+    "sha256": "ef253fce1574498b6014e73fa7e5e8ea19f5e848076ad34fc14e30c6936665bd"
+  },
+  {
+    "path": "ProjectSettings/ProjectVersion.txt",
+    "sha256": "b51164d22c4d2716ba8aee7f0b59d6b7dd0efa8552fd1db2a8c3b123fae3a1ec"
+  },
+  {
+    "path": "ProjectSettings/QualitySettings.asset",
+    "sha256": "4de0ceb8509f8658ceca82e046daf17b2bee362e3a51e72bacf06f522c854e5e"
+  },
+  {
+    "path": "ProjectSettings/SceneTemplateSettings.json",
+    "sha256": "5baf593374ad67246277a435d8d0ded7167696eef6e05d2d245670e490625d8c"
+  },
+  {
+    "path": "ProjectSettings/ShaderGraphSettings.asset",
+    "sha256": "733eb0b08f2d9e57a51cef99c450140b18ddd101065cad1b9cde9330899ed8c7"
+  },
+  {
+    "path": "ProjectSettings/TagManager.asset",
+    "sha256": "8e18b1c820e9c09e16bbd1f1b7842e9fb3b0158a0921b0964e0b8fa12c6e2c01"
+  },
+  {
+    "path": "ProjectSettings/TimeManager.asset",
+    "sha256": "1a83e54adbbda7c9f4851103a0c6ab7f6448a3343d4ea5b7620452fa08416ecd"
+  },
+  {
+    "path": "ProjectSettings/TimelineSettings.asset",
+    "sha256": "aa31f1f85dd0705af72e9a02b1e35c42c34c9c39d512660e51444de0ca2117a3"
+  },
+  {
+    "path": "ProjectSettings/URPProjectSettings.asset",
+    "sha256": "3e9d9f824875297ef6b9315fa7a3ac7ec1b047042395404a23c368fc971a8f3e"
+  },
+  {
+    "path": "ProjectSettings/UnityConnectSettings.asset",
+    "sha256": "d6034acbef6c9e3179866486c31eab81fcbe5e7ed350ce71e0fa2b1449b77109"
+  },
+  {
+    "path": "ProjectSettings/VFXManager.asset",
+    "sha256": "f066c6483919961332415ee64204f74fe52f38c02e82892eb02b7a5b2e381f0e"
+  },
+  {
+    "path": "ProjectSettings/VersionControlSettings.asset",
+    "sha256": "e7bda45bf7a394745fee1316e6c71fa676004d591ad1f3aa247fd3e4ceb86071"
+  },
+  {
+    "path": "ProjectSettings/XRSettings.asset",
+    "sha256": "edd2beb4a2e388312b4b7da241aa51070434005d82c59363f1237dd2e567585f"
+  },
+  {
+    "path": "Server/Deployment/Dockerfile",
+    "sha256": "0965c4e8ef1bab98e70c5ca8ed75a88b8f413bf836d763ea73fa2daa6d6bc81d"
+  },
+  {
+    "path": "Server/Deployment/README.md",
+    "sha256": "230a4e0ebe013a20156ad137156a37ad5aeb5bb82a2330ad88ef6ac8767a2c3b"
+  },
+  {
+    "path": "Server/Deployment/entrypoint.sh",
+    "sha256": "83243335ab8ba01be4efd1fc8bd26b37acc14c9e96b49af5a00eefcd104b3ddf"
+  },
+  {
+    "path": "Server/Deployment/prepare_release.py",
+    "sha256": "ba4a2d7825f51891cb09c35295c082f1ff04ff3d56782cbd5e0d703d0b6fd456"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/LobbyPersistence.cs",
+    "sha256": "dfada8027f2ea7b1fc2a498eb37af98870986b316f60f67ae2a078d30e7d89f9"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/PolyRisk.LobbyServer.csproj",
+    "sha256": "7c8dbff9196245188b63132959ebb1348c904f95d6b8e627e08ef2314bf6bcec"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/Program.cs",
+    "sha256": "145cb271e5c8e0e6b3f7444daabcb5c8f7fd4c200fa334e9240cccaa049a2011"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/Properties/launchSettings.json",
+    "sha256": "07cbc2d5fcb116a480537c03a2e429a47d81d9b94b606e21969bac9afdd31cec"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/README.md",
+    "sha256": "e8deeaf85dae95e5b6d5e6abc5a5647522c64172ffbce1468638202c8cf944a8"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/WebGLHosting.cs",
+    "sha256": "d9ce6d9e634f31c5d5b47b3fb051fd06e3d63a4a71d797e57fd86c1d254b2d9c"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/appsettings.Development.json",
+    "sha256": "817db0bf2ecca78364c41dbaf7949bf2504cf47a1c3d0d54f3be8178fefc030b"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/appsettings.json",
+    "sha256": "54c79fa2267ff0adb1669b7e0b11ddd2170bdd376b13a80ed55a67e51f52b9e5"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/persistence_test.py",
+    "sha256": "5099d5949daa14a8cbce44f968cfaac99877edd45adb2c8a0cb9e638272aa986"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/polling_budget_test.py",
+    "sha256": "0f7171cab21963638f9a65720cea6fc22a601df59b499e0f66fadd6c29cb746c"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/six_player_reconnect_test.py",
+    "sha256": "cbe46617ccee0b1557ce9e0470d5b4f32b121f3d251a477f5f760a945d096050"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/smoke_test.py",
+    "sha256": "8b21ddf3e0df2506a64abedc6b0f33609ec02ac5dc2130d1fade8e4cf1918919"
+  },
+  {
+    "path": "Server/PolyRisk.LobbyServer/webgl_hosting_test.py",
+    "sha256": "58b888a85d71852f542f349ab12b092120fa152ee9d58b0a3b5c0b30565f5743"
+  },
+  {
+    "path": "Server/README_WebGL_validation.md",
+    "sha256": "5e8fd4ce34cc848117dc6c12ca5c90e30d9865dd607ea87489fac7642c39da53"
+  },
+  {
+    "path": "Server/capture_game_state.py",
+    "sha256": "2ea87b3d8c33fdad138c7ed7e01f96a29f84868cee34a61856c9fe6a0e6cae82"
+  },
+  {
+    "path": "Server/prepare_qa_started_lobby.py",
+    "sha256": "9209694a2062e1ccce712ef66d5c8d523da164a96f39d31609fa058c0255f78a"
+  },
+  {
+    "path": "Server/qa_api_proxy.py",
+    "sha256": "7e1cdc659a472d207a0b92fe41ccdb7d09327fdc9016bf878782c7f2106cd96b"
+  },
+  {
+    "path": "Server/qa_fixture.py",
+    "sha256": "1726a16dd398f567f294dc47d3fa1e76cedc1c30f164b75d492767c116fa5f74"
+  },
+  {
+    "path": "Server/serve_webgl.py",
+    "sha256": "7131508a54734ac6c7dc9abd2a471032381ec0ca976970199d278a4209087157"
+  }
+]

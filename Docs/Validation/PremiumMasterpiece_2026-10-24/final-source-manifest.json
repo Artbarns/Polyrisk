@@ -1,0 +1,62 @@
+{
+  "baseline": "9242725",
+  "files": [
+    {
+      "path": "Assets/Scripts/Board/BoardVisualTheme.cs",
+      "sha256": "49c87b0caf251898fc40ce108e2091bf588994e5cecf6e1df78d1f1ce787064f"
+    },
+    {
+      "path": "Assets/Scripts/UI/BoardTileOverlayWidget.cs",
+      "sha256": "4164befa8197d86dbdb75e75f8faeba299e21deeb2f339ad86905b895c32a847"
+    },
+    {
+      "path": "Assets/Scripts/Visuals/BoardContactFeedback.cs",
+      "sha256": "301aa9ff27de8c129dfd0626ebeac2449cc0a871e62a00220ade5edc5037ee23"
+    },
+    {
+      "path": "Assets/Scripts/Visuals/BoardSurfaceLighting.cs",
+      "sha256": "5133f1fa47c017b14c906a546058a9a39e24858da6227216d05b714428343787"
+    },
+    {
+      "path": "Assets/Scripts/Visuals/CompactPawnVisual.cs",
+      "sha256": "772d3f4d72119b87e6ffb0106cde1065115b0e336d8924aee4d50d95f36302b3"
+    },
+    {
+      "path": "Assets/Settings/GraphiteFoundation/GraphiteTheme.asset",
+      "sha256": "4370b9645f1bfe2edc1182ee648716e459c5ada24e49ac47d1168098a0c8492a"
+    },
+    {
+      "path": "Assets/Shaders/GraphiteSurface.shader",
+      "sha256": "9516e82e816ead4173d1d82cb48c8868a95d1a3396224dc8e83107ed207ca906"
+    },
+    {
+      "path": "Assets/Shaders/NeonState.shader",
+      "sha256": "a693a6cfbff53c78563c85028fbac1588ef331511242e86ab105d19f5c52c82a"
+    },
+    {
+      "path": "Assets/Scripts/Debug/ArtCalibrationDriver.cs",
+      "sha256": "35f93ed844747f5859616d72a442246ad53cbe79ed458cb8254eb3a946b66720"
+    },
+    {
+      "path": "Assets/Scripts/Debug/ArtCalibrationDriver.cs.meta",
+      "sha256": "e0c3dac3e525c6c14ddcfb8dcc4a123ec144d849360c4b4acc5d1b8cafceb4a0"
+    },
+    {
+      "path": "Assets/Scripts/Editor/ArtCalibrationValidation.cs",
+      "sha256": "ea7056d008d466109c0371ff3402fd8d4d2a147f5e1539e9ae55bdf2655c0630"
+    },
+    {
+      "path": "Assets/Scripts/Editor/ArtCalibrationValidation.cs.meta",
+      "sha256": "b9a5647a53d22bc0257211334cd16fd1f02b4c8e59516097674bc0c91d5554d4"
+    },
+    {
+      "path": "Assets/Scripts/Editor/ArtCalibrationWindow.cs",
+      "sha256": "a5c9cd9ba40955e0200605e5f8dbb2b35f93b97b12a480bff205c1e8ac898c50"
+    },
+    {
+      "path": "Assets/Scripts/Editor/ArtCalibrationWindow.cs.meta",
+      "sha256": "b2649082585352542959aca63ffab55e7f551bcba0d5ece802c1f77b376d4a2a"
+    }
+  ],
+  "note": "Same game source and settings as the successful final Release. Documentation/preview helpers are separate."
+}

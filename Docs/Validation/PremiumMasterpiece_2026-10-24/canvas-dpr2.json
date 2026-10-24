@@ -1,0 +1,25 @@
+{
+  "backing": [
+    860,
+    1660
+  ],
+  "css": {
+    "bottom": 830,
+    "height": 830,
+    "left": 0,
+    "right": 430,
+    "top": 0,
+    "width": 430,
+    "x": 0,
+    "y": 0
+  },
+  "deviceDpr": 1,
+  "metadata": {
+    "backingHeight": "1660",
+    "backingWidth": "860",
+    "configuredDpr": "2",
+    "cssHeight": "830",
+    "cssWidth": "430",
+    "deviceDpr": "1"
+  }
+}

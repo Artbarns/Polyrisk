@@ -1,0 +1,16 @@
+{
+  "source": "final-long-a.webm",
+  "mp4": "final-long-a.mp4",
+  "seconds": 5.62,
+  "endTrimSeconds": 5.6213,
+  "commandOffsetSeconds": 0.4153,
+  "fixtureRuntimeSeconds": 5.2860107421875,
+  "decodePass": true,
+  "audio": {
+    "samples": 540672,
+    "peak16bit": 1770,
+    "clippedSamples": 0
+  },
+  "retimed": false,
+  "note": "Real-time capture. QA clips only omit the final pose restoration. Natural clip is uncut."
+}

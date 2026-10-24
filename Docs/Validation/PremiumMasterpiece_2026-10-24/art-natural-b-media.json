@@ -1,0 +1,13 @@
+{
+  "source": "art-natural-b.webm",
+  "mp4": "art-natural-b.mp4",
+  "seconds": 12.0,
+  "decodePass": true,
+  "audio": {
+    "samples": 1153120,
+    "peak16bit": 1861,
+    "clippedSamples": 0
+  },
+  "retimed": false,
+  "encode": "H264/AAC, VFR preserved, faststart"
+}

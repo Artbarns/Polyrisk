@@ -1,0 +1,28 @@
+"""Development-only calibration controls and real WebAudio/canvas recorder."""
+from pathlib import Path
+import re
+r=Path(__file__).resolve().parents[3]
+b=r/'Builds/PremiumMasterpieceQA'
+s=(b/'index.html').read_text()
+audio='''<script>
+const taps=new WeakMap(),connect=AudioNode.prototype.connect;
+AudioNode.prototype.connect=function(destination,...args){const result=connect.call(this,destination,...args);if(destination===this.context.destination){let tap=taps.get(this.context);if(!tap){tap=this.context.createMediaStreamDestination();taps.set(this.context,tap);window.artTap=tap;}connect.call(this,tap);}return result;};
+</script>'''
+s=s.replace('</head>',audio+'</head>').replace('.then((unityInstance) => {','.then((unityInstance) => { window.artUnity=unityInstance; document.getElementById("ready").textContent="Unity ready";')
+methods={'A baseline':'Baseline','B proposition':'NewProposal','0 Neutre':'StageNeutral','1 Architecture':'StageArchitecture','2 Sources':'StageSources','3 Réponse':'StageResponse','4 Optique':'StageOptics','État':'Describe','Invariants':'RunChecks','Mesurer6s':'Measure','Restaurer':'RestoreScene','Inactive':'FixtureInactive','Colorée':'FixtureOwned','Sélection':'FixtureSelected','Contact':'FixtureContact','Arrivée':'FixtureArrival','Pion repos':'FixturePawnIdle','Pion actif':'FixturePawnActive','Métal':'FixtureMetal','Reflet':'FixtureReflection','Contact coin':'FixtureCornerContact','Arrivée coin':'FixtureCornerArrival','Court':'MoveShort','Long':'MoveLong','Coin':'MoveCorner'}
+buttons=''.join(f'<button data-method="{v}">{k}</button>' for k,v in methods.items())
+controls='''<div id="art-tools" style="position:fixed;z-index:9999;top:138px;left:8px;max-width:414px;background:#101821;color:#dce5ed;padding:6px;font:11px system-ui;border:1px solid #526270"><output id="ready">Loading</output> <button id="hide">Masquer (H)</button>'''+buttons+'''<button id="low">Low</button><button id="medium">Medium</button><button id="camera-checks">Caméra QA</button><button id="envelope">Enveloppe QA</button><br><label>Clip<input id="clip" value="art-short-b" style="width:130px"></label><label>secondes<input id="duration" type="number" value="12" min="1" max="35" style="width:40px"></label><button id="arm">Armer son</button><button id="record">Record</button><button id="stop" disabled>Stop</button><output id="record-status"></output></div><script>
+const tools=document.getElementById('art-tools');for(const button of tools.querySelectorAll('[data-method]'))button.onclick=()=>{const status=document.getElementById('record-status');status.dataset.command=button.dataset.method;status.dataset.commandMs=String(performance.now());window.artUnity.SendMessage('[QA] ArtCalibration',button.dataset.method);};
+document.getElementById('hide').onclick=()=>tools.style.visibility='hidden';document.addEventListener('keydown',e=>{if(e.key.toLowerCase()==='h')tools.style.visibility='visible';});
+for(const [id,method] of [['low','Low'],['medium','Medium']])document.getElementById(id).onclick=()=>window.artUnity.SendMessage('[QA] Graphite',method);
+document.getElementById('camera-checks').onclick=()=>window.artUnity.SendMessage('[QA] CloseStrategic','RunAll');document.getElementById('envelope').onclick=()=>window.artUnity.SendMessage('[QA] Perceptual','RunEnvelope');document.getElementById('arm').onclick=()=>window.artUnity.SendMessage('[QA] Monolith','ArmAudio');
+let recorder,clock,gain,timer;const status=document.getElementById('record-status');
+document.getElementById('record').onclick=()=>{const name=document.getElementById('clip').value,stream=document.getElementById('unity-canvas').captureStream(30);if(window.artTap){const ctx=window.artTap.context;ctx.resume();clock=ctx.createOscillator();gain=ctx.createGain();gain.gain.value=0;clock.connect(gain);gain.connect(window.artTap);clock.start();window.artTap.stream.getAudioTracks().forEach(t=>stream.addTrack(t));}let chunks=[];const mime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'].find(m=>MediaRecorder.isTypeSupported(m));recorder=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:5000000});recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};recorder.onstop=async()=>{const response=await fetch('/__video?name='+encodeURIComponent(name)+'.webm',{method:'POST',body:new Blob(chunks,{type:mime})});status.textContent=response.ok?'Saved '+name:'Save failed';};recorder.start(300);status.dataset.startedMs=String(performance.now());window.artUnity.SendMessage('[QA] ArtCalibration','CaptureMarker');status.textContent='Recording audioTracks='+stream.getAudioTracks().length;document.getElementById('record').disabled=true;document.getElementById('stop').disabled=false;timer=setTimeout(()=>{if(recorder.state==='recording')document.getElementById('stop').click();},Math.min(35,Math.max(1,Number(document.getElementById('duration').value)))*1000);};
+document.getElementById('stop').onclick=()=>{clearTimeout(timer);window.artUnity.SendMessage('[QA] ArtCalibration','EndCapture');recorder.stop();if(clock){clock.stop();clock.disconnect();gain.disconnect();clock=null;}document.getElementById('record').disabled=false;document.getElementById('stop').disabled=true;status.textContent='Saving';};
+</script>'''
+s=s.replace('</body>',controls+'</body>');(b/'capture.html').write_text(s)
+# Explicit QA-only framebuffer test; actual device DPR must still be reported.
+s2,count=re.subn(r'config\.devicePixelRatio = Math\.max\(1, Math\.min\([\s\S]*?\)\);','config.devicePixelRatio = 2;',s,count=1)
+assert count==1
+(b/'capture-dpr2.html').write_text(s2)
+print('Development calibration pages created; never include them in release bundle.')

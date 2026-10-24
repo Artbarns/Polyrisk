@@ -1,0 +1,16 @@
+{
+  "source": "final-live-turns-b.webm",
+  "mp4": "final-live-turns-b.mp4",
+  "seconds": 25.02,
+  "endTrimSeconds": null,
+  "commandOffsetSeconds": null,
+  "fixtureRuntimeSeconds": null,
+  "decodePass": true,
+  "audio": {
+    "samples": 2402496,
+    "peak16bit": 1906,
+    "clippedSamples": 0
+  },
+  "retimed": false,
+  "note": "Real-time capture. QA clips only omit the final pose restoration. Natural clip is uncut."
+}

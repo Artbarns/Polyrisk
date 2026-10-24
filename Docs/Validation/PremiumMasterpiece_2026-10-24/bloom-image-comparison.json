@@ -1,0 +1,13 @@
+{
+  "comparison": "B stage3 bloom0 versus B stage4 bloom.045, same fixed scene, before removing optional bloom",
+  "region": [
+    0,
+    145,
+    430,
+    445
+  ],
+  "meanAbsoluteChannelDelta8bit": 0.0,
+  "pixelsWithAnyChannelDeltaAtLeast5": 0,
+  "totalPixels": 191350,
+  "note": "Numeric pixel comparison is not artistic acceptance."
+}

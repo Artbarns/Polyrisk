@@ -1,0 +1,74 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "file": "AUDIT.md",
+      "status": 200
+    },
+    {
+      "file": "CALIBRATION.md",
+      "status": 200
+    },
+    {
+      "file": "PARAMETERS.md",
+      "status": 200
+    },
+    {
+      "file": "README.md",
+      "status": 200
+    },
+    {
+      "file": "final-cockpit-expanded-b.png",
+      "status": 200
+    },
+    {
+      "file": "final-live-turns-b.mp4",
+      "status": 200
+    },
+    {
+      "file": "final-long-a.mp4",
+      "status": 200
+    },
+    {
+      "file": "final-long-b.mp4",
+      "status": 200
+    },
+    {
+      "file": "final-native430-a.png",
+      "status": 200
+    },
+    {
+      "file": "final-native430-b.png",
+      "status": 200
+    },
+    {
+      "file": "final-owned-b.png",
+      "status": 200
+    },
+    {
+      "file": "final-short-b.mp4",
+      "status": 200
+    },
+    {
+      "file": "release-desktop.png",
+      "status": 200
+    },
+    {
+      "file": "release-portrait.png",
+      "status": 200
+    },
+    {
+      "file": "reviewed-final-inactive-a.png",
+      "status": 200
+    },
+    {
+      "file": "reviewed-final-inactive-b.png",
+      "status": 200
+    },
+    {
+      "file": "final-live-turns-b.mp4",
+      "range": true,
+      "status": 206
+    }
+  ]
+}

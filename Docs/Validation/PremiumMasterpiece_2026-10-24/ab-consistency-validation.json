@@ -1,0 +1,186 @@
+{
+  "pairs": [
+    {
+      "fixture": "inactive graphite",
+      "baselineAt": "2026-10-24T02:35:39.873Z",
+      "proposalAt": "2026-10-24T02:35:41.890Z",
+      "comparedFields": [
+        "economyHash",
+        "camera",
+        "angles",
+        "orthographicSize",
+        "width",
+        "height",
+        "activePlayer",
+        "logicalTile",
+        "fixtureIndex"
+      ],
+      "differences": [],
+      "pass": true
+    },
+    {
+      "fixture": "contact peak, frozen for A/B",
+      "baselineAt": "2026-10-24T02:35:44.628Z",
+      "proposalAt": "2026-10-24T02:35:46.856Z",
+      "comparedFields": [
+        "economyHash",
+        "camera",
+        "angles",
+        "orthographicSize",
+        "width",
+        "height",
+        "activePlayer",
+        "logicalTile",
+        "fixtureIndex"
+      ],
+      "differences": [],
+      "pass": true
+    },
+    {
+      "fixture": "arrival peak, frozen for A/B",
+      "baselineAt": "2026-10-24T02:35:58.007Z",
+      "proposalAt": "2026-10-24T02:36:00.240Z",
+      "comparedFields": [
+        "economyHash",
+        "camera",
+        "angles",
+        "orthographicSize",
+        "width",
+        "height",
+        "activePlayer",
+        "logicalTile",
+        "fixtureIndex"
+      ],
+      "differences": [],
+      "pass": true
+    },
+    {
+      "fixture": "corner arrival, frozen for A/B",
+      "baselineAt": "2026-10-24T02:36:02.623Z",
+      "proposalAt": "2026-10-24T02:36:05.006Z",
+      "comparedFields": [
+        "economyHash",
+        "camera",
+        "angles",
+        "orthographicSize",
+        "width",
+        "height",
+        "activePlayer",
+        "logicalTile",
+        "fixtureIndex"
+      ],
+      "differences": [],
+      "pass": true
+    },
+    {
+      "fixture": "colored presentation sample \u2014 ownership model unchanged",
+      "baselineAt": "2026-10-24T02:36:16.135Z",
+      "proposalAt": "2026-10-24T02:36:18.159Z",
+      "comparedFields": [
+        "economyHash",
+        "camera",
+        "angles",
+        "orthographicSize",
+        "width",
+        "height",
+        "activePlayer",
+        "logicalTile",
+        "fixtureIndex"
+      ],
+      "differences": [],
+      "pass": true
+    },
+    {
+      "fixture": "selected presentation sample",
+      "baselineAt": "2026-10-24T02:36:20.736Z",
+      "proposalAt": "2026-10-24T02:36:23.047Z",
+      "comparedFields": [
+        "economyHash",
+        "camera",
+        "angles",
+        "orthographicSize",
+        "width",
+        "height",
+        "activePlayer",
+        "logicalTile",
+        "fixtureIndex"
+      ],
+      "differences": [],
+      "pass": true
+    },
+    {
+      "fixture": "monolith at rest \u2014 no geometry enlargement",
+      "baselineAt": "2026-10-24T02:36:29.669Z",
+      "proposalAt": "2026-10-24T02:36:31.656Z",
+      "comparedFields": [
+        "economyHash",
+        "camera",
+        "angles",
+        "orthographicSize",
+        "width",
+        "height",
+        "activePlayer",
+        "logicalTile",
+        "fixtureIndex"
+      ],
+      "differences": [],
+      "pass": true
+    },
+    {
+      "fixture": "active monolith \u2014 no geometry enlargement",
+      "baselineAt": "2026-10-24T02:36:34.389Z",
+      "proposalAt": "2026-10-24T02:36:36.746Z",
+      "comparedFields": [
+        "economyHash",
+        "camera",
+        "angles",
+        "orthographicSize",
+        "width",
+        "height",
+        "activePlayer",
+        "logicalTile",
+        "fixtureIndex"
+      ],
+      "differences": [],
+      "pass": true
+    },
+    {
+      "fixture": "architectural edge and bevel \u2014 original camera",
+      "baselineAt": "2026-10-24T02:36:42.713Z",
+      "proposalAt": "2026-10-24T02:36:44.945Z",
+      "comparedFields": [
+        "economyHash",
+        "camera",
+        "angles",
+        "orthographicSize",
+        "width",
+        "height",
+        "activePlayer",
+        "logicalTile",
+        "fixtureIndex"
+      ],
+      "differences": [],
+      "pass": true
+    },
+    {
+      "fixture": "local neon response, frozen for A/B",
+      "baselineAt": "2026-10-24T02:36:47.590Z",
+      "proposalAt": "2026-10-24T02:36:49.609Z",
+      "comparedFields": [
+        "economyHash",
+        "camera",
+        "angles",
+        "orthographicSize",
+        "width",
+        "height",
+        "activePlayer",
+        "logicalTile",
+        "fixtureIndex"
+      ],
+      "differences": [],
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "note": "Readbacks prove pose/state consistency, not artistic quality. A uses the original rendering branch inside the new QA binary."
+}

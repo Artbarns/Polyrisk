@@ -1,0 +1,18 @@
+{
+  "baselineFiles": 639,
+  "changed": [
+    "Assets/Scripts/Board/BoardVisualTheme.cs",
+    "Assets/Scripts/UI/BoardTileOverlayWidget.cs",
+    "Assets/Scripts/Visuals/BoardContactFeedback.cs",
+    "Assets/Scripts/Visuals/BoardSurfaceLighting.cs",
+    "Assets/Scripts/Visuals/CompactPawnVisual.cs",
+    "Assets/Settings/GraphiteFoundation/GraphiteTheme.asset",
+    "Assets/Shaders/GraphiteSurface.shader",
+    "Assets/Shaders/NeonState.shader"
+  ],
+  "missing": [],
+  "unexpected": [],
+  "protectedFiles": 59,
+  "protectedChanged": [],
+  "pass": true
+}

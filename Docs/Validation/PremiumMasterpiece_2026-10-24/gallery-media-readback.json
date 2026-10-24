@@ -1,0 +1,30 @@
+[
+  {
+    "currentTime": 0,
+    "ended": false,
+    "error": null,
+    "paused": true,
+    "src": "final-short-b.mp4"
+  },
+  {
+    "currentTime": 5.274,
+    "ended": true,
+    "error": null,
+    "paused": true,
+    "src": "final-long-b.mp4"
+  },
+  {
+    "currentTime": 0,
+    "ended": false,
+    "error": null,
+    "paused": true,
+    "src": "final-long-a.mp4"
+  },
+  {
+    "currentTime": 0,
+    "ended": false,
+    "error": null,
+    "paused": true,
+    "src": "final-live-turns-b.mp4"
+  }
+]

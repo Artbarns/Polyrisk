@@ -1,0 +1,146 @@
+{
+  "checkedAt": "2026-10-24T08:23:57.720391+00:00",
+  "checks": [
+    {
+      "path": "reviewed-final-inactive-a.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-inactive-b.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-colored-a.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-colored-b.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-selected-a.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-selected-b.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-contact-a.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-contact-b.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-arrival-a.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-arrival-b.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-pawn-idle-a.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-pawn-idle-b.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-pawn-active-a.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-pawn-active-b.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-metal-a.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-metal-b.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-reflection-a.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-reflection-b.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-corner-arrival-a.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "reviewed-final-corner-arrival-b.jpg",
+      "status": 200,
+      "jpeg": true,
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "final-short-b.mp4",
+      "status": 206,
+      "range": true
+    },
+    {
+      "path": "final-long-b.mp4",
+      "status": 206,
+      "range": true
+    },
+    {
+      "path": "final-long-a.mp4",
+      "status": 206,
+      "range": true
+    },
+    {
+      "path": "final-live-turns-b.mp4",
+      "status": 206,
+      "range": true
+    }
+  ],
+  "pass": true
+}

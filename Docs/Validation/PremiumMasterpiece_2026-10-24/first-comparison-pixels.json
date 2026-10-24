@@ -1,0 +1,12 @@
+{
+  "regionCSS": [
+    0,
+    145,
+    430,
+    445
+  ],
+  "meanMaxChannelDifference8bit": 4.994575385419388,
+  "pixelsChangedAtLeast5": 60459,
+  "totalPixels": 191350,
+  "interpretation": "Numeric difference only. Does not establish artistic acceptance or visual quality."
+}

@@ -1,0 +1,3002 @@
+[
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=36 arrival=False reduced=False intensity=1.150 t=1136.1740\n",
+    "timestamp": "2026-10-24T02:38:44.043Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":860,\"height\":1660,\"indices\":40,\"anchorsVisible\":23,\"collidersInside\":17,\"identityMarkers\":40,\"ownedMarkers\":3,\"selected\":11,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":1392.0,\"width\":860.0,\"height\":268.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":860.0,\"height\":472.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":38.0,\"y\":21.0,\"width\":618.0,\"height\":98.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"tile31\":{\"x\":581.90869140625,\"y\":178.8834228515625},\"tile32\":{\"x\":631.7891845703125,\"y\":210.946044921875},\"tile0\":{\"x\":1039.9024658203125,\"y\":476.3218994140625},\"tile10\":{\"x\":522.9591064453125,\"y\":808.606689453125},\"tile20\":{\"x\":6.015591144561768,\"y\":476.3218994140625},\"tile30\":{\"x\":522.958984375,\"y\":144.037109375},\"economy\":\"0:16700:11:1;1:16800:9:1;2:16900:8:1;3:18000:10:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"Fentanyl Labs\",\"rent\":\"130\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"VOTRE PROPRIÉTÉ\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-124.88005828857422,\"y\":763.3497314453125,\"width\":1295.67822265625,\"height\":834.0985107421875},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":12.942702293395996,\"minTileEdgePixels\":49.59336471557617,\"minTileAltitudePixels\":45.11538314819336,\"minTileAreaPixels\":3210.218994140625}}\n",
+    "timestamp": "2026-10-24T02:38:44.338Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 0\n",
+    "timestamp": "2026-10-24T02:38:44.445Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 0\n",
+    "timestamp": "2026-10-24T02:38:44.488Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 0\n",
+    "timestamp": "2026-10-24T02:38:44.488Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 1\n",
+    "timestamp": "2026-10-24T02:38:44.559Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS rapid contacts clear without residual light\n",
+    "timestamp": "2026-10-24T02:38:44.559Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=31 arrival=True reduced=True intensity=0.742 t=1136.7780\n",
+    "timestamp": "2026-10-24T02:38:44.560Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 1\n",
+    "timestamp": "2026-10-24T02:38:44.647Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 1\n",
+    "timestamp": "2026-10-24T02:38:44.648Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS Reduced Motion retains lower bounded contact\n",
+    "timestamp": "2026-10-24T02:38:44.648Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 2\n",
+    "timestamp": "2026-10-24T02:38:44.749Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 2\n",
+    "timestamp": "2026-10-24T02:38:44.831Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 2\n",
+    "timestamp": "2026-10-24T02:38:44.832Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 3\n",
+    "timestamp": "2026-10-24T02:38:44.832Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 3\n",
+    "timestamp": "2026-10-24T02:38:44.953Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 3\n",
+    "timestamp": "2026-10-24T02:38:44.953Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 4\n",
+    "timestamp": "2026-10-24T02:38:45.011Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":860,\"height\":1660,\"indices\":40,\"anchorsVisible\":22,\"collidersInside\":19,\"identityMarkers\":40,\"ownedMarkers\":3,\"selected\":11,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":1392.0,\"width\":860.0,\"height\":268.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":860.0,\"height\":472.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":38.0,\"y\":21.0,\"width\":618.0,\"height\":98.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"tile31\":{\"x\":180.59732055664063,\"y\":299.52734375},\"tile32\":{\"x\":230.47779846191407,\"y\":331.5899658203125},\"tile0\":{\"x\":638.591064453125,\"y\":596.9658203125},\"tile10\":{\"x\":121.647705078125,\"y\":929.2506713867188},\"tile20\":{\"x\":-395.2957458496094,\"y\":596.9659423828125},\"tile30\":{\"x\":121.6476058959961,\"y\":264.6810302734375},\"economy\":\"0:16700:11:1;1:16800:9:1;2:16900:8:1;3:18000:10:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"Fentanyl Labs\",\"rent\":\"130\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"VOTRE PROPRIÉTÉ\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-526.19140625,\"y\":642.7057495117188,\"width\":1295.67822265625,\"height\":834.0985717773438},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":12.942702293395996,\"minTileEdgePixels\":49.59336471557617,\"minTileAltitudePixels\":45.11537551879883,\"minTileAreaPixels\":3210.216796875}}\n",
+    "timestamp": "2026-10-24T02:38:45.093Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 4\n",
+    "timestamp": "2026-10-24T02:38:45.093Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 4\n",
+    "timestamp": "2026-10-24T02:38:45.094Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS arrival clears independently of callbacks\n",
+    "timestamp": "2026-10-24T02:38:45.094Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS all persistent tile state pixels unchanged through retrigger stress\n",
+    "timestamp": "2026-10-24T02:38:45.094Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE FAIL isolated contact never moves camera\n",
+    "timestamp": "2026-10-24T02:38:45.094Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_ENVELOPE_DONE\n",
+    "timestamp": "2026-10-24T02:38:45.094Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 5\n",
+    "timestamp": "2026-10-24T02:38:45.156Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 5\n",
+    "timestamp": "2026-10-24T02:38:45.257Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 5\n",
+    "timestamp": "2026-10-24T02:38:45.257Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 6\n",
+    "timestamp": "2026-10-24T02:38:45.344Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 6\n",
+    "timestamp": "2026-10-24T02:38:45.457Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 6\n",
+    "timestamp": "2026-10-24T02:38:45.458Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 7\n",
+    "timestamp": "2026-10-24T02:38:45.561Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 7\n",
+    "timestamp": "2026-10-24T02:38:45.564Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 7\n",
+    "timestamp": "2026-10-24T02:38:45.565Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 8\n",
+    "timestamp": "2026-10-24T02:38:45.662Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 8\n",
+    "timestamp": "2026-10-24T02:38:45.763Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 8\n",
+    "timestamp": "2026-10-24T02:38:45.763Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":860,\"height\":1660,\"indices\":40,\"anchorsVisible\":23,\"collidersInside\":16,\"identityMarkers\":40,\"ownedMarkers\":3,\"selected\":11,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":1392.0,\"width\":860.0,\"height\":268.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":860.0,\"height\":472.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":38.0,\"y\":21.0,\"width\":618.0,\"height\":98.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"tile31\":{\"x\":429.9997863769531,\"y\":160.2479248046875},\"tile32\":{\"x\":479.8802795410156,\"y\":192.3104248046875},\"tile0\":{\"x\":887.9935913085938,\"y\":457.6864013671875},\"tile10\":{\"x\":371.0501708984375,\"y\":789.9712524414063},\"tile20\":{\"x\":-145.89328002929688,\"y\":457.6865234375},\"tile30\":{\"x\":371.0500793457031,\"y\":125.401611328125},\"economy\":\"0:16700:11:1;1:16800:9:1;2:16900:8:1;3:18000:10:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"Fentanyl Labs\",\"rent\":\"130\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"VOTRE PROPRIÉTÉ\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-276.7889099121094,\"y\":781.9851684570313,\"width\":1295.67822265625,\"height\":834.0985717773438},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":12.942702293395996,\"minTileEdgePixels\":49.59336471557617,\"minTileAltitudePixels\":45.115379333496097,\"minTileAreaPixels\":3210.21826171875}}\n",
+    "timestamp": "2026-10-24T02:38:45.965Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 9\n",
+    "timestamp": "2026-10-24T02:38:45.966Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 9\n",
+    "timestamp": "2026-10-24T02:38:45.966Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 9\n",
+    "timestamp": "2026-10-24T02:38:45.966Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 10\n",
+    "timestamp": "2026-10-24T02:38:46.053Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 10\n",
+    "timestamp": "2026-10-24T02:38:46.171Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 10\n",
+    "timestamp": "2026-10-24T02:38:46.171Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 11\n",
+    "timestamp": "2026-10-24T02:38:46.274Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 11\n",
+    "timestamp": "2026-10-24T02:38:46.374Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 11\n",
+    "timestamp": "2026-10-24T02:38:46.375Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 12\n",
+    "timestamp": "2026-10-24T02:38:46.476Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 12\n",
+    "timestamp": "2026-10-24T02:38:46.578Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 12\n",
+    "timestamp": "2026-10-24T02:38:46.578Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":860,\"height\":1660,\"indices\":40,\"anchorsVisible\":22,\"collidersInside\":18,\"identityMarkers\":40,\"ownedMarkers\":3,\"selected\":11,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":1392.0,\"width\":860.0,\"height\":268.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":860.0,\"height\":472.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":38.0,\"y\":21.0,\"width\":618.0,\"height\":98.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"tile31\":{\"x\":647.6602172851563,\"y\":203.339599609375},\"tile32\":{\"x\":697.5407104492188,\"y\":235.4022216796875},\"tile0\":{\"x\":1105.654052734375,\"y\":500.7781982421875},\"tile10\":{\"x\":588.7106323242188,\"y\":833.06298828125},\"tile20\":{\"x\":71.76717376708985,\"y\":500.7783203125},\"tile30\":{\"x\":588.7105102539063,\"y\":168.4932861328125},\"economy\":\"0:16700:11:1;1:16800:9:1;2:16900:8:1;3:18000:10:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"Fentanyl Labs\",\"rent\":\"130\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"VOTRE PROPRIÉTÉ\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-59.128456115722659,\"y\":738.8934326171875,\"width\":1295.67822265625,\"height\":834.0985107421875},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":12.942702293395996,\"minTileEdgePixels\":49.59326171875,\"minTileAltitudePixels\":45.1153564453125,\"minTileAreaPixels\":3210.212646484375}}\n",
+    "timestamp": "2026-10-24T02:38:46.781Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 13\n",
+    "timestamp": "2026-10-24T02:38:46.781Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 13\n",
+    "timestamp": "2026-10-24T02:38:46.781Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 13\n",
+    "timestamp": "2026-10-24T02:38:46.781Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 14\n",
+    "timestamp": "2026-10-24T02:38:46.881Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 14\n",
+    "timestamp": "2026-10-24T02:38:46.971Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 14\n",
+    "timestamp": "2026-10-24T02:38:46.971Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 15\n",
+    "timestamp": "2026-10-24T02:38:47.084Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 15\n",
+    "timestamp": "2026-10-24T02:38:47.186Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 15\n",
+    "timestamp": "2026-10-24T02:38:47.187Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 16\n",
+    "timestamp": "2026-10-24T02:38:47.289Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 16\n",
+    "timestamp": "2026-10-24T02:38:47.356Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 16\n",
+    "timestamp": "2026-10-24T02:38:47.356Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 17\n",
+    "timestamp": "2026-10-24T02:38:47.495Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":860,\"height\":1660,\"indices\":40,\"anchorsVisible\":21,\"collidersInside\":19,\"identityMarkers\":40,\"ownedMarkers\":3,\"selected\":11,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":1392.0,\"width\":860.0,\"height\":268.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":860.0,\"height\":472.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":38.0,\"y\":21.0,\"width\":618.0,\"height\":98.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"tile31\":{\"x\":847.1823120117188,\"y\":331.58984375},\"tile32\":{\"x\":897.0628051757813,\"y\":363.6524658203125},\"tile0\":{\"x\":1305.1761474609375,\"y\":629.0284423828125},\"tile10\":{\"x\":788.2327270507813,\"y\":961.313232421875},\"tile20\":{\"x\":271.2892761230469,\"y\":629.028564453125},\"tile30\":{\"x\":788.2326049804688,\"y\":296.74365234375},\"economy\":\"0:16700:11:1;1:16800:9:1;2:16900:8:1;3:18000:10:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"Fentanyl Labs\",\"rent\":\"130\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"VOTRE PROPRIÉTÉ\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":140.39364624023438,\"y\":610.6431884765625,\"width\":1295.6781005859375,\"height\":834.0985107421875},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":12.942702293395996,\"minTileEdgePixels\":49.59331130981445,\"minTileAltitudePixels\":45.11534881591797,\"minTileAreaPixels\":3210.21142578125}}\n",
+    "timestamp": "2026-10-24T02:38:47.597Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 17\n",
+    "timestamp": "2026-10-24T02:38:47.597Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 17\n",
+    "timestamp": "2026-10-24T02:38:47.597Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 18\n",
+    "timestamp": "2026-10-24T02:38:47.606Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 18\n",
+    "timestamp": "2026-10-24T02:38:47.698Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 18\n",
+    "timestamp": "2026-10-24T02:38:47.698Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 19\n",
+    "timestamp": "2026-10-24T02:38:47.800Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 19\n",
+    "timestamp": "2026-10-24T02:38:47.857Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 19\n",
+    "timestamp": "2026-10-24T02:38:47.857Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 20\n",
+    "timestamp": "2026-10-24T02:38:48.002Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 20\n",
+    "timestamp": "2026-10-24T02:38:48.002Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 20\n",
+    "timestamp": "2026-10-24T02:38:48.002Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 21\n",
+    "timestamp": "2026-10-24T02:38:48.105Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 21\n",
+    "timestamp": "2026-10-24T02:38:48.206Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 21\n",
+    "timestamp": "2026-10-24T02:38:48.206Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 22\n",
+    "timestamp": "2026-10-24T02:38:48.206Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 22\n",
+    "timestamp": "2026-10-24T02:38:48.309Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 22\n",
+    "timestamp": "2026-10-24T02:38:48.309Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":860,\"height\":1660,\"indices\":40,\"anchorsVisible\":21,\"collidersInside\":19,\"identityMarkers\":40,\"ownedMarkers\":3,\"selected\":11,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":1392.0,\"width\":860.0,\"height\":268.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":860.0,\"height\":472.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":38.0,\"y\":21.0,\"width\":618.0,\"height\":98.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"tile31\":{\"x\":847.1823120117188,\"y\":535.6246337890625},\"tile32\":{\"x\":897.0628051757813,\"y\":567.6871337890625},\"tile0\":{\"x\":1305.1761474609375,\"y\":833.0631713867188},\"tile10\":{\"x\":788.2327270507813,\"y\":1165.347900390625},\"tile20\":{\"x\":271.2892761230469,\"y\":833.0631713867188},\"tile30\":{\"x\":788.2326049804688,\"y\":500.7783203125},\"economy\":\"0:16700:11:1;1:16800:9:1;2:16900:8:1;3:18000:10:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"Fentanyl Labs\",\"rent\":\"130\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"VOTRE PROPRIÉTÉ\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":140.39364624023438,\"y\":406.6084289550781,\"width\":1295.6781005859375,\"height\":834.0986328125},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":12.942702293395996,\"minTileEdgePixels\":49.59331130981445,\"minTileAltitudePixels\":45.11538314819336,\"minTileAreaPixels\":3210.216796875}}\n",
+    "timestamp": "2026-10-24T02:38:48.373Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 23\n",
+    "timestamp": "2026-10-24T02:38:48.373Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 23\n",
+    "timestamp": "2026-10-24T02:38:48.411Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 23\n",
+    "timestamp": "2026-10-24T02:38:48.411Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 24\n",
+    "timestamp": "2026-10-24T02:38:48.513Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 24\n",
+    "timestamp": "2026-10-24T02:38:48.612Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 24\n",
+    "timestamp": "2026-10-24T02:38:48.612Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 25\n",
+    "timestamp": "2026-10-24T02:38:48.714Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 25\n",
+    "timestamp": "2026-10-24T02:38:48.814Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 25\n",
+    "timestamp": "2026-10-24T02:38:48.815Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 26\n",
+    "timestamp": "2026-10-24T02:38:48.815Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 26\n",
+    "timestamp": "2026-10-24T02:38:48.916Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 26\n",
+    "timestamp": "2026-10-24T02:38:48.916Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 27\n",
+    "timestamp": "2026-10-24T02:38:49.018Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 27\n",
+    "timestamp": "2026-10-24T02:38:49.115Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 27\n",
+    "timestamp": "2026-10-24T02:38:49.115Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":860,\"height\":1660,\"indices\":40,\"anchorsVisible\":22,\"collidersInside\":18,\"identityMarkers\":40,\"ownedMarkers\":3,\"selected\":11,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":1392.0,\"width\":860.0,\"height\":268.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":860.0,\"height\":472.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":38.0,\"y\":21.0,\"width\":618.0,\"height\":98.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"tile31\":{\"x\":597.7798461914063,\"y\":695.9373779296875},\"tile32\":{\"x\":647.6603393554688,\"y\":727.9999389648438},\"tile0\":{\"x\":1055.7735595703125,\"y\":993.3758544921875},\"tile10\":{\"x\":538.8302612304688,\"y\":1325.66064453125},\"tile20\":{\"x\":21.886762619018556,\"y\":993.3759155273438},\"tile30\":{\"x\":538.8301391601563,\"y\":661.0910034179688},\"economy\":\"0:16700:11:1;1:16800:9:1;2:16900:8:1;3:18000:10:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"Fentanyl Labs\",\"rent\":\"130\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"VOTRE PROPRIÉTÉ\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-109.0088882446289,\"y\":246.2957305908203,\"width\":1295.67822265625,\"height\":834.0985717773438},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":12.942702293395996,\"minTileEdgePixels\":49.59331130981445,\"minTileAltitudePixels\":45.11534118652344,\"minTileAreaPixels\":3210.21728515625}}\n",
+    "timestamp": "2026-10-24T02:38:49.204Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 28\n",
+    "timestamp": "2026-10-24T02:38:49.205Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 28\n",
+    "timestamp": "2026-10-24T02:38:49.266Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 28\n",
+    "timestamp": "2026-10-24T02:38:49.267Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[UnityCache] 'http://127.0.0.1:9007/PremiumMasterpieceQA/Build/9c2c5dd30f53d1d0b446df9cc3c42bd0.data' successfully revalidated and served from the indexedDB cache",
+    "timestamp": "2026-10-24T02:38:50.279Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+  },
+  {
+    "level": "log",
+    "message": "navigator.mediaDevices support available",
+    "timestamp": "2026-10-24T02:38:50.337Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[UnityMemory] Configuration Parameters - Can be set up in boot.config\n",
+    "timestamp": "2026-10-24T02:38:50.714Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-temp-allocator-size-nav-mesh-worker=65536\"\n",
+    "timestamp": "2026-10-24T02:38:50.714Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-temp-allocator-size-audio-worker=65536\"\n",
+    "timestamp": "2026-10-24T02:38:50.715Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-temp-allocator-size-background-worker=32768\"\n",
+    "timestamp": "2026-10-24T02:38:50.715Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-allocator-temp-initial-block-size-main=262144\"\n",
+    "timestamp": "2026-10-24T02:38:50.715Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-allocator-temp-initial-block-size-worker=262144\"\n",
+    "timestamp": "2026-10-24T02:38:50.716Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-bucket-allocator-granularity=16\"\n",
+    "timestamp": "2026-10-24T02:38:50.716Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-bucket-allocator-bucket-count=8\"\n",
+    "timestamp": "2026-10-24T02:38:50.717Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-bucket-allocator-block-size=4194304\"\n",
+    "timestamp": "2026-10-24T02:38:50.717Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-bucket-allocator-block-count=1\"\n",
+    "timestamp": "2026-10-24T02:38:50.718Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-main-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-24T02:38:50.718Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-thread-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-24T02:38:50.719Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-gfx-main-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-24T02:38:50.719Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-gfx-thread-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-24T02:38:50.720Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-cache-allocator-block-size=4194304\"\n",
+    "timestamp": "2026-10-24T02:38:50.721Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-typetree-allocator-block-size=2097152\"\n",
+    "timestamp": "2026-10-24T02:38:50.721Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-bucket-allocator-granularity=16\"\n",
+    "timestamp": "2026-10-24T02:38:50.722Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-bucket-allocator-bucket-count=8\"\n",
+    "timestamp": "2026-10-24T02:38:50.723Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-bucket-allocator-block-size=4194304\"\n",
+    "timestamp": "2026-10-24T02:38:50.723Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-bucket-allocator-block-count=1\"\n",
+    "timestamp": "2026-10-24T02:38:50.724Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-24T02:38:50.724Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-editor-allocator-block-size=1048576\"\n",
+    "timestamp": "2026-10-24T02:38:50.725Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-temp-allocator-size-main=4194304\"\n",
+    "timestamp": "2026-10-24T02:38:50.725Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-job-temp-allocator-block-size=2097152\"\n",
+    "timestamp": "2026-10-24T02:38:50.726Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-job-temp-allocator-block-size-background=1048576\"\n",
+    "timestamp": "2026-10-24T02:38:50.727Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-job-temp-allocator-reduction-small-platforms=262144\"\n",
+    "timestamp": "2026-10-24T02:38:50.749Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Found NO interfaces on host .\n",
+    "timestamp": "2026-10-24T02:38:50.878Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Input System module state changed to: Initialized.\n",
+    "timestamp": "2026-10-24T02:38:50.879Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+    "timestamp": "2026-10-24T02:38:50.881Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Loading player data from data.unity3d\n",
+    "timestamp": "2026-10-24T02:38:50.882Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Initialize engine version: 2022.3.62f3 (96770f904ca7)\n",
+    "timestamp": "2026-10-24T02:38:50.883Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Subsystems] Discovering subsystems at path UnitySubsystems\n",
+    "timestamp": "2026-10-24T02:38:50.883Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Creating WebGL 2.0 context.",
+    "timestamp": "2026-10-24T02:38:50.884Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+  },
+  {
+    "level": "log",
+    "message": "Renderer: WebKit WebGL\n",
+    "timestamp": "2026-10-24T02:38:50.908Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Vendor:   WebKit\n",
+    "timestamp": "2026-10-24T02:38:50.909Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Version:  OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))\n",
+    "timestamp": "2026-10-24T02:38:50.909Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GLES:     3\n",
+    "timestamp": "2026-10-24T02:38:50.909Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": " EXT_clip_control EXT_color_buffer_float EXT_color_buffer_half_float EXT_conservative_depth EXT_depth_clamp EXT_disjoint_timer_query_webgl2 EXT_float_blend EXT_polygon_offset_clamp EXT_render_snorm EXT_texture_compression_bptc EXT_texture_compression_rgtc EXT_texture_filter_anisotropic EXT_texture_mirror_clamp_to_edge EXT_texture_norm16 KHR_parallel_shader_compile NV_shader_noperspective_interpolation OES_draw_buffers_indexed OES_sample_variables OES_shader_multisample_interpolation OES_texture_float_linear WEBGL_blend_func_extended WEBGL_clip_cull_distance WEBGL_compressed_texture_s3tc WEBGL_compressed_texture_s3tc_srgb WEBGL_debug_renderer_info WEBGL_debug_shaders WEBGL_lose_context WEBGL_multi_draw WEBGL_polygon_mode WEBGL_provoking_vertex WEBGL_stencil_texturing GL_EXT_clip_control GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_depth_clamp GL_EXT_disjoint_timer_query_webgl2 GL_EXT_float_blend GL_EXT_polygon_offset_clamp GL_EXT_render_snorm GL_EXT_texture_compres\n",
+    "timestamp": "2026-10-24T02:38:50.910Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "sion_bptc GL_EXT_texture_compression_rgtc GL_EXT_texture_filter_anisotropic GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_KHR_parallel_shader_compile GL_NV_shader_noperspective_interpolation GL_OES_draw_buffers_indexed GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_texture_float_linear GL_WEBGL_blend_func_extended GL_WEBGL_clip_cull_distance GL_WEBGL_compressed_texture_s3tc GL_WEBGL_compressed_texture_s3tc_srgb GL_WEBGL_debug_renderer_info GL_WEBGL_debug_shaders GL_WEBGL_lose_context GL_WEBGL_multi_draw GL_WEBGL_polygon_mode GL_WEBGL_provoking_vertex GL_WEBGL_stencil_texturing\n",
+    "timestamp": "2026-10-24T02:38:50.910Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "OPENGL LOG: Creating OpenGL ES 3.0 graphics device ; Context level  <OpenGL ES 3.0> ; Context handle 1\n",
+    "timestamp": "2026-10-24T02:38:50.916Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ERROR: Shader ",
+    "timestamp": "2026-10-24T02:38:51.070Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Hidden/Universal/HDRDebugView shader is not supported on this GPU (none of subshaders/fallbacks are suitable)\n",
+    "timestamp": "2026-10-24T02:38:51.070Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Input Manager initialize...\n",
+    "timestamp": "2026-10-24T02:38:51.072Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+    "timestamp": "2026-10-24T02:38:51.214Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "UnloadTime: 1.000000 ms\n",
+    "timestamp": "2026-10-24T02:38:51.214Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Starting initialization...\n",
+    "timestamp": "2026-10-24T02:38:53.597Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Initializing Board Data...\n",
+    "timestamp": "2026-10-24T02:38:53.597Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Board initialized with 40 tiles.\n",
+    "timestamp": "2026-10-24T02:38:53.597Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Venture Deck initialized and shuffled.\n",
+    "timestamp": "2026-10-24T02:38:53.597Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Creating Players...\n",
+    "timestamp": "2026-10-24T02:38:54.135Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Bootstrap] Player 1 assigned profile: Predator\n",
+    "timestamp": "2026-10-24T02:38:54.135Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Bootstrap] Player 2 assigned profile: Rentier\n",
+    "timestamp": "2026-10-24T02:38:54.136Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Bootstrap] Player 3 assigned profile: Negotiator\n",
+    "timestamp": "2026-10-24T02:38:54.136Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Spawning Visuals...\n",
+    "timestamp": "2026-10-24T02:38:54.137Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Trying to get length of sound which is not loaded yet.",
+    "timestamp": "2026-10-24T02:38:54.168Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Trying to get length of sound which is not loaded yet.",
+    "timestamp": "2026-10-24T02:38:54.168Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Spawned 4 player pawns at (4.55, 3.95, -8.13).\n",
+    "timestamp": "2026-10-24T02:38:54.168Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Starting Game Loop...\n",
+    "timestamp": "2026-10-24T02:38:54.168Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Game loop deferred until a game mode is selected.\n",
+    "timestamp": "2026-10-24T02:38:54.168Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Audio context resumed after 9.542 seconds.",
+    "timestamp": "2026-10-24T02:39:00.465Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Turn Start: Player 0\n",
+    "timestamp": "2026-10-24T02:39:04.313Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Deferred local game started.\n",
+    "timestamp": "2026-10-24T02:39:04.313Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":19,\"collidersInside\":17,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":19.43174171447754,\"y\":213.986083984375},\"tile32\":{\"x\":44.25093460083008,\"y\":229.93951416015626},\"tile0\":{\"x\":247.3170166015625,\"y\":361.9833984375},\"tile10\":{\"x\":-9.899945259094239,\"y\":527.3193359375},\"tile20\":{\"x\":-267.1169738769531,\"y\":361.9833984375},\"tile30\":{\"x\":-9.900022506713868,\"y\":196.6474609375},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-332.2471008300781,\"y\":258.87261962890627,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676305770874025,\"minTileAltitudePixels\":22.448158264160158,\"minTileAreaPixels\":794.7807006835938}}\n",
+    "timestamp": "2026-10-24T02:39:04.414Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"A — baseline\",\"treatment\":\"GraphiteReflectiveNeon\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"07482d415dc55efa0f9a68dbeb57b532f48958a6b11695a0640e97275b121b94\",\"stage\":4,\"fixtureIndex\":-1,\"width\":430,\"height\":830,\"activePlayer\":0,\"logicalTile\":0,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":13.005837440490723,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-8.173534393310547,\"y\":16.035066604614259,\"z\":-19.42641830444336},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":false,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-24T02:39:08.960Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_MEASURE {\"variant\":\"A baseline\",\"quality\":\"Low\",\"fixture\":\"live game\",\"stage\":4,\"width\":430,\"height\":830,\"frames\":179,\"seconds\":6.020999908447266,\"meanFrameMs\":33.68156433105469,\"medianFrameMs\":30.0,\"p95FrameMs\":50.0,\"maxFrameMs\":61.0,\"cpuMainThreadMs\":33.71404494382023,\"cpuMainThreadAvailable\":true,\"gpuTimeAvailable\":false,\"renderCountersAvailable\":true,\"unchangedDuringSample\":true,\"drawCalls\":72,\"batches\":66,\"setPass\":37,\"totalAllocatedBytes\":52009581,\"totalReservedBytes\":60358588}\n",
+    "timestamp": "2026-10-24T02:39:15.836Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"07482d415dc55efa0f9a68dbeb57b532f48958a6b11695a0640e97275b121b94\",\"stage\":4,\"fixtureIndex\":-1,\"width\":430,\"height\":830,\"activePlayer\":0,\"logicalTile\":0,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":13.005837440490723,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-8.173534393310547,\"y\":16.035066604614259,\"z\":-19.42641830444336},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:39:20.596Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"07482d415dc55efa0f9a68dbeb57b532f48958a6b11695a0640e97275b121b94\",\"stage\":3,\"fixtureIndex\":-1,\"width\":430,\"height\":830,\"activePlayer\":0,\"logicalTile\":0,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":13.005837440490723,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-8.173534393310547,\"y\":16.035066604614259,\"z\":-19.42641830444336},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:39:20.898Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_MEASURE {\"variant\":\"B proposal\",\"quality\":\"Low\",\"fixture\":\"live game\",\"stage\":3,\"width\":430,\"height\":830,\"frames\":352,\"seconds\":6.000999450683594,\"meanFrameMs\":17.08806800842285,\"medianFrameMs\":17.0,\"p95FrameMs\":19.0,\"maxFrameMs\":46.0,\"cpuMainThreadMs\":17.058404558404559,\"cpuMainThreadAvailable\":true,\"gpuTimeAvailable\":false,\"renderCountersAvailable\":true,\"unchangedDuringSample\":true,\"drawCalls\":56,\"batches\":50,\"setPass\":20,\"totalAllocatedBytes\":52032353,\"totalReservedBytes\":60382845}\n",
+    "timestamp": "2026-10-24T02:39:27.797Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=31 arrival=False reduced=False intensity=1.150 t=43.3060\n",
+    "timestamp": "2026-10-24T02:39:34.442Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS actual texture matches continuous envelope at measured first-frame age\n",
+    "timestamp": "2026-10-24T02:39:34.443Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_FIRST_SAMPLE age=0.0390014648 alpha=1.14257813\n",
+    "timestamp": "2026-10-24T02:39:34.443Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS actual texture carries bounded progressive pulse\n",
+    "timestamp": "2026-10-24T02:39:34.588Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=31 arrival=False reduced=False intensity=1.150 t=43.4190\n",
+    "timestamp": "2026-10-24T02:39:34.588Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS retrigger preserves current intensity at attack start\n",
+    "timestamp": "2026-10-24T02:39:34.588Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=31 arrival=False reduced=False intensity=1.150 t=43.4550\n",
+    "timestamp": "2026-10-24T02:39:34.588Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=32 arrival=False reduced=False intensity=1.150 t=43.4920\n",
+    "timestamp": "2026-10-24T02:39:34.588Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=33 arrival=False reduced=False intensity=1.150 t=43.5230\n",
+    "timestamp": "2026-10-24T02:39:34.652Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=34 arrival=False reduced=False intensity=1.150 t=43.5570\n",
+    "timestamp": "2026-10-24T02:39:34.652Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=35 arrival=False reduced=False intensity=1.150 t=43.5910\n",
+    "timestamp": "2026-10-24T02:39:34.721Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=36 arrival=False reduced=False intensity=1.150 t=43.6220\n",
+    "timestamp": "2026-10-24T02:39:34.792Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS rapid contacts clear without residual light\n",
+    "timestamp": "2026-10-24T02:39:35.275Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=31 arrival=True reduced=True intensity=0.742 t=44.1250\n",
+    "timestamp": "2026-10-24T02:39:35.275Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS Reduced Motion retains lower bounded contact\n",
+    "timestamp": "2026-10-24T02:39:35.275Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS arrival clears independently of callbacks\n",
+    "timestamp": "2026-10-24T02:39:35.702Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS all persistent tile state pixels unchanged through retrigger stress\n",
+    "timestamp": "2026-10-24T02:39:35.703Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_CASE PASS isolated contact never moves camera\n",
+    "timestamp": "2026-10-24T02:39:35.703Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "PERCEPTUAL_ENVELOPE_DONE\n",
+    "timestamp": "2026-10-24T02:39:35.703Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS 40 anchors remain\n",
+    "timestamp": "2026-10-24T02:39:49.215Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS permanent x1.40 actual camera\n",
+    "timestamp": "2026-10-24T02:39:49.215Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS orthographic 40 degree elevation\n",
+    "timestamp": "2026-10-24T02:39:49.215Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS orthographic projection preserved\n",
+    "timestamp": "2026-10-24T02:39:49.215Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS cockpit toggle never moves camera\n",
+    "timestamp": "2026-10-24T02:39:49.683Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":19,\"collidersInside\":17,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":true,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":245.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":12.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":19.43174171447754,\"y\":213.986083984375},\"tile32\":{\"x\":44.25093460083008,\"y\":229.93951416015626},\"tile0\":{\"x\":247.3170166015625,\"y\":361.9833984375},\"tile10\":{\"x\":-9.899945259094239,\"y\":527.3193359375},\"tile20\":{\"x\":-267.1169738769531,\"y\":361.9833984375},\"tile30\":{\"x\":-9.900022506713868,\"y\":196.6474609375},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-332.2471008300781,\"y\":258.87261962890627,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676305770874025,\"minTileAltitudePixels\":22.448158264160158,\"minTileAreaPixels\":794.7807006835938}}\n",
+    "timestamp": "2026-10-24T02:39:49.888Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS cockpit restored without camera motion\n",
+    "timestamp": "2026-10-24T02:39:50.086Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 0\n",
+    "timestamp": "2026-10-24T02:39:50.472Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 0\n",
+    "timestamp": "2026-10-24T02:39:50.489Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 0\n",
+    "timestamp": "2026-10-24T02:39:50.489Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 1\n",
+    "timestamp": "2026-10-24T02:39:50.590Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 1\n",
+    "timestamp": "2026-10-24T02:39:50.591Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 1\n",
+    "timestamp": "2026-10-24T02:39:50.592Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 2\n",
+    "timestamp": "2026-10-24T02:39:50.592Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 2\n",
+    "timestamp": "2026-10-24T02:39:50.592Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 2\n",
+    "timestamp": "2026-10-24T02:39:50.592Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 3\n",
+    "timestamp": "2026-10-24T02:39:50.593Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 3\n",
+    "timestamp": "2026-10-24T02:39:50.593Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 3\n",
+    "timestamp": "2026-10-24T02:39:50.593Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 4\n",
+    "timestamp": "2026-10-24T02:39:50.690Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 4\n",
+    "timestamp": "2026-10-24T02:39:50.690Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 4\n",
+    "timestamp": "2026-10-24T02:39:50.692Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":22,\"collidersInside\":19,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":115.72322082519531,\"y\":134.85015869140626},\"tile32\":{\"x\":140.5424041748047,\"y\":150.80364990234376},\"tile0\":{\"x\":343.6085205078125,\"y\":282.84747314453127},\"tile10\":{\"x\":86.39153289794922,\"y\":448.1833801269531},\"tile20\":{\"x\":-170.82546997070313,\"y\":282.8475341796875},\"tile30\":{\"x\":86.3914566040039,\"y\":117.5115966796875},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-235.95559692382813,\"y\":338.00848388671877,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.6762638092041,\"minTileAltitudePixels\":22.44814682006836,\"minTileAreaPixels\":794.7800903320313}}\n",
+    "timestamp": "2026-10-24T02:39:50.694Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 5\n",
+    "timestamp": "2026-10-24T02:39:50.695Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 5\n",
+    "timestamp": "2026-10-24T02:39:50.696Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 5\n",
+    "timestamp": "2026-10-24T02:39:50.696Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 6\n",
+    "timestamp": "2026-10-24T02:39:50.697Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 6\n",
+    "timestamp": "2026-10-24T02:39:50.724Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 6\n",
+    "timestamp": "2026-10-24T02:39:50.724Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 7\n",
+    "timestamp": "2026-10-24T02:39:50.724Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 7\n",
+    "timestamp": "2026-10-24T02:39:50.749Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 7\n",
+    "timestamp": "2026-10-24T02:39:50.749Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 8\n",
+    "timestamp": "2026-10-24T02:39:50.770Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 8\n",
+    "timestamp": "2026-10-24T02:39:50.793Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 8\n",
+    "timestamp": "2026-10-24T02:39:50.795Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 9\n",
+    "timestamp": "2026-10-24T02:39:50.815Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 9\n",
+    "timestamp": "2026-10-24T02:39:50.839Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 9\n",
+    "timestamp": "2026-10-24T02:39:50.840Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 10\n",
+    "timestamp": "2026-10-24T02:39:50.891Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 10\n",
+    "timestamp": "2026-10-24T02:39:50.930Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 10\n",
+    "timestamp": "2026-10-24T02:39:50.931Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 11\n",
+    "timestamp": "2026-10-24T02:39:50.976Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 11\n",
+    "timestamp": "2026-10-24T02:39:50.977Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 11\n",
+    "timestamp": "2026-10-24T02:39:50.977Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 12\n",
+    "timestamp": "2026-10-24T02:39:50.993Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 12\n",
+    "timestamp": "2026-10-24T02:39:51.096Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 12\n",
+    "timestamp": "2026-10-24T02:39:51.096Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 13\n",
+    "timestamp": "2026-10-24T02:39:51.097Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 13\n",
+    "timestamp": "2026-10-24T02:39:51.097Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 13\n",
+    "timestamp": "2026-10-24T02:39:51.097Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 14\n",
+    "timestamp": "2026-10-24T02:39:51.097Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 14\n",
+    "timestamp": "2026-10-24T02:39:51.196Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 14\n",
+    "timestamp": "2026-10-24T02:39:51.197Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 15\n",
+    "timestamp": "2026-10-24T02:39:51.197Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 15\n",
+    "timestamp": "2026-10-24T02:39:51.197Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 15\n",
+    "timestamp": "2026-10-24T02:39:51.198Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 16\n",
+    "timestamp": "2026-10-24T02:39:51.198Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 16\n",
+    "timestamp": "2026-10-24T02:39:51.227Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 16\n",
+    "timestamp": "2026-10-24T02:39:51.227Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 17\n",
+    "timestamp": "2026-10-24T02:39:51.228Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 17\n",
+    "timestamp": "2026-10-24T02:39:51.296Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 17\n",
+    "timestamp": "2026-10-24T02:39:51.296Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 18\n",
+    "timestamp": "2026-10-24T02:39:51.297Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 18\n",
+    "timestamp": "2026-10-24T02:39:51.297Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 18\n",
+    "timestamp": "2026-10-24T02:39:51.297Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 19\n",
+    "timestamp": "2026-10-24T02:39:51.396Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 19\n",
+    "timestamp": "2026-10-24T02:39:51.396Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 19\n",
+    "timestamp": "2026-10-24T02:39:51.397Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 20\n",
+    "timestamp": "2026-10-24T02:39:51.397Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 20\n",
+    "timestamp": "2026-10-24T02:39:51.397Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 20\n",
+    "timestamp": "2026-10-24T02:39:51.397Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 21\n",
+    "timestamp": "2026-10-24T02:39:51.397Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 21\n",
+    "timestamp": "2026-10-24T02:39:51.397Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 21\n",
+    "timestamp": "2026-10-24T02:39:51.398Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 22\n",
+    "timestamp": "2026-10-24T02:39:51.479Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 22\n",
+    "timestamp": "2026-10-24T02:39:51.479Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 22\n",
+    "timestamp": "2026-10-24T02:39:51.479Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":21,\"collidersInside\":19,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":422.5785827636719,\"y\":268.279296875},\"tile32\":{\"x\":447.3977355957031,\"y\":284.23272705078127},\"tile0\":{\"x\":650.4638671875,\"y\":416.276611328125},\"tile10\":{\"x\":393.24688720703127,\"y\":581.6124877929688},\"tile20\":{\"x\":136.02989196777345,\"y\":416.276611328125},\"tile30\":{\"x\":393.246826171875,\"y\":250.940673828125},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":70.89976501464844,\"y\":204.57937622070313,\"width\":644.6942138671875,\"height\":415.0248107910156},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676280975341798,\"minTileAltitudePixels\":22.448148727416993,\"minTileAreaPixels\":794.7802124023438}}\n",
+    "timestamp": "2026-10-24T02:39:51.479Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 23\n",
+    "timestamp": "2026-10-24T02:39:51.479Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 23\n",
+    "timestamp": "2026-10-24T02:39:51.480Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 23\n",
+    "timestamp": "2026-10-24T02:39:51.480Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 24\n",
+    "timestamp": "2026-10-24T02:39:51.480Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 24\n",
+    "timestamp": "2026-10-24T02:39:51.496Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 24\n",
+    "timestamp": "2026-10-24T02:39:51.496Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 25\n",
+    "timestamp": "2026-10-24T02:39:51.598Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 25\n",
+    "timestamp": "2026-10-24T02:39:51.598Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 25\n",
+    "timestamp": "2026-10-24T02:39:51.599Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 26\n",
+    "timestamp": "2026-10-24T02:39:51.599Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 26\n",
+    "timestamp": "2026-10-24T02:39:51.600Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 26\n",
+    "timestamp": "2026-10-24T02:39:51.600Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 27\n",
+    "timestamp": "2026-10-24T02:39:51.600Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 27\n",
+    "timestamp": "2026-10-24T02:39:51.697Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 27\n",
+    "timestamp": "2026-10-24T02:39:51.698Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 28\n",
+    "timestamp": "2026-10-24T02:39:51.699Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 28\n",
+    "timestamp": "2026-10-24T02:39:51.699Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 28\n",
+    "timestamp": "2026-10-24T02:39:51.699Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 29\n",
+    "timestamp": "2026-10-24T02:39:51.699Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 29\n",
+    "timestamp": "2026-10-24T02:39:51.731Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 29\n",
+    "timestamp": "2026-10-24T02:39:51.731Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 30\n",
+    "timestamp": "2026-10-24T02:39:51.731Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 30\n",
+    "timestamp": "2026-10-24T02:39:51.799Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 30\n",
+    "timestamp": "2026-10-24T02:39:51.800Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 31\n",
+    "timestamp": "2026-10-24T02:39:51.800Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 31\n",
+    "timestamp": "2026-10-24T02:39:51.832Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 31\n",
+    "timestamp": "2026-10-24T02:39:51.833Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 32\n",
+    "timestamp": "2026-10-24T02:39:51.833Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 32\n",
+    "timestamp": "2026-10-24T02:39:51.901Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 32\n",
+    "timestamp": "2026-10-24T02:39:51.902Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 33\n",
+    "timestamp": "2026-10-24T02:39:51.903Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 33\n",
+    "timestamp": "2026-10-24T02:39:51.983Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 33\n",
+    "timestamp": "2026-10-24T02:39:51.983Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 34\n",
+    "timestamp": "2026-10-24T02:39:51.983Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 34\n",
+    "timestamp": "2026-10-24T02:39:51.983Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 34\n",
+    "timestamp": "2026-10-24T02:39:51.984Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 35\n",
+    "timestamp": "2026-10-24T02:39:51.984Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 35\n",
+    "timestamp": "2026-10-24T02:39:52.014Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 35\n",
+    "timestamp": "2026-10-24T02:39:52.014Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 36\n",
+    "timestamp": "2026-10-24T02:39:52.030Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 36\n",
+    "timestamp": "2026-10-24T02:39:52.076Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 36\n",
+    "timestamp": "2026-10-24T02:39:52.076Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 37\n",
+    "timestamp": "2026-10-24T02:39:52.076Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 37\n",
+    "timestamp": "2026-10-24T02:39:52.104Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 37\n",
+    "timestamp": "2026-10-24T02:39:52.104Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 38\n",
+    "timestamp": "2026-10-24T02:39:52.207Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 38\n",
+    "timestamp": "2026-10-24T02:39:52.207Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 38\n",
+    "timestamp": "2026-10-24T02:39:52.207Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS bounded pan reaches collider 39\n",
+    "timestamp": "2026-10-24T02:39:52.207Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS inspection exploration stable 39\n",
+    "timestamp": "2026-10-24T02:39:52.207Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS rotation unchanged 39\n",
+    "timestamp": "2026-10-24T02:39:52.208Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS manual exploration persists\n",
+    "timestamp": "2026-10-24T02:39:52.208Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS same-position network restore preserves exploration\n",
+    "timestamp": "2026-10-24T02:39:52.208Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Tile Selected: 31\n",
+    "timestamp": "2026-10-24T02:39:52.208Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Input Gateway] Routed click to GameEvents.\n",
+    "timestamp": "2026-10-24T02:39:52.208Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":23,\"collidersInside\":17,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":31,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":215.0,\"y\":350.1800537109375},\"tile32\":{\"x\":239.8191680908203,\"y\":366.13348388671877},\"tile0\":{\"x\":442.8852844238281,\"y\":498.1773376464844},\"tile10\":{\"x\":185.66831970214845,\"y\":663.5132446289063},\"tile20\":{\"x\":-71.54869842529297,\"y\":498.1773681640625},\"tile30\":{\"x\":185.66824340820313,\"y\":332.8414611816406},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"Quantum AI Labs\",\"rent\":\"450\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-136.6788330078125,\"y\":122.67862701416016,\"width\":644.6942138671875,\"height\":415.0248107910156},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676305770874025,\"minTileAltitudePixels\":22.44818687438965,\"minTileAreaPixels\":794.7819213867188}}\n",
+    "timestamp": "2026-10-24T02:39:52.308Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS tap selects actual collider into inspector\n",
+    "timestamp": "2026-10-24T02:39:52.308Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS drag cannot select a tile\n",
+    "timestamp": "2026-10-24T02:39:52.308Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS explicit gameplay restore resumes close rest\n",
+    "timestamp": "2026-10-24T02:39:52.308Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS logical pawn position untouched\n",
+    "timestamp": "2026-10-24T02:39:52.308Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "warn",
+    "message": "Manual synchronization of Unity Application.persistentDataPath via JS_FileSystem_Sync() is deprecated and will be later removed in a future Unity version. The persistent data directory will be automatically synchronized instead on file modification. Pass config.autoSyncPersistentDataPath = true; to configuration in createUnityInstance() to opt in to the new behavior.",
+    "timestamp": "2026-10-24T02:39:52.308Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CAMERA_STATE MovementFocus t=61.1960\n",
+    "timestamp": "2026-10-24T02:39:52.308Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT BEGIN actor=0 seq=1 waypoint=0 crossings=0 audio=False t=61.1960\n",
+    "timestamp": "2026-10-24T02:39:52.309Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=9 arrival=False reduced=False intensity=1.150 t=61.4060\n",
+    "timestamp": "2026-10-24T02:39:52.510Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=1 waypoint=0 crossings=1 audio=True t=61.4060\n",
+    "timestamp": "2026-10-24T02:39:52.510Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT REACHED actor=0 seq=1 waypoint=1 crossings=2 audio=False t=61.6710\n",
+    "timestamp": "2026-10-24T02:39:52.764Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CAMERA_HOLD t=61.7770 size=13.0058374\n",
+    "timestamp": "2026-10-24T02:39:52.917Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=10 arrival=True reduced=False intensity=1.650 t=61.7770\n",
+    "timestamp": "2026-10-24T02:39:52.919Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT LOCK actor=0 seq=1 waypoint=1 crossings=2 audio=True t=61.7770\n",
+    "timestamp": "2026-10-24T02:39:52.920Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 original callback once exact destination\n",
+    "timestamp": "2026-10-24T02:39:52.921Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 economy/logical position not advanced by camera fixture\n",
+    "timestamp": "2026-10-24T02:39:52.922Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 monolith volume inside usable viewport through route\n",
+    "timestamp": "2026-10-24T02:39:52.922Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 no accumulated action zoom\n",
+    "timestamp": "2026-10-24T02:39:52.922Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 hold begins with original completion\n",
+    "timestamp": "2026-10-24T02:39:52.922Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 magnetic lock stays on callback clock\n",
+    "timestamp": "2026-10-24T02:39:52.922Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 hold pose stable\n",
+    "timestamp": "2026-10-24T02:39:52.922Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 hold pose stable\n",
+    "timestamp": "2026-10-24T02:39:52.990Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 hold pose stable\n",
+    "timestamp": "2026-10-24T02:39:52.990Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 hold pose stable\n",
+    "timestamp": "2026-10-24T02:39:53.019Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":19,\"collidersInside\":14,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":249.26881408691407,\"y\":46.895751953125},\"tile32\":{\"x\":274.0880126953125,\"y\":62.84918212890625},\"tile0\":{\"x\":477.1540832519531,\"y\":194.89306640625},\"tile10\":{\"x\":219.9371337890625,\"y\":360.2289733886719},\"tile20\":{\"x\":-37.27988052368164,\"y\":194.89306640625},\"tile30\":{\"x\":219.9370574951172,\"y\":29.55712890625},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-102.4100112915039,\"y\":425.9629211425781,\"width\":644.6942138671875,\"height\":415.0247497558594},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676271438598634,\"minTileAltitudePixels\":22.448144912719728,\"minTileAreaPixels\":794.780517578125}}\n",
+    "timestamp": "2026-10-24T02:39:53.120Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 hold pose stable\n",
+    "timestamp": "2026-10-24T02:39:53.121Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 hold pose stable\n",
+    "timestamp": "2026-10-24T02:39:53.121Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 hold pose stable\n",
+    "timestamp": "2026-10-24T02:39:53.122Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 hold pose stable\n",
+    "timestamp": "2026-10-24T02:39:53.122Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 hold pose stable\n",
+    "timestamp": "2026-10-24T02:39:53.159Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CAMERA_STATE ReturnToOverview t=62.0410\n",
+    "timestamp": "2026-10-24T02:39:53.159Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 250ms hold within frame quantization\n",
+    "timestamp": "2026-10-24T02:39:53.159Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CAMERA_STATE StrategicOverview t=62.4370\n",
+    "timestamp": "2026-10-24T02:39:53.528Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 settles into close rest\n",
+    "timestamp": "2026-10-24T02:39:53.626Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 close rest follows new visual destination\n",
+    "timestamp": "2026-10-24T02:39:53.627Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS short corner10 arrived pawn accessible in rest\n",
+    "timestamp": "2026-10-24T02:39:53.627Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":23,\"collidersInside\":15,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":227.4095001220703,\"y\":81.82525634765625},\"tile32\":{\"x\":252.22866821289063,\"y\":97.77874755859375},\"tile0\":{\"x\":455.2947692871094,\"y\":229.82257080078126},\"tile10\":{\"x\":198.0778045654297,\"y\":395.15850830078127},\"tile20\":{\"x\":-59.13919448852539,\"y\":229.82257080078126},\"tile30\":{\"x\":198.07772827148438,\"y\":64.48663330078125},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-124.26932525634766,\"y\":391.03338623046877,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.67629051208496,\"minTileAltitudePixels\":22.44816017150879,\"minTileAreaPixels\":794.780517578125}}\n",
+    "timestamp": "2026-10-24T02:39:53.846Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CAMERA_STATE MovementFocus t=62.8790\n",
+    "timestamp": "2026-10-24T02:39:53.997Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT BEGIN actor=0 seq=2 waypoint=0 crossings=2 audio=False t=62.8790\n",
+    "timestamp": "2026-10-24T02:39:53.998Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=9 arrival=False reduced=False intensity=1.150 t=63.0810\n",
+    "timestamp": "2026-10-24T02:39:54.234Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=0 crossings=3 audio=True t=63.0810\n",
+    "timestamp": "2026-10-24T02:39:54.234Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=10 arrival=False reduced=False intensity=1.150 t=63.3530\n",
+    "timestamp": "2026-10-24T02:39:54.496Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=1 crossings=4 audio=True t=63.3530\n",
+    "timestamp": "2026-10-24T02:39:54.496Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":21,\"collidersInside\":16,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":269.0303039550781,\"y\":57.40850830078125},\"tile32\":{\"x\":293.8495178222656,\"y\":73.3619384765625},\"tile0\":{\"x\":496.9156188964844,\"y\":205.40582275390626},\"tile10\":{\"x\":239.69862365722657,\"y\":370.7417297363281},\"tile20\":{\"x\":-17.51838493347168,\"y\":205.4058837890625},\"tile30\":{\"x\":239.69854736328126,\"y\":40.0699462890625},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-82.64851379394531,\"y\":415.45013427734377,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.67629051208496,\"minTileAltitudePixels\":22.44814109802246,\"minTileAreaPixels\":794.7808837890625}}\n",
+    "timestamp": "2026-10-24T02:39:54.640Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=11 arrival=False reduced=False intensity=1.150 t=63.6140\n",
+    "timestamp": "2026-10-24T02:39:54.714Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=2 crossings=5 audio=True t=63.6140\n",
+    "timestamp": "2026-10-24T02:39:54.714Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=12 arrival=False reduced=False intensity=1.150 t=63.8350\n",
+    "timestamp": "2026-10-24T02:39:54.934Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=3 crossings=6 audio=True t=63.8350\n",
+    "timestamp": "2026-10-24T02:39:54.934Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=13 arrival=False reduced=False intensity=1.150 t=64.0620\n",
+    "timestamp": "2026-10-24T02:39:55.158Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=4 crossings=7 audio=True t=64.0620\n",
+    "timestamp": "2026-10-24T02:39:55.158Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=14 arrival=False reduced=False intensity=1.150 t=64.2840\n",
+    "timestamp": "2026-10-24T02:39:55.451Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=5 crossings=8 audio=True t=64.2840\n",
+    "timestamp": "2026-10-24T02:39:55.451Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":22,\"collidersInside\":19,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":357.5419921875,\"y\":116.1318359375},\"tile32\":{\"x\":382.3612060546875,\"y\":132.0853271484375},\"tile0\":{\"x\":585.42724609375,\"y\":264.129150390625},\"tile10\":{\"x\":328.2103271484375,\"y\":429.465087890625},\"tile20\":{\"x\":70.9933090209961,\"y\":264.12921142578127},\"tile30\":{\"x\":328.21026611328127,\"y\":98.79327392578125},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":5.863182067871094,\"y\":356.726806640625,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.6762638092041,\"minTileAltitudePixels\":22.448118209838868,\"minTileAreaPixels\":794.7803955078125}}\n",
+    "timestamp": "2026-10-24T02:39:55.451Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=15 arrival=False reduced=False intensity=1.150 t=64.5250\n",
+    "timestamp": "2026-10-24T02:39:55.654Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=6 crossings=9 audio=True t=64.5250\n",
+    "timestamp": "2026-10-24T02:39:55.654Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=16 arrival=False reduced=False intensity=1.150 t=64.7520\n",
+    "timestamp": "2026-10-24T02:39:55.857Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=7 crossings=10 audio=True t=64.7520\n",
+    "timestamp": "2026-10-24T02:39:55.858Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=17 arrival=False reduced=False intensity=1.150 t=64.9810\n",
+    "timestamp": "2026-10-24T02:39:56.163Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=8 crossings=11 audio=True t=64.9810\n",
+    "timestamp": "2026-10-24T02:39:56.164Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":21,\"collidersInside\":19,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":442.7388916015625,\"y\":170.89337158203126},\"tile32\":{\"x\":467.55810546875,\"y\":186.8468017578125},\"tile0\":{\"x\":670.6241455078125,\"y\":318.890625},\"tile10\":{\"x\":413.4071960449219,\"y\":484.2265930175781},\"tile20\":{\"x\":156.190185546875,\"y\":318.89068603515627},\"tile30\":{\"x\":413.4071350097656,\"y\":153.55474853515626},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":91.06005859375,\"y\":301.96533203125,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676298141479493,\"minTileAltitudePixels\":22.448163986206056,\"minTileAreaPixels\":794.78076171875}}\n",
+    "timestamp": "2026-10-24T02:39:56.254Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=18 arrival=False reduced=False intensity=1.150 t=65.2100\n",
+    "timestamp": "2026-10-24T02:39:56.367Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=9 crossings=12 audio=True t=65.2100\n",
+    "timestamp": "2026-10-24T02:39:56.367Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=19 arrival=False reduced=False intensity=1.150 t=65.4410\n",
+    "timestamp": "2026-10-24T02:39:56.541Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=10 crossings=13 audio=True t=65.4410\n",
+    "timestamp": "2026-10-24T02:39:56.541Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=20 arrival=False reduced=False intensity=1.150 t=65.7140\n",
+    "timestamp": "2026-10-24T02:39:56.873Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=11 crossings=14 audio=True t=65.7140\n",
+    "timestamp": "2026-10-24T02:39:56.873Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":17,\"collidersInside\":15,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":482.2094421386719,\"y\":226.48760986328126},\"tile32\":{\"x\":507.0285949707031,\"y\":242.4410400390625},\"tile0\":{\"x\":710.0946655273438,\"y\":374.48486328125},\"tile10\":{\"x\":452.87774658203127,\"y\":539.82080078125},\"tile20\":{\"x\":195.66070556640626,\"y\":374.48492431640627},\"tile30\":{\"x\":452.8776550292969,\"y\":209.14898681640626},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":130.53057861328126,\"y\":246.37107849121095,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676298141479493,\"minTileAltitudePixels\":22.448192596435548,\"minTileAreaPixels\":794.7821044921875}}\n",
+    "timestamp": "2026-10-24T02:39:57.076Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=21 arrival=False reduced=False intensity=1.150 t=65.9770\n",
+    "timestamp": "2026-10-24T02:39:57.076Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=12 crossings=15 audio=True t=65.9770\n",
+    "timestamp": "2026-10-24T02:39:57.077Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=22 arrival=False reduced=False intensity=1.150 t=66.2110\n",
+    "timestamp": "2026-10-24T02:39:57.308Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=13 crossings=16 audio=True t=66.2110\n",
+    "timestamp": "2026-10-24T02:39:57.308Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=23 arrival=False reduced=False intensity=1.150 t=66.4320\n",
+    "timestamp": "2026-10-24T02:39:57.581Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=14 crossings=17 audio=True t=66.4320\n",
+    "timestamp": "2026-10-24T02:39:57.581Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=24 arrival=False reduced=False intensity=1.150 t=66.6610\n",
+    "timestamp": "2026-10-24T02:39:57.762Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=15 crossings=18 audio=True t=66.6610\n",
+    "timestamp": "2026-10-24T02:39:57.762Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":24,\"collidersInside\":20,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":387.96356201171877,\"y\":281.74822998046877},\"tile32\":{\"x\":412.78277587890627,\"y\":297.70166015625},\"tile0\":{\"x\":615.848876953125,\"y\":429.74554443359377},\"tile10\":{\"x\":358.63189697265627,\"y\":595.0814819335938},\"tile20\":{\"x\":101.41487121582031,\"y\":429.7455749511719},\"tile30\":{\"x\":358.6318054199219,\"y\":264.40966796875},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":36.28474426269531,\"y\":191.11041259765626,\"width\":644.6942749023438,\"height\":415.02484130859377},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676298141479493,\"minTileAltitudePixels\":22.44818687438965,\"minTileAreaPixels\":794.781494140625}}\n",
+    "timestamp": "2026-10-24T02:39:57.883Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=25 arrival=False reduced=False intensity=1.150 t=66.9010\n",
+    "timestamp": "2026-10-24T02:39:58.013Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=16 crossings=19 audio=True t=66.9010\n",
+    "timestamp": "2026-10-24T02:39:58.013Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=26 arrival=False reduced=False intensity=1.150 t=67.1360\n",
+    "timestamp": "2026-10-24T02:39:58.264Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=17 crossings=20 audio=True t=67.1360\n",
+    "timestamp": "2026-10-24T02:39:58.265Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=27 arrival=False reduced=False intensity=1.150 t=67.3580\n",
+    "timestamp": "2026-10-24T02:39:58.489Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=18 crossings=21 audio=True t=67.3580\n",
+    "timestamp": "2026-10-24T02:39:58.489Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":24,\"collidersInside\":19,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":302.34783935546877,\"y\":336.7527770996094},\"tile32\":{\"x\":327.1670837402344,\"y\":352.7062683105469},\"tile0\":{\"x\":530.233154296875,\"y\":484.7501220703125},\"tile10\":{\"x\":273.01617431640627,\"y\":650.0860595703125},\"tile20\":{\"x\":15.799162864685059,\"y\":484.7501525878906},\"tile30\":{\"x\":273.01611328125,\"y\":319.41424560546877},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-49.33095169067383,\"y\":136.10585021972657,\"width\":644.6942138671875,\"height\":415.02484130859377},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676298141479493,\"minTileAltitudePixels\":22.44818878173828,\"minTileAreaPixels\":794.7816772460938}}\n",
+    "timestamp": "2026-10-24T02:39:58.615Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=28 arrival=False reduced=False intensity=1.150 t=67.5800\n",
+    "timestamp": "2026-10-24T02:39:58.692Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=19 crossings=22 audio=True t=67.5800\n",
+    "timestamp": "2026-10-24T02:39:58.692Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=29 arrival=False reduced=False intensity=1.150 t=67.8170\n",
+    "timestamp": "2026-10-24T02:39:58.923Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=20 crossings=23 audio=True t=67.8170\n",
+    "timestamp": "2026-10-24T02:39:58.923Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=30 arrival=False reduced=False intensity=1.150 t=68.0850\n",
+    "timestamp": "2026-10-24T02:39:59.199Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=21 crossings=24 audio=True t=68.0850\n",
+    "timestamp": "2026-10-24T02:39:59.199Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":23,\"collidersInside\":17,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":216.67588806152345,\"y\":367.6081848144531},\"tile32\":{\"x\":241.49505615234376,\"y\":383.5616149902344},\"tile0\":{\"x\":444.5611572265625,\"y\":515.60546875},\"tile10\":{\"x\":187.3441925048828,\"y\":680.94140625},\"tile20\":{\"x\":-69.872802734375,\"y\":515.6055297851563},\"tile30\":{\"x\":187.3441162109375,\"y\":350.26959228515627},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-135.0029296875,\"y\":105.25048065185547,\"width\":644.6942138671875,\"height\":415.02484130859377},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676292419433595,\"minTileAltitudePixels\":22.44817352294922,\"minTileAreaPixels\":794.7821044921875}}\n",
+    "timestamp": "2026-10-24T02:39:59.396Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=31 arrival=False reduced=False intensity=1.150 t=68.3710\n",
+    "timestamp": "2026-10-24T02:39:59.465Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=22 crossings=25 audio=True t=68.3710\n",
+    "timestamp": "2026-10-24T02:39:59.465Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=32 arrival=False reduced=False intensity=1.150 t=68.5930\n",
+    "timestamp": "2026-10-24T02:39:59.695Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=23 crossings=26 audio=True t=68.5930\n",
+    "timestamp": "2026-10-24T02:39:59.695Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=33 arrival=False reduced=False intensity=1.150 t=68.8270\n",
+    "timestamp": "2026-10-24T02:39:59.971Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=24 crossings=27 audio=True t=68.8270\n",
+    "timestamp": "2026-10-24T02:39:59.972Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":22,\"collidersInside\":19,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":130.97076416015626,\"y\":311.0819091796875},\"tile32\":{\"x\":155.78993225097657,\"y\":327.0353698730469},\"tile0\":{\"x\":358.8560485839844,\"y\":459.0791931152344},\"tile10\":{\"x\":101.63907623291016,\"y\":624.4151611328125},\"tile20\":{\"x\":-155.5779266357422,\"y\":459.0792236328125},\"tile30\":{\"x\":101.63899993896485,\"y\":293.7432861328125},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-220.7080535888672,\"y\":161.7767791748047,\"width\":644.6941528320313,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676298141479493,\"minTileAltitudePixels\":22.44818878173828,\"minTileAreaPixels\":794.781982421875}}\n",
+    "timestamp": "2026-10-24T02:40:00.211Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=34 arrival=False reduced=False intensity=1.150 t=69.0840\n",
+    "timestamp": "2026-10-24T02:40:00.212Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=25 crossings=28 audio=True t=69.0840\n",
+    "timestamp": "2026-10-24T02:40:00.212Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=35 arrival=False reduced=False intensity=1.150 t=69.3210\n",
+    "timestamp": "2026-10-24T02:40:00.415Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=26 crossings=29 audio=True t=69.3210\n",
+    "timestamp": "2026-10-24T02:40:00.416Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=36 arrival=False reduced=False intensity=1.150 t=69.5720\n",
+    "timestamp": "2026-10-24T02:40:00.719Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=27 crossings=30 audio=True t=69.5720\n",
+    "timestamp": "2026-10-24T02:40:00.719Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=37 arrival=False reduced=False intensity=1.150 t=69.8040\n",
+    "timestamp": "2026-10-24T02:40:00.923Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=28 crossings=31 audio=True t=69.8040\n",
+    "timestamp": "2026-10-24T02:40:00.923Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":21,\"collidersInside\":19,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":49.973934173583987,\"y\":258.2857666015625},\"tile32\":{\"x\":74.79312133789063,\"y\":274.23919677734377},\"tile0\":{\"x\":277.8592224121094,\"y\":406.2831115722656},\"tile10\":{\"x\":20.64224624633789,\"y\":571.6190185546875},\"tile20\":{\"x\":-236.57476806640626,\"y\":406.2831115722656},\"tile30\":{\"x\":20.642169952392579,\"y\":240.94720458984376},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-301.70489501953127,\"y\":214.57289123535157,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.67629051208496,\"minTileAltitudePixels\":22.448158264160158,\"minTileAreaPixels\":794.7807006835938}}\n",
+    "timestamp": "2026-10-24T02:40:01.024Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=38 arrival=False reduced=False intensity=1.150 t=70.0260\n",
+    "timestamp": "2026-10-24T02:40:01.124Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=29 crossings=32 audio=True t=70.0260\n",
+    "timestamp": "2026-10-24T02:40:01.124Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=39 arrival=False reduced=False intensity=1.150 t=70.2590\n",
+    "timestamp": "2026-10-24T02:40:01.430Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=30 crossings=33 audio=True t=70.2590\n",
+    "timestamp": "2026-10-24T02:40:01.430Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=0 arrival=False reduced=False intensity=1.150 t=70.5240\n",
+    "timestamp": "2026-10-24T02:40:01.633Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=31 crossings=34 audio=True t=70.5240\n",
+    "timestamp": "2026-10-24T02:40:01.633Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":17,\"collidersInside\":15,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":1.6808408498764039,\"y\":201.99774169921876},\"tile32\":{\"x\":26.500032424926759,\"y\":217.95123291015626},\"tile0\":{\"x\":229.5661163330078,\"y\":349.99505615234377},\"tile10\":{\"x\":-27.650846481323243,\"y\":515.3309936523438},\"tile20\":{\"x\":-284.8678894042969,\"y\":349.9951171875},\"tile30\":{\"x\":-27.650922775268556,\"y\":184.6591796875},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-349.9980163574219,\"y\":270.8608703613281,\"width\":644.6942138671875,\"height\":415.0248718261719},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.67630958557129,\"minTileAltitudePixels\":22.448184967041017,\"minTileAreaPixels\":794.7816162109375}}\n",
+    "timestamp": "2026-10-24T02:40:01.836Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=1 arrival=False reduced=False intensity=1.150 t=70.7910\n",
+    "timestamp": "2026-10-24T02:40:01.937Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=32 crossings=35 audio=True t=70.7910\n",
+    "timestamp": "2026-10-24T02:40:01.937Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=2 arrival=False reduced=False intensity=1.150 t=71.0240\n",
+    "timestamp": "2026-10-24T02:40:02.116Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=33 crossings=36 audio=True t=71.0240\n",
+    "timestamp": "2026-10-24T02:40:02.117Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=3 arrival=False reduced=False intensity=1.150 t=71.2590\n",
+    "timestamp": "2026-10-24T02:40:02.444Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=34 crossings=37 audio=True t=71.2590\n",
+    "timestamp": "2026-10-24T02:40:02.444Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":24,\"collidersInside\":20,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":96.28697967529297,\"y\":147.5439453125},\"tile32\":{\"x\":121.10617065429688,\"y\":163.49737548828126},\"tile0\":{\"x\":324.1722412109375,\"y\":295.54119873046877},\"tile10\":{\"x\":66.95529174804688,\"y\":460.87713623046877},\"tile20\":{\"x\":-190.26171875,\"y\":295.541259765625},\"tile30\":{\"x\":66.95521545410156,\"y\":130.205322265625},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-255.391845703125,\"y\":325.31475830078127,\"width\":644.6942138671875,\"height\":415.02484130859377},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676292419433595,\"minTileAltitudePixels\":22.44816017150879,\"minTileAreaPixels\":794.7802734375}}\n",
+    "timestamp": "2026-10-24T02:40:02.646Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=4 arrival=False reduced=False intensity=1.150 t=71.5120\n",
+    "timestamp": "2026-10-24T02:40:02.646Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=35 crossings=38 audio=True t=71.5120\n",
+    "timestamp": "2026-10-24T02:40:02.646Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=5 arrival=False reduced=False intensity=1.150 t=71.7350\n",
+    "timestamp": "2026-10-24T02:40:02.848Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=36 crossings=39 audio=True t=71.7350\n",
+    "timestamp": "2026-10-24T02:40:02.849Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=6 arrival=False reduced=False intensity=1.150 t=71.9700\n",
+    "timestamp": "2026-10-24T02:40:03.154Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=37 crossings=40 audio=True t=71.9700\n",
+    "timestamp": "2026-10-24T02:40:03.155Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=7 arrival=False reduced=False intensity=1.150 t=72.2060\n",
+    "timestamp": "2026-10-24T02:40:03.356Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=38 crossings=41 audio=True t=72.2060\n",
+    "timestamp": "2026-10-24T02:40:03.356Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":24,\"collidersInside\":18,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":178.462158203125,\"y\":95.0592041015625},\"tile32\":{\"x\":203.28135681152345,\"y\":111.0126953125},\"tile0\":{\"x\":406.3474426269531,\"y\":243.0565185546875},\"tile10\":{\"x\":149.13047790527345,\"y\":408.3924255371094},\"tile20\":{\"x\":-108.08654022216797,\"y\":243.05657958984376},\"tile30\":{\"x\":149.13040161132813,\"y\":77.72064208984375},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-173.2166748046875,\"y\":377.7994384765625,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676298141479493,\"minTileAltitudePixels\":22.448158264160158,\"minTileAreaPixels\":794.780517578125}}\n",
+    "timestamp": "2026-10-24T02:40:03.456Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=8 arrival=False reduced=False intensity=1.150 t=72.4370\n",
+    "timestamp": "2026-10-24T02:40:03.543Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=39 crossings=42 audio=True t=72.4370\n",
+    "timestamp": "2026-10-24T02:40:03.544Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=9 arrival=False reduced=False intensity=1.150 t=72.6740\n",
+    "timestamp": "2026-10-24T02:40:03.794Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=40 crossings=43 audio=True t=72.6740\n",
+    "timestamp": "2026-10-24T02:40:03.794Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=10 arrival=False reduced=False intensity=1.150 t=72.9500\n",
+    "timestamp": "2026-10-24T02:40:04.045Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=41 crossings=44 audio=True t=72.9500\n",
+    "timestamp": "2026-10-24T02:40:04.045Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":19,\"collidersInside\":14,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":262.9901428222656,\"y\":52.70849609375},\"tile32\":{\"x\":287.809326171875,\"y\":68.6619873046875},\"tile0\":{\"x\":490.8754577636719,\"y\":200.705810546875},\"tile10\":{\"x\":233.65846252441407,\"y\":366.041748046875},\"tile20\":{\"x\":-23.558555603027345,\"y\":200.705810546875},\"tile30\":{\"x\":233.65838623046876,\"y\":35.369873046875},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-88.68868255615235,\"y\":420.1501159667969,\"width\":644.6942138671875,\"height\":415.0248107910156},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.6762638092041,\"minTileAltitudePixels\":22.44815444946289,\"minTileAreaPixels\":794.7804565429688}}\n",
+    "timestamp": "2026-10-24T02:40:04.270Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=11 arrival=False reduced=False intensity=1.150 t=73.2350\n",
+    "timestamp": "2026-10-24T02:40:04.371Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=42 crossings=45 audio=True t=73.2350\n",
+    "timestamp": "2026-10-24T02:40:04.371Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "warn",
+    "message": "[Planning] Safety net : 60s écoulées sans EndPlanningPhase — auto-skip vers RollDice. Vérifie que le Planning Widget est dans la scène.\n",
+    "timestamp": "2026-10-24T02:40:04.377Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Player 0 is rolling dice...\n",
+    "timestamp": "2026-10-24T02:40:04.472Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CAMERA_STATE StrategicOverview t=73.2860\n",
+    "timestamp": "2026-10-24T02:40:04.473Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT REACHED actor=0 seq=2 waypoint=43 crossings=46 audio=False t=73.4730\n",
+    "timestamp": "2026-10-24T02:40:04.564Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=12 arrival=True reduced=False intensity=1.650 t=73.6030\n",
+    "timestamp": "2026-10-24T02:40:04.697Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT LOCK actor=0 seq=2 waypoint=43 crossings=46 audio=True t=73.6030\n",
+    "timestamp": "2026-10-24T02:40:04.697Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS long four corners original callback once exact destination\n",
+    "timestamp": "2026-10-24T02:40:04.774Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS long four corners economy/logical position not advanced by camera fixture\n",
+    "timestamp": "2026-10-24T02:40:04.774Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS long four corners monolith volume inside usable viewport through route\n",
+    "timestamp": "2026-10-24T02:40:04.775Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS long four corners no accumulated action zoom\n",
+    "timestamp": "2026-10-24T02:40:04.775Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE FAIL long four corners hold begins with original completion\n",
+    "timestamp": "2026-10-24T02:40:04.775Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS long four corners magnetic lock stays on callback clock\n",
+    "timestamp": "2026-10-24T02:40:04.775Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE FAIL long four corners 250ms hold within frame quantization\n",
+    "timestamp": "2026-10-24T02:40:04.775Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS long four corners settles into close rest\n",
+    "timestamp": "2026-10-24T02:40:04.776Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS long four corners close rest follows new visual destination\n",
+    "timestamp": "2026-10-24T02:40:04.776Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS long four corners arrived pawn accessible in rest\n",
+    "timestamp": "2026-10-24T02:40:04.776Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":25,\"collidersInside\":19,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":260.1168518066406,\"y\":102.04644775390625},\"tile32\":{\"x\":284.9360046386719,\"y\":117.99993896484375},\"tile0\":{\"x\":488.0021057128906,\"y\":250.04376220703126},\"tile10\":{\"x\":230.78515625,\"y\":415.37969970703127},\"tile20\":{\"x\":-26.43185806274414,\"y\":250.0438232421875},\"tile30\":{\"x\":230.7850799560547,\"y\":84.7078857421875},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"RollDice\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-91.5619888305664,\"y\":370.81219482421877,\"width\":644.6942749023438,\"height\":415.02484130859377},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676305770874025,\"minTileAltitudePixels\":22.44818687438965,\"minTileAreaPixels\":794.7828979492188}}\n",
+    "timestamp": "2026-10-24T02:40:04.977Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT BEGIN actor=0 seq=3 waypoint=0 crossings=46 audio=False t=74.0280\n",
+    "timestamp": "2026-10-24T02:40:05.180Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=19 arrival=False reduced=True intensity=0.518 t=74.2190\n",
+    "timestamp": "2026-10-24T02:40:05.383Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=3 waypoint=0 crossings=47 audio=True t=74.2190\n",
+    "timestamp": "2026-10-24T02:40:05.383Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "DICE_BEGIN id=1 actor=0 values=6,2 up=False t=74.3020\n",
+    "timestamp": "2026-10-24T02:40:05.485Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "DICE_RESULT id=1 actor=0 values=6,2 up=True t=74.3020\n",
+    "timestamp": "2026-10-24T02:40:05.486Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Rolled 6 and 2.\n",
+    "timestamp": "2026-10-24T02:40:05.486Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT REACHED actor=0 seq=3 waypoint=1 crossings=48 audio=False t=74.4840\n",
+    "timestamp": "2026-10-24T02:40:05.574Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=20 arrival=True reduced=True intensity=0.742 t=74.5030\n",
+    "timestamp": "2026-10-24T02:40:05.689Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT LOCK actor=0 seq=3 waypoint=1 crossings=48 audio=True t=74.5030\n",
+    "timestamp": "2026-10-24T02:40:05.689Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS Reduced Motion original callback once exact destination\n",
+    "timestamp": "2026-10-24T02:40:05.690Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS Reduced Motion economy/logical position not advanced by camera fixture\n",
+    "timestamp": "2026-10-24T02:40:05.690Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS Reduced Motion monolith volume inside usable viewport through route\n",
+    "timestamp": "2026-10-24T02:40:05.690Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS Reduced Motion no accumulated action zoom\n",
+    "timestamp": "2026-10-24T02:40:05.690Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS Reduced Motion Reduced Motion keeps camera fixed through interpolation\n",
+    "timestamp": "2026-10-24T02:40:05.690Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_CASE PASS Reduced Motion Reduced Motion establishes new close rest at completion\n",
+    "timestamp": "2026-10-24T02:40:05.690Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "DICE_FADE id=1 actor=0 values=6,2 up=True t=74.5610\n",
+    "timestamp": "2026-10-24T02:40:05.691Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT BEGIN actor=0 seq=4 waypoint=0 crossings=48 audio=False t=74.5610\n",
+    "timestamp": "2026-10-24T02:40:05.691Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":19,\"collidersInside\":17,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":true,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":469.231689453125,\"y\":223.93505859375},\"tile32\":{\"x\":494.0509033203125,\"y\":239.8885498046875},\"tile0\":{\"x\":697.116943359375,\"y\":371.93231201171877},\"tile10\":{\"x\":439.8999938964844,\"y\":537.268310546875},\"tile20\":{\"x\":182.68299865722657,\"y\":371.932373046875},\"tile30\":{\"x\":439.8999328613281,\"y\":206.596435546875},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"MovingPawn\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":117.55286407470703,\"y\":248.9236297607422,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676298141479493,\"minTileAltitudePixels\":22.448192596435548,\"minTileAreaPixels\":794.7821044921875}}\n",
+    "timestamp": "2026-10-24T02:40:05.793Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_READBACK {\"time\":74.9219970703125,\"reference\":18.208171844482423,\"size\":13.005837440490723,\"factor\":1.399999976158142,\"position\":{\"x\":-8.173534393310547,\"y\":16.035066604614259,\"z\":-19.42641830444336},\"rotation\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"pawn\":{\"x\":-5.585693836212158,\"y\":3.9617857933044435,\"z\":1.839970350265503},\"state\":\"StrategicOverview\",\"manual\":false,\"hold\":false,\"reduced\":false,\"expanded\":false,\"active\":0,\"logical\":0,\"inspected\":0,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0}}\n",
+    "timestamp": "2026-10-24T02:40:06.016Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CLOSE_CAMERA_FIXTURES_DONE checks=167 failed=2\n",
+    "timestamp": "2026-10-24T02:40:06.016Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":430,\"height\":830,\"indices\":40,\"anchorsVisible\":19,\"collidersInside\":17,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":696.0,\"width\":430.0,\"height\":134.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":430.0,\"height\":236.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":19.0,\"y\":10.0,\"width\":309.0,\"height\":49.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":8.0,\"y\":244.0,\"width\":414.0,\"height\":444.0},\"tile31\":{\"x\":19.43174171447754,\"y\":213.986083984375},\"tile32\":{\"x\":44.25093460083008,\"y\":229.93951416015626},\"tile0\":{\"x\":247.3170166015625,\"y\":361.9833984375},\"tile10\":{\"x\":-9.899945259094239,\"y\":527.3193359375},\"tile20\":{\"x\":-267.1169738769531,\"y\":361.9833984375},\"tile30\":{\"x\":-9.900022506713868,\"y\":196.6474609375},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"MovingPawn\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-332.2471008300781,\"y\":258.87261962890627,\"width\":644.6942138671875,\"height\":415.0247802734375},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":13.005837440490723,\"minTileEdgePixels\":24.676305770874025,\"minTileAltitudePixels\":22.448158264160158,\"minTileAreaPixels\":794.7807006835938}}\n",
+    "timestamp": "2026-10-24T02:40:06.560Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "pass": true,
+  "base": "http://127.0.0.1:9013",
+  "checks": [
+    {
+      "pass": true,
+      "label": "actual Release index served"
+    },
+    {
+      "pass": true,
+      "label": "HTML revalidated"
+    },
+    {
+      "pass": true,
+      "label": "no QA recorder or controls"
+    },
+    {
+      "pass": true,
+      "label": "7a2dbded24d57e056180125b1583e7c4.loader.js encoding"
+    },
+    {
+      "pass": true,
+      "label": "7a2dbded24d57e056180125b1583e7c4.loader.js hash cache"
+    },
+    {
+      "pass": true,
+      "label": "0baf44af5908f1c03747d46c6b08299e.data.gz MIME"
+    },
+    {
+      "pass": true,
+      "label": "0baf44af5908f1c03747d46c6b08299e.data.gz encoding"
+    },
+    {
+      "pass": true,
+      "label": "0baf44af5908f1c03747d46c6b08299e.data.gz hash cache"
+    },
+    {
+      "pass": true,
+      "label": "00259140ff37058b1aa33adc34496237.wasm.gz MIME"
+    },
+    {
+      "pass": true,
+      "label": "00259140ff37058b1aa33adc34496237.wasm.gz encoding"
+    },
+    {
+      "pass": true,
+      "label": "00259140ff37058b1aa33adc34496237.wasm.gz hash cache"
+    },
+    {
+      "pass": true,
+      "label": "f078938e653b10e66fd9a348a89ae63f.framework.js.gz encoding"
+    },
+    {
+      "pass": true,
+      "label": "f078938e653b10e66fd9a348a89ae63f.framework.js.gz hash cache"
+    },
+    {
+      "pass": true,
+      "label": "/data/lobbies.json excluded"
+    },
+    {
+      "pass": true,
+      "label": "/.env excluded"
+    },
+    {
+      "pass": true,
+      "label": "/Program.cs excluded"
+    },
+    {
+      "pass": true,
+      "label": "/capture.html excluded"
+    },
+    {
+      "pass": true,
+      "label": "/__video excluded"
+    }
+  ],
+  "note": "Actual local Release; no public TLS or iPhone coverage."
+}

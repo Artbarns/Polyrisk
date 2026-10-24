@@ -1,0 +1,1268 @@
+[
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":4,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:27:52.790Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:27:53.542Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_MEASURE {\"variant\":\"B proposal\",\"quality\":\"Low\",\"fixture\":\"live game\",\"stage\":3,\"width\":860,\"height\":1660,\"frames\":72,\"seconds\":6.016998291015625,\"meanFrameMs\":83.73611450195313,\"medianFrameMs\":84.0,\"p95FrameMs\":92.0,\"maxFrameMs\":96.0,\"cpuMainThreadMs\":83.75774650704226,\"cpuMainThreadAvailable\":true,\"gpuTimeAvailable\":false,\"renderCountersAvailable\":true,\"unchangedDuringSample\":true,\"drawCalls\":70,\"batches\":47,\"setPass\":14,\"totalAllocatedBytes\":58852622,\"totalReservedBytes\":67210971}\n",
+    "timestamp": "2026-10-24T02:28:00.712Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:29:20.785Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:35:38.447Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"inactive graphite\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:35:39.163Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"A — baseline\",\"treatment\":\"GraphiteReflectiveNeon\",\"fixture\":\"inactive graphite\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":false,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-24T02:35:39.873Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"inactive graphite\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:35:41.890Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"contact peak, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:35:43.936Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"A — baseline\",\"treatment\":\"GraphiteReflectiveNeon\",\"fixture\":\"contact peak, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":false,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-24T02:35:44.628Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"contact peak, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:35:46.856Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"arrival peak, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:35:57.387Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"A — baseline\",\"treatment\":\"GraphiteReflectiveNeon\",\"fixture\":\"arrival peak, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":false,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-24T02:35:58.007Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"arrival peak, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:00.240Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"corner arrival, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:02.118Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"corner arrival, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":10,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:02.132Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"A — baseline\",\"treatment\":\"GraphiteReflectiveNeon\",\"fixture\":\"corner arrival, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":10,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":false,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-24T02:36:02.623Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"corner arrival, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":10,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:05.006Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"colored presentation sample — ownership model unchanged\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:15.550Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"A — baseline\",\"treatment\":\"GraphiteReflectiveNeon\",\"fixture\":\"colored presentation sample — ownership model unchanged\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":false,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-24T02:36:16.135Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"colored presentation sample — ownership model unchanged\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:18.159Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"selected presentation sample\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:20.088Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"A — baseline\",\"treatment\":\"GraphiteReflectiveNeon\",\"fixture\":\"selected presentation sample\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":false,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-24T02:36:20.736Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"selected presentation sample\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:23.047Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"monolith at rest — no geometry enlargement\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:29.122Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"A — baseline\",\"treatment\":\"GraphiteReflectiveNeon\",\"fixture\":\"monolith at rest — no geometry enlargement\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":false,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-24T02:36:29.669Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"monolith at rest — no geometry enlargement\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:31.656Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"active monolith — no geometry enlargement\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:33.678Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"A — baseline\",\"treatment\":\"GraphiteReflectiveNeon\",\"fixture\":\"active monolith — no geometry enlargement\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":false,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-24T02:36:34.389Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"active monolith — no geometry enlargement\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:36.746Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"architectural edge and bevel — original camera\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:42.102Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"A — baseline\",\"treatment\":\"GraphiteReflectiveNeon\",\"fixture\":\"architectural edge and bevel — original camera\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":false,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-24T02:36:42.713Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"architectural edge and bevel — original camera\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:44.945Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"local neon response, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:46.924Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"A — baseline\",\"treatment\":\"GraphiteReflectiveNeon\",\"fixture\":\"local neon response, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":false,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-24T02:36:47.590Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"local neon response, frozen for A/B\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":12,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":true,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:36:49.609Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_RESTORE economyUnchanged=True cameraNotWritten=true\n",
+    "timestamp": "2026-10-24T02:37:08.038Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:37:08.052Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS 40 unique logical anchors\n",
+    "timestamp": "2026-10-24T02:37:08.622Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS four original fused meshes\n",
+    "timestamp": "2026-10-24T02:37:08.623Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS approved orthographic isometry\n",
+    "timestamp": "2026-10-24T02:37:08.624Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS permanent x1.40\n",
+    "timestamp": "2026-10-24T02:37:08.624Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS 40 retained presentation identities\n",
+    "timestamp": "2026-10-24T02:37:08.625Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_5\n",
+    "timestamp": "2026-10-24T02:37:08.626Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_6\n",
+    "timestamp": "2026-10-24T02:37:08.626Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_7\n",
+    "timestamp": "2026-10-24T02:37:08.627Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_8\n",
+    "timestamp": "2026-10-24T02:37:08.628Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_9\n",
+    "timestamp": "2026-10-24T02:37:08.630Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_10\n",
+    "timestamp": "2026-10-24T02:37:08.630Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_11\n",
+    "timestamp": "2026-10-24T02:37:08.631Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_12\n",
+    "timestamp": "2026-10-24T02:37:08.631Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_13\n",
+    "timestamp": "2026-10-24T02:37:08.632Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_14\n",
+    "timestamp": "2026-10-24T02:37:08.633Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_15\n",
+    "timestamp": "2026-10-24T02:37:08.633Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_16\n",
+    "timestamp": "2026-10-24T02:37:08.634Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_17\n",
+    "timestamp": "2026-10-24T02:37:08.635Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_18\n",
+    "timestamp": "2026-10-24T02:37:08.635Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_19\n",
+    "timestamp": "2026-10-24T02:37:08.636Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_21\n",
+    "timestamp": "2026-10-24T02:37:08.637Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_22\n",
+    "timestamp": "2026-10-24T02:37:08.637Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_23\n",
+    "timestamp": "2026-10-24T02:37:08.638Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_24\n",
+    "timestamp": "2026-10-24T02:37:08.639Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_25\n",
+    "timestamp": "2026-10-24T02:37:08.639Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_35\n",
+    "timestamp": "2026-10-24T02:37:08.640Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 camera unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.641Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.642Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.642Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:37:08.643Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:37:08.643Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:37:08.647Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 camera unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.648Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.649Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.649Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:37:08.650Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:37:08.650Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:37:08.662Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 camera unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.662Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.663Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.663Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:37:08.664Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:37:08.664Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:37:08.674Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 camera unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.674Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.675Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.676Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:37:08.676Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:37:08.676Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:37:08.687Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 camera unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.688Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.688Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.689Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:37:08.689Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:37:08.690Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:37:08.698Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 camera unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.698Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.699Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.699Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:37:08.699Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:37:08.700Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:37:08.707Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 camera unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.708Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.709Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.709Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:37:08.709Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:37:08.709Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:37:08.717Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 camera unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.718Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.718Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.719Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:37:08.719Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:37:08.719Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:37:08.727Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 camera unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.728Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.728Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.729Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:37:08.729Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:37:08.729Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:37:08.737Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 camera unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.737Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.738Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:37:08.738Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:37:08.738Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:37:08.739Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:37:08.747Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 0\n",
+    "timestamp": "2026-10-24T02:37:08.747Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 1\n",
+    "timestamp": "2026-10-24T02:37:08.748Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 2\n",
+    "timestamp": "2026-10-24T02:37:08.748Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 3\n",
+    "timestamp": "2026-10-24T02:37:08.749Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 4\n",
+    "timestamp": "2026-10-24T02:37:08.749Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 5\n",
+    "timestamp": "2026-10-24T02:37:08.750Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 6\n",
+    "timestamp": "2026-10-24T02:37:08.750Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 7\n",
+    "timestamp": "2026-10-24T02:37:08.751Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 8\n",
+    "timestamp": "2026-10-24T02:37:08.751Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 9\n",
+    "timestamp": "2026-10-24T02:37:08.752Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 10\n",
+    "timestamp": "2026-10-24T02:37:08.752Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 11\n",
+    "timestamp": "2026-10-24T02:37:08.753Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 12\n",
+    "timestamp": "2026-10-24T02:37:08.754Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 13\n",
+    "timestamp": "2026-10-24T02:37:08.755Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 14\n",
+    "timestamp": "2026-10-24T02:37:08.756Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 15\n",
+    "timestamp": "2026-10-24T02:37:08.756Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 16\n",
+    "timestamp": "2026-10-24T02:37:08.757Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 17\n",
+    "timestamp": "2026-10-24T02:37:08.757Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 18\n",
+    "timestamp": "2026-10-24T02:37:08.758Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 19\n",
+    "timestamp": "2026-10-24T02:37:08.758Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 20\n",
+    "timestamp": "2026-10-24T02:37:08.759Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 21\n",
+    "timestamp": "2026-10-24T02:37:08.759Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 22\n",
+    "timestamp": "2026-10-24T02:37:08.760Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 23\n",
+    "timestamp": "2026-10-24T02:37:08.761Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 24\n",
+    "timestamp": "2026-10-24T02:37:08.762Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 25\n",
+    "timestamp": "2026-10-24T02:37:08.762Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 26\n",
+    "timestamp": "2026-10-24T02:37:08.763Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 27\n",
+    "timestamp": "2026-10-24T02:37:08.764Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 28\n",
+    "timestamp": "2026-10-24T02:37:08.765Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 29\n",
+    "timestamp": "2026-10-24T02:37:08.765Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 30\n",
+    "timestamp": "2026-10-24T02:37:08.766Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 31\n",
+    "timestamp": "2026-10-24T02:37:08.767Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 32\n",
+    "timestamp": "2026-10-24T02:37:08.769Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 33\n",
+    "timestamp": "2026-10-24T02:37:08.769Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 34\n",
+    "timestamp": "2026-10-24T02:37:08.770Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 35\n",
+    "timestamp": "2026-10-24T02:37:08.771Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 36\n",
+    "timestamp": "2026-10-24T02:37:08.772Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 37\n",
+    "timestamp": "2026-10-24T02:37:08.773Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 38\n",
+    "timestamp": "2026-10-24T02:37:08.773Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 39\n",
+    "timestamp": "2026-10-24T02:37:08.774Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:37:08.776Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CHECKS_DONE checks=126 failed=0\n",
+    "timestamp": "2026-10-24T02:37:08.776Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_AUDIO_ARMED silent output initialization\n",
+    "timestamp": "2026-10-24T02:37:08.980Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:37:10.208Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":0.0919189453125,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":11,\"locks\":1,\"contacts\":11,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-6.834158897399902},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-6.834158897399902},\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004}}\n",
+    "timestamp": "2026-10-24T02:37:10.209Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":0.1639404296875,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":11,\"locks\":1,\"contacts\":11,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-6.834158897399902},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-6.834158897399902},\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004}}\n",
+    "timestamp": "2026-10-24T02:37:10.311Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":0.242919921875,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":11,\"locks\":1,\"contacts\":11,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-6.834158897399902},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-6.834158897399902},\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004}}\n",
+    "timestamp": "2026-10-24T02:37:10.412Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":0.3319091796875,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":11,\"locks\":1,\"contacts\":11,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-6.834158897399902},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-6.834158897399902},\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004}}\n",
+    "timestamp": "2026-10-24T02:37:10.426Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":0.4259033203125,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":11,\"locks\":1,\"contacts\":11,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-6.834158897399902},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-6.834158897399902},\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004}}\n",
+    "timestamp": "2026-10-24T02:37:10.613Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CAMERA_STATE MovementFocus t=1042.7420\n",
+    "timestamp": "2026-10-24T02:37:10.614Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT BEGIN actor=0 seq=2 waypoint=0 crossings=11 audio=False t=1042.7420\n",
+    "timestamp": "2026-10-24T02:37:10.615Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":0.092041015625,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":11,\"locks\":1,\"contacts\":11,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":true,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.249365329742432,\"z\":-5.904159069061279},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.058831214904785,\"z\":-5.904159069061279},\"camera\":{\"x\":-15.996034622192383,\"y\":13.048357009887696,\"z\":-15.148143768310547}}\n",
+    "timestamp": "2026-10-24T02:37:10.615Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=12 arrival=False reduced=False intensity=1.150 t=1042.9160\n",
+    "timestamp": "2026-10-24T02:37:10.697Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=0 crossings=12 audio=True t=1042.9160\n",
+    "timestamp": "2026-10-24T02:37:10.697Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":0.174072265625,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":12,\"locks\":1,\"contacts\":12,\"arrival\":false,\"contactActive\":true,\"cameraHold\":false,\"moving\":true,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-5.734158515930176},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.058831214904785,\"z\":-5.734158515930176},\"camera\":{\"x\":-16.155982971191408,\"y\":13.029577255249024,\"z\":-15.010480880737305}}\n",
+    "timestamp": "2026-10-24T02:37:10.698Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":0.322998046875,\"contactAlpha\":0.11260986328125,\"size\":12.942702293395996,\"contactIndex\":12,\"locks\":1,\"contacts\":12,\"arrival\":false,\"contactActive\":true,\"cameraHold\":false,\"moving\":true,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.440474987030029,\"z\":-4.989158630371094},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.058831214904785,\"z\":-4.989158630371094},\"camera\":{\"x\":-16.620929718017579,\"y\":13.235164642333985,\"z\":-14.301569938659668}}\n",
+    "timestamp": "2026-10-24T02:37:10.919Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=13 arrival=False reduced=False intensity=1.150 t=1043.2290\n",
+    "timestamp": "2026-10-24T02:37:11.016Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT TICK actor=0 seq=2 waypoint=1 crossings=13 audio=True t=1043.2290\n",
+    "timestamp": "2026-10-24T02:37:11.016Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":0.487060546875,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":13,\"locks\":1,\"contacts\":13,\"arrival\":false,\"contactActive\":true,\"cameraHold\":false,\"moving\":true,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-4.634158611297607},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.058831214904785,\"z\":-4.634158611297607},\"camera\":{\"x\":-16.753690719604493,\"y\":13.371124267578125,\"z\":-14.00747013092041}}\n",
+    "timestamp": "2026-10-24T02:37:11.016Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":0.631103515625,\"contactAlpha\":0.1512451171875,\"size\":12.942702293395996,\"contactIndex\":13,\"locks\":1,\"contacts\":13,\"arrival\":false,\"contactActive\":true,\"cameraHold\":false,\"moving\":true,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.458247661590576,\"z\":-3.914158582687378},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.058831214904785,\"z\":-3.914158582687378},\"camera\":{\"x\":-16.911405563354493,\"y\":13.592483520507813,\"z\":-13.587074279785157}}\n",
+    "timestamp": "2026-10-24T02:37:11.224Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":860,\"height\":1660,\"indices\":40,\"anchorsVisible\":22,\"collidersInside\":18,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":11,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":1392.0,\"width\":860.0,\"height\":268.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":860.0,\"height\":472.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":38.0,\"y\":21.0,\"width\":618.0,\"height\":98.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"tile31\":{\"x\":697.9725952148438,\"y\":221.5322265625},\"tile32\":{\"x\":747.8530883789063,\"y\":253.5947265625},\"tile0\":{\"x\":1155.9664306640625,\"y\":518.970703125},\"tile10\":{\"x\":639.0230102539063,\"y\":851.2554931640625},\"tile20\":{\"x\":122.07952117919922,\"y\":518.970703125},\"tile30\":{\"x\":639.0228881835938,\"y\":186.6859130859375},\"economy\":\"0:18000:11:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"ResolveTile\",\"cameraState\":\"MovementFocus\",\"inspectionName\":\"Fentanyl Labs\",\"rent\":\"130\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-8.8161039352417,\"y\":720.700927734375,\"width\":1295.67822265625,\"height\":834.0985107421875},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":12.942702293395996,\"minTileEdgePixels\":49.59331130981445,\"minTileAltitudePixels\":45.1153564453125,\"minTileAreaPixels\":3210.21630859375}}\n",
+    "timestamp": "2026-10-24T02:37:11.343Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT REACHED actor=0 seq=2 waypoint=2 crossings=14 audio=False t=1043.5340\n",
+    "timestamp": "2026-10-24T02:37:11.345Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":0.7921142578125,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":13,\"locks\":1,\"contacts\":13,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.904359817504884,\"y\":13.713918685913086,\"z\":-13.450018882751465}}\n",
+    "timestamp": "2026-10-24T02:37:11.427Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":0.9410400390625,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":13,\"locks\":1,\"contacts\":13,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.869678497314454,\"y\":13.712234497070313,\"z\":-13.486698150634766}}\n",
+    "timestamp": "2026-10-24T02:37:11.467Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CAMERA_HOLD t=1043.8350 size=12.9427023\n",
+    "timestamp": "2026-10-24T02:37:11.634Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "TILE_CONTACT index=14 arrival=True reduced=False intensity=1.650 t=1043.8350\n",
+    "timestamp": "2026-10-24T02:37:11.634Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_CONTACT LOCK actor=0 seq=2 waypoint=2 crossings=14 audio=True t=1043.8350\n",
+    "timestamp": "2026-10-24T02:37:11.634Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":1.093017578125,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":true,\"cameraHold\":true,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.869678497314454,\"y\":13.712234497070313,\"z\":-13.486698150634766}}\n",
+    "timestamp": "2026-10-24T02:37:11.634Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":1.2420654296875,\"contactAlpha\":0.71533203125,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":true,\"cameraHold\":true,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.869678497314454,\"y\":13.712234497070313,\"z\":-13.486698150634766}}\n",
+    "timestamp": "2026-10-24T02:37:11.771Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CAMERA_STATE ReturnToOverview t=1044.1220\n",
+    "timestamp": "2026-10-24T02:37:11.904Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":1.3800048828125,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.869678497314454,\"y\":13.712234497070313,\"z\":-13.486698150634766}}\n",
+    "timestamp": "2026-10-24T02:37:11.938Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":1.47509765625,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.804338455200197,\"y\":13.711835861206055,\"z\":-13.552509307861329}}\n",
+    "timestamp": "2026-10-24T02:37:12.014Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":1.550048828125,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.694250106811525,\"y\":13.711166381835938,\"z\":-13.663393020629883}}\n",
+    "timestamp": "2026-10-24T02:37:12.140Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":860,\"height\":1660,\"indices\":40,\"anchorsVisible\":24,\"collidersInside\":20,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":11,\"expanded\":false,\"focused\":true,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":1392.0,\"width\":860.0,\"height\":268.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":860.0,\"height\":472.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":38.0,\"y\":21.0,\"width\":618.0,\"height\":98.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"tile31\":{\"x\":684.6647338867188,\"y\":231.4676513671875},\"tile32\":{\"x\":734.5452880859375,\"y\":263.5302734375},\"tile0\":{\"x\":1142.658447265625,\"y\":528.9061279296875},\"tile10\":{\"x\":625.7151489257813,\"y\":861.1909790039063},\"tile20\":{\"x\":108.77165985107422,\"y\":528.9061279296875},\"tile30\":{\"x\":625.715087890625,\"y\":196.621337890625},\"economy\":\"0:18000:11:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"ResolveTile\",\"cameraState\":\"ReturnToOverview\",\"inspectionName\":\"Fentanyl Labs\",\"rent\":\"130\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-22.12396812438965,\"y\":710.7654418945313,\"width\":1295.67822265625,\"height\":834.0985717773438},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":12.942702293395996,\"minTileEdgePixels\":49.59331130981445,\"minTileAltitudePixels\":45.11537170410156,\"minTileAreaPixels\":3210.21826171875}}\n",
+    "timestamp": "2026-10-24T02:37:12.243Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":1.631103515625,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.56615447998047,\"y\":13.71038818359375,\"z\":-13.792415618896485}}\n",
+    "timestamp": "2026-10-24T02:37:12.243Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":1.7239990234375,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.46996307373047,\"y\":13.709802627563477,\"z\":-13.889299392700196}}\n",
+    "timestamp": "2026-10-24T02:37:12.274Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "CAMERA_STATE StrategicOverview t=1044.5520\n",
+    "timestamp": "2026-10-24T02:37:12.339Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":1.81005859375,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.462064743041993,\"y\":13.709754943847657,\"z\":-13.897255897521973}}\n",
+    "timestamp": "2026-10-24T02:37:12.344Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":1.8980712890625,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.462064743041993,\"y\":13.709754943847657,\"z\":-13.897255897521973}}\n",
+    "timestamp": "2026-10-24T02:37:12.444Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":1.9940185546875,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.462064743041993,\"y\":13.709754943847657,\"z\":-13.897255897521973}}\n",
+    "timestamp": "2026-10-24T02:37:12.526Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":2.0830078125,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.462064743041993,\"y\":13.709754943847657,\"z\":-13.897255897521973}}\n",
+    "timestamp": "2026-10-24T02:37:12.646Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":2.174072265625,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.462064743041993,\"y\":13.709754943847657,\"z\":-13.897255897521973}}\n",
+    "timestamp": "2026-10-24T02:37:12.748Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"production movement fixture short\",\"seconds\":2.2630615234375,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":14,\"locks\":2,\"contacts\":14,\"arrival\":true,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":-6.848965644836426,\"y\":4.016031265258789,\"z\":-3.534158706665039},\"pawnVisual\":{\"x\":-6.848965644836426,\"y\":4.022031307220459,\"z\":-3.534158706665039},\"camera\":{\"x\":-16.462064743041993,\"y\":13.709754943847657,\"z\":-13.897255897521973}}\n",
+    "timestamp": "2026-10-24T02:37:12.849Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_MOVEMENT {\"name\":\"short\",\"steps\":3,\"callbacks\":1,\"arrived\":true,\"economicSnapshotUnchanged\":true,\"logicalPositionUnchanged\":true,\"reducedMotion\":false,\"seconds\":2.35400390625}\n",
+    "timestamp": "2026-10-24T02:37:12.887Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:37:12.924Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":860,\"height\":1660,\"indices\":40,\"anchorsVisible\":23,\"collidersInside\":17,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":11,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":1392.0,\"width\":860.0,\"height\":268.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":860.0,\"height\":472.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":38.0,\"y\":21.0,\"width\":618.0,\"height\":98.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"tile31\":{\"x\":581.90869140625,\"y\":178.8834228515625},\"tile32\":{\"x\":631.7891845703125,\"y\":210.946044921875},\"tile0\":{\"x\":1039.9024658203125,\"y\":476.3218994140625},\"tile10\":{\"x\":522.9591064453125,\"y\":808.606689453125},\"tile20\":{\"x\":6.015591144561768,\"y\":476.3218994140625},\"tile30\":{\"x\":522.958984375,\"y\":144.037109375},\"economy\":\"0:18000:11:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"ResolveTile\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"Fentanyl Labs\",\"rent\":\"130\",\"risk\":\"Risque —\",\"yield\":\"10,0\",\"ownership\":\"À ACQUÉRIR\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-124.88005828857422,\"y\":763.3497314453125,\"width\":1295.67822265625,\"height\":834.0985107421875},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":12.942702293395996,\"minTileEdgePixels\":49.59336471557617,\"minTileAltitudePixels\":45.11538314819336,\"minTileAreaPixels\":3210.218994140625}}\n",
+    "timestamp": "2026-10-24T02:37:13.027Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"8f054eb51cced1194b0d6eb0db097bf1210662c513bf9870a8afc868766a4b26\",\"stage\":3,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":11,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-15.933921813964844,\"y\":13.083026885986329,\"z\":-15.169114112854004},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:37:18.226Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  }
+]

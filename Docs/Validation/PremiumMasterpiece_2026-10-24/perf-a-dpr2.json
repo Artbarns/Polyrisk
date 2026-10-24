@@ -1,0 +1,8 @@
+[
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_MEASURE {\"variant\":\"A baseline\",\"quality\":\"Low\",\"fixture\":\"live game\",\"stage\":4,\"width\":860,\"height\":1660,\"frames\":36,\"seconds\":6.28900146484375,\"meanFrameMs\":175.0,\"medianFrameMs\":150.0,\"p95FrameMs\":350.0,\"maxFrameMs\":353.0,\"cpuMainThreadMs\":175.75428565714285,\"cpuMainThreadAvailable\":true,\"gpuTimeAvailable\":false,\"renderCountersAvailable\":true,\"unchangedDuringSample\":true,\"drawCalls\":86,\"batches\":63,\"setPass\":31,\"totalAllocatedBytes\":58841766,\"totalReservedBytes\":67200790}\n",
+    "timestamp": "2026-10-24T02:25:10.678Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  }
+]

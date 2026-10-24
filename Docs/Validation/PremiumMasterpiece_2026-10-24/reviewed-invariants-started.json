@@ -1,0 +1,1502 @@
+[
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 1\n",
+    "timestamp": "2026-10-24T02:19:57.957Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 2\n",
+    "timestamp": "2026-10-24T02:19:57.959Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 3\n",
+    "timestamp": "2026-10-24T02:19:57.959Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 4\n",
+    "timestamp": "2026-10-24T02:19:57.959Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 5\n",
+    "timestamp": "2026-10-24T02:19:57.960Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 6\n",
+    "timestamp": "2026-10-24T02:19:57.961Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 7\n",
+    "timestamp": "2026-10-24T02:19:57.962Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 8\n",
+    "timestamp": "2026-10-24T02:19:57.962Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 9\n",
+    "timestamp": "2026-10-24T02:19:57.963Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 10\n",
+    "timestamp": "2026-10-24T02:19:57.963Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 11\n",
+    "timestamp": "2026-10-24T02:19:57.964Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 12\n",
+    "timestamp": "2026-10-24T02:19:57.965Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 13\n",
+    "timestamp": "2026-10-24T02:19:57.965Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 14\n",
+    "timestamp": "2026-10-24T02:19:57.966Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 15\n",
+    "timestamp": "2026-10-24T02:19:57.967Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 16\n",
+    "timestamp": "2026-10-24T02:19:57.967Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 17\n",
+    "timestamp": "2026-10-24T02:19:57.968Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 18\n",
+    "timestamp": "2026-10-24T02:19:57.969Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 19\n",
+    "timestamp": "2026-10-24T02:19:57.970Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 20\n",
+    "timestamp": "2026-10-24T02:19:57.972Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 21\n",
+    "timestamp": "2026-10-24T02:19:57.972Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 22\n",
+    "timestamp": "2026-10-24T02:19:57.973Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 23\n",
+    "timestamp": "2026-10-24T02:19:57.974Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 24\n",
+    "timestamp": "2026-10-24T02:19:57.974Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 25\n",
+    "timestamp": "2026-10-24T02:19:57.975Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 26\n",
+    "timestamp": "2026-10-24T02:19:57.976Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 27\n",
+    "timestamp": "2026-10-24T02:19:57.977Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 28\n",
+    "timestamp": "2026-10-24T02:19:57.981Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 29\n",
+    "timestamp": "2026-10-24T02:19:57.981Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 30\n",
+    "timestamp": "2026-10-24T02:19:57.981Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 31\n",
+    "timestamp": "2026-10-24T02:19:57.981Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 32\n",
+    "timestamp": "2026-10-24T02:19:57.982Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 33\n",
+    "timestamp": "2026-10-24T02:19:57.982Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 34\n",
+    "timestamp": "2026-10-24T02:19:57.983Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 35\n",
+    "timestamp": "2026-10-24T02:19:57.989Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 36\n",
+    "timestamp": "2026-10-24T02:19:57.989Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 37\n",
+    "timestamp": "2026-10-24T02:19:57.990Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 38\n",
+    "timestamp": "2026-10-24T02:19:57.990Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 39\n",
+    "timestamp": "2026-10-24T02:19:57.990Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"unavailable\",\"stage\":4,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":-1,\"logicalTile\":-1,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:19:57.990Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CHECKS_DONE checks=135 failed=10\n",
+    "timestamp": "2026-10-24T02:19:57.990Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "MONOLITH_AUDIO_ARMED silent output initialization\n",
+    "timestamp": "2026-10-24T02:19:58.254Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"unavailable\",\"stage\":4,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":-1,\"logicalTile\":-1,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:19:58.782Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":0.24399948120117188,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:19:58.965Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":0.46899986267089846,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:19:59.288Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":0.5869998931884766,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:19:59.337Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":0.7209997177124023,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:19:59.490Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":0.9169998168945313,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:19:59.684Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":1.1079998016357422,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:19:59.851Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":1.5810003280639649,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:00.299Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":1.9560003280639649,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:00.689Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":2.303999900817871,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:01.120Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":2.442999839782715,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:01.194Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":2.6140003204345705,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:01.423Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":2.7860002517700197,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:01.519Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":2.9729995727539064,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:01.694Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":3.1329994201660158,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:01.911Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":3.2899999618530275,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:02.033Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":3.4499998092651369,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:02.197Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":3.61199951171875,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:02.336Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":3.7790002822875978,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:02.540Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":3.937000274658203,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:02.719Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":4.213000297546387,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:02.937Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":4.484000205993652,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:03.283Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":4.75,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:03.486Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":5.015999794006348,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:03.786Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":5.230999946594238,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:03.993Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":5.370999336242676,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:04.094Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":5.533999443054199,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:04.288Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":5.7009992599487309,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:04.498Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":5.876999855041504,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:04.598Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":6.0490007400512699,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:04.784Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":6.204998970031738,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:05.005Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":6.367999076843262,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:05.105Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":6.526999473571777,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:05.295Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":6.693999290466309,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:05.415Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":6.845999717712402,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:05.618Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":7.016999244689941,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:05.800Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":7.197999000549316,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:05.924Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":7.359000205993652,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:06.125Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":7.522000312805176,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:06.305Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":7.685000419616699,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:06.431Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":7.848999977111816,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:06.634Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":8.01200008392334,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:06.736Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":8.175000190734864,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:06.940Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":8.339999198913575,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:07.061Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":8.506999015808106,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:07.243Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":8.672999382019043,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:07.446Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":8.832999229431153,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:07.552Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":8.995999336242676,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:07.752Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":9.161999702453614,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:07.888Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":9.328999519348145,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:08.059Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":9.494999885559082,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:08.261Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":9.662999153137207,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:08.464Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":9.839999198913575,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:08.566Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":10.026999473571778,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:08.769Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":10.192999839782715,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:08.971Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":10.367999076843262,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:09.173Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":10.52500057220459,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:09.274Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":10.695000648498536,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:09.477Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":10.880999565124512,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:09.679Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":11.050999641418457,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:09.780Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":11.213000297546387,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:09.983Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":11.34999942779541,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:10.075Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":11.51200008392334,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:10.287Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":11.692999839782715,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:10.490Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":11.855000495910645,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:10.580Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":12.02500057220459,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:10.795Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":12.190999031066895,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:10.998Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":12.36099910736084,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:11.084Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":12.522000312805176,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:11.303Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":12.690999031066895,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:11.506Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":12.845000267028809,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:11.589Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":13.01200008392334,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:11.814Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":13.17199993133545,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:11.914Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":13.32599925994873,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:12.092Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":13.495999336242676,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:12.221Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":13.657000541687012,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:12.423Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":13.851000785827637,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:12.594Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_FRAME {\"variant\":\"B\",\"fixture\":\"live game\",\"seconds\":14.0339994430542,\"contactAlpha\":0.0,\"size\":12.942702293395996,\"contactIndex\":-1,\"locks\":0,\"contacts\":0,\"arrival\":false,\"contactActive\":false,\"cameraHold\":false,\"moving\":false,\"pawnRoot\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"pawnVisual\":{\"x\":0.0,\"y\":0.0,\"z\":0.0},\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106}}\n",
+    "timestamp": "2026-10-24T02:20:12.771Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"unavailable\",\"stage\":4,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":-1,\"logicalTile\":-1,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-13.125128746032715,\"y\":16.08942413330078,\"z\":-14.410319328308106},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:20:12.771Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Turn Start: Player 0\n",
+    "timestamp": "2026-10-24T02:20:23.472Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Deferred local game started.\n",
+    "timestamp": "2026-10-24T02:20:23.472Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":860,\"height\":1660,\"indices\":40,\"anchorsVisible\":19,\"collidersInside\":17,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":1392.0,\"width\":860.0,\"height\":268.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":860.0,\"height\":472.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":38.0,\"y\":21.0,\"width\":618.0,\"height\":98.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"tile31\":{\"x\":36.34959030151367,\"y\":426.5087890625},\"tile32\":{\"x\":86.2301025390625,\"y\":458.5712890625},\"tile0\":{\"x\":494.3433837890625,\"y\":723.9472045898438},\"tile10\":{\"x\":-22.600019454956056,\"y\":1056.23193359375},\"tile20\":{\"x\":-539.54345703125,\"y\":723.9472045898438},\"tile30\":{\"x\":-22.600120544433595,\"y\":391.662353515625},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-670.4390869140625,\"y\":515.7244262695313,\"width\":1295.67822265625,\"height\":834.0985717773438},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":12.942702293395996,\"minTileEdgePixels\":49.593387603759769,\"minTileAltitudePixels\":45.11539077758789,\"minTileAreaPixels\":3210.21875}}\n",
+    "timestamp": "2026-10-24T02:20:24.079Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS 40 unique logical anchors\n",
+    "timestamp": "2026-10-24T02:20:41.351Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS four original fused meshes\n",
+    "timestamp": "2026-10-24T02:20:41.351Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS approved orthographic isometry\n",
+    "timestamp": "2026-10-24T02:20:41.352Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS permanent x1.40\n",
+    "timestamp": "2026-10-24T02:20:41.353Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS 40 retained presentation identities\n",
+    "timestamp": "2026-10-24T02:20:41.354Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_0\n",
+    "timestamp": "2026-10-24T02:20:41.356Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_1\n",
+    "timestamp": "2026-10-24T02:20:41.357Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_2\n",
+    "timestamp": "2026-10-24T02:20:41.357Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_3\n",
+    "timestamp": "2026-10-24T02:20:41.358Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_4\n",
+    "timestamp": "2026-10-24T02:20:41.360Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_5\n",
+    "timestamp": "2026-10-24T02:20:41.360Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_6\n",
+    "timestamp": "2026-10-24T02:20:41.361Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_7\n",
+    "timestamp": "2026-10-24T02:20:41.361Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_8\n",
+    "timestamp": "2026-10-24T02:20:41.363Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_9\n",
+    "timestamp": "2026-10-24T02:20:41.363Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_31\n",
+    "timestamp": "2026-10-24T02:20:41.364Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_32\n",
+    "timestamp": "2026-10-24T02:20:41.364Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_33\n",
+    "timestamp": "2026-10-24T02:20:41.365Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_34\n",
+    "timestamp": "2026-10-24T02:20:41.366Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_35\n",
+    "timestamp": "2026-10-24T02:20:41.367Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_36\n",
+    "timestamp": "2026-10-24T02:20:41.368Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_37\n",
+    "timestamp": "2026-10-24T02:20:41.368Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_38\n",
+    "timestamp": "2026-10-24T02:20:41.369Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS visible identity stays outside HUD/cockpit BoardIdentity_39\n",
+    "timestamp": "2026-10-24T02:20:41.369Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 camera unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.370Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.370Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.371Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:20:41.372Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:20:41.372Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:20:41.383Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 camera unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.404Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.405Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.408Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:20:41.409Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:20:41.409Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:20:41.409Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 camera unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.409Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.409Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.409Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:20:41.409Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:20:41.409Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:20:41.423Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 camera unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.424Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.425Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.426Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:20:41.427Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:20:41.428Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:20:41.446Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 camera unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.447Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.448Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.449Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:20:41.450Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:20:41.451Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:20:41.470Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 camera unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.471Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.472Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.473Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:20:41.474Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:20:41.475Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:20:41.494Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 camera unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.495Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.496Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.497Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:20:41.499Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:20:41.499Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:20:41.516Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 camera unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.517Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.518Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.519Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:20:41.520Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:20:41.521Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:20:41.536Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 camera unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.537Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.538Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.538Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:20:41.539Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:20:41.540Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:20:41.555Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 camera unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.556Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.557Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:20:41.558Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:20:41.559Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:20:41.560Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:20:41.573Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 0\n",
+    "timestamp": "2026-10-24T02:20:41.573Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 1\n",
+    "timestamp": "2026-10-24T02:20:41.574Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 2\n",
+    "timestamp": "2026-10-24T02:20:41.575Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 3\n",
+    "timestamp": "2026-10-24T02:20:41.576Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 4\n",
+    "timestamp": "2026-10-24T02:20:41.577Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 5\n",
+    "timestamp": "2026-10-24T02:20:41.578Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 6\n",
+    "timestamp": "2026-10-24T02:20:41.578Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 7\n",
+    "timestamp": "2026-10-24T02:20:41.579Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 8\n",
+    "timestamp": "2026-10-24T02:20:41.580Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 9\n",
+    "timestamp": "2026-10-24T02:20:41.581Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 10\n",
+    "timestamp": "2026-10-24T02:20:41.582Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 11\n",
+    "timestamp": "2026-10-24T02:20:41.582Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 12\n",
+    "timestamp": "2026-10-24T02:20:41.583Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 13\n",
+    "timestamp": "2026-10-24T02:20:41.584Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 14\n",
+    "timestamp": "2026-10-24T02:20:41.585Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 15\n",
+    "timestamp": "2026-10-24T02:20:41.585Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 16\n",
+    "timestamp": "2026-10-24T02:20:41.586Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 17\n",
+    "timestamp": "2026-10-24T02:20:41.587Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 18\n",
+    "timestamp": "2026-10-24T02:20:41.588Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 19\n",
+    "timestamp": "2026-10-24T02:20:41.588Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 20\n",
+    "timestamp": "2026-10-24T02:20:41.589Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 21\n",
+    "timestamp": "2026-10-24T02:20:41.590Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 22\n",
+    "timestamp": "2026-10-24T02:20:41.590Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 23\n",
+    "timestamp": "2026-10-24T02:20:41.591Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 24\n",
+    "timestamp": "2026-10-24T02:20:41.591Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 25\n",
+    "timestamp": "2026-10-24T02:20:41.592Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 26\n",
+    "timestamp": "2026-10-24T02:20:41.593Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 27\n",
+    "timestamp": "2026-10-24T02:20:41.594Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 28\n",
+    "timestamp": "2026-10-24T02:20:41.594Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 29\n",
+    "timestamp": "2026-10-24T02:20:41.595Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 30\n",
+    "timestamp": "2026-10-24T02:20:41.596Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 31\n",
+    "timestamp": "2026-10-24T02:20:41.597Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 32\n",
+    "timestamp": "2026-10-24T02:20:41.598Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 33\n",
+    "timestamp": "2026-10-24T02:20:41.598Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 34\n",
+    "timestamp": "2026-10-24T02:20:41.599Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 35\n",
+    "timestamp": "2026-10-24T02:20:41.600Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 36\n",
+    "timestamp": "2026-10-24T02:20:41.601Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 37\n",
+    "timestamp": "2026-10-24T02:20:41.602Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 38\n",
+    "timestamp": "2026-10-24T02:20:41.603Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 39\n",
+    "timestamp": "2026-10-24T02:20:41.604Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"0c0bd10f21467e02002e894483d0af623a8f04f92acec013d85e39dbd5c26cb2\",\"stage\":4,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":0,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-8.163326263427735,\"y\":16.0410099029541,\"z\":-19.4295711517334},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:20:41.634Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CHECKS_DONE checks=124 failed=0\n",
+    "timestamp": "2026-10-24T02:20:41.634Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/3e89c5bdf753f6b1c80babac1874cf46.framework.js"
+  }
+]

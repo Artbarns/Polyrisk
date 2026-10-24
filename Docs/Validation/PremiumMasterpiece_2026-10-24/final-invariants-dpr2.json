@@ -1,0 +1,1040 @@
+[
+  {
+    "level": "log",
+    "message": "[UnityCache] 'http://127.0.0.1:9007/PremiumMasterpieceQA/Build/34e3fa94330de375025ebc8cb777e9fc.data' successfully downloaded and stored in the indexedDB cache",
+    "timestamp": "2026-10-24T02:00:36.673Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+  },
+  {
+    "level": "log",
+    "message": "navigator.mediaDevices support available",
+    "timestamp": "2026-10-24T02:00:37.036Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[UnityMemory] Configuration Parameters - Can be set up in boot.config\n",
+    "timestamp": "2026-10-24T02:00:37.160Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-temp-allocator-size-nav-mesh-worker=65536\"\n",
+    "timestamp": "2026-10-24T02:00:37.160Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-temp-allocator-size-audio-worker=65536\"\n",
+    "timestamp": "2026-10-24T02:00:37.161Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-temp-allocator-size-background-worker=32768\"\n",
+    "timestamp": "2026-10-24T02:00:37.161Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-allocator-temp-initial-block-size-main=262144\"\n",
+    "timestamp": "2026-10-24T02:00:37.162Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-allocator-temp-initial-block-size-worker=262144\"\n",
+    "timestamp": "2026-10-24T02:00:37.162Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-bucket-allocator-granularity=16\"\n",
+    "timestamp": "2026-10-24T02:00:37.163Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-bucket-allocator-bucket-count=8\"\n",
+    "timestamp": "2026-10-24T02:00:37.163Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-bucket-allocator-block-size=4194304\"\n",
+    "timestamp": "2026-10-24T02:00:37.163Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-bucket-allocator-block-count=1\"\n",
+    "timestamp": "2026-10-24T02:00:37.165Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-main-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-24T02:00:37.165Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-thread-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-24T02:00:37.166Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-gfx-main-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-24T02:00:37.166Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-gfx-thread-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-24T02:00:37.166Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-cache-allocator-block-size=4194304\"\n",
+    "timestamp": "2026-10-24T02:00:37.167Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-typetree-allocator-block-size=2097152\"\n",
+    "timestamp": "2026-10-24T02:00:37.168Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-bucket-allocator-granularity=16\"\n",
+    "timestamp": "2026-10-24T02:00:37.168Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-bucket-allocator-bucket-count=8\"\n",
+    "timestamp": "2026-10-24T02:00:37.169Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-bucket-allocator-block-size=4194304\"\n",
+    "timestamp": "2026-10-24T02:00:37.170Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-bucket-allocator-block-count=1\"\n",
+    "timestamp": "2026-10-24T02:00:37.170Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-allocator-block-size=16777216\"\n",
+    "timestamp": "2026-10-24T02:00:37.171Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-profiler-editor-allocator-block-size=1048576\"\n",
+    "timestamp": "2026-10-24T02:00:37.171Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-temp-allocator-size-main=4194304\"\n",
+    "timestamp": "2026-10-24T02:00:37.171Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-job-temp-allocator-block-size=2097152\"\n",
+    "timestamp": "2026-10-24T02:00:37.172Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-job-temp-allocator-block-size-background=1048576\"\n",
+    "timestamp": "2026-10-24T02:00:37.173Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "    \"memorysetup-job-temp-allocator-reduction-small-platforms=262144\"\n",
+    "timestamp": "2026-10-24T02:00:37.174Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Found NO interfaces on host .\n",
+    "timestamp": "2026-10-24T02:00:37.685Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Input System module state changed to: Initialized.\n",
+    "timestamp": "2026-10-24T02:00:37.686Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+    "timestamp": "2026-10-24T02:00:37.687Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Loading player data from data.unity3d\n",
+    "timestamp": "2026-10-24T02:00:37.688Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Initialize engine version: 2022.3.62f3 (96770f904ca7)\n",
+    "timestamp": "2026-10-24T02:00:37.692Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Subsystems] Discovering subsystems at path UnitySubsystems\n",
+    "timestamp": "2026-10-24T02:00:37.693Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Creating WebGL 2.0 context.",
+    "timestamp": "2026-10-24T02:00:37.707Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/e44a56aec4ea4bd146e240f5611f96db.loader.js"
+  },
+  {
+    "level": "log",
+    "message": "Renderer: WebKit WebGL\n",
+    "timestamp": "2026-10-24T02:00:37.709Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Vendor:   WebKit\n",
+    "timestamp": "2026-10-24T02:00:37.709Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Version:  OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium))\n",
+    "timestamp": "2026-10-24T02:00:37.710Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "GLES:     3\n",
+    "timestamp": "2026-10-24T02:00:37.712Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": " EXT_clip_control EXT_color_buffer_float EXT_color_buffer_half_float EXT_conservative_depth EXT_depth_clamp EXT_disjoint_timer_query_webgl2 EXT_float_blend EXT_polygon_offset_clamp EXT_render_snorm EXT_texture_compression_bptc EXT_texture_compression_rgtc EXT_texture_filter_anisotropic EXT_texture_mirror_clamp_to_edge EXT_texture_norm16 KHR_parallel_shader_compile NV_shader_noperspective_interpolation OES_draw_buffers_indexed OES_sample_variables OES_shader_multisample_interpolation OES_texture_float_linear WEBGL_blend_func_extended WEBGL_clip_cull_distance WEBGL_compressed_texture_s3tc WEBGL_compressed_texture_s3tc_srgb WEBGL_debug_renderer_info WEBGL_debug_shaders WEBGL_lose_context WEBGL_multi_draw WEBGL_polygon_mode WEBGL_provoking_vertex WEBGL_stencil_texturing GL_EXT_clip_control GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_depth_clamp GL_EXT_disjoint_timer_query_webgl2 GL_EXT_float_blend GL_EXT_polygon_offset_clamp GL_EXT_render_snorm GL_EXT_texture_compres\n",
+    "timestamp": "2026-10-24T02:00:37.714Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "sion_bptc GL_EXT_texture_compression_rgtc GL_EXT_texture_filter_anisotropic GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_KHR_parallel_shader_compile GL_NV_shader_noperspective_interpolation GL_OES_draw_buffers_indexed GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_texture_float_linear GL_WEBGL_blend_func_extended GL_WEBGL_clip_cull_distance GL_WEBGL_compressed_texture_s3tc GL_WEBGL_compressed_texture_s3tc_srgb GL_WEBGL_debug_renderer_info GL_WEBGL_debug_shaders GL_WEBGL_lose_context GL_WEBGL_multi_draw GL_WEBGL_polygon_mode GL_WEBGL_provoking_vertex GL_WEBGL_stencil_texturing\n",
+    "timestamp": "2026-10-24T02:00:37.714Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "OPENGL LOG: Creating OpenGL ES 3.0 graphics device ; Context level  <OpenGL ES 3.0> ; Context handle 1\n",
+    "timestamp": "2026-10-24T02:00:37.715Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ERROR: Shader ",
+    "timestamp": "2026-10-24T02:00:38.033Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Hidden/Universal/HDRDebugView shader is not supported on this GPU (none of subshaders/fallbacks are suitable)\n",
+    "timestamp": "2026-10-24T02:00:38.038Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Input Manager initialize...\n",
+    "timestamp": "2026-10-24T02:00:38.038Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[PhysX] Initialized SinglethreadedTaskDispatcher.\n",
+    "timestamp": "2026-10-24T02:00:38.280Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "UnloadTime: 5.500000 ms\n",
+    "timestamp": "2026-10-24T02:00:38.280Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Starting initialization...\n",
+    "timestamp": "2026-10-24T02:00:40.825Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Initializing Board Data...\n",
+    "timestamp": "2026-10-24T02:00:40.825Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Board initialized with 40 tiles.\n",
+    "timestamp": "2026-10-24T02:00:40.825Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Venture Deck initialized and shuffled.\n",
+    "timestamp": "2026-10-24T02:00:40.826Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Creating Players...\n",
+    "timestamp": "2026-10-24T02:00:42.968Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Bootstrap] Player 1 assigned profile: Predator\n",
+    "timestamp": "2026-10-24T02:00:42.969Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Bootstrap] Player 2 assigned profile: Rentier\n",
+    "timestamp": "2026-10-24T02:00:42.970Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "[Bootstrap] Player 3 assigned profile: Negotiator\n",
+    "timestamp": "2026-10-24T02:00:42.974Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Spawning Visuals...\n",
+    "timestamp": "2026-10-24T02:00:42.974Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Trying to get length of sound which is not loaded yet.",
+    "timestamp": "2026-10-24T02:00:43.046Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Trying to get length of sound which is not loaded yet.",
+    "timestamp": "2026-10-24T02:00:43.046Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Spawned 4 player pawns at (4.55, 3.95, -8.13).\n",
+    "timestamp": "2026-10-24T02:00:43.046Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Starting Game Loop...\n",
+    "timestamp": "2026-10-24T02:00:43.046Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Game loop deferred until a game mode is selected.\n",
+    "timestamp": "2026-10-24T02:00:43.046Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Audio context resumed after 5.532 seconds.",
+    "timestamp": "2026-10-24T02:00:43.299Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Turn Start: Player 0\n",
+    "timestamp": "2026-10-24T02:00:51.994Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "Bootstrapper: Deferred local game started.\n",
+    "timestamp": "2026-10-24T02:00:51.994Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "BOARD_QA {\"width\":860,\"height\":1660,\"indices\":40,\"anchorsVisible\":19,\"collidersInside\":17,\"identityMarkers\":40,\"ownedMarkers\":0,\"selected\":0,\"expanded\":false,\"focused\":false,\"reducedMotion\":false,\"viewport\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"hud\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":1392.0,\"width\":860.0,\"height\":268.0},\"cockpit\":{\"serializedVersion\":\"2\",\"x\":0.0,\"y\":0.0,\"width\":860.0,\"height\":472.0},\"primary\":{\"serializedVersion\":\"2\",\"x\":38.0,\"y\":21.0,\"width\":618.0,\"height\":98.0},\"presentation\":{\"serializedVersion\":\"2\",\"x\":16.0,\"y\":488.0,\"width\":828.0,\"height\":888.0},\"tile31\":{\"x\":36.34959030151367,\"y\":426.5087890625},\"tile32\":{\"x\":86.2301025390625,\"y\":458.5712890625},\"tile0\":{\"x\":494.3433837890625,\"y\":723.9472045898438},\"tile10\":{\"x\":-22.600019454956056,\"y\":1056.23193359375},\"tile20\":{\"x\":-539.54345703125,\"y\":723.9472045898438},\"tile30\":{\"x\":-22.600120544433595,\"y\":391.662353515625},\"economy\":\"0:18000:0:0;1:18000:0:0;2:18000:0:0;3:18000:0:0\",\"turnState\":\"Planning\",\"cameraState\":\"StrategicOverview\",\"inspectionName\":\"GO\",\"rent\":\"—\",\"risk\":\"Risque —\",\"yield\":\"—\",\"ownership\":\"CASE SPÉCIALE\",\"projection\":{\"boardPixels\":{\"serializedVersion\":\"2\",\"x\":-670.4390869140625,\"y\":515.7244262695313,\"width\":1295.67822265625,\"height\":834.0985717773438},\"elevation\":40.000003814697269,\"azimuth\":45.00000762939453,\"orthographicSize\":12.942702293395996,\"minTileEdgePixels\":49.593387603759769,\"minTileAltitudePixels\":45.11539077758789,\"minTileAreaPixels\":3210.21875}}\n",
+    "timestamp": "2026-10-24T02:00:51.995Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"A — baseline\",\"treatment\":\"GraphiteReflectiveNeon\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"46abb0eaeb0964a6df81498296def4f0c801ebf5187792c9a736bad462230a73\",\"stage\":4,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":0,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-8.163326263427735,\"y\":16.0410099029541,\"z\":-19.4295711517334},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":false,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.800000011920929,\"g\":0.8299999833106995,\"b\":0.8700000047683716,\"a\":1.0},\"tileTint\":{\"r\":0.8799999952316284,\"g\":0.9100000262260437,\"b\":0.949999988079071,\"a\":1.0},\"boardMetallic\":0.36000001430511477,\"tileMetallic\":0.27000001072883608,\"boardSmoothness\":0.49000000953674319,\"tileSmoothness\":0.44999998807907107,\"studioReflection\":0.46000000834465029,\"edgeSpecular\":0.052000001072883609,\"neonEmission\":0.9200000166893005,\"neonReflection\":0.07999999821186066,\"reflectionFalloff\":0.029999999329447748,\"reflectionReach\":0.10000000149011612,\"contactReflection\":0.7799999713897705,\"arrivalReflection\":1.100000023841858,\"contactOutline\":1.1200000047683716,\"contactReflectionFalloff\":0.06499999761581421,\"contactReflectionReach\":0.2199999988079071,\"activeSurfaceContrast\":0.14000000059604646,\"backgroundSeparation\":0.014000000432133675,\"pawnBody\":{\"r\":0.23000000417232514,\"g\":0.2800000011920929,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.47999998927116396,\"pawnSmoothness\":0.46000000834465029,\"pawnEmission\":1.100000023841858,\"pawnRing\":1.1200000047683716,\"pawnTop\":1.0199999809265137,\"pawnBaseReflection\":0.06499999761581421}}\n",
+    "timestamp": "2026-10-24T02:00:59.392Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"46abb0eaeb0964a6df81498296def4f0c801ebf5187792c9a736bad462230a73\",\"stage\":4,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":0,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-8.163326263427735,\"y\":16.0410099029541,\"z\":-19.4295711517334},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:01:06.595Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS 40 unique logical anchors\n",
+    "timestamp": "2026-10-24T02:01:06.911Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS four original fused meshes\n",
+    "timestamp": "2026-10-24T02:01:06.912Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS approved orthographic isometry\n",
+    "timestamp": "2026-10-24T02:01:06.913Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS permanent x1.40\n",
+    "timestamp": "2026-10-24T02:01:06.913Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 camera unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.914Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.915Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.916Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:01:06.917Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:01:06.918Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 0 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:01:06.931Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 camera unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.932Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.932Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.933Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:01:06.934Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:01:06.934Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 1 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:01:06.942Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 camera unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.942Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.943Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.943Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:01:06.944Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:01:06.944Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 2 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:01:06.954Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 camera unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.954Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.955Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.956Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:01:06.956Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:01:06.957Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 3 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:01:06.966Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 camera unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.967Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.968Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.970Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:01:06.970Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:01:06.971Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS A stage 4 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:01:06.982Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 camera unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.983Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.984Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.985Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:01:06.985Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:01:06.986Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 0 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:01:06.997Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 camera unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.998Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.998Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:01:06.999Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:01:07.000Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:01:07.000Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 1 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:01:07.011Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 camera unchanged\n",
+    "timestamp": "2026-10-24T02:01:07.012Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:01:07.012Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:01:07.013Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:01:07.013Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:01:07.014Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 2 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:01:07.025Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 camera unchanged\n",
+    "timestamp": "2026-10-24T02:01:07.025Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:01:07.026Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:01:07.027Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:01:07.028Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:01:07.029Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 3 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:01:07.041Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 camera unchanged\n",
+    "timestamp": "2026-10-24T02:01:07.041Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 exact anchors unchanged\n",
+    "timestamp": "2026-10-24T02:01:07.042Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 collider contracts unchanged\n",
+    "timestamp": "2026-10-24T02:01:07.042Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 same fused mesh instances\n",
+    "timestamp": "2026-10-24T02:01:07.043Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 presentation state unchanged by treatment\n",
+    "timestamp": "2026-10-24T02:01:07.044Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS B stage 4 economic readback unchanged (full snapshot online, scalar models offline)\n",
+    "timestamp": "2026-10-24T02:01:07.056Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 0\n",
+    "timestamp": "2026-10-24T02:01:07.057Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 1\n",
+    "timestamp": "2026-10-24T02:01:07.057Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 2\n",
+    "timestamp": "2026-10-24T02:01:07.058Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 3\n",
+    "timestamp": "2026-10-24T02:01:07.059Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 4\n",
+    "timestamp": "2026-10-24T02:01:07.060Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 5\n",
+    "timestamp": "2026-10-24T02:01:07.060Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 6\n",
+    "timestamp": "2026-10-24T02:01:07.061Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 7\n",
+    "timestamp": "2026-10-24T02:01:07.062Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 8\n",
+    "timestamp": "2026-10-24T02:01:07.063Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 9\n",
+    "timestamp": "2026-10-24T02:01:07.063Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 10\n",
+    "timestamp": "2026-10-24T02:01:07.064Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 11\n",
+    "timestamp": "2026-10-24T02:01:07.065Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 12\n",
+    "timestamp": "2026-10-24T02:01:07.066Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 13\n",
+    "timestamp": "2026-10-24T02:01:07.066Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 14\n",
+    "timestamp": "2026-10-24T02:01:07.067Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 15\n",
+    "timestamp": "2026-10-24T02:01:07.068Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 16\n",
+    "timestamp": "2026-10-24T02:01:07.068Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 17\n",
+    "timestamp": "2026-10-24T02:01:07.069Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 18\n",
+    "timestamp": "2026-10-24T02:01:07.070Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 19\n",
+    "timestamp": "2026-10-24T02:01:07.071Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 20\n",
+    "timestamp": "2026-10-24T02:01:07.071Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 21\n",
+    "timestamp": "2026-10-24T02:01:07.072Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 22\n",
+    "timestamp": "2026-10-24T02:01:07.072Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 23\n",
+    "timestamp": "2026-10-24T02:01:07.073Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 24\n",
+    "timestamp": "2026-10-24T02:01:07.074Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 25\n",
+    "timestamp": "2026-10-24T02:01:07.074Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 26\n",
+    "timestamp": "2026-10-24T02:01:07.075Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 27\n",
+    "timestamp": "2026-10-24T02:01:07.075Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 28\n",
+    "timestamp": "2026-10-24T02:01:07.076Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 29\n",
+    "timestamp": "2026-10-24T02:01:07.077Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 30\n",
+    "timestamp": "2026-10-24T02:01:07.077Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 31\n",
+    "timestamp": "2026-10-24T02:01:07.078Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 32\n",
+    "timestamp": "2026-10-24T02:01:07.079Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 33\n",
+    "timestamp": "2026-10-24T02:01:07.082Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 34\n",
+    "timestamp": "2026-10-24T02:01:07.082Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 35\n",
+    "timestamp": "2026-10-24T02:01:07.084Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 36\n",
+    "timestamp": "2026-10-24T02:01:07.084Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 37\n",
+    "timestamp": "2026-10-24T02:01:07.086Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 38\n",
+    "timestamp": "2026-10-24T02:01:07.087Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CASE PASS raycast contract 39\n",
+    "timestamp": "2026-10-24T02:01:07.089Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_STATUS {\"variant\":\"B — proposal\",\"treatment\":\"ArchitecturalGraphite\",\"fixture\":\"live game\",\"quality\":\"Low\",\"pipeline\":\"Low_PipelineAsset\",\"antialiasing\":\"SubpixelMorphologicalAntiAliasing\",\"economyHash\":\"46abb0eaeb0964a6df81498296def4f0c801ebf5187792c9a736bad462230a73\",\"stage\":4,\"fixtureIndex\":-1,\"width\":860,\"height\":1660,\"activePlayer\":0,\"logicalTile\":0,\"anchors\":40,\"fusedMeshes\":4,\"realLights\":1,\"realtimeProbes\":0,\"renderScale\":1.0,\"orthographicSize\":12.942702293395996,\"closeFactor\":1.399999976158142,\"camera\":{\"x\":-8.163326263427735,\"y\":16.0410099029541,\"z\":-19.4295711517334},\"angles\":{\"x\":40.000003814697269,\"y\":45.0,\"z\":0.0},\"postProcessing\":true,\"reducedMotion\":false,\"frozenContactPeak\":false,\"finish\":{\"architectural\":true,\"pawnStudioReflection\":0.6800000071525574,\"pawnEdgeSpecular\":0.04500000178813934,\"boardTint\":{\"r\":0.8600000143051148,\"g\":0.8899999856948853,\"b\":0.9399999976158142,\"a\":1.0},\"tileTint\":{\"r\":0.9800000190734863,\"g\":0.9900000095367432,\"b\":1.0,\"a\":1.0},\"boardMetallic\":0.46000000834465029,\"tileMetallic\":0.3199999928474426,\"boardSmoothness\":0.5799999833106995,\"tileSmoothness\":0.47999998927116396,\"studioReflection\":0.8199999928474426,\"edgeSpecular\":0.03500000014901161,\"neonEmission\":0.7799999713897705,\"neonReflection\":0.2199999988079071,\"reflectionFalloff\":0.054999999701976779,\"reflectionReach\":0.1599999964237213,\"contactReflection\":0.8999999761581421,\"arrivalReflection\":1.2999999523162842,\"contactOutline\":0.699999988079071,\"contactReflectionFalloff\":0.10000000149011612,\"contactReflectionReach\":0.2800000011920929,\"activeSurfaceContrast\":0.07999999821186066,\"backgroundSeparation\":0.012000000104308129,\"pawnBody\":{\"r\":0.25,\"g\":0.28999999165534975,\"b\":0.33000001311302187,\"a\":1.0},\"pawnMetallic\":0.3799999952316284,\"pawnSmoothness\":0.47999998927116396,\"pawnEmission\":1.0,\"pawnRing\":1.100000023841858,\"pawnTop\":1.0800000429153443,\"pawnBaseReflection\":0.10000000149011612}}\n",
+    "timestamp": "2026-10-24T02:01:07.090Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  },
+  {
+    "level": "log",
+    "message": "ART_CALIBRATION_CHECKS_DONE checks=104 failed=0\n",
+    "timestamp": "2026-10-24T02:01:07.091Z",
+    "url": "http://127.0.0.1:9007/PremiumMasterpieceQA/Build/96090a40262b27ddb25cdbdbc00213b9.framework.js"
+  }
+]
