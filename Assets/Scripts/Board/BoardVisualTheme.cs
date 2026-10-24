@@ -47,11 +47,13 @@ namespace PolyRisk
         [Range(0f, 2f)] public float neonBoost = 1.15f;
         [Tooltip("Maximum world-space reach of the simulated colored reflection.")]
         [Range(0.02f, 0.2f)] public float reflectionReach = 0.10f;
-        public enum SurfaceTreatment { GraphiteSatin, GraphiteReflectiveNeon }
+        public enum SurfaceTreatment { GraphiteSatin, GraphiteReflectiveNeon, ArchitecturalGraphite }
 
         [System.Serializable]
         public sealed class SurfaceFinish
         {
+            public bool architectural;
+            public float pawnStudioReflection=.68f, pawnEdgeSpecular=.045f;
             public Color boardTint = new Color(.80f,.83f,.87f);
             public Color tileTint = new Color(.88f,.91f,.95f);
             [Range(0,1)] public float boardMetallic=.36f, tileMetallic=.27f;
@@ -75,11 +77,38 @@ namespace PolyRisk
                 contactOutline=1.12f,backgroundSeparation=.014f,pawnMetallic=.48f,pawnSmoothness=.46f,
                 pawnEmission=1.10f,pawnRing=1.12f,pawnTop=1.02f,pawnBaseReflection=.065f
             };
+            public static SurfaceFinish Architectural() => new SurfaceFinish
+            {
+                architectural=true,boardTint=new Color(.86f,.89f,.94f),tileTint=new Color(.98f,.99f,1f),
+                boardMetallic=.46f,tileMetallic=.32f,boardSmoothness=.58f,tileSmoothness=.48f,
+                studioReflection=.82f,edgeSpecular=.035f,neonEmission=.78f,neonReflection=.22f,
+                reflectionFalloff=.055f,reflectionReach=.16f,contactReflection=.90f,arrivalReflection=1.30f,
+                contactReflectionFalloff=.10f,contactReflectionReach=.28f,activeSurfaceContrast=.08f,
+                contactOutline=.70f,backgroundSeparation=.012f,pawnBody=new Color(.25f,.29f,.33f),
+                pawnMetallic=.38f,pawnSmoothness=.48f,pawnEmission=1f,pawnRing=1.10f,pawnTop=1.08f,
+                pawnBaseReflection=.10f
+            };
         }
         [Header("PASS 2F — shared finish system, no geometry or gameplay")]
-        public SurfaceTreatment surfaceTreatment=SurfaceTreatment.GraphiteReflectiveNeon;
+        public SurfaceTreatment surfaceTreatment=SurfaceTreatment.ArchitecturalGraphite;
         public SurfaceFinish graphiteSatin=new SurfaceFinish();
         public SurfaceFinish reflectiveNeon=SurfaceFinish.ReflectiveNeon();
+        [Header("Calibrated architectural graphite — baseline profiles remain available")]
+        public SurfaceFinish architecturalGraphite=SurfaceFinish.Architectural();
+        [System.Serializable]
+        public sealed class ArchitecturalLighting
+        {
+            public Vector3 keyEuler=new Vector3(55,-25,0);
+            public Color keyColor=new Color(.97f,.98f,1f);
+            [Range(0,2)] public float keyIntensity=.68f;
+            public Color ambientSky=new Color(.28f,.31f,.35f),ambientEquator=new Color(.13f,.15f,.18f),ambientGround=new Color(.045f,.055f,.07f);
+            [Tooltip("Analytic neutral studio panels: center X/Z, half width/length in board space.")]
+            public Vector4 studioKey=new Vector4(8,8,9,12),studioFill=new Vector4(0,7,10,12);
+            [Tooltip("Key gain, fill gain, flank contrast, virtual bevel width in board units.")]
+            public Vector4 surfaceResponse=new Vector4(1.25f,.32f,.18f,.035f);
+            [Range(0,.2f)] public float bloom=0f;
+        }
+        public ArchitecturalLighting architecturalLight=new ArchitecturalLighting();
         [Header("PASS 2F.1 — continuous contact envelope")]
         public PolyRisk.Visuals.BoardContactFeedback.Tuning contactLight=new PolyRisk.Visuals.BoardContactFeedback.Tuning();
         [Header("Shared architectural lighting — same exposure for A / B")]
@@ -87,6 +116,7 @@ namespace PolyRisk
         public Color keyColor=new Color(.94f,.96f,.98f);
         [Range(0,2)] public float keyIntensity=.55f;
         public SurfaceFinish Finish(SurfaceTreatment treatment) =>
-            treatment==SurfaceTreatment.GraphiteSatin?graphiteSatin:reflectiveNeon;
+            treatment==SurfaceTreatment.GraphiteSatin?graphiteSatin:
+            treatment==SurfaceTreatment.ArchitecturalGraphite?architecturalGraphite:reflectiveNeon;
     }
 }

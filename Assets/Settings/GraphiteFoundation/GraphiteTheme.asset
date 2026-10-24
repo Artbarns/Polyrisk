@@ -41,7 +41,7 @@ MonoBehaviour:
   minimumBandPixels: 1.2
   neonBoost: 1.5
   reflectionReach: 0.1
-  surfaceTreatment: 1
+  surfaceTreatment: 2
   graphiteSatin:
     boardTint: {r: 0.8, g: 0.83, b: 0.87, a: 1}
     tileTint: {r: 0.88, g: 0.91, b: 0.95, a: 1}
@@ -96,6 +96,47 @@ MonoBehaviour:
     pawnRing: 1.12
     pawnTop: 1.02
     pawnBaseReflection: 0.065
+  architecturalGraphite:
+    architectural: 1
+    pawnStudioReflection: 0.68
+    pawnEdgeSpecular: 0.045
+    boardTint: {r: 0.86, g: 0.89, b: 0.94, a: 1}
+    tileTint: {r: 0.98, g: 0.99, b: 1, a: 1}
+    boardMetallic: 0.46
+    tileMetallic: 0.32
+    boardSmoothness: 0.58
+    tileSmoothness: 0.48
+    studioReflection: 0.82
+    edgeSpecular: 0.035
+    neonEmission: 0.78
+    neonReflection: 0.22
+    reflectionFalloff: 0.055
+    reflectionReach: 0.16
+    contactReflection: 0.9
+    arrivalReflection: 1.3
+    contactOutline: 0.7
+    contactReflectionFalloff: 0.1
+    contactReflectionReach: 0.28
+    activeSurfaceContrast: 0.08
+    backgroundSeparation: 0.012
+    pawnBody: {r: 0.25, g: 0.29, b: 0.33, a: 1}
+    pawnMetallic: 0.38
+    pawnSmoothness: 0.48
+    pawnEmission: 1
+    pawnRing: 1.1
+    pawnTop: 1.08
+    pawnBaseReflection: 0.1
+  architecturalLight:
+    keyEuler: {x: 55, y: -25, z: 0}
+    keyColor: {r: 0.97, g: 0.98, b: 1, a: 1}
+    keyIntensity: 0.68
+    ambientSky: {r: 0.28, g: 0.31, b: 0.35, a: 1}
+    ambientEquator: {r: 0.13, g: 0.15, b: 0.18, a: 1}
+    ambientGround: {r: 0.045, g: 0.055, b: 0.07, a: 1}
+    studioKey: {x: 8, y: 8, z: 9, w: 12}
+    studioFill: {x: 0, y: 7, z: 10, w: 12}
+    surfaceResponse: {x: 1.25, y: 0.32, z: 0.18, w: 0.035}
+    bloom: 0
   contactLight:
     tileContactAttackDuration: 0.032
     tileContactDecayDuration: 0.145

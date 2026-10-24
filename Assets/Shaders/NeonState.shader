@@ -12,6 +12,8 @@ Shader "PolyRisk/NeonState"
 {
     Properties
     {
+        _Polish ("Architectural source enabled", Float) = 0
+        _SourceCore ("Neutral source core fraction", Range(0,0.2)) = 0.08
         _ContactTex ("Transient pawn contact", 2D) = "black" {}
         _StateTex   ("État des cases (64x1)", 2D) = "black" {}
         _ContactGain ("Contact outline gain", Float) = 1
@@ -51,6 +53,8 @@ Shader "PolyRisk/NeonState"
             SAMPLER(sampler_StateTex);
 
             CBUFFER_START(UnityPerMaterial)
+                float _Polish;
+                float _SourceCore;
                 float _ContactGain;
                 float _Count;
                 float _Boost;
@@ -102,7 +106,19 @@ Shader "PolyRisk/NeonState"
 
             half4 frag(Varyings IN) : SV_Target
             {
-                return half4(IN.emissive * IN.rim, 1.0);
+                half3 source = IN.emissive * IN.rim;
+                if (_Polish > 1.5)
+                {
+                    // The recessed emitter has a tiny neutral core at high luminance;
+                    // color stays in the receiving graphite, never in a widened halo.
+                    // Existing geometry, depth and state texture remain authoritative.
+                    half peak = max(source.r,max(source.g,source.b));
+                    source = lerp(source,half3(peak,peak,peak),_SourceCore);
+                    // Retain dim resting emitters, compress only transient HDR peaks.
+                    // Hue stays intact and the source stops clipping into a pink block.
+                    source /= 1 + max(0,peak-.8) * .6;
+                }
+                return half4(source, 1.0);
             }
             ENDHLSL
         }

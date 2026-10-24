@@ -232,11 +232,32 @@ namespace PolyRisk.Visuals
             lightingFinish=finish;
             if(sharedBody!=null)
             {
-                sharedBody.SetColor("_BaseColor",finish.pawnBody);
-                sharedBody.SetFloat("_Metallic",finish.pawnMetallic);sharedBody.SetFloat("_Smoothness",finish.pawnSmoothness);
-                sharedMetal.SetFloat("_Metallic",.58f);sharedMetal.SetFloat("_Smoothness",finish.pawnSmoothness+.08f);
+                // Reuse the two shell materials. The luminous identity remains on its
+                // existing Lit material, with the original emission and timing logic.
+                Shader shellShader=Shader.Find(finish.architectural?"PolyRisk/GraphiteSurface":"Universal Render Pipeline/Lit");
+                if(shellShader!=null)
+                {
+                    if(sharedBody.shader!=shellShader)sharedBody.shader=shellShader;
+                    if(sharedMetal.shader!=shellShader)sharedMetal.shader=shellShader;
+                }
+                ConfigureShellFinish(sharedBody,finish,false);
+                ConfigureShellFinish(sharedMetal,finish,true);
             }
             previousEmission=previousRingEmission=previousTopEmission=-1;SetEmission(0);
+        }
+        static void ConfigureShellFinish(Material material,BoardVisualTheme.SurfaceFinish finish,bool edge)
+        {
+            // These are the original Lit values when the architectural treatment is off.
+            material.SetColor("_BaseColor",edge?new Color(.42f,.48f,.54f):finish.pawnBody);
+            material.SetFloat("_Metallic",edge?.58f:finish.pawnMetallic);
+            material.SetFloat("_Smoothness",edge?finish.pawnSmoothness+.08f:finish.pawnSmoothness);
+            if(!finish.architectural||!material.HasProperty("_PawnSurface"))return;
+            material.SetFloat("_PawnSurface",1);
+            material.SetFloat("_Polish",2);
+            material.SetFloat("_TileSurface",0);
+            material.SetColor("_SurfaceTint",Color.white);
+            material.SetFloat("_StudioStrength",finish.pawnStudioReflection*(edge?1.15f:1f));
+            material.SetFloat("_EdgeSpecular",finish.pawnEdgeSpecular*(edge?1.4f:.7f));
         }
         float previousEmission=-1,previousRingEmission=-1,previousTopEmission=-1;
         void SetEmission(float pulse)

@@ -22,6 +22,7 @@ namespace PolyRisk.UI
         private float nextOwnerPoll;
         private bool hasPrevious;
         private Signature previous;
+        private VisualElement cockpitRoot, cockpitPanel;
 
         private sealed class Entry
         {
@@ -38,10 +39,10 @@ namespace PolyRisk.UI
             public Quaternion rotation;
             public float size, width, height;
             public int state, screenWidth, screenHeight;
-            public Rect viewport;
+            public Rect viewport, occlusion;
             public bool Equals(Signature other) => position == other.position && rotation == other.rotation &&
                 size == other.size && width == other.width && height == other.height && state == other.state &&
-                screenWidth == other.screenWidth && screenHeight == other.screenHeight && viewport == other.viewport;
+                screenWidth == other.screenWidth && screenHeight == other.screenHeight && viewport == other.viewport && occlusion == other.occlusion;
         }
 
         private BoardTileOverlayWidget(VisualElement root, BoardManager board, Camera camera)
@@ -52,7 +53,7 @@ namespace PolyRisk.UI
             framing = UnityEngine.Object.FindObjectOfType<BoardInteractionManager>();
             overlay = new VisualElement { name = OverlayName, pickingMode = PickingMode.Ignore };
             overlay.AddToClassList("board-tile-identity-overlay");
-            root.Add(overlay);
+            root.Insert(0, overlay);
             BuildEntries();
             root.RegisterCallback<GeometryChangedEvent>(_ => hasPrevious = false);
             if (framing != null)
@@ -123,7 +124,8 @@ namespace PolyRisk.UI
             var current = new Signature { position = camera.transform.position, rotation = camera.transform.rotation,
                 size = camera.orthographicSize, width = root.worldBound.width, height = root.worldBound.height,
                 screenWidth = Screen.width, screenHeight = Screen.height, state = state,
-                viewport = framing != null ? framing.BoardViewport : new Rect(0,0,Screen.width,Screen.height) };
+                viewport = framing != null ? framing.BoardViewport : new Rect(0,0,Screen.width,Screen.height),
+                occlusion = CockpitScreenRect() };
             if (hasPrevious && previous.Equals(current)) return;
             previous = current; hasPrevious = true;
             Refresh();
@@ -145,6 +147,7 @@ namespace PolyRisk.UI
 
         private void Refresh()
         {
+            Rect cockpit = CockpitScreenRect();
             int activePosition = turns?.CurrentPlayer != null ? turns.GetPlayerPosition(turns.CurrentPlayer) : -1;
             int selected = inspector != null ? inspector.InspectedTileIndex : -1;
             foreach (var entry in entries)
@@ -152,7 +155,14 @@ namespace PolyRisk.UI
                 if (entry.anchor == null) continue;
                 Vector3 world = entry.anchor.position + Vector3.up * 0.02f;
                 Vector2 center = PanelPoint(world);
-                bool visible = center.x >= 0 && center.x <= root.worldBound.width && center.y >= 0 && center.y <= root.worldBound.height;
+                Vector3 projected = camera.WorldToScreenPoint(world);
+                Rect clip = framing != null && framing.BoardViewport.width > 0
+                    ? framing.BoardViewport : new Rect(0, 0, Screen.width, Screen.height);
+                Vector2 screenCenter = new Vector2(projected.x, projected.y);
+                Vector2 halfChip = new Vector2(9 * Screen.width / root.worldBound.width,
+                    8 * Screen.height / root.worldBound.height);
+                bool visible = projected.z > 0 && clip.Contains(screenCenter - halfChip) && clip.Contains(screenCenter + halfChip);
+                visible &= !cockpit.Overlaps(new Rect(screenCenter-halfChip,halfChip*2));
                 entry.chip.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
                 entry.chip.style.left = center.x - 9; entry.chip.style.top = center.y - 8;
                 entry.chip.EnableInClassList("board-tile-identity--selected", selected == entry.tileIndex);
@@ -163,6 +173,15 @@ namespace PolyRisk.UI
                 if (owner != null) entry.owner.style.backgroundColor = PlayerVisualManager.GetPlayerColor(owner.PlayerId);
                 entry.position.style.display = activePosition == entry.tileIndex ? DisplayStyle.Flex : DisplayStyle.None;
             }
+        }
+        private Rect CockpitScreenRect()
+        {
+            if(cockpitRoot?.panel==null)cockpitRoot=inspector?.uiDocument?.rootVisualElement;
+            if(cockpitPanel?.panel==null)cockpitPanel=cockpitRoot?.Q<VisualElement>(className:"marketplace-panel");
+            if(cockpitRoot==null||cockpitPanel==null||cockpitRoot.worldBound.width<=0||cockpitRoot.worldBound.height<=0)return Rect.zero;
+            var r=cockpitRoot.worldBound;var p=cockpitPanel.worldBound;
+            return new Rect((p.xMin-r.xMin)*Screen.width/r.width,(r.yMax-p.yMax)*Screen.height/r.height,
+                p.width*Screen.width/r.width,p.height*Screen.height/r.height);
         }
     }
 }

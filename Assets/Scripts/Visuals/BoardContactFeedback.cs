@@ -55,6 +55,9 @@ namespace PolyRisk.Visuals
         {
             if(board==null)return;
             if(board.tileMaterial!=null)board.tileMaterial.SetTexture(ContactTex,value);
+            // Corner inlays share the existing dark mesh; the architectural shader
+            // reconstructs their receiver footprint without changing its vertex/index contract.
+            if(board.darkMaterial!=null)board.darkMaterial.SetTexture(ContactTex,value);
             if(board.neonMaterial!=null)board.neonMaterial.SetTexture(ContactTex,value);
         }
         public void Clear()
